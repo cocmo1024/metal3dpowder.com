@@ -1,15 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import MaterialFamilyCard from '../../components/MaterialFamilyCard.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
-import { materialFamilies } from '../../data/materialFamilies';
 
-const title = 'Metal Powder Blog | Alloy Selection, Particle Size, and AM Powder Guides';
+const title = 'Blog | Metal 3D Powder';
 const description =
-  'Metal powder blog with alloy selection, particle size, process fit, and sourcing guides for titanium, nickel, stainless steel, tool steel, aluminum, copper, and cobalt chrome powders.';
+  'Technical articles on metal additive manufacturing powders, alloy selection, particle size, applications, and sourcing guidance.';
 
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 
@@ -38,24 +35,6 @@ const schema = [
       name: post.data.title,
     })),
   },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl.toString(),
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Blog',
-        item: new URL('/blog/', siteUrl).toString(),
-      },
-    ],
-  },
 ];
 ---
 
@@ -63,8 +42,6 @@ const schema = [
   <SiteHeader pathname={Astro.url.pathname} />
 
   <main class="page-shell blog-index">
-    <Breadcrumbs items={[{ href: '/', label: 'Home' }, { label: 'Blog' }]} />
-
     <section class="blog-hero">
       <p class="eyebrow">Blog</p>
       <h1>Technical articles for metal powder selection and additive manufacturing sourcing.</h1>
@@ -72,25 +49,6 @@ const schema = [
         Browse practical guides covering titanium, nickel, stainless steel, aluminum, copper, and cobalt chromium
         powders used in additive manufacturing and powder-based engineering workflows.
       </p>
-    </section>
-
-    <section class="topic-clusters" aria-labelledby="topic-clusters-title">
-      <div class="topic-clusters__head">
-        <h2 id="topic-clusters-title">Topic clusters by material family</h2>
-        <p>These hub pages concentrate internal links around the main commercial alloy groups on the site.</p>
-      </div>
-
-      <div class="topic-clusters__grid">
-        {
-          materialFamilies.map((family) => (
-            <MaterialFamilyCard
-              family={family}
-              productCount={family.relatedProductIds.length}
-              articleCount={posts.filter((post) => family.relatedArticleSlugs.includes(post.id)).length}
-            />
-          ))
-        }
-      </div>
     </section>
 
     {
@@ -145,8 +103,8 @@ const schema = [
 <style>
   .blog-index {
     display: grid;
-    gap: 1.5rem;
-    padding-block: 2rem 4rem;
+    gap: 1.6rem;
+    padding-block: 2.5rem 4rem;
   }
 
   .blog-hero {
@@ -167,35 +125,6 @@ const schema = [
     color: var(--muted);
     font-size: 1.05rem;
     line-height: 1.7;
-  }
-
-  .topic-clusters {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .topic-clusters__head {
-    display: grid;
-    gap: 0.55rem;
-    max-width: 48rem;
-  }
-
-  .topic-clusters__head h2 {
-    margin: 0;
-    font-size: clamp(1.7rem, 3vw, 2.35rem);
-    letter-spacing: -0.04em;
-  }
-
-  .topic-clusters__head p {
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  .topic-clusters__grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .featured-post__card,
@@ -284,7 +213,6 @@ const schema = [
   }
 
   @media (max-width: 1100px) {
-    .topic-clusters__grid,
     .post-grid {
       grid-template-columns: 1fr;
     }

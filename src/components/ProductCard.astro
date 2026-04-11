@@ -1,5 +1,4 @@
 ---
-import { materialFamilyMap } from '../data/materialFamilies';
 import type { Product } from '../data/products';
 
 interface Props {
@@ -8,14 +7,9 @@ interface Props {
 }
 
 const { product, index = 0 } = Astro.props;
-const family = materialFamilyMap[product.familySlug];
 ---
 
-<article
-  class="product-card"
-  id={`product-${product.id}`}
-  style={`--card-accent:${product.accent}; --card-delay:${index * 80}ms;`}
->
+<article class="product-card" style={`--card-accent:${product.accent}; --card-delay:${index * 80}ms;`}>
   <div class="product-card__media">
     <img
       src={product.image}
@@ -52,12 +46,6 @@ const family = materialFamilyMap[product.familySlug];
     <ul class="product-card__chips" aria-label={`${product.name} applications`}>
       {product.applications.map((application) => <li>{application}</li>)}
     </ul>
-
-    <div class="product-card__links" aria-label={`${product.name} internal links`}>
-      <a href={`/materials/${product.familySlug}/`}>Material page</a>
-      {product.articleSlug ? <a href={`/posts/Alloys/${product.articleSlug}/`}>Technical article</a> : null}
-      {family ? <a href={`/materials/${product.familySlug}/#related-articles`}>Related guides</a> : null}
-    </div>
   </div>
 </article>
 
@@ -208,36 +196,6 @@ const family = materialFamilyMap[product.familySlug];
     color: var(--muted);
     border: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 0.82rem;
-  }
-
-  .product-card__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-  }
-
-  .product-card__links a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.3rem;
-    padding-inline: 0.85rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--text);
-    font-size: 0.84rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    transition:
-      border-color 180ms ease,
-      background-color 180ms ease,
-      color 180ms ease;
-  }
-
-  .product-card__links a:hover {
-    border-color: color-mix(in srgb, var(--card-accent) 32%, rgba(255, 255, 255, 0.2));
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--accent);
   }
 
   @keyframes card-rise {

@@ -14,7 +14,6 @@ const {
 } = Astro.props;
 
 const homePage = pathname === '/';
-const materialsPage = pathname.startsWith('/materials/');
 const blogPage = pathname.startsWith('/blog/') || pathname.startsWith('/posts/');
 
 const links = [
@@ -22,11 +21,6 @@ const links = [
     href: productsHref,
     label: 'Products',
     active: homePage,
-  },
-  {
-    href: '/materials/',
-    label: 'Materials',
-    active: materialsPage,
   },
   {
     href: '/blog/',

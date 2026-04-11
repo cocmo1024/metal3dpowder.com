@@ -10,8 +10,6 @@ export type Product = {
   image: string;
   accent: string;
   applications: string[];
-  familySlug: string;
-  articleSlug?: string;
 };
 
 export const products: Product[] = [
@@ -27,8 +25,6 @@ export const products: Product[] = [
     image: '/images/products/titanium.svg',
     accent: '#8fe4d9',
     applications: ['LPBF', 'medical', 'aerospace'],
-    familySlug: 'titanium-powder',
-    articleSlug: 'tc4-ti6al4v-powder',
   },
   {
     id: 'ti-grade-2',
@@ -42,8 +38,6 @@ export const products: Product[] = [
     image: '/images/products/ti-grade-2.svg',
     accent: '#8ee0cb',
     applications: ['corrosion resistant', 'chemical', 'industrial'],
-    familySlug: 'titanium-powder',
-    articleSlug: 'titanium-grade-2-powder',
   },
   {
     id: '316l',
@@ -57,8 +51,6 @@ export const products: Product[] = [
     image: '/images/products/316l.svg',
     accent: '#b9c6d1',
     applications: ['LPBF', 'tooling', 'industrial'],
-    familySlug: 'stainless-steel-powder',
-    articleSlug: '316l-stainless-steel-powder',
   },
   {
     id: '17-4ph',
@@ -72,8 +64,6 @@ export const products: Product[] = [
     image: '/images/products/17-4ph.svg',
     accent: '#cad4dc',
     applications: ['structural', 'tooling', 'industrial'],
-    familySlug: 'stainless-steel-powder',
-    articleSlug: '17-4ph-stainless-steel-powder',
   },
   {
     id: 'm300',
@@ -87,8 +77,6 @@ export const products: Product[] = [
     image: '/images/products/m300.svg',
     accent: '#b8d0f2',
     applications: ['molds', 'inserts', 'tool steel'],
-    familySlug: 'tool-steel-powder',
-    articleSlug: 'm300-maraging-steel-powder',
   },
   {
     id: 'h13',
@@ -102,8 +90,6 @@ export const products: Product[] = [
     image: '/images/products/h13.svg',
     accent: '#98cab2',
     applications: ['dies', 'hot work', 'tooling'],
-    familySlug: 'tool-steel-powder',
-    articleSlug: 'h13-tool-steel-powder',
   },
   {
     id: 'in718',
@@ -117,8 +103,6 @@ export const products: Product[] = [
     image: '/images/products/in718.svg',
     accent: '#ffb177',
     applications: ['turbines', 'energy', 'high-temp'],
-    familySlug: 'nickel-alloy-powder',
-    articleSlug: 'gh4169-in718-powder',
   },
   {
     id: 'in625',
@@ -132,8 +116,6 @@ export const products: Product[] = [
     image: '/images/products/in625.svg',
     accent: '#ffc289',
     applications: ['corrosion', 'marine', 'thermal'],
-    familySlug: 'nickel-alloy-powder',
-    articleSlug: 'gh3625-in625-powder',
   },
   {
     id: 'hastelloyx',
@@ -147,8 +129,6 @@ export const products: Product[] = [
     image: '/images/products/hastelloyx.svg',
     accent: '#ffbf78',
     applications: ['combustion', 'oxidation', 'hot section'],
-    familySlug: 'nickel-alloy-powder',
-    articleSlug: 'hastelloy-x-powder',
   },
   {
     id: 'alsi10mg',
@@ -162,8 +142,6 @@ export const products: Product[] = [
     image: '/images/products/alsi10mg.svg',
     accent: '#8dc5ff',
     applications: ['automotive', 'thermal', 'lightweight'],
-    familySlug: 'aluminum-powder',
-    articleSlug: 'alsi10mg-powder',
   },
   {
     id: 'cucrzr',
@@ -177,8 +155,6 @@ export const products: Product[] = [
     image: '/images/products/cucrzr.svg',
     accent: '#ffa06a',
     applications: ['conductive', 'electronics', 'thermal'],
-    familySlug: 'copper-powder',
-    articleSlug: 'cucrzr-copper-powder',
   },
   {
     id: 'cocrmo',
@@ -192,7 +168,5 @@ export const products: Product[] = [
     image: '/images/products/cocrmo.svg',
     accent: '#d2d3ff',
     applications: ['dental', 'medical', 'wear resistant'],
-    familySlug: 'cobalt-chrome-powder',
-    articleSlug: 'cocrmo-cocrw-powder',
   },
 ];

@@ -1,11 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
-import { materialFamilies } from '../../../data/materialFamilies';
-import { products } from '../../../data/products';
 import { siteInfo } from '../../../data/site';
 
 export async function getStaticPaths() {
@@ -17,41 +14,28 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content, headings } = await render(post);
+const { Content } = await render(post);
 
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 const readingMinutes = Math.max(1, Math.round((post.body ?? '').split(/\s+/).length / 220));
 const allPosts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const family = materialFamilies.find((entry) => entry.relatedArticleSlugs.includes(post.id)) ?? null;
-const familyProducts = family ? products.filter((product) => family.relatedProductIds.includes(product.id)) : [];
-const coverProduct = products.find((product) => product.articleSlug === post.id) ?? familyProducts[0] ?? null;
-const relatedPosts = allPosts
-  .filter((entry) => entry.id !== post.id)
-  .sort((left, right) => {
-    const leftScore = family?.relatedArticleSlugs.includes(left.id) ? 0 : 1;
-    const rightScore = family?.relatedArticleSlugs.includes(right.id) ? 0 : 1;
-    return leftScore - rightScore || right.data.pubDate.valueOf() - left.data.pubDate.valueOf();
-  })
-  .slice(0, 3);
+const relatedPosts = allPosts.filter((entry) => entry.id !== post.id).slice(0, 3);
 
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const canonical = `/posts/Alloys/${post.id}/`;
-const coverImage = coverProduct?.image ?? '/og-image.svg';
 
 const schema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': 'Article',
     headline: post.data.title,
     description: post.data.description,
-    image: [new URL(coverImage, siteUrl).toString()],
     datePublished: post.data.pubDate.toISOString(),
     dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
     mainEntityOfPage: new URL(canonical, siteUrl).toString(),
     author: {
       '@type': 'Organization',
       name: siteInfo.brand,
-      url: new URL('/about/', siteUrl).toString(),
     },
     publisher: {
       '@type': 'Organization',
@@ -88,7 +72,6 @@ const schema = [
   title={`${post.data.title} | Metal 3D Powder`}
   description={post.data.description}
   canonical={canonical}
-  ogImage={coverImage}
   ogType="article"
   extraMeta={[
     { property: 'article:published_time', content: post.data.pubDate.toISOString() },
@@ -101,11 +84,10 @@ const schema = [
   <SiteHeader pathname={Astro.url.pathname} />
 
   <main class="page-shell article-page">
-    <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/blog/', label: 'Blog' }, { label: post.data.title }]} />
+    <a class="article-back" href="/blog/">Back to articles</a>
 
     <div class="article-layout">
       <article class="article">
-        <a class="article-back" href="/blog/">Back to articles</a>
         <p class="eyebrow">{post.data.category}</p>
         <h1>{post.data.title}</h1>
         <p class="article-description">{post.data.description}</p>
@@ -121,41 +103,6 @@ const schema = [
       </article>
 
       <aside class="article-sidebar">
-        {
-          headings.length ? (
-            <section>
-              <p class="article-sidebar__label">On this page</p>
-              <nav class="article-toc" aria-label="Table of contents">
-                {headings
-                  .filter((heading) => heading.depth <= 2)
-                  .map((heading) => (
-                    <a href={`#${heading.slug}`}>{heading.text}</a>
-                  ))}
-              </nav>
-            </section>
-          ) : null
-        }
-
-        {
-          family ? (
-            <section>
-              <p class="article-sidebar__label">Material family</p>
-              <a class="article-family-card" href={`/materials/${family.slug}/`}>
-                <strong>{family.label}</strong>
-                <span>{family.summary}</span>
-              </a>
-
-              {familyProducts.length ? (
-                <div class="article-family-products">
-                  {familyProducts.slice(0, 3).map((product) => (
-                    <a href={`/#product-${product.id}`}>{product.name}</a>
-                  ))}
-                </div>
-              ) : null}
-            </section>
-          ) : null
-        }
-
         <section>
           <p class="article-sidebar__label">Tags</p>
           <ul class="article-tags">
@@ -174,15 +121,6 @@ const schema = [
             ))}
           </div>
         </section>
-
-        <section>
-          <p class="article-sidebar__label">Need a quote?</p>
-          <p class="article-sidebar__text">
-            Send grade, particle size, process, quantity, and destination country to
-            {' '}
-            <a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
-          </p>
-        </section>
       </aside>
     </div>
   </main>
@@ -194,7 +132,7 @@ const schema = [
   .article-page {
     display: grid;
     gap: 1.5rem;
-    padding-block: 2rem 4rem;
+    padding-block: 2.5rem 4rem;
   }
 
   .article-back {
@@ -294,38 +232,6 @@ const schema = [
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-  }
-
-  .article-toc,
-  .article-family-products {
-    display: grid;
-    gap: 0.65rem;
-  }
-
-  .article-toc a,
-  .article-family-products a {
-    color: #d3dce6;
-    line-height: 1.5;
-  }
-
-  .article-family-card {
-    display: grid;
-    gap: 0.45rem;
-    padding: 0.95rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-  }
-
-  .article-family-card strong {
-    font-size: 1rem;
-    letter-spacing: -0.02em;
-  }
-
-  .article-family-card span,
-  .article-sidebar__text {
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.7;
   }
 
   .article-tags {

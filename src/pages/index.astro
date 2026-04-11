@@ -1,21 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MaterialFamilyCard from '../components/MaterialFamilyCard.astro';
 import ProductCard from '../components/ProductCard.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
-import { materialFamilies } from '../data/materialFamilies';
 import { siteInfo } from '../data/site';
 import { products } from '../data/products';
 
-const title = 'Metal Powder Supplier for Additive Manufacturing | Titanium, Nickel, Stainless Steel';
+const title = 'Metal 3D Powder | Premium AM Powder Supplier';
 const description =
-  'Metal powder supplier for additive manufacturing with titanium, nickel alloy, stainless steel, tool steel, aluminum, copper, and cobalt chrome powders showing price, particle size, and lead time.';
+  'English-first export website for metal additive manufacturing powders with clear pricing, particle size, and lead time.';
 
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
-const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const latestPosts = posts.slice(0, 4);
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -24,22 +19,6 @@ const organizationSchema = {
   url: siteUrl.toString(),
   email: siteInfo.email,
   description,
-};
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: siteInfo.brand,
-  url: siteUrl.toString(),
-  description,
-};
-
-const collectionPageSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: title,
-  description,
-  url: siteUrl.toString(),
 };
 
 const itemListSchema = {
@@ -58,81 +37,19 @@ const itemListSchema = {
       priceCurrency: 'USD',
       price: product.price,
       availability: 'https://schema.org/InStock',
-      url: new URL(`/#product-${product.id}`, siteUrl).toString(),
+      url: siteUrl.toString(),
     },
   })),
 };
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  schema={[organizationSchema, websiteSchema, collectionPageSchema, itemListSchema]}
->
+<BaseLayout title={title} description={description} schema={[organizationSchema, itemListSchema]}>
   <SiteHeader pathname={Astro.url.pathname} productsHref="#products" contactHref="#contact" />
 
   <main>
-    <section class="section page-shell intro-block" aria-labelledby="home-title">
-      <div class="intro-block__copy">
-        <p class="eyebrow">Metal Powders</p>
-        <h1 id="home-title">Metal powder supply for additive manufacturing with pricing, particle size, and lead time shown clearly.</h1>
-        <p>
-          Browse titanium, nickel alloy, stainless steel, tool steel, aluminum, copper, and cobalt chrome powder
-          options for overseas additive manufacturing buyers. Product cards below connect directly to material pages
-          and technical articles to support material selection and sourcing.
-        </p>
-      </div>
-    </section>
-
-    <section class="section page-shell topic-section" id="materials" aria-labelledby="materials-title">
-      <div class="section-heading">
-        <p class="eyebrow">Material Families</p>
-        <h2 id="materials-title">Search-focused topic pages for the main alloy groups.</h2>
-        <p>Use these pages to compare grades, applications, and supporting articles before requesting a quote.</p>
-      </div>
-
-      <div class="topic-grid">
-        {
-          materialFamilies.map((family) => (
-            <MaterialFamilyCard
-              family={family}
-              productCount={family.relatedProductIds.length}
-              articleCount={family.relatedArticleSlugs.length}
-            />
-          ))
-        }
-      </div>
-    </section>
-
     <section class="section page-shell" id="products">
-      <div class="section-heading">
-        <p class="eyebrow">Products</p>
-        <h2>Available metal powders for export inquiry.</h2>
-        <p>Each product card links to the related material hub and technical article for faster qualification review.</p>
-      </div>
-
       <div class="products-grid">
         {products.map((product, index) => <ProductCard product={product} index={index} />)}
-      </div>
-    </section>
-
-    <section class="section page-shell article-strip" aria-labelledby="latest-guides-title">
-      <div class="section-heading">
-        <p class="eyebrow">Technical Guides</p>
-        <h2 id="latest-guides-title">Latest powder articles supporting buyer research.</h2>
-        <p>These article pages target alloy-specific searches that often happen before RFQ submission.</p>
-      </div>
-
-      <div class="article-strip__grid">
-        {latestPosts.map((post) => (
-          <article class="article-teaser">
-            <p class="article-teaser__meta">{post.data.category}</p>
-            <h3>
-              <a href={`/posts/Alloys/${post.id}/`}>{post.data.title}</a>
-            </h3>
-            <p>{post.data.description}</p>
-          </article>
-        ))}
       </div>
     </section>
 
@@ -185,93 +102,10 @@ const itemListSchema = {
     padding-block: clamp(2rem, 4vw, 2.75rem) clamp(3rem, 6vw, 4rem);
   }
 
-  .intro-block {
-    padding-block-end: 1rem;
-  }
-
-  .intro-block__copy {
-    display: grid;
-    gap: 0.9rem;
-    max-width: 66rem;
-  }
-
-  .intro-block h1,
-  .section-heading h2 {
-    margin: 0;
-    letter-spacing: -0.05em;
-  }
-
-  .intro-block h1 {
-    font-size: clamp(2.35rem, 4.5vw, 4.35rem);
-    line-height: 0.97;
-  }
-
-  .intro-block p:last-child,
-  .section-heading p:last-child,
-  .article-teaser p:last-child {
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  .section-heading {
-    display: grid;
-    gap: 0.7rem;
-    max-width: 54rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .section-heading h2 {
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-  }
-
-  .topic-grid,
   .products-grid {
     display: grid;
     gap: 1.25rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .article-strip {
-    display: grid;
-    gap: 1.4rem;
-  }
-
-  .article-strip__grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .article-teaser {
-    display: grid;
-    gap: 0.7rem;
-    padding: 1.2rem 1.25rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.3rem;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
-      rgba(10, 14, 18, 0.88);
-  }
-
-  .article-teaser__meta {
-    margin: 0;
-    color: var(--accent);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .article-teaser h3 {
-    margin: 0;
-    font-size: 1.28rem;
-    letter-spacing: -0.04em;
-    line-height: 1.15;
-  }
-
-  .article-teaser a:hover {
-    color: var(--accent);
   }
 
   .contact-strip {
@@ -323,12 +157,7 @@ const itemListSchema = {
   }
 
   @media (max-width: 1100px) {
-    .topic-grid,
     .products-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .article-strip__grid {
       grid-template-columns: 1fr;
     }
   }
