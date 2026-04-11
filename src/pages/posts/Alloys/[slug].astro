@@ -136,7 +136,7 @@ const schema = [
   .article {
     display: grid;
     gap: 1.5rem;
-    max-width: 920px;
+    max-width: 860px;
     margin-inline: auto;
   }
 
@@ -157,7 +157,8 @@ const schema = [
   }
 
   .article-header h1 {
-    max-width: 100%;
+    width: 100%;
+    max-width: none;
     font-size: clamp(1.68rem, 2.2vw, 2.12rem);
     line-height: 1.16;
     letter-spacing: -0.024em;
@@ -165,6 +166,7 @@ const schema = [
     text-wrap: pretty;
     word-break: normal;
     overflow-wrap: normal;
+    hyphens: none;
   }
 
   .article-meta {
