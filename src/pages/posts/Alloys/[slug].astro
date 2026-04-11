@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BlogPostGrid from '../../../components/BlogPostGrid.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import {
@@ -8,6 +9,7 @@ import {
   estimateReadingMinutes,
   getAdjacentBlogPosts,
   getBlogPostPath,
+  getRelatedBlogPosts,
   getTagPath,
   sortBlogPosts,
 } from '../../../data/blog';
@@ -26,6 +28,7 @@ const { Content } = await render(post);
 
 const allPosts = sortBlogPosts(await getCollection('blog'));
 const { previousPost, nextPost } = getAdjacentBlogPosts(allPosts, post.id);
+const relatedPosts = getRelatedBlogPosts(allPosts, post, 6);
 const readingMinutes = estimateReadingMinutes(post.body ?? '');
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 
@@ -122,6 +125,15 @@ const schema = [
           </a>
         ) : null}
       </nav>
+
+      {
+        relatedPosts.length ? (
+          <section class="article-related" aria-labelledby="article-related-title">
+            <h2 id="article-related-title">Related Articles</h2>
+            <BlogPostGrid posts={relatedPosts} ariaLabel="Related articles" />
+          </section>
+        ) : null
+      }
     </article>
   </main>
 
@@ -143,7 +155,8 @@ const schema = [
   .article-header,
   .article-summary,
   .article-tags,
-  .article-pagination {
+  .article-pagination,
+  .article-related {
     display: grid;
     gap: 0.8rem;
   }
@@ -151,6 +164,7 @@ const schema = [
   .article-header h1,
   .article-summary h2,
   .article-tags h2,
+  .article-related h2,
   .article-content :global(h2),
   .article-content :global(h3) {
     margin: 0;
@@ -187,7 +201,8 @@ const schema = [
   }
 
   .article-summary h2,
-  .article-tags h2 {
+  .article-tags h2,
+  .article-related h2 {
     font-size: 0.92rem;
     font-weight: 700;
     letter-spacing: 0.08em;

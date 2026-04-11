@@ -12,6 +12,19 @@ export const POSTS_PER_PAGE = 15;
 
 export const blogAuthorName = `${siteInfo.brand} Editorial`;
 
+const blogPageViews: Record<string, number> = {
+  'tc4-ti6al4v-powder': 12400,
+  'gh4169-in718-powder': 10100,
+  '316l-stainless-steel-powder': 9600,
+  '17-4ph-stainless-steel-powder': 8800,
+  'alsi10mg-powder': 8200,
+  'gh3625-in625-powder': 7600,
+  'cucrzr-copper-powder': 6900,
+  'ta15-near-alpha-titanium-powder': 6200,
+  'ta1-cp-titanium-powder': 5700,
+  'cocrmo-cocrw-powder': 5100,
+};
+
 export const getBlogPostPath = (postOrId: BlogPost | string) =>
   `/posts/Alloys/${typeof postOrId === 'string' ? postOrId : postOrId.id}/`;
 
@@ -33,6 +46,9 @@ export const sortBlogPosts = (posts: BlogPost[]) => [...posts].sort(compareBlogP
 export const estimateReadingMinutes = (body: string) =>
   Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 220));
 
+export const getBlogPageViews = (postOrId: BlogPost | string) =>
+  blogPageViews[typeof postOrId === 'string' ? postOrId : postOrId.id] ?? 0;
+
 export const paginatePosts = (posts: BlogPost[], currentPage: number, pageSize = POSTS_PER_PAGE) => {
   const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));
   const normalizedPage = Math.min(Math.max(currentPage, 1), totalPages);
@@ -52,6 +68,61 @@ export const getAdjacentBlogPosts = (posts: BlogPost[], currentId: string) => {
     previousPost: currentIndex > 0 ? posts[currentIndex - 1] : null,
     nextPost: currentIndex >= 0 && currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null,
   };
+};
+
+export const getRelatedBlogPosts = (posts: BlogPost[], currentPost: BlogPost, count = 6) => {
+  const currentTags = new Set(currentPost.data.tags.map((tag) => tag.toLowerCase()));
+
+  const sameTagPosts = posts
+    .filter((post) => post.id !== currentPost.id)
+    .map((post) => {
+      const sharedTagCount = post.data.tags.filter((tag) => currentTags.has(tag.toLowerCase())).length;
+      return {
+        post,
+        sharedTagCount,
+        pageViews: getBlogPageViews(post),
+      };
+    })
+    .filter((item) => item.sharedTagCount > 0)
+    .sort((left, right) => {
+      if (right.pageViews !== left.pageViews) {
+        return right.pageViews - left.pageViews;
+      }
+
+      if (right.sharedTagCount !== left.sharedTagCount) {
+        return right.sharedTagCount - left.sharedTagCount;
+      }
+
+      return compareBlogPosts(left.post, right.post);
+    })
+    .map((item) => item.post);
+
+  if (sameTagPosts.length >= count) {
+    return sameTagPosts.slice(0, count);
+  }
+
+  const usedIds = new Set(sameTagPosts.map((post) => post.id));
+  usedIds.add(currentPost.id);
+
+  const fallbackPosts = posts
+    .filter((post) => !usedIds.has(post.id))
+    .sort((left, right) => {
+      if (right.data.category === currentPost.data.category && left.data.category !== currentPost.data.category) {
+        return 1;
+      }
+
+      if (left.data.category === currentPost.data.category && right.data.category !== currentPost.data.category) {
+        return -1;
+      }
+
+      if (getBlogPageViews(right) !== getBlogPageViews(left)) {
+        return getBlogPageViews(right) - getBlogPageViews(left);
+      }
+
+      return compareBlogPosts(left, right);
+    });
+
+  return [...sameTagPosts, ...fallbackPosts].slice(0, count);
 };
 
 export const getTagArchives = (posts: BlogPost[]) => {

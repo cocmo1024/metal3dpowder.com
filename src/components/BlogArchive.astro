@@ -1,6 +1,6 @@
 ---
 import type { BlogPost } from '../data/blog';
-import { getBlogPostPath } from '../data/blog';
+import BlogPostGrid from './BlogPostGrid.astro';
 
 interface Props {
   eyebrow?: string;
@@ -22,8 +22,6 @@ const {
   pageBasePath,
 } = Astro.props;
 
-const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
-
 const getPageHref = (page: number) => {
   if (page <= 1) {
     return pageBasePath;
@@ -42,20 +40,7 @@ const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
     {description ? <p>{description}</p> : null}
   </section>
 
-  <section class="archive-grid" aria-label="Articles">
-    {posts.map((post) => (
-      <article class="archive-card">
-        <div class="archive-card__meta">
-          <span>{post.data.category}</span>
-          <span>{formatter.format(post.data.pubDate)}</span>
-        </div>
-        <h2>
-          <a href={getBlogPostPath(post)}>{post.data.title}</a>
-        </h2>
-        <p>{post.data.description}</p>
-      </article>
-    ))}
-  </section>
+  <BlogPostGrid posts={posts} ariaLabel="Articles" />
 
   {
     totalPages > 1 ? (
@@ -105,8 +90,7 @@ const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
     max-width: 50rem;
   }
 
-  .archive-intro h1,
-  .archive-card h2 {
+  .archive-intro h1 {
     margin: 0;
   }
 
@@ -117,49 +101,10 @@ const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
     font-weight: 730;
   }
 
-  .archive-intro p:last-child,
-  .archive-card p {
+  .archive-intro p:last-child {
     margin: 0;
     color: var(--muted);
     line-height: 1.72;
-  }
-
-  .archive-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .archive-card {
-    display: grid;
-    gap: 0.75rem;
-    align-content: start;
-    padding: 1.15rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.1rem;
-    background: rgba(12, 17, 22, 0.9);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
-  }
-
-  .archive-card__meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    color: var(--muted);
-    font-size: 0.76rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-  }
-
-  .archive-card h2 {
-    font-size: 1.02rem;
-    line-height: 1.28;
-    letter-spacing: -0.018em;
-    font-weight: 700;
-  }
-
-  .archive-card a:hover {
-    color: var(--accent);
   }
 
   .archive-pagination {
@@ -204,12 +149,6 @@ const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
     pointer-events: none;
   }
 
-  @media (max-width: 980px) {
-    .archive-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
   @media (max-width: 720px) {
     .archive-page {
       gap: 1.3rem;
@@ -220,14 +159,6 @@ const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
       font-size: clamp(1.5rem, 7vw, 2rem);
       line-height: 1.12;
       letter-spacing: -0.024em;
-    }
-
-    .archive-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .archive-card h2 {
-      font-size: 0.98rem;
     }
   }
 </style>

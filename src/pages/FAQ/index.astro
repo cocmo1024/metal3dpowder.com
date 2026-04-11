@@ -55,7 +55,7 @@ const schema = [
 <BaseLayout title={title} description={description} canonical="/FAQ/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="page-shell content-page">
+  <main class="page-shell content-page faq-page">
     <section class="page-intro">
       <p class="eyebrow">FAQ</p>
       <h1>Technical and commercial questions buyers usually ask first.</h1>
@@ -111,6 +111,44 @@ const schema = [
 </BaseLayout>
 
 <style>
+  .faq-page {
+    gap: 1.5rem;
+    padding-block: 2rem 4rem;
+  }
+
+  .faq-page .page-intro {
+    gap: 0.65rem;
+    max-width: 50rem;
+  }
+
+  .faq-page .page-intro h1 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+  }
+
+  .faq-page .page-intro p {
+    max-width: 44rem;
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+
+  .faq-page .copy-grid {
+    gap: 1rem;
+  }
+
+  .faq-page .rich-copy {
+    gap: 0.75rem;
+  }
+
+  .faq-page .rich-copy h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.24;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
   .faq-section {
     display: grid;
     gap: 1rem;
@@ -123,8 +161,10 @@ const schema = [
 
   .faq-section__head h2 {
     margin: 0;
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    letter-spacing: -0.04em;
+    font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    font-weight: 720;
   }
 
   .faq-list {
@@ -140,12 +180,13 @@ const schema = [
   }
 
   .faq-list summary {
-    padding: 1rem 1.1rem;
+    padding: 0.95rem 1.05rem;
     cursor: pointer;
     list-style: none;
-    font-size: 1rem;
-    font-weight: 650;
-    letter-spacing: -0.02em;
+    font-size: 0.96rem;
+    line-height: 1.45;
+    font-weight: 680;
+    letter-spacing: -0.015em;
   }
 
   .faq-list summary::-webkit-details-marker {
@@ -161,6 +202,25 @@ const schema = [
   .faq-answer p {
     margin: 0;
     color: #d3dce6;
-    line-height: 1.8;
+    line-height: 1.78;
+    font-size: 0.98rem;
+  }
+
+  @media (max-width: 720px) {
+    .faq-page {
+      gap: 1.35rem;
+      padding-block: 1.85rem 3.2rem;
+    }
+
+    .faq-page .page-intro h1 {
+      font-size: clamp(1.52rem, 6.8vw, 2rem);
+      line-height: 1.14;
+      letter-spacing: -0.024em;
+    }
+
+    .faq-page .rich-copy h2,
+    .faq-section__head h2 {
+      font-size: 1.04rem;
+    }
   }
 </style>
