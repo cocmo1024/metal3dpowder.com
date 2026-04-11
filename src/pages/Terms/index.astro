@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { siteInfo } from '../../data/site';
+
+const title = 'Terms of Service | Metal 3D Powder';
+const description =
+  'Terms of service for Metal 3D Powder covering reference-only content, acceptable use, quotation validity, and liability limits.';
+---
+
+<BaseLayout title={title} description={description} canonical="/Terms/">
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="page-shell content-page">
+    <section class="page-intro">
+      <p class="eyebrow">Terms</p>
+      <h1>Reference content, acceptable use, and quotation validity.</h1>
+      <p>
+        Last updated: April 11, 2026. This page preserves the structure of the existing terms page while removing
+        unnecessary duplication and making the commercial boundaries explicit.
+      </p>
+    </section>
+
+    <section class="surface-card surface-card--padded rich-copy">
+      <h2>Reference-only website content</h2>
+      <p>
+        Product cards, articles, FAQ content, and engineering notes on this website are general reference information.
+        They do not by themselves create a contractual commitment, engineering guarantee, or formal commercial offer.
+      </p>
+
+      <h2>Acceptable use</h2>
+      <p>
+        Users may browse and reference the website for legitimate business or research purposes. Unlawful access,
+        interference with the site, abusive scraping, or misuse of the content is not permitted.
+      </p>
+
+      <h2>Quotations and commercial terms</h2>
+      <p>
+        Prices, lead times, and technical values shown on the website are indicative only. Final commercial terms are
+        valid only when issued through the official corporate email:
+        <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        Website text, graphics, and technical presentation remain protected content. Reproduction or commercial reuse
+        requires prior permission unless otherwise allowed by applicable law.
+      </p>
+
+      <h2>Disclaimers and liability limits</h2>
+      <p>
+        Buyers remain responsible for independent verification before using any information for material selection,
+        engineering design, manufacturing, qualification, or procurement decisions. The site owner is not liable for
+        losses caused by reliance on general reference content without project-specific confirmation.
+      </p>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

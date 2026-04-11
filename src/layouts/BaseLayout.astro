@@ -1,12 +1,19 @@
 ---
 import '@fontsource-variable/space-grotesk';
 import '../styles/global.css';
+import { siteInfo } from '../data/site';
 
 interface Props {
   title: string;
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogType?: string;
+  extraMeta?: Array<{
+    name?: string;
+    property?: string;
+    content: string;
+  }>;
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
@@ -15,6 +22,8 @@ const {
   description,
   canonical = '/',
   ogImage = '/og-image.svg',
+  ogType = 'website',
+  extraMeta = [],
   schema = [],
 } = Astro.props;
 
@@ -37,17 +46,21 @@ const schemaItems = Array.isArray(schema) ? schema : [schema];
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
-    <meta property="og:site_name" content="Metal 3D Powder" />
+    <meta property="og:site_name" content={siteInfo.brand} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+
+    {extraMeta.map((meta) => (
+      <meta {...(meta.name ? { name: meta.name } : {})} {...(meta.property ? { property: meta.property } : {})} content={meta.content} />
+    ))}
 
     {schemaItems.map((item) => (
       <script type="application/ld+json" is:inline set:html={JSON.stringify(item)} />

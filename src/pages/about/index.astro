@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+
+const title = 'About | Metal 3D Powder';
+const description =
+  'About Metal 3D Powder and Suzhou Como Precision Materials Co., Ltd., including supply-chain integration, export support, and alloy coverage for AM powders.';
+---
+
+<BaseLayout title={title} description={description} canonical="/about/">
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="page-shell content-page">
+    <section class="page-intro">
+      <p class="eyebrow">About</p>
+      <h1>Supply-chain integration for engineering-grade metal AM powder sourcing.</h1>
+      <p>
+        Suzhou Como Precision Materials Co., Ltd. serves overseas buyers looking for qualified metal additive
+        manufacturing powders, practical material guidance, and export-oriented communication.
+      </p>
+    </section>
+
+    <section class="copy-grid">
+      <div class="surface-card surface-card--padded rich-copy">
+        <h2>What the company does</h2>
+        <p>
+          Suzhou Como Precision Materials Co., Ltd. focuses on metal additive manufacturing powder supply, material
+          matching, export communication, and practical support for overseas buyers evaluating powder options.
+        </p>
+        <p>
+          The operating model is built around screened supply resources, batch traceability, and application-oriented
+          communication instead of a single-source sales pitch.
+        </p>
+      </div>
+
+      <div class="surface-card surface-card--padded rich-copy">
+        <h2>How the supply model works</h2>
+        <p>
+          Powder manufacturers, testing capability, and logistics execution are treated as parts of one delivery chain.
+          That makes it easier to match material, documents, and lead-time expectations to the real project rather than
+          only to a catalog entry.
+        </p>
+        <p>
+          The practical goal is simpler: reduce trial-and-error for buyers who need usable powder information before
+          purchase decisions are made.
+        </p>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="surface-card surface-card--padded info-card">
+        <strong>Materials</strong>
+        <p>Titanium alloys, nickel superalloys, stainless steels, tool steels, aluminum alloys, copper alloys, and CoCr systems.</p>
+      </article>
+
+      <article class="surface-card surface-card--padded info-card">
+        <strong>Typical buyers</strong>
+        <p>AM service bureaus, industrial engineering teams, mold and tooling companies, research groups, and overseas procurement teams.</p>
+      </article>
+
+      <article class="surface-card surface-card--padded info-card">
+        <strong>Website role</strong>
+        <p>The site combines product cards, alloy articles, FAQ material, and direct contact information for export-oriented inquiry handling.</p>
+      </article>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

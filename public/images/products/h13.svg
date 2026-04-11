@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1112" />
+      <stop offset="100%" stop-color="#131919" />
+    </linearGradient>
+    <radialGradient id="orb" cx="34%" cy="25%" r="72%">
+      <stop offset="0%" stop-color="#fafffc" />
+      <stop offset="38%" stop-color="#98cab2" />
+      <stop offset="72%" stop-color="#2b4338" />
+      <stop offset="100%" stop-color="#0a1111" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="560" rx="44" fill="url(#bg)" />
+  <g opacity=".33" fill="none" stroke="#ffffff">
+    <path d="M0 116h800" />
+    <path d="M0 298h800" />
+    <path d="M172 0v560" />
+    <path d="M560 0v560" />
+  </g>
+  <g>
+    <circle cx="228" cy="260" r="112" fill="url(#orb)" />
+    <circle cx="434" cy="198" r="72" fill="url(#orb)" opacity=".95" />
+    <circle cx="560" cy="334" r="120" fill="url(#orb)" opacity=".91" />
+    <circle cx="374" cy="394" r="72" fill="url(#orb)" opacity=".88" />
+    <circle cx="684" cy="220" r="46" fill="url(#orb)" opacity=".84" />
+  </g>
+  <text x="52" y="82" fill="#98cab2" font-family="Space Grotesk, Arial, sans-serif" font-size="20" letter-spacing="4">TOOL STEEL</text>
+  <text x="52" y="500" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="54" font-weight="700">H13</text>
+</svg>

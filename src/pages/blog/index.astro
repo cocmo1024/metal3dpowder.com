@@ -1,0 +1,220 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+
+const title = 'Blog | Metal 3D Powder';
+const description =
+  'Technical articles on metal additive manufacturing powders, alloy selection, particle size, applications, and sourcing guidance.';
+
+const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featured = posts.find((post) => post.data.featured) ?? posts[0] ?? null;
+const latest = featured ? posts.filter((post) => post.id !== featured.id) : posts;
+
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Metal 3D Powder Blog',
+    description,
+    url: new URL('/blog/', siteUrl).toString(),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Metal 3D Powder Articles',
+    itemListElement: posts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: new URL(`/posts/Alloys/${post.id}/`, siteUrl).toString(),
+      name: post.data.title,
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonical="/blog/" schema={schema}>
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="page-shell blog-index">
+    <section class="blog-hero">
+      <p class="eyebrow">Blog</p>
+      <h1>Technical articles for metal powder selection and additive manufacturing sourcing.</h1>
+      <p>
+        Browse practical guides covering titanium, nickel, stainless steel, aluminum, copper, and cobalt chromium
+        powders used in additive manufacturing and powder-based engineering workflows.
+      </p>
+    </section>
+
+    {
+      featured ? (
+        <>
+          <section class="featured-post">
+            <a class="featured-post__card" href={`/posts/Alloys/${featured.id}/`}>
+              <div class="featured-post__meta">
+                <span>{featured.data.category}</span>
+                <span>{formatter.format(featured.data.pubDate)}</span>
+              </div>
+              <h2>{featured.data.title}</h2>
+              <p>{featured.data.description}</p>
+              <ul>
+                {featured.data.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            </a>
+          </section>
+
+          <section class="post-grid" aria-label="Latest articles">
+            {latest.map((post) => (
+              <article class="post-card">
+                <div class="post-card__meta">
+                  <span>{post.data.category}</span>
+                  <span>{formatter.format(post.data.pubDate)}</span>
+                </div>
+                <h2>
+                  <a href={`/posts/Alloys/${post.id}/`}>{post.data.title}</a>
+                </h2>
+                <p>{post.data.description}</p>
+                <ul>
+                  {post.data.tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+              </article>
+            ))}
+          </section>
+        </>
+      ) : (
+        <section class="featured-post">
+          <div class="featured-post__card">
+            <h2>Articles will appear here as they are published.</h2>
+            <p>Check back for additional alloy notes, powder guidance, and sourcing articles.</p>
+          </div>
+        </section>
+      )
+    }
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .blog-index {
+    display: grid;
+    gap: 1.6rem;
+    padding-block: 2.5rem 4rem;
+  }
+
+  .blog-hero {
+    display: grid;
+    gap: 0.85rem;
+    max-width: 56rem;
+  }
+
+  .blog-hero h1 {
+    margin: 0;
+    font-size: clamp(3rem, 6vw, 5.1rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .blog-hero p:last-child {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .featured-post__card,
+  .post-card {
+    display: grid;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.6rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+      rgba(10, 14, 18, 0.9);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.05) inset,
+      0 22px 60px rgba(0, 0, 0, 0.2);
+  }
+
+  .featured-post__card {
+    padding: 1.5rem;
+  }
+
+  .featured-post__card h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.05em;
+  }
+
+  .featured-post__card p,
+  .post-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .featured-post__meta,
+  .post-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .featured-post__card ul,
+  .post-card ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .featured-post__card li,
+  .post-card li {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.82rem;
+  }
+
+  .post-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .post-card {
+    align-content: start;
+    padding: 1.3rem;
+  }
+
+  .post-card h2 {
+    margin: 0;
+    font-size: 1.42rem;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+  }
+
+  .post-card h2 a:hover,
+  .featured-post__card:hover h2 {
+    color: var(--accent);
+  }
+
+  @media (max-width: 1100px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

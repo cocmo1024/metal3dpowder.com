@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1018" />
+      <stop offset="100%" stop-color="#131c29" />
+    </linearGradient>
+    <radialGradient id="orb" cx="32%" cy="24%" r="72%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#b8d0f2" />
+      <stop offset="73%" stop-color="#39506d" />
+      <stop offset="100%" stop-color="#0b1117" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="560" rx="44" fill="url(#bg)" />
+  <g opacity=".34" fill="none" stroke="#ffffff">
+    <path d="M0 120h800" />
+    <path d="M0 308h800" />
+    <path d="M188 0v560" />
+    <path d="M548 0v560" />
+  </g>
+  <g>
+    <circle cx="220" cy="264" r="112" fill="url(#orb)" />
+    <circle cx="430" cy="194" r="74" fill="url(#orb)" opacity=".96" />
+    <circle cx="566" cy="340" r="124" fill="url(#orb)" opacity=".92" />
+    <circle cx="364" cy="392" r="70" fill="url(#orb)" opacity=".88" />
+    <circle cx="678" cy="212" r="48" fill="url(#orb)" opacity=".84" />
+  </g>
+  <text x="52" y="82" fill="#b8d0f2" font-family="Space Grotesk, Arial, sans-serif" font-size="20" letter-spacing="4">MARAGING STEEL</text>
+  <text x="52" y="500" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="54" font-weight="700">M300</text>
+</svg>

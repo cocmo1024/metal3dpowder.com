@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { siteInfo } from '../../data/site';
+
+const title = 'Privacy Policy | Metal 3D Powder';
+const description =
+  'Privacy policy for Metal 3D Powder covering inquiry data, analytics, cookies, communication records, and contact rights.';
+---
+
+<BaseLayout title={title} description={description} canonical="/privacy/">
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="page-shell content-page">
+    <section class="page-intro">
+      <p class="eyebrow">Privacy</p>
+      <h1>Privacy policy for inquiry handling and website usage data.</h1>
+      <p>
+        Last updated: April 11, 2026. This policy covers inquiry data, website analytics, cookies, and business
+        communication records associated with the website.
+      </p>
+    </section>
+
+    <section class="surface-card surface-card--padded rich-copy">
+      <h2>Scope</h2>
+      <p>
+        This policy applies when you browse the website, send an RFQ, request technical information, or communicate with
+        the company through email or other business channels tied to the site.
+      </p>
+
+      <h2>Information collected</h2>
+      <p>
+        The site may collect contact details you provide directly, such as name, company, email address, country,
+        project background, material request, and technical notes. Basic usage data such as page visits, browser type,
+        approximate region, and aggregate traffic behavior may also be collected for performance and content improvement.
+      </p>
+
+      <h2>How information is used</h2>
+      <p>
+        Information is used to respond to inquiries, prepare quotations, recommend suitable powder options, improve the
+        website, and maintain relevant communication records connected with legitimate business activity.
+      </p>
+
+      <h2>Cookies and analytics</h2>
+      <p>
+        Cookies or similar technologies may be used to keep the site functional, measure traffic, and understand how
+        content is used. You can manage cookies through your browser settings, although some functions may be affected.
+      </p>
+
+      <h2>Sharing, retention, and security</h2>
+      <p>
+        Information is not sold. It may be shared with service providers or business partners only when reasonably
+        necessary for inquiry handling, logistics, compliance, or website operation. Records are retained only as long
+        as needed for the relevant business or legal purpose and are protected through reasonable administrative and
+        technical measures.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        You may request correction or deletion of inquiry data where legally applicable. Privacy-related requests can be
+        sent to <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
+      </p>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

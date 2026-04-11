@@ -5,5 +5,5 @@ export default defineConfig({
   site: 'https://metal3dpowder.com',
   integrations: [sitemap()],
   compressHTML: true,
-  trailingSlash: 'never',
+  trailingSlash: 'always',
 });

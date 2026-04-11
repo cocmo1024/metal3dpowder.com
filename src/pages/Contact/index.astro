@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { siteInfo } from '../../data/site';
+
+const title = 'Contact | Metal 3D Powder';
+const description =
+  'Contact Metal 3D Powder for RFQs, powder specifications, technical questions, and export-oriented metal AM powder inquiries.';
+---
+
+<BaseLayout title={title} description={description} canonical="/Contact/">
+  <SiteHeader pathname={Astro.url.pathname} contactHref="/Contact/" />
+
+  <main class="page-shell content-page">
+    <section class="page-intro">
+      <p class="eyebrow">Contact</p>
+      <h1>Use the official email for RFQs, technical checks, and commercial communication.</h1>
+      <p>
+        For quotations, material questions, and supply discussions, send the required project details directly by email
+        so the first response can be commercially and technically useful.
+      </p>
+    </section>
+
+    <section class="copy-grid">
+      <div class="surface-card surface-card--padded rich-copy">
+        <h2>Official email</h2>
+        <div class="contact-copy">
+          <input type="text" value={siteInfo.email} readonly aria-label="Official email" onclick="this.select();" />
+          <button type="button" class="button button--primary" data-copy-email>Copy Email</button>
+        </div>
+        <p>{siteInfo.contactNote}</p>
+      </div>
+
+      <div class="surface-card surface-card--padded rich-copy">
+        <h2>What to include</h2>
+        <ul>
+          <li>Alloy grade and target AM process</li>
+          <li>Particle size range and required quantity</li>
+          <li>Destination country and target ship date</li>
+          <li>Required documents, test data, or packaging notes</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="surface-card surface-card--padded info-card">
+        <strong>Scope</strong>
+        <p>Powder supply inquiries, material matching, and export-oriented communication in English.</p>
+      </article>
+
+      <article class="surface-card surface-card--padded info-card">
+        <strong>Response style</strong>
+        <p>Send complete RFQ details first. That reduces back-and-forth and improves lead-time accuracy.</p>
+      </article>
+
+      <article class="surface-card surface-card--padded info-card">
+        <strong>Quick links</strong>
+        <p><a class="inline-link" href="/FAQ/">Read the FAQ</a> for recurring technical and logistics questions.</p>
+        <p><a class="inline-link" href="/blog/">Read alloy articles</a> for long-form powder content.</p>
+      </article>
+    </section>
+  </main>
+
+  <SiteFooter />
+
+  <script is:inline>
+    const button = document.querySelector('[data-copy-email]');
+    const input = document.querySelector('input[aria-label="Official email"]');
+
+    if (button instanceof HTMLButtonElement && input instanceof HTMLInputElement) {
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(input.value);
+          button.textContent = 'Copied';
+          window.setTimeout(() => {
+            button.textContent = 'Copy Email';
+          }, 1600);
+        } catch {
+          input.focus();
+          input.select();
+        }
+      });
+    }
+  </script>
+</BaseLayout>
+
+<style>
+  .contact-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .contact-copy input {
+    min-width: 0;
+    height: 3rem;
+    padding: 0.8rem 1rem;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.95rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  @media (max-width: 640px) {
+    .contact-copy {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { siteInfo } from '../data/site';
 import { products } from '../data/products';
 
 const title = 'Metal 3D Powder | Premium AM Powder Supplier';
@@ -14,11 +15,10 @@ const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Metal 3D Powder',
+  name: siteInfo.brand,
   url: siteUrl.toString(),
-  email: 'sales@metal3dpowder.com',
+  email: siteInfo.email,
   description,
-  logo: new URL('/favicon.svg', siteUrl).toString(),
 };
 
 const itemListSchema = {
@@ -56,10 +56,13 @@ const itemListSchema = {
     <section class="contact-strip page-shell" id="contact" aria-labelledby="contact-title">
       <p class="contact-strip__eyebrow">Contact</p>
       <h2 id="contact-title">Email for quote and order inquiry</h2>
+      <p class="contact-strip__note">
+        Send material grade, particle size, target process, quantity, and destination country for faster quoting.
+      </p>
       <div class="contact-strip__box">
         <input
           type="text"
-          value="sales@metal3dpowder.com"
+          value={siteInfo.email}
           readonly
           aria-label="Sales email"
           onclick="this.select();"
@@ -83,7 +86,7 @@ const itemListSchema = {
           await navigator.clipboard.writeText(input.value);
           button.textContent = 'Copied';
           window.setTimeout(() => {
-            button.textContent = 'Copy';
+            button.textContent = 'Copy Email';
           }, 1600);
         } catch {
           input.focus();
@@ -126,6 +129,13 @@ const itemListSchema = {
     margin: 0;
     font-size: clamp(1.6rem, 3vw, 2.3rem);
     letter-spacing: -0.04em;
+  }
+
+  .contact-strip__note {
+    max-width: 42rem;
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
   }
 
   .contact-strip__box {

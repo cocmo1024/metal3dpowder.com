@@ -1,4 +1,6 @@
 ---
+import { siteInfo } from '../data/site';
+
 interface Props {
   pathname: string;
   productsHref?: string;
@@ -12,6 +14,7 @@ const {
 } = Astro.props;
 
 const homePage = pathname === '/';
+const blogPage = pathname.startsWith('/blog/') || pathname.startsWith('/posts/');
 
 const links = [
   {
@@ -20,25 +23,38 @@ const links = [
     active: homePage,
   },
   {
-    href: '/blog',
+    href: '/blog/',
     label: 'Blog',
-    active: pathname === '/blog',
+    active: blogPage,
   },
   {
-    href: contactHref,
+    href: '/FAQ/',
+    label: 'FAQ',
+    active: pathname === '/FAQ/',
+  },
+  {
+    href: pathname === '/' ? contactHref : '/Contact/',
     label: 'Contact',
-    active: false,
+    active: pathname === '/Contact/',
   },
 ];
 ---
 
-<header class="site-header page-shell">
-  <a class="brand" href="/" aria-label="Metal 3D Powder home">
-    <span class="brand__mark" aria-hidden="true"></span>
-    <span>Metal 3D Powder</span>
+<header class="site-header page-shell" data-site-header data-open="false">
+  <a class="brand" href="/" aria-label={`${siteInfo.brand} home`}>
+    <span>{siteInfo.brand}</span>
   </a>
 
-  <nav class="site-nav" aria-label="Primary">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" data-nav-toggle>
+    <span class="nav-toggle__lines" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <span>Menu</span>
+  </button>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary">
     {
       links.map((link) => (
         <a href={link.href} aria-current={link.active ? 'page' : undefined} data-active={link.active ? 'true' : 'false'}>
@@ -47,40 +63,108 @@ const links = [
       ))
     }
   </nav>
+
+  <button class="drawer-backdrop" type="button" aria-label="Close menu" tabindex="-1" data-nav-close></button>
+
+  <aside class="site-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true" data-drawer>
+    <div class="site-drawer__header">
+      <p>Navigation</p>
+      <button class="site-drawer__close" type="button" aria-label="Close menu" data-nav-close>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="site-drawer__nav" aria-label="Mobile primary">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={link.active ? 'page' : undefined}
+            data-active={link.active ? 'true' : 'false'}
+            data-drawer-link
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </aside>
 </header>
+
+<script is:inline>
+  const header = document.querySelector('[data-site-header]');
+
+  if (header instanceof HTMLElement) {
+    const toggle = header.querySelector('[data-nav-toggle]');
+    const drawer = header.querySelector('[data-drawer]');
+    const closeButtons = header.querySelectorAll('[data-nav-close], [data-drawer-link]');
+
+    const sync = (open) => {
+      header.dataset.open = String(open);
+      if (toggle instanceof HTMLButtonElement) {
+        toggle.setAttribute('aria-expanded', String(open));
+      }
+      if (drawer instanceof HTMLElement) {
+        drawer.setAttribute('aria-hidden', String(!open));
+      }
+      document.body.classList.toggle('nav-open', open);
+    };
+
+    const closeDrawer = () => sync(false);
+
+    if (toggle instanceof HTMLButtonElement) {
+      toggle.addEventListener('click', () => {
+        sync(header.dataset.open !== 'true');
+      });
+    }
+
+    closeButtons.forEach((node) => {
+      node.addEventListener('click', closeDrawer);
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeDrawer();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 760) {
+        closeDrawer();
+      }
+    });
+  }
+</script>
 
 <style>
   .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 1.4rem;
-    padding-block: 1.2rem 1rem;
+    padding-block: 1rem 0.9rem;
+    padding-inline: clamp(0.18rem, 0.55vw, 0.5rem);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      linear-gradient(180deg, rgba(8, 11, 14, 0.94), rgba(8, 11, 14, 0.84)),
+      rgba(8, 11, 14, 0.9);
+    backdrop-filter: blur(18px);
   }
 
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.9rem;
+    padding-inline-start: 0.12rem;
     color: var(--text);
     font-size: clamp(1.38rem, 1.12rem + 0.7vw, 1.82rem);
     font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 1;
     white-space: nowrap;
-  }
-
-  .brand__mark {
-    width: 1rem;
-    height: 1rem;
-    flex: 0 0 auto;
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 30% 30%, #f7ffff, #98dfd6 42%, #192028 70%);
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.1),
-      0 0 26px rgba(143, 228, 217, 0.24);
   }
 
   .site-nav {
@@ -105,7 +189,7 @@ const links = [
     align-items: center;
     justify-content: center;
     min-height: 2.85rem;
-    padding-inline: 1.1rem;
+      padding-inline: 1rem;
     border-radius: 999px;
     color: #aab7c4;
     font-size: 0.98rem;
@@ -127,43 +211,214 @@ const links = [
     transform: translateY(-1px);
   }
 
+  .nav-toggle,
+  .drawer-backdrop,
+  .site-drawer {
+    display: none;
+  }
+
   @media (max-width: 760px) {
     .site-header {
-      grid-template-columns: 1fr;
-      gap: 0.95rem;
-      padding-block: 1rem 0.9rem;
+      grid-template-columns: 1fr auto;
+      gap: 0.9rem;
+      padding-block: 0.95rem 0.85rem;
+      padding-inline: clamp(0.08rem, 0.5vw, 0.28rem);
     }
 
     .brand {
-      justify-self: start;
       font-size: clamp(1.18rem, 5vw, 1.4rem);
     }
 
-    .brand__mark {
-      width: 0.92rem;
-      height: 0.92rem;
+    .site-nav--desktop {
+      display: none;
     }
 
-    .site-nav {
-      width: 100%;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-auto-flow: row;
-      justify-self: stretch;
-      gap: 0.35rem;
-      padding: 0.4rem;
-      border-radius: 1.15rem;
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      justify-content: center;
+      min-height: 2.9rem;
+      padding: 0.7rem 0.95rem;
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+        rgba(11, 15, 19, 0.82);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.05) inset,
+        0 12px 26px rgba(0, 0, 0, 0.14);
     }
 
-    .site-nav a {
-      min-height: 3rem;
-      padding-inline: 0.55rem;
-      font-size: 0.95rem;
+    .nav-toggle span:last-child {
+      font-size: 0.94rem;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-toggle__lines {
+      display: grid;
+      gap: 0.22rem;
+    }
+
+    .nav-toggle__lines span {
+      display: block;
+      width: 1rem;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 48;
+      display: block;
+      border: 0;
+      padding: 0;
+      background: rgba(3, 6, 8, 0.48);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 220ms ease;
+    }
+
+    .site-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 49;
+      display: grid;
+      align-content: start;
+      gap: 0.9rem;
+      width: min(78vw, 320px);
+      height: 100dvh;
+      padding: 1rem 0.95rem;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(180deg, rgba(16, 22, 28, 0.98), rgba(9, 13, 17, 0.98)),
+        rgba(8, 11, 14, 0.98);
+      box-shadow: -24px 0 70px rgba(0, 0, 0, 0.35);
+      transform: translateX(100%);
+      transition: transform 240ms cubic-bezier(0.2, 1, 0.22, 1);
+    }
+
+    .site-drawer__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 0.08rem 0.25rem;
+    }
+
+    .site-drawer__header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .site-drawer__close {
+      position: relative;
+      width: 2.85rem;
+      height: 2.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .site-drawer__close span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1rem;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+    }
+
+    .site-drawer__close span:first-child {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .site-drawer__close span:last-child {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .site-drawer__nav {
+      display: grid;
+      align-content: start;
+      gap: 0.5rem;
+    }
+
+    .site-drawer__nav a {
+      display: flex;
+      align-items: center;
+      min-height: 3.1rem;
+      padding: 0.78rem 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 0.95rem;
+      color: #b9c5d1;
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 0.98rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .site-drawer__nav a[data-active='true'] {
+      color: var(--text);
+      border-color: rgba(143, 228, 217, 0.28);
+      background: rgba(143, 228, 217, 0.08);
+    }
+
+    .site-header[data-open='true'] .drawer-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .site-header[data-open='true'] .site-drawer {
+      transform: translateX(0);
+    }
+
+    .site-header[data-open='true'] .nav-toggle__lines span:nth-child(1) {
+      transform: translateY(4px) rotate(45deg);
+    }
+
+    .site-header[data-open='true'] .nav-toggle__lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .site-header[data-open='true'] .nav-toggle__lines span:nth-child(3) {
+      transform: translateY(-4px) rotate(-45deg);
     }
   }
 
   @media (max-width: 420px) {
-    .site-nav a {
-      font-size: 0.9rem;
+    .brand {
+      font-size: 1.08rem;
+    }
+
+    .nav-toggle {
+      min-height: 2.75rem;
+      padding-inline: 0.82rem;
+    }
+
+    .nav-toggle span:last-child {
+      font-size: 0.88rem;
+    }
+
+    .site-drawer {
+      width: min(80vw, 300px);
+      padding: 0.95rem 0.9rem;
+    }
+
+    .site-drawer__nav a {
+      min-height: 2.95rem;
+      padding: 0.72rem 0.9rem;
+      font-size: 0.95rem;
     }
   }
 </style>

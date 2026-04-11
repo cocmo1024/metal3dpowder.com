@@ -1,0 +1,287 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import { siteInfo } from '../../../data/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+const readingMinutes = Math.max(1, Math.round((post.body ?? '').split(/\s+/).length / 220));
+const allPosts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const relatedPosts = allPosts.filter((entry) => entry.id !== post.id).slice(0, 3);
+
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const canonical = `/posts/Alloys/${post.id}/`;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: post.data.pubDate.toISOString(),
+    dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    mainEntityOfPage: new URL(canonical, siteUrl).toString(),
+    author: {
+      '@type': 'Organization',
+      name: siteInfo.brand,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteInfo.brand,
+      logo: {
+        '@type': 'ImageObject',
+        url: new URL('/og-image.svg', siteUrl).toString(),
+      },
+    },
+    keywords: post.data.tags.join(', '),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Blog',
+        item: new URL('/blog/', siteUrl).toString(),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: post.data.title,
+        item: new URL(canonical, siteUrl).toString(),
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={`${post.data.title} | Metal 3D Powder`}
+  description={post.data.description}
+  canonical={canonical}
+  ogType="article"
+  extraMeta={[
+    { property: 'article:published_time', content: post.data.pubDate.toISOString() },
+    { property: 'article:modified_time', content: (post.data.updatedDate ?? post.data.pubDate).toISOString() },
+    { property: 'article:section', content: post.data.category },
+    { name: 'author', content: siteInfo.brand },
+  ]}
+  schema={schema}
+>
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="page-shell article-page">
+    <a class="article-back" href="/blog/">Back to articles</a>
+
+    <div class="article-layout">
+      <article class="article">
+        <p class="eyebrow">{post.data.category}</p>
+        <h1>{post.data.title}</h1>
+        <p class="article-description">{post.data.description}</p>
+
+        <div class="article-meta">
+          <span>{formatter.format(post.data.pubDate)}</span>
+          <span>{readingMinutes} min read</span>
+        </div>
+
+        <div class="article-content">
+          <Content />
+        </div>
+      </article>
+
+      <aside class="article-sidebar">
+        <section>
+          <p class="article-sidebar__label">Tags</p>
+          <ul class="article-tags">
+            {post.data.tags.map((tag) => <li>{tag}</li>)}
+          </ul>
+        </section>
+
+        <section>
+          <p class="article-sidebar__label">Related articles</p>
+          <div class="article-related">
+            {relatedPosts.map((entry) => (
+              <a href={`/posts/Alloys/${entry.id}/`}>
+                <strong>{entry.data.title}</strong>
+                <span>{formatter.format(entry.data.pubDate)}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .article-page {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 2.5rem 4rem;
+  }
+
+  .article-back {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .article-layout {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: start;
+  }
+
+  .article h1 {
+    max-width: 15ch;
+    margin: 0;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+  }
+
+  .article-description {
+    max-width: 48rem;
+    margin: 1rem 0 0;
+    color: var(--muted);
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .article-content {
+    margin-top: 2rem;
+  }
+
+  .article-content :global(h2),
+  .article-content :global(h3) {
+    margin: 2rem 0 0.7rem;
+    letter-spacing: -0.04em;
+  }
+
+  .article-content :global(h2) {
+    font-size: clamp(1.7rem, 3vw, 2.25rem);
+  }
+
+  .article-content :global(h3) {
+    font-size: 1.3rem;
+  }
+
+  .article-content :global(p),
+  .article-content :global(li) {
+    color: #d3dce6;
+    line-height: 1.8;
+    font-size: 1.02rem;
+  }
+
+  .article-content :global(ul) {
+    padding-left: 1.2rem;
+  }
+
+  .article-content :global(a) {
+    color: var(--accent);
+  }
+
+  .article-sidebar {
+    position: sticky;
+    top: 6rem;
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .article-sidebar section {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.35rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+      rgba(10, 14, 18, 0.88);
+  }
+
+  .article-sidebar__label {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .article-tags li {
+    padding: 0.42rem 0.68rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.82rem;
+  }
+
+  .article-related {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .article-related a {
+    display: grid;
+    gap: 0.3rem;
+    padding: 0.85rem 0.9rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .article-related strong {
+    font-size: 0.98rem;
+    line-height: 1.35;
+  }
+
+  .article-related span {
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 1100px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+      position: static;
+    }
+  }
+</style>
