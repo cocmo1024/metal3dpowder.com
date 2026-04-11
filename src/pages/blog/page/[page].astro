@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BlogArchive from '../../../components/BlogArchive.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { paginatePosts, POSTS_PER_PAGE, sortBlogPosts } from '../../../data/blog';
+import { siteInfo } from '../../../data/site';
+
+export async function getStaticPaths() {
+  const posts = sortBlogPosts(await getCollection('blog'));
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
+    params: { page: String(index + 2) },
+  }));
+}
+
+const page = Number(Astro.params.page);
+const allPosts = sortBlogPosts(await getCollection('blog'));
+const { posts, currentPage, totalPages } = paginatePosts(allPosts, page, POSTS_PER_PAGE);
+const canonical = `/blog/page/${currentPage}/`;
+
+const title = `Blog Page ${currentPage} | ${siteInfo.brand}`;
+const description = `Page ${currentPage} of the metal powder technical article archive.`;
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <SiteHeader pathname={Astro.url.pathname} />
+  <BlogArchive
+    eyebrow="Blog"
+    title="Technical articles on metal powder materials and buying decisions."
+    description={`Archive page ${currentPage} of ${totalPages}.`}
+    posts={posts}
+    currentPage={currentPage}
+    totalPages={totalPages}
+    pageBasePath="/blog/"
+  />
+  <SiteFooter />
+</BaseLayout>

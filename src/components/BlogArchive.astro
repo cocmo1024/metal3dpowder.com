@@ -1,0 +1,233 @@
+---
+import type { BlogPost } from '../data/blog';
+import { getBlogPostPath } from '../data/blog';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  posts: BlogPost[];
+  currentPage?: number;
+  totalPages?: number;
+  pageBasePath: string;
+}
+
+const {
+  eyebrow = 'Blog',
+  title,
+  description = '',
+  posts,
+  currentPage = 1,
+  totalPages = 1,
+  pageBasePath,
+} = Astro.props;
+
+const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+
+const getPageHref = (page: number) => {
+  if (page <= 1) {
+    return pageBasePath;
+  }
+
+  return `${pageBasePath}page/${page}/`;
+};
+
+const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+---
+
+<main class="page-shell archive-page">
+  <section class="archive-intro">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    {description ? <p>{description}</p> : null}
+  </section>
+
+  <section class="archive-grid" aria-label="Articles">
+    {posts.map((post) => (
+      <article class="archive-card">
+        <div class="archive-card__meta">
+          <span>{post.data.category}</span>
+          <span>{formatter.format(post.data.pubDate)}</span>
+        </div>
+        <h2>
+          <a href={getBlogPostPath(post)}>{post.data.title}</a>
+        </h2>
+        <p>{post.data.description}</p>
+      </article>
+    ))}
+  </section>
+
+  {
+    totalPages > 1 ? (
+      <nav class="archive-pagination" aria-label="Pagination">
+        <a
+          class:list={['archive-pagination__link', { 'is-disabled': currentPage === 1 }]}
+          href={currentPage === 1 ? undefined : getPageHref(currentPage - 1)}
+          aria-disabled={currentPage === 1 ? 'true' : undefined}
+        >
+          Previous
+        </a>
+
+        <div class="archive-pagination__pages">
+          {pageNumbers.map((pageNumber) => (
+            <a
+              class:list={['archive-pagination__page', { 'is-active': pageNumber === currentPage }]}
+              href={getPageHref(pageNumber)}
+              aria-current={pageNumber === currentPage ? 'page' : undefined}
+            >
+              {pageNumber}
+            </a>
+          ))}
+        </div>
+
+        <a
+          class:list={['archive-pagination__link', { 'is-disabled': currentPage === totalPages }]}
+          href={currentPage === totalPages ? undefined : getPageHref(currentPage + 1)}
+          aria-disabled={currentPage === totalPages ? 'true' : undefined}
+        >
+          Next
+        </a>
+      </nav>
+    ) : null
+  }
+</main>
+
+<style>
+  .archive-page {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 2rem 4rem;
+  }
+
+  .archive-intro {
+    display: grid;
+    gap: 0.6rem;
+    max-width: 50rem;
+  }
+
+  .archive-intro h1,
+  .archive-card h2 {
+    margin: 0;
+  }
+
+  .archive-intro h1 {
+    font-size: clamp(1.8rem, 3.1vw, 2.45rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 730;
+  }
+
+  .archive-intro p:last-child,
+  .archive-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.72;
+  }
+
+  .archive-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .archive-card {
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+    padding: 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.1rem;
+    background: rgba(12, 17, 22, 0.9);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+  }
+
+  .archive-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    color: var(--muted);
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .archive-card h2 {
+    font-size: 1.02rem;
+    line-height: 1.28;
+    letter-spacing: -0.018em;
+    font-weight: 700;
+  }
+
+  .archive-card a:hover {
+    color: var(--accent);
+  }
+
+  .archive-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  .archive-pagination__pages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .archive-pagination__link,
+  .archive-pagination__page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding-inline: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .archive-pagination__page.is-active {
+    border-color: rgba(143, 228, 217, 0.3);
+    background: rgba(143, 228, 217, 0.08);
+    color: var(--accent);
+  }
+
+  .archive-pagination__link.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  @media (max-width: 980px) {
+    .archive-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .archive-page {
+      gap: 1.3rem;
+      padding-block: 1.85rem 3.2rem;
+    }
+
+    .archive-intro h1 {
+      font-size: clamp(1.5rem, 7vw, 2rem);
+      line-height: 1.12;
+      letter-spacing: -0.024em;
+    }
+
+    .archive-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .archive-card h2 {
+      font-size: 0.98rem;
+    }
+  }
+</style>

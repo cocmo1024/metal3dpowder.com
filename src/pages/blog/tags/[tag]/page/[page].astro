@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BlogArchive from '../../../../../components/BlogArchive.astro';
+import SiteFooter from '../../../../../components/SiteFooter.astro';
+import SiteHeader from '../../../../../components/SiteHeader.astro';
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import { getTagArchives, getTagPath, paginatePosts, POSTS_PER_PAGE, sortBlogPosts } from '../../../../../data/blog';
+import { siteInfo } from '../../../../../data/site';
+
+export async function getStaticPaths() {
+  const posts = sortBlogPosts(await getCollection('blog'));
+
+  return getTagArchives(posts).flatMap((archive) => {
+    const totalPages = Math.max(1, Math.ceil(archive.posts.length / POSTS_PER_PAGE));
+
+    return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
+      params: {
+        tag: archive.slug,
+        page: String(index + 2),
+      },
+      props: { archive },
+    }));
+  });
+}
+
+const { archive } = Astro.props;
+const page = Number(Astro.params.page);
+const { posts, currentPage, totalPages } = paginatePosts(archive.posts, page, POSTS_PER_PAGE);
+const canonical = `${getTagPath(archive.slug)}page/${currentPage}/`;
+const title = `${archive.label} Articles Page ${currentPage} | ${siteInfo.brand}`;
+const description = `Page ${currentPage} of articles tagged ${archive.label}.`;
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <SiteHeader pathname={Astro.url.pathname} />
+  <BlogArchive
+    eyebrow="Tag"
+    title={`Articles tagged: ${archive.label}`}
+    description={`Filtered archive page ${currentPage} of ${totalPages} for ${archive.label}.`}
+    posts={posts}
+    currentPage={currentPage}
+    totalPages={totalPages}
+    pageBasePath={getTagPath(archive.slug)}
+  />
+  <SiteFooter />
+</BaseLayout>

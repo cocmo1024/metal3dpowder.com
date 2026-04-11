@@ -8,7 +8,7 @@ import {
   estimateReadingMinutes,
   getAdjacentBlogPosts,
   getBlogPostPath,
-  getRelatedBlogPosts,
+  getTagPath,
   sortBlogPosts,
 } from '../../../data/blog';
 import { siteInfo } from '../../../data/site';
@@ -22,21 +22,17 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content, headings } = await render(post);
+const { Content } = await render(post);
 
-const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 const allPosts = sortBlogPosts(await getCollection('blog'));
-const readingMinutes = estimateReadingMinutes(post.body ?? '');
-const relatedPosts = getRelatedBlogPosts(allPosts, post, 3);
 const { previousPost, nextPost } = getAdjacentBlogPosts(allPosts, post.id);
-const tocItems = headings.filter((heading) => heading.depth >= 2 && heading.depth <= 3);
+const readingMinutes = estimateReadingMinutes(post.body ?? '');
+const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 
 const canonical = getBlogPostPath(post);
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const publishedIso = post.data.pubDate.toISOString();
 const modifiedIso = (post.data.updatedDate ?? post.data.pubDate).toISOString();
-const publishedLabel = formatter.format(post.data.pubDate);
-const updatedLabel = post.data.updatedDate ? formatter.format(post.data.updatedDate) : null;
 
 const schema = [
   {
@@ -44,10 +40,10 @@ const schema = [
     '@type': 'BlogPosting',
     headline: post.data.title,
     description: post.data.description,
-    datePublished: publishedIso,
-    dateModified: modifiedIso,
     articleSection: post.data.category,
     keywords: post.data.tags.join(', '),
+    datePublished: publishedIso,
+    dateModified: modifiedIso,
     mainEntityOfPage: new URL(canonical, siteUrl).toString(),
     author: {
       '@type': 'Organization',
@@ -61,30 +57,6 @@ const schema = [
         url: new URL('/og-image.svg', siteUrl).toString(),
       },
     },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl.toString(),
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Blog',
-        item: new URL('/blog/', siteUrl).toString(),
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: post.data.title,
-        item: new URL(canonical, siteUrl).toString(),
-      },
-    ],
   },
 ];
 ---
@@ -105,169 +77,52 @@ const schema = [
   <SiteHeader pathname={Astro.url.pathname} />
 
   <main class="page-shell article-page">
-    <nav class="article-breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span>/</span>
-      <a href="/blog/">Blog</a>
-      <span>/</span>
-      <span>{post.data.category}</span>
-    </nav>
-
-    <section class="article-hero">
-      <div class="article-hero__copy">
-        <a class="article-back" href="/blog/">Back to articles</a>
-        <p class="eyebrow">{post.data.category}</p>
+    <article class="article">
+      <header class="article-header">
         <h1>{post.data.title}</h1>
-        <p class="article-summary">{post.data.description}</p>
 
         <div class="article-meta">
-          <div>
-            <span class="article-meta__label">Author</span>
-            <strong>{blogAuthorName}</strong>
-          </div>
-          <div>
-            <span class="article-meta__label">Published</span>
-            <strong>{publishedLabel}</strong>
-          </div>
-          <div>
-            <span class="article-meta__label">Reading Time</span>
-            <strong>{readingMinutes} min read</strong>
-          </div>
-          {
-            updatedLabel ? (
-              <div>
-                <span class="article-meta__label">Updated</span>
-                <strong>{updatedLabel}</strong>
-              </div>
-            ) : null
-          }
+          <span>{post.data.category}</span>
+          <span>{blogAuthorName}</span>
+          <span>{formatter.format(post.data.pubDate)}</span>
+          <span>{readingMinutes} min read</span>
         </div>
-      </div>
+      </header>
 
-      <aside class="article-overview">
-        <section class="article-card">
-          <p class="article-card__label">Article Summary</p>
-          <p>{post.data.description}</p>
-        </section>
+      <section class="article-summary" aria-labelledby="article-summary-title">
+        <h2 id="article-summary-title">Summary</h2>
+        <p>{post.data.description}</p>
+      </section>
 
-        <section class="article-card">
-          <p class="article-card__label">Tags</p>
-          <ul class="article-tags">
-            {post.data.tags.map((tag) => <li>{tag}</li>)}
-          </ul>
-        </section>
-      </aside>
-    </section>
+      <section class="article-content">
+        <Content />
+      </section>
 
-    <div class="article-layout">
-      <article class="article-main">
-        {
-          tocItems.length ? (
-            <section class="article-outline article-outline--mobile">
-              <p class="article-card__label">In This Article</p>
-              <ol>
-                {tocItems.map((heading) => (
-                  <li class:list={{ 'is-subheading': heading.depth === 3 }}>
-                    <a href={`#${heading.slug}`}>{heading.text}</a>
-                  </li>
-                ))}
-              </ol>
-            </section>
-          ) : null
-        }
+      <section class="article-tags" aria-labelledby="article-tags-title">
+        <h2 id="article-tags-title">Tags</h2>
+        <div class="article-tags__list">
+          {post.data.tags.map((tag) => (
+            <a href={getTagPath(tag)}>{tag}</a>
+          ))}
+        </div>
+      </section>
 
-        <section class="article-content surface-card surface-card--padded">
-          <Content />
-        </section>
+      <nav class="article-pagination" aria-label="Article pagination">
+        {previousPost ? (
+          <a class="article-pagination__link" href={getBlogPostPath(previousPost)}>
+            <span>Previous article</span>
+            <strong>{previousPost.data.title}</strong>
+          </a>
+        ) : null}
 
-        <section class="article-cta surface-card surface-card--padded" aria-labelledby="article-cta-title">
-          <div>
-            <p class="eyebrow">Next Step</p>
-            <h2 id="article-cta-title">Need pricing, particle size, or lead time for this powder?</h2>
-            <p>
-              Send the target grade, particle size range, process route, quantity, and destination country so the
-              inquiry can be scoped around the actual project requirement.
-            </p>
-          </div>
-          <div class="article-cta__actions">
-            <a class="button button--primary" href="/Contact/">Contact Us</a>
-            <a class="button button--ghost" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
-          </div>
-        </section>
-
-        <nav class="article-pagination" aria-label="Article pagination">
-          {previousPost ? (
-            <a class="article-pagination__card" href={getBlogPostPath(previousPost)}>
-              <span>Previous article</span>
-              <strong>{previousPost.data.title}</strong>
-            </a>
-          ) : (
-            <div class="article-pagination__card article-pagination__card--empty">
-              <span>Previous article</span>
-              <strong>No earlier article in this sequence</strong>
-            </div>
-          )}
-
-          {nextPost ? (
-            <a class="article-pagination__card" href={getBlogPostPath(nextPost)}>
-              <span>Next article</span>
-              <strong>{nextPost.data.title}</strong>
-            </a>
-          ) : (
-            <div class="article-pagination__card article-pagination__card--empty">
-              <span>Next article</span>
-              <strong>No later article in this sequence</strong>
-            </div>
-          )}
-        </nav>
-      </article>
-
-      <aside class="article-sidebar">
-        {
-          tocItems.length ? (
-            <section class="article-card article-outline">
-              <p class="article-card__label">In This Article</p>
-              <ol>
-                {tocItems.map((heading) => (
-                  <li class:list={{ 'is-subheading': heading.depth === 3 }}>
-                    <a href={`#${heading.slug}`}>{heading.text}</a>
-                  </li>
-                ))}
-              </ol>
-            </section>
-          ) : null
-        }
-
-        <section class="article-card article-card--compact">
-          <p class="article-card__label">Need A Quote</p>
-          <h2>Move from article research to a real inquiry.</h2>
-          <p>Send the specification details to receive pricing, lead time, and commercial confirmation.</p>
-          <a class="button button--primary" href="/Contact/">Request Quote</a>
-        </section>
-      </aside>
-    </div>
-
-    <section class="related-articles" aria-labelledby="related-articles-title">
-      <div class="section-heading">
-        <p class="eyebrow">Related Articles</p>
-        <h2 id="related-articles-title">Continue with the closest articles in the archive.</h2>
-      </div>
-
-      <div class="related-articles__grid">
-        {relatedPosts.map((entry) => (
-          <article class="related-card">
-            <div class="related-card__meta">
-              <span>{entry.data.category}</span>
-              <span>{formatter.format(entry.data.pubDate)}</span>
-            </div>
-            <h3>
-              <a href={getBlogPostPath(entry)}>{entry.data.title}</a>
-            </h3>
-            <p>{entry.data.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
+        {nextPost ? (
+          <a class="article-pagination__link" href={getBlogPostPath(nextPost)}>
+            <span>Next article</span>
+            <strong>{nextPost.data.title}</strong>
+          </a>
+        ) : null}
+      </nav>
+    </article>
   </main>
 
   <SiteFooter />
@@ -275,200 +130,101 @@ const schema = [
 
 <style>
   .article-page {
-    display: grid;
-    gap: 1.6rem;
     padding-block: 2rem 4rem;
   }
 
-  .article-breadcrumbs,
-  .article-back {
-    color: var(--muted);
-    font-size: 0.92rem;
-  }
-
-  .article-breadcrumbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-  }
-
-  .article-hero,
-  .article-layout,
-  .related-articles {
+  .article {
     display: grid;
-    gap: 1.25rem;
+    gap: 1.5rem;
+    max-width: 840px;
+    margin-inline: auto;
   }
 
-  .article-hero {
-    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
-    align-items: start;
-  }
-
-  .article-hero__copy,
-  .article-overview,
-  .section-heading {
-    display: grid;
-    gap: 0.85rem;
-  }
-
-  .article h1,
-  .article-hero h1,
-  .article-content :global(h2),
-  .article-content :global(h3),
-  .article-card--compact h2,
-  .section-heading h2,
-  .related-card h3 {
-    margin: 0;
-  }
-
-  .article-hero h1 {
-    max-width: 16ch;
-    font-size: clamp(1.95rem, 3.5vw, 2.85rem);
-    line-height: 1.08;
-    letter-spacing: -0.032em;
-    font-weight: 740;
-  }
-
+  .article-header,
   .article-summary,
-  .article-card p,
-  .article-content :global(p),
-  .article-content :global(li),
-  .related-card p,
-  .section-heading p:last-child,
-  .article-cta p:last-child {
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.78;
+  .article-tags,
+  .article-pagination {
+    display: grid;
+    gap: 0.8rem;
   }
 
-  .article-summary {
-    max-width: 46rem;
-    font-size: 1rem;
+  .article-header h1,
+  .article-summary h2,
+  .article-tags h2,
+  .article-content :global(h2),
+  .article-content :global(h3) {
+    margin: 0;
+  }
+
+  .article-header h1 {
+    max-width: 17ch;
+    font-size: clamp(1.9rem, 3.3vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 730;
   }
 
   .article-meta {
-    display: grid;
-    gap: 0.8rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  .article-meta > div,
-  .article-card,
-  .related-card,
-  .article-pagination__card {
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.35rem;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
-      rgba(10, 14, 18, 0.9);
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.05) inset,
-      0 20px 52px rgba(0, 0, 0, 0.18);
-  }
-
-  .article-meta > div,
-  .article-card,
-  .related-card {
-    padding: 1.05rem 1.1rem;
-  }
-
-  .article-meta > div {
-    display: grid;
-    gap: 0.3rem;
-  }
-
-  .article-meta__label,
-  .article-card__label,
-  .related-card__meta {
-    color: var(--muted);
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-  }
-
-  .article-meta strong {
-    font-size: 0.96rem;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-  }
-
-  .article-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .article-tags li {
-    padding: 0.42rem 0.66rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.04);
+    gap: 0.8rem 1rem;
     color: var(--muted);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    font-size: 0.8rem;
+    font-size: 0.84rem;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
   }
 
-  .article-layout {
-    grid-template-columns: minmax(0, 1fr) 300px;
-    align-items: start;
+  .article-summary {
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
   }
 
-  .article-main,
-  .article-sidebar {
-    display: grid;
-    gap: 1.2rem;
+  .article-summary h2,
+  .article-tags h2 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
-  .article-outline {
-    display: grid;
-    gap: 0.8rem;
-  }
-
-  .article-outline--mobile {
-    display: none;
-  }
-
-  .article-outline ol {
-    display: grid;
-    gap: 0.55rem;
+  .article-summary p,
+  .article-content :global(p),
+  .article-content :global(li) {
     margin: 0;
-    padding-left: 1.1rem;
+    color: #d3dce6;
+    line-height: 1.8;
+    font-size: 0.98rem;
   }
 
-  .article-outline li {
-    color: var(--muted);
-    line-height: 1.5;
-  }
-
-  .article-outline li.is-subheading {
-    margin-left: 0.55rem;
+  .article-content {
+    display: grid;
+    gap: 0;
   }
 
   .article-content :global(h2),
   .article-content :global(h3) {
-    scroll-margin-top: 6.5rem;
     margin-top: 2rem;
     margin-bottom: 0.7rem;
-    letter-spacing: -0.028em;
+    letter-spacing: -0.02em;
   }
 
   .article-content :global(h2) {
-    font-size: clamp(1.34rem, 2.1vw, 1.72rem);
-    line-height: 1.18;
+    font-size: clamp(1.28rem, 2vw, 1.6rem);
+    line-height: 1.2;
     font-weight: 720;
   }
 
   .article-content :global(h3) {
-    font-size: clamp(1.02rem, 1.55vw, 1.16rem);
-    line-height: 1.28;
+    font-size: clamp(1.02rem, 1.4vw, 1.12rem);
+    line-height: 1.3;
     font-weight: 700;
   }
 
   .article-content :global(ul),
   .article-content :global(ol) {
+    margin: 0;
     padding-left: 1.2rem;
   }
 
@@ -476,157 +232,79 @@ const schema = [
     color: var(--accent);
   }
 
-  .article-content :global(strong) {
-    color: #eef5fc;
-  }
-
-  .article-sidebar {
-    position: sticky;
-    top: 5.6rem;
-  }
-
-  .article-card--compact {
-    gap: 0.7rem;
-  }
-
-  .article-card--compact h2 {
-    font-size: 1.14rem;
-    line-height: 1.22;
-    letter-spacing: -0.02em;
-    font-weight: 710;
-  }
-
-  .article-cta {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .article-cta h2,
-  .section-heading h2 {
-    font-size: clamp(1.3rem, 2.2vw, 1.76rem);
-    line-height: 1.16;
-    letter-spacing: -0.03em;
-    font-weight: 720;
-  }
-
-  .article-cta__actions {
+  .article-tags__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 0.55rem;
+  }
+
+  .article-tags__list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.35rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.86rem;
+  }
+
+  .article-tags__list a:hover,
+  .article-pagination__link:hover {
+    border-color: rgba(143, 228, 217, 0.24);
+    color: var(--text);
   }
 
   .article-pagination {
-    display: grid;
-    gap: 1rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .article-pagination__card {
+  .article-pagination__link {
     display: grid;
-    gap: 0.45rem;
+    gap: 0.35rem;
     padding: 1rem 1.05rem;
-    transition:
-      transform 180ms ease,
-      border-color 180ms ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
   }
 
-  .article-pagination__card span {
+  .article-pagination__link span {
     color: var(--muted);
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
   }
 
-  .article-pagination__card strong {
-    font-size: 1rem;
-    line-height: 1.32;
+  .article-pagination__link strong {
+    font-size: 0.96rem;
+    line-height: 1.35;
     letter-spacing: -0.015em;
-  }
-
-  .article-pagination__card:hover,
-  .related-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(143, 228, 217, 0.22);
-  }
-
-  .article-pagination__card--empty:hover {
-    transform: none;
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-
-  .related-articles__grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .related-card {
-    display: grid;
-    gap: 0.65rem;
-  }
-
-  .related-card__meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-  }
-
-  .related-card h3 {
-    font-size: 1.06rem;
-    line-height: 1.28;
-    letter-spacing: -0.015em;
-    font-weight: 710;
-  }
-
-  @media (max-width: 1100px) {
-    .article-hero,
-    .article-layout,
-    .related-articles__grid {
-      grid-template-columns: 1fr;
-    }
-
-    .article-sidebar {
-      position: static;
-    }
+    font-weight: 700;
   }
 
   @media (max-width: 720px) {
     .article-page {
-      gap: 1.35rem;
-      padding-block: 1.75rem 3.2rem;
+      padding-block: 1.85rem 3.2rem;
     }
 
-    .article-hero h1 {
+    .article {
+      gap: 1.3rem;
+    }
+
+    .article-header h1 {
       max-width: 14ch;
-      font-size: clamp(1.56rem, 6.8vw, 2.06rem);
-      line-height: 1.1;
+      font-size: clamp(1.56rem, 6.5vw, 2rem);
+      line-height: 1.12;
       letter-spacing: -0.024em;
     }
 
-    .article-outline--mobile {
-      display: grid;
-    }
-
-    .article-sidebar .article-outline {
-      display: none;
-    }
-
     .article-content :global(h2) {
-      font-size: 1.26rem;
-      line-height: 1.22;
-    }
-
-    .article-content :global(h3),
-    .related-card h3,
-    .article-pagination__card strong,
-    .article-card--compact h2 {
-      font-size: 1rem;
-    }
-
-    .article-cta h2,
-    .section-heading h2 {
       font-size: 1.2rem;
-      line-height: 1.18;
+    }
+
+    .article-content :global(h3) {
+      font-size: 1rem;
     }
 
     .article-pagination {
