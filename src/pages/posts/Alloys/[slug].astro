@@ -132,7 +132,7 @@ const schema = [
   .article-page {
     display: grid;
     gap: 1.5rem;
-    padding-block: 2.5rem 4rem;
+    padding-block: 2rem 4rem;
   }
 
   .article-back {
@@ -148,20 +148,20 @@ const schema = [
   }
 
   .article h1 {
-    max-width: 16ch;
+    max-width: 17ch;
     margin: 0;
-    font-size: clamp(2.35rem, 4.4vw, 4.1rem);
-    line-height: 1.01;
-    letter-spacing: -0.05em;
-    font-weight: 780;
+    font-size: clamp(2rem, 3.7vw, 3.2rem);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+    font-weight: 730;
   }
 
   .article-description {
     max-width: 48rem;
     margin: 1rem 0 0;
     color: var(--muted);
-    font-size: 1.08rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.72;
   }
 
   .article-meta {
@@ -186,18 +186,22 @@ const schema = [
   }
 
   .article-content :global(h2) {
-    font-size: clamp(1.7rem, 3vw, 2.25rem);
+    font-size: clamp(1.4rem, 2.35vw, 1.82rem);
+    line-height: 1.18;
+    font-weight: 720;
   }
 
   .article-content :global(h3) {
-    font-size: 1.3rem;
+    font-size: clamp(1.08rem, 1.7vw, 1.22rem);
+    line-height: 1.24;
+    font-weight: 700;
   }
 
   .article-content :global(p),
   .article-content :global(li) {
     color: #d3dce6;
-    line-height: 1.8;
-    font-size: 1.02rem;
+    line-height: 1.82;
+    font-size: 0.98rem;
   }
 
   .article-content :global(ul) {
@@ -267,8 +271,8 @@ const schema = [
   }
 
   .article-related strong {
-    font-size: 0.98rem;
-    line-height: 1.35;
+    font-size: 0.93rem;
+    line-height: 1.4;
   }
 
   .article-related span {
@@ -289,9 +293,19 @@ const schema = [
   @media (max-width: 720px) {
     .article h1 {
       max-width: 13ch;
-      font-size: clamp(2rem, 10vw, 2.9rem);
-      line-height: 1.03;
-      letter-spacing: -0.045em;
+      font-size: clamp(1.7rem, 8vw, 2.3rem);
+      line-height: 1.08;
+      letter-spacing: -0.028em;
+    }
+
+    .article-content :global(h2) {
+      font-size: 1.32rem;
+      line-height: 1.2;
+    }
+
+    .article-content :global(h3) {
+      font-size: 1.04rem;
+      line-height: 1.26;
     }
   }
 </style>

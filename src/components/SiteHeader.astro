@@ -110,7 +110,6 @@ const links = [
       if (drawer instanceof HTMLElement) {
         drawer.setAttribute('aria-hidden', String(!open));
       }
-      document.body.classList.toggle('nav-open', open);
     };
 
     const closeDrawer = () => sync(false);
