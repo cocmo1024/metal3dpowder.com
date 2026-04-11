@@ -26,6 +26,16 @@ const blogPageViews: Record<string, number> = {
   'ta15-near-alpha-titanium-powder': 6200,
   'ta1-cp-titanium-powder': 5700,
   'cocrmo-cocrw-powder': 5100,
+  'metal-am-powder-price-guide': 4800,
+  'metal-powder-rfq-checklist': 4500,
+  'lpbf-powder-particle-size-guide': 4300,
+  'metal-powder-coa-certificate-guide': 4100,
+  'in718-vs-in625-powder': 3900,
+  '316l-vs-17-4ph-powder': 3600,
+  'ti64-vs-grade-2-titanium-powder': 3400,
+  'h13-tool-steel-powder': 3100,
+  'm300-maraging-steel-powder': 2900,
+  'hastelloy-x-powder': 2700,
 };
 
 const blogPostImages: Record<string, string> = {
@@ -39,6 +49,16 @@ const blogPostImages: Record<string, string> = {
   'cucrzr-copper-powder': '/images/products/cucrzr.svg',
   'gh3625-in625-powder': '/images/products/in625.svg',
   'gh4169-in718-powder': '/images/products/in718.svg',
+  'metal-am-powder-price-guide': '/og-image.svg',
+  'metal-powder-rfq-checklist': '/og-image.svg',
+  'lpbf-powder-particle-size-guide': '/og-image.svg',
+  'metal-powder-coa-certificate-guide': '/og-image.svg',
+  'ti64-vs-grade-2-titanium-powder': '/images/products/titanium.svg',
+  'in718-vs-in625-powder': '/images/products/in718.svg',
+  '316l-vs-17-4ph-powder': '/images/products/316l.svg',
+  'h13-tool-steel-powder': '/images/products/h13.svg',
+  'm300-maraging-steel-powder': '/images/products/m300.svg',
+  'hastelloy-x-powder': '/images/products/hastelloyx.svg',
 };
 
 export const getBlogPostPath = (postOrId: BlogPost | string) =>
@@ -52,6 +72,10 @@ export const compareBlogPosts = (left: BlogPost, right: BlogPost) => {
   const dateDiff = right.data.pubDate.valueOf() - left.data.pubDate.valueOf();
   if (dateDiff !== 0) {
     return dateDiff;
+  }
+
+  if (left.data.featured !== right.data.featured) {
+    return left.data.featured ? -1 : 1;
   }
 
   return left.data.title.localeCompare(right.data.title);
