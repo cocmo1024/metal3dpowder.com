@@ -11,6 +11,9 @@ export type BlogTagArchive = {
 export const POSTS_PER_PAGE = 15;
 
 export const blogAuthorName = `${siteInfo.brand} Editorial`;
+export const blogAuthorPath = '/about/';
+export const blogCategoryPath = '/blog/';
+export const tagArchiveRobots = 'noindex,follow,max-image-preview:large';
 
 const blogPageViews: Record<string, number> = {
   'tc4-ti6al4v-powder': 12400,
@@ -23,6 +26,19 @@ const blogPageViews: Record<string, number> = {
   'ta15-near-alpha-titanium-powder': 6200,
   'ta1-cp-titanium-powder': 5700,
   'cocrmo-cocrw-powder': 5100,
+};
+
+const blogPostImages: Record<string, string> = {
+  'tc4-ti6al4v-powder': '/images/products/titanium.svg',
+  'ta1-cp-titanium-powder': '/images/products/ti-grade-2.svg',
+  'ta15-near-alpha-titanium-powder': '/images/products/titanium.svg',
+  '316l-stainless-steel-powder': '/images/products/316l.svg',
+  '17-4ph-stainless-steel-powder': '/images/products/17-4ph.svg',
+  'alsi10mg-powder': '/images/products/alsi10mg.svg',
+  'cocrmo-cocrw-powder': '/images/products/cocrmo.svg',
+  'cucrzr-copper-powder': '/images/products/cucrzr.svg',
+  'gh3625-in625-powder': '/images/products/in625.svg',
+  'gh4169-in718-powder': '/images/products/in718.svg',
 };
 
 export const getBlogPostPath = (postOrId: BlogPost | string) =>
@@ -48,6 +64,9 @@ export const estimateReadingMinutes = (body: string) =>
 
 export const getBlogPageViews = (postOrId: BlogPost | string) =>
   blogPageViews[typeof postOrId === 'string' ? postOrId : postOrId.id] ?? 0;
+
+export const getBlogPostImage = (postOrId: BlogPost | string) =>
+  blogPostImages[typeof postOrId === 'string' ? postOrId : postOrId.id] ?? '/og-image.svg';
 
 export const paginatePosts = (posts: BlogPost[], currentPage: number, pageSize = POSTS_PER_PAGE) => {
   const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));

@@ -42,9 +42,19 @@ const links = [
 
 <header class="site-header" data-site-header data-open="false">
   <div class="site-header__inner page-shell">
-    <a class="brand" href="/" aria-label={`${siteInfo.brand} home`}>
-      <span>{siteInfo.brand}</span>
-    </a>
+    {
+      homePage ? (
+        <h1 class="brand-heading">
+          <a class="brand" href="/" aria-label={`${siteInfo.brand} home`}>
+            <span>{siteInfo.brand}</span>
+          </a>
+        </h1>
+      ) : (
+        <a class="brand" href="/" aria-label={`${siteInfo.brand} home`}>
+          <span>{siteInfo.brand}</span>
+        </a>
+      )
+    }
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" data-nav-toggle>
       <span class="nav-toggle__lines" aria-hidden="true">
@@ -169,6 +179,12 @@ const links = [
     letter-spacing: -0.04em;
     line-height: 1;
     white-space: nowrap;
+  }
+
+  .brand-heading {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
   }
 
   .site-nav {

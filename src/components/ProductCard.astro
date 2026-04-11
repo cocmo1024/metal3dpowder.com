@@ -9,7 +9,7 @@ interface Props {
 const { product, index = 0 } = Astro.props;
 ---
 
-<article class="product-card" style={`--card-accent:${product.accent}; --card-delay:${index * 80}ms;`}>
+<article class="product-card" id={`product-${product.id}`} style={`--card-accent:${product.accent}; --card-delay:${index * 80}ms;`}>
   <div class="product-card__media">
     <img
       src={product.image}

@@ -4,6 +4,7 @@ import BlogArchive from '../../components/BlogArchive.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
 import { paginatePosts, POSTS_PER_PAGE, sortBlogPosts } from '../../data/blog';
 import { siteInfo } from '../../data/site';
 
@@ -11,8 +12,8 @@ const allPosts = sortBlogPosts(await getCollection('blog'));
 const { posts, totalPages } = paginatePosts(allPosts, 1, POSTS_PER_PAGE);
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 
-const title = `Blog | ${siteInfo.brand}`;
-const description = 'Technical articles on metal powders, additive manufacturing, and powder buying considerations.';
+const title = `Metal Powder Blog | AM Material Guides | ${siteInfo.brand}`;
+const description = 'Technical blog covering titanium, stainless steel, nickel alloy, aluminum, copper, and cobalt chrome powder selection for additive manufacturing.';
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -26,23 +27,21 @@ const schema = [
     },
   },
   {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl.toString(),
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Blog',
-        item: new URL('/blog/', siteUrl).toString(),
-      },
-    ],
+    ...buildCollectionPageSchema({
+      site: siteUrl,
+      path: '/blog/',
+      name: 'Metal powder article archive',
+      description,
+      items: posts.map((post) => ({
+        name: post.data.title,
+        path: `/posts/Alloys/${post.id}/`,
+      })),
+    }),
   },
+  buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Blog' },
+  ]),
 ];
 ---
 

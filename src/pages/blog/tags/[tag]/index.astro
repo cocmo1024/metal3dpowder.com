@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 import BlogArchive from '../../../../components/BlogArchive.astro';
 import SiteFooter from '../../../../components/SiteFooter.astro';
 import SiteHeader from '../../../../components/SiteHeader.astro';
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../../../data/seo';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import { getTagArchives, getTagPath, paginatePosts, POSTS_PER_PAGE, sortBlogPosts } from '../../../../data/blog';
+import { getTagArchives, getTagPath, paginatePosts, POSTS_PER_PAGE, sortBlogPosts, tagArchiveRobots } from '../../../../data/blog';
 import { siteInfo } from '../../../../data/site';
 
 export async function getStaticPaths() {
@@ -19,9 +20,28 @@ const { archive } = Astro.props;
 const { posts, totalPages } = paginatePosts(archive.posts, 1, POSTS_PER_PAGE);
 const title = `${archive.label} Articles | ${siteInfo.brand}`;
 const description = `Articles tagged ${archive.label} in the metal powder blog archive.`;
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const canonical = getTagPath(archive.slug);
+const schema = [
+  buildCollectionPageSchema({
+    site: siteUrl,
+    path: canonical,
+    name: `${archive.label} article archive`,
+    description,
+    items: posts.map((post) => ({
+      name: post.data.title,
+      path: `/posts/Alloys/${post.id}/`,
+    })),
+  }),
+  buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog/' },
+    { name: archive.label },
+  ]),
+];
 ---
 
-<BaseLayout title={title} description={description} canonical={getTagPath(archive.slug)}>
+<BaseLayout title={title} description={description} canonical={canonical} robots={tagArchiveRobots} schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <BlogArchive
     eyebrow="Tag"

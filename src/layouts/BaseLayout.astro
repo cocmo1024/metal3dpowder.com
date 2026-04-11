@@ -1,13 +1,17 @@
 ---
 import '../styles/global.css';
 import { siteInfo } from '../data/site';
+import { defaultOgImagePath, rssFeedPath } from '../data/seo';
 
 interface Props {
   title: string;
   description: string;
+  author?: string;
   canonical?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
+  robots?: string;
   extraMeta?: Array<{
     name?: string;
     property?: string;
@@ -19,9 +23,12 @@ interface Props {
 const {
   title,
   description,
+  author = siteInfo.brand,
   canonical = '/',
-  ogImage = '/og-image.svg',
+  ogImage = defaultOgImagePath,
+  ogImageAlt = title,
   ogType = 'website',
+  robots = 'index,follow,max-image-preview:large',
   extraMeta = [],
   schema = [],
 } = Astro.props;
@@ -40,22 +47,29 @@ const schemaItems = Array.isArray(schema) ? schema : [schema];
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="robots" content={robots} />
+    <meta name="author" content={author} />
     <meta name="theme-color" content="#080b0e" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" hreflang="en" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    <link rel="alternate" type="application/rss+xml" title={`${siteInfo.brand} Blog Feed`} href={new URL(rssFeedPath, site).toString()} />
 
     <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:site_name" content={siteInfo.brand} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
     {extraMeta.map((meta) => (
       <meta {...(meta.name ? { name: meta.name } : {})} {...(meta.property ? { property: meta.property } : {})} content={meta.content} />

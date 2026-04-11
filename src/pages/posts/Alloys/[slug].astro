@@ -4,11 +4,15 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BlogPostGrid from '../../../components/BlogPostGrid.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
+import { buildBreadcrumbSchema, publisherLogoPath } from '../../../data/seo';
 import {
   blogAuthorName,
+  blogAuthorPath,
+  blogCategoryPath,
   estimateReadingMinutes,
   getAdjacentBlogPosts,
   getBlogPostPath,
+  getBlogPostImage,
   getRelatedBlogPosts,
   getTagPath,
   sortBlogPosts,
@@ -36,6 +40,9 @@ const canonical = getBlogPostPath(post);
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const publishedIso = post.data.pubDate.toISOString();
 const modifiedIso = (post.data.updatedDate ?? post.data.pubDate).toISOString();
+const articleImage = getBlogPostImage(post);
+const articleImageUrl = new URL(articleImage, siteUrl).toString();
+const wordCount = post.body?.split(/\s+/).filter(Boolean).length ?? 0;
 
 const schema = [
   {
@@ -45,35 +52,49 @@ const schema = [
     description: post.data.description,
     articleSection: post.data.category,
     keywords: post.data.tags.join(', '),
+    url: new URL(canonical, siteUrl).toString(),
+    inLanguage: 'en',
+    wordCount,
     datePublished: publishedIso,
     dateModified: modifiedIso,
     mainEntityOfPage: new URL(canonical, siteUrl).toString(),
     author: {
       '@type': 'Organization',
       name: blogAuthorName,
+      url: new URL(blogAuthorPath, siteUrl).toString(),
     },
+    image: [articleImageUrl],
     publisher: {
       '@type': 'Organization',
       name: siteInfo.brand,
+      url: siteUrl.toString(),
       logo: {
         '@type': 'ImageObject',
-        url: new URL('/og-image.svg', siteUrl).toString(),
+        url: new URL(publisherLogoPath, siteUrl).toString(),
       },
     },
   },
+  buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: blogCategoryPath },
+    { name: post.data.title },
+  ]),
 ];
 ---
 
 <BaseLayout
   title={`${post.data.title} | ${siteInfo.brand}`}
   description={post.data.description}
+  author={blogAuthorName}
   canonical={canonical}
+  ogImage={articleImage}
+  ogImageAlt={post.data.title}
   ogType="article"
   extraMeta={[
     { property: 'article:published_time', content: publishedIso },
     { property: 'article:modified_time', content: modifiedIso },
     { property: 'article:section', content: post.data.category },
-    { name: 'author', content: blogAuthorName },
+    ...post.data.tags.map((tag) => ({ property: 'article:tag', content: tag })),
   ]}
   schema={schema}
 >

@@ -3,14 +3,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { buildCollectionPageSchema } from '../data/seo';
 import { siteInfo } from '../data/site';
 import { products } from '../data/products';
 
-const title = 'Metal 3D Powder | Premium AM Powder Supplier';
+const title = 'Titanium, Nickel & Stainless AM Powder | Metal 3D Powder';
 const description =
-  'English-first export website for metal additive manufacturing powders with clear pricing, particle size, and lead time.';
+  'Metal additive manufacturing powder supplier with titanium, nickel alloy, stainless steel, aluminum, copper, and cobalt chrome powders plus clear pricing, particle size, and lead time.';
 
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteInfo.brand,
+  alternateName: 'Metal3DPowder',
+  url: siteUrl.toString(),
+};
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -25,7 +34,7 @@ const itemListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Metal 3D Powder Product List',
-  itemListElement: products.map((product, index) => ({
+      itemListElement: products.map((product, index) => ({
     '@type': 'Product',
     position: index + 1,
     name: product.name,
@@ -37,13 +46,23 @@ const itemListSchema = {
       priceCurrency: 'USD',
       price: product.price,
       availability: 'https://schema.org/InStock',
-      url: siteUrl.toString(),
+      url: new URL(`/#product-${product.id}`, siteUrl).toString(),
     },
   })),
 };
+
+const collectionPageSchema = buildCollectionPageSchema({
+  site: siteUrl,
+  path: '/',
+  name: 'Metal AM Powder Product Catalog',
+  description,
+  items: products.map((product) => ({
+    name: `${product.name} powder`,
+  })),
+});
 ---
 
-<BaseLayout title={title} description={description} schema={[organizationSchema, itemListSchema]}>
+<BaseLayout title={title} description={description} canonical="/" ogImageAlt="Metal 3D Powder product catalog" schema={[websiteSchema, organizationSchema, collectionPageSchema, itemListSchema]}>
   <SiteHeader pathname={Astro.url.pathname} productsHref="#products" contactHref="#contact" />
 
   <main>

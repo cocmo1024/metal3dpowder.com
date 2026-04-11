@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BlogArchive from '../../../components/BlogArchive.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../../data/seo';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { paginatePosts, POSTS_PER_PAGE, sortBlogPosts } from '../../../data/blog';
 import { siteInfo } from '../../../data/site';
@@ -20,12 +21,30 @@ const page = Number(Astro.params.page);
 const allPosts = sortBlogPosts(await getCollection('blog'));
 const { posts, currentPage, totalPages } = paginatePosts(allPosts, page, POSTS_PER_PAGE);
 const canonical = `/blog/page/${currentPage}/`;
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 
-const title = `Blog Page ${currentPage} | ${siteInfo.brand}`;
-const description = `Page ${currentPage} of the metal powder technical article archive.`;
+const title = `Metal Powder Blog Archive Page ${currentPage} | ${siteInfo.brand}`;
+const description = `Page ${currentPage} of the metal powder article archive covering additive manufacturing material guidance and RFQ content.`;
+const schema = [
+  buildCollectionPageSchema({
+    site: siteUrl,
+    path: canonical,
+    name: `Metal powder article archive page ${currentPage}`,
+    description,
+    items: posts.map((post) => ({
+      name: post.data.title,
+      path: `/posts/Alloys/${post.id}/`,
+    })),
+  }),
+  buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog/' },
+    { name: `Page ${currentPage}` },
+  ]),
+];
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <BlogArchive
     eyebrow="Blog"
