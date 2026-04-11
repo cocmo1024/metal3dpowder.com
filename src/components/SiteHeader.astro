@@ -1,0 +1,169 @@
+---
+interface Props {
+  pathname: string;
+  productsHref?: string;
+  contactHref?: string;
+}
+
+const {
+  pathname,
+  productsHref = '/#products',
+  contactHref = '/#contact',
+} = Astro.props;
+
+const homePage = pathname === '/';
+
+const links = [
+  {
+    href: productsHref,
+    label: 'Products',
+    active: homePage,
+  },
+  {
+    href: '/blog',
+    label: 'Blog',
+    active: pathname === '/blog',
+  },
+  {
+    href: contactHref,
+    label: 'Contact',
+    active: false,
+  },
+];
+---
+
+<header class="site-header page-shell">
+  <a class="brand" href="/" aria-label="Metal 3D Powder home">
+    <span class="brand__mark" aria-hidden="true"></span>
+    <span>Metal 3D Powder</span>
+  </a>
+
+  <nav class="site-nav" aria-label="Primary">
+    {
+      links.map((link) => (
+        <a href={link.href} aria-current={link.active ? 'page' : undefined} data-active={link.active ? 'true' : 'false'}>
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1.4rem;
+    padding-block: 1.2rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    color: var(--text);
+    font-size: clamp(1.38rem, 1.12rem + 0.7vw, 1.82rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .brand__mark {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 30%, #f7ffff, #98dfd6 42%, #192028 70%);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 0 26px rgba(143, 228, 217, 0.24);
+  }
+
+  .site-nav {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-self: end;
+    gap: 0.4rem;
+    padding: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+      rgba(11, 15, 19, 0.78);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.05) inset,
+      0 16px 36px rgba(0, 0, 0, 0.18);
+  }
+
+  .site-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.85rem;
+    padding-inline: 1.1rem;
+    border-radius: 999px;
+    color: #aab7c4;
+    font-size: 0.98rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a[data-active='true'] {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .site-nav a:hover {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 760px) {
+    .site-header {
+      grid-template-columns: 1fr;
+      gap: 0.95rem;
+      padding-block: 1rem 0.9rem;
+    }
+
+    .brand {
+      justify-self: start;
+      font-size: clamp(1.18rem, 5vw, 1.4rem);
+    }
+
+    .brand__mark {
+      width: 0.92rem;
+      height: 0.92rem;
+    }
+
+    .site-nav {
+      width: 100%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-flow: row;
+      justify-self: stretch;
+      gap: 0.35rem;
+      padding: 0.4rem;
+      border-radius: 1.15rem;
+    }
+
+    .site-nav a {
+      min-height: 3rem;
+      padding-inline: 0.55rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .site-nav a {
+      font-size: 0.9rem;
+    }
+  }
+</style>

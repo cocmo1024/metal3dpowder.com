@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091117" />
+      <stop offset="55%" stop-color="#0a0f14" />
+      <stop offset="100%" stop-color="#101922" />
+    </linearGradient>
+    <radialGradient id="powder" cx="35%" cy="28%" r="78%">
+      <stop offset="0%" stop-color="#fbffff" />
+      <stop offset="36%" stop-color="#9ce7dc" />
+      <stop offset="70%" stop-color="#22343c" />
+      <stop offset="100%" stop-color="#0a1014" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <g opacity=".75">
+    <circle cx="930" cy="150" r="95" fill="#ffb177" opacity=".18" />
+    <circle cx="1030" cy="212" r="64" fill="#8fe4d9" opacity=".22" />
+  </g>
+  <g>
+    <circle cx="910" cy="350" r="150" fill="url(#powder)" />
+    <circle cx="1020" cy="420" r="90" fill="url(#powder)" opacity=".94" />
+    <circle cx="838" cy="472" r="74" fill="url(#powder)" opacity=".9" />
+  </g>
+  <text x="90" y="180" fill="#8fe4d9" font-family="Space Grotesk, Arial, sans-serif" font-size="28" letter-spacing="7">METAL 3D POWDER</text>
+  <text x="90" y="304" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="82" font-weight="700">
+    Premium metal powders
+  </text>
+  <text x="90" y="394" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="82" font-weight="700">
+    for additive manufacturing
+  </text>
+  <text x="90" y="476" fill="#95a3b1" font-family="Space Grotesk, Arial, sans-serif" font-size="34">
+    Pricing, particle size, and lead time shown clearly for overseas buyers.
+  </text>
+</svg>

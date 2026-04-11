@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120d0b" />
+      <stop offset="100%" stop-color="#18120f" />
+    </linearGradient>
+    <radialGradient id="orb" cx="34%" cy="25%" r="72%">
+      <stop offset="0%" stop-color="#fff8f4" />
+      <stop offset="38%" stop-color="#ffa06a" />
+      <stop offset="74%" stop-color="#5d341e" />
+      <stop offset="100%" stop-color="#120d0c" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="560" rx="44" fill="url(#bg)" />
+  <g opacity=".32" fill="none" stroke="#ffffff">
+    <path d="M0 126h800" />
+    <path d="M0 420h800" />
+    <path d="M208 0v560" />
+    <path d="M560 0v560" />
+  </g>
+  <g>
+    <circle cx="244" cy="270" r="110" fill="url(#orb)" />
+    <circle cx="455" cy="190" r="68" fill="url(#orb)" opacity=".95" />
+    <circle cx="574" cy="340" r="120" fill="url(#orb)" opacity=".92" />
+    <circle cx="364" cy="394" r="76" fill="url(#orb)" opacity=".88" />
+    <circle cx="676" cy="230" r="54" fill="url(#orb)" opacity=".84" />
+  </g>
+  <text x="52" y="82" fill="#ffa06a" font-family="Space Grotesk, Arial, sans-serif" font-size="20" letter-spacing="4">CONDUCTIVE COPPER</text>
+  <text x="52" y="500" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="54" font-weight="700">CuCrZr</text>
+</svg>

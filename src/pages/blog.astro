@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+
+const title = 'Blog | Metal 3D Powder';
+const description = 'Updates and articles about metal powders for additive manufacturing.';
+---
+
+<BaseLayout title={title} description={description}>
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="page-shell blog-page">
+    <p class="eyebrow">Blog</p>
+    <h1>Articles and updates are being prepared.</h1>
+    <p>
+      This section will be used for powder application notes, alloy comparisons, and export-related updates.
+    </p>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .blog-page {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    min-height: calc(100vh - 180px);
+    padding-block: 3rem 4rem;
+  }
+
+  .blog-page h1 {
+    max-width: 12ch;
+    margin: 0;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .blog-page p:last-child {
+    max-width: 44rem;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+</style>

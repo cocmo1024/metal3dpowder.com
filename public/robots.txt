@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://metal3dpowder.com/sitemap-index.xml

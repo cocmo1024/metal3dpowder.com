@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Metal 3D Powder">
+  <defs>
+    <radialGradient id="g" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f8ffff" />
+      <stop offset="38%" stop-color="#9ce7dc" />
+      <stop offset="68%" stop-color="#29414a" />
+      <stop offset="100%" stop-color="#0b1217" />
+    </radialGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#081016" />
+  <circle cx="44" cy="44" r="22" fill="url(#g)" />
+  <circle cx="79" cy="51" r="17" fill="url(#g)" opacity=".92" />
+  <circle cx="64" cy="82" r="25" fill="url(#g)" opacity=".96" />
+</svg>
