@@ -21,11 +21,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: clip;
   color: var(--text);
   font-family: "Space Grotesk Variable", "Space Grotesk", "Segoe UI", sans-serif;
   background:

@@ -1,0 +1,376 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { materialFamilies } from '../../data/materialFamilies';
+import { products } from '../../data/products';
+import { siteInfo } from '../../data/site';
+
+export async function getStaticPaths() {
+  return materialFamilies.map((family) => ({
+    params: { slug: family.slug },
+    props: { family },
+  }));
+}
+
+const { family } = Astro.props;
+const allPosts = await getCollection('blog');
+const relatedProducts = products.filter((product) => family.relatedProductIds.includes(product.id));
+const relatedPosts = allPosts.filter((post) => family.relatedArticleSlugs.includes(post.id));
+
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const canonical = `/materials/${family.slug}/`;
+const coverImage = relatedProducts[0]?.image ?? '/og-image.svg';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: family.title,
+    description: family.description,
+    url: new URL(canonical, siteUrl).toString(),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl.toString(),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Materials',
+        item: new URL('/materials/', siteUrl).toString(),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: family.label,
+        item: new URL(canonical, siteUrl).toString(),
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${family.label} products`,
+    itemListElement: relatedProducts.map((product, index) => ({
+      '@type': 'Product',
+      position: index + 1,
+      name: product.name,
+      description: product.description,
+      sku: product.code,
+      url: new URL(`/#product-${product.id}`, siteUrl).toString(),
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title={`${family.title} | Metal 3D Powder`}
+  description={family.description}
+  canonical={canonical}
+  ogImage={coverImage}
+  schema={schema}
+>
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="page-shell family-page">
+    <Breadcrumbs items={[{ href: '/', label: 'Home' }, { href: '/materials/', label: 'Materials' }, { label: family.label }]} />
+
+    <section class="page-intro">
+      <p class="eyebrow">{family.label}</p>
+      <h1>{family.title}</h1>
+      <p>{family.lead}</p>
+    </section>
+
+    <div class="family-layout">
+      <article class="family-main">
+        <section class="surface-card surface-card--padded rich-copy">
+          <h2>Overview</h2>
+          {family.overview.map((item) => <p>{item}</p>)}
+        </section>
+
+        <section class="surface-card surface-card--padded">
+          <h2>Key buying points</h2>
+          <div class="keypoints-grid">
+            {family.keypoints.map((point) => (
+              <article class="keypoint-card">
+                <p>{point}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="surface-card surface-card--padded" aria-labelledby="related-products-title">
+          <div class="section-head">
+            <h2 id="related-products-title">Related products</h2>
+            <a class="inline-link" href="/#products">View all powders</a>
+          </div>
+
+          <div class="product-links">
+            {relatedProducts.map((product) => (
+              <article class="product-link-card">
+                <div class="product-link-card__head">
+                  <div>
+                    <p>{product.code}</p>
+                    <h3>{product.name}</h3>
+                  </div>
+                  <strong>{product.priceLabel}</strong>
+                </div>
+                <p>{product.description}</p>
+                <dl>
+                  <div>
+                    <dt>Particle size</dt>
+                    <dd>{product.particleSize}</dd>
+                  </div>
+                  <div>
+                    <dt>Lead time</dt>
+                    <dd>{product.leadTime}</dd>
+                  </div>
+                </dl>
+                <div class="product-link-card__actions">
+                  <a href={`/#product-${product.id}`}>Product card</a>
+                  {product.articleSlug ? <a href={`/posts/Alloys/${product.articleSlug}/`}>Article</a> : null}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="surface-card surface-card--padded" id="related-articles" aria-labelledby="related-articles-title">
+          <div class="section-head">
+            <h2 id="related-articles-title">Related articles</h2>
+            <a class="inline-link" href="/blog/">All articles</a>
+          </div>
+
+          <div class="article-links">
+            {relatedPosts.map((post) => (
+              <a class="article-link-card" href={`/posts/Alloys/${post.id}/`}>
+                <span>{post.data.category}</span>
+                <strong>{post.data.title}</strong>
+                <p>{post.data.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      </article>
+
+      <aside class="family-sidebar">
+        <section class="surface-card surface-card--padded">
+          <h2>Common uses</h2>
+          <ul>
+            {family.commonUses.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section class="surface-card surface-card--padded">
+          <h2>How to request a quote</h2>
+          <ul>
+            <li>State the target grade and process route such as LPBF, EBM, or DED.</li>
+            <li>Confirm particle size range, quantity, and destination country.</li>
+            <li>Include any chemistry, documentation, or post-processing requirements in the first email.</li>
+          </ul>
+          <p class="family-sidebar__contact">
+            Contact: <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
+          </p>
+        </section>
+
+        <section class="surface-card surface-card--padded">
+          <h2>Explore another family</h2>
+          <div class="family-sidebar__links">
+            {materialFamilies
+              .filter((entry) => entry.slug !== family.slug)
+              .slice(0, 4)
+              .map((entry) => (
+                <a href={`/materials/${entry.slug}/`}>{entry.label}</a>
+              ))}
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .family-page {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 2rem 4rem;
+  }
+
+  .family-layout {
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: start;
+  }
+
+  .family-main,
+  .family-sidebar,
+  .product-links,
+  .article-links,
+  .keypoints-grid,
+  .family-sidebar__links {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .family-main h2,
+  .family-sidebar h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    letter-spacing: -0.04em;
+  }
+
+  .section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .keypoints-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .keypoint-card,
+  .product-link-card,
+  .article-link-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.15rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .keypoint-card {
+    padding: 1rem;
+  }
+
+  .keypoint-card p,
+  .product-link-card p,
+  .article-link-card p,
+  .family-sidebar__contact {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .product-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-link-card {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1rem;
+  }
+
+  .product-link-card__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.7rem;
+  }
+
+  .product-link-card__head p,
+  .article-link-card span {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .product-link-card__head h3,
+  .article-link-card strong {
+    margin: 0.15rem 0 0;
+    font-size: 1.15rem;
+    letter-spacing: -0.03em;
+  }
+
+  .product-link-card__head strong {
+    font-size: 0.96rem;
+  }
+
+  .product-link-card dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin: 0;
+  }
+
+  .product-link-card dl div {
+    padding: 0.8rem 0.85rem;
+    border-radius: 0.95rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .product-link-card dt {
+    margin: 0 0 0.35rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .product-link-card dd {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .product-link-card__actions,
+  .family-sidebar__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .product-link-card__actions a,
+  .family-sidebar__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    padding-inline: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .article-link-card {
+    display: grid;
+    gap: 0.55rem;
+    padding: 1rem;
+  }
+
+  .family-sidebar ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #d3dce6;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 1100px) {
+    .family-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .keypoints-grid,
+    .product-links,
+    .product-link-card dl {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
