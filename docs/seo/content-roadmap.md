@@ -80,3 +80,30 @@ Before publishing a new article:
 - Export document checklist for powder shipments
 - Medical and dental powder documentation guide
 - Aerospace powder qualification checklist
+
+## Round 2 publishing map
+
+### Tooling and material-choice pages
+
+- H13 vs M300 powder for AM tooling
+- CuCrZr vs pure copper powder for AM
+
+### Process and quality pages
+
+- EBM powder size guide
+- Metal powder reuse policy guide
+
+### Commercial and compliance pages
+
+- Export document checklist for international powder shipments
+- Medical and dental powder documentation guide
+- Aerospace powder qualification checklist
+
+## Round 3 backlog
+
+- Powder storage and shelf-life guide
+- Prototype vs production powder specification guide
+- Incoterms guide for powder buyers
+- How to compare two powder quotes without false savings
+- Titanium Grade 23 vs Grade 5 buying guide
+- Dental lab cobalt chrome sourcing checklist

@@ -53,3 +53,5 @@ That combination helps separate a serious copper AM project from a generic mater
 ## The practical sourcing point
 
 CuCrZr is usually not purchased because it is fashionable. It is purchased because the part is trying to solve a heat-transfer or conductivity problem that stainless steel and ordinary tooling alloys cannot solve well enough. That makes the inquiry quality especially important. If the buyer can explain the thermal or electrical target clearly, the supplier can respond with a much more relevant first quote.
+
+If the project is still undecided between CuCrZr and a pure-copper route, use the dedicated [CuCrZr vs pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) before finalizing the RFQ.

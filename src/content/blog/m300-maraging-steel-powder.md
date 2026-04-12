@@ -66,3 +66,5 @@ M300 is usually easier to justify than nickel or titanium powders because the bu
 ## The practical takeaway
 
 Use M300 when the project is tooling-driven and the value comes from high post-aged strength, insert performance, and conformal cooling geometry. Compare it against [H13 tool steel powder](/posts/Alloys/h13-tool-steel-powder/) when the service condition becomes more heat- and thermal-fatigue-driven.
+
+For the full side-by-side choice, use the [H13 vs M300 powder guide](/posts/Alloys/h13-vs-m300-powder/).

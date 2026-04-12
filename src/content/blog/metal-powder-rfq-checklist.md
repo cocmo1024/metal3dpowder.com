@@ -59,6 +59,8 @@ The same applies to internal inspection rules. A supplier cannot protect the quo
 
 If the buyer is unsure what to request, start with a [COA and certificate review guide](/posts/Alloys/metal-powder-coa-certificate-guide/).
 
+If the shipment is international, add the paperwork scope early as well. The dedicated [export document checklist](/posts/Alloys/export-document-checklist-metal-powder/) helps prevent a technically correct quote from becoming a weak export file.
+
 ## Packaging and logistics
 
 Packaging is not a small detail. Container size, inert packing expectations, and shipment destination all affect both cost and lead time. A technically correct quote can still fail commercially if the packaging format does not fit the receiving workflow or the export route.
@@ -80,6 +82,8 @@ If the supplier is expected to respond with something more useful than a number,
 - whether there is an internal oxygen or chemistry ceiling
 
 These are not "nice to have" details. They are the difference between a fast but generic quote and a technically useful one.
+
+If the program is medical, dental, or aerospace-oriented, align the RFQ with the relevant [medical and dental documentation guide](/posts/Alloys/medical-dental-powder-documentation-guide/) or [aerospace qualification checklist](/posts/Alloys/aerospace-powder-qualification-checklist/) before the supplier quotes.
 
 ## The practical takeaway
 

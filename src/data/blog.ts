@@ -36,6 +36,13 @@ const blogPageViews: Record<string, number> = {
   'h13-tool-steel-powder': 3100,
   'm300-maraging-steel-powder': 2900,
   'hastelloy-x-powder': 2700,
+  'aerospace-powder-qualification-checklist': 5200,
+  'export-document-checklist-metal-powder': 5000,
+  'metal-powder-reuse-policy-guide': 4700,
+  'h13-vs-m300-powder': 4400,
+  'cucrzr-vs-pure-copper-powder': 4200,
+  'ebm-powder-size-guide': 4000,
+  'medical-dental-powder-documentation-guide': 3800,
 };
 
 const blogPostImages: Record<string, string> = {
@@ -59,6 +66,13 @@ const blogPostImages: Record<string, string> = {
   'h13-tool-steel-powder': '/images/products/h13.svg',
   'm300-maraging-steel-powder': '/images/products/m300.svg',
   'hastelloy-x-powder': '/images/products/hastelloyx.svg',
+  'aerospace-powder-qualification-checklist': '/images/products/titanium.svg',
+  'export-document-checklist-metal-powder': '/og-image.svg',
+  'metal-powder-reuse-policy-guide': '/og-image.svg',
+  'h13-vs-m300-powder': '/images/products/h13.svg',
+  'cucrzr-vs-pure-copper-powder': '/images/products/cucrzr.svg',
+  'ebm-powder-size-guide': '/images/products/titanium.svg',
+  'medical-dental-powder-documentation-guide': '/images/products/cocrmo.svg',
 };
 
 export const getBlogPostPath = (postOrId: BlogPost | string) =>

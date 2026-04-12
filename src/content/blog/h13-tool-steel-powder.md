@@ -67,3 +67,5 @@ That is why AM tooling selection should start with the service condition, not ju
 ## The practical takeaway
 
 Use H13 when the part is a true hot-work tooling problem and the value of the project depends on thermal fatigue resistance, hot-service durability, and tooling-focused performance. If the job is more insert- and mold-driven with less thermal punishment, compare it against M300 instead of assuming one steel covers every tooling case.
+
+For the direct side-by-side decision, use the [H13 vs M300 tooling guide](/posts/Alloys/h13-vs-m300-powder/).

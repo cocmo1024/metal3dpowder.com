@@ -61,6 +61,10 @@ Two offers can both say "15-45 um" and still describe very different commercial 
 
 That is why PSD should not be used as a shortcut for deciding between suppliers. If the build is qualification-relevant, ask how the PSD is measured, how the lot is released, and what supporting certificate package is available.
 
+If the program also defines virgin addition or recycled-powder limits, connect the PSD review to a written [powder reuse policy](/posts/Alloys/metal-powder-reuse-policy-guide/) instead of reviewing them separately.
+
 ## The practical takeaway
 
 For LPBF, particle size matters a lot, but it only becomes meaningful when it is tied to process route, alloy family, and batch quality. The best commercial result comes from asking for the PSD you actually need and backing it with the other information a supplier needs to protect the quote.
+
+If the project is actually electron beam based rather than laser based, use the dedicated [EBM powder size guide](/posts/Alloys/ebm-powder-size-guide/) instead of copying an LPBF PSD request.

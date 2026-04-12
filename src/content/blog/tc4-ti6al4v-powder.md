@@ -29,6 +29,8 @@ The reason is not only material performance. TC4 has a mature supply chain, wide
 
 TC4 also works across more than one AM process. LPBF remains the most common request, but TC4 also shows up in EBM and DED programs. That matters commercially because buyers can often keep the same alloy family while moving between prototyping, production, repair, and larger geometry strategies.
 
+When the part is flight-related rather than a simple development build, the purchasing conversation should be tied to the broader [aerospace qualification checklist](/posts/Alloys/aerospace-powder-qualification-checklist/) instead of stopping at alloy and PSD alone.
+
 ## Powder points that matter
 
 For LPBF, buyers often request 15-45 um or 15-53 um. EBM usually moves to a coarser range, while DED can require a very different cut depending on nozzle design and feed method. The correct answer is process-specific rather than universal.
@@ -56,7 +58,7 @@ On this site, TC4 is currently listed from USD 89/kg as an indicative starting p
 
 The cheapest titanium offer is not always the most economical one. If a batch arrives with the wrong PSD, incomplete traceability, or chemistry that does not fit the qualification route, the real project cost rises immediately. For that reason, buyers usually do better with a conservative quotation that already matches the specification than with a low headline price that creates rework later.
 
-If the part is corrosion-driven rather than strength-driven, it is worth comparing TC4 against [Grade 2 titanium powder](/posts/Alloys/ti64-vs-grade-2-titanium-powder/).
+If the part is corrosion-driven rather than strength-driven, it is worth comparing TC4 against [Grade 2 titanium powder](/posts/Alloys/ti64-vs-grade-2-titanium-powder/). If the process is electron beam rather than laser based, pair the alloy decision with the [EBM powder size guide](/posts/Alloys/ebm-powder-size-guide/) instead of reusing an LPBF-style PSD request.
 
 ## What to confirm before ordering
 

@@ -28,6 +28,8 @@ The exact package depends on the project, but most serious RFQs eventually need 
 
 That package may be light for development work and much heavier for regulated, aerospace, or production-oriented programs.
 
+If the order is international, the technical certificate pack should also line up with the broader [export document checklist](/posts/Alloys/export-document-checklist-metal-powder/) so the shipment file stays coherent.
+
 ## Chemistry and interstitial control
 
 The chemistry certificate is the first line of review. For some alloys, that means confirming the expected major elements. For others, especially titanium and some nickel routes, interstitial control is just as important as the headline alloy identity.
@@ -67,3 +69,5 @@ These are not always signs of a bad supplier. Sometimes they simply show that th
 ## The practical takeaway
 
 A certificate package should help the buyer decide whether the lot is commercially and technically releasable. If the document set cannot answer that question, the safest move is to clarify it before shipment rather than after the powder reaches the machine room.
+
+For controlled end uses, pair certificate review with the right downstream standard of proof. Medical and dental programs should reference the [medical and dental documentation guide](/posts/Alloys/medical-dental-powder-documentation-guide/), while flight-related programs should start from the [aerospace qualification checklist](/posts/Alloys/aerospace-powder-qualification-checklist/).
