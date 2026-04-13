@@ -51,7 +51,7 @@ For example, a titanium RFQ with a tighter chemistry window and more documentati
 
 Buyers sometimes see two offers for the same nominal alloy and assume one supplier is simply expensive. That is not always true. One quote may include tighter oxygen control, a more conservative PSD guarantee, smaller packaging, or a fuller document package. Another may be technically valid for a prototype build but weak for qualification or export use.
 
-That is why low headline pricing should be treated carefully. A cheaper lot can become more expensive if it creates inspection failure, delayed qualification, or a second purchasing cycle.
+That is why low headline pricing should be treated carefully. A cheaper lot can become more expensive if it creates inspection failure, delayed qualification, or a second purchasing cycle. The direct [quote comparison guide](/posts/Alloys/compare-metal-powder-quotes/) is the right next step if two offers look similar but feel commercially inconsistent.
 
 ## How to use price information the right way
 
@@ -82,4 +82,4 @@ If the project is qualification-relevant, also include oxygen limits, reuse expe
 
 Use public pricing as a budget tool, not as the entire sourcing decision. On a professional AM project, the right powder is the one that lands at the correct balance of alloy fit, powder quality, documentation, and lead time. The lowest visible price is rarely the whole story.
 
-If you are still collecting purchasing inputs, start with the [metal powder RFQ checklist](/posts/Alloys/metal-powder-rfq-checklist/). It is the fastest way to turn a rough inquiry into a quote that can actually be compared.
+If you are still collecting purchasing inputs, start with the [metal powder RFQ checklist](/posts/Alloys/metal-powder-rfq-checklist/). It is the fastest way to turn a rough inquiry into a quote that can actually be compared. If the project is already moving toward controlled supply, pair that with the [prototype vs production specification guide](/posts/Alloys/prototype-vs-production-powder-specification/).

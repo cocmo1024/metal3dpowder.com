@@ -43,6 +43,12 @@ const blogPageViews: Record<string, number> = {
   'cucrzr-vs-pure-copper-powder': 4200,
   'ebm-powder-size-guide': 4000,
   'medical-dental-powder-documentation-guide': 3800,
+  'compare-metal-powder-quotes': 5800,
+  'prototype-vs-production-powder-specification': 5600,
+  'metal-powder-storage-shelf-life-guide': 5400,
+  'incoterms-guide-metal-powder-buyers': 5200,
+  'ti64-grade-23-vs-grade-5-powder': 5000,
+  'dental-lab-cobalt-chrome-sourcing-checklist': 4600,
 };
 
 const blogPostImages: Record<string, string> = {
@@ -73,6 +79,12 @@ const blogPostImages: Record<string, string> = {
   'cucrzr-vs-pure-copper-powder': '/images/products/cucrzr.svg',
   'ebm-powder-size-guide': '/images/products/titanium.svg',
   'medical-dental-powder-documentation-guide': '/images/products/cocrmo.svg',
+  'compare-metal-powder-quotes': '/og-image.svg',
+  'prototype-vs-production-powder-specification': '/og-image.svg',
+  'metal-powder-storage-shelf-life-guide': '/og-image.svg',
+  'incoterms-guide-metal-powder-buyers': '/og-image.svg',
+  'ti64-grade-23-vs-grade-5-powder': '/images/products/titanium.svg',
+  'dental-lab-cobalt-chrome-sourcing-checklist': '/images/products/cocrmo.svg',
 };
 
 export const getBlogPostPath = (postOrId: BlogPost | string) =>

@@ -15,6 +15,8 @@ Powder reuse is one of the fastest ways to tell whether an AM sourcing conversat
 
 The right reuse policy is not the same for every machine, alloy, or qualification stage. But every professional powder RFQ should at least ask how reuse is being controlled.
 
+That question becomes much stronger when it is paired with a written [storage and shelf-life policy](/posts/Alloys/metal-powder-storage-shelf-life-guide/) instead of treated as a standalone reuse note.
+
 ## Why reuse policy matters
 
 Powder reuse affects more than material cost. It can influence:

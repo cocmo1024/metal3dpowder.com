@@ -37,6 +37,8 @@ For both alloys, buyers still need to define PSD, process route, quantity, and d
 
 With Ti64, the conversation usually centers on structural use, chemistry control, interstitial limits, and whether the route aligns with Grade 5 or Grade 23 expectations. With Grade 2, the conversation is more likely to focus on purity, corrosion-oriented use, and whether the project really needs a commercially pure titanium route.
 
+If the project has already decided on Ti64 but is still unsure about ELI-level control, use the direct [Grade 23 vs Grade 5 guide](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/) instead of reopening the broader Grade 2 comparison.
+
 ## Price context
 
 On this site, Ti64 is currently listed from USD 89/kg and Grade 2 from USD 82/kg. That difference is not huge, and it should not be treated as the whole decision. The more important question is whether the project benefits from Ti64-level performance or from the simpler logic of Grade 2.

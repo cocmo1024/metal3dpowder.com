@@ -46,6 +46,8 @@ Many medical and dental AM sourcing discussions center on cobalt chrome and tita
 
 For site-specific alloy guidance, start with [CoCrMo powder](/posts/Alloys/cocrmo-cocrw-powder/) or [commercially pure titanium powder](/posts/Alloys/ta1-cp-titanium-powder/) if those are the candidate materials.
 
+If the workflow is specifically dental-lab oriented, use the narrower [dental cobalt chrome sourcing checklist](/posts/Alloys/dental-lab-cobalt-chrome-sourcing-checklist/) before finalizing the purchase file.
+
 ## What not to do
 
 Do not assume a general industrial document pack is enough for a medical or dental program. Do not assume the supplier can infer traceability expectations from the alloy name alone. And do not leave the quality team out of the RFQ stage if the build is intended for anything beyond basic development work.

@@ -107,3 +107,26 @@ Before publishing a new article:
 - How to compare two powder quotes without false savings
 - Titanium Grade 23 vs Grade 5 buying guide
 - Dental lab cobalt chrome sourcing checklist
+
+## Round 3 publishing map
+
+### Commercial decision pages
+
+- How to compare two powder quotes without false savings
+- Prototype vs production powder specification guide
+- Incoterms guide for international powder buyers
+
+### Quality and handling pages
+
+- Metal powder storage and shelf-life guide
+- Titanium Grade 23 vs Grade 5 powder
+- Dental lab cobalt chrome sourcing checklist
+
+## Round 4 backlog
+
+- Incoming inspection checklist for AM powder lots
+- First article sample request guide for new suppliers
+- Prototype-to-qualification document handoff guide
+- MOQ and packaging strategy for international powder orders
+- DED powder vs wire decision guide
+- Cobalt chrome vs titanium for dental AM buying

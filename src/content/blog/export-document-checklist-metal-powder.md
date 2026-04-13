@@ -65,6 +65,8 @@ If the shipment is international, the RFQ should say:
 
 That makes it much easier for the supplier to quote not only the powder, but the actual exportable order.
 
+If the delivery basis is still unclear, settle it early with the [Incoterms guide for international powder buyers](/posts/Alloys/incoterms-guide-metal-powder-buyers/) instead of letting the quote and shipping file drift apart.
+
 ## Why carrier rules still matter
 
 IATA continues to emphasize documentation quality in dangerous-goods workflows and has recently pushed DG Digital to reduce missing or incorrect paperwork. Even when a powder shipment does not trigger the same documentation path as another commodity, buyers should still assume that carrier paperwork quality matters.
