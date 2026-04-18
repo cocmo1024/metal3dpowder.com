@@ -156,3 +156,29 @@ Before publishing a new article:
 - Powder change-notification requirements for controlled supply
 - Split-shipment strategy for urgent international replenishment
 - Titanium oxygen-limit discussion guide for incoming buyers
+
+## Round 5 publishing map
+
+### Controlled supply and second-source pages
+
+- Alternate supplier onboarding checklist for qualified programs
+- Powder change-notification requirements for controlled supply
+
+### Document and recurring-order pages
+
+- SDS vs COA vs TDS guide for powder buyers
+- Annual call-off and lot reservation strategy for recurring orders
+
+### Logistics and titanium control pages
+
+- Split-shipment strategy for urgent international replenishment
+- Titanium oxygen-limit discussion guide for incoming buyers
+
+## Round 6 backlog
+
+- Receiving discrepancy report workflow for powder lots
+- Supplier scorecard template for recurring powder programs
+- Quarantine vs release decision tree for borderline lots
+- When to re-issue RFQs after internal spec drift
+- Requalification trigger guide after material-route changes
+- Titanium lot-to-lot consistency review guide

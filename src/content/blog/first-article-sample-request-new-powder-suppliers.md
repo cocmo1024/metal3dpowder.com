@@ -69,6 +69,8 @@ For a first article lot, it is usually reasonable to request:
 
 If the long-term workflow will require a more formal document handoff, define that early rather than waiting until the supplier has already become operationally important. The dedicated [prototype-to-qualification handoff guide](/posts/Alloys/prototype-to-qualification-powder-document-handoff/) is built for that step.
 
+If the program is already qualified and the new supplier is being considered as a second source rather than as a first source, move next to the [alternate supplier onboarding checklist](/posts/Alloys/alternate-supplier-onboarding-qualified-powder-programs/).
+
 ## The practical takeaway
 
 A first article sample request is the cleanest way to evaluate a new powder supplier without creating false production expectations. Keep the request controlled, align it to the real program stage, and make sure the first lot is judged on documentation quality and release discipline as well as on material identity.

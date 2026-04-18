@@ -21,6 +21,8 @@ Use Grade 23 when the project needs the cleaner ELI-style titanium route and car
 
 That decision should be made before the RFQ, not after the quote returns.
 
+If the project team is still carrying one generic oxygen limit from project to project, stop there and review the [titanium oxygen-limit discussion guide](/posts/Alloys/titanium-oxygen-limit-discussion-guide/) before finalizing the inquiry.
+
 ## Why buyers move toward Grade 23
 
 Grade 23 enters the conversation when the program is more controlled, more fatigue-aware, or more medically or qualification-oriented than a general titanium buy. The value is not just that the alloy sounds stricter. The value is that the chemistry intent matches the application better.

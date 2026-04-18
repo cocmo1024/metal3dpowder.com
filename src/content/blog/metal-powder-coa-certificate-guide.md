@@ -28,6 +28,8 @@ The exact package depends on the project, but most serious RFQs eventually need 
 
 That package may be light for development work and much heavier for regulated, aerospace, or production-oriented programs.
 
+If the team is still unclear on which document is meant for hazard communication, which one is meant for lot release, and which one is just general product information, align first with the [SDS vs COA vs TDS guide](/posts/Alloys/sds-vs-coa-vs-tds-guide-metal-powder-buyers/).
+
 If the order is international, the technical certificate pack should also line up with the broader [export document checklist](/posts/Alloys/export-document-checklist-metal-powder/) so the shipment file stays coherent.
 
 ## Chemistry and interstitial control

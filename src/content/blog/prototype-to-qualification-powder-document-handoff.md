@@ -44,6 +44,8 @@ That does not mean every project needs a heavy regulated document stack. It mean
 
 If the program is still working with a new source, the handoff should also show how the supplier was initially evaluated. That is why a structured [first article sample request](/posts/Alloys/first-article-sample-request-new-powder-suppliers/) matters. It creates the first documented bridge between prototype learning and controlled sourcing.
 
+If the same program is preparing to bring in a second source, the handoff should also define how alternate-source approval will be controlled. The [alternate supplier onboarding checklist](/posts/Alloys/alternate-supplier-onboarding-qualified-powder-programs/) is the right next step for that case.
+
 ## Qualification requires a release basis, not just more paperwork
 
 Many teams react to qualification by asking for "more documents." That is incomplete. The real question is whether the documents point to a release basis the team can actually use. For powder lots, that usually means:
@@ -54,6 +56,8 @@ Many teams react to qualification by asking for "more documents." That is incomp
 - the supplier knows what cannot change silently
 
 The handoff only works if those four views align.
+
+Once the program reaches recurring supply, the next discipline is usually formal change control. The dedicated [change-notification guide](/posts/Alloys/powder-change-notification-controlled-supply/) explains what buyers should define before repeat orders become routine.
 
 ## Regulated and controlled sectors need earlier clarity
 

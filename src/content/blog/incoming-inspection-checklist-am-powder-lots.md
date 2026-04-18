@@ -63,6 +63,8 @@ The certificate package should be reviewed against the intended workflow, not ag
 
 This is where the main [COA and certificate guide](/posts/Alloys/metal-powder-coa-certificate-guide/) becomes useful. The incoming inspection step is not a replacement for certificate review. It is the place where the certificate pack is reconciled against the physical lot that actually arrived.
 
+If the receiving team is still mixing hazard documents, lot certificates, and general product information together, the [SDS vs COA vs TDS guide](/posts/Alloys/sds-vs-coa-vs-tds-guide-metal-powder-buyers/) should be reviewed before the release checklist is finalized.
+
 ## Define quarantine, sample retention, and disposition
 
 Incoming inspection should not end with "looks fine." Buyers should define what happens next if the lot is:

@@ -23,6 +23,8 @@ The most relevant comparison is usually Grade 5 versus Grade 23. Both sit in the
 
 For RFQ purposes, it is a mistake to ask only for "TC4 powder" and leave the rest to the supplier. Buyers should clarify whether the project is aligned with a Grade 5 route, a Grade 23 route, or an internal chemistry window. That one decision affects cost, documentation expectations, and how conservative the supplier must be with oxygen and interstitial control.
 
+If the buyer is still trying to define what oxygen control should mean in the RFQ, the dedicated [titanium oxygen-limit discussion guide](/posts/Alloys/titanium-oxygen-limit-discussion-guide/) is the best next read before the inquiry is released.
+
 ## Why TC4 stays dominant in AM
 
 The reason is not only material performance. TC4 has a mature supply chain, widely available PSD cuts, broad printer parameter history, and a post-processing route that most serious AM teams already understand. That makes qualification easier than with less common titanium systems.

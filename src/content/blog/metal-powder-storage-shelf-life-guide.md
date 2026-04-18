@@ -44,6 +44,8 @@ The better question is:
 
 If those answers are weak, the powder should not be treated as routine stock just because the calendar still looks acceptable.
 
+If the order may need to be received in multiple urgent stages rather than one stable shipment, pair storage planning with the [split-shipment guide](/posts/Alloys/split-shipment-strategy-urgent-powder-replenishment/) so the release logic stays coherent across arrivals.
+
 ## Where storage and reuse meet
 
 Storage discipline matters even more once reused powder enters the workflow. The reuse question is not only about cycles. It is also about how powder is held, screened, documented, and returned to controlled storage.

@@ -64,6 +64,8 @@ If MOQ or package format matters, the RFQ should state:
 
 Without those items, suppliers tend to quote what is commercially easiest for them rather than what is operationally easiest for the buyer.
 
+If the order may need to move in stages rather than as one consolidated export movement, add the [split-shipment strategy guide](/posts/Alloys/split-shipment-strategy-urgent-powder-replenishment/) before approving the logistics plan.
+
 ## The practical takeaway
 
 MOQ and packaging strategy should help the powder move cleanly from supplier to receiving to release. If the order quantity, package format, and shipping logic are not aligned, the quote may still look acceptable while the real workflow becomes expensive. Good buyers define the package strategy early enough that it becomes part of the commercial scope, not an afterthought.

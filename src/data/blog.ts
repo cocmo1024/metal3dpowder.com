@@ -55,6 +55,12 @@ const blogPageViews: Record<string, number> = {
   'moq-packaging-strategy-international-powder-orders': 5500,
   'ded-powder-vs-wire-feedstock-guide': 5300,
   'cobalt-chrome-vs-titanium-powder-dental-am': 5100,
+  'alternate-supplier-onboarding-qualified-powder-programs': 6300,
+  'sds-vs-coa-vs-tds-guide-metal-powder-buyers': 6100,
+  'annual-call-off-lot-reservation-strategy-powder-orders': 5900,
+  'powder-change-notification-controlled-supply': 5700,
+  'split-shipment-strategy-urgent-powder-replenishment': 5500,
+  'titanium-oxygen-limit-discussion-guide': 5300,
 };
 
 const blogPostImages: Record<string, string> = {
@@ -97,6 +103,12 @@ const blogPostImages: Record<string, string> = {
   'moq-packaging-strategy-international-powder-orders': '/og-image.svg',
   'ded-powder-vs-wire-feedstock-guide': '/og-image.svg',
   'cobalt-chrome-vs-titanium-powder-dental-am': '/images/products/cocrmo.svg',
+  'alternate-supplier-onboarding-qualified-powder-programs': '/og-image.svg',
+  'sds-vs-coa-vs-tds-guide-metal-powder-buyers': '/og-image.svg',
+  'annual-call-off-lot-reservation-strategy-powder-orders': '/og-image.svg',
+  'powder-change-notification-controlled-supply': '/og-image.svg',
+  'split-shipment-strategy-urgent-powder-replenishment': '/og-image.svg',
+  'titanium-oxygen-limit-discussion-guide': '/images/products/titanium.svg',
 };
 
 export const getBlogPostPath = (postOrId: BlogPost | string) =>
