@@ -51,6 +51,8 @@ Suppliers quote differently for:
 
 The buyer does not need to know the final annual consumption on day one, but the supplier should know whether the request is for a small development lot or a recurring commercial program.
 
+If the supplier is new, that first order is usually better handled as a controlled [first article sample request](/posts/Alloys/first-article-sample-request-new-powder-suppliers/) rather than as an oversized production-style inquiry.
+
 ## Certificates, traceability, and testing
 
 This is where many industrial RFQs stay too vague. If the buyer needs chemistry certificates, PSD reports, oxygen data, batch traceability, or export documents, those items should be listed in the first inquiry.
@@ -84,6 +86,8 @@ If the supplier is expected to respond with something more useful than a number,
 These are not "nice to have" details. They are the difference between a fast but generic quote and a technically useful one.
 
 If the program is medical, dental, or aerospace-oriented, align the RFQ with the relevant [medical and dental documentation guide](/posts/Alloys/medical-dental-powder-documentation-guide/) or [aerospace qualification checklist](/posts/Alloys/aerospace-powder-qualification-checklist/) before the supplier quotes.
+
+If the project is already moving from trial sourcing into formal release logic, pair the RFQ with the [prototype-to-qualification document handoff guide](/posts/Alloys/prototype-to-qualification-powder-document-handoff/).
 
 ## The practical takeaway
 

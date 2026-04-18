@@ -65,6 +65,8 @@ If the shipment is international, the RFQ should say:
 
 That makes it much easier for the supplier to quote not only the powder, but the actual exportable order.
 
+It also helps the buyer define the right package count and order size before shipment planning starts. The companion [MOQ and packaging strategy guide](/posts/Alloys/moq-packaging-strategy-international-powder-orders/) is useful if the receiving workflow still needs to be aligned with the export file.
+
 If the delivery basis is still unclear, settle it early with the [Incoterms guide for international powder buyers](/posts/Alloys/incoterms-guide-metal-powder-buyers/) instead of letting the quote and shipping file drift apart.
 
 ## Why carrier rules still matter

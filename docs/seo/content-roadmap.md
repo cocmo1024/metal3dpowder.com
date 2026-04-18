@@ -130,3 +130,29 @@ Before publishing a new article:
 - MOQ and packaging strategy for international powder orders
 - DED powder vs wire decision guide
 - Cobalt chrome vs titanium for dental AM buying
+
+## Round 4 publishing map
+
+### Receiving and release pages
+
+- Incoming inspection checklist for AM powder lots
+- Prototype-to-qualification document handoff guide
+
+### Supplier onboarding and commercial pages
+
+- First article sample request guide for new powder suppliers
+- MOQ and packaging strategy for international powder orders
+
+### Process and application decision pages
+
+- DED powder vs wire decision guide
+- Cobalt chrome vs titanium for dental AM buying
+
+## Round 5 backlog
+
+- Alternate supplier onboarding checklist for qualified programs
+- SDS vs COA vs TDS guide for powder buyers
+- Annual call-off and lot reservation strategy for recurring orders
+- Powder change-notification requirements for controlled supply
+- Split-shipment strategy for urgent international replenishment
+- Titanium oxygen-limit discussion guide for incoming buyers

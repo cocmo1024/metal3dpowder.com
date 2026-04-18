@@ -52,6 +52,8 @@ If the lab is only running an internal validation lot, the document set may be l
 
 If the project is crossing that line, the buyer should also review the broader [medical and dental documentation guide](/posts/Alloys/medical-dental-powder-documentation-guide/) before release.
 
+If the dental team is actively deciding between cobalt chrome and titanium, the comparison should stay grounded in workflow and documentation rather than reputation. The dedicated [cobalt chrome vs titanium dental buying guide](/posts/Alloys/cobalt-chrome-vs-titanium-powder-dental-am/) is the right next page for that decision.
+
 ## The practical takeaway
 
 Dental cobalt chrome sourcing should be treated as a controlled powder purchase, not just as a routine consumable buy. The key checks are alloy identity, machine fit, traceability, and certificate discipline. If those are clear, the quote becomes much more useful and the receiving risk drops quickly.

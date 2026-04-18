@@ -36,6 +36,8 @@ The most common false saving is a quote that is lower because it is lighter on s
 
 That is why buyers should treat a cheap quote as an invitation to inspect the scope, not as proof of a better deal.
 
+The same applies to quantity and package format. If one supplier is quoting a different minimum order or a different package structure, the lower visible price may simply reflect a different commercial basis. The [MOQ and packaging strategy guide](/posts/Alloys/moq-packaging-strategy-international-powder-orders/) is built for that comparison.
+
 ## Delivery term changes the real cost
 
 International buyers should not compare two quotes without confirming the delivery basis. ICC remains the official publisher of the Incoterms(R) 2020 rules, and the named rule plus named place can materially change who carries transport cost and risk.

@@ -59,6 +59,8 @@ Production-oriented AM sourcing usually adds more explicit control around:
 
 If the project is medical, aerospace, or other controlled end use, this becomes even more important because the powder order has to support a bigger quality system, not just a build.
 
+That transition should be documented, not just assumed. The dedicated [prototype-to-qualification handoff guide](/posts/Alloys/prototype-to-qualification-powder-document-handoff/) is built for the moment when the powder record needs to move from trial logic into controlled release logic.
+
 ## Why this matters during quote comparison
 
 Buyers frequently compare a prototype-style quote with a production-style quote and call the second one overpriced. That is usually the wrong diagnosis. The real issue is that the offers describe different program stages.

@@ -66,6 +66,8 @@ The most common red flags are:
 
 These are not always signs of a bad supplier. Sometimes they simply show that the RFQ was incomplete. But they are still reasons to pause before approval.
 
+Once the shipment arrives, the certificate review should be tied directly into a formal [incoming inspection checklist](/posts/Alloys/incoming-inspection-checklist-am-powder-lots/) so the lot is judged against the actual receiving and release workflow rather than against the paperwork alone.
+
 ## The practical takeaway
 
 A certificate package should help the buyer decide whether the lot is commercially and technically releasable. If the document set cannot answer that question, the safest move is to clarify it before shipment rather than after the powder reaches the machine room.
