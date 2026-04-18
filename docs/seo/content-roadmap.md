@@ -58,6 +58,7 @@ It should not drift into supplier-side operations unless the topic is directly a
 - Aerospace Ti64 structural parts
 - TA15 elevated-temperature aerospace structures
 - IN718 hot-section parts
+- IN625 corrosion-heavy hot-side hardware
 - Hastelloy X furnace and hot-gas hardware
 - CuCrZr cold plates and heat sinks
 - CuCrZr induction coils and current-carrying parts
@@ -65,15 +66,23 @@ It should not drift into supplier-side operations unless the topic is directly a
 - 17-4PH industrial fixtures and tooling hardware
 - AlSi10Mg lightweight housings and brackets
 - H13 conformal cooling inserts
+- H13 die-casting inserts
 - M300 mold tooling and inserts
+- M300 core inserts and compact production tooling
 - CoCrMo dental frameworks and crowns
+- CoCrMo wear-critical industrial parts
 - Cobalt chrome vs titanium for dental AM
+- TA1 chemical and biomedical titanium parts
 
-## Round 7 backlog
+## Core comparison pages live
 
-- IN625 powder for corrosion-heavy hot-side hardware
-- CP titanium powder for chemical and biomedical parts
-- H13 powder for die-casting inserts
-- M300 powder for core inserts and compact production tooling
-- CoCrMo powder for wear-critical industrial parts
-- Nickel powder comparison for turbine vs furnace applications
+- IN718 vs Hastelloy X for turbine vs furnace hardware
+
+## Round 8 backlog
+
+- 316L powder for manifolds and fluid-path components
+- IN625 powder for marine and chemical ducting
+- TA1 powder for corrosion-side chemical hardware
+- CuCrZr powder for conductive tooling and welding-contact parts
+- AlSi10Mg powder for UAV structures and electronics housings
+- CoCrMo vs stainless for wear-critical industrial hardware

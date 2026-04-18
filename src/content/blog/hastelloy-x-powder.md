@@ -37,3 +37,5 @@ With Hastelloy X, the thermal problem has to be explicit. If the environment is 
 ## The practical takeaway
 
 Use Hastelloy X when the AM part belongs to an oxidation-resistant, high-temperature, combustion-oriented problem. Do not treat it as a generic premium nickel upgrade. The right comparison is against the environment, then against [IN718 vs IN625](/posts/Alloys/in718-vs-in625-powder/) if the project still sits between structural and corrosion-driven nickel-alloy routes. If the actual use case is furnace or hot-gas hardware, continue with the focused [Hastelloy X application guide](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/).
+
+If the choice is specifically between structural hot-side hardware and oxidation-driven furnace hardware, use the dedicated [IN718 vs Hastelloy X comparison](/posts/Alloys/in718-vs-hastelloy-x-powder-turbine-vs-furnace-hardware/).

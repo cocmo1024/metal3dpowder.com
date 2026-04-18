@@ -64,3 +64,5 @@ Use H13 when the part is a true hot-work tooling problem and the value of the pr
 For the direct side-by-side decision, use the [H13 vs M300 tooling guide](/posts/Alloys/h13-vs-m300-powder/).
 
 If the specific application is conformal cooling or insert-side thermal control, continue with the dedicated [H13 conformal cooling insert guide](/posts/Alloys/h13-powder-conformal-cooling-inserts/).
+
+If the actual tool is a die-casting insert rather than a general hot-work tool, continue with the dedicated [H13 die-casting insert guide](/posts/Alloys/h13-powder-die-casting-inserts/).

@@ -39,3 +39,5 @@ If oxidation resistance in hot-section service is the primary issue, [Hastelloy 
 ## The practical takeaway
 
 Use IN718 when the part is structurally demanding, temperature-loaded, and tied to a controlled post-build route. If the actual hardware is turbine-adjacent or hot-section-focused, the application-specific [IN718 hot-section parts guide](/posts/Alloys/in718-powder-hot-section-parts/) is the right next page.
+
+If the choice is between structural hot-side hardware and oxidation-driven furnace hardware, use the direct [IN718 vs Hastelloy X comparison](/posts/Alloys/in718-vs-hastelloy-x-powder-turbine-vs-furnace-hardware/).

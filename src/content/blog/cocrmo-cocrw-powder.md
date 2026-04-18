@@ -33,3 +33,5 @@ Teams sometimes request "cobalt chrome powder" as if that is already a complete 
 With CoCr systems, the alloy name gets attention, but the application logic closes the decision. The part function and service condition matter more than the alloy label by itself.
 
 If the application is specifically dental frameworks or crown-related metal parts, the dedicated [CoCrMo dental applications guide](/posts/Alloys/cocrmo-powder-dental-frameworks-and-crowns/) is the most relevant next page.
+
+If the part is instead a wear-critical industrial component, continue with the focused [CoCrMo industrial wear guide](/posts/Alloys/cocrmo-powder-wear-critical-industrial-parts/).

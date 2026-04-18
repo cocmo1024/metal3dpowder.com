@@ -46,3 +46,5 @@ IN625 is more forgiving than some higher-strength nickel systems, but it still b
 ## When IN625 is not the right answer
 
 If the part is primarily structural at elevated temperature, [IN718 powder](/posts/Alloys/gh4169-in718-powder/) may be a better starting point. If the job is more specifically hot-section and oxidation-driven, [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/) may be worth evaluating. The point is to match the alloy to the failure mode.
+
+If the actual use case is corrosion-heavy hot-side hardware rather than a general nickel corrosion route, continue with the focused [IN625 hot-side application guide](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/).

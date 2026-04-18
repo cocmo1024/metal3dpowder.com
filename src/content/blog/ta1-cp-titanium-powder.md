@@ -40,3 +40,5 @@ The same process discipline used for other titanium powders still applies: PSD f
 For example, a corrosion-driven industrial part and a biocompatibility-related development program will not always ask for the same validation focus.
 
 If the project is undecided between commercially pure titanium and Ti64, use the side-by-side guide to [Ti64 vs Grade 2 titanium powder](/posts/Alloys/ti64-vs-grade-2-titanium-powder/).
+
+If the actual target is corrosion-facing chemical hardware or a biomedical titanium part, continue with the narrower [TA1 application guide](/posts/Alloys/ta1-powder-chemical-and-biomedical-parts/).
