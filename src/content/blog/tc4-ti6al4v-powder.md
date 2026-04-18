@@ -13,62 +13,46 @@ tags:
 featured: true
 ---
 
-TC4 is the Chinese designation commonly aligned with Ti-6Al-4V. In additive manufacturing it remains the default titanium alloy for a simple reason: it gives buyers a practical mix of high specific strength, corrosion resistance, broad machine compatibility, and a mature qualification history.
+TC4 is the Chinese designation commonly aligned with Ti-6Al-4V. In additive manufacturing it remains the default titanium alloy for a simple reason: it gives a practical mix of high specific strength, corrosion resistance, broad machine compatibility, and a mature qualification history.
 
-That does not mean every titanium project should default to TC4. It means TC4 is the easiest high-performance titanium route to justify when the part is structural, weight-sensitive, and likely to move beyond one-off prototyping. The main buying question is not whether the alloy is famous. The real question is whether the powder, the PSD window, and the chemistry controls fit the exact process and qualification target.
+That does not mean every titanium project should default to TC4. It means TC4 is the easiest high-performance titanium route to justify when the part is structural, weight-sensitive, and likely to move beyond one-off prototyping. The real question is whether the powder, the PSD window, and the chemistry controls fit the exact process and service target.
 
 ## What TC4, Grade 5, and Grade 23 mean in practice
 
 The most relevant comparison is usually Grade 5 versus Grade 23. Both sit in the Ti-6Al-4V family, but Grade 23 uses tighter interstitial control and is often preferred when ductility, fatigue behavior, or medical-oriented specifications matter more. Grade 5 is still common when the application is strength-driven and the project does not require the stricter chemistry window of Grade 23.
 
-For RFQ purposes, it is a mistake to ask only for "TC4 powder" and leave the rest to the supplier. Buyers should clarify whether the project is aligned with a Grade 5 route, a Grade 23 route, or an internal chemistry window. That one decision affects cost, documentation expectations, and how conservative the supplier must be with oxygen and interstitial control.
-
-If the buyer is still trying to define what oxygen control should mean in the RFQ, the dedicated [titanium oxygen-limit discussion guide](/posts/Alloys/titanium-oxygen-limit-discussion-guide/) is the best next read before the inquiry is released.
+The first decision is usually Grade 5 versus Grade 23. That choice changes interstitial expectations, ductility margin, and where the alloy best fits. If the chemistry window is still being defined, the dedicated [titanium oxygen-limit discussion guide](/posts/Alloys/titanium-oxygen-limit-discussion-guide/) is the best next read before the build route is locked.
 
 ## Why TC4 stays dominant in AM
 
-The reason is not only material performance. TC4 has a mature supply chain, widely available PSD cuts, broad printer parameter history, and a post-processing route that most serious AM teams already understand. That makes qualification easier than with less common titanium systems.
+The reason is not only material performance. TC4 has widely used PSD cuts, broad printer parameter history, and a post-processing route that most serious AM teams already understand. That makes qualification easier than with less common titanium systems.
 
-TC4 also works across more than one AM process. LPBF remains the most common request, but TC4 also shows up in EBM and DED programs. That matters commercially because buyers can often keep the same alloy family while moving between prototyping, production, repair, and larger geometry strategies.
-
-When the part is flight-related rather than a simple development build, the purchasing conversation should be tied to the broader [aerospace qualification checklist](/posts/Alloys/aerospace-powder-qualification-checklist/) instead of stopping at alloy and PSD alone.
+TC4 also works across more than one AM process. LPBF remains the most common route, but TC4 also shows up in EBM and DED programs. That matters because teams can often keep the same alloy family while moving between prototyping, production, repair, and larger geometry strategies.
 
 ## Powder points that matter
 
 For LPBF, buyers often request 15-45 um or 15-53 um. EBM usually moves to a coarser range, while DED can require a very different cut depending on nozzle design and feed method. The correct answer is process-specific rather than universal.
 
-Titanium procurement should never stop at PSD alone. Oxygen, nitrogen, morphology, satellite level, and packing behavior directly affect how safely the powder can be introduced into a qualification workflow. If the project includes reuse, baseline chemistry becomes even more important because reused titanium can move out of tolerance faster than a buyer expects.
+Titanium evaluation should never stop at PSD alone. Oxygen, nitrogen, morphology, satellite level, and packing behavior directly affect how safely the powder can be introduced into a repeatable process. If the project includes reuse, baseline chemistry becomes even more important because reused titanium can move out of tolerance faster than many teams expect.
 
-For a serious RFQ, the minimum review should include:
+For a serious titanium route, the minimum review should include:
 
 - PSD range and test method
 - Oxygen and nitrogen limits
-- Chemistry certificate
+- chemistry consistency
 - Morphology and contamination control
 - Batch traceability
-- Packaging format and quantity per package
 
 ## Process fit: LPBF, EBM, and DED
 
 LPBF is the most common request because TC4 prints dense parts with strong geometry freedom and a large installed machine base. EBM is often chosen when residual stress management and thicker sections matter more than surface finish. DED is useful for larger structures, repairs, or geometry build-up where powder feed behavior becomes part of the process risk.
 
-That is why the first process question should be explicit in the inquiry. A supplier cannot quote the right powder cut or documentation package if LPBF, EBM, and DED are still being mixed together in the same request.
-
-## Price and quotation context
-
-On this site, TC4 is currently listed from USD 89/kg as an indicative starting point. That number is useful only as a first signal. Real titanium quotes move based on chemistry window, particle size range, quantity, document package, packaging size, and destination country.
-
-The cheapest titanium offer is not always the most economical one. If a batch arrives with the wrong PSD, incomplete traceability, or chemistry that does not fit the qualification route, the real project cost rises immediately. For that reason, buyers usually do better with a conservative quotation that already matches the specification than with a low headline price that creates rework later.
+That is why the process route should be explicit from the beginning. LPBF, EBM, and DED ask for different powder behavior, even when the alloy family is the same.
 
 If the part is corrosion-driven rather than strength-driven, it is worth comparing TC4 against [Grade 2 titanium powder](/posts/Alloys/ti64-vs-grade-2-titanium-powder/). If the process is electron beam rather than laser based, pair the alloy decision with the [EBM powder size guide](/posts/Alloys/ebm-powder-size-guide/) instead of reusing an LPBF-style PSD request.
 
-## What to confirm before ordering
+If the end use is really aerospace structural hardware rather than titanium AM in general, continue with the application-specific [Ti64 aerospace structures guide](/posts/Alloys/ti64-titanium-powder-aerospace-structures/).
 
-- Required alloy reference: Grade 5, Grade 23, or project-specific chemistry window
-- Target process: LPBF, EBM, or DED
-- Particle size range and any reuse plan
-- Oxygen and nitrogen limits
-- Required documents and traceability package
-- Packaging size, quantity, and destination country
+## The practical takeaway
 
-If those items are clear in the first inquiry, the quotation can be scoped around actual engineering requirements rather than generic titanium pricing. That is the difference between a titanium quote that is merely fast and one that is actually usable.
+Use TC4 when the part is structural, weight-sensitive, and needs a titanium route with broad AM familiarity. Define the grade intent, the process route, and the oxygen logic before treating Ti64 as a generic catalog choice.

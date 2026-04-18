@@ -14,8 +14,6 @@ featured: false
 
 CuCrZr is one of the most practical copper alloys for additive manufacturing when the part needs a real balance of conductivity and mechanical strength. Pure copper can be difficult to process and may lack the required strength. Many stronger copper alloys sacrifice too much conductivity. CuCrZr sits in the middle.
 
-On this site, CuCrZr starts from **USD 68/kg**, which reflects both its higher value compared with standard steels and its practical relevance in conductivity-driven AM applications.
-
 ## Why CuCrZr is used
 
 Typical use cases include thermal management hardware, induction tooling, electrical components, and heat-transfer parts where conductivity matters but the part cannot be mechanically weak.
@@ -27,31 +25,18 @@ That is why CuCrZr is common in search intent tied to:
 - electrical or induction applications
 - copper parts that need more structural credibility than pure copper
 
-The core value is balance. Buyers usually do not choose CuCrZr because it is the most conductive copper available. They choose it because it offers a more usable mix of conductivity, strength, and printability.
+The core value is balance. Teams usually do not choose CuCrZr because it is the most conductive copper available. They choose it because it offers a more usable mix of conductivity, strength, and printability.
 
-## What buyers should check
+## What should still be checked
 
-Copper alloy AM requires disciplined control of PSD, oxidation state, and process compatibility. Buyers should also confirm whether the intended machine and laser system are already validated for copper-family materials, because printability varies significantly across platforms.
+Copper alloy AM requires disciplined control of PSD, oxidation state, and process compatibility. Teams should also confirm whether the intended machine and laser system are already validated for copper-family materials, because printability varies significantly across platforms.
 
-That second point is important. A copper alloy inquiry is not complete if it only names the alloy. Machine readiness and process experience matter much more here than they do on easier materials like 316L.
+That second point is important. Machine readiness and process experience matter much more here than they do on easier materials like 316L.
 
 ## Post-processing and end use
 
-CuCrZr is valuable because it can be precipitation hardened after printing. That makes it important to define the target performance state early in the purchase discussion. If the end use is conductivity-driven, the RFQ should say so clearly.
+CuCrZr is valuable because it can be precipitation hardened after printing. That makes the target performance state important early in the evaluation. If the end use is conductivity-driven, the material discussion should stay tied to that target.
 
-The most useful CuCrZr RFQs include:
+If the project is still undecided between CuCrZr and a pure-copper route, use the dedicated [CuCrZr vs pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) before finalizing the material route.
 
-- target AM process
-- PSD range
-- machine platform
-- whether the part is conductivity-driven or tooling-driven
-- required documents
-- quantity and destination
-
-That combination helps separate a serious copper AM project from a generic material inquiry.
-
-## The practical sourcing point
-
-CuCrZr is usually not purchased because it is fashionable. It is purchased because the part is trying to solve a heat-transfer or conductivity problem that stainless steel and ordinary tooling alloys cannot solve well enough. That makes the inquiry quality especially important. If the buyer can explain the thermal or electrical target clearly, the supplier can respond with a much more relevant first quote.
-
-If the project is still undecided between CuCrZr and a pure-copper route, use the dedicated [CuCrZr vs pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) before finalizing the RFQ.
+If the actual hardware target is a cold plate or heat sink rather than a general copper part, continue with the application-focused [CuCrZr thermal hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/). If the part is an induction coil or current-carrying copper component, continue with the dedicated [CuCrZr induction and conductor guide](/posts/Alloys/cucrzr-powder-induction-coils-and-current-carrying-parts/).

@@ -12,8 +12,8 @@ const allPosts = sortBlogPosts(await getCollection('blog'));
 const { posts, totalPages } = paginatePosts(allPosts, 1, POSTS_PER_PAGE);
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 
-const title = `Metal Powder Blog | AM Material Guides | ${siteInfo.brand}`;
-const description = 'Technical blog covering titanium, stainless steel, nickel alloy, aluminum, copper, and cobalt chrome powder selection for additive manufacturing.';
+const title = `Metal Powder Blog | Material and Application Guides | ${siteInfo.brand}`;
+const description = 'Technical blog covering metal powder materials, process fit, and real additive manufacturing applications across titanium, steel, nickel, aluminum, copper, and cobalt chrome.';
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -49,8 +49,8 @@ const schema = [
   <SiteHeader pathname={Astro.url.pathname} />
   <BlogArchive
     eyebrow="Blog"
-    title="Technical articles on metal powder materials and buying decisions."
-    description="A simple archive of all published blog articles."
+    title="Technical articles on metal powder materials, process fit, and applications."
+    description="A simple archive of published articles focused on alloys, process routes, and real additive manufacturing use cases."
     posts={posts}
     currentPage={1}
     totalPages={totalPages}
