@@ -37,3 +37,5 @@ If the part is mainly thermal and lightweight, AlSi10Mg is often strong enough. 
 If the geometry is thin-walled, thermal, or dimensional-control-sensitive, that should be defined early because it changes the technical conversation.
 
 If the actual target is lightweight housings, brackets, or enclosure hardware, continue with the dedicated [AlSi10Mg applications guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/).
+
+If the actual target is a UAV structure or electronics housing, continue with the focused [AlSi10Mg UAV and electronics guide](/posts/Alloys/alsi10mg-powder-uav-structures-and-electronics-housings/).

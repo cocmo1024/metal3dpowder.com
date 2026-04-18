@@ -39,7 +39,7 @@ With Ti64, the conversation usually centers on structural use, chemistry control
 
 If the project has already decided on Ti64 but is still unsure about ELI-level control, use the direct [Grade 23 vs Grade 5 guide](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/) instead of reopening the broader Grade 2 comparison.
 
-The part should first answer whether it is structurally titanium-driven or corrosion-driven. That choice is more important than small commercial differences.
+The part should first answer whether it is structurally titanium-driven or corrosion-driven. That choice is more important than small wording differences around the titanium family.
 
 ## The practical takeaway
 

@@ -40,3 +40,5 @@ CuCrZr is valuable because it can be precipitation hardened after printing. That
 If the project is still undecided between CuCrZr and a pure-copper route, use the dedicated [CuCrZr vs pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) before finalizing the material route.
 
 If the actual hardware target is a cold plate or heat sink rather than a general copper part, continue with the application-focused [CuCrZr thermal hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/). If the part is an induction coil or current-carrying copper component, continue with the dedicated [CuCrZr induction and conductor guide](/posts/Alloys/cucrzr-powder-induction-coils-and-current-carrying-parts/).
+
+If the actual use case is conductive tooling or a welding-contact component, continue with the dedicated [CuCrZr conductive tooling guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).

@@ -30,7 +30,7 @@ LPBF users often focus first on the PSD range, but that is only part of the pict
 
 316L fits best when corrosion resistance, fabrication simplicity, and process stability matter more than maximum strength. It is well suited to general industrial parts, many fluid-handling components, and development programs that need a stainless route with comparatively low friction.
 
-It is less attractive when the application is strongly strength-driven and the project can support a heat-treatment-dependent route. In that case, [17-4PH](/posts/Alloys/316l-vs-17-4ph-powder/) may be the better fit. Buyers should decide early whether corrosion tolerance or higher aged strength is the main priority, because that changes the powder choice immediately.
+It is less attractive when the application is strongly strength-driven and the project can support a heat-treatment-dependent route. In that case, [17-4PH](/posts/Alloys/316l-vs-17-4ph-powder/) may be the better fit. Teams should decide early whether corrosion tolerance or higher aged strength is the main priority, because that changes the powder choice immediately.
 
 ## Where teams go wrong
 
@@ -41,3 +41,5 @@ Another common mistake is assuming every stainless application should use 316L b
 ## The practical takeaway
 
 Use 316L when the part needs corrosion-aware stainless behavior, broad LPBF familiarity, and a stable route for industrial hardware. If the real use case is corrosion-resistant manifolds, housings, and flow-path parts, continue with the narrower [316L industrial hardware guide](/posts/Alloys/316l-powder-corrosion-resistant-industrial-hardware/). If higher aged strength is the real target, move to [17-4PH](/posts/Alloys/316l-vs-17-4ph-powder/) instead of stretching 316L beyond its natural fit.
+
+If the actual hardware is a manifold or fluid-path part rather than general stainless hardware, continue with the dedicated [316L manifold and flow-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/).

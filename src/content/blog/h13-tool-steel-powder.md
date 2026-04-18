@@ -11,7 +11,7 @@ tags:
 featured: false
 ---
 
-H13 is one of the most practical AM tool steels when the job is centered on dies, inserts, or production tooling that will see heat and cyclic service. It is not the easiest steel in the catalog, and it is not meant to be. Teams choose H13 because the final tooling problem is demanding enough that ordinary stainless or general structural steels are no longer a credible answer.
+H13 is one of the most practical AM tool steels when the job is centered on dies, inserts, or production tooling that will see heat and cyclic service. It is not the easiest steel to process, and it is not meant to be. Teams choose H13 because the final tooling problem is demanding enough that ordinary stainless or general structural steels are no longer a credible answer.
 
 ## Why H13 is used in AM
 
@@ -53,7 +53,7 @@ This is important because the printed tool is only one stage of the manufacturin
 
 ## What H13 is not
 
-H13 is not the low-friction answer for every strong steel application. It is also not the first choice when corrosion resistance is the central requirement. If the tool never sees serious thermal cycling, or if the project mainly values easy age-hardening and high hardness, a maraging route may be commercially cleaner.
+H13 is not the low-friction answer for every strong steel application. It is also not the first choice when corrosion resistance is the central requirement. If the tool never sees serious thermal cycling, or if the project mainly values easy age-hardening and high hardness, a maraging route may be cleaner.
 
 That is why AM tooling selection should start with the service condition, not just with brand familiarity around steel names.
 

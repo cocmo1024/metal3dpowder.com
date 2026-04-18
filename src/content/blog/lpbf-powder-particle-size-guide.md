@@ -17,7 +17,7 @@ The problem is that PSD is often discussed as if one size range is universally "
 
 ## Why common LPBF PSD windows look similar
 
-Many LPBF teams recognize ranges like 15-45 um or 15-53 um because they are common in commercial powder offers. Those ranges tend to balance flow behavior and fine-feature capability reasonably well for many alloys and machines.
+Many LPBF teams recognize ranges like 15-45 um or 15-53 um because they are common powder cuts across established LPBF routes. Those ranges tend to balance flow behavior and fine-feature capability reasonably well for many alloys and machines.
 
 That does not mean every LPBF build should use the same cut. Different alloys, different recoating behavior, and different process targets can all move the practical answer.
 

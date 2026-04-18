@@ -29,7 +29,7 @@ That is why Grade 23 often shows up when the team is no longer asking only for "
 
 ## Why Grade 5 still matters
 
-Grade 5 remains commercially important because it is strong, widely understood, and often sufficient for structural AM work. Not every Ti64 program needs the tighter ELI-style route. Some projects need strength, machine compatibility, and a practical structural titanium baseline more than they need the extra control logic of Grade 23.
+Grade 5 remains important because it is strong, widely understood, and often sufficient for structural AM work. Not every Ti64 program needs the tighter ELI-style route. Some projects need strength, machine compatibility, and a practical structural titanium baseline more than they need the extra control logic of Grade 23.
 
 The mistake is assuming Grade 23 is always the better answer. It is only better when the application needs what it actually changes.
 

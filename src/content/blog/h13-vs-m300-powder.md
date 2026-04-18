@@ -21,7 +21,7 @@ Both alloys appear in AM tooling discussions because they solve expensive manufa
 
 ## Where H13 is usually stronger
 
-H13 is a hot-work tool steel. Buyers normally move toward it when the tooling duty includes:
+H13 is a hot-work tool steel. Teams normally move toward it when the tooling duty includes:
 
 - repeated thermal cycling
 - hotter operating conditions
@@ -41,7 +41,7 @@ M300 is usually easier to justify when the tooling case is precision- and insert
 
 In practical terms, M300 often wins when the part is built around better cooling, tool redesign, and insert performance rather than hot-work survival.
 
-## Why buyers lose time on this choice
+## Why teams lose time on this choice
 
 The usual mistake is selecting the alloy based on reputation rather than service condition. Some teams choose H13 because it sounds more "tool steel." Others choose M300 because it is common in AM insert discussions. Neither is a reliable method.
 

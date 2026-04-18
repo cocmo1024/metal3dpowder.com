@@ -1,5 +1,5 @@
 ---
-title: "DED Powder vs Wire: Feedstock Choice for Directed Energy Deposition Buyers"
+title: "DED Powder vs Wire: Feedstock Choice for Directed Energy Deposition"
 description: A practical DED feedstock guide comparing powder and wire, focused on machine fit, feedstock behavior, and where each route makes sense.
 pubDate: 2026-04-18T09:40:00+08:00
 category: Process
@@ -28,7 +28,7 @@ That is why DED planning should always state:
 
 If those items are missing, the process discussion usually stays too generic to help material selection.
 
-## When powder-fed DED is usually the more practical conversation
+## When powder-fed DED is usually the more practical route
 
 Powder-fed DED tends to become attractive when the project needs:
 
@@ -37,11 +37,11 @@ Powder-fed DED tends to become attractive when the project needs:
 - feedstock options that are being evaluated within a powder-supply framework
 - tighter control over powder-based deposition behavior
 
-In those cases, the process should be treated as its own application route rather than as a generic extension of another AM method.
+In those cases, powder-fed DED should be treated as its own application route rather than as a generic extension of another AM method.
 
-## When wire-fed DED can simplify the commercial path
+## When wire-fed DED can simplify the route
 
-Wire-fed DED is often easier to discuss when the installed process is already built around wire supply and the project values a simpler feedstock form. That does not make the decision automatic. It means the buyer should not force a powder conversation onto a wire-oriented workflow just because the alloy name is familiar in powder form.
+Wire-fed DED is often easier to define when the installed process is already built around wire supply and the project values a simpler feedstock form. That does not make the decision automatic. It means the team should not force a powder route onto a wire-oriented workflow just because the alloy name is familiar in powder form.
 
 ## Why the process structure changes
 
@@ -51,10 +51,10 @@ Those are different process packages. They should not be treated as if only the 
 
 ## Questions that usually clarify the decision
 
-Before choosing between powder and wire, buyers should ask:
+Before choosing between powder and wire, the project should ask:
 
 1. which feedstock form is native to the intended equipment
-2. whether the alloy is commercially available in the required feedstock form
+2. whether the alloy is available in the required feedstock form
 3. whether the application depends on finer powder-based control
 4. whether the finishing and validation plan changes materially between the two routes
 5. whether the geometry or build size clearly favors one route

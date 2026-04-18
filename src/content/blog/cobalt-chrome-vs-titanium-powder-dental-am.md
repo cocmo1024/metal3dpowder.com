@@ -15,7 +15,7 @@ Dental AM teams often start with the alloy question: cobalt chrome or titanium. 
 
 ## Why cobalt chrome remains common in dental AM
 
-Cobalt chrome stays central in many dental workflows because the route is familiar, commercially established, and often well aligned with controlled lab routines. The main [CoCrMo powder guide](/posts/Alloys/cocrmo-cocrw-powder/) explains the alloy context at the site level.
+Cobalt chrome stays central in many dental workflows because the route is familiar, well established, and often well aligned with controlled lab routines. The main [CoCrMo powder guide](/posts/Alloys/cocrmo-cocrw-powder/) explains the alloy context at the site level.
 
 The practical question is whether cobalt chrome fits the actual part family and production routine better than titanium does.
 
@@ -37,7 +37,7 @@ That comparison is usually more useful than debating alloy reputation in the abs
 
 ## Documentation matters either way
 
-The alloy choice does not remove the need for a stable workflow, but the more useful comparison is still application-first. If the team is mainly building crown- and framework-related cobalt chrome parts, the dedicated [CoCrMo dental applications guide](/posts/Alloys/cocrmo-powder-dental-frameworks-and-crowns/) is the best next page. If the question is broader titanium route selection, start from the site-level [commercially pure titanium powder guide](/posts/Alloys/ta1-cp-titanium-powder/).
+The alloy choice does not remove the need for a stable workflow, but the more useful comparison is still application-first. If the team is mainly building crown- and framework-related cobalt chrome parts, the dedicated [CoCrMo dental applications guide](/posts/Alloys/cocrmo-powder-dental-frameworks-and-crowns/) is the best next page. If the question is broader titanium route selection, start from the site-level [Grade 2 titanium powder guide](/posts/Alloys/ta1-cp-titanium-powder/).
 
 ## The practical takeaway
 

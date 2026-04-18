@@ -47,7 +47,7 @@ IN625 is often the better fit when the application is driven by:
 
 ## Why the wrong comparison wastes time
 
-Many projects use the phrase "nickel alloy powder" without explaining the service logic. That creates unnecessary back-and-forth because IN718 and IN625 are not interchangeable catalog lines. The useful answer depends on whether the real target is strength, corrosion, thermal service, or qualification familiarity.
+Many projects use the phrase "nickel alloy powder" without explaining the service logic. That creates unnecessary back-and-forth because IN718 and IN625 are not interchangeable nickel routes. The useful answer depends on whether the real target is strength, corrosion, thermal service, or qualification familiarity.
 
 ## When Hastelloy X enters the conversation
 

@@ -15,7 +15,7 @@ M300 is one of the most useful AM steels for precision tooling. Teams often come
 
 ## Why M300 is popular in AM
 
-M300 is commonly used for inserts, molds, and tooling geometries where AM delivers clear design value through internal cooling or shape simplification. The material is attractive because the tooling case is often easier to explain commercially than with more exotic alloys: the buyer wants harder, stronger tooling with geometry that conventional machining struggles to deliver.
+M300 is commonly used for inserts, molds, and tooling geometries where AM delivers clear design value through internal cooling or shape simplification. The material is attractive because the tooling case is often easier to justify than with more exotic alloys: the project wants harder, stronger tooling with geometry that conventional machining struggles to deliver.
 
 That makes M300 a frequent fit for:
 

@@ -13,11 +13,11 @@ featured: false
 
 EBM powder size should not be specified as if it were an LPBF route with a different machine label. Electron beam powder bed fusion usually works with a coarser powder strategy, and that changes how teams should think about reuse and process fit.
 
-Colibrium Additive publicly markets a **coarse-cut Ti6Al4V Grade 23** option and shows **45-106 um** on that material documentation. That is a useful market signal: EBM conversations often sit in a different powder-size logic than common LPBF requests.
+Colibrium Additive publicly markets a **coarse-cut Ti6Al4V Grade 23** option and shows **45-106 um** on that material documentation. That is a useful reference point: EBM conversations often sit in a different powder-size logic than common LPBF requests.
 
 ## Why EBM usually means coarser powder
 
-EBM is not just LPBF with electrons. The build environment, powder behavior, and process strategy are different enough that buyers should expect different powder expectations. Colibrium also describes EB-PBF builds occurring in **semi-sintered powder**, which is one reason reuse discipline becomes part of the commercial conversation earlier.
+EBM is not just LPBF with electrons. The build environment, powder behavior, and process strategy are different enough that teams should expect different powder expectations. Colibrium also describes EB-PBF builds occurring in **semi-sintered powder**, which is one reason reuse discipline becomes part of the process discussion earlier.
 
 That does not mean every EBM job should blindly ask for 45-106 um. It means teams should stop assuming that a fine LPBF-style PSD is the default answer.
 
@@ -35,11 +35,11 @@ That last point matters because EBM is often tied to a reuse workflow more direc
 
 ## Why titanium dominates the EBM conversation
 
-EBM search intent is frequently tied to titanium because Ti6Al4V remains the most familiar commercial EBM route. That does not mean EBM is only for titanium. It does mean that many buyers first encounter EBM through titanium and then generalize the powder logic to other alloys.
+EBM search intent is frequently tied to titanium because Ti6Al4V remains the most familiar EBM route. That does not mean EBM is only for titanium. It does mean that many teams first encounter EBM through titanium and then generalize the powder logic to other alloys.
 
 That generalization can be useful, but only if the process definition still respects the alloy family, machine route, and reuse policy.
 
-## How EBM differs commercially from LPBF
+## How EBM differs from LPBF
 
 The most practical differences are:
 

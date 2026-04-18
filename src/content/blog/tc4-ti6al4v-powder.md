@@ -31,7 +31,7 @@ TC4 also works across more than one AM process. LPBF remains the most common rou
 
 ## Powder points that matter
 
-For LPBF, buyers often request 15-45 um or 15-53 um. EBM usually moves to a coarser range, while DED can require a very different cut depending on nozzle design and feed method. The correct answer is process-specific rather than universal.
+For LPBF, teams often request 15-45 um or 15-53 um. EBM usually moves to a coarser range, while DED can require a very different cut depending on nozzle design and feed method. The correct answer is process-specific rather than universal.
 
 Titanium evaluation should never stop at PSD alone. Oxygen, nitrogen, morphology, satellite level, and packing behavior directly affect how safely the powder can be introduced into a repeatable process. If the project includes reuse, baseline chemistry becomes even more important because reused titanium can move out of tolerance faster than many teams expect.
 
@@ -55,4 +55,4 @@ If the end use is really aerospace structural hardware rather than titanium AM i
 
 ## The practical takeaway
 
-Use TC4 when the part is structural, weight-sensitive, and needs a titanium route with broad AM familiarity. Define the grade intent, the process route, and the oxygen logic before treating Ti64 as a generic catalog choice.
+Use TC4 when the part is structural, weight-sensitive, and needs a titanium route with broad AM familiarity. Define the grade intent, the process route, and the oxygen logic before treating Ti64 as a generic titanium option.

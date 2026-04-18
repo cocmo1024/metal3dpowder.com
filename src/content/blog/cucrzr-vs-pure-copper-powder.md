@@ -19,7 +19,7 @@ That is why many AM copper projects end up landing on CuCrZr even when the first
 
 If the project is chasing the highest possible conductivity and the machine route is already validated for pure copper, pure copper may deserve review. If the project needs a more usable balance of conductivity, mechanical strength, and post-build performance, CuCrZr is usually the safer first choice.
 
-## Why CuCrZr is often easier to commercialize
+## Why CuCrZr is often easier to put into real hardware
 
 Teams choose CuCrZr because it solves the real AM problem more often than the theoretical materials problem. The part needs conductivity, but it also needs to print repeatably and survive service.
 
@@ -51,4 +51,4 @@ That is why it remains one of the most common conductive AM alloy requests.
 
 Use pure copper only when the project has already validated why maximum conductivity justifies the added process burden. Use CuCrZr when the project needs a better balance of conductivity, mechanical performance, and practical manufacturability.
 
-For stocked copper-family guidance on this site, see the dedicated [CuCrZr powder guide](/posts/Alloys/cucrzr-copper-powder/).
+For copper-family guidance on this site, see the dedicated [CuCrZr powder guide](/posts/Alloys/cucrzr-copper-powder/). If the real use case is conductive tooling or welding contacts rather than thermal blocks, continue with the narrower [CuCrZr conductive tooling page](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
