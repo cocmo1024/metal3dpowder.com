@@ -46,6 +46,7 @@ const blogPageViews: Record<string, number> = {
   'ta1-powder-chemical-and-biomedical-parts': 6100,
   'cocrmo-cocrw-powder': 5100,
   'cocrmo-powder-wear-critical-industrial-parts': 5900,
+  'cocrmo-vs-stainless-powder-wear-critical-industrial-hardware': 6100,
   'lpbf-powder-particle-size-guide': 4300,
   'in718-vs-in625-powder': 3900,
   'in718-vs-hastelloy-x-powder-turbine-vs-furnace-hardware': 6400,
@@ -63,10 +64,14 @@ const blogPageViews: Record<string, number> = {
   'cucrzr-vs-pure-copper-powder': 4200,
   'ebm-powder-size-guide': 4000,
   'ti64-grade-23-vs-grade-5-powder': 5000,
+  'ti64-powder-lattice-brackets-and-lightweight-structural-nodes': 9200,
   'ded-powder-vs-wire-feedstock-guide': 5300,
   'cobalt-chrome-vs-titanium-powder-dental-am': 5100,
   'cocrmo-powder-dental-frameworks-and-crowns': 5800,
   'titanium-oxygen-limit-discussion-guide': 5300,
+  '17-4ph-powder-stronger-workholding-and-jig-hardware': 8200,
+  '316l-powder-filters-and-corrosion-side-mim-parts': 7900,
+  '17-4ph-powder-stronger-binder-jet-industrial-parts': 8100,
 };
 
 const blogPostImages: Record<string, string> = {
@@ -89,6 +94,7 @@ const blogPostImages: Record<string, string> = {
   'cocrmo-cocrw-powder': '/images/products/cocrmo.svg',
   'cocrmo-powder-dental-frameworks-and-crowns': '/images/products/cocrmo.svg',
   'cocrmo-powder-wear-critical-industrial-parts': '/images/products/cocrmo.svg',
+  'cocrmo-vs-stainless-powder-wear-critical-industrial-hardware': '/images/products/cocrmo.svg',
   'cucrzr-copper-powder': '/images/products/cucrzr.svg',
   'cucrzr-powder-rocket-engine-parts-and-heat-exchangers': '/images/products/cucrzr.svg',
   'cucrzr-powder-cold-plates-and-heat-sinks': '/images/products/cucrzr.svg',
@@ -117,10 +123,14 @@ const blogPostImages: Record<string, string> = {
   'cucrzr-vs-pure-copper-powder': '/images/products/cucrzr.svg',
   'ebm-powder-size-guide': '/images/products/titanium.svg',
   'ti64-grade-23-vs-grade-5-powder': '/images/products/titanium.svg',
+  'ti64-powder-lattice-brackets-and-lightweight-structural-nodes': '/images/products/titanium.svg',
   'ded-powder-vs-wire-feedstock-guide': '/og-image.svg',
   'cobalt-chrome-vs-titanium-powder-dental-am': '/images/products/cocrmo.svg',
   'titanium-oxygen-limit-discussion-guide': '/images/products/titanium.svg',
   'ta15-powder-elevated-temperature-aerospace-structures': '/images/products/titanium.svg',
+  '17-4ph-powder-stronger-workholding-and-jig-hardware': '/images/products/17-4ph.svg',
+  '316l-powder-filters-and-corrosion-side-mim-parts': '/images/products/316l.svg',
+  '17-4ph-powder-stronger-binder-jet-industrial-parts': '/images/products/17-4ph.svg',
 };
 
 export const getBlogPostPath = (postOrId: BlogPost | string) =>

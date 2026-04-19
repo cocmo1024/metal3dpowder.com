@@ -105,22 +105,24 @@ The cleanup rule is simple:
 - IN625 marine and chemical ducting
 - CuCrZr conductive tooling and welding contacts
 - Ti64 aircraft hydraulic manifolds and valve blocks
+- Ti64 lattice brackets and lightweight structural nodes
 - Ti64 Grade 23 orthopedic implants and medical components
 - 316L metal injection molding and binder jet parts
+- 316L filters and corrosion-side MIM parts
 - 17-4PH metal injection molding and binder jet parts
+- 17-4PH stronger workholding and jig hardware
+- 17-4PH stronger binder jet industrial parts
 - CuCrZr rocket engine parts and heat exchangers
 
 ## Core comparison pages live
 
 - IN718 vs Hastelloy X for turbine vs furnace hardware
-
-## Round 8 backlog
-
 - CoCrMo vs stainless for wear-critical industrial hardware
-- Ti64 powder for lattice brackets and lightweight structural nodes
-- 17-4PH powder for stronger workholding and jig hardware
+
+## Next backlog
+
 - 316L vs nickel powder for corrosion-side manifolds
 - CuCrZr vs pure copper for electrical contact hardware
 - IN625 vs Hastelloy X for chemical hot-gas hardware
-- 316L powder for filters and corrosion-side MIM parts
-- 17-4PH powder for stronger binder jet industrial parts
+- H13 powder for injection molding conformal cooling production tools
+- M300 powder for compact mold inserts in recurring production
