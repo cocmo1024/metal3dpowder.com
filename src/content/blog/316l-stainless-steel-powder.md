@@ -43,3 +43,5 @@ Another common mistake is assuming every stainless application should use 316L b
 Use 316L when the part needs corrosion-aware stainless behavior, broad LPBF familiarity, and a stable route for industrial hardware. If the real use case is corrosion-resistant manifolds, housings, and flow-path parts, continue with the narrower [316L industrial hardware guide](/posts/Alloys/316l-powder-corrosion-resistant-industrial-hardware/). If higher aged strength is the real target, move to [17-4PH](/posts/Alloys/316l-vs-17-4ph-powder/) instead of stretching 316L beyond its natural fit.
 
 If the actual hardware is a manifold or fluid-path part rather than general stainless hardware, continue with the dedicated [316L manifold and flow-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/).
+
+If the actual route is metal injection molding or binder jet rather than LPBF, continue with the dedicated [316L MIM and binder jet guide](/posts/Alloys/316l-powder-metal-injection-molding-and-binder-jet-parts/).

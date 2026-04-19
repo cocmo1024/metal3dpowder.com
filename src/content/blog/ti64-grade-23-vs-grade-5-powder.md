@@ -53,3 +53,5 @@ This comparison is still inside the Ti64 family. It should not be confused with 
 ## The practical takeaway
 
 Choose Grade 23 when the application needs the tighter ELI-style titanium route and can justify its specification discipline. Choose Grade 5 when the project remains strength-driven and a standard Ti64 route is sufficient. The right answer depends on what the program is actually trying to control.
+
+If the real use case is orthopedic or medical titanium hardware rather than a broad grade comparison, continue with the dedicated [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/).

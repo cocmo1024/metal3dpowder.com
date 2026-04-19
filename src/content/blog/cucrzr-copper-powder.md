@@ -42,3 +42,5 @@ If the project is still undecided between CuCrZr and a pure-copper route, use th
 If the actual hardware target is a cold plate or heat sink rather than a general copper part, continue with the application-focused [CuCrZr thermal hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/). If the part is an induction coil or current-carrying copper component, continue with the dedicated [CuCrZr induction and conductor guide](/posts/Alloys/cucrzr-powder-induction-coils-and-current-carrying-parts/).
 
 If the actual use case is conductive tooling or a welding-contact component, continue with the dedicated [CuCrZr conductive tooling guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
+
+If the actual use case is copper heat exchangers or rocket-side copper hardware, continue with the frontier-focused [CuCrZr heat exchanger and rocket parts guide](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/).

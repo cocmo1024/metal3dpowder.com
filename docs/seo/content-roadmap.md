@@ -35,6 +35,8 @@ That means:
 - keep process words like `LPBF`, `EBM`, `DED`, `particle size`, and `oxygen` where they genuinely matter,
 - route application pages back into material pages so the search path stays powder-centered instead of drifting into generic hardware content.
 
+Use `docs/seo/powder-industry-opportunity-map.md` as the external-research layer before choosing the next batch.
+
 ## Content audit status
 
 The current stock set is now kept on site because it still fits powder-intent traffic:
@@ -102,6 +104,11 @@ The cleanup rule is simple:
 - TA1 chemical and biomedical titanium parts
 - IN625 marine and chemical ducting
 - CuCrZr conductive tooling and welding contacts
+- Ti64 aircraft hydraulic manifolds and valve blocks
+- Ti64 Grade 23 orthopedic implants and medical components
+- 316L metal injection molding and binder jet parts
+- 17-4PH metal injection molding and binder jet parts
+- CuCrZr rocket engine parts and heat exchangers
 
 ## Core comparison pages live
 
@@ -115,3 +122,5 @@ The cleanup rule is simple:
 - 316L vs nickel powder for corrosion-side manifolds
 - CuCrZr vs pure copper for electrical contact hardware
 - IN625 vs Hastelloy X for chemical hot-gas hardware
+- 316L powder for filters and corrosion-side MIM parts
+- 17-4PH powder for stronger binder jet industrial parts

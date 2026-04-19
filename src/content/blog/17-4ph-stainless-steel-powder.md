@@ -55,3 +55,5 @@ That is why the best 17-4PH evaluations describe both the build route and the po
 ## The practical takeaway
 
 Use 17-4PH when the hardware is genuinely strength-driven and the final heat-treated condition is part of the design intent. If the application is industrial fixturing, tooling-support hardware, or stronger stainless production aids, continue with the narrower [17-4PH application guide](/posts/Alloys/17-4ph-powder-industrial-fixtures-and-tooling-hardware/). If the decision is still open, compare it directly against [316L vs 17-4PH powder](/posts/Alloys/316l-vs-17-4ph-powder/) before choosing on habit.
+
+If the actual route is metal injection molding or binder jet rather than LPBF, continue with the dedicated [17-4PH MIM and binder jet guide](/posts/Alloys/17-4ph-powder-metal-injection-molding-and-binder-jet-parts/).
