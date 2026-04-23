@@ -52,3 +52,5 @@ For the full side-by-side choice, use the [H13 vs M300 powder guide](/posts/Allo
 If the application is primarily mold tooling, core inserts, or production fixtures, continue with the narrower [M300 tooling applications guide](/posts/Alloys/m300-powder-mold-tooling-inserts/).
 
 If the actual use case is compact production tooling or a core insert, continue with the dedicated [M300 core insert guide](/posts/Alloys/m300-powder-core-inserts-and-compact-production-tooling/).
+
+If the actual use case is a compact mold insert in recurring production, continue with the dedicated [M300 recurring-production insert page](/posts/Alloys/m300-powder-compact-mold-inserts-in-recurring-production/).

@@ -96,8 +96,10 @@ The cleanup rule is simple:
 - AlSi10Mg UAV structures and electronics housings
 - H13 conformal cooling inserts
 - H13 die-casting inserts
+- H13 injection molding conformal cooling production tools
 - M300 mold tooling and inserts
 - M300 core inserts and compact production tooling
+- M300 compact mold inserts in recurring production
 - CoCrMo dental frameworks and crowns
 - CoCrMo wear-critical industrial parts
 - Cobalt chrome vs titanium for dental AM
@@ -118,11 +120,13 @@ The cleanup rule is simple:
 
 - IN718 vs Hastelloy X for turbine vs furnace hardware
 - CoCrMo vs stainless for wear-critical industrial hardware
+- 316L vs nickel powder for corrosion-side manifolds
+- CuCrZr vs pure copper powder for electrical contact hardware
+- IN625 vs Hastelloy X powder for chemical hot-gas hardware
 
 ## Next backlog
 
-- 316L vs nickel powder for corrosion-side manifolds
-- CuCrZr vs pure copper for electrical contact hardware
-- IN625 vs Hastelloy X for chemical hot-gas hardware
-- H13 powder for injection molding conformal cooling production tools
-- M300 powder for compact mold inserts in recurring production
+- Ti64 powder for satellite brackets and propulsion support hardware
+- IN718 powder for hot-side structural housings and casings
+- CoCrMo powder for pump sleeves and valve-seat wear hardware
+- AlSi10Mg powder for UAV motor mounts and thermal electronics frames

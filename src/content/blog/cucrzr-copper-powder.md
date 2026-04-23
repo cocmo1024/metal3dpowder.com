@@ -44,3 +44,5 @@ If the actual hardware target is a cold plate or heat sink rather than a general
 If the actual use case is conductive tooling or a welding-contact component, continue with the dedicated [CuCrZr conductive tooling guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
 
 If the actual use case is copper heat exchangers or rocket-side copper hardware, continue with the frontier-focused [CuCrZr heat exchanger and rocket parts guide](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/).
+
+If the real question is whether CuCrZr or pure copper is better for electrical contact hardware, continue with the dedicated [electrical-contact comparison](/posts/Alloys/cucrzr-vs-pure-copper-powder-electrical-contact-hardware/).

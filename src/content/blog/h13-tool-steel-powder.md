@@ -66,3 +66,5 @@ For the direct side-by-side decision, use the [H13 vs M300 tooling guide](/posts
 If the specific application is conformal cooling or insert-side thermal control, continue with the dedicated [H13 conformal cooling insert guide](/posts/Alloys/h13-powder-conformal-cooling-inserts/).
 
 If the actual tool is a die-casting insert rather than a general hot-work tool, continue with the dedicated [H13 die-casting insert guide](/posts/Alloys/h13-powder-die-casting-inserts/).
+
+If the actual tool is an injection molding production tool with conformal cooling rather than a broad insert discussion, continue with the dedicated [H13 injection molding production-tool page](/posts/Alloys/h13-powder-injection-molding-conformal-cooling-production-tools/).

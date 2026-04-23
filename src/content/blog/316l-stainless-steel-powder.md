@@ -45,3 +45,5 @@ Use 316L when the part needs corrosion-aware stainless behavior, broad LPBF fami
 If the actual hardware is a manifold or fluid-path part rather than general stainless hardware, continue with the dedicated [316L manifold and flow-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/).
 
 If the actual route is metal injection molding or binder jet rather than LPBF, continue with the dedicated [316L MIM and binder jet guide](/posts/Alloys/316l-powder-metal-injection-molding-and-binder-jet-parts/).
+
+If the real material decision is between stainless and nickel on a corrosion-side manifold, continue with the dedicated [316L vs nickel manifold comparison](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/).

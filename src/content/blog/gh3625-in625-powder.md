@@ -50,3 +50,5 @@ If the part is primarily structural at elevated temperature, [IN718 powder](/pos
 If the actual use case is corrosion-heavy hot-side hardware rather than a general nickel corrosion route, continue with the focused [IN625 hot-side application guide](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/).
 
 If the actual use case is marine or chemical ducting rather than general corrosion hardware, continue with the dedicated [IN625 ducting guide](/posts/Alloys/in625-powder-marine-and-chemical-ducting/).
+
+If the actual decision sits between IN625 and Hastelloy X on chemical hot-gas hardware, continue with the dedicated [IN625 vs Hastelloy X chemical hot-gas comparison](/posts/Alloys/in625-vs-hastelloy-x-powder-chemical-hot-gas-hardware/).
