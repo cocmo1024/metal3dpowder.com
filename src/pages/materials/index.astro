@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import ContentHub from '../../components/ContentHub.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortBlogPosts, type BlogPost } from '../../data/blog';
+import { hubLandings } from '../../data/contentHubs';
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
+import { siteInfo } from '../../data/site';
+
+const landing = hubLandings.materials;
+const allPosts = sortBlogPosts(await getCollection('blog'));
+const postMap = new Map(allPosts.map((post) => [post.id, post]));
+const selectedIds = [...new Set(landing.hubs.flatMap((hub) => hub.postIds))].slice(0, 12);
+const posts = selectedIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
+const cards = landing.hubs.map((hub) => ({
+  title: hub.title,
+  description: hub.description,
+  href: `/materials/${hub.slug}/`,
+}));
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const description = `${landing.description} Browse material-led metal powder guides for overseas AM powder sourcing.`;
+const schema = [
+  buildCollectionPageSchema({
+    site: siteUrl,
+    path: landing.path,
+    name: landing.title,
+    description,
+    items: cards.map((card) => ({ name: card.title, path: card.href })),
+  }),
+  buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Materials' },
+  ]),
+];
+---
+
+<BaseLayout title={`${landing.title} | ${siteInfo.brand}`} description={description} canonical={landing.path} schema={schema}>
+  <SiteHeader pathname={Astro.url.pathname} />
+  <ContentHub
+    eyebrow="Materials"
+    title={landing.title}
+    description={landing.description}
+    cards={cards}
+    posts={posts}
+    postsTitle="Selected material guides"
+  />
+  <SiteFooter />
+</BaseLayout>

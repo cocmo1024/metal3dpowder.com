@@ -1,0 +1,100 @@
+---
+import type { BlogPost } from '../data/blog';
+import BlogPostGrid from './BlogPostGrid.astro';
+import HubCardGrid from './HubCardGrid.astro';
+
+interface HubCard {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  cards?: HubCard[];
+  posts?: BlogPost[];
+  postsTitle?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  cards = [],
+  posts = [],
+  postsTitle = 'Related articles',
+} = Astro.props;
+---
+
+<main class="page-shell hub-page">
+  <section class="hub-intro">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </section>
+
+  {cards.length ? <HubCardGrid items={cards} ariaLabel={`${title} sections`} /> : null}
+
+  {
+    posts.length ? (
+      <section class="hub-section" aria-labelledby="hub-posts-title">
+        <h2 id="hub-posts-title">{postsTitle}</h2>
+        <BlogPostGrid posts={posts} ariaLabel={postsTitle} />
+      </section>
+    ) : null
+  }
+</main>
+
+<style>
+  .hub-page {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 2rem 4rem;
+  }
+
+  .hub-intro {
+    display: grid;
+    gap: 0.65rem;
+    max-width: 58rem;
+  }
+
+  .hub-intro h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.1vw, 2.45rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 730;
+  }
+
+  .hub-intro p:last-child {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.72;
+  }
+
+  .hub-section {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .hub-section h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 720px) {
+    .hub-page {
+      gap: 1.3rem;
+      padding-block: 1.85rem 3.2rem;
+    }
+
+    .hub-intro h1 {
+      font-size: clamp(1.5rem, 7vw, 2rem);
+      line-height: 1.12;
+    }
+  }
+</style>

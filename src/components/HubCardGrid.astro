@@ -1,0 +1,76 @@
+---
+interface HubCard {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface Props {
+  items: HubCard[];
+  ariaLabel?: string;
+}
+
+const { items, ariaLabel = 'Topic hubs' } = Astro.props;
+---
+
+<section class="hub-card-grid" aria-label={ariaLabel}>
+  {items.map((item) => (
+    <article class="hub-card">
+      <h2><a href={item.href}>{item.title}</a></h2>
+      <p>{item.description}</p>
+    </article>
+  ))}
+</section>
+
+<style>
+  .hub-card-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hub-card {
+    display: grid;
+    gap: 0.7rem;
+    align-content: start;
+    min-height: 10rem;
+    padding: 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.1rem;
+    background: rgba(12, 17, 22, 0.9);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+  }
+
+  .hub-card h2 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.28;
+    letter-spacing: -0.018em;
+  }
+
+  .hub-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.72;
+  }
+
+  .hub-card a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 980px) {
+    .hub-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .hub-card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hub-card {
+      min-height: 0;
+    }
+  }
+</style>

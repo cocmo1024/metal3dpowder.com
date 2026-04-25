@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import ContentHub from '../../components/ContentHub.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getBlogPostPath, sortBlogPosts, type BlogPost } from '../../data/blog';
+import { comparisonPostIds } from '../../data/contentHubs';
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
+import { siteInfo } from '../../data/site';
+
+const allPosts = sortBlogPosts(await getCollection('blog'));
+const postMap = new Map(allPosts.map((post) => [post.id, post]));
+const posts = comparisonPostIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const title = 'Metal Powder Comparison Guides';
+const description = 'Practical comparison guides for AM powder buyers comparing titanium, stainless, nickel, copper, tool steel, and cobalt chrome powder routes.';
+const schema = [
+  buildCollectionPageSchema({
+    site: siteUrl,
+    path: '/comparisons/',
+    name: title,
+    description,
+    items: posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
+  }),
+  buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Comparisons' },
+  ]),
+];
+---
+
+<BaseLayout title={`${title} | ${siteInfo.brand}`} description={description} canonical="/comparisons/" schema={schema}>
+  <SiteHeader pathname={Astro.url.pathname} />
+  <ContentHub
+    eyebrow="Comparisons"
+    title={title}
+    description={description}
+    posts={posts}
+    postsTitle="Comparison articles"
+  />
+  <SiteFooter />
+</BaseLayout>
+

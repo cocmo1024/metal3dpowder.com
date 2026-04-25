@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import ContentHub from '../../components/ContentHub.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getBlogPostPath, sortBlogPosts, type BlogPost } from '../../data/blog';
+import { knowledgePostIds } from '../../data/contentHubs';
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
+import { siteInfo } from '../../data/site';
+
+const allPosts = sortBlogPosts(await getCollection('blog'));
+const postMap = new Map(allPosts.map((post) => [post.id, post]));
+const posts = knowledgePostIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
+const cards = [
+  {
+    title: 'Process Centers',
+    description: 'LPBF, EBM, DED, binder jet, and MIM powder guidance organized by manufacturing route.',
+    href: '/processes/',
+  },
+  {
+    title: 'Comparison Guides',
+    description: 'Side-by-side material and alloy decisions for practical powder selection and application fit.',
+    href: '/comparisons/',
+  },
+  {
+    title: 'Material Centers',
+    description: 'Titanium, stainless, nickel, copper, tool steel, aluminum, and cobalt chrome powder pages.',
+    href: '/materials/',
+  },
+];
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const title = 'Metal Powder Knowledge Base';
+const description = 'Core metal powder knowledge for AM buyers, including particle size, process fit, oxygen control, and practical powder selection basics.';
+const schema = [
+  buildCollectionPageSchema({
+    site: siteUrl,
+    path: '/knowledge/',
+    name: title,
+    description,
+    items: [
+      ...cards.map((card) => ({ name: card.title, path: card.href })),
+      ...posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
+    ],
+  }),
+  buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Knowledge' },
+  ]),
+];
+---
+
+<BaseLayout title={`${title} | ${siteInfo.brand}`} description={description} canonical="/knowledge/" schema={schema}>
+  <SiteHeader pathname={Astro.url.pathname} />
+  <ContentHub
+    eyebrow="Knowledge"
+    title={title}
+    description={description}
+    cards={cards}
+    posts={posts}
+    postsTitle="Core powder knowledge"
+  />
+  <SiteFooter />
+</BaseLayout>
