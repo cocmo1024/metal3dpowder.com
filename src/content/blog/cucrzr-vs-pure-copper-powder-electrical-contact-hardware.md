@@ -32,7 +32,7 @@ That is why CuCrZr appears so often in current-carrying parts, welding-contact h
 
 A general copper comparison asks how much conductivity the project needs. An electrical-contact article asks a narrower question: whether the part can keep doing its job after real contact pressure, current cycling, and physical use enter the picture.
 
-That makes this search intent more commercially valuable and closer to an actual powder decision.
+That makes this a narrower and more decision-ready material comparison.
 
 ## The shortest decision rule
 

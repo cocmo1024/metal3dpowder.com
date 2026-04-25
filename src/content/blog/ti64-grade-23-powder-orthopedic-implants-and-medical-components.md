@@ -30,7 +30,7 @@ Grade 23 stays inside the Ti-6Al-4V family, but with lower oxygen and iron than 
 
 ## Why this is a high-value powder topic
 
-Medical titanium programs are rarely casual. The searcher is usually already thinking about:
+Medical titanium programs are rarely casual. The project is usually already thinking about:
 
 - grade intent,
 - release logic,

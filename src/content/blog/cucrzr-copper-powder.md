@@ -18,7 +18,7 @@ CuCrZr is one of the most practical copper alloys for additive manufacturing whe
 
 Typical use cases include thermal management hardware, induction tooling, electrical components, and heat-transfer parts where conductivity matters but the part cannot be mechanically weak.
 
-That is why CuCrZr is common in search intent tied to:
+That is why CuCrZr is commonly discussed in:
 
 - heat sinks and thermal management
 - tooling with cooling performance

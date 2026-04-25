@@ -83,8 +83,10 @@ The cleanup rule is simple:
 ## Core application pages live
 
 - Aerospace Ti64 structural parts
+- Ti64 satellite brackets and propulsion support hardware
 - TA15 elevated-temperature aerospace structures
 - IN718 hot-section parts
+- IN718 hot-side structural housings and casings
 - IN625 corrosion-heavy hot-side hardware
 - Hastelloy X furnace and hot-gas hardware
 - CuCrZr cold plates and heat sinks
@@ -94,6 +96,7 @@ The cleanup rule is simple:
 - 17-4PH industrial fixtures and tooling hardware
 - AlSi10Mg lightweight housings and brackets
 - AlSi10Mg UAV structures and electronics housings
+- AlSi10Mg UAV motor mounts and thermal electronics frames
 - H13 conformal cooling inserts
 - H13 die-casting inserts
 - H13 injection molding conformal cooling production tools
@@ -102,6 +105,7 @@ The cleanup rule is simple:
 - M300 compact mold inserts in recurring production
 - CoCrMo dental frameworks and crowns
 - CoCrMo wear-critical industrial parts
+- CoCrMo pump sleeves and valve-seat wear hardware
 - Cobalt chrome vs titanium for dental AM
 - TA1 chemical and biomedical titanium parts
 - IN625 marine and chemical ducting
@@ -126,7 +130,7 @@ The cleanup rule is simple:
 
 ## Next backlog
 
-- Ti64 powder for satellite brackets and propulsion support hardware
-- IN718 powder for hot-side structural housings and casings
-- CoCrMo powder for pump sleeves and valve-seat wear hardware
-- AlSi10Mg powder for UAV motor mounts and thermal electronics frames
+- 316L powder for sensor housings and corrosion-side instrumentation parts
+- IN625 powder for chemical nozzles and injector blocks
+- CuCrZr powder for RF heat spreaders and busbar transition hardware
+- Ti64 powder for drone landing gear brackets and support nodes

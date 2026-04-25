@@ -26,7 +26,7 @@ That is exactly where M300 tends to stay practical.
 
 ## Why this is narrower than a general tooling article
 
-A broad M300 tooling article can cover many insert and mold topics. This narrower page is closer to the actual powder decision because the searcher is already thinking about recurring production, compact insert size, and real tool deployment.
+A broad M300 tooling article can cover many insert and mold topics. This narrower page is closer to the actual powder decision because the project is already focused on recurring production, compact insert size, and real tool deployment.
 
 That usually means the project is closer to a purchase and qualification decision than a generic mold-design search.
 

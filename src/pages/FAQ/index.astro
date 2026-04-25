@@ -8,7 +8,7 @@ import { siteInfo } from '../../data/site';
 
 const title = 'FAQ | Metal 3D Powder';
 const description =
-  'Metal additive manufacturing FAQ covering powder basics, quality control, quotation details, storage, and export-oriented buying questions.';
+  'Metal additive manufacturing FAQ covering powder basics, quality control, material selection, storage, and shipment-related questions.';
 
 const groupedFaqs = Object.entries(
   faqs.reduce<Record<string, typeof faqs>>((acc, item) => {
@@ -42,10 +42,10 @@ const schema = [
   <main class="page-shell content-page faq-page">
     <section class="page-intro">
       <p class="eyebrow">FAQ</p>
-      <h1>Technical and commercial questions buyers usually ask first.</h1>
+      <h1>Technical questions engineering teams usually ask first.</h1>
       <p>
-        This FAQ focuses on the powder, quality, quotation, and delivery questions that usually matter first to
-        engineering teams and overseas buyers.
+        This FAQ focuses on the powder, quality, material-selection, storage, and shipment questions that usually
+        matter first to engineering teams evaluating AM powder.
       </p>
     </section>
 

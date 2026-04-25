@@ -36,4 +36,4 @@ If the application is conductivity-driven, a copper route may make more sense. I
 
 Use AlSi10Mg powder when the application is a UAV structure or electronics housing that values low mass, packaging geometry, and stable LPBF behavior more than extreme thermal or mechanical specialization.
 
-For the broader alloy context, return to the main [AlSi10Mg powder guide](/posts/Alloys/alsi10mg-powder/). If the part is more generally about lightweight housings, brackets, or enclosure hardware, use the wider [AlSi10Mg applications page](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/).
+For the broader alloy context, return to the main [AlSi10Mg powder guide](/posts/Alloys/alsi10mg-powder/). If the part is more generally about lightweight housings, brackets, or enclosure hardware, use the wider [AlSi10Mg applications page](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/). If the hardware is specifically a UAV motor mount or a thermal electronics frame, continue with the narrower [AlSi10Mg motor-mount and electronics-frame page](/posts/Alloys/alsi10mg-powder-uav-motor-mounts-and-thermal-electronics-frames/).

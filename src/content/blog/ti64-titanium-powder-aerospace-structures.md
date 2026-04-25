@@ -51,4 +51,4 @@ That is why the application decision should always answer two questions together
 
 ## The practical takeaway
 
-Ti64 is strongest as an aerospace AM powder when the part is structurally loaded, weight-sensitive, and geometrically valuable enough that AM changes the design outcome. If the part is really a structural titanium problem rather than a generic metal problem, Ti64 usually deserves to be the first route reviewed.
+Ti64 is strongest as an aerospace AM powder when the part is structurally loaded, weight-sensitive, and geometrically valuable enough that AM changes the design outcome. If the part is really a structural titanium problem rather than a generic metal problem, Ti64 usually deserves to be the first route reviewed. If the hardware is specifically a satellite bracket or propulsion support part, continue with the narrower [Ti64 space-structure page](/posts/Alloys/ti64-powder-satellite-brackets-and-propulsion-support-hardware/).

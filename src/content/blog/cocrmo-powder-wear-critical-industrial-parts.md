@@ -34,4 +34,4 @@ If the project is really corrosion-only and not wear-driven, stainless or nickel
 
 ## The practical takeaway
 
-Use CoCrMo when the application is a wear-critical industrial part that needs more surface durability and corrosion resistance than stainless routes usually provide. That is the real industrial use case behind many cobalt chrome searches.
+Use CoCrMo when the application is a wear-critical industrial part that needs more surface durability and corrosion resistance than stainless routes usually provide. If the hardware is specifically a pump sleeve or valve-seat wear component, continue with the narrower [CoCrMo pump and valve-seat page](/posts/Alloys/cocrmo-powder-pump-sleeves-and-valve-seat-wear-hardware/).

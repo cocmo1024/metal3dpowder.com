@@ -35,7 +35,7 @@ That last point matters because EBM is often tied to a reuse workflow more direc
 
 ## Why titanium dominates the EBM conversation
 
-EBM search intent is frequently tied to titanium because Ti6Al4V remains the most familiar EBM route. That does not mean EBM is only for titanium. It does mean that many teams first encounter EBM through titanium and then generalize the powder logic to other alloys.
+EBM is frequently tied to titanium because Ti6Al4V remains the most familiar EBM route. That does not mean EBM is only for titanium. It does mean that many teams first encounter EBM through titanium and then generalize the powder logic to other alloys.
 
 That generalization can be useful, but only if the process definition still respects the alloy family, machine route, and reuse policy.
 
