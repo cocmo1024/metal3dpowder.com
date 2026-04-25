@@ -52,3 +52,5 @@ If the actual use case is corrosion-heavy hot-side hardware rather than a genera
 If the actual use case is marine or chemical ducting rather than general corrosion hardware, continue with the dedicated [IN625 ducting guide](/posts/Alloys/in625-powder-marine-and-chemical-ducting/).
 
 If the actual decision sits between IN625 and Hastelloy X on chemical hot-gas hardware, continue with the dedicated [IN625 vs Hastelloy X chemical hot-gas comparison](/posts/Alloys/in625-vs-hastelloy-x-powder-chemical-hot-gas-hardware/).
+
+If the actual hardware is a chemical nozzle or injector block rather than a broad corrosion-resistant part, continue with the narrower [IN625 nozzle and injector page](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/).

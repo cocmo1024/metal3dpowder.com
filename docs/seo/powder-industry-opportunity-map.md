@@ -22,6 +22,18 @@ There are four useful buckets for powder traffic:
 3. fast-growing frontier applications,
 4. process-led powder searches.
 
+## Current heat map for 2026
+
+If the goal is high-value traffic rather than generic AM pageviews, the hottest relevant sectors right now are:
+
+1. AI data center liquid cooling and power-delivery hardware,
+2. aerospace, space, and UAV structural hardware,
+3. medical implant programs,
+4. semiconductor and clean-process fluid hardware,
+5. scalable MIM and binder-jet stainless production.
+
+These sectors matter because they combine active industry investment with parts that still force a real material decision.
+
 ## Highest-value sectors
 
 These are the sectors where one approved powder route can be worth a lot, even if total search volume is not the highest.
@@ -139,6 +151,8 @@ Strong application patterns:
 - rocket-engine copper parts,
 - e-mobility copper hardware.
 
+This bucket is even stronger now because AI data-center buildout keeps pushing direct liquid cooling, cold plates, heat spreaders, and compact current-carrying copper hardware into more programs.
+
 ### Lightweight aluminum and titanium structures
 
 Strong materials:
@@ -153,6 +167,55 @@ Strong application patterns:
 - lightweight brackets,
 - lattice-enabled nodes,
 - flight-control hydraulic hardware.
+
+This bucket stays strong because aerospace, space, and UAV systems keep rewarding structural efficiency, lighter support hardware, and part consolidation.
+
+## Highest-opportunity current-sector pairings
+
+### AI infrastructure and liquid cooling
+
+Strong materials:
+
+- CuCrZr,
+- pure copper in selected conductivity-first cases,
+- 316L for supporting manifolds and sensor-side stainless hardware.
+
+Strong application patterns:
+
+- GPU cold plates,
+- liquid-cooling manifolds,
+- RF heat spreaders,
+- busbar transitions,
+- coolant-side instrumentation hardware.
+
+### Medical implants and patient-specific hardware
+
+Strong materials:
+
+- Ti64 Grade 23,
+- CoCrMo.
+
+Strong application patterns:
+
+- spinal cages,
+- porous implant structures,
+- orthopedic implants,
+- dental frameworks.
+
+### Semiconductor and clean-process hardware
+
+Strong materials:
+
+- 316L,
+- CuCrZr,
+- IN625 in selected chemical-service hardware.
+
+Strong application patterns:
+
+- gas manifolds,
+- sensor housings,
+- heat spreaders,
+- corrosion-aware routed hardware.
 
 ## How powder searchers usually search
 
@@ -228,3 +291,12 @@ Priority 2:
 - 316L powder for filters and corrosion-side MIM parts
 - 17-4PH powder for stronger binder jet industrial parts
 - CuCrZr powder for induction coils and electrical contacts
+
+Priority 3:
+
+- CuCrZr powder for AI data center cold plates and GPU liquid-cooling manifolds
+- CuCrZr powder for RF heat spreaders and busbar transition hardware
+- 316L powder for semiconductor gas manifolds and sensor housings
+- Ti64 Grade 23 powder for spinal cages and porous implant structures
+- Ti64 powder for drone landing gear brackets and support nodes
+- IN625 powder for chemical nozzles and injector blocks

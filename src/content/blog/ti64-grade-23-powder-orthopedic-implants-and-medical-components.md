@@ -45,4 +45,4 @@ If the part is really an aerospace or industrial structural component without me
 
 ## The practical takeaway
 
-Use Ti64 Grade 23 powder when the application is an orthopedic implant or medical titanium component that needs a tougher, cleaner ELI-style Ti64 route. For the direct grade-level comparison, continue with the [Ti64 Grade 23 vs Grade 5 guide](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/). For broader structural titanium logic, move back to the main [TC4 / Ti64 powder guide](/posts/Alloys/tc4-ti6al4v-powder/).
+Use Ti64 Grade 23 powder when the application is an orthopedic implant or medical titanium component that needs a tougher, cleaner ELI-style Ti64 route. For the direct grade-level comparison, continue with the [Ti64 Grade 23 vs Grade 5 guide](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/). For broader structural titanium logic, move back to the main [TC4 / Ti64 powder guide](/posts/Alloys/tc4-ti6al4v-powder/). If the implant is specifically a spinal cage or porous implant structure, continue with the narrower [Ti64 Grade 23 spinal-implant page](/posts/Alloys/ti64-grade-23-powder-spinal-cages-and-porous-implant-structures/).

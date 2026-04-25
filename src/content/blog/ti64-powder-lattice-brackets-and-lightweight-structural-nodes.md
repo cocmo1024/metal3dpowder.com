@@ -42,4 +42,4 @@ If the part is not structurally loaded, not weight-sensitive, or easily made as 
 
 ## The practical takeaway
 
-Use Ti64 powder for lattice brackets and lightweight structural nodes when the geometry is structurally driven, weight-sensitive, and difficult to execute efficiently as a machined solid part. For broader aerospace structural hardware, return to the main [Ti64 aerospace structures page](/posts/Alloys/ti64-titanium-powder-aerospace-structures/).
+Use Ti64 powder for lattice brackets and lightweight structural nodes when the geometry is structurally driven, weight-sensitive, and difficult to execute efficiently as a machined solid part. For broader aerospace structural hardware, return to the main [Ti64 aerospace structures page](/posts/Alloys/ti64-titanium-powder-aerospace-structures/). If the structural hardware is specifically tied to drone landing gear or support nodes, continue with the narrower [Ti64 drone support page](/posts/Alloys/ti64-powder-drone-landing-gear-brackets-and-support-nodes/).

@@ -119,6 +119,12 @@ The cleanup rule is simple:
 - 17-4PH stronger workholding and jig hardware
 - 17-4PH stronger binder jet industrial parts
 - CuCrZr rocket engine parts and heat exchangers
+- CuCrZr AI data center cold plates and GPU liquid-cooling manifolds
+- CuCrZr RF heat spreaders and busbar transition hardware
+- 316L semiconductor gas manifolds and sensor housings
+- Ti64 Grade 23 spinal cages and porous implant structures
+- Ti64 drone landing gear brackets and support nodes
+- IN625 chemical nozzles and injector blocks
 
 ## Core comparison pages live
 
@@ -130,7 +136,7 @@ The cleanup rule is simple:
 
 ## Next backlog
 
-- 316L powder for sensor housings and corrosion-side instrumentation parts
-- IN625 powder for chemical nozzles and injector blocks
-- CuCrZr powder for RF heat spreaders and busbar transition hardware
-- Ti64 powder for drone landing gear brackets and support nodes
+- 17-4PH powder for actuator housings and latch hardware in industrial automation
+- AlSi10Mg powder for lightweight radar and EO sensor housings
+- CuCrZr powder for battery-thermal plates and inverter cooling hardware
+- Ti64 powder for compact robotic arm support brackets

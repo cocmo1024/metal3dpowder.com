@@ -43,4 +43,4 @@ Both applications care about heat, but the design logic can differ. Heat sinks o
 
 CuCrZr powder is a strong AM route when the application is thermal hardware that needs conductivity plus structural credibility. For heat sinks and cold plates, it is usually worth evaluating when pure copper feels too soft or too process-sensitive for the real hardware problem.
 
-If the real hardware is conductive tooling or a welding-contact component rather than thermal hardware, continue with the dedicated [CuCrZr conductive tooling page](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
+If the real hardware is conductive tooling or a welding-contact component rather than thermal hardware, continue with the dedicated [CuCrZr conductive tooling page](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/). If the actual use case is AI server liquid-cooling hardware rather than a broad thermal part class, continue with the narrower [CuCrZr AI cold-plate page](/posts/Alloys/cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds/).
