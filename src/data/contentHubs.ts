@@ -39,6 +39,7 @@ export const materialHubs: HubDefinition[] = [
     title: 'Stainless Steel Powder',
     description: '316L and 17-4PH powder routes for LPBF, MIM, binder jet, manifolds, fixtures, and industrial hardware.',
     postIds: [
+      'steel-metal-powder-for-3d-printing-guide',
       '316l-stainless-steel-powder',
       '17-4ph-stainless-steel-powder',
       '316l-vs-17-4ph-powder',
@@ -90,6 +91,7 @@ export const materialHubs: HubDefinition[] = [
     title: 'Tool Steel Powder',
     description: 'H13 and M300 powder content for conformal cooling, die-casting inserts, mold inserts, and production tooling.',
     postIds: [
+      'steel-metal-powder-for-3d-printing-guide',
       'h13-tool-steel-powder',
       'm300-maraging-steel-powder',
       'h13-vs-m300-powder',
@@ -348,6 +350,10 @@ export const comparisonPostIds = [
 ];
 
 export const knowledgePostIds = [
+  'metal-powder-for-3d-printing-guide',
+  'additive-manufacturing-powder-supplier-guide',
+  'metal-powder-for-3d-printing-price-guide',
+  'steel-metal-powder-for-3d-printing-guide',
   'lpbf-powder-particle-size-guide',
   'ebm-powder-size-guide',
   'ded-powder-vs-wire-feedstock-guide',

@@ -16,6 +16,10 @@ export const blogCategoryPath = '/blog/';
 export const tagArchiveRobots = 'noindex,follow,max-image-preview:large';
 
 const blogPageViews: Record<string, number> = {
+  'metal-powder-for-3d-printing-guide': 13200,
+  'additive-manufacturing-powder-supplier-guide': 12100,
+  'metal-powder-for-3d-printing-price-guide': 11600,
+  'steel-metal-powder-for-3d-printing-guide': 10800,
   'tc4-ti6al4v-powder': 12400,
   'ti64-titanium-powder-aerospace-structures': 10800,
   'ti64-powder-satellite-brackets-and-propulsion-support-hardware': 8800,
@@ -98,6 +102,10 @@ const blogPageViews: Record<string, number> = {
 };
 
 const blogPostImages: Record<string, string> = {
+  'metal-powder-for-3d-printing-guide': '/og-image.svg',
+  'additive-manufacturing-powder-supplier-guide': '/og-image.svg',
+  'metal-powder-for-3d-printing-price-guide': '/og-image.svg',
+  'steel-metal-powder-for-3d-printing-guide': '/images/products/316l.svg',
   'tc4-ti6al4v-powder': '/images/products/titanium.svg',
   'ti64-titanium-powder-aerospace-structures': '/images/products/titanium.svg',
   'ti64-powder-evtol-brackets-and-lightweight-airframe-nodes': '/images/products/titanium.svg',
