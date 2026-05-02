@@ -16,6 +16,10 @@ export const blogCategoryPath = '/blog/';
 export const tagArchiveRobots = 'noindex,follow,max-image-preview:large';
 
 const blogPageViews: Record<string, number> = {
+  'titanium-powder-for-3d-printing-guide': 12800,
+  'nickel-alloy-powder-for-3d-printing-guide': 11800,
+  'copper-powder-for-3d-printing-guide': 11400,
+  'aluminum-powder-for-additive-manufacturing-guide': 10600,
   'metal-powder-for-3d-printing-guide': 13200,
   'additive-manufacturing-powder-supplier-guide': 12100,
   'metal-powder-for-3d-printing-price-guide': 11600,
@@ -102,6 +106,10 @@ const blogPageViews: Record<string, number> = {
 };
 
 const blogPostImages: Record<string, string> = {
+  'titanium-powder-for-3d-printing-guide': '/images/products/titanium.svg',
+  'nickel-alloy-powder-for-3d-printing-guide': '/images/products/in718.svg',
+  'copper-powder-for-3d-printing-guide': '/images/products/cucrzr.svg',
+  'aluminum-powder-for-additive-manufacturing-guide': '/images/products/alsi10mg.svg',
   'metal-powder-for-3d-printing-guide': '/og-image.svg',
   'additive-manufacturing-powder-supplier-guide': '/og-image.svg',
   'metal-powder-for-3d-printing-price-guide': '/og-image.svg',

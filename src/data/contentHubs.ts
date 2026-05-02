@@ -22,6 +22,7 @@ export const materialHubs: HubDefinition[] = [
     title: 'Titanium Powder',
     description: 'Ti64, Grade 23, Grade 2, and TA15 routes for structural, medical, and elevated-temperature AM parts.',
     postIds: [
+      'titanium-powder-for-3d-printing-guide',
       'tc4-ti6al4v-powder',
       'ti64-grade-23-vs-grade-5-powder',
       'ti64-grade-23-powder-orthopedic-implants-and-medical-components',
@@ -57,6 +58,7 @@ export const materialHubs: HubDefinition[] = [
     title: 'Nickel Alloy Powder',
     description: 'IN718, IN625, and Hastelloy X powder guidance for hot-side, corrosion, and chemical hardware.',
     postIds: [
+      'nickel-alloy-powder-for-3d-printing-guide',
       'gh4169-in718-powder',
       'gh3625-in625-powder',
       'hastelloy-x-powder',
@@ -74,6 +76,7 @@ export const materialHubs: HubDefinition[] = [
     title: 'Copper Alloy Powder',
     description: 'CuCrZr powder pages for cold plates, RF heat spreaders, induction coils, conductive tooling, and rocket-side hardware.',
     postIds: [
+      'copper-powder-for-3d-printing-guide',
       'cucrzr-copper-powder',
       'cucrzr-vs-pure-copper-powder',
       'cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds',
@@ -106,6 +109,7 @@ export const materialHubs: HubDefinition[] = [
     title: 'Aluminum Powder',
     description: 'AlSi10Mg powder pages for lightweight housings, UAV structures, motor mounts, and electronics frames.',
     postIds: [
+      'aluminum-powder-for-additive-manufacturing-guide',
       'alsi10mg-powder',
       'alsi10mg-powder-lightweight-housings-and-brackets',
       'alsi10mg-powder-uav-structures-and-electronics-housings',
@@ -351,6 +355,10 @@ export const comparisonPostIds = [
 
 export const knowledgePostIds = [
   'metal-powder-for-3d-printing-guide',
+  'titanium-powder-for-3d-printing-guide',
+  'nickel-alloy-powder-for-3d-printing-guide',
+  'copper-powder-for-3d-printing-guide',
+  'aluminum-powder-for-additive-manufacturing-guide',
   'additive-manufacturing-powder-supplier-guide',
   'metal-powder-for-3d-printing-price-guide',
   'steel-metal-powder-for-3d-printing-guide',
