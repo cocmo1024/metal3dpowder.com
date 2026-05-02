@@ -101,4 +101,44 @@ export const faqs: FAQItem[] = [
       'If your project is schedule-sensitive, send the target ship date in the first email so the quote can be scoped around actual delivery risk instead of only nominal production time.',
     ],
   },
+  {
+    category: 'Supplier Selection',
+    question: 'How should buyers compare additive manufacturing powder suppliers?',
+    answer: [
+      'Compare suppliers by alloy fit, target process, particle-size distribution, chemistry controls, documentation, packaging, lead time, and application risk. A lower price is not meaningful if the PSD range, oxygen limit, certificate scope, or lot size is different.',
+      'A strong supplier response should connect the powder to LPBF, EBM, DED, binder jet, MIM, or the buyer\'s actual process instead of only listing available grades.',
+    ],
+  },
+  {
+    category: 'Supplier Selection',
+    question: 'What is the biggest red flag in a metal powder quote?',
+    answer: [
+      'The biggest red flag is a quote that gives only alloy name and price. Serious powder buying needs process route, PSD, quantity, destination, packaging, documentation scope, and any chemistry or oxygen limits that affect the application.',
+      'If those details are missing, the quote may still be useful for a rough budget, but it should not be treated as a production-ready comparison.',
+    ],
+  },
+  {
+    category: 'Supplier Selection',
+    question: 'Should I choose a supplier with the lowest metal powder price?',
+    answer: [
+      'Not automatically. The lowest price may reflect a different PSD cut, looser chemistry, weaker documentation, larger minimum order, non-equivalent packaging, or unclear export assumptions.',
+      'For engineering projects, the better comparison is total usable value: powder fit, lot consistency, documents, lead time, and how much risk remains after the quote is received.',
+    ],
+  },
+  {
+    category: 'Application Fit',
+    question: 'Which metal powder is best for LPBF?',
+    answer: [
+      'There is no single best LPBF powder. The right choice depends on the application: Ti64 for lightweight structural parts, 316L for corrosion-resistant components, 17-4PH for heat-treatable stainless strength, IN718 for high-temperature nickel applications, AlSi10Mg for lightweight aluminum parts, and CuCrZr for conductive thermal hardware.',
+      'After alloy selection, the buyer still needs the correct PSD, morphology, chemistry, and documentation for the machine and project stage.',
+    ],
+  },
+  {
+    category: 'Application Fit',
+    question: 'What should I send if I do not know the correct alloy?',
+    answer: [
+      'Send the part application, operating temperature, load, corrosion exposure, conductivity or thermal requirement, target process, quantity, and whether the project is research, prototype, qualification, or production.',
+      'A useful supplier can then help narrow the alloy family and powder window. A supplier cannot do that well from the phrase "3D printing powder" alone.',
+    ],
+  },
 ];
