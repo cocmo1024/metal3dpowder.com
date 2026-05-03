@@ -2,6 +2,7 @@
 title: "LPBF Powder Particle Size Guide: 15-45 um, 15-53 um, and What Actually Changes"
 description: Practical LPBF powder particle size guidance covering common PSD windows, why they differ, and how they affect process fit.
 pubDate: 2026-04-12
+updatedDate: 2026-05-04T07:46:00+08:00
 category: Process
 tags:
   - LPBF
@@ -20,6 +21,15 @@ The problem is that PSD is often discussed as if one size range is universally "
 Many LPBF teams recognize ranges like 15-45 um or 15-53 um because they are common powder cuts across established LPBF routes. Those ranges tend to balance flow behavior and fine-feature capability reasonably well for many alloys and machines.
 
 That does not mean every LPBF build should use the same cut. Different alloys, different recoating behavior, and different process targets can all move the practical answer.
+
+| Common LPBF request | What the request usually means |
+| --- | --- |
+| 15-45 um metal powder | A fine powder-bed cut often used where layer quality and fine feature behavior matter. |
+| 15-53 um metal powder | A slightly wider common LPBF window that may improve yield or availability for some alloys. |
+| 20-63 um metal powder | A coarser powder-bed style request that needs machine and parameter confirmation. |
+| Custom PSD window | Usually tied to a validated machine parameter set or controlled production route. |
+
+The search phrase "15-45 um metal powder" is therefore useful, but it is incomplete. The better request is "15-45 um Ti64 powder for LPBF" or "15-53 um 316L powder for LPBF" because the alloy and process route make the PSD meaningful.
 
 ## PSD is not the same thing as powder quality
 
@@ -41,6 +51,14 @@ Fine, reactive, high-value powders such as titanium and nickel are usually handl
 
 The right PSD request therefore follows the alloy and the machine route together. A titanium LPBF project and a stainless LPBF project may both use similar nominal windows, but the surrounding chemistry and handling controls can differ a lot.
 
+For titanium powder, the PSD discussion should stay close to oxygen control, nitrogen, hydrogen, morphology, and reuse discipline. For nickel alloy powder, chemistry stability, apparent density, and downstream heat treatment matter. For aluminum powder, oxide behavior and handling discipline become more visible. For copper powder, reflectivity, oxygen, and morphology can affect process stability. Stainless steel powder may be more forgiving, but lot consistency still matters when the project moves beyond trial builds.
+
+## How to read 15-45 um and 15-53 um requests
+
+A 15-45 um request usually signals a fine LPBF powder expectation. It may be appropriate for Ti64, 316L, IN718, AlSi10Mg, CuCrZr, and many other powder-bed alloys, but only if the machine route supports it. A 15-53 um request may appear because a supplier or machine route uses a wider cut. Neither number is a universal quality grade.
+
+The upper and lower ends both matter. Too many fines can affect flow, handling, and contamination sensitivity. Too many coarse particles can affect layer quality or fine feature behavior. That is why a PSD report should be read with morphology, apparent density, and process history rather than treated as a single line item.
+
 ## What should actually be defined
 
 If the team already has a validated powder window, the best definition is the simplest one: use that exact PSD and state the process route clearly.
@@ -54,6 +72,17 @@ If the team is still deciding, the project should at least define:
 - any machine or layer-thickness constraints already known
 
 That gives the project enough context to choose a realistic cut rather than a generic one.
+
+## RFQ wording that reduces confusion
+
+A clear powder inquiry should name the alloy, process, PSD window, quantity, documentation expectation, and application class. Examples:
+
+- Ti64 powder for LPBF, 15-45 um, low oxygen requirement, aerospace bracket development.
+- 316L powder for LPBF, 15-53 um, PSD report and COA required, manifold prototype.
+- IN718 powder for LPBF, fine powder-bed cut, chemistry and oxygen documentation required, hot-side hardware.
+- AlSi10Mg powder for LPBF, machine-compatible PSD, lightweight housing development.
+
+These examples are still short, but they are much stronger than asking for "3D printing powder" or "15-45 um powder" without context.
 
 ## Why the cheapest PSD offer can be risky
 

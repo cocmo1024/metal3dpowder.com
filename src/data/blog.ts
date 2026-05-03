@@ -16,6 +16,9 @@ export const blogCategoryPath = '/blog/';
 export const tagArchiveRobots = 'noindex,follow,max-image-preview:large';
 
 const blogPageViews: Record<string, number> = {
+  'gas-atomized-metal-powder-for-additive-manufacturing': 12500,
+  'spherical-metal-powder-for-3d-printing': 11900,
+  'metal-powder-specification-guide-psd-oxygen-flowability': 11300,
   'titanium-powder-for-3d-printing-guide': 12800,
   'nickel-alloy-powder-for-3d-printing-guide': 11800,
   'copper-powder-for-3d-printing-guide': 11400,
@@ -106,6 +109,9 @@ const blogPageViews: Record<string, number> = {
 };
 
 const blogPostImages: Record<string, string> = {
+  'gas-atomized-metal-powder-for-additive-manufacturing': '/og-image.svg',
+  'spherical-metal-powder-for-3d-printing': '/og-image.svg',
+  'metal-powder-specification-guide-psd-oxygen-flowability': '/og-image.svg',
   'titanium-powder-for-3d-printing-guide': '/images/products/titanium.svg',
   'nickel-alloy-powder-for-3d-printing-guide': '/images/products/in718.svg',
   'copper-powder-for-3d-printing-guide': '/images/products/cucrzr.svg',
