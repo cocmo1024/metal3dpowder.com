@@ -14,6 +14,7 @@ const {
 } = Astro.props;
 
 const homePage = pathname === '/';
+const normalizedPathname = pathname.toLowerCase();
 const blogPage = pathname.startsWith('/blog/') || pathname.startsWith('/posts/');
 const materialsPage = pathname.startsWith('/materials/');
 const applicationsPage = pathname.startsWith('/applications/');
@@ -46,14 +47,14 @@ const links = [
     active: blogPage,
   },
   {
-    href: '/FAQ/',
+    href: '/faq/',
     label: 'FAQ',
-    active: pathname === '/FAQ/',
+    active: normalizedPathname === '/faq/',
   },
   {
-    href: pathname === '/' ? contactHref : '/Contact/',
+    href: pathname === '/' ? contactHref : '/contact/',
     label: 'Contact',
-    active: pathname === '/Contact/',
+    active: normalizedPathname === '/contact/',
   },
 ];
 ---
