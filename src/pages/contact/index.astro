@@ -90,8 +90,8 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
 
 <style>
   .contact-page {
-    gap: 1.5rem;
-    padding-block: 2rem 4rem;
+    gap: var(--page-gap);
+    padding-block: var(--page-padding-block);
   }
 
   .contact-page .page-intro {
@@ -100,15 +100,15 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
   }
 
   .contact-page .page-intro h1 {
-    font-size: clamp(1.74rem, 2.85vw, 2.24rem);
+    font-size: clamp(1.68rem, 2.7vw, 2.14rem);
     line-height: 1.12;
-    letter-spacing: -0.03em;
+    letter-spacing: var(--title-tracking);
   }
 
   .contact-page .page-intro p {
     max-width: 44rem;
     font-size: 1rem;
-    line-height: 1.72;
+    line-height: var(--body-leading);
   }
 
   .contact-page .copy-grid {
@@ -131,7 +131,7 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
   .contact-page .rich-copy li,
   .contact-page .info-card p {
     font-size: 0.98rem;
-    line-height: 1.78;
+    line-height: var(--body-leading);
   }
 
   .contact-page .info-card strong {
@@ -160,12 +160,12 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
 
   @media (max-width: 720px) {
     .contact-page {
-      gap: 1.35rem;
-      padding-block: 1.85rem 3.2rem;
+      gap: var(--mobile-page-gap);
+      padding-block: var(--mobile-page-padding-block);
     }
 
     .contact-page .page-intro h1 {
-      font-size: clamp(1.46rem, 6.3vw, 1.92rem);
+      font-size: clamp(1.46rem, 6.2vw, 1.86rem);
       line-height: 1.14;
       letter-spacing: -0.024em;
     }

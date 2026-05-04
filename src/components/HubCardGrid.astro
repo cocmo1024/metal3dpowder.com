@@ -34,24 +34,24 @@ const { items, ariaLabel = 'Topic hubs' } = Astro.props;
     gap: 0.7rem;
     align-content: start;
     min-height: 10rem;
-    padding: 1.15rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.1rem;
-    background: rgba(12, 17, 22, 0.9);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-card);
   }
 
   .hub-card h2 {
     margin: 0;
     font-size: 1.05rem;
     line-height: 1.28;
-    letter-spacing: -0.018em;
+    letter-spacing: -0.016em;
   }
 
   .hub-card p {
     margin: 0;
     color: var(--muted);
-    line-height: 1.72;
+    line-height: var(--body-leading);
   }
 
   .hub-card a:hover {

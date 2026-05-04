@@ -50,8 +50,8 @@ const {
 <style>
   .hub-page {
     display: grid;
-    gap: 1.5rem;
-    padding-block: 2rem 4rem;
+    gap: var(--page-gap);
+    padding-block: var(--page-padding-block);
   }
 
   .hub-intro {
@@ -62,16 +62,16 @@ const {
 
   .hub-intro h1 {
     margin: 0;
-    font-size: clamp(1.8rem, 3.1vw, 2.45rem);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    font-size: clamp(1.68rem, 2.7vw, 2.14rem);
+    line-height: 1.12;
+    letter-spacing: var(--title-tracking);
     font-weight: 730;
   }
 
   .hub-intro p:last-child {
     margin: 0;
     color: var(--muted);
-    line-height: 1.72;
+    line-height: var(--body-leading);
   }
 
   .hub-section {
@@ -81,19 +81,19 @@ const {
 
   .hub-section h2 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.12rem;
     line-height: 1.25;
     letter-spacing: -0.02em;
   }
 
   @media (max-width: 720px) {
     .hub-page {
-      gap: 1.3rem;
-      padding-block: 1.85rem 3.2rem;
+      gap: var(--mobile-page-gap);
+      padding-block: var(--mobile-page-padding-block);
     }
 
     .hub-intro h1 {
-      font-size: clamp(1.5rem, 7vw, 2rem);
+      font-size: clamp(1.46rem, 6.2vw, 1.86rem);
       line-height: 1.12;
     }
   }

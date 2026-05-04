@@ -163,12 +163,12 @@ const schema = [
 
 <style>
   .article-page {
-    padding-block: 2rem 4rem;
+    padding-block: var(--page-padding-block);
   }
 
   .article {
     display: grid;
-    gap: 1.5rem;
+    gap: var(--page-gap);
     max-width: 860px;
     margin-inline: auto;
   }
@@ -194,9 +194,9 @@ const schema = [
   .article-header h1 {
     width: 100%;
     max-width: none;
-    font-size: clamp(1.68rem, 2.2vw, 2.12rem);
+    font-size: clamp(1.58rem, 2vw, 1.96rem);
     line-height: 1.16;
-    letter-spacing: -0.024em;
+    letter-spacing: var(--title-tracking);
     font-weight: 720;
     text-wrap: pretty;
     word-break: normal;
@@ -215,10 +215,11 @@ const schema = [
   }
 
   .article-summary {
-    padding: 1rem 1.1rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.03);
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-card);
   }
 
   .article-summary h2,
@@ -234,8 +235,8 @@ const schema = [
   .article-content :global(p),
   .article-content :global(li) {
     margin: 0;
-    color: #d3dce6;
-    line-height: 1.8;
+    color: var(--copy);
+    line-height: var(--body-leading);
     font-size: 0.98rem;
   }
 
@@ -284,7 +285,7 @@ const schema = [
     align-items: center;
     min-height: 2.35rem;
     padding: 0.45rem 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--line);
     border-radius: 999px;
     color: var(--muted);
     background: rgba(255, 255, 255, 0.03);
@@ -304,10 +305,10 @@ const schema = [
   .article-pagination__link {
     display: grid;
     gap: 0.35rem;
-    padding: 1rem 1.05rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.03);
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--card-bg);
   }
 
   .article-pagination__link span {
@@ -326,15 +327,15 @@ const schema = [
 
   @media (max-width: 720px) {
     .article-page {
-      padding-block: 1.85rem 3.2rem;
+      padding-block: var(--mobile-page-padding-block);
     }
 
     .article {
-      gap: 1.3rem;
+      gap: var(--mobile-page-gap);
     }
 
     .article-header h1 {
-      font-size: clamp(1.46rem, 5.6vw, 1.82rem);
+      font-size: clamp(1.42rem, 5.6vw, 1.76rem);
       line-height: 1.14;
       letter-spacing: -0.02em;
     }
