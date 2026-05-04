@@ -56,7 +56,7 @@ export default defineConfig({
   site: siteUrl,
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/blog/tags/'),
+      filter: (page) => !page.includes('/blog/tags/') && !page.includes('/blog/page/'),
       serialize: (item) => {
         const pathname = new URL(item.url).pathname;
         item.lastmod = getPageLastmod(pathname);

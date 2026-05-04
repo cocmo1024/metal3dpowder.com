@@ -30,31 +30,6 @@ const organizationSchema = {
   description,
 };
 
-const itemListSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Metal 3D Powder Product List',
-  numberOfItems: products.length,
-  itemListElement: products.map((product, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    item: {
-      '@type': 'Product',
-      name: product.name,
-      description: product.description,
-      image: new URL(product.image, siteUrl).toString(),
-      sku: product.code,
-      offers: {
-        '@type': 'Offer',
-        priceCurrency: 'USD',
-        price: product.price,
-        availability: 'https://schema.org/InStock',
-        url: new URL(`/#product-${product.id}`, siteUrl).toString(),
-      },
-    },
-  })),
-};
-
 const collectionPageSchema = buildCollectionPageSchema({
   site: siteUrl,
   path: '/',
@@ -66,7 +41,7 @@ const collectionPageSchema = buildCollectionPageSchema({
 });
 ---
 
-<BaseLayout title={title} description={description} canonical="/" ogImageAlt="Metal 3D Powder product catalog" schema={[websiteSchema, organizationSchema, collectionPageSchema, itemListSchema]}>
+<BaseLayout title={title} description={description} canonical="/" ogImageAlt="Metal 3D Powder product catalog" schema={[websiteSchema, organizationSchema, collectionPageSchema]}>
   <SiteHeader pathname={Astro.url.pathname} productsHref="#products" contactHref="#contact" />
 
   <main>
