@@ -80,6 +80,7 @@ export const materialHubs: HubDefinition[] = [
       'cucrzr-copper-powder',
       'cucrzr-vs-pure-copper-powder',
       'cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds',
+      'cucrzr-powder-battery-thermal-plates-and-inverter-cooling-hardware',
       'cucrzr-powder-power-electronics-cooling-plates-and-busbar-hardware',
       'cucrzr-powder-ev-battery-welding-fixtures-and-conductive-tooling',
       'cucrzr-powder-rf-heat-spreaders-and-busbar-transition-hardware',
@@ -199,6 +200,7 @@ export const applicationHubs: HubDefinition[] = [
     description: 'CuCrZr and aluminum powder pages for power electronics cooling, busbar hardware, EV battery tooling, and compact electronics structures.',
     postIds: [
       'cucrzr-powder-power-electronics-cooling-plates-and-busbar-hardware',
+      'cucrzr-powder-battery-thermal-plates-and-inverter-cooling-hardware',
       'cucrzr-powder-ev-battery-welding-fixtures-and-conductive-tooling',
       'cucrzr-powder-rf-heat-spreaders-and-busbar-transition-hardware',
       'cucrzr-vs-pure-copper-powder-electrical-contact-hardware',
@@ -264,6 +266,7 @@ export const processHubs: HubDefinition[] = [
       '316l-stainless-steel-powder',
       'gh4169-in718-powder',
       'cucrzr-copper-powder',
+      'cucrzr-powder-battery-thermal-plates-and-inverter-cooling-hardware',
       'cucrzr-powder-power-electronics-cooling-plates-and-busbar-hardware',
     ],
   },
