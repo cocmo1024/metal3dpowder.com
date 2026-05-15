@@ -1,6 +1,6 @@
 ---
 title: Ti64 Powder for Aircraft Hydraulic Manifolds and Valve Blocks
-description: Why Ti64 powder is a strong route for aircraft hydraulic manifolds and valve blocks where weight reduction, internal routing, and structural titanium logic matter together.
+description: Why Ti64 powder fits aircraft hydraulic manifolds and valve blocks where weight reduction, internal routing, and structural titanium logic matter together.
 pubDate: 2026-04-19T14:10:00+08:00
 category: Titanium
 tags:

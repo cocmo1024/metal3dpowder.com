@@ -1,6 +1,6 @@
 ---
 title: IN718 Powder for Turbomachinery Impellers and Compressor Hardware
-description: Where IN718 powder fits turbomachinery impellers, compressor hardware, and hot-side rotating-adjacent AM parts that need strength retention and controlled post-processing.
+description: Where IN718 powder fits turbomachinery impellers, compressor hardware, and hot-side AM parts needing strength retention and controlled post-processing.
 pubDate: 2026-04-25T22:26:00+08:00
 category: Nickel
 tags:

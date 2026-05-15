@@ -1,6 +1,6 @@
 ---
 title: CuCrZr Powder for Power Electronics Cooling Plates and Busbar Hardware
-description: Why CuCrZr powder fits power electronics cooling plates, busbar transition hardware, and compact copper parts where heat flow, current path, and mechanical interfaces meet.
+description: Why CuCrZr powder fits power electronics cooling plates and busbar hardware where heat flow, current path, and mechanical interfaces meet.
 pubDate: 2026-04-25T22:20:00+08:00
 category: Copper
 tags:
@@ -55,4 +55,3 @@ If the component also carries clamping load, needs threads or machined interface
 ## The practical takeaway
 
 Use CuCrZr powder for power electronics cooling plates and busbar hardware when the part is a combined thermal, electrical, and mechanical problem. For broader copper thermal hardware, continue with the [CuCrZr cold plates and heat sinks page](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/). For electrical-contact-focused parts, compare the [CuCrZr versus pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder-electrical-contact-hardware/).
-

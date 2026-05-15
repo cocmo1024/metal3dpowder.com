@@ -37,6 +37,10 @@ const readingMinutes = estimateReadingMinutes(post.body ?? '');
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 
 const canonical = getBlogPostPath(post);
+const pageTitle =
+  `${post.data.title} | ${siteInfo.brand}`.length <= 72
+    ? `${post.data.title} | ${siteInfo.brand}`
+    : post.data.title;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const publishedIso = post.data.pubDate.toISOString();
 const modifiedIso = (post.data.updatedDate ?? post.data.pubDate).toISOString();
@@ -83,7 +87,7 @@ const schema = [
 ---
 
 <BaseLayout
-  title={`${post.data.title} | ${siteInfo.brand}`}
+  title={pageTitle}
   description={post.data.description}
   author={blogAuthorName}
   canonical={canonical}

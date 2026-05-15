@@ -1,6 +1,6 @@
 ---
 title: Metal Powder for 3D Printing Price Guide by Alloy Family
-description: 2026 reference price ranges for common metal powders used in additive manufacturing, including titanium, stainless steel, nickel, aluminum, copper, cobalt chrome, and tool steel.
+description: 2026 reference price ranges for common AM metal powders, including titanium, stainless steel, nickel, aluminum, copper, cobalt chrome, and tool steel.
 pubDate: 2026-04-29T22:07:00+08:00
 updatedDate: 2026-05-05T00:30:00+08:00
 category: Knowledge

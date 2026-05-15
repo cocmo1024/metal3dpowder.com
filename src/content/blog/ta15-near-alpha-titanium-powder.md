@@ -1,5 +1,5 @@
 ---
-title: TA15 Near-Alpha Titanium Powder for High-Temperature Structural AM Applications
+title: TA15 Titanium Powder for High-Temperature Structural AM
 description: TA15 near-alpha titanium powder explained for elevated-temperature AM parts, including alloy logic, powder controls, and structural application fit.
 pubDate: 2025-12-20
 updatedDate: 2026-04-12

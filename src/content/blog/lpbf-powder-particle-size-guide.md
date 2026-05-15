@@ -1,5 +1,5 @@
 ---
-title: "LPBF Powder Particle Size Guide: 15-45 um, 15-53 um, and What Actually Changes"
+title: "LPBF Powder Particle Size Guide: 15-45 vs 15-53 um"
 description: Practical LPBF powder particle size guidance covering common PSD windows, why they differ, and how they affect process fit.
 pubDate: 2026-04-12
 updatedDate: 2026-05-04T07:46:00+08:00

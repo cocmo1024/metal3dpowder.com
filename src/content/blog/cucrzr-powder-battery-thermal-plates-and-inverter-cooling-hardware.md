@@ -1,6 +1,6 @@
 ---
 title: CuCrZr Powder for Battery Thermal Plates and Inverter Cooling Hardware
-description: Where CuCrZr powder fits battery thermal plates, inverter cooling hardware, and compact copper thermal parts that need conductivity, sealing discipline, and better mechanical margin.
+description: Where CuCrZr powder fits battery thermal plates and inverter cooling hardware needing conductivity, sealing discipline, and mechanical margin.
 pubDate: 2026-05-07T10:30:00+08:00
 category: Copper
 tags:

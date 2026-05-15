@@ -1,5 +1,5 @@
 ---
-title: CuCrZr Powder for AI Data Center Cold Plates and GPU Liquid-Cooling Manifolds
+title: CuCrZr Powder for AI Cold Plates and GPU Manifolds
 description: Why CuCrZr powder fits AI data center cold plates and GPU liquid-cooling manifolds where thermal density, sealed flow paths, and copper process margin matter together.
 pubDate: 2026-04-25T23:10:00+08:00
 updatedDate: 2026-05-01T07:00:00+08:00

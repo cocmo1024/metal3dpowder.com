@@ -1,5 +1,5 @@
 ---
-title: "Aluminum Powder for Additive Manufacturing: AlSi10Mg and Lightweight AM Parts"
+title: "Aluminum Powder for AM: AlSi10Mg and Lightweight Parts"
 description: Aluminum powder for additive manufacturing guide covering AlSi10Mg, lightweight housings, UAV structures, electronics frames, and LPBF fit.
 pubDate: 2026-05-02T10:14:00+08:00
 category: Aluminum
