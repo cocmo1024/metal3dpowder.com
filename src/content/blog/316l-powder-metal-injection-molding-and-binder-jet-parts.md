@@ -1,6 +1,6 @@
 ---
 title: 316L Powder for Metal Injection Molding and Binder Jet Parts
-description: Why 316L powder remains a strong route for metal injection molding and binder jet parts where corrosion resistance, ductility, and scalable stainless production matter.
+description: Why 316L powder fits MIM and binder jet stainless parts where corrosion resistance, ductility, and scalable production matter.
 pubDate: 2026-04-19T14:22:00+08:00
 category: Steel
 tags:

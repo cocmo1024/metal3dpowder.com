@@ -1,6 +1,6 @@
 ---
 title: Ti64 Grade 23 Powder for Orthopedic Implants and Medical Components
-description: Why Ti64 Grade 23 powder is relevant for orthopedic implants and medical components where tougher ELI titanium logic matters more than a standard structural Ti64 route.
+description: Why Ti64 Grade 23 powder fits orthopedic implants and medical components where ELI titanium logic matters more than standard Ti64.
 pubDate: 2026-04-19T14:16:00+08:00
 category: Titanium
 tags:

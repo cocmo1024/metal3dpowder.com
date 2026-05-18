@@ -125,6 +125,9 @@ The cleanup rule is simple:
 - Ti64 Grade 23 spinal cages and porous implant structures
 - Ti64 drone landing gear brackets and support nodes
 - IN625 chemical nozzles and injector blocks
+- 17-4PH industrial automation actuator housings and latch hardware
+- CuCrZr battery thermal plates and inverter cooling hardware
+- Ti64 robotic arm brackets and end-effector hardware
 
 ## Core comparison pages live
 
@@ -136,7 +139,4 @@ The cleanup rule is simple:
 
 ## Next backlog
 
-- 17-4PH powder for actuator housings and latch hardware in industrial automation
-- AlSi10Mg powder for lightweight radar and EO sensor housings
-- CuCrZr powder for battery-thermal plates and inverter cooling hardware
-- Ti64 powder for compact robotic arm support brackets
+- AlSi10Mg powder for lightweight radar and EO sensor housings, but only if it is clearly separated from the existing satellite electronics/RF enclosure and UAV electronics housing pages.

@@ -1,6 +1,6 @@
 ---
 title: 17-4PH Powder for Automation Actuator Housings and Latches
-description: Why 17-4PH powder fits industrial automation actuator housings, latch hardware, and stronger stainless AM parts where load, wear, and compact geometry matter together.
+description: Why 17-4PH powder fits industrial automation actuator housings and latch hardware where load, wear, and compact geometry matter together.
 pubDate: 2026-05-12T15:42:00+08:00
 category: Steel
 tags:

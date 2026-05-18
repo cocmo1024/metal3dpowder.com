@@ -1,6 +1,6 @@
 ---
 title: CoCrMo Powder for Wear-Critical Industrial Parts
-description: Why CoCrMo powder fits wear-critical industrial parts where sliding contact, surface durability, and corrosion resistance matter more than ordinary stainless behavior.
+description: Why CoCrMo powder fits wear-critical industrial parts where sliding contact, surface durability, and corrosion resistance matter.
 pubDate: 2026-04-19T09:38:00+08:00
 category: CoCr
 tags:
