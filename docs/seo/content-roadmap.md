@@ -128,6 +128,7 @@ The cleanup rule is simple:
 - 17-4PH industrial automation actuator housings and latch hardware
 - CuCrZr battery thermal plates and inverter cooling hardware
 - Ti64 robotic arm brackets and end-effector hardware
+- AlSi10Mg radar and EO/IR sensor housings
 
 ## Core comparison pages live
 
@@ -139,4 +140,4 @@ The cleanup rule is simple:
 
 ## Next backlog
 
-- AlSi10Mg powder for lightweight radar and EO sensor housings, but only if it is clearly separated from the existing satellite electronics/RF enclosure and UAV electronics housing pages.
+- Continue selecting one clean application-led topic at a time after checking overlap against existing material, process, and application pages.
