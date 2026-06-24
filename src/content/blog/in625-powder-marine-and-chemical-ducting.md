@@ -36,4 +36,4 @@ If the part is mainly structural and high-temperature-loaded, [IN718](/posts/All
 
 Use IN625 powder when the application is marine or chemical ducting that needs nickel-alloy corrosion behavior plus geometry freedom, without forcing the part into a more structural nickel category than it actually needs.
 
-For the alloy-level background, return to the main [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/). If the part is corrosion-heavy hot-side hardware rather than ducting, use the narrower [IN625 hot-side applications page](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/).
+For the alloy-level background, return to the main [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/). If the part is corrosion-heavy hot-side hardware rather than ducting, use the narrower [IN625 hot-side applications page](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/). If the specific project is seawater desalination pump, valve, or brine-side hardware, use the dedicated [IN625 desalination hardware page](/posts/Alloys/in625-powder-seawater-desalination-pump-valve-and-brine-hardware/).
