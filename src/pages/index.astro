@@ -1,17 +1,52 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPostGrid from '../components/BlogPostGrid.astro';
+import HubCardGrid from '../components/HubCardGrid.astro';
 import ProductCard from '../components/ProductCard.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { buildCollectionPageSchema } from '../data/seo';
 import { siteInfo } from '../data/site';
 import { products } from '../data/products';
+import { getBlogPostPath, sortBlogPosts } from '../data/blog';
+import { applicationHubs, getHubPath, materialHubs, processHubs, type HubDefinition } from '../data/contentHubs';
 
-const title = '3D Printing Metal Powder Supplier | Titanium, Stainless, Nickel';
+const title = '3D Printing Metal Powder Supplier | Titanium, Stainless, Nickel, Copper';
 const description =
-  'Metal powder for 3D printing and additive manufacturing: titanium, stainless steel, nickel, aluminum, copper and cobalt chrome with prices, sizes and lead times.';
+  'Metal powder for 3D printing and additive manufacturing: titanium, stainless steel, nickel, aluminum, copper, tool steel and cobalt chrome with current application guides, sizes and lead times.';
 
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const allPosts = sortBlogPosts(await getCollection('blog'));
+const latestPosts = allPosts.slice(0, 6);
+
+const pickHubs = (hubs: HubDefinition[], slugs: string[]) =>
+  slugs
+    .map((slug) => hubs.find((hub) => hub.slug === slug))
+    .filter((hub): hub is HubDefinition => Boolean(hub))
+    .map((hub) => ({
+      title: hub.title,
+      description: hub.description,
+      href: getHubPath(hub),
+    }));
+
+const materialRouteLinks = pickHubs(materialHubs, [
+  'titanium-powder',
+  'nickel-alloy-powder',
+  'stainless-steel-powder',
+  'copper-alloy-powder',
+]);
+
+const processRouteLinks = pickHubs(processHubs, ['lpbf', 'ded', 'binder-jet']);
+
+const applicationUpdateCards = pickHubs(applicationHubs, [
+  'geothermal-and-brine-energy-hardware',
+  'ai-liquid-cooling',
+  'fusion-high-heat-flux-hardware',
+  'marine-and-desalination-hardware',
+  'semiconductor-fluid-hardware',
+  'industrial-automation-robotics',
+]);
 
 const websiteSchema = {
   '@context': 'https://schema.org',
@@ -35,9 +70,20 @@ const collectionPageSchema = buildCollectionPageSchema({
   path: '/',
   name: 'Metal AM Powder Product Catalog',
   description,
-  items: products.map((product) => ({
-    name: `${product.name} powder`,
-  })),
+  items: [
+    ...products.map((product) => ({
+      name: `${product.name} powder`,
+      path: `/#product-${product.id}`,
+    })),
+    ...latestPosts.map((post) => ({
+      name: post.data.title,
+      path: getBlogPostPath(post),
+    })),
+    ...applicationUpdateCards.map((card) => ({
+      name: card.title,
+      path: card.href,
+    })),
+  ],
 });
 ---
 
@@ -45,10 +91,63 @@ const collectionPageSchema = buildCollectionPageSchema({
   <SiteHeader pathname={Astro.url.pathname} productsHref="#products" contactHref="#contact" />
 
   <main>
-    <section class="section page-shell" id="products">
+    <section class="home-intro page-shell" aria-labelledby="home-intro-title">
+      <div class="home-intro__copy">
+        <p class="eyebrow">Updated powder catalog</p>
+        <h2 id="home-intro-title">Current AM powder routes for application-led sourcing</h2>
+        <p>
+          Browse {products.length} powder routes across titanium, stainless steel, nickel alloys, aluminum,
+          copper, tool steel, and cobalt chrome. Recent updates add stronger coverage for geothermal brine,
+          desalination, AI liquid cooling, fusion cooling, medical titanium, and elevated-temperature aerospace parts.
+        </p>
+      </div>
+
+      <div class="route-list" aria-label="Priority powder route links">
+        {[...materialRouteLinks, ...processRouteLinks].map((item) => (
+          <a href={item.href}>
+            <span>{item.title}</span>
+            <small>{item.description}</small>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="section page-shell" id="products" aria-labelledby="products-title">
+      <div class="section-header">
+        <p class="eyebrow">Powder catalog</p>
+        <h2 id="products-title">Core metal powder families</h2>
+        <p>
+          Standard LPBF particle-size ranges are shown where applicable. For special grades such as Ti64 Grade 23 and TA15,
+          send the target process, oxygen limit, and qualification requirements with the inquiry.
+        </p>
+      </div>
       <div class="products-grid">
         {products.map((product, index) => <ProductCard product={product} index={index} />)}
       </div>
+    </section>
+
+    <section class="latest-section page-shell" aria-labelledby="latest-title">
+      <div class="section-header">
+        <p class="eyebrow">Latest powder information</p>
+        <h2 id="latest-title">Newest alloy and application updates</h2>
+        <p>
+          The homepage now surfaces the latest technical pages automatically, so new powder applications become visible
+          without replacing the product catalog.
+        </p>
+      </div>
+      <BlogPostGrid posts={latestPosts} ariaLabel="Latest powder information" />
+    </section>
+
+    <section class="latest-section page-shell" aria-labelledby="application-title">
+      <div class="section-header">
+        <p class="eyebrow">Application demand centers</p>
+        <h2 id="application-title">Powder inquiries by end-use hardware</h2>
+        <p>
+          These application centers connect powder families to real part demand, including brine-side energy hardware,
+          cooling components, clean fluid systems, and industrial automation parts.
+        </p>
+      </div>
+      <HubCardGrid items={applicationUpdateCards} ariaLabel="Application demand centers" />
     </section>
 
     <section class="contact-strip page-shell" id="contact" aria-labelledby="contact-title">
@@ -96,8 +195,83 @@ const collectionPageSchema = buildCollectionPageSchema({
 </BaseLayout>
 
 <style>
+  .home-intro {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+    align-items: start;
+    padding-block: 2rem 0;
+  }
+
+  .home-intro__copy {
+    display: grid;
+    gap: 0.85rem;
+    max-width: 48rem;
+  }
+
+  .home-intro h2,
+  .section-header h2 {
+    margin: 0;
+    font-size: clamp(1.46rem, 2.5vw, 2.05rem);
+    line-height: 1.12;
+    letter-spacing: var(--title-tracking);
+  }
+
+  .home-intro p:last-child,
+  .section-header p:last-child {
+    margin: 0;
+    color: var(--muted);
+    line-height: var(--body-leading);
+  }
+
+  .route-list {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .route-list a {
+    display: grid;
+    gap: 0.4rem;
+    min-height: 7rem;
+    align-content: start;
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-card);
+  }
+
+  .route-list a:hover {
+    border-color: var(--line-strong);
+  }
+
+  .route-list span {
+    color: var(--text);
+    font-weight: 720;
+    letter-spacing: -0.018em;
+  }
+
+  .route-list small {
+    color: var(--muted);
+    line-height: 1.56;
+  }
+
   .section {
+    display: grid;
+    gap: 1.2rem;
     padding-block: 2rem 4rem;
+  }
+
+  .latest-section {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .section-header {
+    display: grid;
+    gap: 0.72rem;
+    max-width: 58rem;
   }
 
   .products-grid {
@@ -155,7 +329,21 @@ const collectionPageSchema = buildCollectionPageSchema({
   }
 
   @media (max-width: 1100px) {
+    .home-intro {
+      grid-template-columns: 1fr;
+    }
+
     .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .home-intro {
+      padding-block-start: 1.55rem;
+    }
+
+    .route-list {
       grid-template-columns: 1fr;
     }
   }
