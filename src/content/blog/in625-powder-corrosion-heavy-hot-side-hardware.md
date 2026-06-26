@@ -28,6 +28,8 @@ The AM value usually comes from internal routing, consolidated geometry, and par
 
 Some parts live in the gap between ordinary corrosion hardware and true turbine-structure hardware. They need a nickel alloy because stainless is no longer enough, but they are not primarily high-strength structural components. That is exactly where IN625 often makes sense.
 
+If the aggressive media is specifically geothermal brine, use the dedicated [IN625 geothermal brine hardware guide](/posts/Alloys/in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware/) because scaling, dissolved minerals, acid gases, heat-exchanger geometry, and repair access change the RFQ details.
+
 ## When another nickel alloy is cleaner
 
 If the part is mainly structural and strength-retaining at temperature, [IN718](/posts/Alloys/gh4169-in718-powder/) usually deserves first review. If the problem is more oxidation-driven furnace or hot-gas service, [Hastelloy X](/posts/Alloys/hastelloy-x-powder/) may be the better answer.
