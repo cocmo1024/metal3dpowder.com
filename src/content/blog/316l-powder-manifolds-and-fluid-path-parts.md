@@ -2,6 +2,7 @@
 title: 316L Powder for Manifolds and Fluid-Path Parts
 description: Why 316L powder is a strong LPBF route for manifolds, fluid-path parts, and stainless hardware where corrosion resistance and internal routing matter together.
 pubDate: 2026-04-19T11:00:00+08:00
+updatedDate: 2026-06-27
 category: Steel
 tags:
   - 316L
@@ -23,6 +24,8 @@ This route is usually most relevant for:
 - corrosion-aware flow components
 
 The AM value often comes from internal channels, path consolidation, and geometry that is awkward to drill or assemble conventionally.
+
+If the manifold belongs to SMR auxiliary-fluid, instrumentation, test-loop, or nuclear support hardware, the decision needs a stricter acceptance path. Use the dedicated [316L powder for SMR auxiliary manifolds and nuclear support hardware guide](/posts/Alloys/316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware/) when classification, lot traceability, inspection, leak testing, and qualification evidence are part of the discussion.
 
 ## Why manifolds keep landing on 316L
 
