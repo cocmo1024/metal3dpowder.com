@@ -32,7 +32,7 @@ This made sour-service oilfield flow hardware a clean incremental topic. It exte
 
 Recent market context:
 
-- IEA Gas Market Report Q1-2026: `https://www.iea.org/reports/gas-market-report-q1-2026`
+- IEA Gas Market Report Q2-2026: `https://www.iea.org/reports/gas-market-report-q2-2026`
 - EIA Short-Term Energy Outlook natural gas page: `https://www.eia.gov/outlooks/steo/report/natgas.php`
 
 Evergreen engineering context:
