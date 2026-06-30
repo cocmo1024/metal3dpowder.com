@@ -57,6 +57,8 @@ If the actual use case is geothermal brine heat-exchanger, valve, pump-adjacent,
 
 If the actual use case is carbon capture amine-service, CO2 conditioning, CO2 compression-skid, or CCUS pilot-loop hardware, continue with the dedicated [IN625 carbon capture hardware guide](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/).
 
+If the actual use case is sour gas, H2S-bearing valve, choke, downhole flow, or wellhead/subsea flow hardware, continue with the dedicated [IN625 sour gas hardware guide](/posts/Alloys/in625-powder-sour-gas-valves-chokes-and-downhole-flow-hardware/).
+
 If the actual decision sits between IN625 and Hastelloy X on chemical hot-gas hardware, continue with the dedicated [IN625 vs Hastelloy X chemical hot-gas comparison](/posts/Alloys/in625-vs-hastelloy-x-powder-chemical-hot-gas-hardware/).
 
 If the actual hardware is a chemical nozzle or injector block rather than a broad corrosion-resistant part, continue with the narrower [IN625 nozzle and injector page](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/).

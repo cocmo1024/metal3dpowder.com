@@ -38,6 +38,8 @@ In those cases, a nickel route such as [IN625 powder](/posts/Alloys/gh3625-in625
 
 If the manifold belongs to carbon capture amine service, wet CO2 conditioning, or CO2 compression-skid instrumentation hardware, use the dedicated [IN625 carbon capture hardware guide](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/) because solvent degradation products, contaminants, acidic condensate, and drain details can move the decision beyond a normal stainless manifold.
 
+If the manifold belongs to sour gas, H2S-bearing oilfield service, wellhead/subsea flow, or downhole instrumentation hardware, use the dedicated [IN625 sour gas hardware guide](/posts/Alloys/in625-powder-sour-gas-valves-chokes-and-downhole-flow-hardware/) because sour-service acceptance and pressure or leak status change the material review.
+
 ## Why manifolds are a special material decision
 
 Manifolds are not only corrosion parts. They are geometry parts. Internal routing, sealing zones, wall transitions, and interface faces mean the powder choice has to support both the environment and the manufactured geometry.
