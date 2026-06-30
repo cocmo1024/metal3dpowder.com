@@ -2,6 +2,7 @@
 title: 316L vs Nickel Powder for Corrosion-Side Manifolds
 description: A practical comparison of 316L and nickel-alloy powder for corrosion-side manifolds where media, temperature, and geometry decide the correct AM route.
 pubDate: 2026-04-23T21:45:00+08:00
+updatedDate: 2026-06-30
 category: Steel
 tags:
   - 316L
@@ -34,6 +35,8 @@ Nickel powder enters the discussion when the manifold is no longer just corrosio
 - long-term margin matters more than staying on a stainless route.
 
 In those cases, a nickel route such as [IN625 powder](/posts/Alloys/gh3625-in625-powder/) may be the more defensible path.
+
+If the manifold belongs to carbon capture amine service, wet CO2 conditioning, or CO2 compression-skid instrumentation hardware, use the dedicated [IN625 carbon capture hardware guide](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/) because solvent degradation products, contaminants, acidic condensate, and drain details can move the decision beyond a normal stainless manifold.
 
 ## Why manifolds are a special material decision
 

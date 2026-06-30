@@ -2,6 +2,7 @@
 title: IN625 Powder for Corrosion-Heavy Hot-Side Hardware
 description: Why IN625 powder fits corrosion-heavy hot-side hardware such as ducting, manifolds, and service parts that see heat plus aggressive media.
 pubDate: 2026-04-19T09:30:00+08:00
+updatedDate: 2026-06-30
 category: Nickel
 tags:
   - IN625
@@ -29,6 +30,8 @@ The AM value usually comes from internal routing, consolidated geometry, and par
 Some parts live in the gap between ordinary corrosion hardware and true turbine-structure hardware. They need a nickel alloy because stainless is no longer enough, but they are not primarily high-strength structural components. That is exactly where IN625 often makes sense.
 
 If the aggressive media is specifically geothermal brine, use the dedicated [IN625 geothermal brine hardware guide](/posts/Alloys/in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware/) because scaling, dissolved minerals, acid gases, heat-exchanger geometry, and repair access change the RFQ details.
+
+If the aggressive media is specifically carbon capture amine service, wet CO2, CO2 conditioning, or compression-skid instrumentation hardware, use the dedicated [IN625 carbon capture hardware guide](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/) because solvent condition, contaminants, condensate, and drainability change the material review.
 
 ## When another nickel alloy is cleaner
 
