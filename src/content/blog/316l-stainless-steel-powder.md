@@ -2,7 +2,7 @@
 title: 316L Stainless Steel Powder for LPBF Additive Manufacturing
 description: 316L powder guidance for LPBF covering why it is widely used, what defines a stable powder lot, and where this stainless route fits best.
 pubDate: 2025-12-20
-updatedDate: 2026-06-27
+updatedDate: 2026-07-02
 category: Steel
 tags:
   - 316L
@@ -43,6 +43,8 @@ Another common mistake is assuming every stainless application should use 316L b
 Use 316L when the part needs corrosion-aware stainless behavior, broad LPBF familiarity, and a stable route for industrial hardware. If the real use case is corrosion-resistant manifolds, housings, and flow-path parts, continue with the narrower [316L industrial hardware guide](/posts/Alloys/316l-powder-corrosion-resistant-industrial-hardware/). If higher aged strength is the real target, move to [17-4PH](/posts/Alloys/316l-vs-17-4ph-powder/) instead of stretching 316L beyond its natural fit.
 
 If the actual hardware is a manifold or fluid-path part rather than general stainless hardware, continue with the dedicated [316L manifold and flow-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/).
+
+If the actual project is direct air capture auxiliary manifolds, sensor blocks, air or CO2 sampling hardware, purge lines, drain blocks, or moderate stainless DAC flow parts, continue with the dedicated [316L direct air capture auxiliary hardware guide](/posts/Alloys/316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks/).
 
 If the actual project is SMR auxiliary-fluid, instrumentation, test-loop, or nuclear support hardware, use the dedicated [316L SMR and nuclear support hardware guide](/posts/Alloys/316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware/) because classification, traceability, inspection, and acceptance evidence become part of the powder decision.
 

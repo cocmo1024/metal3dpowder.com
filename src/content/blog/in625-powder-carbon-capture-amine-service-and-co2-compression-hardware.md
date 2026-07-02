@@ -2,6 +2,7 @@
 title: IN625 Powder for Carbon Capture Amine-Service and CO2 Compression Hardware
 description: Where IN625 powder fits carbon capture amine-service manifolds, CO2 conditioning hardware, compression-skid flow parts, and corrosion-critical CCUS test hardware.
 pubDate: 2026-06-30T09:20:00+08:00
+updatedDate: 2026-07-02
 category: Nickel
 tags:
   - IN625
@@ -52,6 +53,8 @@ Carbon capture amine and CO2 processing hardware is different because the critic
 ## When 316L may still be enough
 
 316L remains practical for many moderate stainless flow parts. If the part is a clean auxiliary manifold, a low-severity instrument block, or a prototype with mild chemistry and defined cleaning conditions, the [316L manifold and fluid-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/) may be the better starting point.
+
+If the project is specifically direct air capture auxiliary hardware, air or CO2 sampling, purge, drain, vacuum, or sensor-block service with moderate stainless conditions, use the dedicated [316L direct air capture auxiliary manifolds guide](/posts/Alloys/316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks/) before escalating the material choice to IN625.
 
 The move toward IN625 should be justified by the actual environment. Common reasons include:
 

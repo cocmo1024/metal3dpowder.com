@@ -2,7 +2,7 @@
 title: 316L vs Nickel Powder for Corrosion-Side Manifolds
 description: A practical comparison of 316L and nickel-alloy powder for corrosion-side manifolds where media, temperature, and geometry decide the correct AM route.
 pubDate: 2026-04-23T21:45:00+08:00
-updatedDate: 2026-06-30
+updatedDate: 2026-07-02
 category: Steel
 tags:
   - 316L
@@ -24,6 +24,8 @@ The real question is not whether stainless or nickel is "better." It is whether 
 - not clearly outside stainless capability.
 
 That is why many flow-path and manifold searches still land on 316L first. The alloy is practical, corrosion-capable in many environments, and easier to justify when nickel would be unnecessary.
+
+If the manifold belongs to direct air capture auxiliary hardware, air or CO2 sampling, purge, drain, vacuum, or sensor-block service with moderate stainless conditions, start with the dedicated [316L direct air capture auxiliary manifolds guide](/posts/Alloys/316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks/). Move toward nickel only when wet acidic CO2, aggressive solvent chemistry, contaminants, temperature, or downtime risk makes stainless margin too thin.
 
 ## When nickel starts to take over
 
