@@ -2,7 +2,7 @@
 title: CuCrZr Powder for RF Heat Spreaders and Busbar Transition Hardware
 description: Why CuCrZr powder fits RF heat spreaders and busbar transition hardware where conductivity, local stiffness, and interface machining matter together.
 pubDate: 2026-04-25T23:14:00+08:00
-updatedDate: 2026-05-01T07:00:00+08:00
+updatedDate: 2026-07-02
 category: Copper
 tags:
   - CuCrZr
@@ -45,6 +45,8 @@ For RF heat spreaders and busbar transitions, the powder route should be discuss
 A broad electrical-contact page can include many current-carrying parts. RF heat spreaders and busbar transitions are narrower because the geometry is usually coupled to local cooling, mounting, and dimensional handoff at the same time.
 
 That coupling is the reason AM may be useful. If the hardware can be made as a simple plate, bar, or machined block, powder-based manufacturing may add cost without adding value. If the geometry needs integrated cooling channels, localized mass reduction, complex cable or busbar transitions, or compact mounting features, then CuCrZr powder becomes a more serious candidate.
+
+If the RF heat-spreading problem belongs to semiconductor equipment, packaging test hardware, or clean tool-side thermal hardware, use the dedicated [CuCrZr semiconductor equipment hardware guide](/posts/Alloys/cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware/) because cleanliness, coolant routing, tool interfaces, and contamination boundaries become part of the material review.
 
 ## When pure copper may still be enough
 

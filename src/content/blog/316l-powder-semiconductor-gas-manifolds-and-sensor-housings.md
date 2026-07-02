@@ -2,7 +2,7 @@
 title: 316L Powder for Semiconductor Gas Manifolds and Sensor Housings
 description: Why 316L powder fits semiconductor gas manifolds and sensor housings where corrosion-aware routing, cleanliness, and sealing interfaces matter together.
 pubDate: 2026-04-25T23:18:00+08:00
-updatedDate: 2026-05-01T07:00:00+08:00
+updatedDate: 2026-07-02
 category: Steel
 tags:
   - 316L
@@ -51,6 +51,8 @@ The most important distinction is that these parts often fail as systems rather 
 If the hardware is strongly strength-driven rather than corrosion- and routing-driven, 17-4PH may be more appropriate. If the service is too aggressive for stainless, the comparison may move into nickel.
 
 Nickel alloy powder may become more relevant when the chemical environment is beyond what stainless should handle. 17-4PH may become more relevant when strength and wear resistance dominate. CuCrZr may enter the conversation if the part is really a thermal or electrical interface rather than a stainless fluid-path body. A good material decision starts by naming the real service condition before naming the alloy.
+
+If the semiconductor hardware is a copper cooling plate, RF thermal body, packaging test fixture, or clean tool-side thermal part rather than a stainless gas manifold, use the dedicated [CuCrZr semiconductor equipment hardware guide](/posts/Alloys/cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware/).
 
 ## What to include in an inquiry
 

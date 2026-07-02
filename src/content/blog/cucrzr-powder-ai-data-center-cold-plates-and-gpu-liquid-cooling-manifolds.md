@@ -2,7 +2,7 @@
 title: CuCrZr Powder for AI Cold Plates and GPU Manifolds
 description: Why CuCrZr powder fits AI data center cold plates and GPU liquid-cooling manifolds where thermal density and sealed flow paths matter.
 pubDate: 2026-04-25T23:10:00+08:00
-updatedDate: 2026-05-01T07:00:00+08:00
+updatedDate: 2026-07-02
 category: Copper
 tags:
   - CuCrZr
@@ -51,6 +51,8 @@ For GPU liquid-cooling manifolds, the geometry often has to turn flow in a compa
 If the part is mainly an electrical transition or heat spreader rather than a liquid-cooling body, a different page is more useful. If the only target is maximum conductivity without much mechanical demand, pure copper may still deserve review.
 
 Pure copper can be the cleaner discussion when maximum conductivity is the dominant requirement and the geometry does not need much mechanical reserve. CuCrZr becomes more convincing when the part has to combine thermal duty with threads, ports, clamping, sealing, or repeated handling. If the part is not leak-sensitive and has no internal flow path, the project may belong in a broader heat-spreader or busbar article rather than this cold-plate page.
+
+If the copper cooling hardware belongs to semiconductor equipment, packaging test hardware, RF thermal assemblies, or clean tool-side cooling rather than a server rack or GPU manifold, use the dedicated [CuCrZr semiconductor equipment hardware guide](/posts/Alloys/cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware/).
 
 ## What to define before asking for powder
 

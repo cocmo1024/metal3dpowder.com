@@ -2,6 +2,7 @@
 title: CuCrZr Powder for Co-Packaged Optics Cold Plates
 description: Where CuCrZr powder fits LPBF cold plates and liquid-cooled optics as AI networks push co-packaged optics and sealed copper interfaces.
 pubDate: 2026-05-29T22:58:00+08:00
+updatedDate: 2026-07-02
 category: Copper
 tags:
   - CuCrZr
@@ -110,6 +111,8 @@ This level of detail prevents a common sourcing error: treating a liquid-cooled 
 CuCrZr powder should not be forced into every CPO or optics-cooling program. If the hardware is thin, flat, and high volume, machined copper, skived heat sinks, stamped plates, brazed assemblies, or a non-additive cold-plate route may be more economical. If the main issue is a large GPU baseplate rather than optical package cooling, the existing [CuCrZr AI liquid-cooling page](/posts/Alloys/cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds/) is the closer fit.
 
 If the component is mainly a current path, busbar transition, or RF heat-spreading part, use the [RF heat spreader and busbar page](/posts/Alloys/cucrzr-powder-rf-heat-spreaders-and-busbar-transition-hardware/). If the project is more about power electronics or EV inverter cooling, the [CuCrZr power electronics cooling guide](/posts/Alloys/cucrzr-powder-power-electronics-cooling-plates-and-busbar-hardware/) is more relevant.
+
+If the component is semiconductor equipment thermal hardware, RF-adjacent tool hardware, or packaging test equipment rather than an optical package cold plate, use the dedicated [CuCrZr semiconductor equipment hardware guide](/posts/Alloys/cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware/).
 
 ## The practical takeaway
 
