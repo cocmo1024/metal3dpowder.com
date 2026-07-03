@@ -2,6 +2,7 @@
 title: IN718 vs Hastelloy X Powder for Turbine and Furnace Hardware
 description: A practical comparison of IN718 and Hastelloy X powders for turbine-adjacent, hot-gas, and furnace hardware in additive manufacturing.
 pubDate: 2026-04-19T09:40:00+08:00
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - IN718
@@ -29,6 +30,8 @@ IN718 is often stronger when the application centers on:
 - parts with a more structural qualification history
 
 Its value is tied to strength retention and a very mature post-build route.
+
+If the IN718-side part is specifically a gas turbine fuel nozzle body, combustor swirler support, pilot injector housing, or injector-adjacent routed feature, use the dedicated [IN718 gas turbine fuel nozzle and swirler hardware guide](/posts/Alloys/in718-powder-gas-turbine-fuel-nozzles-and-combustor-swirler-hardware/). That narrower page covers small passages, flow verification, heat treatment, and combustor-adjacent boundaries that a broad alloy comparison cannot fully resolve.
 
 ## Where Hastelloy X usually wins
 

@@ -2,6 +2,7 @@
 title: Hastelloy X Powder for Hydrogen Burner and Combustor Hardware
 description: Why Hastelloy X powder is relevant for hydrogen burner hardware, combustor components, and hot-gas AM parts where oxidation resistance and thermal cycling matter.
 pubDate: 2026-04-25T22:27:00+08:00
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - Hastelloy X
@@ -51,6 +52,8 @@ If the part has thin walls, small holes, or internal channels, the drawing shoul
 IN718 is usually reviewed when structural strength retention is the main driver. IN625 is often reviewed when corrosion resistance and hot-side ducting are central. Hastelloy X becomes more relevant when oxidation and hot-gas behavior dominate.
 
 That is why material selection should start with the failure mode: strength, corrosion, oxidation, thermal cycling, or a combination of these.
+
+If the hardware is specifically a gas turbine fuel nozzle body, combustor swirler support, pilot injector housing, or injector-adjacent feature where precipitation-strengthened hot-side structure is the main reason for the alloy choice, use the dedicated [IN718 gas turbine fuel nozzle and swirler guide](/posts/Alloys/in718-powder-gas-turbine-fuel-nozzles-and-combustor-swirler-hardware/) before treating the part as a Hastelloy X combustion component.
 
 ## The practical takeaway
 

@@ -2,6 +2,7 @@
 title: IN718 Powder for Turbine, Exhaust, and Hot-Section AM Parts
 description: Where IN718 powder makes sense for high-temperature AM parts such as turbine hardware, exhaust-side structures, and other hot-section applications.
 pubDate: 2026-04-18T13:40:00+08:00
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - IN718
@@ -39,3 +40,5 @@ That combination is why IN718 remains one of the most credible first nickel rout
 ## The practical takeaway
 
 IN718 is strongest when the part is a real hot-section or high-temperature structural problem, not just a general industrial metal part. If the geometry and service temperature both matter, IN718 usually earns its place early in the material review.
+
+If the hot-section part is specifically a gas turbine fuel nozzle body, combustor swirler support, pilot injector housing, or injector-adjacent routed feature, use the dedicated [IN718 gas turbine fuel nozzle and combustor swirler hardware guide](/posts/Alloys/in718-powder-gas-turbine-fuel-nozzles-and-combustor-swirler-hardware/) because small passages, fuel or air distribution, heat treatment, cleaning, flow checks, and inspection access change the RFQ.

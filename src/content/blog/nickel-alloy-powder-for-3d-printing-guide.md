@@ -2,6 +2,7 @@
 title: "Nickel Alloy Powder for 3D Printing: IN718, IN625, and Hastelloy X"
 description: Nickel alloy powder for 3D printing guide covering IN718, IN625, Hastelloy X, LPBF, DED, hot-side parts, and corrosion hardware.
 pubDate: 2026-05-02T10:13:00+08:00
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - nickel alloy powder for 3D printing
@@ -22,6 +23,8 @@ In metal AM, nickel alloys are used in LPBF, DED, and selected powder metallurgy
 IN718 powder is the strength-led nickel superalloy route. It is commonly reviewed for hot-side structural housings, turbine-adjacent hardware, compressor components, brackets, and parts where precipitation-strengthened behavior is part of the design logic.
 
 IN718 is not the first answer for every hot part. It becomes most relevant when the part needs high-temperature strength and a qualified process route. For AM, the final result depends on powder quality, build parameters, heat treatment, residual stress control, and inspection evidence.
+
+If the specific application is a gas turbine fuel nozzle body, combustor swirler support, pilot injector housing, or injector-adjacent hot-section flow part, continue with the dedicated [IN718 gas turbine fuel nozzle and swirler hardware guide](/posts/Alloys/in718-powder-gas-turbine-fuel-nozzles-and-combustor-swirler-hardware/).
 
 ## IN625 powder
 

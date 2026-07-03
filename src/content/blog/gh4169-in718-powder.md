@@ -2,7 +2,7 @@
 title: GH4169 (IN718) Nickel Superalloy Powder for LPBF Additive Manufacturing
 description: A practical IN718 powder guide covering GH4169 identity, LPBF suitability, powder controls, and post-processing logic for demanding AM parts.
 pubDate: 2025-12-20
-updatedDate: 2026-04-12
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - IN718
@@ -38,6 +38,6 @@ If oxidation resistance in hot-section service is the primary issue, [Hastelloy 
 
 ## The practical takeaway
 
-Use IN718 when the part is structurally demanding, temperature-loaded, and tied to a controlled post-build route. If the actual hardware is turbine-adjacent or hot-section-focused, the application-specific [IN718 hot-section parts guide](/posts/Alloys/in718-powder-hot-section-parts/) is the right next page. If the part is specifically a hot-side structural housing or casing, continue with the narrower [IN718 housings and casings page](/posts/Alloys/in718-powder-hot-side-structural-housings-and-casings/).
+Use IN718 when the part is structurally demanding, temperature-loaded, and tied to a controlled post-build route. If the actual hardware is turbine-adjacent or hot-section-focused, the application-specific [IN718 hot-section parts guide](/posts/Alloys/in718-powder-hot-section-parts/) is the right next page. If the part is specifically a gas turbine fuel nozzle body, combustor swirler support, or injector-adjacent hot-section flow part, continue with the dedicated [IN718 gas turbine fuel nozzle and swirler hardware guide](/posts/Alloys/in718-powder-gas-turbine-fuel-nozzles-and-combustor-swirler-hardware/). If the part is specifically a hot-side structural housing or casing, continue with the narrower [IN718 housings and casings page](/posts/Alloys/in718-powder-hot-side-structural-housings-and-casings/).
 
 If the choice is between structural hot-side hardware and oxidation-driven furnace hardware, use the direct [IN718 vs Hastelloy X comparison](/posts/Alloys/in718-vs-hastelloy-x-powder-turbine-vs-furnace-hardware/).

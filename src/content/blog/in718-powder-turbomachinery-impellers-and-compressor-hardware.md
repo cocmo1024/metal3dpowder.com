@@ -2,6 +2,7 @@
 title: IN718 Powder for Turbomachinery Impellers and Compressor Hardware
 description: Where IN718 powder fits turbomachinery impellers, compressor hardware, and hot-side AM parts needing strength retention and controlled post-processing.
 pubDate: 2026-04-25T22:26:00+08:00
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - IN718
@@ -55,3 +56,5 @@ If oxidation resistance at higher hot-gas temperatures is the leading requiremen
 ## The practical takeaway
 
 Use IN718 powder for turbomachinery impellers and compressor hardware when strength retention, controlled heat treatment, and high-value geometry justify the route. For broader context, review the [IN718 powder guide](/posts/Alloys/gh4169-in718-powder/) and the [IN718 hot-section parts page](/posts/Alloys/in718-powder-hot-section-parts/). If corrosion is the main driver, compare [IN718 vs IN625 powder](/posts/Alloys/in718-vs-in625-powder/).
+
+If the project is not an impeller or compressor body but a gas turbine fuel nozzle body, combustor swirler support, or injector-adjacent hot-section flow part, route the review to the dedicated [IN718 gas turbine fuel nozzle and swirler hardware guide](/posts/Alloys/in718-powder-gas-turbine-fuel-nozzles-and-combustor-swirler-hardware/) because the key issues shift toward small passages, cleaning, flow verification, and combustor-adjacent material boundaries.
