@@ -2,6 +2,7 @@
 title: "DED Powder vs Wire: Feedstock Choice for Directed Energy Deposition"
 description: A practical DED feedstock guide comparing powder and wire, focused on machine fit, feedstock behavior, and where each route makes sense.
 pubDate: 2026-04-18T09:40:00+08:00
+updatedDate: 2026-07-03
 category: Process
 tags:
   - DED
@@ -48,6 +49,8 @@ Wire-fed DED is often easier to define when the installed process is already bui
 For powder-fed DED, the team usually needs to think through powder behavior, nozzle path, and how the application uses deposition freedom. For wire-fed DED, the discussion shifts toward wire stability, deposition continuity, and where the route is mechanically or operationally simpler.
 
 Those are different process packages. They should not be treated as if only the material form changes.
+
+If the alloy is IN625 and the application is repair, laser cladding, or localized oilfield corrosion restoration, continue with the [IN625 DED powder repair overlay guide](/posts/Alloys/in625-ded-powder-repair-overlays-and-oilfield-corrosion-hardware/) because the decision must include base-metal compatibility, dilution, machining stock, and deposit inspection.
 
 ## Questions that usually clarify the decision
 

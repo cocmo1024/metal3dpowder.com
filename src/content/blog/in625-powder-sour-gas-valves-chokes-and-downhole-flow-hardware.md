@@ -2,6 +2,7 @@
 title: IN625 Powder for Sour Gas Valves, Chokes, and Downhole Flow Hardware
 description: Where IN625 powder fits sour gas valves, choke components, downhole flow hardware, and oilfield corrosion-critical AM parts under H2S service review.
 pubDate: 2026-06-30T15:58:00+08:00
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - IN625
@@ -64,6 +65,8 @@ LPBF is the usual starting point for compact sour-service test parts, small rout
 LPBF also creates inspection and cleaning risks. Powder removal, CT access, internal surface condition, wall thickness, machining stock, leak testing, and pressure testing need to be planned before the build. The [LPBF powder particle size guide](/posts/Alloys/lpbf-powder-particle-size-guide/) is useful when defining the powder size range and process route.
 
 DED powder routes are more relevant when the job is repair, local overlay, or corrosion-resistant surface restoration on larger equipment. In sour oilfield service, many real parts are too large or too code-constrained for a full LPBF replacement. DED changes the review: dilution, base-metal compatibility, heat input, procedure qualification, machining, and post-build inspection become central. Use the [DED powder vs wire feedstock guide](/posts/Alloys/ded-powder-vs-wire-feedstock-guide/) when repair or overlay is the real route.
+
+If the project is specifically an IN625 repair overlay, laser-clad rebuild, or localized oilfield corrosion restoration, use the dedicated [IN625 DED powder repair overlay guide](/posts/Alloys/in625-ded-powder-repair-overlays-and-oilfield-corrosion-hardware/) before treating the job as a full replacement part.
 
 ## IN625 is not automatically a wear solution
 

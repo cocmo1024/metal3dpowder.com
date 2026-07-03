@@ -2,7 +2,7 @@
 title: IN625 Powder for Corrosion-Heavy Hot-Side Hardware
 description: Why IN625 powder fits corrosion-heavy hot-side hardware such as ducting, manifolds, and service parts that see heat plus aggressive media.
 pubDate: 2026-04-19T09:30:00+08:00
-updatedDate: 2026-06-30
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - IN625
@@ -34,6 +34,8 @@ If the aggressive media is specifically geothermal brine, use the dedicated [IN6
 If the aggressive media is specifically carbon capture amine service, wet CO2, CO2 conditioning, or compression-skid instrumentation hardware, use the dedicated [IN625 carbon capture hardware guide](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/) because solvent condition, contaminants, condensate, and drainability change the material review.
 
 If the aggressive media is H2S-bearing sour gas, downhole flow, wellhead/subsea flow, or valve and choke service, use the dedicated [IN625 sour gas hardware guide](/posts/Alloys/in625-powder-sour-gas-valves-chokes-and-downhole-flow-hardware/) because sour-service qualification, pressure class, erosion, and environmental cracking review change the RFQ details.
+
+If the job is repair-led rather than a new compact LPBF part, use the [IN625 DED powder repair overlay guide](/posts/Alloys/in625-ded-powder-repair-overlays-and-oilfield-corrosion-hardware/) because dilution, base-metal compatibility, machining stock, and deposit inspection become the central questions.
 
 ## When another nickel alloy is cleaner
 

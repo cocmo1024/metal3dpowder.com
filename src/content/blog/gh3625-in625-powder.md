@@ -2,7 +2,7 @@
 title: GH3625 (IN625) Nickel Alloy Powder for Corrosion-Resistant AM Parts
 description: IN625 powder guidance focused on corrosion resistance, powder quality, and application fit for harsh service environments.
 pubDate: 2025-12-20
-updatedDate: 2026-06-30
+updatedDate: 2026-07-03
 category: Nickel
 tags:
   - IN625
@@ -58,6 +58,8 @@ If the actual use case is geothermal brine heat-exchanger, valve, pump-adjacent,
 If the actual use case is carbon capture amine-service, CO2 conditioning, CO2 compression-skid, or CCUS pilot-loop hardware, continue with the dedicated [IN625 carbon capture hardware guide](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/).
 
 If the actual use case is sour gas, H2S-bearing valve, choke, downhole flow, or wellhead/subsea flow hardware, continue with the dedicated [IN625 sour gas hardware guide](/posts/Alloys/in625-powder-sour-gas-valves-chokes-and-downhole-flow-hardware/).
+
+If the actual use case is a repair overlay, laser-clad rebuild, or localized oilfield corrosion restoration rather than a full new part, continue with the focused [IN625 DED powder repair overlay guide](/posts/Alloys/in625-ded-powder-repair-overlays-and-oilfield-corrosion-hardware/).
 
 If the actual decision sits between IN625 and Hastelloy X on chemical hot-gas hardware, continue with the dedicated [IN625 vs Hastelloy X chemical hot-gas comparison](/posts/Alloys/in625-vs-hastelloy-x-powder-chemical-hot-gas-hardware/).
 
