@@ -2,6 +2,7 @@
 title: Ti64 Grade 23 vs Grade 5 Powder for Additive Manufacturing
 description: A practical comparison of Ti64 Grade 23 and Grade 5 powder for additive manufacturing focused on interstitial control, toughness, and specification intent.
 pubDate: 2026-04-13T10:10:00+08:00
+updatedDate: 2026-07-05T16:30:00+08:00
 category: Titanium
 tags:
   - Ti-6Al-4V
@@ -26,6 +27,8 @@ That decision should be made before the route is frozen, not after later specifi
 Grade 23 enters the conversation when the program is more controlled, more fatigue-aware, or more medically or qualification-oriented than a general titanium buy. The value is not just that the alloy sounds stricter. The value is that the chemistry intent matches the application better.
 
 That is why Grade 23 often shows up when the team is no longer asking only for "Ti64 powder" in a broad sense.
+
+That narrower intent can include implants, but it can also include patient-specific surgical guides, drill-guide carriers, and reusable instrument-adjacent hardware where the team wants ELI-style titanium documentation without describing the part as an implant. For that use case, continue with the [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/).
 
 ## Why Grade 5 still matters
 
@@ -54,4 +57,4 @@ This comparison is still inside the Ti64 family. It should not be confused with 
 
 Choose Grade 23 when the application needs the tighter ELI-style titanium route and can justify its specification discipline. Choose Grade 5 when the project remains strength-driven and a standard Ti64 route is sufficient. The right answer depends on what the program is actually trying to control.
 
-If the real use case is orthopedic or medical titanium hardware rather than a broad grade comparison, continue with the dedicated [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/).
+If the real use case is orthopedic or medical titanium hardware rather than a broad grade comparison, continue with the dedicated [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/). If the hardware is a surgical guide or instrument-adjacent component, use the focused [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/).

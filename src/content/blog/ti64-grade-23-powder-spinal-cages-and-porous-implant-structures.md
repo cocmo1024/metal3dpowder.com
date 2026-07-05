@@ -2,7 +2,7 @@
 title: Ti64 Grade 23 Powder for Spinal Cages and Porous Implant Structures
 description: Why Ti64 Grade 23 powder fits spinal cages and porous implant structures where ELI chemistry, lattice behavior, and implant-side toughness matter together.
 pubDate: 2026-04-25T23:26:00+08:00
-updatedDate: 2026-05-01T07:00:00+08:00
+updatedDate: 2026-07-05T16:30:00+08:00
 category: Titanium
 tags:
   - Ti64 Grade 23
@@ -46,6 +46,8 @@ A broad medical titanium article can include many devices. Spinal cages and poro
 
 For example, a solid surgical instrument and a porous spinal cage may both be titanium, but they are not the same powder decision. The spinal cage has more geometry-driven surface area, more cleaning sensitivity, and a stronger need to connect powder quality with build orientation, support strategy, heat treatment, and inspection.
 
+When the titanium part is actually a surgical guide, drill sleeve carrier, or reusable instrument component, use the dedicated [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/) so the powder discussion stays focused on guide stiffness, sleeve interfaces, machining stock, cleaning, and sterilization workflow rather than porous implant logic.
+
 ## When Grade 23 is not the point
 
 If the titanium part is not actually implant-side or does not need the tighter ELI-style route, a broader Ti64 path may be enough. Grade 23 should be used where the application truly needs what the tighter grade definition changes.
@@ -58,4 +60,4 @@ A serious Grade 23 powder inquiry should define the implant class, target AM pro
 
 ## The practical takeaway
 
-Choose Ti64 Grade 23 powder for spinal cages and porous implant structures when the project needs implant-side titanium logic rather than a generic structural titanium route. For the wider medical context, continue with the existing [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/).
+Choose Ti64 Grade 23 powder for spinal cages and porous implant structures when the project needs implant-side titanium logic rather than a generic structural titanium route. For the wider medical context, continue with the existing [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/). For guide and instrument-adjacent hardware, use the [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/).

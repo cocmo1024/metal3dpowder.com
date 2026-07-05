@@ -2,6 +2,7 @@
 title: "Titanium Powder for 3D Printing: Ti64, Grade 23, Grade 2, and TA15"
 description: Titanium powder for 3D printing guide covering Ti64, Grade 23, Grade 2, TA15, particle size, oxygen control, and application fit.
 pubDate: 2026-05-02T10:12:00+08:00
+updatedDate: 2026-07-05T16:30:00+08:00
 category: Titanium
 tags:
   - titanium powder for 3D printing
@@ -20,7 +21,7 @@ For metal additive manufacturing, the powder discussion should include alloy gra
 
 Ti64, commonly aligned with Ti-6Al-4V, is the default titanium alloy for many structural AM projects. It fits aerospace brackets, lightweight nodes, hydraulic manifolds, UAV support hardware, and many general high-strength titanium parts.
 
-Grade 23 titanium powder is the ELI-style Ti-6Al-4V route used when implant-side chemistry and ductility logic become more important. It is commonly considered for orthopedic implants, spinal cages, porous structures, and other medical components where a tighter titanium grade definition matters.
+Grade 23 titanium powder is the ELI-style Ti-6Al-4V route used when implant-side chemistry and ductility logic become more important. It is commonly considered for orthopedic implants, spinal cages, porous structures, and controlled medical components where a tighter titanium grade definition matters. It can also be considered for [surgical guides and instrument-adjacent hardware](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/) when metallic stiffness, sleeve interfaces, cleaning access, and documentation justify a Grade 23 route.
 
 Grade 2 or TA1 commercially pure titanium powder is different. It is not chosen for maximum strength. It is selected when corrosion behavior, ductility, biocompatibility logic, or chemical-service titanium behavior are more important than Ti64-style strength.
 
@@ -29,7 +30,7 @@ TA15 near-alpha titanium powder is more specialized. It belongs in discussions w
 | Titanium route | Where it usually fits |
 | --- | --- |
 | Ti64 / Ti-6Al-4V | Aerospace brackets, manifolds, UAV structures, lightweight nodes. |
-| Grade 23 Ti64 | Medical implants, spinal cages, porous implant structures. |
+| Grade 23 Ti64 | Medical implants, spinal cages, porous implant structures, surgical guide carriers, instrument hardware. |
 | Grade 2 / TA1 | Chemical parts, biomedical titanium, corrosion-aware hardware. |
 | TA15 | Elevated-temperature aerospace or structural AM parts. |
 
@@ -55,4 +56,4 @@ A useful titanium powder inquiry should include the alloy grade, AM process, tar
 
 ## Related titanium powder pages
 
-For alloy-specific detail, continue with [TC4 / Ti-6Al-4V powder](/posts/Alloys/tc4-ti6al4v-powder/), [Grade 23 vs Grade 5 titanium powder](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/), [TA1 commercially pure titanium powder](/posts/Alloys/ta1-cp-titanium-powder/), and [TA15 near-alpha titanium powder](/posts/Alloys/ta15-near-alpha-titanium-powder/).
+For alloy-specific detail, continue with [TC4 / Ti-6Al-4V powder](/posts/Alloys/tc4-ti6al4v-powder/), [Grade 23 vs Grade 5 titanium powder](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/), [Ti64 Grade 23 surgical guide and instrument hardware](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/), [TA1 commercially pure titanium powder](/posts/Alloys/ta1-cp-titanium-powder/), and [TA15 near-alpha titanium powder](/posts/Alloys/ta15-near-alpha-titanium-powder/).

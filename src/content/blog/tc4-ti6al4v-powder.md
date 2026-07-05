@@ -2,7 +2,7 @@
 title: TC4 (Ti-6Al-4V) Grade 5/23 Titanium Powder for LPBF, EBM & DED
 description: A practical guide to TC4 titanium powder covering Grade 5 vs Grade 23, PSD selection, oxygen control, and process fit across LPBF, EBM, and DED.
 pubDate: 2025-12-20
-updatedDate: 2026-04-12
+updatedDate: 2026-07-05
 category: Titanium
 tags:
   - titanium powder
@@ -21,7 +21,7 @@ That does not mean every titanium project should default to TC4. It means TC4 is
 
 The most relevant comparison is usually Grade 5 versus Grade 23. Both sit in the Ti-6Al-4V family, but Grade 23 uses tighter interstitial control and is often preferred when ductility, fatigue behavior, or medical-oriented specifications matter more. Grade 5 is still common when the application is strength-driven and the project does not require the stricter chemistry window of Grade 23.
 
-The first decision is usually Grade 5 versus Grade 23. That choice changes interstitial expectations, ductility margin, and where the alloy best fits. If the chemistry window is still being defined, the dedicated [titanium oxygen-limit discussion guide](/posts/Alloys/titanium-oxygen-limit-discussion-guide/) is the best next read before the build route is locked.
+The first decision is usually Grade 5 versus Grade 23. That choice changes interstitial expectations, ductility margin, and where the alloy best fits. If the chemistry window is still being defined, the dedicated [titanium oxygen-limit discussion guide](/posts/Alloys/titanium-oxygen-limit-discussion-guide/) is the best next read before the build route is locked. If the Grade 23 route is being evaluated for surgical guides, drill-guide carriers, or instrument-adjacent hardware, continue with the focused [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/).
 
 ## Why TC4 stays dominant in AM
 
@@ -51,7 +51,7 @@ That is why the process route should be explicit from the beginning. LPBF, EBM, 
 
 If the part is corrosion-driven rather than strength-driven, it is worth comparing TC4 against [Grade 2 titanium powder](/posts/Alloys/ti64-vs-grade-2-titanium-powder/). If the process is electron beam rather than laser based, pair the alloy decision with the [EBM powder size guide](/posts/Alloys/ebm-powder-size-guide/) instead of reusing an LPBF-style PSD request.
 
-If the end use is really aerospace structural hardware rather than titanium AM in general, continue with the application-specific [Ti64 aerospace structures guide](/posts/Alloys/ti64-titanium-powder-aerospace-structures/). If the titanium geometry is specifically a lattice bracket or lightweight structural node, continue with the narrower [Ti64 lattice and structural-node page](/posts/Alloys/ti64-powder-lattice-brackets-and-lightweight-structural-nodes/). If the titanium part is specifically an aircraft hydraulic manifold or valve block, continue with the dedicated [Ti64 aircraft hydraulic page](/posts/Alloys/ti64-powder-aircraft-hydraulic-manifolds-and-valve-blocks/). If the titanium route is being defined for orthopedic or medical use, continue with the focused [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/).
+If the end use is really aerospace structural hardware rather than titanium AM in general, continue with the application-specific [Ti64 aerospace structures guide](/posts/Alloys/ti64-titanium-powder-aerospace-structures/). If the titanium geometry is specifically a lattice bracket or lightweight structural node, continue with the narrower [Ti64 lattice and structural-node page](/posts/Alloys/ti64-powder-lattice-brackets-and-lightweight-structural-nodes/). If the titanium part is specifically an aircraft hydraulic manifold or valve block, continue with the dedicated [Ti64 aircraft hydraulic page](/posts/Alloys/ti64-powder-aircraft-hydraulic-manifolds-and-valve-blocks/). If the titanium route is being defined for orthopedic or medical use, continue with the focused [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/) or the narrower [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/).
 
 ## The practical takeaway
 
