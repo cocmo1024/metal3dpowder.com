@@ -2,6 +2,7 @@
 title: M300 Powder for Compact Mold Inserts in Recurring Production
 description: Why M300 powder fits compact mold inserts in recurring production when insert precision, aging response, and cooling geometry must work together.
 pubDate: 2026-04-23T22:01:00+08:00
+updatedDate: 2026-07-05
 category: Tooling
 tags:
   - M300
@@ -21,6 +22,8 @@ Compact mold inserts in recurring production usually care about:
 - insert precision,
 - cooling geometry where AM changes cycle time or heat removal,
 - repeatable insert replacement without redesigning the whole tool.
+
+If the recurring insert is a moving mold detail rather than a static insert, the [M300 injection mold slider and lifter guide](/posts/Alloys/m300-powder-injection-mold-sliders-and-lifters/) is the closer page because it adds contact surfaces, angled motion, shutoff faces, and datum planning.
 
 That is exactly where M300 tends to stay practical.
 

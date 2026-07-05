@@ -2,6 +2,7 @@
 title: M300 Powder for Core Inserts and Compact Production Tooling
 description: Why M300 powder fits core inserts, compact production tooling, and precision tool components where post-aged strength and cooling geometry matter.
 pubDate: 2026-04-19T09:36:00+08:00
+updatedDate: 2026-07-05
 category: Tooling
 tags:
   - M300
@@ -27,6 +28,8 @@ The AM value often comes from compact geometry, targeted cooling, and insert red
 ## Why core inserts keep pointing to M300
 
 Core inserts are often precision-driven. They may need high post-aged strength, dimensional credibility, and cooling geometry inside a very compact tooling envelope. That is exactly where M300 keeps showing up as a practical AM steel.
+
+If the compact tooling component moves during mold operation, such as a slider, lifter, angled side-action detail, or undercut-release insert, use the narrower [M300 mold slider and lifter guide](/posts/Alloys/m300-powder-injection-mold-sliders-and-lifters/) instead of treating it like a static core insert.
 
 ## When another steel should take over
 

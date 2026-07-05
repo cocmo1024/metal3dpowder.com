@@ -2,6 +2,7 @@
 title: M300 Maraging Steel Powder for AM Tooling and Conformal Cooling Inserts
 description: M300 maraging steel powder guide covering tooling fit, aging response, and the applications where this steel is strongest.
 pubDate: 2026-04-12
+updatedDate: 2026-07-05
 category: Tooling
 tags:
   - M300
@@ -54,3 +55,5 @@ If the application is primarily mold tooling, core inserts, or production fixtur
 If the actual use case is compact production tooling or a core insert, continue with the dedicated [M300 core insert guide](/posts/Alloys/m300-powder-core-inserts-and-compact-production-tooling/).
 
 If the actual use case is a compact mold insert in recurring production, continue with the dedicated [M300 recurring-production insert page](/posts/Alloys/m300-powder-compact-mold-inserts-in-recurring-production/).
+
+If the actual use case is a moving injection mold detail such as a slider, lifter, angled side action, or undercut-release insert, continue with the dedicated [M300 mold slider and lifter guide](/posts/Alloys/m300-powder-injection-mold-sliders-and-lifters/).

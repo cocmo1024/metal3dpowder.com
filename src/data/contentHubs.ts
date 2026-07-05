@@ -132,6 +132,7 @@ export const materialHubs: HubDefinition[] = [
       'm300-powder-mold-tooling-inserts',
       'm300-powder-core-inserts-and-compact-production-tooling',
       'm300-powder-compact-mold-inserts-in-recurring-production',
+      'm300-powder-injection-mold-sliders-and-lifters',
       'm300-powder-robot-gripper-jaws-and-end-of-arm-tooling',
     ],
   },
@@ -470,6 +471,7 @@ export const applicationHubs: HubDefinition[] = [
       'm300-powder-mold-tooling-inserts',
       'm300-powder-core-inserts-and-compact-production-tooling',
       'm300-powder-compact-mold-inserts-in-recurring-production',
+      'm300-powder-injection-mold-sliders-and-lifters',
     ],
   },
   {
@@ -541,6 +543,7 @@ export const processHubs: HubDefinition[] = [
       'ti64-powder-robotic-arm-brackets-and-end-effector-hardware',
       'ti64-vs-17-4ph-powder-humanoid-robot-joints',
       'm300-powder-robot-gripper-jaws-and-end-of-arm-tooling',
+      'm300-powder-injection-mold-sliders-and-lifters',
       '316l-stainless-steel-powder',
       '316l-powder-ai-data-center-coolant-distribution-manifolds',
       '316l-powder-hydrogen-electrolyzer-flow-field-plates',

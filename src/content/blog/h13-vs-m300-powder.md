@@ -2,6 +2,7 @@
 title: H13 vs M300 Powder for AM Tooling
 description: A practical comparison of H13 and M300 powders for additive manufacturing tooling, focused on hot-work duty and insert performance.
 pubDate: 2026-04-12T09:00:00+08:00
+updatedDate: 2026-07-05
 category: Tooling
 tags:
   - H13
@@ -40,6 +41,8 @@ M300 is usually easier to justify when the tooling case is precision- and insert
 - high-strength tooling components that benefit from an aging route
 
 In practical terms, M300 often wins when the part is built around better cooling, tool redesign, and insert performance rather than hot-work survival.
+
+For injection mold sliders, lifters, angled side actions, and undercut-release details, the narrower [M300 mold slider and lifter page](/posts/Alloys/m300-powder-injection-mold-sliders-and-lifters/) is usually the cleaner follow-up because moving contact surfaces and machined datum faces change the insert discussion.
 
 ## Why teams lose time on this choice
 

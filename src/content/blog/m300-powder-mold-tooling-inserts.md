@@ -2,6 +2,7 @@
 title: M300 Powder for Mold Tooling, Core Inserts, and Production Fixtures
 description: How M300 powder fits mold tooling, core inserts, and production fixtures where dimensional stability and tooling-focused strength matter more than hot-work behavior.
 pubDate: 2026-04-18T13:50:00+08:00
+updatedDate: 2026-07-05
 category: Tooling
 tags:
   - M300
@@ -21,6 +22,8 @@ M300 is usually strongest in applications such as:
 - core inserts
 - production fixtures
 - tooling parts that benefit from internal geometry but are not dominated by hot-work cycling
+
+If the mold detail is specifically a slider, lifter, angled side action, or undercut-release insert, use the dedicated [M300 injection mold slider and lifter page](/posts/Alloys/m300-powder-injection-mold-sliders-and-lifters/) because moving contact surfaces, shutoff faces, and machining datum logic change the powder and build discussion.
 
 The common pattern is simple: the tool geometry matters, the insert performance matters, and the thermal load is meaningful but not extreme enough to force the decision toward a hot-work steel.
 

@@ -2,6 +2,7 @@
 title: H13 Powder for Injection Molding Conformal Cooling Production Tools
 description: Why H13 powder fits injection molding production tools with conformal cooling when the tooling problem is heat-driven and not just geometry-driven.
 pubDate: 2026-04-23T21:57:00+08:00
+updatedDate: 2026-07-05
 category: Tooling
 tags:
   - H13
@@ -33,6 +34,8 @@ This is what separates a production-tool article from a generic insert article.
 ## When H13 is the wrong production-tool answer
 
 If the job is more about compact mold inserts, easier aging response, and less severe hot-work duty, [M300 powder](/posts/Alloys/m300-maraging-steel-powder/) may be the cleaner choice. The part should not be forced into H13 just because the cooling geometry is attractive.
+
+If the compact injection mold detail is specifically a moving slider, lifter, angled side action, or undercut-release insert, continue with the [M300 mold slider and lifter guide](/posts/Alloys/m300-powder-injection-mold-sliders-and-lifters/) because motion surfaces and datum machining become central.
 
 ## The practical takeaway
 
