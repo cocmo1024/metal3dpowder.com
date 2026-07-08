@@ -2,7 +2,7 @@
 title: 316L Powder for Semiconductor Gas Manifolds and Sensor Housings
 description: Why 316L powder fits semiconductor gas manifolds and sensor housings where corrosion-aware routing, cleanliness, and sealing interfaces matter together.
 pubDate: 2026-04-25T23:18:00+08:00
-updatedDate: 2026-07-02
+updatedDate: 2026-07-08
 category: Steel
 tags:
   - 316L
@@ -15,6 +15,8 @@ featured: true
 316L powder becomes especially relevant when the stainless hardware is not a generic flow part, but a gas manifold or sensor housing tied to cleaner service, controlled routing, and sealing surfaces. This kind of part usually values corrosion-aware stainless behavior and geometry discipline more than maximum strength.
 
 This is a high-value powder topic because semiconductor-side hardware often forces several requirements into the same part: routed passages, compact package boundaries, cleanable surfaces, port alignment, and corrosion-aware material behavior. The material choice is therefore not just "stainless steel." It is whether 316L powder can support the process route, feature size, post-processing plan, and acceptance evidence required by the hardware.
+
+If the part is a wet-process chemical manifold, clean liquid delivery block, drain body, rinse block, or valve block rather than a gas or sensor-side component, use the dedicated [316L semiconductor wet-process chemical manifold page](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/) so the powder discussion stays focused on liquid chemistry, drainability, internal surface finish, and cleaning validation.
 
 ## Why semiconductor-side manifolds point to 316L
 
@@ -60,4 +62,4 @@ Useful project information includes the gas or fluid environment, cleanliness ex
 
 ## The practical takeaway
 
-Choose 316L powder for semiconductor gas manifolds and sensor housings when the part is really a corrosion-aware routing and sealing problem rather than a strength-first stainless problem. For the wider stainless context, continue with the existing [316L manifolds and fluid-path page](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/).
+Choose 316L powder for semiconductor gas manifolds and sensor housings when the part is really a corrosion-aware routing and sealing problem rather than a strength-first stainless problem. For wet-process chemical manifolds and clean liquid delivery blocks, continue with the [316L semiconductor wet-process chemical manifold page](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/). For the wider stainless context, continue with the existing [316L manifolds and fluid-path page](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/).

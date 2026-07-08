@@ -2,7 +2,7 @@
 title: 316L Powder for Manifolds and Fluid-Path Parts
 description: Why 316L powder is a strong LPBF route for manifolds, fluid-path parts, and stainless hardware where corrosion resistance and internal routing matter together.
 pubDate: 2026-04-19T11:00:00+08:00
-updatedDate: 2026-07-02
+updatedDate: 2026-07-08
 category: Steel
 tags:
   - 316L
@@ -29,6 +29,8 @@ If the manifold belongs to SMR auxiliary-fluid, instrumentation, test-loop, or n
 
 If the manifold belongs to direct air capture auxiliary hardware, air or CO2 sampling, purge, drain, vacuum, or sensor-block service, use the dedicated [316L direct air capture auxiliary manifolds and sensor blocks guide](/posts/Alloys/316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks/) to separate moderate stainless DAC hardware from more severe carbon capture chemistry.
 
+If the manifold belongs to semiconductor wet-process chemical delivery, rinse, drain, sampling, or clean liquid valve-block hardware, use the focused [316L semiconductor wet-process chemical manifold guide](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/) because wetted-surface finish, drainability, trapped powder, and contamination control change the AM decision.
+
 ## Why manifolds keep landing on 316L
 
 Many fluid-path parts do not need a precipitation-hardening stainless route. They need a stainless route that prints predictably, tolerates corrosive service reasonably well, and keeps the internal geometry problem manageable. That is where 316L usually wins.
@@ -41,4 +43,4 @@ If the part is actually strength-driven or tooling-adjacent rather than flow-pat
 
 Use 316L powder when the application is a manifold or fluid-path part that benefits from corrosion resistance, internal routing freedom, and a stable LPBF stainless route. That is one of the most natural stainless AM use cases.
 
-For the broader alloy-level context, return to the main [316L stainless steel powder guide](/posts/Alloys/316l-stainless-steel-powder/). If the part is broader corrosion-side stainless hardware rather than a routed manifold, use the more general [316L industrial hardware page](/posts/Alloys/316l-powder-corrosion-resistant-industrial-hardware/). If the hardware is specifically a semiconductor gas manifold or a sensor housing, continue with the narrower [316L semiconductor manifold page](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/).
+For the broader alloy-level context, return to the main [316L stainless steel powder guide](/posts/Alloys/316l-stainless-steel-powder/). If the part is broader corrosion-side stainless hardware rather than a routed manifold, use the more general [316L industrial hardware page](/posts/Alloys/316l-powder-corrosion-resistant-industrial-hardware/). If the hardware is specifically a semiconductor gas manifold or a sensor housing, continue with the narrower [316L semiconductor manifold page](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/). If the hardware is a semiconductor wet-process chemical block, continue with the [316L semiconductor wet-process chemical manifold page](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/).

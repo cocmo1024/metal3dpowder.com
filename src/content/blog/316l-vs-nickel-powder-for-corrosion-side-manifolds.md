@@ -2,7 +2,7 @@
 title: 316L vs Nickel Powder for Corrosion-Side Manifolds
 description: A practical comparison of 316L and nickel-alloy powder for corrosion-side manifolds where media, temperature, and geometry decide the correct AM route.
 pubDate: 2026-04-23T21:45:00+08:00
-updatedDate: 2026-07-02
+updatedDate: 2026-07-08
 category: Steel
 tags:
   - 316L
@@ -26,6 +26,8 @@ The real question is not whether stainless or nickel is "better." It is whether 
 That is why many flow-path and manifold searches still land on 316L first. The alloy is practical, corrosion-capable in many environments, and easier to justify when nickel would be unnecessary.
 
 If the manifold belongs to direct air capture auxiliary hardware, air or CO2 sampling, purge, drain, vacuum, or sensor-block service with moderate stainless conditions, start with the dedicated [316L direct air capture auxiliary manifolds guide](/posts/Alloys/316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks/). Move toward nickel only when wet acidic CO2, aggressive solvent chemistry, contaminants, temperature, or downtime risk makes stainless margin too thin.
+
+If the manifold belongs to semiconductor wet-process chemical delivery and still fits a practical stainless envelope, start with the focused [316L semiconductor wet-process chemical manifold guide](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/). Move toward nickel only when the media, temperature, release risk, or surface requirement makes 316L margin too thin.
 
 ## When nickel starts to take over
 
@@ -56,4 +58,4 @@ The wrong decision is usually caused by staying with stainless out of habit afte
 
 ## The practical takeaway
 
-Choose 316L powder for corrosion-side manifolds that still fit a practical stainless route. Choose nickel powder when chemistry and temperature push the manifold beyond stainless comfort. For the narrower stainless application page, continue with the dedicated [316L manifold and fluid-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/). For a corrosion-first nickel route, continue with the focused [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/).
+Choose 316L powder for corrosion-side manifolds that still fit a practical stainless route. Choose nickel powder when chemistry and temperature push the manifold beyond stainless comfort. For the narrower stainless application page, continue with the dedicated [316L manifold and fluid-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/). For semiconductor wet-process liquid hardware, continue with the [316L semiconductor wet-process chemical manifold guide](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/). For a corrosion-first nickel route, continue with the focused [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/).

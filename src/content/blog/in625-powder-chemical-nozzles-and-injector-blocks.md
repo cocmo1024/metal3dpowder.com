@@ -2,7 +2,7 @@
 title: IN625 Powder for Chemical Nozzles and Injector Blocks
 description: Why IN625 powder fits chemical nozzles and injector blocks where corrosion, thermal cycling, and internal passage stability matter together.
 pubDate: 2026-04-25T23:30:00+08:00
-updatedDate: 2026-05-01T07:00:00+08:00
+updatedDate: 2026-07-08
 category: Nickel
 tags:
   - IN625
@@ -52,10 +52,12 @@ If the part is more strongly oxidation-driven or furnace-side, Hastelloy X may b
 
 If the part is only mildly corrosive and mostly stainless-compatible, 316L may be more economical. If the part is combustion-side or oxidation-limited, Hastelloy X may be closer. If the main requirement is precipitation-strengthened hot-section structure, IN718 may be more appropriate. IN625 is strongest as a corrosion-first nickel route with useful thermal and flow-path capability.
 
+For semiconductor wet-process chemical manifolds and clean liquid delivery blocks that still fit a stainless route, start with the [316L semiconductor wet-process chemical manifold page](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/) before moving to IN625. Move to nickel when the media, temperature, or release risk is no longer a practical 316L problem.
+
 ## What to define before choosing IN625 powder
 
 A useful inquiry should include media exposure, operating temperature, pressure, minimum passage size, nozzle or injector-face tolerances, sealing surfaces, and post-processing expectations. If any passage must be inspected, cleaned, or verified, that requirement should be named before powder is ordered. The earlier those limits are defined, the less likely the project is to become a printed shape that cannot be accepted.
 
 ## The practical takeaway
 
-Choose IN625 powder for chemical nozzles and injector blocks when the hardware is corrosion-first, passage-driven, and too demanding for stainless. For the broader alloy context, continue with the existing [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/).
+Choose IN625 powder for chemical nozzles and injector blocks when the hardware is corrosion-first, passage-driven, and too demanding for stainless. For stainless semiconductor wet-process manifolds, use the [316L semiconductor wet-process chemical manifold guide](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/). For the broader alloy context, continue with the existing [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/).

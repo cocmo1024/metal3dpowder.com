@@ -2,6 +2,7 @@
 title: CuCrZr Powder for Semiconductor Equipment Cooling Plates and RF Thermal Hardware
 description: Where CuCrZr powder fits semiconductor equipment cooling plates, RF thermal hardware, test fixtures, and copper AM parts that need heat transfer plus interface stability.
 pubDate: 2026-07-02T09:20:00+08:00
+updatedDate: 2026-07-08
 category: Copper
 tags:
   - CuCrZr
@@ -58,6 +59,7 @@ The existing copper cluster already covers several close topics, so this page ne
 - use [CuCrZr co-packaged optics cold plates](/posts/Alloys/cucrzr-powder-co-packaged-optics-cold-plates/) when the limiting constraints are optical package alignment, fiber clearance, silicon photonics, or liquid-cooled optical modules
 - use [CuCrZr RF heat spreaders and busbar transitions](/posts/Alloys/cucrzr-powder-rf-heat-spreaders-and-busbar-transition-hardware/) when the part is a broader RF or power-transition heat spreader
 - use [316L semiconductor gas manifolds and sensor housings](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/) when the part is a stainless clean gas, instrumentation, or corrosion-aware manifold
+- use [316L semiconductor wet-process chemical manifolds](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/) when the part is stainless liquid chemical delivery, rinse, drain, or clean valve-block hardware
 - use this page when the part is semiconductor equipment thermal hardware, RF-adjacent tool hardware, test equipment thermal hardware, or clean copper cooling hardware
 
 This separation helps the site add keywords without publishing duplicate copper cold-plate pages. Each page answers a different buyer question.
@@ -134,6 +136,7 @@ Use this internal map to keep the decision powder-centered:
 - use this page when the part is semiconductor equipment cooling, RF thermal hardware, packaging test hardware, or clean copper thermal tooling
 - use [CuCrZr co-packaged optics cold plates](/posts/Alloys/cucrzr-powder-co-packaged-optics-cold-plates/) when the thermal body is tied to optical engines, CPO, or silicon photonics
 - use [316L semiconductor gas manifolds](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/) when the problem is clean stainless fluid routing rather than copper heat transfer
+- use [316L semiconductor wet-process chemical manifolds](/posts/Alloys/316l-powder-semiconductor-wet-process-chemical-manifolds/) when the stainless route is liquid chemical delivery rather than gas or sensor-side hardware
 - use [Copper Alloy Powder](/materials/copper-alloy-powder/) for adjacent CuCrZr cold plate, RF, conductor, and heat-exchanger pages
 - use [Semiconductor Fluid Hardware](/applications/semiconductor-fluid-hardware/) or [Photonics and RF Hardware](/applications/photonics-and-rf-hardware/) when browsing by application
 - use [LPBF Powder](/processes/lpbf/) when the manufacturing route drives the powder-size and inspection discussion

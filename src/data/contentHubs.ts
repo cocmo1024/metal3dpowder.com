@@ -56,6 +56,7 @@ export const materialHubs: HubDefinition[] = [
       '316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware',
       '316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks',
       '316l-powder-semiconductor-gas-manifolds-and-sensor-housings',
+      '316l-powder-semiconductor-wet-process-chemical-manifolds',
       '316l-powder-pharmaceutical-fluid-manifolds-and-clean-flow-hardware',
       '316l-powder-metal-injection-molding-and-binder-jet-parts',
       '17-4ph-powder-industrial-fixtures-and-tooling-hardware',
@@ -281,6 +282,7 @@ export const applicationHubs: HubDefinition[] = [
     postIds: [
       '316l-powder-ai-data-center-coolant-distribution-manifolds',
       '316l-powder-semiconductor-gas-manifolds-and-sensor-housings',
+      '316l-powder-semiconductor-wet-process-chemical-manifolds',
       'cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware',
       '316l-powder-pharmaceutical-fluid-manifolds-and-clean-flow-hardware',
       '316l-powder-manifolds-and-fluid-path-parts',
@@ -552,6 +554,7 @@ export const processHubs: HubDefinition[] = [
       '316l-powder-hydrogen-electrolyzer-flow-field-plates',
       '316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware',
       '316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks',
+      '316l-powder-semiconductor-wet-process-chemical-manifolds',
       'gh4169-in718-powder',
       'in625-powder-seawater-desalination-pump-valve-and-brine-hardware',
       'in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware',
