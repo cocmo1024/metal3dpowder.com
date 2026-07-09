@@ -2,6 +2,7 @@
 import type { BlogPost } from '../data/blog';
 import BlogPostGrid from './BlogPostGrid.astro';
 import HubCardGrid from './HubCardGrid.astro';
+import RfqCta from './RfqCta.astro';
 
 interface HubCard {
   title: string;
@@ -45,6 +46,8 @@ const {
       </section>
     ) : null
   }
+
+  <RfqCta context={title} variant="hub" />
 </main>
 
 <style>

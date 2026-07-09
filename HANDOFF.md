@@ -34,12 +34,13 @@
 - Product cards show powder image, name, starting price, particle size, lead time, short description, and tags.
 - The site has a complete Astro-based article system with blog listing, paginated archive, tag pages, article pages, previous/next navigation, related article grids, and RSS feed.
 - Content hubs are organized around materials, applications, processes, comparisons, and knowledge pages.
-- Current blog content count: 91 Markdown articles.
+- Current blog content count: 114 Markdown articles.
 - Core material clusters are established for titanium, stainless steel, nickel alloy, copper alloy, tool steel, aluminum, and cobalt chrome powders.
 - Application clusters are established for AI liquid cooling, aerospace and space, medical and dental, semiconductor fluid hardware, power electronics and EV, energy and propulsion, tooling and mold inserts, and MIM/binder jet production.
 - SEO groundwork includes canonical site URL, sitemap generation, RSS feed, structured internal linking through hubs, and noindex/follow handling for lower-value pagination.
 - Recent pricing system was updated using conservative public market references.
-- Recent high-value content addition: CuCrZr powder for battery thermal plates and inverter cooling hardware.
+- Recent high-value content addition: 316L powder for semiconductor wet-process chemical manifolds.
+- Recent conversion optimization: article pages and content hub pages now include a reusable powder RFQ CTA that routes organic readers toward `/contact/` and the official sales email.
 
 ## Current Unfinished Tasks
 

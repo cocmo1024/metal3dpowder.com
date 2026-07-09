@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BlogPostGrid from '../../../components/BlogPostGrid.astro';
+import RfqCta from '../../../components/RfqCta.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import { buildBreadcrumbSchema, publisherLogoPath } from '../../../data/seo';
@@ -129,6 +130,8 @@ const schema = [
       <section class="article-content">
         <Content />
       </section>
+
+      <RfqCta context={post.data.title} />
 
       {
         topicHubs.length ? (

@@ -26,6 +26,49 @@ export const buildBreadcrumbSchema = (site: URL, items: BreadcrumbItem[]) => ({
   })),
 });
 
+export const buildOrganizationSchema = (site: URL) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteInfo.brand,
+  alternateName: siteAlternateName,
+  url: site.toString(),
+  email: siteInfo.email,
+  logo: new URL(publisherLogoPath, site).toString(),
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: siteInfo.email,
+      availableLanguage: ['en'],
+      areaServed: 'Worldwide',
+    },
+  ],
+});
+
+export const buildContactPageSchema = ({
+  site,
+  path,
+  name,
+  description,
+}: {
+  site: URL;
+  path: string;
+  name: string;
+  description: string;
+}) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name,
+  description,
+  url: new URL(path, site).toString(),
+  about: {
+    '@type': 'Organization',
+    name: siteInfo.brand,
+    url: site.toString(),
+    email: siteInfo.email,
+  },
+});
+
 export const buildCollectionPageSchema = ({
   site,
   path,
