@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import { buildRfqEmailHref } from '../../data/contact';
 import { buildBreadcrumbSchema, buildContactPageSchema, buildOrganizationSchema } from '../../data/seo';
 import { siteInfo } from '../../data/site';
 
@@ -9,6 +10,7 @@ const title = 'Contact | Metal 3D Powder';
 const description =
   'Contact Metal 3D Powder for RFQs, powder specifications, technical questions, and export-oriented metal AM powder inquiries.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const rfqEmailHref = buildRfqEmailHref();
 const schema = [
   buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'Contact' }]),
   buildContactPageSchema({ site: siteUrl, path: '/contact/', name: title, description }),
@@ -34,7 +36,8 @@ const schema = [
         <h2>Official email</h2>
         <div class="contact-copy">
           <input type="text" value={siteInfo.email} readonly aria-label="Official email" onclick="this.select();" />
-          <button type="button" class="button button--primary" data-copy-email>Copy Email</button>
+          <a class="button button--primary" href={rfqEmailHref}>Start RFQ email</a>
+          <button type="button" class="button button--ghost" data-copy-email>Copy email</button>
         </div>
         <p>{siteInfo.contactNote}</p>
       </div>
@@ -81,7 +84,7 @@ const schema = [
           await navigator.clipboard.writeText(input.value);
           button.textContent = 'Copied';
           window.setTimeout(() => {
-            button.textContent = 'Copy Email';
+            button.textContent = 'Copy email';
           }, 1600);
         } catch {
           input.focus();
@@ -146,9 +149,14 @@ const schema = [
 
   .contact-copy {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     gap: 0.8rem;
     align-items: center;
+  }
+
+  .contact-copy .button {
+    min-height: 3rem;
+    white-space: nowrap;
   }
 
   .contact-copy input {

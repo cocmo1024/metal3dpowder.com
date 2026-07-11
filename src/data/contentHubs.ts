@@ -278,17 +278,11 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'semiconductor-fluid-hardware',
     title: 'Semiconductor Fluid Hardware',
-    description: 'Stainless, copper, and nickel powder routes for clean manifolds, sensor housings, cooling plates, RF thermal hardware, heat spreaders, and chemical flow parts.',
+    description: '316L and CuCrZr powder routes for semiconductor gas and wet-process manifolds, equipment cooling plates, sensor housings, and RF thermal hardware.',
     postIds: [
-      '316l-powder-ai-data-center-coolant-distribution-manifolds',
       '316l-powder-semiconductor-gas-manifolds-and-sensor-housings',
       '316l-powder-semiconductor-wet-process-chemical-manifolds',
       'cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware',
-      '316l-powder-pharmaceutical-fluid-manifolds-and-clean-flow-hardware',
-      '316l-powder-manifolds-and-fluid-path-parts',
-      'cucrzr-powder-rf-heat-spreaders-and-busbar-transition-hardware',
-      'in625-powder-chemical-nozzles-and-injector-blocks',
-      '316l-vs-nickel-powder-for-corrosion-side-manifolds',
     ],
   },
   {

@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import { getPostHubs, type HubGroup } from './contentHubs';
 import { siteInfo } from './site';
 
 export type BlogPost = CollectionEntry<'blog'>;
@@ -301,21 +302,36 @@ export const getAdjacentBlogPosts = (posts: BlogPost[], currentId: string) => {
 
 export const getRelatedBlogPosts = (posts: BlogPost[], currentPost: BlogPost, count = 6) => {
   const currentTags = new Set(currentPost.data.tags.map((tag) => tag.toLowerCase()));
+  const currentHubKeys = new Set(getPostHubs(currentPost.id).map((hub) => `${hub.group}:${hub.slug}`));
+  const hubWeights: Record<HubGroup, number> = {
+    materials: 12,
+    applications: 14,
+    processes: 5,
+  };
 
-  const sameTagPosts = posts
+  const rankedPosts = posts
     .filter((post) => post.id !== currentPost.id)
     .map((post) => {
       const sharedTagCount = post.data.tags.filter((tag) => currentTags.has(tag.toLowerCase())).length;
+      const sharedHubs = getPostHubs(post.id).filter((hub) => currentHubKeys.has(`${hub.group}:${hub.slug}`));
+      const hubScore = sharedHubs.reduce((score, hub) => score + hubWeights[hub.group], 0);
+      const categoryScore = post.data.category === currentPost.data.category ? 2 : 0;
+
       return {
         post,
         sharedTagCount,
-        pageViews: getBlogPageViews(post),
+        sharedHubCount: sharedHubs.length,
+        score: hubScore + sharedTagCount * 4 + categoryScore,
       };
     })
-    .filter((item) => item.sharedTagCount > 0)
+    .filter((item) => item.score > 0)
     .sort((left, right) => {
-      if (right.pageViews !== left.pageViews) {
-        return right.pageViews - left.pageViews;
+      if (right.score !== left.score) {
+        return right.score - left.score;
+      }
+
+      if (right.sharedHubCount !== left.sharedHubCount) {
+        return right.sharedHubCount - left.sharedHubCount;
       }
 
       if (right.sharedTagCount !== left.sharedTagCount) {
@@ -326,11 +342,11 @@ export const getRelatedBlogPosts = (posts: BlogPost[], currentPost: BlogPost, co
     })
     .map((item) => item.post);
 
-  if (sameTagPosts.length >= count) {
-    return sameTagPosts.slice(0, count);
+  if (rankedPosts.length >= count) {
+    return rankedPosts.slice(0, count);
   }
 
-  const usedIds = new Set(sameTagPosts.map((post) => post.id));
+  const usedIds = new Set(rankedPosts.map((post) => post.id));
   usedIds.add(currentPost.id);
 
   const fallbackPosts = posts
@@ -344,14 +360,10 @@ export const getRelatedBlogPosts = (posts: BlogPost[], currentPost: BlogPost, co
         return -1;
       }
 
-      if (getBlogPageViews(right) !== getBlogPageViews(left)) {
-        return getBlogPageViews(right) - getBlogPageViews(left);
-      }
-
       return compareBlogPosts(left, right);
     });
 
-  return [...sameTagPosts, ...fallbackPosts].slice(0, count);
+  return [...rankedPosts, ...fallbackPosts].slice(0, count);
 };
 
 export const getTagArchives = (posts: BlogPost[]) => {

@@ -1,5 +1,5 @@
 ---
-import { siteInfo } from '../data/site';
+import { buildRfqEmailHref } from '../data/contact';
 
 interface Props {
   context?: string;
@@ -15,6 +15,7 @@ const heading = isHub
 const copy = isHub
   ? `Use this ${context} page to shortlist the alloy family, then send the process, particle size, quantity, destination, and target application so the inquiry can move toward a usable powder specification.`
   : `If ${context} matches your application, send the alloy grade, process route, PSD target, quantity, destination country, and any oxygen, documentation, or packaging requirements.`;
+const emailHref = buildRfqEmailHref(context);
 ---
 
 <section class={`rfq-cta rfq-cta--${variant}`} aria-labelledby={titleId}>
@@ -31,8 +32,8 @@ const copy = isHub
   </ul>
 
   <div class="rfq-cta__actions" aria-label="RFQ actions">
-    <a class="button button--primary" href="/contact/">Request quote</a>
-    <a class="button button--ghost" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
+    <a class="button button--primary" href={emailHref}>Start RFQ email</a>
+    <a class="button button--ghost" href="/contact/">RFQ details</a>
   </div>
 </section>
 

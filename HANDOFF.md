@@ -41,6 +41,8 @@
 - Recent pricing system was updated using conservative public market references.
 - Recent high-value content addition: 316L powder for semiconductor wet-process chemical manifolds.
 - Recent conversion optimization: article pages and content hub pages now include a reusable powder RFQ CTA that routes organic readers toward `/contact/` and the official sales email.
+- Recent semantic and inquiry optimization: related articles now rank by shared material, application, process, tags, and category; RFQ email actions now open a prefilled buyer checklist from articles, hubs, contact, and the homepage contact area.
+- The Semiconductor Fluid Hardware hub is intentionally narrow: only explicit semiconductor gas, wet-process, and equipment thermal-hardware pages belong there. Keep AI cooling, pharmaceutical flow, and generic corrosion/manifold pages in their own application centers.
 
 ## Current Unfinished Tasks
 

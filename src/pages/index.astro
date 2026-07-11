@@ -6,6 +6,7 @@ import HubCardGrid from '../components/HubCardGrid.astro';
 import ProductCard from '../components/ProductCard.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { buildRfqEmailHref } from '../data/contact';
 import { buildCollectionPageSchema } from '../data/seo';
 import { siteInfo } from '../data/site';
 import { products } from '../data/products';
@@ -17,6 +18,7 @@ const description =
   'Metal powder for 3D printing and additive manufacturing: titanium, stainless steel, nickel, aluminum, copper, tool steel and cobalt chrome with current application guides, sizes and lead times.';
 
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const rfqEmailHref = buildRfqEmailHref();
 const allPosts = sortBlogPosts(await getCollection('blog'));
 const latestPosts = allPosts.slice(0, 6);
 
@@ -164,8 +166,9 @@ const collectionPageSchema = buildCollectionPageSchema({
           aria-label="Sales email"
           onclick="this.select();"
         />
-        <button type="button" class="button button--primary" data-copy-email>
-          Copy Email
+        <a class="button button--primary" href={rfqEmailHref}>Start RFQ email</a>
+        <button type="button" class="button button--ghost" data-copy-email>
+          Copy email
         </button>
       </div>
     </section>
@@ -183,7 +186,7 @@ const collectionPageSchema = buildCollectionPageSchema({
           await navigator.clipboard.writeText(input.value);
           button.textContent = 'Copied';
           window.setTimeout(() => {
-            button.textContent = 'Copy Email';
+            button.textContent = 'Copy email';
           }, 1600);
         } catch {
           input.focus();
@@ -312,9 +315,14 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .contact-strip__box {
     display: grid;
-    grid-template-columns: minmax(320px, auto) auto;
+    grid-template-columns: minmax(280px, auto) auto auto;
     gap: 0.85rem;
     align-items: center;
+  }
+
+  .contact-strip__box .button {
+    min-height: 3rem;
+    white-space: nowrap;
   }
 
   .contact-strip__box input {
