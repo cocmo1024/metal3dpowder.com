@@ -18,7 +18,7 @@ import {
   getTagPath,
   sortBlogPosts,
 } from '../../../data/blog';
-import { getHubPath, getPostHubs } from '../../../data/contentHubs';
+import { getHubPath, getPostHubs, knowledgePostIds } from '../../../data/contentHubs';
 import { siteInfo } from '../../../data/site';
 
 export async function getStaticPaths() {
@@ -36,6 +36,7 @@ const allPosts = sortBlogPosts(await getCollection('blog'));
 const { previousPost, nextPost } = getAdjacentBlogPosts(allPosts, post.id);
 const relatedPosts = getRelatedBlogPosts(allPosts, post, 6);
 const topicHubs = getPostHubs(post.id);
+const isKnowledgePost = knowledgePostIds.includes(post.id);
 const readingMinutes = estimateReadingMinutes(post.body ?? '');
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 const topicHubLabel = (group: string) =>
@@ -134,11 +135,17 @@ const schema = [
       <RfqCta context={post.data.title} />
 
       {
-        topicHubs.length ? (
+        topicHubs.length || isKnowledgePost ? (
           <section class="article-paths" aria-labelledby="article-paths-title">
             <h2 id="article-paths-title">Topic Paths</h2>
             <p>Continue through the material, application, and process centers connected to this powder topic.</p>
             <div class="article-paths__links">
+              {isKnowledgePost ? (
+                <a href="/knowledge/">
+                  <span>Knowledge center</span>
+                  <strong>Metal Powder Knowledge Base</strong>
+                </a>
+              ) : null}
               {topicHubs.map((hub) => (
                 <a href={getHubPath(hub)}>
                   <span>{topicHubLabel(hub.group)}</span>
@@ -300,6 +307,62 @@ const schema = [
   .article-content :global(ol) {
     margin: 0;
     padding-left: 1.2rem;
+  }
+
+  .article-content :global(table) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0 0;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .article-content :global(th),
+  .article-content :global(td) {
+    min-width: 9rem;
+    padding: 0.72rem 0.78rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .article-content :global(th:last-child),
+  .article-content :global(td:last-child) {
+    border-right: 0;
+  }
+
+  .article-content :global(tr:last-child td) {
+    border-bottom: 0;
+  }
+
+  .article-content :global(th) {
+    color: var(--text);
+    background: rgba(143, 228, 217, 0.08);
+    font-weight: 700;
+  }
+
+  .article-content :global(td) {
+    color: var(--copy);
+  }
+
+  .article-content :global(blockquote) {
+    display: grid;
+    gap: 0.45rem;
+    margin: 1rem 0 0;
+    padding: var(--card-padding);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .article-content :global(blockquote p) {
+    margin: 0;
   }
 
   .article-content :global(a) {

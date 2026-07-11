@@ -668,6 +668,7 @@ export const comparisonPostIds = [
 
 export const knowledgePostIds = [
   'metal-powder-for-3d-printing-guide',
+  'metal-powder-selection-by-application',
   'titanium-powder-for-3d-printing-guide',
   'nickel-alloy-powder-for-3d-printing-guide',
   'copper-powder-for-3d-printing-guide',

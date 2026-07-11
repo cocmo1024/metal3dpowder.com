@@ -1,69 +1,246 @@
 ---
-title: "Metal Powder Specification Guide: PSD, Oxygen, Flowability, and COA"
-description: Metal powder specification guide covering PSD, oxygen, chemistry, flowability, apparent density, morphology, COA, and RFQ details for AM powder.
+title: "Metal Powder Specification and COA Guide: PSD, Oxygen, and Flow"
+description: Specify AM metal powder and read a COA using chemistry, D10/D50/D90, oxygen, morphology, density, flow, sampling, traceability, and RFQ fields.
 pubDate: 2026-05-04T07:46:00+08:00
+updatedDate: 2026-07-11
 category: Knowledge
 tags:
   - metal powder specification
+  - metal powder COA
   - PSD report
   - oxygen control
   - powder flowability
-  - COA
 featured: true
 ---
 
-A metal powder specification should do more than name the alloy. For additive manufacturing, the useful specification ties alloy grade, process route, particle-size distribution, chemistry, oxygen, morphology, flowability, apparent density, and documentation to the part being made.
+A metal powder specification defines what the buyer will accept. A certificate of analysis (COA) reports selected results for a supplied lot. The two documents serve different purposes, and neither should be replaced by a generic product data sheet.
 
-Many weak inquiries say only "send price for 3D printing powder." That is not enough for a serious technical or commercial answer. A better inquiry states the alloy, manufacturing process, PSD window, quantity, application, and required documents.
+For additive manufacturing, a complete powder specification normally connects alloy chemistry, particle-size distribution, morphology, density, flow or spreadability, contamination, traceability, packaging, and powder condition to the process and application.
 
-## Core items in an AM powder specification
+## Specification, COA, and data sheet
 
-The exact specification depends on alloy and process, but most serious powder discussions include the same core items:
+| Document | Main purpose | What it should answer | Common limitation |
+| --- | --- | --- | --- |
+| Technical specification or purchase requirement | Defines acceptance | What grade, limits, methods, documents, packaging, and change controls are required? | Can become unrealistic if copied from another process or alloy |
+| Lot-specific COA | Reports lot results | What was measured for this lot, and does it meet the agreed limits? | May report only chemistry and a nominal PSD |
+| Product data sheet | Describes a standard product | What grade, typical range, and intended processes are offered? | Usually not proof for the supplied lot |
+| Safety data sheet | Supports hazard communication and handling | What hazards and precautions apply? | Does not establish AM process suitability |
 
-| Specification item | Why it matters |
-| --- | --- |
-| Alloy grade | Separates Ti64 from Grade 23, 316L from 17-4PH, IN718 from IN625, and CuCrZr from pure copper. |
-| Process route | LPBF, EBM, DED, MIM, and binder jet do not use the same powder assumptions. |
-| PSD | Defines the particle-size window, such as 15-45 um or 15-53 um for many LPBF discussions. |
-| Chemistry | Confirms alloy composition and controlled elements. |
-| Oxygen and interstitials | Critical for titanium and important for several other alloy families. |
-| Morphology | Affects spreading, feeding, packing, and process consistency. |
-| Flowability and apparent density | Helps evaluate powder handling behavior. |
-| Documentation | COA, PSD report, and lot traceability support qualification and repeat orders. |
+The buyer should review all four where relevant, but the specification and lot evidence control technical acceptance.
 
-## PSD report
+## What ISO and ASTM include
 
-The PSD report describes particle-size distribution. It should be read in context. A 15-45 um powder and a 15-53 um powder may both be reasonable for LPBF, but the correct window depends on machine, alloy, layer strategy, and process history.
+[ISO/ASTM 52907](https://www.iso.org/standard/73565.html), confirmed as current in 2025, covers documentation and traceability, sampling, particle-size distribution, chemistry, characteristic densities, morphology, flowability, contamination, packaging, storage, and used powder. It does not cover safety.
 
-PSD alone does not prove powder quality. A powder can meet the size range but still have morphology, oxygen, contamination, or flow problems. Treat PSD as one part of the specification, not the whole specification.
+[ASTM F3049](https://store.astm.org/standards/f3049) is a guide to characterization methods for metal powders used in powder bed fusion, directed energy deposition, and binder jetting. These standards do not create one universal acceptance limit. They help buyers and suppliers agree on what to characterize and how to describe the methods.
 
-## Oxygen and chemistry
+## Core fields in a metal powder specification
 
-Oxygen is especially important in titanium powder because interstitial pickup can affect ductility and final performance. Oxygen and chemistry are also relevant for aluminum, copper, nickel, and high-value stainless programs. The right requirement depends on alloy and application. Do not copy one oxygen number across every project.
+| Specification field | Evidence to request | Why it matters |
+| --- | --- | --- |
+| Alloy designation | Referenced standard or agreed chemistry table | Prevents ambiguous names such as "titanium powder" or "stainless powder" |
+| Chemical composition | Lot-specific measured chemistry and method where required | Confirms alloy identity and controlled elements |
+| Interstitials / gases | Oxygen, nitrogen, hydrogen or other limits by alloy | Critical for titanium and relevant to other reactive or controlled systems |
+| PSD | D10/D50/D90 or agreed sieve limits plus method | Defines the actual distribution behind a nominal cut |
+| Morphology | Agreed imaging method or representative lot images | Reveals irregulars, satellites, agglomerates, or surface condition |
+| Apparent/tap density | Value and test method | Supports packing and handling comparison |
+| Flow / rheology | Value, method, and conditions | Helps compare handling but does not alone prove machine spreadability |
+| Contamination | Agreed foreign-particle or cleanliness controls | Protects chemistry and build integrity |
+| Production route | Gas atomized, plasma atomized, water atomized, or other | Provides context for shape, oxygen, internal porosity, and cost |
+| Powder condition | Virgin, blended, conditioned, recovered, or reused | Prevents incompatible assumptions about feedstock history |
+| Traceability | Manufacturer, lot, dates, quantity, document references | Supports repeat orders, investigation, and change control |
+| Packaging | Container, net mass, seal, atmosphere, label, storage | Protects the accepted powder condition through delivery |
 
-## COA and traceability
+Not every sample order needs every field. The correct scope follows the process risk and application.
 
-A COA is useful because it ties a powder lot to chemistry and quality information. For early development, a basic COA may be enough. For medical, aerospace, hot-side, or recurring production work, stronger traceability and documentation may be needed.
+## How to read a PSD report
 
-Traceability also protects the repeat order path. If a successful development lot cannot be identified clearly, the next purchase may not behave the same way. For powder users trying to move from trials into recurring production, lot identity, retained documentation, packaging condition, and any reuse policy should be treated as part of the manufacturing route rather than administrative extras.
+Particle-size distribution is not fully described by "15-45 um."
 
-## Process-specific specification differences
+### D10, D50, and D90
 
-LPBF specifications often emphasize fine PSD windows, morphology, flowability, apparent density, and chemistry. EBM powder may use coarser titanium cuts. DED powder may prioritize feeding behavior and deposition stability. MIM and binder jet powders can follow different size and packing requirements. This is why a complete powder specification starts with the process route instead of only the alloy name.
+- D10 is the size below which 10% of the measured distribution falls.
+- D50 is the median of the measured distribution.
+- D90 is the size below which 90% falls.
 
-## RFQ checklist
+The exact meaning also depends on whether the instrument reports volume, number, mass, or another basis. A buyer should record the measurement method and reporting basis.
 
-A practical powder RFQ should include:
+### Nominal cut versus measured distribution
 
-- alloy grade,
-- target process,
-- PSD window,
-- quantity,
-- application or part family,
-- required documents,
-- delivery country,
-- whether the powder is for testing, qualification, or recurring production.
+A nominal 15-45 um product can contain limited material below or above those values depending on the supplier's controls and test method. The specification should state whether acceptance uses sieves, laser diffraction, dynamic imaging, or another method, plus limits for fines and oversize if they matter.
 
-## Related powder guides
+NIST compared multiple PSD and morphology techniques for stainless powder and found that methods respond to different physical aspects of the particles. The [NIST comparison study](https://www.nist.gov/publications/comparison-particle-size-distribution-and-morphology-data-acquired-using-lab-based-and) is a useful warning against comparing numbers without comparing methods.
 
-For broad material choice, start with the [metal powder for 3D printing guide](/posts/Alloys/metal-powder-for-3d-printing-guide/). For LPBF size windows, read the [LPBF powder particle size guide](/posts/Alloys/lpbf-powder-particle-size-guide/). For morphology, read the [spherical metal powder guide](/posts/Alloys/spherical-metal-powder-for-3d-printing/).
+### PSD is process-specific
+
+LPBF often discusses fine cuts such as 15-45 um or 15-53 um. EBM frequently uses coarser powder. Powder-fed DED focuses on feeding and deposition behavior. Binder jet and MIM depend on packing, binder interaction, debinding, sintering, and shrinkage.
+
+Use the [LPBF particle-size guide](/posts/Alloys/lpbf-powder-particle-size-guide/), [EBM size guide](/posts/Alloys/ebm-powder-size-guide/), or [DED powder versus wire guide](/posts/Alloys/ded-powder-vs-wire-feedstock-guide/) instead of copying one range across processes.
+
+## Chemistry and oxygen
+
+The chemistry section should identify:
+
+- the alloy designation and reference,
+- measured elements and units,
+- specification limits,
+- test method where required,
+- whether results represent the supplied lot,
+- any calculated or balance value,
+- controlled gases or interstitial elements.
+
+Titanium powder requires particular care because oxygen and other interstitials influence material behavior. Grade 5 and Grade 23 should not be separated by label alone; the agreed chemistry and project requirements control. Read the [titanium oxygen guide](/posts/Alloys/titanium-oxygen-limit-discussion-guide/) for that decision.
+
+For aluminum, copper, nickel, stainless, tool steel, and cobalt alloys, chemistry still matters. Do not assume that an alloy family name establishes the exact grade or application suitability.
+
+## Morphology: spherical is not a binary result
+
+Powder morphology can include:
+
+- near-spherical particles,
+- irregular or elongated particles,
+- satellites attached to larger particles,
+- agglomerates,
+- hollow or internally porous particles,
+- rough surfaces,
+- fractured or oxidized particles.
+
+NIST's [3D particle shape and size study](https://www.nist.gov/publications/particle-shape-and-size-analysis-metal-powders-used-additive-manufacturing-technique) used X-ray computed tomography and image analysis to distinguish near-spherical particles from non-spherical or multi-particle forms. For purchasing, the practical point is that "spherical" should be supported by an agreed observation or acceptance method when morphology is critical.
+
+Representative images are useful only when they are tied to the lot or a controlled product baseline. A polished marketing micrograph with no lot, scale, sampling, or method has limited acceptance value.
+
+## Flowability, rheology, and spreadability
+
+Flow tests measure behavior under defined test conditions. A powder may flow through a funnel yet spread poorly in a thin LPBF layer. Another powder may not produce a Hall-flow time but still process acceptably in a particular machine.
+
+Record:
+
+- the test method and funnel or instrument,
+- temperature and humidity where relevant,
+- sample preparation,
+- whether the result is a single value or range,
+- how the method relates to the actual recoating or feeding system.
+
+The current [ISO/ASTM flow-property guidance](https://www.iso.org/standard/75754.html) emphasizes selecting measurement methods appropriate to the powder and process, including virgin and used material. This supports a method-based specification rather than one universal "good flow" number.
+
+## Density values are not interchangeable
+
+Apparent density, tap density, skeletal density, and powder-bed density describe different conditions. State the method and units.
+
+- Apparent density helps describe how powder fills a defined volume without tapping.
+- Tap density measures a compacted condition after a specified tapping procedure.
+- Skeletal density relates to the solid material excluding accessible void space, depending on method.
+- Powder-bed density is the density achieved in the deposited layer and is process-dependent.
+
+A supplier COA may report one density. The buyer should not relabel it as another.
+
+## Sampling can invalidate good testing
+
+Segregation can occur during atomization collection, transport, vibration, storage, splitting, and pouring. A test result is only as representative as the sample.
+
+Define:
+
+- where and how the sample is taken,
+- whether the container is mixed or sampled from multiple locations,
+- the sample quantity,
+- the sample-reduction method,
+- retention-sample requirements,
+- how opened or partially used containers are handled.
+
+NIST research on [feedstock variation in powder bed fusion](https://www.nist.gov/publications/characterization-feedstock-powder-bed-fusion-process-sources-variation-particle-size) discusses transportation, handling, sampling, and spreading as sources of variation.
+
+## Virgin, blended, and reused powder
+
+The specification should state the allowed powder condition:
+
+- virgin only,
+- virgin blended with recovered powder,
+- conditioned or sieved powder,
+- reused powder with defined cycle or exposure controls.
+
+If reused powder is permitted, define the recovery, sieving, sampling, chemistry, PSD, contamination, and blending rules. A reuse policy is part of the manufacturing process, not a generic supplier claim.
+
+## Three documentation levels
+
+### Development screening
+
+Suitable for an early feasibility trial:
+
+- alloy identity,
+- lot chemistry,
+- PSD report,
+- production route,
+- basic packaging and traceability.
+
+### Recurring industrial production
+
+Add:
+
+- agreed chemistry and PSD limits,
+- morphology/density/flow baseline where useful,
+- lot genealogy,
+- change notification,
+- standardized packaging,
+- incoming inspection and retention plan.
+
+### Qualification-sensitive application
+
+Add the controls required by the governing program:
+
+- contract material specification,
+- approved methods and laboratories,
+- complete lot traceability,
+- controlled sampling,
+- retained records and samples,
+- source and process change approval,
+- powder reuse controls,
+- application-specific regulatory, code, or quality requirements.
+
+The powder supplier supports this package; the part manufacturer still owns process qualification and final part acceptance.
+
+## COA review checklist
+
+Before accepting a COA, ask:
+
+1. Does the document identify the original manufacturer and supplied lot?
+2. Does the alloy designation match the purchase requirement?
+3. Are values measured, typical, or specification limits?
+4. Are units and methods clear?
+5. Does the PSD include actual distribution data?
+6. Are oxygen or other controlled gases included where required?
+7. Do all reported results meet the agreed limits?
+8. Does the packaging label match the COA?
+9. Is any test performed on a different lot or product baseline?
+10. Are deviations or substitutions explicitly approved?
+
+## Metal powder RFQ specification block
+
+Include this information in the first inquiry:
+
+> Alloy and specification:
+>
+> Process and machine:
+>
+> Particle-size distribution and method:
+>
+> Chemistry / oxygen / controlled-element limits:
+>
+> Required morphology, density, or flow data:
+>
+> Virgin / blended / reused condition:
+>
+> Quantity and packaging:
+>
+> COA and traceability requirements:
+>
+> Application and project stage:
+>
+> Destination and target date:
+>
+> Change-notification requirement:
+
+If a field is not yet known, state that it is open for supplier recommendation. That is better than copying an unsuitable requirement.
+
+## Use the specification to create comparable quotations
+
+The goal is not the largest possible document package. It is a specification that makes supplier offers technically comparable and proportionate to risk. Start with the [metal powder buying guide](/posts/Alloys/metal-powder-for-3d-printing-guide/), then use the [supplier qualification guide](/posts/Alloys/additive-manufacturing-powder-supplier-guide/) to verify the source against the same acceptance basis.

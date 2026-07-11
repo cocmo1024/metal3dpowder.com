@@ -34,7 +34,7 @@
 - Product cards show powder image, name, starting price, particle size, lead time, short description, and tags.
 - The site has a complete Astro-based article system with blog listing, paginated archive, tag pages, article pages, previous/next navigation, related article grids, and RSS feed.
 - Content hubs are organized around materials, applications, processes, comparisons, and knowledge pages.
-- Current blog content count: 114 Markdown articles.
+- Current blog content count: 115 Markdown articles.
 - Core material clusters are established for titanium, stainless steel, nickel alloy, copper alloy, tool steel, aluminum, and cobalt chrome powders.
 - Application clusters are established for AI liquid cooling, aerospace and space, medical and dental, semiconductor fluid hardware, power electronics and EV, energy and propulsion, tooling and mold inserts, and MIM/binder jet production.
 - SEO groundwork includes canonical site URL, sitemap generation, RSS feed, structured internal linking through hubs, and noindex/follow handling for lower-value pagination.
@@ -43,12 +43,16 @@
 - Recent conversion optimization: article pages and content hub pages now include a reusable powder RFQ CTA that routes organic readers toward `/contact/` and the official sales email.
 - Recent semantic and inquiry optimization: related articles now rank by shared material, application, process, tags, and category; RFQ email actions now open a prefilled buyer checklist from articles, hubs, contact, and the homepage contact area.
 - The Semiconductor Fluid Hardware hub is intentionally narrow: only explicit semiconductor gas, wet-process, and equipment thermal-hardware pages belong there. Keep AI cooling, pharmaceutical flow, and generic corrosion/manifold pages in their own application centers.
+- The 2026-07-11 content rebuild replaced four core commercial/specification articles and added one cross-application powder selection pillar. Do not return to one-page-per-trend publishing without fresh Search Console evidence.
+- Current quality debt remains visible: 54 articles are below 500 words and 99 articles have no external technical source. Word count is not the target; distinct engineering decision value, evidence, and query performance are.
 
 ## Current Unfinished Tasks
 
-- Continue adding high-value SEO articles, but only after checking existing articles to avoid duplicate or near-duplicate intent.
-- Keep expanding around real powder search intent: alloy + powder, alloy + process, alloy + application, alloy + specification.
-- Watch Google Search Console data after deployment and prioritize pages with impressions but weak CTR or low average position.
+- Obtain a fresh Google Search Console query/page export. The latest local evidence is still dated 2026-04-29 and is no longer sufficient for content expansion decisions.
+- Rewrite, merge, redirect, or retire weak existing pages before another broad publishing wave.
+- Add a new URL only when it serves a distinct powder decision that an existing page cannot satisfy.
+- Keep future work around real powder search intent: alloy + powder, alloy + process, alloy + application, alloy + specification.
+- Prioritize pages with relevant impressions but weak ranking, CTR, or inquiry contribution once current GSC data is available.
 - Periodically refresh price guidance and product card prices when public market signals materially change.
 - Continue pruning or improving any content that drifts away from powder, material selection, process fit, or application fit.
 
@@ -86,12 +90,9 @@
 
 ## Next Recommendations
 
-1. Run a fresh content inventory before the next article batch: list titles, slugs, categories, and target intent.
-2. Prioritize the next clean topics that do not overlap current articles:
-   - 17-4PH powder for actuator housings and latch hardware in industrial automation.
-   - AlSi10Mg powder for radar and EO sensor housings.
-   - Ti64 powder for compact robotic arm support brackets.
-   - IN625 powder for marine chemical ducting and corrosion-side hardware, if existing coverage is not already enough.
-3. Use Google Search Console data to identify pages with impressions and weak CTR, then improve titles and descriptions before creating more pages.
-4. Keep each new article tied to one search intent, one material family, and one application or process route.
-5. After each content update, run `npm run build`, commit intentionally, and push to `main`.
+1. Export current Search Console data for both the latest 3 months and 6 months, including Queries and Pages tabs.
+2. Build a page-to-query map and identify overlap, zero-impression pages, and URLs ranking below the useful result range.
+3. Start the next rewrite wave with H13 die-casting inserts, CuCrZr induction hardware, IN718 hot-side housings, 17-4PH fixtures, CoCrMo wear hardware, and Ti64 satellite/UAV pages only if their current GSC data supports keeping separate URLs.
+4. Merge overlapping zero-value pages into the strongest parent and use permanent redirects rather than leaving weak near-duplicates indexed.
+5. Do not make decorative images mandatory. Add only technical visuals that improve understanding or image-search value.
+6. After each content update, run `npm run build`, commit intentionally, push to `main`, and verify the production URL.

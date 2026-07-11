@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { buildBreadcrumbSchema } from '../../data/seo';
+import { siteInfo } from '../../data/site';
 
 const title = 'About | Metal 3D Powder';
 const description =
@@ -66,6 +67,35 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
         <strong>Website role</strong>
         <p>The site combines product cards, alloy articles, FAQ material, and direct contact information for export-oriented inquiry handling.</p>
       </article>
+    </section>
+
+    <section class="copy-grid" aria-label="Editorial and source standards">
+      <div class="surface-card surface-card--padded rich-copy">
+        <h2>How the technical content is prepared</h2>
+        <p>
+          Material and process guides are built from alloy definitions, powder characterization standards, public
+          technical research, regulator or government guidance, and manufacturer data where it is useful. Sources are
+          linked inside articles when they support a material statement, measurement method, or application boundary.
+        </p>
+        <p>
+          Application pages distinguish a powder route worth reviewing from a qualified part. Alloy selection, powder
+          acceptance, printing, heat treatment, machining, inspection, and final release remain separate engineering
+          decisions.
+        </p>
+      </div>
+
+      <div class="surface-card surface-card--padded rich-copy">
+        <h2>Boundaries, updates, and corrections</h2>
+        <p>
+          The site does not treat a common aerospace, medical, energy, or semiconductor alloy as automatic approval for
+          a part. Regulatory, code, pressure, corrosion, fatigue, and customer-specific requirements must be reviewed by
+          the responsible engineering and quality teams.
+        </p>
+        <p>
+          Article dates are updated only when the content changes materially. Technical corrections and source questions
+          can be sent to <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
+        </p>
+      </div>
     </section>
   </main>
 
