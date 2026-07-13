@@ -71,6 +71,8 @@ If the team is still deciding, the project should at least define:
 - whether reused powder is part of the plan
 - any machine or layer-thickness constraints already known
 
+For lot acceptance, also lock the analytical basis. The [laser diffraction versus dynamic image analysis guide](/posts/Alloys/laser-diffraction-vs-dynamic-image-analysis-metal-powder-psd/) explains why identical percentile names can move when the diameter descriptor, weighting, or physical method changes. The [metal powder lot sampling guide](/posts/Alloys/am-metal-powder-lot-sampling-for-psd/) covers how the tested material should represent the supplied lot before any PSD limit is applied.
+
 That gives the project enough context to choose a realistic cut rather than a generic one.
 
 ## RFQ wording that reduces confusion

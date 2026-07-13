@@ -71,6 +71,8 @@ A nominal 15-45 um product can contain limited material below or above those val
 
 NIST compared multiple PSD and morphology techniques for stainless powder and found that methods respond to different physical aspects of the particles. The [NIST comparison study](https://www.nist.gov/publications/comparison-particle-size-distribution-and-morphology-data-acquired-using-lab-based-and) is a useful warning against comparing numbers without comparing methods.
 
+Use the dedicated [laser diffraction versus dynamic image analysis guide](/posts/Alloys/laser-diffraction-vs-dynamic-image-analysis-metal-powder-psd/) to choose a release method, define the reporting basis, and avoid transferring D10/D50/D90 limits between unlike techniques.
+
 ### PSD is process-specific
 
 LPBF often discusses fine cuts such as 15-45 um or 15-53 um. EBM frequently uses coarser powder. Powder-fed DED focuses on feeding and deposition behavior. Binder jet and MIM depend on packing, binder interaction, debinding, sintering, and shrinkage.
@@ -146,6 +148,8 @@ Define:
 - the sample-reduction method,
 - retention-sample requirements,
 - how opened or partially used containers are handled.
+
+The [AM metal powder lot sampling guide](/posts/Alloys/am-metal-powder-lot-sampling-for-psd/) develops these fields into an increment, composite, sample-reduction, retention, and chain-of-custody workflow for PSD acceptance.
 
 NIST research on [feedstock variation in powder bed fusion](https://www.nist.gov/publications/characterization-feedstock-powder-bed-fusion-process-sources-variation-particle-size) discusses transportation, handling, sampling, and spreading as sources of variation.
 
