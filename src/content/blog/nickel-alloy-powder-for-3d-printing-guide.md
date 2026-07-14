@@ -38,6 +38,8 @@ Hastelloy X powder belongs in oxidation-resistant and high-temperature gas-side 
 
 The practical question is whether the part is strength-led, corrosion-led, or oxidation and hot-gas led. That distinction should be made before asking for a powder quote.
 
+If the application is a liquid-rocket chamber jacket, preburner, propellant manifold, channel-wall nozzle, or other hot-fire component, use the dedicated [nickel alloy powder guide for rocket chamber jackets and hot-fire hardware](/posts/Alloys/nickel-alloy-powder-rocket-chamber-jackets-and-hot-fire-hardware/). It separates the conductivity-first copper liner from the strength-, environment-, and interface-led nickel roles.
+
 | Nickel powder route | Primary fit |
 | --- | --- |
 | IN718 | High-temperature strength and structural hot-side AM parts. |

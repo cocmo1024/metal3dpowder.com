@@ -43,7 +43,7 @@ If the actual hardware target is a cold plate or heat sink rather than a general
 
 If the actual use case is conductive tooling or a welding-contact component, continue with the dedicated [CuCrZr conductive tooling guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
 
-If the actual use case is copper heat exchangers or rocket-side copper hardware, continue with the frontier-focused [CuCrZr heat exchanger and rocket parts guide](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/).
+If the actual use case is a regeneratively cooled rocket combustion chamber liner, continue with the [CuCrZr rocket chamber guide](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/) for cooling-channel, jacket-interface, inspection, and RFQ decisions.
 
 If the actual use case is semiconductor equipment cooling plates, RF thermal hardware, packaging test fixtures, or clean copper thermal tooling, continue with the dedicated [CuCrZr semiconductor equipment hardware guide](/posts/Alloys/cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware/).
 
