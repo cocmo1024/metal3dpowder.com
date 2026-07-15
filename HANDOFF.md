@@ -1,5 +1,7 @@
 # Metal3dPowder.com Handoff
 
+> **更新文章、内容 hub、内链或正文技术视觉前，必须先阅读 [`CONTENT_UPDATE_GUIDE.md`](./CONTENT_UPDATE_GUIDE.md)。** 该指南定义 GSC 证据、意图去重、技术声明、URL/hub 和发布验收规则。
+
 ## Project Path
 
 `G:\Codex\metal3dpowder.com`
@@ -34,7 +36,7 @@
 - Product cards show powder image, name, starting price, particle size, lead time, short description, and tags.
 - The site has a complete Astro-based article system with blog listing, paginated archive, tag pages, article pages, previous/next navigation, related article grids, and RSS feed.
 - Content hubs are organized around materials, applications, processes, comparisons, and knowledge pages.
-- Current blog content count: 115 Markdown articles.
+- Derive the current blog inventory from `src/content/blog/`; do not use a hard-coded article count for future planning.
 - Core material clusters are established for titanium, stainless steel, nickel alloy, copper alloy, tool steel, aluminum, and cobalt chrome powders.
 - Application clusters are established for AI liquid cooling, aerospace and space, medical and dental, semiconductor fluid hardware, power electronics and EV, energy and propulsion, tooling and mold inserts, and MIM/binder jet production.
 - SEO groundwork includes canonical site URL, sitemap generation, RSS feed, structured internal linking through hubs, and noindex/follow handling for lower-value pagination.
@@ -44,7 +46,7 @@
 - Recent semantic and inquiry optimization: related articles now rank by shared material, application, process, tags, and category; RFQ email actions now open a prefilled buyer checklist from articles, hubs, contact, and the homepage contact area.
 - The Semiconductor Fluid Hardware hub is intentionally narrow: only explicit semiconductor gas, wet-process, and equipment thermal-hardware pages belong there. Keep AI cooling, pharmaceutical flow, and generic corrosion/manifold pages in their own application centers.
 - The 2026-07-11 content rebuild replaced four core commercial/specification articles and added one cross-application powder selection pillar. Do not return to one-page-per-trend publishing without fresh Search Console evidence.
-- Current quality debt remains visible: 54 articles are below 500 words and 99 articles have no external technical source. Word count is not the target; distinct engineering decision value, evidence, and query performance are.
+- The 2026-07-11 quality baseline showed 54 articles below 500 words and 99 without an external technical source. Re-measure before using those counts; word count is not the target, while distinct engineering decision value, evidence, and query performance are.
 
 ## Current Unfinished Tasks
 
