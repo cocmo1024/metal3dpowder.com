@@ -66,4 +66,13 @@ export default defineConfig({
   ],
   compressHTML: true,
   trailingSlash: 'always',
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: '_astro/[hash][extname]',
+        },
+      },
+    },
+  },
 });
