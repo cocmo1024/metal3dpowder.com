@@ -2,7 +2,7 @@
 title: "Metal Powder Specification and COA Guide: PSD, Oxygen, and Flow"
 description: Specify AM metal powder and read a COA using chemistry, D10/D50/D90, oxygen, morphology, density, flow, sampling, traceability, and RFQ fields.
 pubDate: 2026-05-04T07:46:00+08:00
-updatedDate: 2026-07-11
+updatedDate: 2026-07-16
 category: Knowledge
 tags:
   - metal powder specification
@@ -124,6 +124,8 @@ Record:
 - how the method relates to the actual recoating or feeding system.
 
 The current [ISO/ASTM flow-property guidance](https://www.iso.org/standard/75754.html) emphasizes selecting measurement methods appropriate to the powder and process, including virgin and used material. This supports a method-based specification rather than one universal "good flow" number.
+
+Use the [Hall, Carney, density, and powder-rheology test guide](/posts/Alloys/metal-powder-flowability-tests-hall-carney-rheology/) to define reportable results, no-flow handling, and method-transfer rules. For LPBF, use the separate [spreadability and layer-density guide](/posts/Alloys/lpbf-powder-spreadability-and-layer-density/) to connect incoming indicators with recoater and machine-trial evidence.
 
 ## Density values are not interchangeable
 

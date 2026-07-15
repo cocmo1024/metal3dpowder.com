@@ -2,7 +2,7 @@
 title: "LPBF Powder Particle Size Guide: 15-45 vs 15-53 um"
 description: Practical LPBF powder particle size guidance covering common PSD windows, why they differ, and how they affect process fit.
 pubDate: 2026-04-12
-updatedDate: 2026-05-04T07:46:00+08:00
+updatedDate: 2026-07-16
 category: Process
 tags:
   - LPBF
@@ -72,6 +72,8 @@ If the team is still deciding, the project should at least define:
 - any machine or layer-thickness constraints already known
 
 For lot acceptance, also lock the analytical basis. The [laser diffraction versus dynamic image analysis guide](/posts/Alloys/laser-diffraction-vs-dynamic-image-analysis-metal-powder-psd/) explains why identical percentile names can move when the diameter descriptor, weighting, or physical method changes. The [metal powder lot sampling guide](/posts/Alloys/am-metal-powder-lot-sampling-for-psd/) covers how the tested material should represent the supplied lot before any PSD limit is applied.
+
+PSD and bulk flow still do not prove that a powder will form a uniform layer. Use the [LPBF spreadability and layer-density guide](/posts/Alloys/lpbf-powder-spreadability-and-layer-density/) to define recoater variables, environmental controls, layer measurements, and machine-trial acceptance.
 
 That gives the project enough context to choose a realistic cut rather than a generic one.
 

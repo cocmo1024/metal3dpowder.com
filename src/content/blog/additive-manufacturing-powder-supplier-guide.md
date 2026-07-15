@@ -2,7 +2,7 @@
 title: "Additive Manufacturing Powder Suppliers and Manufacturers: Buyer Guide"
 description: Qualify AM powder suppliers and manufacturers by alloy, PSD, COA, traceability, change control, price basis, packaging, and application risk.
 pubDate: 2026-04-29T22:06:00+08:00
-updatedDate: 2026-07-11
+updatedDate: 2026-07-16
 category: Knowledge
 tags:
   - additive manufacturing powder suppliers
@@ -70,6 +70,8 @@ Ask whether the powder is gas atomized, plasma atomized, water atomized, mechani
 ### 4. Morphology and physical-property data
 
 Depending on risk, request representative microscopy, apparent or tap density, and method-specific flow data. Do not treat a single Hall-flow number as proof that powder will spread in a particular LPBF machine.
+
+The [metal powder flowability test guide](/posts/Alloys/metal-powder-flowability-tests-hall-carney-rheology/) shows how Hall, Carney, density, and rheology results should be reported. For LPBF supplier qualification, the [spreadability and layer-density guide](/posts/Alloys/lpbf-powder-spreadability-and-layer-density/) adds bench-spread and controlled machine-trial evidence.
 
 ### 5. Lot traceability
 
