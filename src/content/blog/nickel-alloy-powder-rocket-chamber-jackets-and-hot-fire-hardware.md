@@ -142,6 +142,8 @@ Define and verify:
 
 The paired [CuCrZr chamber-liner guide](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/) covers the conductivity-first side of this architecture.
 
+For cryogenic valve bodies, injector flow hardware, and propellant manifolds outside the chamber-wall architecture, use the [rocket feed-system powder selection guide](/posts/Alloys/metal-powder-rocket-injectors-cryogenic-valves-feed-manifolds/). It compares the service boundaries for IN718, IN625, Hastelloy X, Ti64, and copper-alloy routes.
+
 ## Powder and supplier controls for an RFQ
 
 The [ECSS standard for metallic powder-bed fusion in space applications](https://ecss.nl/standard/ecss-q-st-70-80c-processing-and-quality-assurance-requirements-for-metallic-powder-bed-fusion-technologies-for-space-applications-30-july-2021/) separates manufacturing planning, procedure definition, verification, hardware fabrication, and reporting. Even when another quality system governs, a rocket-powder RFQ should preserve that chain.
