@@ -296,6 +296,7 @@ export const applicationHubs: HubDefinition[] = [
     description: 'Stainless, titanium, nickel, and copper powder content for electrolyzer flow fields, fuel-cell plates, hydrogen-side manifolds, and clean energy hardware.',
     postIds: [
       '316l-powder-hydrogen-electrolyzer-flow-field-plates',
+      'metal-powder-fuel-cell-balance-of-plant-hardware',
       '316l-powder-manifolds-and-fluid-path-parts',
       '316l-vs-nickel-powder-for-corrosion-side-manifolds',
       '316l-powder-semiconductor-gas-manifolds-and-sensor-housings',
@@ -328,6 +329,7 @@ export const applicationHubs: HubDefinition[] = [
     postIds: [
       'lpbf-metal-powder-defense-sustainment-spares',
       '316l-powder-hydrogen-electrolyzer-flow-field-plates',
+      'metal-powder-fuel-cell-balance-of-plant-hardware',
       '316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware',
       '316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks',
       'in625-powder-carbon-capture-amine-service-and-co2-compression-hardware',
@@ -556,6 +558,7 @@ export const processHubs: HubDefinition[] = [
       '316l-stainless-steel-powder',
       '316l-powder-ai-data-center-coolant-distribution-manifolds',
       '316l-powder-hydrogen-electrolyzer-flow-field-plates',
+      'metal-powder-fuel-cell-balance-of-plant-hardware',
       '316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware',
       '316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks',
       '316l-powder-semiconductor-wet-process-chemical-manifolds',
@@ -619,6 +622,7 @@ export const processHubs: HubDefinition[] = [
     description: 'Binder jet powder pages for 316L and 17-4PH production parts, filters, and stronger stainless hardware.',
     postIds: [
       '316l-powder-metal-injection-molding-and-binder-jet-parts',
+      'metal-powder-fuel-cell-balance-of-plant-hardware',
       '17-4ph-powder-metal-injection-molding-and-binder-jet-parts',
       '17-4ph-powder-stronger-binder-jet-industrial-parts',
       '316l-powder-filters-and-corrosion-side-mim-parts',
