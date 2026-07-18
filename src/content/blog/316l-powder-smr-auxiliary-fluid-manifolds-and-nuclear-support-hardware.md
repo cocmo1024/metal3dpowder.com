@@ -2,6 +2,7 @@
 title: 316L Powder for SMR Auxiliary Fluid Manifolds and Nuclear Support Hardware
 description: Where 316L powder fits SMR auxiliary-fluid manifolds, instrumentation blocks, test-loop parts, and nuclear support hardware under qualification-led review.
 pubDate: 2026-06-27T09:20:00+08:00
+updatedDate: 2026-07-19
 category: Steel
 tags:
   - 316L
@@ -17,6 +18,8 @@ featured: true
 The recent market signal is real. The [US Department of Energy describes advanced small modular reactors](https://www.energy.gov/ne/advanced-small-modular-reactors-smrs) as reactors that can support power generation, process heat, desalination, and other industrial uses. The [IEA projects data centre electricity consumption to roughly double from 2025 to 2030](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary), and its energy-supply analysis says nuclear begins to play a larger role for data-centre electricity toward the end of the decade and beyond. That keeps SMR and advanced nuclear visible for power, industrial heat, and infrastructure planning.
 
 The long-term powder search value is more stable than the news cycle. Nuclear and SMR projects still need to decide when [316L stainless steel powder](/posts/Alloys/316l-stainless-steel-powder/) is appropriate, when conventional wrought or machined hardware is cleaner, when a nickel alloy is required, and when any additive route needs a formal qualification path before it can be used.
+
+This page is intentionally limited to compact LPBF auxiliary-fluid, instrumentation, test-loop, and support hardware. If the inquiry is for a large PM-HIP valve body, pump casing, vessel section, nozzle, or pressure-component demonstrator, use the separate [316L and IN625 nuclear PM-HIP guide](/posts/Alloys/316l-in625-powder-pm-hip-nuclear-pressure-components/). The process scale, canister controls, powder loading, consolidation evidence, and code questions are different.
 
 ## Start with scope and classification
 

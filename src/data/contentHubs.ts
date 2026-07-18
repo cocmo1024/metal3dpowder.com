@@ -47,6 +47,8 @@ export const materialHubs: HubDefinition[] = [
     description: '316L and 17-4PH powder routes for LPBF, MIM, binder jet, manifolds, fixtures, and industrial hardware.',
     postIds: [
       'steel-metal-powder-for-3d-printing-guide',
+      '316l-in625-powder-pm-hip-nuclear-pressure-components',
+      'metal-powder-hip-canister-large-reactor-valves-pump-casings',
       '316l-stainless-steel-powder',
       '17-4ph-stainless-steel-powder',
       '316l-vs-17-4ph-powder',
@@ -75,6 +77,8 @@ export const materialHubs: HubDefinition[] = [
     description: 'IN718, IN625, and Hastelloy X powder guidance for hot-side, corrosion, and chemical hardware.',
     postIds: [
       'nickel-alloy-powder-for-3d-printing-guide',
+      '316l-in625-powder-pm-hip-nuclear-pressure-components',
+      'metal-powder-hip-canister-large-reactor-valves-pump-casings',
       'gh4169-in718-powder',
       'gh3625-in625-powder',
       'hastelloy-x-powder',
@@ -395,8 +399,10 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'nuclear-and-smr-support-hardware',
     title: 'Nuclear and SMR Support Hardware',
-    description: '316L, 17-4PH, nickel, and copper powder pages for SMR auxiliary-fluid, instrumentation, support, test-loop, and qualification-led energy hardware.',
+    description: '316L, IN625, 17-4PH, and copper powder guidance for nuclear PM-HIP pressure-component development, SMR auxiliary hardware, test loops, and qualification-led energy parts.',
     postIds: [
+      '316l-in625-powder-pm-hip-nuclear-pressure-components',
+      'metal-powder-hip-canister-large-reactor-valves-pump-casings',
       '316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware',
       '316l-powder-manifolds-and-fluid-path-parts',
       '316l-powder-corrosion-resistant-industrial-hardware',
@@ -530,6 +536,22 @@ export const applicationHubs: HubDefinition[] = [
 ];
 
 export const processHubs: HubDefinition[] = [
+  {
+    group: 'processes',
+    slug: 'pm-hip',
+    title: 'PM-HIP Powder',
+    description: 'Powder metallurgy hot isostatic pressing guidance for nuclear pressure-component route selection, HIP canisters, powder lots, filling, consolidation, and qualification records.',
+    postIds: [
+      '316l-in625-powder-pm-hip-nuclear-pressure-components',
+      'metal-powder-hip-canister-large-reactor-valves-pump-casings',
+      'metal-powder-specification-guide-psd-oxygen-flowability',
+      'am-metal-powder-lot-sampling-for-psd',
+      'metal-powder-flowability-tests-hall-carney-rheology',
+      'gas-atomized-metal-powder-for-additive-manufacturing',
+      '316l-stainless-steel-powder',
+      'gh3625-in625-powder',
+    ],
+  },
   {
     group: 'processes',
     slug: 'lpbf',
