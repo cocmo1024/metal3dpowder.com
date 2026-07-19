@@ -2,6 +2,7 @@
 title: Hastelloy X Powder for Furnace and Hot-Gas Hardware
 description: Why Hastelloy X powder is relevant for furnace hardware, hot-gas components, and oxidation-driven high-temperature applications in additive manufacturing.
 pubDate: 2026-04-18T14:18:00+08:00
+updatedDate: 2026-07-20
 category: Nickel
 tags:
   - Hastelloy X
@@ -23,6 +24,8 @@ This route is usually evaluated for:
 - oxidation-driven high-temperature hardware
 
 The AM value appears when the geometry is complex enough that conventional fabrication starts to limit the part design.
+
+High-temperature reactor helium is not equivalent to an industrial furnace atmosphere, and liquid sodium is a different environment again. For gas chemistry, program baseline, sodium compatibility, code and qualification boundaries, use the [gas-cooled and liquid-sodium reactor powder guide](/posts/Alloys/metal-powder-high-temperature-gas-liquid-sodium-reactor-hardware/).
 
 ## Why it should not be selected by habit
 

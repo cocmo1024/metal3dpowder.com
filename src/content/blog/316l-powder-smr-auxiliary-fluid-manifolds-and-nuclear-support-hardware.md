@@ -2,7 +2,7 @@
 title: 316L Powder for SMR Auxiliary Fluid Manifolds and Nuclear Support Hardware
 description: Where 316L powder fits SMR auxiliary-fluid manifolds, instrumentation blocks, test-loop parts, and nuclear support hardware under qualification-led review.
 pubDate: 2026-06-27T09:20:00+08:00
-updatedDate: 2026-07-19
+updatedDate: 2026-07-20
 category: Steel
 tags:
   - 316L
@@ -52,7 +52,7 @@ The common pattern is routed or compact stainless hardware. That makes this page
 
 316L is attractive because it is a widely understood austenitic stainless family with good corrosion resistance in many moderate environments, useful weldability, and a large base of industrial experience. For LPBF, 316L powder is also one of the more common stainless feedstocks, so process knowledge, supplier options, and test data are broader than for many niche alloys.
 
-That does not mean 316L is the right answer for every nuclear or SMR part. High-temperature reactor regions, aggressive coolants, chloride-heavy chemistry, molten salts, high radiation exposure, high-cycle fatigue, or code pressure-boundary requirements can push the material and process discussion elsewhere. In some elevated-temperature nuclear research, 316H is evaluated because high-temperature strength becomes important. ORNL has reported 3D-printed 316H stainless steel capsules tested in a reactor environment, while Argonne/LWRS work has evaluated AM 316L in light-water-reactor environments. Those programs show why qualification evidence matters; they do not remove the need for project-specific approval.
+That does not mean 316L is the right answer for every nuclear or SMR part. High-temperature reactor regions, aggressive coolants, chloride-heavy chemistry, molten salts, high radiation exposure, high-cycle fatigue, or code pressure-boundary requirements can push the material and process discussion elsewhere. Use the dedicated [molten-salt flow-hardware guide](/posts/Alloys/in625-powder-molten-salt-reactor-flow-hardware-heat-exchangers/) when salt chemistry and corrosion exposure control the decision, and the [gas-cooled and liquid-sodium reactor guide](/posts/Alloys/metal-powder-high-temperature-gas-liquid-sodium-reactor-hardware/) when helium or sodium compatibility is the real environment. In some elevated-temperature nuclear research, 316H is evaluated because high-temperature strength becomes important. ORNL has reported 3D-printed 316H stainless steel capsules tested in a reactor environment, while Argonne/LWRS work has evaluated AM 316L in light-water-reactor environments. Those programs show why qualification evidence matters; they do not remove the need for project-specific approval.
 
 For ordinary corrosion-side industrial hardware, use the [316L corrosion-resistant industrial hardware page](/posts/Alloys/316l-powder-corrosion-resistant-industrial-hardware/). For nuclear-adjacent auxiliary or support hardware, keep the acceptance route in the same discussion as material, powder lot, build parameters, post-processing, and inspection.
 

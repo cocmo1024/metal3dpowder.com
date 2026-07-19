@@ -2,7 +2,7 @@
 title: IN625 Powder for Corrosion-Heavy Hot-Side Hardware
 description: Why IN625 powder fits corrosion-heavy hot-side hardware such as ducting, manifolds, and service parts that see heat plus aggressive media.
 pubDate: 2026-04-19T09:30:00+08:00
-updatedDate: 2026-07-03
+updatedDate: 2026-07-20
 category: Nickel
 tags:
   - IN625
@@ -24,6 +24,8 @@ This route is often strongest for:
 - service parts exposed to heat plus aggressive media
 
 The AM value usually comes from internal routing, consolidated geometry, and parts that are awkward to build cleanly from multiple fabricated sections.
+
+Molten-salt reactor development is a separate decision because fluoride versus chloride chemistry, redox control, impurities, printed surface condition, creep, and irradiation can change the material ranking. Use the [IN625 molten-salt flow-hardware and heat-exchanger guide](/posts/Alloys/in625-powder-molten-salt-reactor-flow-hardware-heat-exchangers/) instead of extending this general hot-side guidance to salt-wetted hardware.
 
 ## Why hot-side corrosion keeps pointing to IN625
 
