@@ -113,6 +113,11 @@ const collectionPageSchema = buildCollectionPageSchema({
             confirms the producing route, lot documentation, packaging, availability, and destination requirements.
           </p>
 
+          <div class="hero__supply-chain">
+            <strong>Backed by China’s complete powder supply chain, with extensive international metal powder trading experience.</strong>
+            <span lang="zh-CN">背靠中国完整的粉末供应链资源，同时拥有丰富的金属粉末国际贸易经验。</span>
+          </div>
+
           <div class="hero__actions">
             <a class="button button--hero" href="/products/">Browse powder catalog</a>
             <a class="button button--dark" href="/rfq/">Build a multi-product RFQ</a>
@@ -258,18 +263,18 @@ const collectionPageSchema = buildCollectionPageSchema({
     <section class="network-section" aria-labelledby="network-title">
       <div class="network-section__inner page-shell">
         <div class="network-section__copy">
-          <p class="eyebrow">Partner-backed manufacturing</p>
+          <p class="eyebrow">China supply network</p>
           <h2 id="network-title">A sourcing network, presented with the correct capability boundary.</h2>
           <p>
             Depending on alloy and specification, sourcing can be matched to VIGA, EIGA, PREP, plasma atomization, and
-            downstream powder processing through authorized production partners. The producing entity, applicable
-            quality evidence, and commercial terms are identified in the formal quotation.
+            downstream powder processing across reviewed supply resources. The producing entity, applicable quality
+            evidence, and commercial terms are identified in the formal quotation.
           </p>
 
-          <div class="partner-list" aria-label="Authorized partner capability network">
-            <span>VILORY · 威拉里</span>
-            <span>AVIMETAL · 中航迈特</span>
-            <span>BLT · 铂力特</span>
+          <div class="capability-list" aria-label="Supply network capabilities">
+            <span>Atomization routes</span>
+            <span>Powder conditioning</span>
+            <span>Export coordination</span>
           </div>
 
           <a class="button button--dark" href="/about/">How the supply model works</a>
@@ -348,8 +353,8 @@ const collectionPageSchema = buildCollectionPageSchema({
         <p class="eyebrow">Online RFQ</p>
         <h2 id="final-cta-title">Compare grades or send one exact specification.</h2>
         <p>
-          Add products to the RFQ list, then submit the process, PSD, quantity, destination, timing, and supporting
-          files. Unknown fields can remain open for technical review.
+          Add products to the RFQ list, then submit the process, PSD, quantity, destination, timing, requirements, and
+          acceptance criteria. Unknown fields can remain open for technical review.
         </p>
       </div>
       <div class="final-cta__actions">
@@ -429,6 +434,27 @@ const collectionPageSchema = buildCollectionPageSchema({
     color: #c2d0dc;
     font-size: clamp(1rem, 1.3vw, 1.12rem);
     line-height: 1.72;
+  }
+
+  .hero__supply-chain {
+    display: grid;
+    max-width: 42rem;
+    gap: 0.35rem;
+    padding: 0.85rem 1rem;
+    border-left: 3px solid var(--accent-warm);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .hero__supply-chain strong {
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero__supply-chain span {
+    color: #aebfce;
+    font-size: 0.74rem;
+    line-height: 1.55;
   }
 
   .hero__actions {
@@ -835,14 +861,14 @@ const collectionPageSchema = buildCollectionPageSchema({
     line-height: 1.72;
   }
 
-  .partner-list {
+  .capability-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-block: 0.35rem;
   }
 
-  .partner-list span {
+  .capability-list span {
     padding: 0.45rem 0.6rem;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 0.42rem;

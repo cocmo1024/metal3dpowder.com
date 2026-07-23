@@ -61,11 +61,11 @@ LPBF 316L is most attractive for low-volume integrated routing. Binder-jet 316L 
 
 ### IN625: corrosion or hotter fluid routing leads
 
-[IN625 powder](/posts/Alloys/gh3625-in625-powder/) deserves review where stainless corrosion margin is weak or the hardware sees a hotter and more aggressive fluid environment. Special Metals' [INCONEL alloy 625 technical bulletin](https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-625.pdf) documents the wrought alloy's corrosion and temperature-dependent behavior. Wrought handbook values do not become LPBF acceptance values; the powder, build, heat treatment, orientation, and finished part need their own basis.
+[IN625 powder](/posts/Alloys/gh3625-in625-powder/) deserves review where stainless corrosion margin is weak or the hardware sees a hotter and more aggressive fluid environment. A [published Alloy 625 technical bulletin](https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-625.pdf) documents the wrought alloy's corrosion and temperature-dependent behavior. Wrought handbook values do not become LPBF acceptance values; the powder, build, heat treatment, orientation, and finished part need their own basis.
 
 ### Hastelloy X: hot gas and thermal cycling lead
 
-[Hastelloy X powder](/posts/Alloys/hastelloy-x-powder-hydrogen-burner-and-combustor-hardware/) enters the review for reformer burners, tail-gas combustors, hot transition ducts, and other flame-adjacent hardware. Haynes describes [Hastelloy X](https://haynesintl.com/en/alloys/alloy-portfolio/high-temperature-alloys/hastelloy-x/) as a nickel-chromium-iron-molybdenum alloy combining oxidation resistance, fabricability, and high-temperature strength. The supplier data are a material-screening source, not proof for a printed hydrogen burner or SOFC manifold.
+[Hastelloy X powder](/posts/Alloys/hastelloy-x-powder-hydrogen-burner-and-combustor-hardware/) enters the review for reformer burners, tail-gas combustors, hot transition ducts, and other flame-adjacent hardware. A [published Alloy X technical page](https://haynesintl.com/en/alloys/alloy-portfolio/high-temperature-alloys/hastelloy-x/) describes the nickel-chromium-iron-molybdenum alloy as combining oxidation resistance, fabricability, and high-temperature strength. The source data are a material-screening reference, not proof for a printed hydrogen burner or SOFC manifold.
 
 ### 17-4PH: strength-led static hardware only after corrosion review
 

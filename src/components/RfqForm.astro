@@ -47,9 +47,9 @@ const productPayload = products.map((product) => ({
     </div>
 
     <aside>
-      <strong>Useful attachments</strong>
-      <p>PDF specifications, drawing exports, acceptance plans, prior COA examples, or reference images.</p>
-      <small>Up to 3 files · 3 MB each · 4 MB total</small>
+      <strong>Text-only online RFQ</strong>
+      <p>State standards, chemistry and PSD limits, document needs, acceptance criteria, equipment, and delivery needs.</p>
+      <small>If documents are required later, we will arrange the appropriate channel after initial review.</small>
     </aside>
   </div>
 
@@ -57,7 +57,6 @@ const productPayload = products.map((product) => ({
     <form
       action="/api/rfq"
       method="post"
-      enctype="multipart/form-data"
       data-rfq-form
       data-turnstile-site-key={turnstileSiteKey}
       data-product-catalog={JSON.stringify(productPayload)}
@@ -197,21 +196,6 @@ const productPayload = products.map((product) => ({
           required></textarea>
       </label>
 
-      <label class="full-field">
-        <span>Specifications, drawings, or reference files</span>
-        <input
-          name="attachments"
-          type="file"
-          accept=".pdf,.jpg,.jpeg,.png"
-          multiple
-          data-rfq-files
-        />
-        <small data-rfq-file-help>
-          Optional PDF, JPG, or PNG only. Do not send native CAD, executable, export-controlled, classified, or
-          restricted data before an approved handling agreement.
-        </small>
-      </label>
-
       <div class="honeypot" aria-hidden="true">
         <label>
           Website
@@ -291,8 +275,6 @@ const productPayload = products.map((product) => ({
     const productsInput = form.elements.namedItem('products');
     const submitButton = form.querySelector('[data-rfq-submit]');
     const status = form.querySelector('[data-rfq-status]');
-    const fileInput = form.querySelector('[data-rfq-files]');
-    const fileHelp = form.querySelector('[data-rfq-file-help]');
     const successPanel = form.parentElement?.querySelector('[data-rfq-success]');
     const reference = successPanel?.querySelector('[data-rfq-reference]');
     const sourcePage = form.elements.namedItem('source_page');
@@ -387,21 +369,21 @@ const productPayload = products.map((product) => ({
             <div class="selected-product__fields">
               <label>
                 <span>Process override</span>
-                <select data-item-id="${escapeAttribute(id)}" data-item-field="process">
+                <select aria-label="Process override for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="process">
                   <option value="">Use general process</option>
                   ${processOptions}
                 </select>
               </label>
               <label>
                 <span>PSD override</span>
-                <select data-item-id="${escapeAttribute(id)}" data-item-field="particleSize">
+                <select aria-label="PSD override for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="particleSize">
                   <option value="">Use general PSD</option>
                   ${particleOptions}
                 </select>
               </label>
               <label>
                 <span>Quantity override</span>
-                <input data-item-id="${escapeAttribute(id)}" data-item-field="quantity" maxlength="100" value="${escapeAttribute(item.quantity)}" placeholder="Use general quantity" />
+                <input aria-label="Quantity override for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="quantity" maxlength="100" value="${escapeAttribute(item.quantity)}" placeholder="Use general quantity" />
               </label>
             </div>
           </div>`;
@@ -454,27 +436,6 @@ const productPayload = products.map((product) => ({
       syncProductsInput();
     });
 
-    const validateFiles = () => {
-      const files = Array.from(fileInput instanceof HTMLInputElement ? fileInput.files || [] : []);
-      const totalSize = files.reduce((total, file) => total + file.size, 0);
-      const tooLarge = files.find((file) => file.size > 3 * 1024 * 1024);
-
-      if (files.length > 3) return 'Attach no more than 3 files.';
-      if (tooLarge) return `${tooLarge.name} is larger than 3 MB.`;
-      if (totalSize > 4 * 1024 * 1024) return 'Attachments must be 4 MB or less in total.';
-      return '';
-    };
-
-    fileInput?.addEventListener('change', () => {
-      const error = validateFiles();
-      if (fileInput instanceof HTMLInputElement) fileInput.setCustomValidity(error);
-      if (fileHelp) {
-        fileHelp.textContent =
-          error ||
-          'Optional. Do not send export-controlled, classified, or restricted data before an approved handling agreement.';
-      }
-    });
-
     const refreshContext = (resetStartedAt = false) => {
       if (resetStartedAt && startedAt instanceof HTMLInputElement) startedAt.value = String(Date.now());
       if (submissionId instanceof HTMLInputElement && !submissionId.value) {
@@ -509,11 +470,9 @@ const productPayload = products.map((product) => ({
         materialRequest.setCustomValidity('');
       }
 
-      const fileError = validateFiles();
-      if (fileInput instanceof HTMLInputElement) fileInput.setCustomValidity(fileError);
       if (!form.checkValidity()) {
         form.reportValidity();
-        setStatus(fileError || 'Please complete the required fields.', true);
+        setStatus('Please complete the required fields.', true);
         return;
       }
 
@@ -526,7 +485,7 @@ const productPayload = products.map((product) => ({
       try {
         const response = await fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
+          body: new URLSearchParams(new FormData(form)),
           headers: { Accept: 'application/json' },
           credentials: 'same-origin',
         });
@@ -700,7 +659,7 @@ const productPayload = products.map((product) => ({
     gap: 0.45rem;
   }
 
-  .selected-products__empty {
+  :global([data-selected-products] .selected-products__empty) {
     margin: 0;
     padding: 0.75rem;
     border: 1px dashed var(--line-strong);
@@ -710,70 +669,82 @@ const productPayload = products.map((product) => ({
     font-size: 0.76rem;
   }
 
-  .selected-product {
+  :global([data-selected-products] .selected-product) {
     display: grid;
-    gap: 0.7rem;
-    padding: 0.7rem 0.8rem;
+    gap: 0.85rem;
+    padding: 0.9rem 1rem;
     border: 1px solid var(--line);
     border-radius: 0.65rem;
     background: var(--brand-soft);
   }
 
-  .selected-product__heading {
+  :global([data-selected-products] .selected-product__heading) {
     display: flex;
     gap: 0.8rem;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
   }
 
-  .selected-product__heading > span {
+  :global([data-selected-products] .selected-product__heading > span) {
     display: grid;
     gap: 0.12rem;
     min-width: 0;
   }
 
-  .selected-product strong {
-    font-size: 0.84rem;
+  :global([data-selected-products] .selected-product strong) {
+    font-size: 0.88rem;
+    line-height: 1.3;
   }
 
-  .selected-product small {
-    overflow: hidden;
+  :global([data-selected-products] .selected-product small) {
     color: var(--muted);
-    font-size: 0.7rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 0.72rem;
+    line-height: 1.4;
   }
 
-  .selected-product__heading button {
-    padding: 0.35rem;
-    border: 0;
+  :global([data-selected-products] .selected-product__heading button) {
+    flex: 0 0 auto;
+    min-height: 2rem;
+    padding: 0.35rem 0.55rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 0.45rem;
     color: var(--brand);
-    background: transparent;
+    background: var(--surface);
     font-size: 0.72rem;
     font-weight: 750;
     cursor: pointer;
   }
 
-  .selected-product__fields {
+  :global([data-selected-products] .selected-product__fields) {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.45rem;
+    gap: 0.65rem;
   }
 
-  .selected-product__fields label {
+  :global([data-selected-products] .selected-product__fields label) {
+    display: grid;
     gap: 0.25rem;
+    min-width: 0;
   }
 
-  .selected-product__fields label > span {
+  :global([data-selected-products] .selected-product__fields label > span) {
     color: var(--muted);
-    font-size: 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 700;
   }
 
-  .selected-product__fields input,
-  .selected-product__fields select {
-    min-height: 2.45rem;
+  :global([data-selected-products] .selected-product__fields input),
+  :global([data-selected-products] .selected-product__fields select) {
+    width: 100%;
+    min-width: 0;
+    min-height: 2.65rem;
     padding: 0.55rem 0.6rem;
-    font-size: 0.74rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 0.5rem;
+    color: var(--text);
+    background: #fff;
+    font: inherit;
+    font-size: 0.76rem;
   }
 
   .product-picker {
@@ -849,18 +820,6 @@ const productPayload = products.map((product) => ({
     min-height: 10rem;
     resize: vertical;
     line-height: 1.55;
-  }
-
-  input[type='file'] {
-    min-height: 3.5rem;
-    padding: 0.65rem;
-    background: var(--surface-soft);
-  }
-
-  .full-field small {
-    color: var(--muted);
-    font-size: 0.7rem;
-    line-height: 1.45;
   }
 
   .honeypot {
@@ -961,7 +920,7 @@ const productPayload = products.map((product) => ({
     justify-self: start;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1040px) {
     .rfq-form-section {
       grid-template-columns: 1fr;
     }
@@ -989,7 +948,7 @@ const productPayload = products.map((product) => ({
       grid-template-columns: 1fr;
     }
 
-    .selected-product__fields {
+    :global([data-selected-products] .selected-product__fields) {
       grid-template-columns: 1fr;
     }
 

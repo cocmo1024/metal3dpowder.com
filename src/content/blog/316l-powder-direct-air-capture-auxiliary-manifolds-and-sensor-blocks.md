@@ -24,7 +24,7 @@ Direct air capture systems combine ambient air contact, sorbents or solvents, re
 
 The additive opportunity is more specific. DAC development programs often need compact blocks that combine multiple small channels, instrument ports, pressure or vacuum taps, sampling points, purge paths, condensate drains, and service interfaces. Those geometries can be awkward to drill, weld, and seal from several separate pieces. A printed 316L route can be attractive when the environment remains within a moderate stainless envelope and the design benefits from integration.
 
-That distinction is important for Google quality as well as engineering credibility. This page is not claiming that direct air capture plants should be made with AM. It is about small stainless powder parts that may appear around DAC modules, test loops, instrumentation skids, and CO2 handling auxiliaries.
+That distinction is important for engineering credibility. This page is not claiming that direct air capture plants should be made with AM. It is about small stainless powder parts that may appear around DAC modules, test loops, instrumentation skids, and CO2 handling auxiliaries.
 
 ## Where 316L powder can fit in DAC hardware
 

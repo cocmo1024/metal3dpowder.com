@@ -2,7 +2,7 @@
 title: Ti64 Grade 23 vs Grade 5 Powder for Additive Manufacturing
 description: A practical comparison of Ti64 Grade 23 and Grade 5 powder for additive manufacturing focused on interstitial control, toughness, and specification intent.
 pubDate: 2026-04-13T10:10:00+08:00
-updatedDate: 2026-07-05T16:30:00+08:00
+updatedDate: 2026-07-23
 category: Titanium
 tags:
   - Ti-6Al-4V
@@ -14,7 +14,7 @@ featured: false
 
 Grade 23 and Grade 5 are both Ti-6Al-4V routes, but they should not be treated as interchangeable titanium labels. For AM, the difference is not marketing language. It is specification intent.
 
-EOS describes Ti64 Grade 23 as a Ti-6Al-4V alloy with lower oxygen and iron than standard Ti64, and notes that the Grade 23 route typically improves elongation and toughness while reducing strength relative to the standard alloy. That is the right technical frame for this comparison.
+[A published Grade 23 material data sheet](https://www.eos.info/metal-solutions/data-sheets/all-processes-and-materials?id=eos-titanium-ti64-grade-23) describes Ti64 Grade 23 as a Ti-6Al-4V alloy with lower oxygen and iron than standard Ti64, and notes that the Grade 23 route typically improves elongation and toughness while reducing strength relative to the standard alloy. That is the right technical frame for this comparison.
 
 ## The shortest decision rule
 

@@ -62,7 +62,7 @@ For many RFQs, the strongest first answer is not "yes, use Grade 23." The strong
 
 ## When metal is not the right answer
 
-A Google-friendly page should also say when the material is not a fit. Ti64 Grade 23 powder should not be forced into every surgical-guide discussion.
+A technically useful page should also say when the material is not a fit. Ti64 Grade 23 powder should not be forced into every surgical-guide discussion.
 
 Do not start with a Grade 23 powder request when:
 

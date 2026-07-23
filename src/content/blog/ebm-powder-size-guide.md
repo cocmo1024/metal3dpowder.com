@@ -2,6 +2,7 @@
 title: EBM Powder Size Guide for Titanium and High-Temperature AM Alloys
 description: Practical EBM powder size guidance for teams comparing electron beam powder bed fusion with LPBF, including why coarser cuts and reuse planning matter.
 pubDate: 2026-04-12T09:40:00+08:00
+updatedDate: 2026-07-23
 category: Process
 tags:
   - EBM
@@ -13,11 +14,11 @@ featured: false
 
 EBM powder size should not be specified as if it were an LPBF route with a different machine label. Electron beam powder bed fusion usually works with a coarser powder strategy, and that changes how teams should think about reuse and process fit.
 
-Colibrium Additive publicly markets a **coarse-cut Ti6Al4V Grade 23** option and shows **45-106 um** on that material documentation. That is a useful reference point: EBM conversations often sit in a different powder-size logic than common LPBF requests.
+A [published coarse-cut Ti6Al4V Grade 23 process sheet](https://www.colibriumadditive.com/sites/default/files/M2SERIES5_COARSE_Ti64_400W_CMDS_20241112_RevA.pdf) lists a **45–106 µm** route. That is a useful reference point: EBM conversations often sit in a different powder-size logic than common LPBF requests.
 
 ## Why EBM usually means coarser powder
 
-EBM is not just LPBF with electrons. The build environment, powder behavior, and process strategy are different enough that teams should expect different powder expectations. Colibrium also describes EB-PBF builds occurring in **semi-sintered powder**, which is one reason reuse discipline becomes part of the process discussion earlier.
+EBM is not just LPBF with electrons. The build environment, powder behavior, and process strategy are different enough that teams should expect different powder expectations. Published EB-PBF process guidance also describes builds occurring in **semi-sintered powder**, which is one reason reuse discipline becomes part of the process discussion earlier.
 
 That does not mean every EBM job should blindly ask for 45-106 um. It means teams should stop assuming that a fine LPBF-style PSD is the default answer.
 

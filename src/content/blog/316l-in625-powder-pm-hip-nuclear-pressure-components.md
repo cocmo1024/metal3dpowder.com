@@ -2,6 +2,7 @@
 title: 316L and IN625 Powder for PM-HIP Nuclear Pressure Components
 description: Select 316L, IN625, or a conventional route for nuclear PM-HIP valves, pump casings, vessel sections, and qualification-led powder RFQs.
 pubDate: 2026-07-19T00:10:00+08:00
+updatedDate: 2026-07-23
 category: Knowledge
 tags:
   - PM-HIP
@@ -180,7 +181,7 @@ Reject or pause the PM-HIP route when:
 >
 > Required COA, certificate of conformance, travelers, genealogy, deviation, change notification, and record-retention format:
 
-Send that block through the [powder RFQ contact page](/contact/) with the drawing and the non-confidential service envelope. A supplier can then quote the feedstock and documentation scope without implying nuclear approval it does not own.
+Send that text block through the [powder RFQ contact page](/contact/) with the non-confidential service envelope. If drawings are required, arrange a separate approved document channel before transfer. A supplier can then quote the feedstock and documentation scope without implying nuclear approval it does not own.
 
 ## Application limits
 

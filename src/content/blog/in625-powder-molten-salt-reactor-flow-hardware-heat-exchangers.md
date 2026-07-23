@@ -2,6 +2,7 @@
 title: IN625 Powder for Molten-Salt Flow Hardware and Heat Exchangers
 description: A qualification-led guide to screening IN625 powder for molten-salt nozzles, manifolds, flow hardware, and heat-exchanger development parts.
 pubDate: 2026-07-20T00:10:00+08:00
+updatedDate: 2026-07-23
 category: Nickel
 tags:
   - IN625
@@ -163,7 +164,7 @@ Use the following block when requesting powder for molten-salt development work:
 - **Evidence:** COA, certificate of conformance, traceability, sampling record, retained sample, witness coupons and required inspection reports
 - **Acceptance:** purchaser-approved powder limits, coupon plan, salt-exposure gate and final decision authority
 
-Send drawings and internal-channel details under an appropriate confidentiality process. The [contact team](/contact/) can then quote a powder lot against the real experiment instead of guessing from the phrase "molten-salt reactor powder."
+Describe the non-confidential internal-channel and service requirements through the [contact team](/contact/). If drawings are needed, arrange an approved confidentiality and document-transfer process before sending them. The team can then quote a powder lot against the real experiment instead of guessing from the phrase "molten-salt reactor powder."
 
 ## Application limits
 

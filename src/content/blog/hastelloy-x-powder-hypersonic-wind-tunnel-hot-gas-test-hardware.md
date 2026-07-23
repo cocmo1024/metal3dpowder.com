@@ -106,7 +106,7 @@ The strongest Hastelloy X powder cases usually start with the test plan, not the
 - post-test inspection method
 - whether the part is a screening coupon, development fixture, or recurring rig component
 
-This keeps the article aligned with Google-friendly helpful content. It does not imply that powder alone solves qualification. It explains which questions make the powder choice meaningful.
+This keeps the decision boundary explicit. It does not imply that powder alone solves qualification. It explains which questions make the powder choice meaningful.
 
 ## When another route is cleaner
 

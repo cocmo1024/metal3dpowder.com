@@ -11,13 +11,6 @@ type RfqEnv = {
   TURNSTILE_SECRET_KEY?: string;
 };
 
-type RfqEmailAttachment = {
-  filename: string;
-  content: ArrayBuffer;
-  type: string;
-  disposition: 'attachment';
-};
-
 type RfqEmailMessage = {
   from: string;
   to: string;
@@ -25,7 +18,6 @@ type RfqEmailMessage = {
   subject: string;
   text: string;
   html: string;
-  attachments: RfqEmailAttachment[];
   headers: Record<string, string>;
 };
 
@@ -43,10 +35,7 @@ type ProductRequest = {
   quantity: string;
 };
 
-const MAX_FILES = 3;
-const MAX_FILE_SIZE = 3 * 1024 * 1024;
-const MAX_TOTAL_FILE_SIZE = 4 * 1024 * 1024;
-const MAX_REQUEST_SIZE = 6 * 1024 * 1024;
+const MAX_REQUEST_SIZE = 128 * 1024;
 const MIN_SUBMIT_TIME_MS = 3_000;
 const MAX_FORM_AGE_MS = 24 * 60 * 60 * 1_000;
 const DEFAULT_TO_EMAIL = 'info@szcomo.com';
@@ -101,35 +90,6 @@ const allowedTimings = new Set([
   'Production planning',
 ]);
 
-const allowedFileExtensions = new Set(['.pdf', '.jpg', '.jpeg', '.png']);
-
-const fileContentTypes = new Map([
-  ['.pdf', 'application/pdf'],
-  ['.jpg', 'image/jpeg'],
-  ['.jpeg', 'image/jpeg'],
-  ['.png', 'image/png'],
-]);
-
-const hasAllowedFileSignature = async (file: File, extension: string) => {
-  const bytes = new Uint8Array(await file.slice(0, 12).arrayBuffer());
-  const startsWith = (signature: number[]) =>
-    signature.every((value, index) => bytes[index] === value);
-
-  if (extension === '.pdf') {
-    return startsWith([0x25, 0x50, 0x44, 0x46, 0x2d]);
-  }
-
-  if (extension === '.jpg' || extension === '.jpeg') {
-    return startsWith([0xff, 0xd8, 0xff]);
-  }
-
-  if (extension === '.png') {
-    return startsWith([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-  }
-
-  return false;
-};
-
 const jsonResponse = (status: number, body: Record<string, unknown>) =>
   new Response(JSON.stringify(body), {
     status,
@@ -140,8 +100,43 @@ const jsonResponse = (status: number, body: Record<string, unknown>) =>
     },
   });
 
-const cleanText = (value: FormDataEntryValue | null, maxLength: number) =>
-  typeof value === 'string' ? value.replace(/\0/g, '').trim().slice(0, maxLength) : '';
+const readLimitedText = async (
+  request: Request,
+  maxBytes: number
+): Promise<{ ok: true; text: string } | { ok: false; tooLarge: boolean }> => {
+  const reader = request.body?.getReader();
+  if (!reader) return { ok: true, text: '' };
+
+  const chunks: Uint8Array[] = [];
+  let totalBytes = 0;
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      totalBytes += value.byteLength;
+      if (totalBytes > maxBytes) {
+        await reader.cancel().catch(() => undefined);
+        return { ok: false, tooLarge: true };
+      }
+      chunks.push(value);
+    }
+  } catch {
+    return { ok: false, tooLarge: false };
+  }
+
+  const body = new Uint8Array(totalBytes);
+  let offset = 0;
+  for (const chunk of chunks) {
+    body.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+
+  return { ok: true, text: new TextDecoder().decode(body) };
+};
+
+const cleanText = (value: string | null, maxLength: number) =>
+  value ? value.replace(/\0/g, '').trim().slice(0, maxLength) : '';
 
 const isValidEmail = (value: string) =>
   value.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/u.test(value) && !/[\r\n]/u.test(value);
@@ -157,19 +152,6 @@ const escapeHtml = (value: string) =>
     };
     return entities[character];
   });
-
-const safeFileName = (name: string) => {
-  const baseName = name.split(/[\\/]/u).pop() || 'attachment';
-  return baseName.replace(/[^a-zA-Z0-9._() -]/gu, '_').slice(0, 120);
-};
-
-const getExtension = (name: string) => {
-  const normalizedName = name.toLowerCase();
-  const specialExtension = ['.step', '.iges'].find((extension) => normalizedName.endsWith(extension));
-  if (specialExtension) return specialExtension;
-  const lastDot = normalizedName.lastIndexOf('.');
-  return lastDot >= 0 ? normalizedName.slice(lastDot) : '';
-};
 
 const parseProducts = (rawValue: string): ProductRequest[] | null => {
   if (!rawValue) return [];
@@ -271,13 +253,14 @@ export const onRequestPost: WorkerHandler = async ({ request, env }) => {
   }
 
   const contentType = request.headers.get('Content-Type') || '';
-  if (!contentType.toLowerCase().startsWith('multipart/form-data')) {
+  const mediaType = contentType.split(';', 1)[0]?.trim().toLowerCase();
+  if (mediaType !== 'application/x-www-form-urlencoded') {
     return jsonResponse(415, { ok: false, message: 'Unsupported form submission.' });
   }
 
   const contentLength = Number(request.headers.get('Content-Length') || 0);
   if (Number.isFinite(contentLength) && contentLength > MAX_REQUEST_SIZE) {
-    return jsonResponse(413, { ok: false, message: 'The submitted package is larger than the online limit.' });
+    return jsonResponse(413, { ok: false, message: 'The submitted form is larger than the online limit.' });
   }
 
   const turnstileSecret = env.TURNSTILE_SECRET_KEY?.trim();
@@ -297,12 +280,13 @@ export const onRequestPost: WorkerHandler = async ({ request, env }) => {
     });
   }
 
-  let formData: FormData;
-  try {
-    formData = await request.formData();
-  } catch {
-    return jsonResponse(400, { ok: false, message: 'The submitted form could not be read.' });
+  const bodyResult = await readLimitedText(request, MAX_REQUEST_SIZE);
+  if (!bodyResult.ok) {
+    return bodyResult.tooLarge
+      ? jsonResponse(413, { ok: false, message: 'The submitted form is larger than the online limit.' })
+      : jsonResponse(400, { ok: false, message: 'The submitted form could not be read.' });
   }
+  const formData = new URLSearchParams(bodyResult.text);
 
   if (cleanText(formData.get('website'), 200)) {
     return jsonResponse(200, { ok: true, accepted: false });
@@ -373,48 +357,6 @@ export const onRequestPost: WorkerHandler = async ({ request, env }) => {
     return jsonResponse(400, { ok: false, message: 'Please confirm that we may use the details to review your RFQ.' });
   }
 
-  const files = formData
-    .getAll('attachments')
-    .filter((entry): entry is File => entry instanceof File && entry.size > 0);
-
-  if (files.length > MAX_FILES) {
-    return jsonResponse(400, { ok: false, message: `Attach no more than ${MAX_FILES} files.` });
-  }
-
-  let totalFileSize = 0;
-  for (const file of files) {
-    const extension = getExtension(file.name);
-    totalFileSize += file.size;
-    if (file.size > MAX_FILE_SIZE) {
-      return jsonResponse(400, { ok: false, message: `${safeFileName(file.name)} is larger than 3 MB.` });
-    }
-    if (!allowedFileExtensions.has(extension)) {
-      return jsonResponse(400, { ok: false, message: `${safeFileName(file.name)} uses an unsupported file type.` });
-    }
-    if (!(await hasAllowedFileSignature(file, extension))) {
-      return jsonResponse(400, {
-        ok: false,
-        message: `${safeFileName(file.name)} does not match its declared PDF or image type.`,
-      });
-    }
-  }
-
-  if (totalFileSize > MAX_TOTAL_FILE_SIZE) {
-    return jsonResponse(400, { ok: false, message: 'Attachments must be 4 MB or less in total.' });
-  }
-
-  const attachments = await Promise.all(
-    files.map(async (file) => {
-      const extension = getExtension(file.name);
-      return {
-        filename: safeFileName(file.name),
-        content: await file.arrayBuffer(),
-        type: fileContentTypes.get(extension) || 'application/octet-stream',
-        disposition: 'attachment' as const,
-      };
-    })
-  );
-
   const selectedProductNames = selectedProducts.map((item) => productNames.get(item.id) as string);
   const selectedProductRows: Array<[string, string]> = selectedProducts.map((item, index) => [
     `Catalog product ${index + 1}`,
@@ -471,7 +413,6 @@ export const onRequestPost: WorkerHandler = async ({ request, env }) => {
       subject,
       text: `${textDetails}\n\nRequirements and acceptance criteria:\n${requirements}`,
       html: `<h1 style="font-size:20px">New metal powder RFQ</h1><table>${htmlDetails}</table><h2 style="font-size:16px;margin-top:24px">Requirements and acceptance criteria</h2><p style="white-space:pre-wrap">${escapeHtml(requirements)}</p>`,
-      attachments,
       headers: {
         'X-Metal3DPowder-Submission-ID': submissionId,
       },

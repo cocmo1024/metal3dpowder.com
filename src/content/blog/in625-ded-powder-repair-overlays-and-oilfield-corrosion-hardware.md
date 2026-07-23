@@ -86,7 +86,7 @@ If the application is mainly stronger stainless valve or pump hardware and the s
 
 ## What to ask for in an IN625 DED powder RFQ
 
-A useful RFQ should not just ask for "Inconel 625 powder." For DED repair overlays and oilfield corrosion hardware, include:
+A useful RFQ should not just ask for "Alloy 625 powder." For DED repair overlays and oilfield corrosion hardware, include:
 
 - process route: powder-fed DED, laser cladding, repair overlay, rebuild, or qualification pad
 - alloy identity: IN625, Alloy 625, UNS N06625, GH3625, or owner specification

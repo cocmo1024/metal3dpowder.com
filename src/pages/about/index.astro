@@ -6,30 +6,27 @@ import { buildBreadcrumbSchema, buildOrganizationSchema } from '../../data/seo';
 import { productFamilies, products } from '../../data/products';
 import { siteInfo } from '../../data/site';
 
-const title = 'About Metal 3D Powder | Partner-Backed Powder Supply';
+const title = 'About Metal 3D Powder | Metal Powder Sourcing by SZComo';
 const description =
-  'Metal 3D Powder is a partner-backed sourcing and engineering storefront for metal powders, with project-specific source, lot, evidence, and logistics confirmation.';
+  'Metal 3D Powder is operated by SZComo as a sourcing and engineering storefront for metal powders, with project-specific source, lot, evidence, and logistics confirmation.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const schema = [
   buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'About' }]),
   buildOrganizationSchema(siteUrl),
 ];
 
-const partners = [
+const supplyCapabilities = [
   {
-    name: 'VILORY',
-    localName: '威拉里',
-    note: 'An authorized deep-cooperation partner within the powder supply and additive-manufacturing ecosystem.',
+    name: 'Atomization access',
+    note: 'VIGA, EIGA, PREP, plasma atomization, and route-specific production review.',
   },
   {
-    name: 'AVIMETAL',
-    localName: '中航迈特',
-    note: 'An authorized deep-cooperation partner supporting project-specific powder and manufacturing-resource review.',
+    name: 'Powder conditioning',
+    note: 'Classification, blending, handling, packaging, and lot-specific evidence coordination.',
   },
   {
-    name: 'BLT',
-    localName: '铂力特',
-    note: 'An authorized deep-cooperation partner within the industrial metal additive-manufacturing ecosystem.',
+    name: 'International delivery',
+    note: 'Commercial, export, documentation, logistics, and destination-requirement coordination.',
   },
 ];
 ---
@@ -44,8 +41,8 @@ const partners = [
           <p class="eyebrow">About Metal 3D Powder</p>
           <h1>A powder storefront built around the buyer’s real decision variables.</h1>
           <p>
-            Suzhou Como Precision Materials Co., Ltd. operates Metal 3D Powder as a commercial and engineering interface
-            for alloy selection, partner-backed sourcing, evidence review, and export-oriented RFQ coordination.
+            SZComo — Suzhou Como Precision Materials Co., Ltd. — operates Metal 3D Powder as a commercial and engineering
+            interface for alloy selection, supply-network sourcing, evidence review, and export-oriented RFQ coordination.
           </p>
           <div class="about-hero__actions">
             <a class="button button--primary" href="/products/">Browse powder catalog</a>
@@ -62,8 +59,8 @@ const partners = [
             <span>alloy families</span>
           </article>
           <article>
-            <strong>{partners.length}</strong>
-            <span>named authorized partners</span>
+            <strong>End-to-end</strong>
+            <span>powder sourcing coordination</span>
           </article>
           <p>Catalog breadth is not an inventory claim. Source, lot, quantity, evidence, and lead time are confirmed per RFQ.</p>
         </aside>
@@ -75,7 +72,7 @@ const partners = [
         <p class="eyebrow">Operating model</p>
         <h2 id="operating-model-title">The site is not presented as a single anonymous powder factory.</h2>
         <p>
-          The value is the controlled interface between buyer requirements and project-reviewed partner resources. The exact
+          The value is the controlled interface between buyer requirements and project-reviewed supply resources. The exact
           producer, production route, testing scope, and applicable documents are disclosed in the commercial process
           where permitted and tied to the quoted material.
         </p>
@@ -89,7 +86,7 @@ const partners = [
         <article>
           <span>02</span>
           <h3>Match supply route</h3>
-          <p>Review standard and custom routes across partner resources without presenting every supplier capability as universal.</p>
+          <p>Review standard and custom routes across supply resources without presenting every supplier capability as universal.</p>
         </article>
         <article>
           <span>03</span>
@@ -107,23 +104,22 @@ const partners = [
     <section class="partner-section">
       <div class="page-shell partner-section__inner">
         <div class="partner-section__copy">
-          <p class="eyebrow">Authorized cooperation network</p>
-          <h2>Named partners, explicit evidence boundaries.</h2>
+          <p class="eyebrow">Supply capability network</p>
+          <h2>Production access without borrowed claims.</h2>
           <p>
-            These companies are identified as authorized deep-cooperation partners. Their public capabilities inform
-            route discovery, but certifications, plant identity, equipment, process, typical data, media, and documents
-            are not automatically attributed to every powder offered on this site.
+            Each supply route is reviewed against the buyer’s actual alloy, process, PSD, quantity, evidence, and
+            delivery requirements. Plant identity, equipment, process, typical data, and documents are disclosed only
+            when they apply to the quoted material.
           </p>
           <a href="/quality/">See the quality and evidence model →</a>
         </div>
         <div class="partner-list">
-          {partners.map((partner, index) => (
+          {supplyCapabilities.map((capability, index) => (
             <article>
               <span>{String(index + 1).padStart(2, '0')}</span>
               <div>
-                <p>{partner.name}</p>
-                <strong>{partner.localName}</strong>
-                <small>{partner.note}</small>
+                <p>{capability.name}</p>
+                <small>{capability.note}</small>
               </div>
             </article>
           ))}
@@ -153,7 +149,7 @@ const partners = [
           </li>
           <li>
             <strong>RFQ layer</strong>
-            <span>Grade, PSD, quantity, partner route, evidence, packaging, destination, and timing review.</span>
+            <span>Grade, PSD, quantity, production route, evidence, packaging, destination, and timing review.</span>
           </li>
           <li>
             <strong>Quotation layer</strong>
@@ -179,7 +175,7 @@ const partners = [
         </article>
         <article>
           <strong>No borrowed certification</strong>
-          <p>A partner certificate applies only to its stated entity, site, scope, period, and quoted supply route.</p>
+          <p>A source certificate applies only to its stated entity, site, scope, period, and quoted supply route.</p>
         </article>
         <article>
           <strong>No automatic part approval</strong>
@@ -196,7 +192,7 @@ const partners = [
       <div>
         <p class="eyebrow">Start with the actual requirement</p>
         <h2>Send the process, PSD, quantity, destination, timing, and evidence needs.</h2>
-        <p>For corrections, partner-document questions, or commercial communication, use {siteInfo.email}.</p>
+        <p>For corrections, source-document questions, or commercial communication, use {siteInfo.email}.</p>
       </div>
       <a class="button button--primary" href="/rfq/">Build powder RFQ</a>
     </section>
@@ -422,13 +418,12 @@ const partners = [
 
   .partner-list article > div {
     display: grid;
-    grid-template-columns: auto auto minmax(0, 1fr);
+    grid-template-columns: minmax(8rem, 0.45fr) minmax(0, 1fr);
     gap: 0.6rem 1rem;
     align-items: baseline;
   }
 
   .partner-list p,
-  .partner-list strong,
   .partner-list small {
     margin: 0;
   }
@@ -438,11 +433,6 @@ const partners = [
     font-size: 1.05rem;
     font-weight: 780;
     letter-spacing: 0.06em;
-  }
-
-  .partner-list strong {
-    color: #8fb2ca;
-    font-size: 0.8rem;
   }
 
   .partner-list small {

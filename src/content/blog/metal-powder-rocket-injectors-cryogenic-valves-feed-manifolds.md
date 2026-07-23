@@ -39,7 +39,7 @@ The table intentionally includes conventional and program-specific alternatives.
 
 ## What public rocket programs actually prove
 
-NASA and Aerojet Rocketdyne [hot-fire tested a selectively laser melted injector](https://www.nasa.gov/news-release/nasa-industry-test-additively-manufactured-rocket-engine-injector/) with liquid oxygen and gaseous hydrogen. NASA later operated additively manufactured turbopump, injector, and valve hardware together in a [cryogenic breadboard-engine configuration](https://www.nasa.gov/technology/manufacturing-materials-3-d-printing/piece-by-piece-nasa-team-moves-closer-to-building-a-3-d-printed-rocket-engine/).
+NASA and an industry collaborator [hot-fire tested a selectively laser melted injector](https://www.nasa.gov/news-release/nasa-industry-test-additively-manufactured-rocket-engine-injector/) with liquid oxygen and gaseous hydrogen. NASA later operated additively manufactured turbopump, injector, and valve hardware together in a [cryogenic breadboard-engine configuration](https://www.nasa.gov/technology/manufacturing-materials-3-d-printing/piece-by-piece-nasa-team-moves-closer-to-building-a-3-d-printed-rocket-engine/).
 
 These demonstrations establish that metal-powder routes can create testable rocket feed and injection components. They do not qualify a catalog alloy for a new propellant or make a printed valve, injector, or manifold flight-ready. NASA's [rocket AM overview](https://ntrs.nasa.gov/citations/20160012051) explicitly describes development and testing as part of a path toward certification.
 
