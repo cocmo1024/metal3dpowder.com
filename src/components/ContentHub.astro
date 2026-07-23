@@ -1,6 +1,8 @@
 ---
 import type { BlogPost } from '../data/blog';
+import type { BreadcrumbItem } from '../data/seo';
 import BlogPostGrid from './BlogPostGrid.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
 import HubCardGrid from './HubCardGrid.astro';
 import RfqCta from './RfqCta.astro';
 
@@ -17,6 +19,7 @@ interface Props {
   cards?: HubCard[];
   posts?: BlogPost[];
   postsTitle?: string;
+  breadcrumbItems?: BreadcrumbItem[];
 }
 
 const {
@@ -26,10 +29,13 @@ const {
   cards = [],
   posts = [],
   postsTitle = 'Related articles',
+  breadcrumbItems = [],
 } = Astro.props;
 ---
 
-<main class="page-shell hub-page">
+<main id="main-content" class="page-shell hub-page">
+  {breadcrumbItems.length ? <Breadcrumbs items={breadcrumbItems} /> : null}
+
   <section class="hub-intro">
     <p class="eyebrow">{eyebrow}</p>
     <h1>{title}</h1>

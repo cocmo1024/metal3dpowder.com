@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { buildBreadcrumbSchema } from '../../data/seo';
@@ -9,13 +10,16 @@ const title = 'Privacy Policy | Metal 3D Powder';
 const description =
   'Privacy policy for Metal 3D Powder covering inquiry data, analytics, cookies, communication records, and contact rights.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
-const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'Privacy' }])];
+const breadcrumbItems = [{ name: 'Home', path: '/' }, { name: 'Privacy' }];
+const schema = [buildBreadcrumbSchema(siteUrl, breadcrumbItems)];
 ---
 
 <BaseLayout title={title} description={description} canonical="/privacy/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="page-shell content-page document-page">
+  <main id="main-content" class="page-shell content-page document-page">
+    <Breadcrumbs items={breadcrumbItems} />
+
     <section class="page-intro">
       <p class="eyebrow">Privacy</p>
       <h1>Privacy policy for inquiry handling and website usage data.</h1>

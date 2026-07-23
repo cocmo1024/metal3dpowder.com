@@ -26,6 +26,11 @@ const postMap = new Map(allPosts.map((post) => [post.id, post]));
 const posts = hub.postIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
 const canonical = `/materials/${hub.slug}/`;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Materials', path: '/materials/' },
+  { name: hub.title },
+];
 const schema = [
   buildCollectionPageSchema({
     site: siteUrl,
@@ -34,17 +39,14 @@ const schema = [
     description: hub.description,
     items: posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
   }),
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Materials', path: '/materials/' },
-    { name: hub.title },
-  ]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
 ];
 ---
 
 <BaseLayout title={`${hub.title} Guides | ${siteInfo.brand}`} description={hub.description} canonical={canonical} schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <ContentHub
+    breadcrumbItems={breadcrumbItems}
     eyebrow="Material center"
     title={`${hub.title} Guides`}
     description={hub.description}
@@ -53,4 +55,3 @@ const schema = [
   />
   <SiteFooter />
 </BaseLayout>
-

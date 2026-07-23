@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
@@ -16,8 +17,9 @@ const title = 'Metal Powder Catalog | Search by Alloy, Process and PSD';
 const description =
   'Search metal powders by alloy family, grade, international designation, process, application, and particle-size route. Add one or more products to a technical RFQ.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const breadcrumbItems = [{ name: 'Home', path: '/' }, { name: 'Powder catalog' }];
 const schema = [
-  buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'Powder catalog' }]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
   buildCollectionPageSchema({
     site: siteUrl,
     path: '/products/',
@@ -34,7 +36,9 @@ const schema = [
 <BaseLayout title={title} description={description} canonical="/products/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="catalog-page">
+  <main id="main-content" class="catalog-page">
+    <Breadcrumbs items={breadcrumbItems} contained />
+
     <section class="catalog-hero">
       <div class="catalog-hero__inner page-shell">
         <div>

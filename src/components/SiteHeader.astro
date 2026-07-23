@@ -134,20 +134,27 @@ const links = [
   </nav>
 </aside>
 
-<script is:inline>
+<script>
   const header = document.querySelector('[data-site-header]');
 
   if (header instanceof HTMLElement) {
     const toggle = header.querySelector('[data-nav-toggle]');
     const drawer = document.querySelector('[data-drawer]');
     const closeButtons = document.querySelectorAll('[data-nav-close], [data-drawer-link]');
-    let lastFocusedElement = null;
+    let lastFocusedElement: HTMLElement | null = null;
     let lockedScrollY = 0;
     let scrollLocked = false;
     let previousRootOverflow = '';
-    let previousBodyStyles = null;
+    let previousBodyStyles: {
+      overflow: string;
+      position: string;
+      top: string;
+      left: string;
+      right: string;
+      width: string;
+    } | null = null;
 
-    const setPageScrollLocked = (locked) => {
+    const setPageScrollLocked = (locked: boolean) => {
       if (locked === scrollLocked) return;
 
       if (locked) {
@@ -184,7 +191,7 @@ const links = [
       document.documentElement.style.scrollBehavior = previousScrollBehavior;
     };
 
-    const sync = (open, restoreFocus = true) => {
+    const sync = (open: boolean, restoreFocus = true) => {
       if (open && document.activeElement instanceof HTMLElement) lastFocusedElement = document.activeElement;
       header.dataset.open = String(open);
       setPageScrollLocked(open);
@@ -216,9 +223,9 @@ const links = [
       }
 
       if (event.key !== 'Tab' || header.dataset.open !== 'true' || !(drawer instanceof HTMLElement)) return;
-      const focusable = Array.from(drawer.querySelectorAll('button:not([disabled]), a[href]')).filter(
-        (node) => node instanceof HTMLElement && node.offsetParent !== null
-      );
+      const focusable = Array.from(
+        drawer.querySelectorAll<HTMLElement>('button:not([disabled]), a[href]')
+      ).filter((node) => node.offsetParent !== null);
       if (!focusable.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];

@@ -5,7 +5,7 @@ import BlogPostGrid from '../components/BlogPostGrid.astro';
 import ProductCard from '../components/ProductCard.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
-import { buildCollectionPageSchema, buildOrganizationSchema } from '../data/seo';
+import { buildCollectionPageSchema, buildOrganizationSchema, buildWebsiteSchema } from '../data/seo';
 import { siteInfo } from '../data/site';
 import {
   getProductPath,
@@ -67,21 +67,13 @@ const processCards = [
   },
 ];
 
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: siteInfo.brand,
-  alternateName: 'Metal3DPowder',
-  url: siteUrl.toString(),
-};
-
 const collectionPageSchema = buildCollectionPageSchema({
   site: siteUrl,
   path: '/',
   name: 'Metal powder product catalog and sourcing portal',
   description,
   items: [
-    ...products.map((product) => ({
+    ...featuredProducts.map((product) => ({
       name: `${product.name} powder`,
       path: getProductPath(product),
     })),
@@ -98,11 +90,11 @@ const collectionPageSchema = buildCollectionPageSchema({
   description={description}
   canonical="/"
   ogImageAlt="Metal powder product catalog"
-  schema={[websiteSchema, buildOrganizationSchema(siteUrl), collectionPageSchema]}
+  schema={[buildWebsiteSchema(siteUrl), buildOrganizationSchema(siteUrl), collectionPageSchema]}
 >
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main>
+  <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__inner page-shell">
         <div class="hero__copy">

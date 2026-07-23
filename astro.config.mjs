@@ -4,8 +4,6 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
 
 const siteUrl = 'https://metal3dpowder.com';
-const staticPageLastmod = new Date('2026-04-11T00:00:00.000Z');
-const storefrontRebuildLastmod = new Date('2026-07-23T00:00:00.000Z');
 
 const getFrontmatterDate = (frontmatter, key) => {
   const match = frontmatter.match(new RegExp(`^${key}:\\s*"?([^"\\r\\n]+)"?`, 'm'));
@@ -31,39 +29,6 @@ const loadBlogLastmodMap = () => {
 };
 
 const blogLastmodByPath = loadBlogLastmodMap();
-const latestContentLastmod = new Date(Math.max(...blogLastmodByPath.values()));
-
-const getPageLastmod = (pathname) => {
-  if (blogLastmodByPath.has(pathname)) {
-    return blogLastmodByPath.get(pathname);
-  }
-
-  if (
-    pathname === '/' ||
-    pathname.startsWith('/products/') ||
-    pathname.startsWith('/rfq/') ||
-    pathname.startsWith('/quality/') ||
-    pathname.startsWith('/about/') ||
-    pathname.startsWith('/contact/') ||
-    pathname.startsWith('/privacy/') ||
-    pathname.startsWith('/terms/')
-  ) {
-    return storefrontRebuildLastmod;
-  }
-
-  if (
-    pathname.startsWith('/blog/') ||
-    pathname.startsWith('/materials/') ||
-    pathname.startsWith('/applications/') ||
-    pathname.startsWith('/processes/') ||
-    pathname.startsWith('/knowledge/') ||
-    pathname.startsWith('/comparisons/')
-  ) {
-    return latestContentLastmod;
-  }
-
-  return staticPageLastmod;
-};
 
 export default defineConfig({
   site: siteUrl,
@@ -72,7 +37,12 @@ export default defineConfig({
       filter: (page) => !page.includes('/blog/tags/') && !page.includes('/blog/page/'),
       serialize: (item) => {
         const pathname = new URL(item.url).pathname;
-        item.lastmod = getPageLastmod(pathname);
+        const verifiedLastmod = blogLastmodByPath.get(pathname);
+
+        if (verifiedLastmod) {
+          item.lastmod = verifiedLastmod;
+        }
+
         return item;
       },
     }),
@@ -81,6 +51,7 @@ export default defineConfig({
   trailingSlash: 'always',
   vite: {
     build: {
+      assetsInlineLimit: (filePath) => (filePath.endsWith('.js') ? false : undefined),
       rollupOptions: {
         output: {
           assetFileNames: '_astro/[hash][extname]',

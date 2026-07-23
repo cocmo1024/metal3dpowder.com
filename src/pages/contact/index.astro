@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { buildRfqEmailHref } from '../../data/contact';
@@ -11,8 +12,9 @@ const description =
   'Use the structured online RFQ for metal powder sourcing, or contact the official corporate email for technical, document, and special-handling questions.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const rfqEmailHref = buildRfqEmailHref();
+const breadcrumbItems = [{ name: 'Home', path: '/' }, { name: 'Contact' }];
 const schema = [
-  buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'Contact' }]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
   buildContactPageSchema({ site: siteUrl, path: '/contact/', name: title, description }),
   buildOrganizationSchema(siteUrl),
 ];
@@ -21,7 +23,9 @@ const schema = [
 <BaseLayout title={title} description={description} canonical="/contact/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="contact-page">
+  <main id="main-content" class="contact-page">
+    <Breadcrumbs items={breadcrumbItems} contained />
+
     <section class="contact-hero">
       <div class="page-shell contact-hero__inner">
         <div>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
@@ -26,21 +27,27 @@ const relatedProducts = products
   .filter((candidate) => candidate.id !== product.id)
   .sort((left, right) => Number(right.family === product.family) - Number(left.family === product.family))
   .slice(0, 3);
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Powder catalog', path: '/products/' },
+  { name: product.name },
+];
 
 const schema = [
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Powder catalog', path: '/products/' },
-    { name: product.name },
-  ]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
   {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `${new URL(productPath, siteUrl).toString()}#product`,
     name: `${product.name} metal powder`,
     category: product.familyLabel,
     description: product.summary,
     image: new URL(product.image, siteUrl).toString(),
     url: new URL(productPath, siteUrl).toString(),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${new URL(productPath, siteUrl).toString()}#webpage`,
+    },
     additionalProperty: [
       {
         '@type': 'PropertyValue',
@@ -67,19 +74,13 @@ const schema = [
   description={description}
   canonical={productPath}
   ogImage={defaultOgImagePath}
-  ogImageAlt={`${product.name} powder sourcing and RFQ`}
+  ogImageAlt="Metal powder catalog and specification-led RFQ"
   schema={schema}
 >
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="product-page" style={`--product-accent:${product.accent};`}>
-    <nav class="breadcrumbs page-shell" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span aria-hidden="true">/</span>
-      <a href="/products/">Powder catalog</a>
-      <span aria-hidden="true">/</span>
-      <span aria-current="page">{product.name}</span>
-    </nav>
+  <main id="main-content" class="product-page" style={`--product-accent:${product.accent};`}>
+    <Breadcrumbs items={breadcrumbItems} contained />
 
     <section class="product-hero page-shell">
       <div class="product-gallery">
@@ -90,6 +91,7 @@ const schema = [
             width="800"
             height="560"
             decoding="async"
+            fetchpriority="high"
           />
           <span>Illustrative powder image</span>
         </div>
@@ -373,20 +375,6 @@ const schema = [
   .product-page {
     gap: 0;
     padding-bottom: 2rem;
-  }
-
-  .breadcrumbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    align-items: center;
-    padding-block: 1rem;
-    color: var(--muted);
-    font-size: 0.78rem;
-  }
-
-  .breadcrumbs a {
-    color: var(--brand);
   }
 
   .product-hero {

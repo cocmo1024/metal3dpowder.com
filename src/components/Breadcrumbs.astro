@@ -1,0 +1,80 @@
+---
+import type { BreadcrumbItem } from '../data/seo';
+
+interface Props {
+  items: BreadcrumbItem[];
+  contained?: boolean;
+}
+
+const { items, contained = false } = Astro.props;
+---
+
+<nav
+  class:list={['breadcrumb-nav', { 'breadcrumb-nav--contained': contained, 'page-shell': contained }]}
+  aria-label="Breadcrumb"
+>
+  <ol>
+    {
+      items.map((item, index) => {
+        const isCurrent = index === items.length - 1;
+
+        return (
+          <li>
+            {isCurrent || !item.path ? (
+              <span aria-current={isCurrent ? 'page' : undefined}>{item.name}</span>
+            ) : (
+              <a href={item.path}>{item.name}</a>
+            )}
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb-nav {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .breadcrumb-nav--contained {
+    padding-block: 1rem;
+  }
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  li + li::before {
+    margin-inline: 0.45rem;
+    color: var(--line-strong);
+    content: '/';
+  }
+
+  a {
+    color: var(--brand);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  [aria-current='page'] {
+    color: var(--copy);
+  }
+</style>

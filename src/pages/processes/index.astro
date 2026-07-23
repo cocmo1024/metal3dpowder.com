@@ -21,6 +21,10 @@ const cards = landing.hubs.map((hub) => ({
 }));
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const description = `${landing.description} Browse process-led AM powder guides for LPBF, EBM, DED, binder jet, and MIM.`;
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Processes' },
+];
 const schema = [
   buildCollectionPageSchema({
     site: siteUrl,
@@ -29,16 +33,14 @@ const schema = [
     description,
     items: cards.map((card) => ({ name: card.title, path: card.href })),
   }),
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Processes' },
-  ]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
 ];
 ---
 
 <BaseLayout title={`${landing.title} | ${siteInfo.brand}`} description={description} canonical={landing.path} schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <ContentHub
+    breadcrumbItems={breadcrumbItems}
     eyebrow="Processes"
     title={landing.title}
     description={landing.description}
@@ -48,4 +50,3 @@ const schema = [
   />
   <SiteFooter />
 </BaseLayout>
-

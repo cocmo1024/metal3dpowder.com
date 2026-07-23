@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BlogArchive from '../../../components/BlogArchive.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
-import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../../data/seo';
+import { buildCollectionPageSchema, itemListOrderDescending } from '../../../data/seo';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { paginatePosts, POSTS_PER_PAGE, sortBlogPosts } from '../../../data/blog';
 import { siteInfo } from '../../../data/site';
@@ -35,12 +35,8 @@ const schema = [
       name: post.data.title,
       path: `/posts/Alloys/${post.id}/`,
     })),
+    itemListOrder: itemListOrderDescending,
   }),
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Blog', path: '/blog/' },
-    { name: `Page ${currentPage}` },
-  ]),
 ];
 ---
 

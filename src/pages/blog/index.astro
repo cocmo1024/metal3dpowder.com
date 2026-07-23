@@ -4,7 +4,12 @@ import BlogArchive from '../../components/BlogArchive.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
+import {
+  buildBreadcrumbSchema,
+  buildCollectionPageSchema,
+  buildPublisherSchema,
+  itemListOrderDescending,
+} from '../../data/seo';
 import { paginatePosts, POSTS_PER_PAGE, sortBlogPosts } from '../../data/blog';
 import { siteInfo } from '../../data/site';
 
@@ -14,6 +19,10 @@ const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 
 const title = `Metal Powder Blog | Material and Application Guides | ${siteInfo.brand}`;
 const description = 'Technical blog on metal powder materials, process fit, and additive manufacturing applications across titanium, steel, nickel, aluminum, copper, and cobalt chrome.';
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Blog' },
+];
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -21,10 +30,7 @@ const schema = [
     name: `${siteInfo.brand} Blog`,
     description,
     url: new URL('/blog/', siteUrl).toString(),
-    publisher: {
-      '@type': 'Organization',
-      name: siteInfo.brand,
-    },
+    publisher: buildPublisherSchema(siteUrl),
   },
   {
     ...buildCollectionPageSchema({
@@ -36,18 +42,17 @@ const schema = [
         name: post.data.title,
         path: `/posts/Alloys/${post.id}/`,
       })),
+      itemListOrder: itemListOrderDescending,
     }),
   },
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Blog' },
-  ]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
 ];
 ---
 
 <BaseLayout title={title} description={description} canonical="/blog/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <BlogArchive
+    breadcrumbItems={breadcrumbItems}
     eyebrow="Blog"
     title="Technical articles on metal powder materials, process fit, and applications."
     description="Engineering references for alloy selection, powder specification, process fit, and additive manufacturing applications."

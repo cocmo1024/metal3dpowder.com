@@ -1,0 +1,79 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Page Not Found | Metal 3D Powder';
+const description = 'The requested page could not be found. Return to the metal powder catalog or submit a powder RFQ.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={null}
+  robots="noindex,follow,max-image-preview:large"
+>
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main id="main-content" class="page-shell not-found-page">
+    <p class="eyebrow">404 · Page not found</p>
+    <h1>The requested page is not available.</h1>
+    <p>
+      The URL may have changed or the page may no longer exist. Continue with the powder catalog, engineering
+      knowledge center, or a specification-led RFQ.
+    </p>
+    <div class="not-found-page__actions">
+      <a class="button button--primary" href="/products/">Browse powders</a>
+      <a class="button button--dark" href="/rfq/">Submit an RFQ</a>
+      <a class="not-found-page__link" href="/">Return home</a>
+    </div>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .not-found-page {
+    align-content: center;
+    gap: 0.85rem;
+    min-height: min(62vh, 36rem);
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .not-found-page h1,
+  .not-found-page p {
+    margin: 0;
+  }
+
+  .not-found-page h1 {
+    max-width: 48rem;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.03;
+    letter-spacing: var(--title-tracking);
+  }
+
+  .not-found-page > p:not(.eyebrow) {
+    max-width: 46rem;
+    color: var(--copy);
+    line-height: var(--body-leading);
+  }
+
+  .not-found-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.65rem;
+  }
+
+  .not-found-page__link {
+    padding: 0.75rem 0.35rem;
+    color: var(--brand);
+    font-weight: 720;
+  }
+
+  .not-found-page__link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+</style>

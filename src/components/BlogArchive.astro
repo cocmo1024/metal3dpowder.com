@@ -1,5 +1,7 @@
 ---
 import type { BlogPost } from '../data/blog';
+import type { BreadcrumbItem } from '../data/seo';
+import Breadcrumbs from './Breadcrumbs.astro';
 import BlogPostGrid from './BlogPostGrid.astro';
 
 interface Props {
@@ -10,6 +12,7 @@ interface Props {
   currentPage?: number;
   totalPages?: number;
   pageBasePath: string;
+  breadcrumbItems?: BreadcrumbItem[];
 }
 
 const {
@@ -20,6 +23,7 @@ const {
   currentPage = 1,
   totalPages = 1,
   pageBasePath,
+  breadcrumbItems = [],
 } = Astro.props;
 
 const getPageHref = (page: number) => {
@@ -33,7 +37,9 @@ const getPageHref = (page: number) => {
 const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
 ---
 
-<main class="page-shell archive-page">
+<main id="main-content" class="page-shell archive-page">
+  {breadcrumbItems.length ? <Breadcrumbs items={breadcrumbItems} /> : null}
+
   <section class="archive-intro">
     <p class="eyebrow">{eyebrow}</p>
     <h1>{title}</h1>

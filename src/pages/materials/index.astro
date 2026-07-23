@@ -21,6 +21,10 @@ const cards = landing.hubs.map((hub) => ({
 }));
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const description = 'Material-led guides for titanium, stainless, nickel, copper, tool steel, aluminum, and cobalt chrome AM powder sourcing.';
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Materials' },
+];
 const schema = [
   buildCollectionPageSchema({
     site: siteUrl,
@@ -29,16 +33,14 @@ const schema = [
     description,
     items: cards.map((card) => ({ name: card.title, path: card.href })),
   }),
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Materials' },
-  ]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
 ];
 ---
 
 <BaseLayout title={`${landing.title} | ${siteInfo.brand}`} description={description} canonical={landing.path} schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <ContentHub
+    breadcrumbItems={breadcrumbItems}
     eyebrow="Materials"
     title={landing.title}
     description={landing.description}

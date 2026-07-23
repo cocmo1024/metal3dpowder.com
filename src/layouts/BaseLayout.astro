@@ -7,9 +7,11 @@ interface Props {
   title: string;
   description: string;
   author?: string;
-  canonical?: string;
+  canonical: string | null;
   ogImage?: string;
   ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   ogType?: string;
   robots?: string;
   extraMeta?: Array<{
@@ -24,9 +26,11 @@ const {
   title,
   description,
   author = siteInfo.brand,
-  canonical = '/',
+  canonical,
   ogImage = defaultOgImagePath,
   ogImageAlt = title,
+  ogImageWidth,
+  ogImageHeight,
   ogType = 'website',
   robots = 'index,follow,max-image-preview:large',
   extraMeta = [],
@@ -34,8 +38,19 @@ const {
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://metal3dpowder.com');
-const canonicalUrl = new URL(canonical, site).toString();
+const canonicalUrl = canonical ? new URL(canonical, site).toString() : null;
 const ogImageUrl = new URL(ogImage, site).toString();
+const ogImageExtension = ogImageUrl.split(/[?#]/)[0]?.split('.').pop()?.toLowerCase();
+const ogImageType =
+  ogImageExtension === 'webp'
+    ? 'image/webp'
+    : ogImageExtension === 'svg'
+      ? 'image/svg+xml'
+      : ogImageExtension === 'jpg' || ogImageExtension === 'jpeg'
+        ? 'image/jpeg'
+        : 'image/png';
+const resolvedOgImageWidth = ogImageWidth ?? (ogImage === defaultOgImagePath ? 1200 : undefined);
+const resolvedOgImageHeight = ogImageHeight ?? (ogImage === defaultOgImagePath ? 630 : undefined);
 const schemaItems = Array.isArray(schema) ? schema : [schema];
 ---
 
@@ -49,18 +64,21 @@ const schemaItems = Array.isArray(schema) ? schema : [schema];
     <meta name="robots" content={robots} />
     <meta name="author" content={author} />
     <meta name="theme-color" content="#0b2748" />
-    <link rel="canonical" href={canonicalUrl} />
+    {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang="en" href={canonicalUrl} />
-    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    {canonicalUrl ? <link rel="alternate" hreflang="en" href={canonicalUrl} /> : null}
+    {canonicalUrl ? <link rel="alternate" hreflang="x-default" href={canonicalUrl} /> : null}
     <link rel="alternate" type="application/rss+xml" title={`${siteInfo.brand} Blog Feed`} href={new URL(rssFeedPath, site).toString()} />
 
     <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
+    {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:type" content={ogImageType} />
+    {resolvedOgImageWidth ? <meta property="og:image:width" content={String(resolvedOgImageWidth)} /> : null}
+    {resolvedOgImageHeight ? <meta property="og:image:height" content={String(resolvedOgImageHeight)} /> : null}
     <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:site_name" content={siteInfo.brand} />
 
@@ -83,24 +101,27 @@ const schemaItems = Array.isArray(schema) ? schema : [schema];
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <slot />
 
-    <script is:inline>
+    <script>
       (() => {
         const storageKey = 'metal3dpowder:rfq-products';
-        let memoryProducts = [];
+        let memoryProducts: string[] = [];
 
-        const readProducts = () => {
+        const readProducts = (): string[] => {
           try {
-            const value = JSON.parse(window.localStorage.getItem(storageKey) || '[]');
-            memoryProducts = Array.isArray(value) ? value.filter((item) => typeof item === 'string') : [];
+            const value: unknown = JSON.parse(window.localStorage.getItem(storageKey) || '[]');
+            memoryProducts = Array.isArray(value)
+              ? value.filter((item): item is string => typeof item === 'string')
+              : [];
             return memoryProducts;
           } catch {
             return memoryProducts;
           }
         };
 
-        const writeProducts = (products) => {
+        const writeProducts = (products: string[]) => {
           memoryProducts = [...new Set(products)];
           try {
             window.localStorage.setItem(storageKey, JSON.stringify(memoryProducts));

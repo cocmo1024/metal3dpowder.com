@@ -2,10 +2,15 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BlogPostGrid from '../../../components/BlogPostGrid.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import RfqCta from '../../../components/RfqCta.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
-import { buildBreadcrumbSchema, publisherLogoPath } from '../../../data/seo';
+import {
+  buildBreadcrumbSchema,
+  buildPublisherSchema,
+  defaultOgImagePath,
+} from '../../../data/seo';
 import {
   blogAuthorName,
   blogAuthorPath,
@@ -15,7 +20,6 @@ import {
   getBlogPostPath,
   getBlogPostImage,
   getRelatedBlogPosts,
-  getTagPath,
   sortBlogPosts,
 } from '../../../data/blog';
 import { getHubPath, getPostHubs, knowledgePostIds } from '../../../data/contentHubs';
@@ -52,7 +56,13 @@ const publishedIso = post.data.pubDate.toISOString();
 const modifiedIso = (post.data.updatedDate ?? post.data.pubDate).toISOString();
 const articleImage = getBlogPostImage(post);
 const articleImageUrl = new URL(articleImage, siteUrl).toString();
+const hasSpecificArticleImage = articleImage !== defaultOgImagePath;
 const wordCount = post.body?.split(/\s+/).filter(Boolean).length ?? 0;
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: blogCategoryPath },
+  { name: post.data.title },
+];
 
 const schema = [
   {
@@ -67,28 +77,19 @@ const schema = [
     wordCount,
     datePublished: publishedIso,
     dateModified: modifiedIso,
-    mainEntityOfPage: new URL(canonical, siteUrl).toString(),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${new URL(canonical, siteUrl).toString()}#webpage`,
+    },
     author: {
       '@type': 'Organization',
       name: blogAuthorName,
       url: new URL(blogAuthorPath, siteUrl).toString(),
     },
-    image: [articleImageUrl],
-    publisher: {
-      '@type': 'Organization',
-      name: siteInfo.brand,
-      url: siteUrl.toString(),
-      logo: {
-        '@type': 'ImageObject',
-        url: new URL(publisherLogoPath, siteUrl).toString(),
-      },
-    },
+    ...(hasSpecificArticleImage ? { image: [articleImageUrl] } : {}),
+    publisher: buildPublisherSchema(siteUrl),
   },
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Blog', path: blogCategoryPath },
-    { name: post.data.title },
-  ]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
 ];
 ---
 
@@ -98,7 +99,7 @@ const schema = [
   author={blogAuthorName}
   canonical={canonical}
   ogImage={articleImage}
-  ogImageAlt={post.data.title}
+  ogImageAlt={hasSpecificArticleImage ? post.data.title : 'Metal powder sourcing and engineering knowledge'}
   ogType="article"
   extraMeta={[
     { property: 'article:published_time', content: publishedIso },
@@ -110,8 +111,10 @@ const schema = [
 >
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="page-shell article-page">
+  <main id="main-content" class="page-shell article-page">
     <article class="article">
+      <Breadcrumbs items={breadcrumbItems} />
+
       <header class="article-header">
         <h1>{post.data.title}</h1>
 
@@ -161,7 +164,7 @@ const schema = [
         <h2 id="article-tags-title">Tags</h2>
         <div class="article-tags__list">
           {post.data.tags.map((tag) => (
-            <a href={getTagPath(tag)}>{tag}</a>
+            <span>{tag}</span>
           ))}
         </div>
       </section>
@@ -436,7 +439,7 @@ const schema = [
     gap: 0.55rem;
   }
 
-  .article-tags__list a {
+  .article-tags__list span {
     display: inline-flex;
     align-items: center;
     min-height: 2.35rem;
@@ -448,7 +451,6 @@ const schema = [
     font-size: 0.86rem;
   }
 
-  .article-tags__list a:hover,
   .article-pagination__link:hover {
     border-color: color-mix(in srgb, var(--brand) 35%, var(--line));
     color: var(--text);

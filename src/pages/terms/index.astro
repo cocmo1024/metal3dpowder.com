@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { buildBreadcrumbSchema } from '../../data/seo';
@@ -9,13 +10,16 @@ const title = 'Terms of Service | Metal 3D Powder';
 const description =
   'Terms of service for Metal 3D Powder covering reference-only content, acceptable use, quotation validity, and liability limits.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
-const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'Terms' }])];
+const breadcrumbItems = [{ name: 'Home', path: '/' }, { name: 'Terms' }];
+const schema = [buildBreadcrumbSchema(siteUrl, breadcrumbItems)];
 ---
 
 <BaseLayout title={title} description={description} canonical="/terms/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="page-shell content-page document-page">
+  <main id="main-content" class="page-shell content-page document-page">
+    <Breadcrumbs items={breadcrumbItems} />
+
     <section class="page-intro">
       <p class="eyebrow">Terms</p>
       <h1>Reference content, acceptable use, and quotation validity.</h1>

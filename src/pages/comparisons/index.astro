@@ -15,6 +15,10 @@ const posts = comparisonPostIds.map((id) => postMap.get(id)).filter((post): post
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const title = 'Metal Powder Comparison Guides';
 const description = 'Practical comparison guides for AM powder buyers comparing titanium, stainless, nickel, copper, tool steel, and cobalt chrome powder routes.';
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Comparisons' },
+];
 const schema = [
   buildCollectionPageSchema({
     site: siteUrl,
@@ -23,16 +27,14 @@ const schema = [
     description,
     items: posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
   }),
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Comparisons' },
-  ]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
 ];
 ---
 
 <BaseLayout title={`${title} | ${siteInfo.brand}`} description={description} canonical="/comparisons/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <ContentHub
+    breadcrumbItems={breadcrumbItems}
     eyebrow="Comparisons"
     title={title}
     description={description}
@@ -41,4 +43,3 @@ const schema = [
   />
   <SiteFooter />
 </BaseLayout>
-

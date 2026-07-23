@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import RfqForm from '../../components/RfqForm.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
@@ -9,8 +10,9 @@ const title = 'Metal Powder RFQ | Grade, PSD, Documents and Delivery';
 const description =
   'Submit a structured metal powder RFQ with alloy, process, PSD, quantity, destination, evidence, packaging, and delivery requirements.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const breadcrumbItems = [{ name: 'Home', path: '/' }, { name: 'Powder RFQ' }];
 const schema = [
-  buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'Powder RFQ' }]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
   buildContactPageSchema({
     site: siteUrl,
     path: '/rfq/',
@@ -23,7 +25,9 @@ const schema = [
 <BaseLayout title={title} description={description} canonical="/rfq/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="rfq-page">
+  <main id="main-content" class="rfq-page">
+    <Breadcrumbs items={breadcrumbItems} contained />
+
     <section class="rfq-hero">
       <div class="page-shell rfq-hero__inner">
         <div>

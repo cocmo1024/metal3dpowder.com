@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { buildBreadcrumbSchema, buildOrganizationSchema } from '../../data/seo';
@@ -10,8 +11,9 @@ const title = 'About Metal 3D Powder | Metal Powder Sourcing by SZComo';
 const description =
   'Metal 3D Powder is operated by SZComo as a sourcing and engineering storefront for metal powders, with project-specific source, lot, evidence, and logistics confirmation.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const breadcrumbItems = [{ name: 'Home', path: '/' }, { name: 'About' }];
 const schema = [
-  buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'About' }]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
   buildOrganizationSchema(siteUrl),
 ];
 
@@ -34,7 +36,9 @@ const supplyCapabilities = [
 <BaseLayout title={title} description={description} canonical="/about/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="about-page">
+  <main id="main-content" class="about-page">
+    <Breadcrumbs items={breadcrumbItems} contained />
+
     <section class="about-hero">
       <div class="page-shell about-hero__inner">
         <div>

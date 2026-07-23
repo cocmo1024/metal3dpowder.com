@@ -93,6 +93,25 @@ button:disabled {
   box-shadow: 0 0 0 6px var(--focus) !important;
 }
 
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.45rem;
+  color: #fff;
+  background: var(--brand-dark);
+  font-size: 0.86rem;
+  font-weight: 720;
+  transform: translateY(-180%);
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 main {
   display: grid;
   gap: clamp(3.5rem, 6vw, 6.2rem);

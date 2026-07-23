@@ -32,6 +32,10 @@ const cards = [
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const title = 'Metal Powder Knowledge Base';
 const description = 'Core metal powder knowledge for AM buyers, including particle size, process fit, oxygen control, and practical powder selection basics.';
+const breadcrumbItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Knowledge' },
+];
 const schema = [
   buildCollectionPageSchema({
     site: siteUrl,
@@ -43,16 +47,14 @@ const schema = [
       ...posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
     ],
   }),
-  buildBreadcrumbSchema(siteUrl, [
-    { name: 'Home', path: '/' },
-    { name: 'Knowledge' },
-  ]),
+  buildBreadcrumbSchema(siteUrl, breadcrumbItems),
 ];
 ---
 
 <BaseLayout title={`${title} | ${siteInfo.brand}`} description={description} canonical="/knowledge/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <ContentHub
+    breadcrumbItems={breadcrumbItems}
     eyebrow="Knowledge"
     title={title}
     description={description}
