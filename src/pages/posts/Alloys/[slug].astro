@@ -40,7 +40,7 @@ const isKnowledgePost = knowledgePostIds.includes(post.id);
 const readingMinutes = estimateReadingMinutes(post.body ?? '');
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 const topicHubLabel = (group: string) =>
-  group === 'materials' ? 'Material center' : group === 'applications' ? 'Application center' : 'Process center';
+  group === 'materials' ? 'Material guide' : group === 'applications' ? 'Application guide' : 'Process guide';
 
 const canonical = getBlogPostPath(post);
 const pageTitle =
@@ -137,12 +137,12 @@ const schema = [
       {
         topicHubs.length || isKnowledgePost ? (
           <section class="article-paths" aria-labelledby="article-paths-title">
-            <h2 id="article-paths-title">Topic Paths</h2>
-            <p>Continue through the material, application, and process centers connected to this powder topic.</p>
+            <h2 id="article-paths-title">Related technical topics</h2>
+            <p>Continue with related material, process, and application guidance.</p>
             <div class="article-paths__links">
               {isKnowledgePost ? (
                 <a href="/knowledge/">
-                  <span>Knowledge center</span>
+                  <span>Knowledge base</span>
                   <strong>Metal Powder Knowledge Base</strong>
                 </a>
               ) : null}

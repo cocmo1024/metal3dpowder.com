@@ -18,7 +18,7 @@ That is where Hastelloy X powder deserves a focused page. The alloy is already a
 
 <figure class="article-figure">
   <img src="/images/blog/hastelloy-x-powder-hypersonic-wind-tunnel-hot-gas-test-hardware.webp" alt="Hastelloy X powder parts for hypersonic wind-tunnel and hot-gas ground-test hardware" width="1536" height="864" loading="eager" decoding="async" />
-  <figcaption>Hastelloy X powder is relevant when hot-gas oxidation and thermal cycling drive ground-test hardware more than peak structural strength.</figcaption>
+  <figcaption>Illustrative engineering visual: Hastelloy X powder is relevant when hot-gas oxidation and thermal cycling drive ground-test hardware more than peak structural strength.</figcaption>
 </figure>
 
 This topic should stay grounded. A printed hot-gas component is not automatically qualified, and a hypersonic test program is not a reason to print every piece of hardware. The value appears when a compact high-temperature test part needs geometry that conventional fabrication cannot provide cleanly enough, or when a development team needs realistic hot-gas coupons and fixtures without turning every iteration into a long fabrication project.

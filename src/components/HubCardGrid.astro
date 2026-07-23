@@ -30,6 +30,7 @@ const { items, ariaLabel = 'Topic hubs' } = Astro.props;
   }
 
   .hub-card {
+    position: relative;
     display: grid;
     gap: 0.7rem;
     align-content: start;
@@ -39,6 +40,7 @@ const { items, ariaLabel = 'Topic hubs' } = Astro.props;
     border-radius: var(--radius-card);
     background: var(--card-bg);
     box-shadow: var(--shadow-card);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
   }
 
   .hub-card h2 {
@@ -54,7 +56,21 @@ const { items, ariaLabel = 'Topic hubs' } = Astro.props;
     line-height: var(--body-leading);
   }
 
-  .hub-card a:hover {
+  .hub-card h2 a::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+  }
+
+  .hub-card:hover,
+  .hub-card:focus-within {
+    transform: translateY(-2px);
+    border-color: var(--brand);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .hub-card a:hover,
+  .hub-card:focus-within a {
     color: var(--accent);
   }
 

@@ -91,14 +91,14 @@ const schema = [
             height="560"
             decoding="async"
           />
-          <span>Representative product visual</span>
+          <span>Illustrative powder image</span>
         </div>
         <div class="product-gallery__evidence">
           <article>
             <span>01</span>
             <div>
-              <strong>Powder evidence</strong>
-              <small>Lot-specific COA and PSD report on request</small>
+              <strong>Lot documentation</strong>
+              <small>COA and PSD data available subject to the quoted lot</small>
             </div>
           </article>
           <article>
@@ -154,8 +154,8 @@ const schema = [
           </button>
         </div>
         <p class="product-boundary">
-          Price, inventory, lead time, chemistry, and performance are confirmed against the requested specification and
-          available lot. This page is a selection route, not a certificate or fixed offer.
+          Final price, availability, lead time, chemistry, performance data, and documentation are confirmed for the
+          quoted specification and lot.
         </p>
       </div>
     </section>
@@ -163,15 +163,15 @@ const schema = [
     <section class="decision-strip">
       <div class="page-shell decision-strip__inner">
         <article>
-          <span>Start with use</span>
+          <span>Application</span>
           <strong>{product.bestFor[0]}</strong>
         </article>
         <article>
-          <span>Then lock process</span>
+          <span>Process</span>
           <strong>{product.processes[0]} or project-defined route</strong>
         </article>
         <article>
-          <span>Release by evidence</span>
+          <span>Documentation</span>
           <strong>Specification + lot documents</strong>
         </article>
       </div>
@@ -182,7 +182,7 @@ const schema = [
         <section class="content-block" aria-labelledby="fit-title">
           <div class="section-heading">
             <p class="eyebrow">Application fit</p>
-            <h2 id="fit-title">Where this powder route earns a technical review.</h2>
+            <h2 id="fit-title">Applications suited to technical review.</h2>
           </div>
           <div class="fit-grid">
             {product.bestFor.map((item, index) => (
@@ -200,7 +200,7 @@ const schema = [
         <section class="content-block" aria-labelledby="specification-title">
           <div class="section-heading">
             <p class="eyebrow">Specification controls</p>
-            <h2 id="specification-title">Define the powder as a controlled input—not only an alloy name.</h2>
+            <h2 id="specification-title">Define the powder beyond the alloy designation.</h2>
             <p>
               The same grade name can represent materially different powder routes. A usable RFQ needs the acceptance
               method, limits, packaging, and intended process.
@@ -233,7 +233,7 @@ const schema = [
         <section class="content-block" aria-labelledby="route-title">
           <div class="section-heading">
             <p class="eyebrow">Process and PSD</p>
-            <h2 id="route-title">Candidate routes to resolve in the RFQ.</h2>
+            <h2 id="route-title">Process and PSD options to confirm in the RFQ.</h2>
             <p>
               PSD labels below are catalog starting points. Final fit depends on the machine, layer strategy, feed system,
               qualification plan, and the supplier lot.
@@ -273,7 +273,7 @@ const schema = [
           <div>
             <div class="section-heading">
               <p class="eyebrow">Failure modes</p>
-              <h2 id="risk-title">Issues that can invalidate a superficially correct grade.</h2>
+              <h2 id="risk-title">Critical variables to verify before qualification.</h2>
             </div>
             <ul class="watch-list">
               {product.watchItems.map((item) => <li>{item}</li>)}
@@ -311,12 +311,12 @@ const schema = [
 
       <aside class="product-content__aside" aria-label="Request summary">
         <div class="rfq-panel">
-          <p class="eyebrow">Build an actionable RFQ</p>
+          <p class="eyebrow">Request a quotation</p>
           <h2>{product.name}</h2>
           <ol>
             <li>Choose process and candidate PSD</li>
             <li>Add quantity and destination</li>
-            <li>Attach specification or acceptance plan</li>
+            <li>State the applicable specification and acceptance criteria</li>
             <li>Receive a lot-specific commercial response</li>
           </ol>
           <a class="button button--primary" href={`/rfq/?product=${product.id}`}>Start structured RFQ</a>
@@ -352,9 +352,9 @@ const schema = [
     <section class="product-final page-shell">
       <div>
         <p class="eyebrow">Custom chemistry or PSD?</p>
-        <h2>Describe the engineering requirement instead of forcing the wrong catalog match.</h2>
+        <h2>Tell us the target chemistry, process, PSD, and acceptance criteria.</h2>
       </div>
-      <a class="button button--primary" href="/rfq/?custom=1">Request a custom powder route</a>
+      <a class="button button--primary" href="/rfq/?custom=1">Request a custom powder</a>
     </section>
 
     <div class="mobile-rfq-bar">
@@ -438,7 +438,7 @@ const schema = [
     border-radius: 999px;
     color: #fff;
     background: rgba(5, 14, 21, 0.58);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     backdrop-filter: blur(10px);
@@ -463,7 +463,7 @@ const schema = [
 
   .product-gallery__evidence article > span {
     color: var(--brand);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 800;
   }
 
@@ -478,7 +478,7 @@ const schema = [
 
   .product-gallery__evidence small {
     color: var(--muted);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     line-height: 1.45;
   }
 
@@ -498,7 +498,7 @@ const schema = [
     border-radius: 999px;
     color: var(--brand);
     background: var(--brand-soft);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 750;
     letter-spacing: 0.055em;
     text-transform: uppercase;
@@ -522,9 +522,11 @@ const schema = [
     max-width: 37rem;
     margin: 0;
     color: var(--text);
-    font-size: clamp(2.65rem, 5.2vw, 5rem);
-    line-height: 0.96;
-    letter-spacing: -0.052em;
+    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
   }
 
   .product-deck {
@@ -544,7 +546,7 @@ const schema = [
 
   .alias-row strong {
     color: var(--muted);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
@@ -638,7 +640,7 @@ const schema = [
 
   .decision-strip span {
     color: #91a9bd;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1077,12 +1079,16 @@ const schema = [
 
   @media (max-width: 580px) {
     .product-page {
-      padding-bottom: 5.5rem;
+      padding-bottom: 0;
     }
 
     .product-hero {
       gap: 2rem;
       padding-top: 0;
+    }
+
+    .product-summary {
+      order: -1;
     }
 
     .product-gallery__main,
@@ -1095,7 +1101,7 @@ const schema = [
     }
 
     .product-summary h1 {
-      font-size: clamp(2.35rem, 13vw, 3.5rem);
+      font-size: clamp(2.25rem, 10vw, 2.75rem);
     }
 
     .quick-specs div {
@@ -1114,7 +1120,7 @@ const schema = [
       right: 0.7rem;
       bottom: 0.7rem;
       left: 0.7rem;
-      display: grid;
+      display: none;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 0.8rem;
       align-items: center;

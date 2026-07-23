@@ -37,6 +37,7 @@ const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
   }
 
   .blog-post-card {
+    position: relative;
     display: grid;
     gap: 0.75rem;
     align-content: start;
@@ -46,6 +47,7 @@ const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
     border-radius: var(--radius-card);
     background: var(--card-bg);
     box-shadow: var(--shadow-card);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
   }
 
   .blog-post-card__meta {
@@ -77,6 +79,12 @@ const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
     -webkit-line-clamp: 2;
   }
 
+  .blog-post-card :is(h2, h3) a::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+  }
+
   .blog-post-card p {
     margin: 0;
     color: var(--muted);
@@ -84,7 +92,15 @@ const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
     -webkit-line-clamp: 3;
   }
 
-  .blog-post-card a:hover {
+  .blog-post-card:hover,
+  .blog-post-card:focus-within {
+    transform: translateY(-2px);
+    border-color: var(--brand);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .blog-post-card a:hover,
+  .blog-post-card:focus-within a {
     color: var(--accent);
   }
 

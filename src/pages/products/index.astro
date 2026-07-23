@@ -39,15 +39,15 @@ const schema = [
       <div class="catalog-hero__inner page-shell">
         <div>
           <p class="eyebrow">Powder catalog</p>
-          <h1>Find the powder route that fits your process.</h1>
+          <h1>Find the alloy and particle-size range for your process.</h1>
           <p>
-            Search common names, UNS and EN identifiers, alloy families, processes, and applications. The catalog
-            presents requestable commercial routes—not unqualified promises of current stock or fixed performance.
+            Review powder grades, candidate PSD ranges, processes, and applications. Stock, pricing, documentation, and
+            final specifications are confirmed with each quotation.
           </p>
         </div>
         <aside>
           <strong>{products.length} core products</strong>
-          <span>{productFamilies.length} alloy families · {productProcesses.length} process routes</span>
+          <span>{productFamilies.length} alloy families · {productProcesses.length} supported processes</span>
           <a href="/rfq/">Open RFQ list <span data-rfq-count data-empty>0</span> →</a>
         </aside>
       </div>
@@ -58,7 +58,7 @@ const schema = [
         <div class="filter-panel__top">
           <div>
             <p class="eyebrow">Product finder</p>
-            <h2>Filter by the variables buyers actually use.</h2>
+            <h2>Filter by grade, process, and application.</h2>
           </div>
           <button type="button" data-filter-reset>Clear filters</button>
         </div>
@@ -103,9 +103,9 @@ const schema = [
       <div class="catalog-results__head">
         <div>
           <p class="eyebrow">Search results</p>
-          <h2 id="catalog-results-title"><span data-result-count>{products.length}</span> powder routes</h2>
+          <h2 id="catalog-results-title"><span data-result-count>{products.length}</span> powder products</h2>
           <span class="sr-only" data-result-status role="status" aria-live="polite" aria-atomic="true">
-            {products.length} powder routes shown
+            {products.length} powder products shown
           </span>
         </div>
         <p>Pricing, packaging, availability, producer, and documents are confirmed in the formal quotation.</p>
@@ -116,7 +116,7 @@ const schema = [
       </div>
 
       <div class="catalog-empty" data-catalog-empty hidden>
-        <strong>No exact catalog route matches all filters.</strong>
+        <strong>No exact powder product matches all filters.</strong>
         <p>Clear one filter or submit a custom powder RFQ with the target chemistry, PSD, quantity, and process.</p>
         <a class="button button--primary" href="/rfq/?custom=1">Start custom powder RFQ</a>
       </div>
@@ -128,11 +128,11 @@ const schema = [
         <h2>Use the catalog as a specification starting point.</h2>
         <p>
           Non-standard chemistry, tighter interstitial limits, uncommon PSD, special packaging, and qualification
-          programs require a technical review. Add the nearest material—or leave the grade open—and describe the real
-          requirement.
+          programs require a technical review. Add the nearest material—or leave the grade open—and describe the
+          project requirement.
         </p>
       </div>
-      <a class="button button--primary" href="/rfq/?custom=1">Request a custom route</a>
+      <a class="button button--primary" href="/rfq/?custom=1">Request a custom powder</a>
     </section>
   </main>
 
@@ -178,7 +178,7 @@ const schema = [
         });
 
         if (count) count.textContent = String(visible);
-        if (status) status.textContent = `${visible} powder route${visible === 1 ? '' : 's'} shown`;
+        if (status) status.textContent = `${visible} powder product${visible === 1 ? '' : 's'} shown`;
         if (empty) empty.hidden = visible !== 0;
 
         const next = new URLSearchParams();
@@ -227,7 +227,7 @@ const schema = [
     grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
     gap: 3rem;
     align-items: end;
-    padding-block: clamp(3.5rem, 7vw, 5.5rem);
+    padding-block: clamp(3rem, 5.5vw, 5rem);
   }
 
   .catalog-hero__inner > div {
@@ -239,9 +239,11 @@ const schema = [
     max-width: 48rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 0.99;
-    letter-spacing: -0.046em;
+    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
   }
 
   .catalog-hero p:last-child {
@@ -341,7 +343,7 @@ const schema = [
 
   .filter-grid label > span {
     color: var(--muted);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
   }
 

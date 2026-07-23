@@ -18,7 +18,7 @@ That is where the Ti64 vs 17-4PH powder decision becomes useful. These alloys do
 
 <figure class="article-figure">
   <img src="/images/blog/ti64-vs-17-4ph-powder-humanoid-robot-joints.webp" alt="Ti64 and 17-4PH powder comparison for humanoid robot joint brackets, actuator housings, and end-effector hardware" width="1536" height="864" loading="eager" decoding="async" />
-  <figcaption>Humanoid robot joint hardware often separates into lightweight moving links and stronger actuator-side stainless components.</figcaption>
+  <figcaption>Illustrative engineering visual: humanoid robot joint hardware often separates into lightweight moving links and stronger actuator-side stainless components.</figcaption>
 </figure>
 
 The right choice is rarely a single-material answer for the whole robot. A better design review asks where each alloy belongs in the joint stack and where aluminum, 316L, tool steel, or conventional machining may still be cleaner.

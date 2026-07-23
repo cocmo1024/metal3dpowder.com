@@ -109,18 +109,18 @@ const collectionPageSchema = buildCollectionPageSchema({
           <p class="hero__eyebrow">Industrial metal powder catalog</p>
           <h1 id="hero-title">Metal powder sourcing, built around your process.</h1>
           <p class="hero__lead">
-            Find the alloy, particle-size route, and production evidence your program requires. Every formal quote
-            confirms the producing route, lot documentation, packaging, availability, and destination requirements.
+            Source metal powders by alloy, particle size, process, and documentation requirements. Each formal
+            quotation confirms the proposed production source, applicable lot documentation, packaging, availability,
+            and destination-specific terms.
           </p>
 
           <div class="hero__supply-chain">
             <strong>Backed by China’s complete powder supply chain, with extensive international metal powder trading experience.</strong>
-            <span lang="zh-CN">背靠中国完整的粉末供应链资源，同时拥有丰富的金属粉末国际贸易经验。</span>
           </div>
 
           <div class="hero__actions">
-            <a class="button button--hero" href="/products/">Browse powder catalog</a>
-            <a class="button button--dark" href="/rfq/">Build a multi-product RFQ</a>
+            <a class="button button--hero" href="/products/">Browse powders</a>
+            <a class="button button--dark" href="/rfq/">Request a quote</a>
           </div>
 
           <ul class="hero__routes" aria-label="Supported powder process routes">
@@ -156,8 +156,8 @@ const collectionPageSchema = buildCollectionPageSchema({
           </a>
 
           <div class="hero-showcase__note">
-            <span>RFQ READY</span>
-            <p>Choose a grade now. Confirm producer, specification, and lot before order.</p>
+            <span>SPECIFICATION-LED</span>
+            <p>Select a grade, then confirm the process, PSD, documentation, and lot in the quotation.</p>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     <section class="proof-strip page-shell" aria-label="Catalog scope">
       <article>
         <strong>{products.length}</strong>
-        <span>core powder routes</span>
+        <span>powder grades</span>
       </article>
       <article>
         <strong>{productFamilies.length}</strong>
@@ -174,11 +174,11 @@ const collectionPageSchema = buildCollectionPageSchema({
       </article>
       <article>
         <strong>{productProcesses.length}</strong>
-        <span>process routes</span>
+        <span>supported processes</span>
       </article>
       <article>
         <strong>Lot-specific</strong>
-        <span>commercial confirmation</span>
+        <span>quotation confirmation</span>
       </article>
     </section>
 
@@ -187,8 +187,8 @@ const collectionPageSchema = buildCollectionPageSchema({
         <p class="eyebrow">Powder finder</p>
         <h2 id="finder-title">Start with the alloy family.</h2>
         <p>
-          Search by common grade, international designation, process, or application. Product pages remain public and
-          indexable; pricing, availability, and final specifications are confirmed in the RFQ.
+          Filter by grade, international designation, process, or application. Pricing, availability, and lot
+          documentation are confirmed with each quotation.
         </p>
       </div>
 
@@ -200,7 +200,7 @@ const collectionPageSchema = buildCollectionPageSchema({
               <a class="family-card" href={`/products/?family=${family.id}`} style={`--family-accent:${family.accent}`}>
                 <span class="family-card__orb" aria-hidden="true"></span>
                 <div>
-                  <small>{count} {count === 1 ? 'route' : 'routes'}</small>
+                  <small>{count} {count === 1 ? 'grade' : 'grades'}</small>
                   <h3>{family.label}</h3>
                   <p>{family.description}</p>
                 </div>
@@ -215,12 +215,9 @@ const collectionPageSchema = buildCollectionPageSchema({
     <section class="featured-section" aria-labelledby="featured-title">
       <div class="featured-section__inner page-shell">
         <div class="section-heading">
-          <p class="eyebrow">Featured commercial routes</p>
-          <h2 id="featured-title">Selected powder routes for commercial review.</h2>
-          <p>
-            Each card shows requestable PSD routes and the commercial status. Add more than one product to the RFQ
-            list when comparing alloys, processes, or suppliers.
-          </p>
+          <p class="eyebrow">Featured powders</p>
+          <h2 id="featured-title">Frequently requested grades for technical review.</h2>
+          <p>Compare candidate PSD ranges and processes, then add one or more grades to the RFQ.</p>
         </div>
 
         <div class="products-grid">
@@ -228,7 +225,7 @@ const collectionPageSchema = buildCollectionPageSchema({
         </div>
 
         <div class="featured-section__action">
-          <a class="button button--ghost" href="/products/">View all {products.length} powder routes</a>
+          <a class="button button--ghost" href="/products/">View all {products.length} powder grades</a>
         </div>
       </div>
     </section>
@@ -264,11 +261,10 @@ const collectionPageSchema = buildCollectionPageSchema({
       <div class="network-section__inner page-shell">
         <div class="network-section__copy">
           <p class="eyebrow">China supply network</p>
-          <h2 id="network-title">A sourcing network, presented with the correct capability boundary.</h2>
+          <h2 id="network-title">Powder sourcing aligned to your specification.</h2>
           <p>
-            Depending on alloy and specification, sourcing can be matched to VIGA, EIGA, PREP, plasma atomization, and
-            downstream powder processing across reviewed supply resources. The producing entity, applicable quality
-            evidence, and commercial terms are identified in the formal quotation.
+            We coordinate sourcing across reviewed atomization and downstream powder-processing capabilities. The
+            proposed source, applicable quality documentation, and commercial terms are confirmed in the quotation.
           </p>
 
           <div class="capability-list" aria-label="Supply network capabilities">
@@ -318,8 +314,8 @@ const collectionPageSchema = buildCollectionPageSchema({
         <p class="eyebrow">Application markets</p>
         <h2 id="application-title">Move from end-use hardware to the right powder route.</h2>
         <p>
-          Application pages connect service conditions and manufacturing choices to the alloy families that belong in
-          a serious RFQ.
+          Application guides connect service conditions, part requirements, and manufacturing constraints to suitable
+          powder families.
         </p>
       </div>
 
@@ -354,7 +350,7 @@ const collectionPageSchema = buildCollectionPageSchema({
         <h2 id="final-cta-title">Compare grades or send one exact specification.</h2>
         <p>
           Add products to the RFQ list, then submit the process, PSD, quantity, destination, timing, requirements, and
-          acceptance criteria. Unknown fields can remain open for technical review.
+          acceptance criteria. Leave unresolved fields open; they can be confirmed during technical review.
         </p>
       </div>
       <div class="final-cta__actions">
@@ -394,11 +390,11 @@ const collectionPageSchema = buildCollectionPageSchema({
   .hero__inner {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 0.94fr) minmax(31rem, 1.06fr);
-    min-height: 38rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(28rem, 0.95fr);
+    min-height: 35rem;
     align-items: center;
-    gap: clamp(2rem, 5vw, 5rem);
-    padding-block: clamp(4.5rem, 8vw, 7rem);
+    gap: clamp(2rem, 4vw, 4rem);
+    padding-block: clamp(4rem, 7vw, 6rem);
   }
 
   .hero__copy {
@@ -412,20 +408,21 @@ const collectionPageSchema = buildCollectionPageSchema({
   .hero__eyebrow {
     margin: 0;
     color: #8fc9ff;
-    font-size: 0.76rem;
-    font-weight: 780;
-    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   .hero h1 {
-    max-width: 42rem;
+    max-width: 40rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.8rem, 5.6vw, 5rem);
-    font-weight: 780;
-    line-height: 0.98;
-    letter-spacing: -0.048em;
+    font-size: clamp(2.65rem, 4.5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.038em;
+    text-wrap: balance;
   }
 
   .hero__lead {
@@ -449,12 +446,6 @@ const collectionPageSchema = buildCollectionPageSchema({
     color: #fff;
     font-size: 0.9rem;
     line-height: 1.5;
-  }
-
-  .hero__supply-chain span {
-    color: #aebfce;
-    font-size: 0.74rem;
-    line-height: 1.55;
   }
 
   .hero__actions {
@@ -490,7 +481,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     border-radius: 0.4rem;
     color: #adbdcb;
     background: rgba(255, 255, 255, 0.045);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
   }
 
@@ -549,7 +540,7 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .hero-product small {
     color: #93a9bd;
-    font-size: 0.65rem;
+    font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
@@ -603,15 +594,15 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .hero-showcase__note span {
     color: #82c5ff;
-    font-size: 0.66rem;
-    font-weight: 780;
+    font-size: 0.72rem;
+    font-weight: 700;
     letter-spacing: 0.13em;
   }
 
   .hero-showcase__note p {
     margin: 0;
     color: #b9c9d7;
-    font-size: 0.74rem;
+    font-size: 0.78rem;
     line-height: 1.5;
   }
 
@@ -695,8 +686,8 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .family-card small {
     color: var(--muted);
-    font-size: 0.7rem;
-    font-weight: 680;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
   }
 
@@ -1055,7 +1046,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     }
 
     .hero-showcase {
-      min-height: 26rem;
+      min-height: 23rem;
       max-width: 45rem;
       width: 100%;
       margin-inline: auto;
@@ -1078,11 +1069,11 @@ const collectionPageSchema = buildCollectionPageSchema({
   @media (max-width: 780px) {
     .hero__inner {
       min-height: 0;
-      padding-block: 3.7rem 4.4rem;
+      padding-block: 3.2rem 3.8rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.45rem, 12vw, 3.8rem);
+      font-size: clamp(2.25rem, 9.8vw, 2.9rem);
     }
 
     .proof-strip {
@@ -1124,25 +1115,8 @@ const collectionPageSchema = buildCollectionPageSchema({
       width: 100%;
     }
 
-    .hero-showcase {
-      min-height: 22rem;
-    }
-
-    .hero-product--primary {
-      left: 0;
-      width: 72%;
-    }
-
-    .hero-product--secondary {
-      top: 7.2rem;
-      width: 62%;
-    }
-
-    .hero-product--tertiary {
-      width: 55%;
-    }
-
-    .hero-showcase__note {
+    .hero-showcase,
+    .hero__routes {
       display: none;
     }
 

@@ -26,12 +26,14 @@ const schema = [
       <div class="page-shell contact-hero__inner">
         <div>
           <p class="eyebrow">Contact</p>
-          <h1>Choose the channel that preserves the right project context.</h1>
+          <h1>Send a powder RFQ or contact our team directly.</h1>
           <p>
-            Use the online RFQ when you can provide grade, process, PSD, quantity, destination, timing, and evidence
-            needs. Use the official email first when documents require a separate handling channel or the scope is not
-            ready for a quote.
+            Use the online RFQ for structured requests, or email us for document handling and complex projects.
           </p>
+          <div class="contact-hero__actions">
+            <a class="button button--primary" href="/rfq/">Open powder RFQ</a>
+            <a class="button button--dark" href={`mailto:${siteInfo.email}`}>Email sales</a>
+          </div>
         </div>
         <div class="contact-email">
           <span>Official corporate email</span>
@@ -44,7 +46,7 @@ const schema = [
     <section class="contact-routes page-shell" aria-labelledby="contact-routes-title">
       <div class="section-heading">
         <p class="eyebrow">Two communication routes</p>
-        <h2 id="contact-routes-title">Structured RFQ for speed; email for exceptions.</h2>
+        <h2 id="contact-routes-title">Choose a structured RFQ or direct email.</h2>
       </div>
       <div class="contact-routes__grid">
         <article class="contact-route contact-route--primary">
@@ -64,7 +66,7 @@ const schema = [
         </article>
 
         <article class="contact-route">
-          <span>Exception path</span>
+          <span>Direct contact</span>
           <h3>Official email</h3>
           <p>
             Use email to arrange controlled or sensitive document handling, or when the request is exploratory,
@@ -88,7 +90,7 @@ const schema = [
       <div class="page-shell contact-checklist__inner">
         <div>
           <p class="eyebrow">Minimum useful context</p>
-          <h2>Four missing variables usually create most of the delay.</h2>
+          <h2>Include these four details for a faster technical review.</h2>
         </div>
         <ol>
           <li><span>01</span><strong>Target grade and governing standard</strong></li>
@@ -105,9 +107,8 @@ const schema = [
         <h2>Form acceptance is not a quotation.</h2>
       </div>
       <p>
-        The online reference proves only that the submission service accepted the RFQ package. Price, source,
-        specification, lot, quantity, lead time, logistics, validity, and formal terms become binding only when issued
-        through the official corporate email.
+        An online reference confirms receipt of the RFQ. Pricing, source, specification, lot, lead time, logistics, and
+        formal terms are confirmed only in the corporate quotation.
       </p>
     </section>
   </main>
@@ -151,7 +152,7 @@ const schema = [
     grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
     gap: 3rem;
     align-items: end;
-    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+    padding-block: clamp(3rem, 5.5vw, 5rem);
   }
 
   .contact-hero__inner > div:first-child {
@@ -168,16 +169,25 @@ const schema = [
     max-width: 58rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.75rem, 6vw, 5.7rem);
-    line-height: 0.96;
-    letter-spacing: -0.056em;
+    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
   }
 
-  .contact-hero__inner > div:first-child > p:last-child {
+  .contact-hero__inner > div:first-child > p:last-of-type {
     max-width: 51rem;
     margin: 0;
     color: #bfd0de;
     line-height: 1.72;
+  }
+
+  .contact-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
   }
 
   .contact-email {
@@ -191,7 +201,7 @@ const schema = [
 
   .contact-email > span {
     color: #aebfce;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -206,7 +216,7 @@ const schema = [
   .contact-email > p {
     margin: 0;
     color: #aebfce;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     line-height: 1.5;
   }
 
@@ -250,7 +260,7 @@ const schema = [
 
   .contact-route > span {
     color: var(--brand);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -397,6 +407,14 @@ const schema = [
 
     .contact-email {
       max-width: 30rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .contact-hero__actions,
+    .contact-hero__actions .button {
+      display: grid;
+      width: 100%;
     }
   }
 </style>

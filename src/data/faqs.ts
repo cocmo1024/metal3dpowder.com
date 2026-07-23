@@ -10,14 +10,14 @@ export const faqs: FAQItem[] = [
     question: 'Which additive manufacturing processes can use metal powders?',
     answer: [
       'Metal powders are used across LPBF, EBM, DED, thermal spray, binder jetting, and conventional powder metallurgy workflows. The right powder window depends on the process, energy source, layer thickness, and required final density.',
-      'For overseas buyers, the most common request on this site is LPBF-grade powder, but we also support particle size windows suited to EBM, DED, and other engineering routes.',
+      'Requests commonly include LPBF-grade powder as well as coarser particle-size ranges for EBM, DED, and other manufacturing processes.',
     ],
   },
   {
     category: 'Powder Basics',
     question: 'What particle size ranges are typical for AM metal powders?',
     answer: [
-      'A common LPBF window is 15-53 um or 15-45 um. EBM and some DED routes often use coarser cuts such as 45-105 um or wider distributions.',
+      'A common LPBF window is 15–53 μm or 15–45 μm. EBM and some DED processes often use coarser cuts such as 45–105 μm or wider distributions.',
       'The full PSD curve matters more than a single number. D10, D50, D90, fines content, and oversize particles all affect recoating, packing, and spatter behavior.',
     ],
   },
@@ -79,9 +79,9 @@ export const faqs: FAQItem[] = [
   },
   {
     category: 'Ordering & Logistics',
-    question: 'Are the prices and lead times on the website final?',
+    question: 'How are pricing and lead time confirmed?',
     answer: [
-      'No. Website prices and lead times are reference values only. Final commercial terms depend on alloy, quantity, PSD cut, packaging, documentation scope, and export destination.',
+      'Pricing and lead time are quoted for the requested alloy, quantity, PSD cut, packaging, documentation scope, and export destination.',
       'Formal quotations and commercial commitments are valid only when issued from the official corporate email shown on this site.',
     ],
   },
@@ -89,15 +89,15 @@ export const faqs: FAQItem[] = [
     category: 'Ordering & Logistics',
     question: 'Which regions do you serve?',
     answer: [
-      'The website is built for overseas buyers and supports export-oriented communication in English. Typical customers include AM service bureaus, industrial buyers, research teams, and engineering procurement teams.',
-      'Destination-specific shipping feasibility still depends on the alloy system, package format, and local import requirements.',
+      'We review international inquiries from AM service bureaus, industrial buyers, research teams, and engineering procurement teams.',
+      'Shipping feasibility is confirmed for the requested alloy, package format, destination, and local import requirements.',
     ],
   },
   {
     category: 'Ordering & Logistics',
     question: 'What is the typical lead time for metal powder orders?',
     answer: [
-      'Lead time varies by alloy family, particle size cut, stock status, and required documents. Common stainless and aluminum grades can move faster than reactive titanium or nickel superalloys.',
+      'Lead time varies by alloy family, particle-size cut, stock status, production route, and required documents.',
       'If your project is schedule-sensitive, send the target ship date in the first email so the quote can be scoped around actual delivery risk instead of only nominal production time.',
     ],
   },

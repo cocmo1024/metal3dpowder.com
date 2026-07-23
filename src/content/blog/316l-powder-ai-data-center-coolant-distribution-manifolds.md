@@ -18,7 +18,7 @@ That is where 316L powder deserves a separate discussion. It is not the right ma
 
 <figure class="article-figure">
   <img src="/images/blog/316l-powder-ai-data-center-coolant-distribution-manifolds.webp" alt="316L powder coolant distribution manifold and sensor housing hardware for AI data center liquid cooling" width="1536" height="864" loading="eager" decoding="async" />
-  <figcaption>316L powder fits coolant distribution hardware when stainless routing, sealing faces, and sensor integration matter more than maximum copper conductivity.</figcaption>
+  <figcaption>Illustrative engineering visual: 316L powder fits coolant distribution hardware when stainless routing, sealing faces, and sensor integration matter more than maximum copper conductivity.</figcaption>
 </figure>
 
 The long-term search value of this topic is simple: AI racks will keep changing, but liquid-cooling loops will keep asking the same engineering questions. How should coolant be distributed? Where should sensors sit? Which bodies need stainless corrosion behavior? Which faces need machining? What powder specification and inspection route make the part repeatable?

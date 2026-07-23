@@ -19,7 +19,7 @@ The 2026 signal is clear enough to matter. AI factory networks are moving toward
 
 <figure class="article-figure">
   <img src="/images/blog/cucrzr-powder-co-packaged-optics-cold-plates.webp" alt="CuCrZr powder with LPBF copper cold plate, microchannels, manifold block, and liquid-cooled optics package hardware" width="1536" height="864" loading="eager" decoding="async" />
-  <figcaption>Co-packaged optics cooling hardware puts microchannels, sealed copper interfaces, and optical package clearance into the same RFQ.</figcaption>
+  <figcaption>Illustrative engineering visual: co-packaged optics cooling hardware puts microchannels, sealed copper interfaces, and optical package clearance into the same RFQ.</figcaption>
 </figure>
 
 This page focuses on [CuCrZr copper alloy powder](/posts/Alloys/cucrzr-copper-powder/) for LPBF-style development and low-to-medium volume thermal hardware. It is not a claim that every optical module should be printed. The value appears when the cooling body is geometry-rich enough that conventional machining, brazing, or a simple stamped plate becomes the wrong starting point.

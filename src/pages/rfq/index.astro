@@ -28,16 +28,19 @@ const schema = [
       <div class="page-shell rfq-hero__inner">
         <div>
           <p class="eyebrow">Powder request for quotation</p>
-          <h1>Turn a material name into a buyable powder specification.</h1>
+          <h1>Build a quote-ready powder specification.</h1>
           <p>
-            A credible powder quote needs more than “Ti64” or “316L.” Submit the process, particle-size target, quantity,
-            destination, timing, documents, and acceptance boundary in one structured request.
+            An accurate powder quote requires more than an alloy name. Submit the process, particle-size target,
+            quantity, destination, timing, documents, and acceptance criteria in one structured request.
           </p>
+          <div class="rfq-hero__actions">
+            <a class="button button--primary" href="#rfq-form">Start RFQ</a>
+          </div>
         </div>
         <aside>
           <strong>What happens next</strong>
           <ol>
-            <li>Technical requirement triage</li>
+            <li>Technical review</li>
             <li>Source and available-lot confirmation</li>
             <li>Documents, packaging, and logistics review</li>
             <li>Formal commercial response by email</li>
@@ -67,7 +70,7 @@ const schema = [
       </div>
     </section>
 
-    <section class="page-shell rfq-form-wrap">
+    <section class="page-shell rfq-form-wrap" id="rfq-form">
       <RfqForm />
     </section>
 
@@ -116,7 +119,7 @@ const schema = [
     grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
     gap: 3rem;
     align-items: end;
-    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+    padding-block: clamp(3rem, 5.5vw, 5rem);
   }
 
   .rfq-hero__inner > div {
@@ -132,17 +135,24 @@ const schema = [
     max-width: 54rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.7rem, 6.2vw, 5.7rem);
-    line-height: 0.96;
-    letter-spacing: -0.055em;
+    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
   }
 
-  .rfq-hero__inner > div > p:last-child {
+  .rfq-hero__inner > div > p:last-of-type {
     max-width: 49rem;
     margin: 0;
     color: #bfd0de;
     font-size: 1.02rem;
     line-height: 1.72;
+  }
+
+  .rfq-hero__actions {
+    display: flex;
+    margin-top: 0.35rem;
   }
 
   .rfq-hero aside {
@@ -191,7 +201,7 @@ const schema = [
 
   .rfq-proof span {
     color: var(--muted);
-    font-size: 0.66rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -203,6 +213,7 @@ const schema = [
 
   .rfq-form-wrap {
     padding-block: clamp(4rem, 8vw, 7rem);
+    scroll-margin-top: 6rem;
   }
 
   .rfq-boundaries {
@@ -273,7 +284,6 @@ const schema = [
   }
 
   @media (max-width: 540px) {
-    .rfq-proof > div,
     .rfq-boundaries__grid {
       grid-template-columns: 1fr;
     }
@@ -281,6 +291,16 @@ const schema = [
     .rfq-proof article {
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+    }
+
+    .rfq-hero aside {
+      display: none;
+    }
+
+    .rfq-hero__actions,
+    .rfq-hero__actions .button {
+      display: grid;
+      width: 100%;
     }
   }
 </style>

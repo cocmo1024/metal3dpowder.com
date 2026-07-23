@@ -16,9 +16,9 @@ const productPayload = products.map((product) => ({
 <section class="rfq-form-section" aria-labelledby="rfq-form-title">
   <div class="rfq-form-section__intro">
     <p class="eyebrow">Structured powder RFQ</p>
-    <h2 id="rfq-form-title">Send the variables required for a useful commercial answer.</h2>
+    <h2 id="rfq-form-title">Provide the details needed for an accurate quotation.</h2>
     <p>
-      Select one or more catalog routes, or describe a custom grade. Price, lead time, source, documents, and available
+      Select one or more catalog products, or describe a custom grade. Price, lead time, source, documents, and available
       lot are confirmed against the complete request.
     </p>
 
@@ -33,14 +33,14 @@ const productPayload = products.map((product) => ({
       <article>
         <span>02</span>
         <div>
-          <strong>Specification-specific response</strong>
+          <strong>Specification review</strong>
           <p>Documents and supply status are tied to the quoted source, with lot evidence where applicable.</p>
         </div>
       </article>
       <article>
         <span>03</span>
         <div>
-          <strong>Evidence boundary</strong>
+          <strong>Qualification scope</strong>
           <p>No catalog label is treated as finished-part qualification or regulatory approval.</p>
         </div>
       </article>
@@ -68,15 +68,15 @@ const productPayload = products.map((product) => ({
 
         <div class="selected-products" data-selected-products aria-live="polite"></div>
         <p class="selection-note">
-          General process and quantity below are required defaults. Item-level choices override them only where a
-          selected product needs a different process, PSD, or quantity.
+          The main process and quantity apply to all selected products unless you set a different process, particle
+          size, or quantity for an item.
         </p>
 
         <div class="product-picker">
           <label>
             <span>Add a catalog product</span>
             <select data-product-picker>
-              <option value="">Choose a powder route</option>
+              <option value="">Choose a powder grade</option>
               {products.map((product) => <option value={product.id}>{product.name} · {product.code}</option>)}
             </select>
           </label>
@@ -147,12 +147,12 @@ const productPayload = products.map((product) => ({
         </label>
 
         <label>
-          <span>General particle-size requirement</span>
-          <input name="particle_size" type="text" maxlength="100" placeholder="Applies unless an item overrides it" />
+          <span>Particle-size requirement</span>
+          <input name="particle_size" type="text" maxlength="100" placeholder="Applies unless a product has a different requirement" />
         </label>
 
         <label>
-          <span>General quantity and buying pattern <em aria-hidden="true">*</em></span>
+          <span>Quantity and annual demand <em aria-hidden="true">*</em></span>
           <input
             name="quantity"
             type="text"
@@ -163,7 +163,7 @@ const productPayload = products.map((product) => ({
         </label>
 
         <label>
-          <span>General packaging or handling requirement</span>
+          <span>Packaging or handling requirements</span>
           <input
             name="packaging"
             type="text"
@@ -234,7 +234,7 @@ const productPayload = products.map((product) => ({
       <div class="submit-row">
         <button class="button button--primary" type="submit" data-rfq-submit>Submit powder RFQ</button>
         <p aria-live="polite" data-rfq-status>
-          A success reference appears only after the server accepts the submission.
+          You’ll receive an on-screen reference after submission.
         </p>
       </div>
     </form>
@@ -368,22 +368,22 @@ const productPayload = products.map((product) => ({
             </div>
             <div class="selected-product__fields">
               <label>
-                <span>Process override</span>
-                <select aria-label="Process override for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="process">
-                  <option value="">Use general process</option>
+                <span>Process (if different)</span>
+                <select aria-label="Process for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="process">
+                  <option value="">Use main process</option>
                   ${processOptions}
                 </select>
               </label>
               <label>
-                <span>PSD override</span>
-                <select aria-label="PSD override for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="particleSize">
-                  <option value="">Use general PSD</option>
+                <span>Particle size (if different)</span>
+                <select aria-label="Particle size for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="particleSize">
+                  <option value="">Use main particle size</option>
                   ${particleOptions}
                 </select>
               </label>
               <label>
-                <span>Quantity override</span>
-                <input aria-label="Quantity override for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="quantity" maxlength="100" value="${escapeAttribute(item.quantity)}" placeholder="Use general quantity" />
+                <span>Quantity (if different)</span>
+                <input aria-label="Quantity for ${escapeAttribute(product.name)}" data-item-id="${escapeAttribute(id)}" data-item-field="quantity" maxlength="100" value="${escapeAttribute(item.quantity)}" placeholder="Use main quantity" />
               </label>
             </div>
           </div>`;
@@ -651,7 +651,7 @@ const productPayload = products.map((product) => ({
   .product-selection .selection-note {
     padding-left: 0.7rem;
     border-left: 2px solid var(--brand);
-    font-size: 0.72rem;
+    font-size: 0.8125rem;
   }
 
   .selected-products {
@@ -666,7 +666,7 @@ const productPayload = products.map((product) => ({
     border-radius: 0.65rem;
     color: var(--muted);
     background: var(--surface-soft);
-    font-size: 0.76rem;
+    font-size: 0.8125rem;
   }
 
   :global([data-selected-products] .selected-product) {
@@ -744,7 +744,7 @@ const productPayload = products.map((product) => ({
     color: var(--text);
     background: #fff;
     font: inherit;
-    font-size: 0.76rem;
+    font-size: 0.8125rem;
   }
 
   .product-picker {
@@ -804,7 +804,7 @@ const productPayload = products.map((product) => ({
     color: var(--text);
     background: #fff;
     font: inherit;
-    font-size: 0.85rem;
+    font-size: 0.9375rem;
     outline: none;
     transition: border-color 150ms ease, box-shadow 150ms ease;
   }
@@ -950,6 +950,21 @@ const productPayload = products.map((product) => ({
 
     :global([data-selected-products] .selected-product__fields) {
       grid-template-columns: 1fr;
+    }
+
+    input,
+    select,
+    textarea,
+    :global([data-selected-products] .selected-product__fields input),
+    :global([data-selected-products] .selected-product__fields select) {
+      font-size: 1rem;
+    }
+
+    .form-grid label > span,
+    .product-selection label > span,
+    .full-field > span,
+    :global([data-selected-products] .selected-product__fields label > span) {
+      font-size: 0.8125rem;
     }
 
     .submit-row {

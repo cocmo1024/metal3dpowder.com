@@ -108,7 +108,7 @@ export const materialHubs: HubDefinition[] = [
     group: 'materials',
     slug: 'copper-alloy-powder',
     title: 'Copper Alloy Powder',
-    description: 'CuCrZr powder pages for cold plates, RF heat spreaders, induction coils, conductive tooling, and rocket-side hardware.',
+    description: 'CuCrZr powder selection guidance for cold plates, RF heat spreaders, induction coils, conductive tooling, and rocket-side hardware.',
     postIds: [
       'copper-powder-for-3d-printing-guide',
       'cucrzr-copper-powder',
@@ -131,7 +131,7 @@ export const materialHubs: HubDefinition[] = [
     group: 'materials',
     slug: 'tool-steel-powder',
     title: 'Tool Steel Powder',
-    description: 'H13 and M300 powder content for conformal cooling, die-casting inserts, mold inserts, robot tooling, and production tooling.',
+    description: 'H13 and M300 powder selection guidance for conformal cooling, die-casting inserts, mold inserts, robot tooling, and production tooling.',
     postIds: [
       'steel-metal-powder-for-3d-printing-guide',
       'h13-tool-steel-powder',
@@ -150,7 +150,7 @@ export const materialHubs: HubDefinition[] = [
     group: 'materials',
     slug: 'aluminum-powder',
     title: 'Aluminum Powder',
-    description: 'AlSi10Mg powder pages for lightweight housings, UAV structures, motor mounts, and electronics frames.',
+    description: 'AlSi10Mg powder selection guidance for lightweight housings, UAV structures, motor mounts, and electronics frames.',
     postIds: [
       'aluminum-powder-for-additive-manufacturing-guide',
       'alsi10mg-powder',
@@ -165,7 +165,7 @@ export const materialHubs: HubDefinition[] = [
     group: 'materials',
     slug: 'cobalt-chrome-powder',
     title: 'Cobalt Chrome Powder',
-    description: 'CoCrMo and CoCrW powder content for dental frameworks, wear hardware, pump sleeves, and valve-seat parts.',
+    description: 'CoCrMo and CoCrW powder selection guidance for dental frameworks, wear hardware, pump sleeves, and valve-seat parts.',
     postIds: [
       'cocrmo-cocrw-powder',
       'cocrmo-powder-dental-frameworks-and-crowns',
@@ -182,7 +182,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'ai-liquid-cooling',
     title: 'AI Liquid Cooling',
-    description: 'Copper and stainless powder topics for GPU cold plates, coolant distribution manifolds, liquid-cooling sensor hardware, RF heat spreaders, and busbar transition hardware.',
+    description: 'Copper and stainless powder selection guidance for GPU cold plates, coolant distribution manifolds, liquid-cooling sensor hardware, RF heat spreaders, and busbar transition hardware.',
     postIds: [
       '316l-powder-ai-data-center-coolant-distribution-manifolds',
       'cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds',
@@ -199,7 +199,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'photonics-and-rf-hardware',
     title: 'Photonics and RF Hardware',
-    description: 'Copper, aluminum, and stainless powder pages for co-packaged optics cooling, RF heat spreaders, electronics housings, and signal-adjacent thermal hardware.',
+    description: 'Copper, aluminum, and stainless powder selection guidance for co-packaged optics cooling, RF heat spreaders, electronics housings, and signal-adjacent thermal hardware.',
     postIds: [
       'cucrzr-powder-co-packaged-optics-cold-plates',
       'cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware',
@@ -216,7 +216,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'aerospace-space',
     title: 'Aerospace and Space',
-    description: 'Titanium and nickel powder content for lightweight structures, hot-side components, propulsion support, and flight hardware.',
+    description: 'Titanium and nickel powder selection guidance for lightweight structures, hot-side components, propulsion support, and flight hardware.',
     postIds: [
       'lpbf-metal-powder-defense-sustainment-spares',
       'ti64-titanium-powder-aerospace-structures',
@@ -240,7 +240,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'defense-sustainment-mission-hardware',
     title: 'Defense Sustainment and Mission Hardware',
-    description: 'LPBF powder pages for readiness-sensitive spares, sensor payloads, flight brackets, thermal hardware, and propulsion-side mission parts.',
+    description: 'LPBF powder selection guidance for readiness-sensitive spares, sensor payloads, flight brackets, thermal hardware, and propulsion-side mission parts.',
     postIds: [
       'lpbf-metal-powder-defense-sustainment-spares',
       'alsi10mg-powder-radar-and-eo-ir-sensor-housings',
@@ -259,7 +259,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'uav-and-sensor-payloads',
     title: 'UAV and Sensor Payloads',
-    description: 'AlSi10Mg and Ti64 powder content for UAV structures, sensor housings, motor mounts, and lightweight payload support hardware.',
+    description: 'AlSi10Mg and Ti64 powder selection guidance for UAV structures, sensor housings, motor mounts, and lightweight payload support hardware.',
     postIds: [
       'alsi10mg-powder-radar-and-eo-ir-sensor-housings',
       'alsi10mg-powder-uav-structures-and-electronics-housings',
@@ -300,7 +300,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'hydrogen-and-fuel-cell-hardware',
     title: 'Hydrogen and Fuel Cell Hardware',
-    description: 'Stainless, titanium, nickel, and copper powder content for electrolyzer flow fields, fuel-cell plates, hydrogen-side manifolds, and clean energy hardware.',
+    description: 'Stainless, titanium, nickel, and copper powder selection guidance for electrolyzer flow fields, fuel-cell plates, hydrogen-side manifolds, and clean energy hardware.',
     postIds: [
       '316l-powder-hydrogen-electrolyzer-flow-field-plates',
       'metal-powder-fuel-cell-balance-of-plant-hardware',
@@ -317,7 +317,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'power-electronics-and-ev',
     title: 'Power Electronics and EV Tooling',
-    description: 'CuCrZr and aluminum powder pages for power electronics cooling, busbar hardware, EV battery tooling, and compact electronics structures.',
+    description: 'CuCrZr and aluminum powder selection guidance for power electronics cooling, busbar hardware, EV battery tooling, and compact electronics structures.',
     postIds: [
       'cucrzr-powder-power-electronics-cooling-plates-and-busbar-hardware',
       'cucrzr-powder-battery-thermal-plates-and-inverter-cooling-hardware',
@@ -332,7 +332,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'energy-and-propulsion',
     title: 'Energy and Propulsion Hardware',
-    description: 'Nickel, copper, stainless, and titanium powder content for rocket-side, sour gas, geothermal brine, carbon capture, direct air capture, hydrogen, fuel-cell, SMR support, turbine, combustor, hot-gas, and propulsion-support applications.',
+    description: 'Powder selection guidance for high-temperature, corrosive, and conductive components used in energy, propulsion, and thermal systems.',
     postIds: [
       'lpbf-metal-powder-defense-sustainment-spares',
       '316l-powder-hydrogen-electrolyzer-flow-field-plates',
@@ -366,7 +366,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'oil-gas-and-sour-service-hardware',
     title: 'Oil, Gas, and Sour-Service Hardware',
-    description: 'IN625, 17-4PH, CoCrMo, and stainless powder pages for sour gas, valve, choke, downhole, pump, and corrosion-side oilfield hardware.',
+    description: 'IN625, 17-4PH, CoCrMo, and stainless powder selection guidance for sour gas, valve, choke, downhole, pump, and corrosion-side oilfield hardware.',
     postIds: [
       'in625-powder-sour-gas-valves-chokes-and-downhole-flow-hardware',
       'in625-ded-powder-repair-overlays-and-oilfield-corrosion-hardware',
@@ -385,7 +385,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'carbon-capture-and-co2-processing-hardware',
     title: 'Carbon Capture and CO2 Processing Hardware',
-    description: 'IN625, 316L, nickel, and stainless powder pages for amine-service, direct air capture auxiliary manifolds, CO2 conditioning, compression-skid, solvent-loop, and corrosion-side CCUS hardware.',
+    description: 'IN625, 316L, nickel, and stainless powder selection guidance for amine-service, direct air capture auxiliary manifolds, CO2 conditioning, compression-skid, solvent-loop, and corrosion-side CCUS hardware.',
     postIds: [
       'in625-powder-carbon-capture-amine-service-and-co2-compression-hardware',
       '316l-powder-direct-air-capture-auxiliary-manifolds-and-sensor-blocks',
@@ -427,7 +427,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'geothermal-and-brine-energy-hardware',
     title: 'Geothermal and Brine Energy Hardware',
-    description: 'IN625, 316L, and nickel powder pages for geothermal brine, heat-exchanger, valve, pump, and corrosion-side energy hardware.',
+    description: 'IN625, 316L, and nickel powder selection guidance for geothermal brine, heat-exchanger, valve, pump, and corrosion-side energy hardware.',
     postIds: [
       'in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware',
       'in625-powder-seawater-desalination-pump-valve-and-brine-hardware',
@@ -444,7 +444,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'marine-and-desalination-hardware',
     title: 'Marine and Desalination Hardware',
-    description: 'IN625, 316L, and CoCrMo powder pages for seawater, brine, pump, valve, ducting, and corrosion-side flow hardware.',
+    description: 'IN625, 316L, and CoCrMo powder selection guidance for seawater, brine, pump, valve, ducting, and corrosion-side flow hardware.',
     postIds: [
       'in625-powder-seawater-desalination-pump-valve-and-brine-hardware',
       'in625-powder-marine-and-chemical-ducting',
@@ -460,7 +460,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'fusion-high-heat-flux-hardware',
     title: 'Fusion and High-Heat-Flux Hardware',
-    description: 'Copper, nickel, and titanium powder content for fusion-adjacent cooling parts, high-heat-flux mockups, hot-side structures, and thermal hardware.',
+    description: 'Copper, nickel, and titanium powder selection guidance for fusion-adjacent cooling parts, high-heat-flux mockups, hot-side structures, and thermal hardware.',
     postIds: [
       'cucrzr-powder-fusion-high-heat-flux-cooling-components',
       'cucrzr-powder-rocket-engine-parts-and-heat-exchangers',
@@ -478,7 +478,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'tooling-and-mold-inserts',
     title: 'Tooling and Mold Inserts',
-    description: 'H13 and M300 powder content for conformal cooling, compact inserts, die-casting tooling, robot EOAT tooling, and recurring production molds.',
+    description: 'H13 and M300 powder selection guidance for conformal cooling, compact inserts, die-casting tooling, robot EOAT tooling, and recurring production molds.',
     postIds: [
       'h13-powder-conformal-cooling-inserts',
       'h13-powder-injection-molding-conformal-cooling-production-tools',
@@ -497,7 +497,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'industrial-automation-robotics',
     title: 'Industrial Automation and Robotics',
-    description: '17-4PH, Ti64, M300, 316L, CoCrMo, and CuCrZr powder pages for robotic arms, actuator hardware, gripper tooling, fixtures, wear parts, and conductive tooling.',
+    description: '17-4PH, Ti64, M300, 316L, CoCrMo, and CuCrZr powder selection guidance for robotic arms, actuator hardware, gripper tooling, fixtures, wear parts, and conductive tooling.',
     postIds: [
       'ti64-vs-17-4ph-powder-humanoid-robot-joints',
       'm300-powder-robot-gripper-jaws-and-end-of-arm-tooling',
@@ -514,7 +514,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'humanoid-and-robot-joint-hardware',
     title: 'Humanoid and Robot Joint Hardware',
-    description: 'Titanium, 17-4PH, M300, aluminum, and copper powder pages for lightweight robot joints, actuator housings, wrist hardware, sensor payloads, gripper tooling, and end-effector support parts.',
+    description: 'Titanium, 17-4PH, M300, aluminum, and copper powder selection guidance for lightweight robot joints, actuator housings, wrist hardware, sensor payloads, gripper tooling, and end-effector support parts.',
     postIds: [
       'ti64-vs-17-4ph-powder-humanoid-robot-joints',
       'm300-powder-robot-gripper-jaws-and-end-of-arm-tooling',
@@ -531,7 +531,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'mim-binder-jet-production',
     title: 'MIM and Binder Jet Production',
-    description: '316L and 17-4PH powder content for scalable stainless production by MIM and binder jet routes.',
+    description: '316L and 17-4PH powder selection guidance for scalable stainless production by MIM and binder jetting.',
     postIds: [
       '316l-powder-metal-injection-molding-and-binder-jet-parts',
       '316l-powder-filters-and-corrosion-side-mim-parts',
@@ -650,7 +650,7 @@ export const processHubs: HubDefinition[] = [
     group: 'processes',
     slug: 'binder-jet',
     title: 'Binder Jet Powder',
-    description: 'Binder jet powder pages for 316L and 17-4PH production parts, filters, and stronger stainless hardware.',
+    description: 'Binder jetting powder selection guidance for 316L and 17-4PH production parts, filters, and higher-strength stainless hardware.',
     postIds: [
       '316l-powder-metal-injection-molding-and-binder-jet-parts',
       'metal-powder-fuel-cell-balance-of-plant-hardware',
@@ -663,7 +663,7 @@ export const processHubs: HubDefinition[] = [
     group: 'processes',
     slug: 'mim',
     title: 'MIM Powder',
-    description: 'Metal injection molding powder topics for 316L, 17-4PH, corrosion-side parts, and scalable stainless production.',
+    description: 'Metal injection molding powder selection guidance for 316L, 17-4PH, corrosion-side parts, and scalable stainless production.',
     postIds: [
       '316l-powder-metal-injection-molding-and-binder-jet-parts',
       '316l-powder-filters-and-corrosion-side-mim-parts',
@@ -681,20 +681,20 @@ export const getPostHubs = (postId: string) => contentHubs.filter((hub) => hub.p
 
 export const hubLandings: Record<HubGroup, HubLandingDefinition> = {
   materials: {
-    title: 'Metal Powder Material Centers',
-    description: 'Organized entry points for titanium, stainless steel, nickel, copper, tool steel, aluminum, and cobalt chrome AM powder content.',
+    title: 'Powder by Material',
+    description: 'Compare titanium, stainless steel, nickel, copper, tool steel, aluminum, and cobalt-chromium powders by properties, process fit, and application.',
     path: '/materials/',
     hubs: materialHubs,
   },
   applications: {
-    title: 'Metal Powder Application Centers',
-    description: 'Industry and application pages that connect powder materials to high-value AM use cases.',
+    title: 'Powder by Application',
+    description: 'Explore powder options by service environment, component type, and manufacturing requirements.',
     path: '/applications/',
     hubs: applicationHubs,
   },
   processes: {
-    title: 'Metal Powder Process Centers',
-    description: 'Process-led powder guidance for LPBF, EBM, DED, binder jet, and MIM routes.',
+    title: 'Powder by Process',
+    description: 'Compare powder requirements for LPBF, EBM, DED, binder jetting, MIM, and powder HIP.',
     path: '/processes/',
     hubs: processHubs,
   },

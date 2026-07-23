@@ -10,11 +10,11 @@ const { context = 'this powder topic', variant = 'article' } = Astro.props;
 const titleId = `rfq-cta-title-${variant}`;
 const isHub = variant === 'hub';
 const heading = isHub
-  ? 'Turn this powder research into a qualified RFQ'
+  ? 'Request pricing and availability'
   : 'Need a powder quote for this application?';
 const copy = isHub
-  ? `Use this ${context} page to shortlist the alloy family, then send the process, particle size, quantity, destination, and target application so the inquiry can move toward a usable powder specification.`
-  : `If ${context} matches your application, send the alloy grade, process route, PSD target, quantity, destination country, and any oxygen, documentation, or packaging requirements.`;
+  ? 'Shortlist a material, then send the process, particle size, quantity, destination, application, and documentation requirements for review.'
+  : 'To request powder for this application, send the alloy grade, process, PSD target, quantity, destination country, and any oxygen, documentation, or packaging requirements.';
 const emailHref = buildRfqEmailHref(context);
 ---
 
@@ -26,14 +26,14 @@ const emailHref = buildRfqEmailHref(context);
   </div>
 
   <ul class="rfq-cta__details" aria-label="Useful RFQ details">
-    <li>Alloy grade and AM, MIM, binder jet, or DED route</li>
+    <li>Alloy grade and target process: LPBF, EBM, DED, binder jetting, or MIM</li>
     <li>Particle size range, chemistry limits, and document needs</li>
     <li>Trial or production quantity, destination, and target timing</li>
   </ul>
 
   <div class="rfq-cta__actions" aria-label="RFQ actions">
-    <a class="button button--primary" href="/rfq/">Build RFQ</a>
-    <a class="button button--ghost" href={emailHref}>Use email</a>
+    <a class="button button--primary" href="/rfq/">Request a quote</a>
+    <a class="button button--ghost" href={emailHref}>Email sales</a>
   </div>
 </section>
 
