@@ -32,8 +32,8 @@ const emailHref = buildRfqEmailHref(context);
   </ul>
 
   <div class="rfq-cta__actions" aria-label="RFQ actions">
-    <a class="button button--primary" href={emailHref}>Start RFQ email</a>
-    <a class="button button--ghost" href="/contact/">RFQ details</a>
+    <a class="button button--primary" href="/rfq/">Build RFQ</a>
+    <a class="button button--ghost" href={emailHref}>Use email</a>
   </div>
 </section>
 
@@ -45,8 +45,12 @@ const emailHref = buildRfqEmailHref(context);
     border: 1px solid var(--line);
     border-radius: var(--radius-card);
     background:
-      linear-gradient(135deg, rgba(143, 228, 217, 0.08), rgba(255, 177, 119, 0.055)),
-      var(--card-bg);
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--brand) 6.5%, transparent),
+        color-mix(in srgb, var(--accent) 4.5%, transparent)
+      ),
+      var(--surface);
     box-shadow: var(--shadow-card);
   }
 

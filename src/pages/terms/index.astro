@@ -19,14 +19,23 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
     <section class="page-intro">
       <p class="eyebrow">Terms</p>
       <h1>Reference content, acceptable use, and quotation validity.</h1>
-      <p>Last updated: April 11, 2026. These terms explain how website content may be used and when commercial terms become binding.</p>
+      <p>Last updated: July 23, 2026. These terms explain how catalog, technical, partner, and RFQ information may be used and when commercial terms become binding.</p>
     </section>
 
     <section class="surface-card surface-card--padded rich-copy">
       <h2>Reference-only website content</h2>
       <p>
-        Product cards, articles, FAQ content, and engineering notes on this website are general reference information.
-        They do not by themselves create a contractual commitment, engineering guarantee, or formal commercial offer.
+        Product pages, cards, articles, FAQ content, process guidance, partner information, and engineering notes are
+        general selection and reference information. They do not by themselves create a contractual commitment,
+        engineering guarantee, reserved inventory, certification, or formal commercial offer.
+      </p>
+
+      <h2>Catalog, availability, and technical values</h2>
+      <p>
+        A powder appearing in the catalog does not prove current stock, fixed price, lead time, production capacity,
+        source, lot, document availability, or fitness for a specific machine or finished part. Particle-size ranges,
+        processes, applications, and public data are selection starting points unless the formal quotation states
+        otherwise.
       </p>
 
       <h2>Acceptable use</h2>
@@ -37,9 +46,24 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
 
       <h2>Quotations and commercial terms</h2>
       <p>
-        Prices, lead times, and technical values shown on the website are indicative only. Final commercial terms are
+        An online submission reference confirms only that the RFQ service accepted the package for review. It does not
+        confirm feasibility, source, lot, price, lead time, or acceptance. Final specifications and commercial terms are
         valid only when issued through the official corporate email:
         <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
+      </p>
+
+      <h2>Partner, certificate, and document boundaries</h2>
+      <p>
+        A partner name, public factory image, equipment description, typical data set, certificate, sample report, or
+        other source material applies only to its stated entity, site, scope, date, process, grade, and lot. It must not
+        be interpreted as a universal claim for every powder route shown on this website.
+      </p>
+
+      <h2>RFQ uploads and restricted data</h2>
+      <p>
+        Users must have the right to submit all information and files they provide. Do not use the online form for
+        export-controlled, classified, personal medical, customer-restricted, malicious, or unlawful content before an
+        approved handling agreement and channel are in place.
       </p>
 
       <h2>Intellectual property</h2>
@@ -50,9 +74,10 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
 
       <h2>Disclaimers and liability limits</h2>
       <p>
-        Buyers remain responsible for independent verification before using any information for material selection,
-        engineering design, manufacturing, qualification, or procurement decisions. The site owner is not liable for
-        losses caused by reliance on general reference content without project-specific confirmation.
+        Buyers remain responsible for independent verification before using information for material selection,
+        incoming acceptance, printing, heat treatment, machining, inspection, regulatory release, or procurement.
+        Powder conformity does not qualify a finished part. To the extent permitted by law, the site owner is not liable
+        for losses caused by reliance on general website content without project-specific confirmation.
       </p>
     </section>
   </main>

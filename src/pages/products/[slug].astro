@@ -1,0 +1,1162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { buildBreadcrumbSchema, defaultOgImagePath } from '../../data/seo';
+import { getProductPath, products, type Product } from '../../data/products';
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: { slug: product.id },
+    props: { product },
+  }));
+}
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const productPath = getProductPath(product);
+const title = `${product.name} Metal Powder | PSD and RFQ`;
+const description = `${product.name} powder selection page with candidate PSD routes, processes, evidence requirements, and lot-specific RFQ controls.`;
+const relatedProducts = products
+  .filter((candidate) => candidate.id !== product.id)
+  .sort((left, right) => Number(right.family === product.family) - Number(left.family === product.family))
+  .slice(0, 3);
+
+const schema = [
+  buildBreadcrumbSchema(siteUrl, [
+    { name: 'Home', path: '/' },
+    { name: 'Powder catalog', path: '/products/' },
+    { name: product.name },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${product.name} metal powder`,
+    category: product.familyLabel,
+    description: product.summary,
+    image: new URL(product.image, siteUrl).toString(),
+    url: new URL(productPath, siteUrl).toString(),
+    additionalProperty: [
+      {
+        '@type': 'PropertyValue',
+        name: 'Candidate particle-size routes',
+        value: product.particleSizes.join(', '),
+      },
+      {
+        '@type': 'PropertyValue',
+        name: 'Candidate manufacturing processes',
+        value: product.processes.join(', '),
+      },
+      {
+        '@type': 'PropertyValue',
+        name: 'Supply status',
+        value: product.availabilityLabel,
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={productPath}
+  ogImage={defaultOgImagePath}
+  ogImageAlt={`${product.name} powder sourcing and RFQ`}
+  schema={schema}
+>
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="product-page" style={`--product-accent:${product.accent};`}>
+    <nav class="breadcrumbs page-shell" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/products/">Powder catalog</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{product.name}</span>
+    </nav>
+
+    <section class="product-hero page-shell">
+      <div class="product-gallery">
+        <div class="product-gallery__main">
+          <img
+            src={product.image}
+            alt={`${product.name} powder product illustration`}
+            width="800"
+            height="560"
+            decoding="async"
+          />
+          <span>Representative product visual</span>
+        </div>
+        <div class="product-gallery__evidence">
+          <article>
+            <span>01</span>
+            <div>
+              <strong>Powder evidence</strong>
+              <small>Lot-specific COA and PSD report on request</small>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <strong>Process fit</strong>
+              <small>Matched to equipment and build requirement</small>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="product-summary">
+        <div class="product-summary__topline">
+          <span>{product.familyLabel}</span>
+          <span>{product.availabilityLabel}</span>
+        </div>
+        <p class="product-code">{product.code}</p>
+        <h1>{product.name} metal powder</h1>
+        <p class="product-deck">{product.summary}</p>
+
+        <div class="alias-row" aria-label="Alternate designations">
+          <strong>Also searched as</strong>
+          <ul>
+            {product.aliases.map((alias) => <li>{alias}</li>)}
+          </ul>
+        </div>
+
+        <dl class="quick-specs">
+          <div>
+            <dt>PSD candidates</dt>
+            <dd>{product.particleSizes.join(' · ')}</dd>
+          </div>
+          <div>
+            <dt>Process routes</dt>
+            <dd>{product.processes.join(' · ')}</dd>
+          </div>
+          <div>
+            <dt>Commercial path</dt>
+            <dd>{product.orderLabel}</dd>
+          </div>
+        </dl>
+
+        <div class="product-actions">
+          <a class="button button--primary" href={`/rfq/?product=${product.id}`}>Request this powder</a>
+          <button
+            type="button"
+            class="button button--ghost"
+            data-add-product={product.id}
+            data-product-name={product.name}
+          >
+            Add to RFQ
+          </button>
+        </div>
+        <p class="product-boundary">
+          Price, inventory, lead time, chemistry, and performance are confirmed against the requested specification and
+          available lot. This page is a selection route, not a certificate or fixed offer.
+        </p>
+      </div>
+    </section>
+
+    <section class="decision-strip">
+      <div class="page-shell decision-strip__inner">
+        <article>
+          <span>Start with use</span>
+          <strong>{product.bestFor[0]}</strong>
+        </article>
+        <article>
+          <span>Then lock process</span>
+          <strong>{product.processes[0]} or project-defined route</strong>
+        </article>
+        <article>
+          <span>Release by evidence</span>
+          <strong>Specification + lot documents</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="product-content page-shell">
+      <div class="product-content__main">
+        <section class="content-block" aria-labelledby="fit-title">
+          <div class="section-heading">
+            <p class="eyebrow">Application fit</p>
+            <h2 id="fit-title">Where this powder route earns a technical review.</h2>
+          </div>
+          <div class="fit-grid">
+            {product.bestFor.map((item, index) => (
+              <article>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+          <ul class="tag-list" aria-label="Application markets">
+            {product.applications.map((application) => <li>{application}</li>)}
+          </ul>
+        </section>
+
+        <section class="content-block" aria-labelledby="specification-title">
+          <div class="section-heading">
+            <p class="eyebrow">Specification controls</p>
+            <h2 id="specification-title">Define the powder as a controlled input—not only an alloy name.</h2>
+            <p>
+              The same grade name can represent materially different powder routes. A usable RFQ needs the acceptance
+              method, limits, packaging, and intended process.
+            </p>
+          </div>
+          <div class="control-grid">
+            <article>
+              <span>01</span>
+              <h3>Chemistry & standard</h3>
+              <p>State the governing grade, revision, restricted elements, and any tighter oxygen or nitrogen limits.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>PSD & method</h3>
+              <p>Choose a candidate range and state whether sieve, laser diffraction, or a customer method controls acceptance.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Powder behavior</h3>
+              <p>Define required flow, apparent/tap density, morphology evidence, satellites, and hollow-particle limits where relevant.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Lot & reuse plan</h3>
+              <p>Confirm lot size, virgin/reused powder policy, blend restrictions, sampling, retention, and traceability expectations.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-block" aria-labelledby="route-title">
+          <div class="section-heading">
+            <p class="eyebrow">Process and PSD</p>
+            <h2 id="route-title">Candidate routes to resolve in the RFQ.</h2>
+            <p>
+              PSD labels below are catalog starting points. Final fit depends on the machine, layer strategy, feed system,
+              qualification plan, and the supplier lot.
+            </p>
+          </div>
+          <div class="route-table-wrap">
+            <table class="route-table">
+              <thead>
+                <tr>
+                  <th scope="col">Decision variable</th>
+                  <th scope="col">Catalog starting points</th>
+                  <th scope="col">Required confirmation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Process candidates</th>
+                  <td>{product.processes.join(' · ')}</td>
+                  <td>Machine, feed system, layer strategy, and qualification stage</td>
+                </tr>
+                <tr>
+                  <th scope="row">PSD candidates</th>
+                  <td>{product.particleSizes.join(' · ')}</td>
+                  <td>Target process, equipment limits, and PSD test method</td>
+                </tr>
+                <tr>
+                  <th scope="row">Process × PSD pairing</th>
+                  <td>Not implied by this catalog page</td>
+                  <td>Confirmed in the RFQ against the selected source and lot</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-block content-block--split" aria-labelledby="risk-title">
+          <div>
+            <div class="section-heading">
+              <p class="eyebrow">Failure modes</p>
+              <h2 id="risk-title">Issues that can invalidate a superficially correct grade.</h2>
+            </div>
+            <ul class="watch-list">
+              {product.watchItems.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <aside>
+            <strong>Qualification boundary</strong>
+            <p>
+              Powder conformity does not qualify the finished part. Printing, heat treatment, HIP, machining, inspection,
+              service environment, and regulatory release remain separate responsibilities.
+            </p>
+          </aside>
+        </section>
+
+        <section class="content-block" aria-labelledby="documents-title">
+          <div class="section-heading">
+            <p class="eyebrow">Evidence package</p>
+            <h2 id="documents-title">Request the documents that support the actual buying decision.</h2>
+          </div>
+          <div class="document-grid">
+            {product.documentOptions.map((document, index) => (
+              <article>
+                <span>DOC {String(index + 1).padStart(2, '0')}</span>
+                <strong>{document}</strong>
+                <small>Availability and scope confirmed in quotation</small>
+              </article>
+            ))}
+          </div>
+          <p class="evidence-note">
+            Certificates, technical data, sample reports, and partner-specific documents are supplied only when they
+            correspond to the quoted source, grade, particle-size route, and lot.
+          </p>
+        </section>
+      </div>
+
+      <aside class="product-content__aside" aria-label="Request summary">
+        <div class="rfq-panel">
+          <p class="eyebrow">Build an actionable RFQ</p>
+          <h2>{product.name}</h2>
+          <ol>
+            <li>Choose process and candidate PSD</li>
+            <li>Add quantity and destination</li>
+            <li>Attach specification or acceptance plan</li>
+            <li>Receive a lot-specific commercial response</li>
+          </ol>
+          <a class="button button--primary" href={`/rfq/?product=${product.id}`}>Start structured RFQ</a>
+          <button
+            type="button"
+            class="text-action"
+            data-add-product={product.id}
+            data-product-name={product.name}
+          >
+            Add to multi-product RFQ
+          </button>
+        </div>
+
+        <div class="knowledge-panel">
+          <span>Engineering background</span>
+          <strong>Need material-selection context first?</strong>
+          <p>Read the related technical guide, then return with the process, PSD, quantity, and acceptance needs.</p>
+          <a href={product.knowledgePath}>Read the alloy guide →</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="related-section page-shell" aria-labelledby="related-title">
+      <div class="section-heading">
+        <p class="eyebrow">Related routes</p>
+        <h2 id="related-title">Compare adjacent powder options.</h2>
+      </div>
+      <div class="related-grid">
+        {relatedProducts.map((related, index) => <ProductCard product={related} index={index} />)}
+      </div>
+    </section>
+
+    <section class="product-final page-shell">
+      <div>
+        <p class="eyebrow">Custom chemistry or PSD?</p>
+        <h2>Describe the engineering requirement instead of forcing the wrong catalog match.</h2>
+      </div>
+      <a class="button button--primary" href="/rfq/?custom=1">Request a custom powder route</a>
+    </section>
+
+    <div class="mobile-rfq-bar">
+      <div>
+        <span>{product.code}</span>
+        <strong>{product.orderLabel}</strong>
+      </div>
+      <a href={`/rfq/?product=${product.id}`}>Request quote</a>
+    </div>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .product-page {
+    gap: 0;
+    padding-bottom: 2rem;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+    padding-block: 1rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  .breadcrumbs a {
+    color: var(--brand);
+  }
+
+  .product-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(24rem, 0.98fr);
+    gap: clamp(2rem, 5vw, 4.75rem);
+    align-items: center;
+    padding-block: 1rem clamp(3.5rem, 7vw, 6.5rem);
+  }
+
+  .product-gallery {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .product-gallery__main {
+    position: relative;
+    overflow: hidden;
+    min-height: 27rem;
+    border-radius: var(--radius-card);
+    background: #0b1219;
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .product-gallery__main::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, transparent 67%, rgba(3, 9, 14, 0.55)),
+      radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--product-accent) 34%, transparent), transparent 30%);
+  }
+
+  .product-gallery__main img {
+    width: 100%;
+    height: 100%;
+    min-height: 27rem;
+    object-fit: cover;
+  }
+
+  .product-gallery__main > span {
+    position: absolute;
+    z-index: 1;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.38rem 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(5, 14, 21, 0.58);
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+  }
+
+  .product-gallery__evidence {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .product-gallery__evidence article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.8rem;
+    align-items: start;
+    padding: 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 0.7rem;
+    background: var(--surface);
+  }
+
+  .product-gallery__evidence article > span {
+    color: var(--brand);
+    font-size: 0.72rem;
+    font-weight: 800;
+  }
+
+  .product-gallery__evidence div {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .product-gallery__evidence strong {
+    font-size: 0.84rem;
+  }
+
+  .product-gallery__evidence small {
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  .product-summary {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .product-summary__topline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .product-summary__topline span {
+    padding: 0.42rem 0.68rem;
+    border-radius: 999px;
+    color: var(--brand);
+    background: var(--brand-soft);
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+  }
+
+  .product-summary__topline span:last-child {
+    color: var(--success-text);
+    background: var(--success-bg);
+  }
+
+  .product-code {
+    margin: 0.35rem 0 -0.45rem;
+    color: var(--brand);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .product-summary h1 {
+    max-width: 37rem;
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(2.65rem, 5.2vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.052em;
+  }
+
+  .product-deck {
+    max-width: 38rem;
+    margin: 0;
+    color: var(--copy);
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .alias-row {
+    display: grid;
+    gap: 0.52rem;
+    padding-block: 0.9rem;
+    border-block: 1px solid var(--line);
+  }
+
+  .alias-row strong {
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .alias-row ul,
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .alias-row li,
+  .tag-list li {
+    padding: 0.38rem 0.62rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--text);
+    background: var(--surface-soft);
+    font-size: 0.76rem;
+  }
+
+  .quick-specs {
+    display: grid;
+    gap: 0;
+    margin: 0;
+  }
+
+  .quick-specs div {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 0.7rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .quick-specs dt {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .quick-specs dd {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 660;
+  }
+
+  .product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    padding-top: 0.35rem;
+  }
+
+  .product-boundary {
+    margin: 0;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--product-accent);
+    color: var(--muted);
+    font-size: 0.76rem;
+    line-height: 1.55;
+  }
+
+  .decision-strip {
+    color: #fff;
+    background:
+      radial-gradient(circle at 82% 0%, color-mix(in srgb, var(--product-accent) 22%, transparent), transparent 28rem),
+      var(--brand-dark);
+  }
+
+  .decision-strip__inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .decision-strip article {
+    display: grid;
+    gap: 0.42rem;
+    padding: 1.35rem 1.4rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .decision-strip article:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .decision-strip span {
+    color: #91a9bd;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .decision-strip strong {
+    font-size: 0.94rem;
+    line-height: 1.4;
+  }
+
+  .product-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.34fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .product-content__main {
+    display: grid;
+    gap: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .content-block {
+    display: grid;
+    gap: 1.5rem;
+    min-width: 0;
+  }
+
+  .section-heading {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .section-heading h2 {
+    max-width: 50rem;
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(1.8rem, 3.2vw, 2.85rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .section-heading > p:last-child:not(.eyebrow) {
+    max-width: 50rem;
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .fit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .fit-grid article {
+    display: grid;
+    gap: 1rem;
+    min-height: 9.5rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  .fit-grid span,
+  .control-grid article > span {
+    color: var(--brand);
+    font-size: 0.72rem;
+    font-weight: 800;
+  }
+
+  .fit-grid p {
+    align-self: end;
+    margin: 0;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .control-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .control-grid article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.8rem;
+    row-gap: 0.38rem;
+    padding: 1.15rem;
+    border: 1px solid var(--line);
+    border-radius: 0.85rem;
+    background: var(--surface-soft);
+  }
+
+  .control-grid h3,
+  .control-grid p {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .control-grid h3 {
+    font-size: 1rem;
+  }
+
+  .control-grid p {
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  .route-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+  }
+
+  .route-table {
+    width: 100%;
+    min-width: 42rem;
+    border-collapse: collapse;
+    background: var(--surface);
+  }
+
+  .route-table th,
+  .route-table td {
+    padding: 0.95rem 1rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .route-table thead th {
+    color: var(--muted);
+    background: var(--surface-soft);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .route-table tbody th {
+    color: var(--text);
+    font-size: 0.86rem;
+  }
+
+  .route-table tbody td {
+    color: var(--copy);
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .route-table tbody tr:last-child th,
+  .route-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .content-block--split {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.65fr);
+    gap: 1rem;
+  }
+
+  .content-block--split > div {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .watch-list {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .watch-list li {
+    position: relative;
+    padding: 0.78rem 0.85rem 0.78rem 2.3rem;
+    border: 1px solid var(--line);
+    border-radius: 0.7rem;
+    color: var(--copy);
+    background: var(--surface);
+    line-height: 1.5;
+  }
+
+  .watch-list li::before {
+    position: absolute;
+    top: 0.83rem;
+    left: 0.85rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--accent);
+    content: '!';
+    font-size: 0.68rem;
+    font-weight: 800;
+    line-height: 1rem;
+    text-align: center;
+  }
+
+  .content-block--split aside {
+    align-self: start;
+    padding: 1.25rem;
+    border-radius: var(--radius-card);
+    color: #fff;
+    background: var(--brand-dark);
+  }
+
+  .content-block--split aside strong {
+    font-size: 1rem;
+  }
+
+  .content-block--split aside p {
+    margin: 0.7rem 0 0;
+    color: #b7c8d7;
+    font-size: 0.85rem;
+    line-height: 1.65;
+  }
+
+  .document-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .document-grid article {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1rem;
+    border-left: 3px solid var(--product-accent);
+    background: var(--surface-soft);
+  }
+
+  .document-grid span,
+  .document-grid small {
+    color: var(--muted);
+    font-size: 0.7rem;
+  }
+
+  .document-grid strong {
+    font-size: 0.92rem;
+  }
+
+  .evidence-note {
+    margin: 0;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.7rem;
+    color: var(--muted);
+    background: var(--surface);
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  .product-content__aside {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+  }
+
+  .rfq-panel,
+  .knowledge-panel {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.2rem;
+    border-radius: var(--radius-card);
+  }
+
+  .rfq-panel {
+    position: sticky;
+    top: 6.5rem;
+    color: #fff;
+    background:
+      radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--product-accent) 25%, transparent), transparent 15rem),
+      var(--brand-dark);
+    box-shadow: var(--shadow-card);
+  }
+
+  .rfq-panel .eyebrow {
+    color: #9fc1dc;
+  }
+
+  .rfq-panel h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.45rem;
+    letter-spacing: -0.03em;
+  }
+
+  .rfq-panel ol {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #c0cedb;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .rfq-panel .button {
+    width: 100%;
+  }
+
+  .text-action {
+    padding: 0.35rem 0;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    font-size: 0.78rem;
+    font-weight: 750;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .text-action[data-added='true'] {
+    color: #93e4c8;
+  }
+
+  .knowledge-panel {
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .knowledge-panel > span {
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .knowledge-panel > strong {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .knowledge-panel p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .knowledge-panel a {
+    color: var(--brand);
+    font-size: 0.82rem;
+    font-weight: 750;
+  }
+
+  .related-section {
+    display: grid;
+    gap: 1.4rem;
+    padding-block: 1rem 5rem;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .product-final {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: clamp(1.5rem, 4vw, 2.4rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--brand-soft);
+  }
+
+  .product-final > div {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .product-final h2 {
+    max-width: 48rem;
+    margin: 0;
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    letter-spacing: -0.03em;
+  }
+
+  .mobile-rfq-bar {
+    display: none;
+  }
+
+  @media (max-width: 980px) {
+    .product-hero,
+    .product-content {
+      grid-template-columns: 1fr;
+    }
+
+    .product-gallery {
+      max-width: 48rem;
+    }
+
+    .product-content__aside {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rfq-panel {
+      position: static;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .decision-strip__inner,
+    .fit-grid,
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .decision-strip article {
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .control-grid,
+    .content-block--split,
+    .document-grid,
+    .product-content__aside,
+    .product-final {
+      grid-template-columns: 1fr;
+    }
+
+    .fit-grid article {
+      min-height: 7rem;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .product-page {
+      padding-bottom: 5.5rem;
+    }
+
+    .product-hero {
+      gap: 2rem;
+      padding-top: 0;
+    }
+
+    .product-gallery__main,
+    .product-gallery__main img {
+      min-height: 19rem;
+    }
+
+    .product-gallery__evidence {
+      grid-template-columns: 1fr;
+    }
+
+    .product-summary h1 {
+      font-size: clamp(2.35rem, 13vw, 3.5rem);
+    }
+
+    .quick-specs div {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .mobile-rfq-bar {
+      position: fixed;
+      z-index: 20;
+      right: 0.7rem;
+      bottom: 0.7rem;
+      left: 0.7rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.8rem;
+      align-items: center;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 0.8rem;
+      color: #fff;
+      background: rgba(8, 31, 53, 0.96);
+      box-shadow: 0 15px 45px rgba(5, 18, 31, 0.3);
+      backdrop-filter: blur(12px);
+    }
+
+    .mobile-rfq-bar > div {
+      display: grid;
+      gap: 0.1rem;
+      min-width: 0;
+    }
+
+    .mobile-rfq-bar span,
+    .mobile-rfq-bar strong {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .mobile-rfq-bar span {
+      color: #9fb4c5;
+      font-size: 0.66rem;
+    }
+
+    .mobile-rfq-bar strong {
+      font-size: 0.78rem;
+    }
+
+    .mobile-rfq-bar a {
+      padding: 0.65rem 0.8rem;
+      border-radius: 0.55rem;
+      color: #fff;
+      background: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 780;
+      white-space: nowrap;
+    }
+  }
+</style>

@@ -20,8 +20,8 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
       <p class="eyebrow">Privacy</p>
       <h1>Privacy policy for inquiry handling and website usage data.</h1>
       <p>
-        Last updated: April 11, 2026. This policy covers inquiry data, website analytics, cookies, and business
-        communication records associated with the website.
+        Last updated: July 23, 2026. This policy covers the powder catalog, online RFQ service, attachments, local
+        browser storage, anti-abuse controls, website usage data, and business communication records.
       </p>
     </section>
 
@@ -34,35 +34,68 @@ const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { n
 
       <h2>Information collected</h2>
       <p>
-        The site may collect contact details you provide directly, such as name, company, email address, country,
-        project background, material request, and technical notes. Basic usage data such as page visits, browser type,
-        approximate region, and aggregate traffic behavior may also be collected for performance and content improvement.
+        An online RFQ may include your name, work email, company, destination country, selected powders, per-product and
+        general process, particle-size and quantity requirements, packaging, timing, technical notes, and files you
+        choose to attach. Email communication may contain additional information you provide.
+      </p>
+      <p>
+        For security and operation, the service may process IP address, request time, browser or network metadata,
+        source page, a random submission reference, rate-limit results, and Cloudflare Turnstile verification data.
+        Marketing-source fields such as UTM parameters or advertising click identifiers may be retained when present in
+        the landing URL.
       </p>
 
       <h2>How information is used</h2>
       <p>
-        Information is used to respond to inquiries, prepare quotations, recommend suitable powder options, improve the
-        website, and maintain relevant communication records connected with legitimate business activity.
+        Information is used to validate and route RFQs, review material and process fit, coordinate authorized partner
+        resources where necessary, prepare quotations, prevent abuse, maintain traceable communication records, and
+        improve the commercial and technical usefulness of the website.
       </p>
 
-      <h2>Cookies and analytics</h2>
+      <h2>Browser storage, attribution, and anti-abuse controls</h2>
       <p>
-        Cookies or similar technologies may be used to keep the site functional, measure traffic, and understand how
-        content is used. You can manage cookies through your browser settings, although some functions may be affected.
+        The RFQ list uses browser local storage to remember selected product IDs. A separate local record may retain the
+        first and latest landing path, referring origin, and allowed campaign parameters. These records do not contain
+        the technical RFQ itself and can be cleared through browser settings.
+      </p>
+      <p>
+        The online form uses Cloudflare infrastructure for same-origin request handling, rate limiting, Turnstile
+        verification, static delivery, and email routing. Anti-abuse data may be processed before an RFQ is accepted.
       </p>
 
-      <h2>Sharing, retention, and security</h2>
+      <h2>Attachments and sensitive information</h2>
       <p>
-        Information is not sold. It may be shared with service providers or business partners only when reasonably
-        necessary for inquiry handling, logistics, compliance, or website operation. Records are retained only as long
-        as needed for the relevant business or legal purpose and are protected through reasonable administrative and
-        technical measures.
+        Do not upload export-controlled, classified, personal medical, customer-restricted, or other specially
+        controlled data before an approved handling agreement is in place. Online files are limited by type and size
+        and are transmitted with the RFQ email. Larger or specially controlled packages require a separately arranged
+        channel.
+      </p>
+
+      <h2>Sharing, international processing, and retention</h2>
+      <p>
+        Information is not sold. It may be processed by website, security, and email service providers, and shared with
+        authorized business partners only to the extent reasonably necessary to evaluate sourcing, testing, documents,
+        logistics, compliance, or quotation scope. Because inquiries may involve international supply, relevant data
+        may be processed in more than one country.
+      </p>
+      <p>
+        RFQ, attachment, quotation, and communication records are retained only as long as reasonably required for the
+        project, legitimate business records, dispute handling, security, or applicable legal obligations. Retention
+        varies with the project and record type.
+      </p>
+
+      <h2>Security and service limits</h2>
+      <p>
+        Reasonable technical and administrative safeguards are used, but no internet or email transmission can be
+        guaranteed completely secure. A successful on-screen reference means the submission service accepted the RFQ;
+        it is not a quotation or proof that every requested file can be processed.
       </p>
 
       <h2>Your choices</h2>
       <p>
-        You may request correction or deletion of inquiry data where legally applicable. Privacy-related requests can be
-        sent to <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
+        You may request access, correction, or deletion of inquiry data where legally applicable. You can also clear the
+        RFQ list and attribution record through browser storage settings. Privacy-related requests can be sent to
+        <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
       </p>
     </section>
   </main>

@@ -6,9 +6,9 @@ import { buildRfqEmailHref } from '../../data/contact';
 import { buildBreadcrumbSchema, buildContactPageSchema, buildOrganizationSchema } from '../../data/seo';
 import { siteInfo } from '../../data/site';
 
-const title = 'Contact | Metal 3D Powder';
+const title = 'Contact Metal 3D Powder | RFQ and Technical Support';
 const description =
-  'Contact Metal 3D Powder for RFQs, powder specifications, technical questions, and export-oriented metal AM powder inquiries.';
+  'Use the structured online RFQ for metal powder sourcing, or contact the official corporate email for technical, document, and special-handling questions.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const rfqEmailHref = buildRfqEmailHref();
 const schema = [
@@ -19,76 +19,114 @@ const schema = [
 ---
 
 <BaseLayout title={title} description={description} canonical="/contact/" schema={schema}>
-  <SiteHeader pathname={Astro.url.pathname} contactHref="/contact/" />
+  <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="page-shell content-page contact-page">
-    <section class="page-intro">
-      <p class="eyebrow">Contact</p>
-      <h1>Use the official email for RFQs, technical checks, and commercial communication.</h1>
-      <p>
-        For quotations, material questions, and supply discussions, send the required project details directly by email
-        so the first response can be commercially and technically useful.
-      </p>
-    </section>
-
-    <section class="copy-grid">
-      <div class="surface-card surface-card--padded rich-copy">
-        <h2>Official email</h2>
-        <div class="contact-copy">
-          <input type="text" value={siteInfo.email} readonly aria-label="Official email" onclick="this.select();" />
-          <a class="button button--primary" href={rfqEmailHref}>Start RFQ email</a>
-          <button type="button" class="button button--ghost" data-copy-email>Copy email</button>
+  <main class="contact-page">
+    <section class="contact-hero">
+      <div class="page-shell contact-hero__inner">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h1>Choose the channel that preserves the right project context.</h1>
+          <p>
+            Use the online RFQ when you can provide grade, process, PSD, quantity, destination, timing, and evidence
+            needs. Use the official email first when files require special handling or the scope is not ready for a quote.
+          </p>
         </div>
-        <p>{siteInfo.contactNote}</p>
-      </div>
-
-      <div class="surface-card surface-card--padded rich-copy">
-        <h2>What to include</h2>
-        <ul>
-          <li>Alloy grade and target AM process</li>
-          <li>Particle size range and required quantity</li>
-          <li>Destination country and target ship date</li>
-          <li>Required documents, test data, or packaging notes</li>
-        </ul>
+        <div class="contact-email">
+          <span>Official corporate email</span>
+          <a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
+          <p>{siteInfo.contactNote}</p>
+        </div>
       </div>
     </section>
 
-    <section class="info-grid">
-      <article class="surface-card surface-card--padded info-card">
-        <strong>Scope</strong>
-        <p>Powder supply inquiries, material matching, and export-oriented communication in English.</p>
-      </article>
+    <section class="contact-routes page-shell" aria-labelledby="contact-routes-title">
+      <div class="section-heading">
+        <p class="eyebrow">Two communication routes</p>
+        <h2 id="contact-routes-title">Structured RFQ for speed; email for exceptions.</h2>
+      </div>
+      <div class="contact-routes__grid">
+        <article class="contact-route contact-route--primary">
+          <span>Recommended</span>
+          <h3>Online powder RFQ</h3>
+          <p>
+            Best for standard or custom powder inquiries where you can define the material, process, PSD, quantity,
+            destination, and project timing.
+          </p>
+          <ul>
+            <li>Multi-product RFQ list</li>
+            <li>Per-product process, PSD, and quantity overrides</li>
+            <li>Specifications and reference attachments</li>
+            <li>Server-confirmed acceptance reference</li>
+          </ul>
+          <a class="button button--primary" href="/rfq/">Open structured RFQ</a>
+        </article>
 
-      <article class="surface-card surface-card--padded info-card">
-        <strong>Response style</strong>
-        <p>Send complete RFQ details first. That reduces back-and-forth and improves lead-time accuracy.</p>
-      </article>
+        <article class="contact-route">
+          <span>Exception path</span>
+          <h3>Official email</h3>
+          <p>
+            Use email before sending controlled, sensitive, unusually large, or commercially complex packages, or when
+            the request is exploratory rather than quote-ready.
+          </p>
+          <ul>
+            <li>Special data-handling discussion</li>
+            <li>Large file-transfer arrangement</li>
+            <li>Partner-document and correction questions</li>
+            <li>Formal quotation follow-up</li>
+          </ul>
+          <div class="contact-route__actions">
+            <a class="button button--ghost" href={rfqEmailHref}>Start RFQ email</a>
+            <button type="button" class="copy-button" data-copy-email={siteInfo.email}>Copy {siteInfo.email}</button>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <article class="surface-card surface-card--padded info-card">
-        <strong>Quick links</strong>
-        <p><a class="inline-link" href="/faq/">Read the FAQ</a> for recurring technical and logistics questions.</p>
-        <p><a class="inline-link" href="/blog/">Read alloy articles</a> for long-form powder content.</p>
-      </article>
+    <section class="contact-checklist">
+      <div class="page-shell contact-checklist__inner">
+        <div>
+          <p class="eyebrow">Minimum useful context</p>
+          <h2>Four missing variables usually create most of the delay.</h2>
+        </div>
+        <ol>
+          <li><span>01</span><strong>Target grade and governing standard</strong></li>
+          <li><span>02</span><strong>Process, equipment, and PSD target</strong></li>
+          <li><span>03</span><strong>Trial quantity and annual demand pattern</strong></li>
+          <li><span>04</span><strong>Destination, timing, documents, and acceptance boundary</strong></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact-boundary page-shell">
+      <div>
+        <p class="eyebrow">Commercial boundary</p>
+        <h2>Form acceptance is not a quotation.</h2>
+      </div>
+      <p>
+        The online reference proves only that the submission service accepted the RFQ package. Price, source,
+        specification, lot, quantity, lead time, logistics, validity, and formal terms become binding only when issued
+        through the official corporate email.
+      </p>
     </section>
   </main>
 
   <SiteFooter />
 
   <script is:inline>
-    const button = document.querySelector('[data-copy-email]');
-    const input = document.querySelector('input[aria-label="Official email"]');
+    const copyButton = document.querySelector('[data-copy-email]');
 
-    if (button instanceof HTMLButtonElement && input instanceof HTMLInputElement) {
-      button.addEventListener('click', async () => {
+    if (copyButton instanceof HTMLButtonElement) {
+      copyButton.addEventListener('click', async () => {
+        const email = copyButton.dataset.copyEmail || '';
         try {
-          await navigator.clipboard.writeText(input.value);
-          button.textContent = 'Copied';
+          await navigator.clipboard.writeText(email);
+          copyButton.textContent = 'Email copied';
           window.setTimeout(() => {
-            button.textContent = 'Copy email';
+            copyButton.textContent = `Copy ${email}`;
           }, 1600);
         } catch {
-          input.focus();
-          input.select();
+          window.location.href = `mailto:${email}`;
         }
       });
     }
@@ -97,99 +135,267 @@ const schema = [
 
 <style>
   .contact-page {
-    gap: var(--page-gap);
-    padding-block: var(--page-padding-block);
+    gap: 0;
   }
 
-  .contact-page .page-intro {
-    gap: 0.65rem;
-    max-width: 50rem;
+  .contact-hero {
+    color: #fff;
+    background:
+      radial-gradient(circle at 86% 8%, rgba(64, 139, 196, 0.32), transparent 30rem),
+      linear-gradient(130deg, #071b2f, #0c355b);
   }
 
-  .contact-page .page-intro h1 {
-    font-size: clamp(1.68rem, 2.7vw, 2.14rem);
-    line-height: 1.12;
-    letter-spacing: var(--title-tracking);
-  }
-
-  .contact-page .page-intro p {
-    max-width: 44rem;
-    font-size: 1rem;
-    line-height: var(--body-leading);
-  }
-
-  .contact-page .copy-grid {
-    gap: 1rem;
-  }
-
-  .contact-page .rich-copy {
-    gap: 0.75rem;
-  }
-
-  .contact-page .rich-copy h2 {
-    margin: 0;
-    font-size: 1.06rem;
-    line-height: 1.24;
-    letter-spacing: -0.02em;
-    font-weight: 700;
-  }
-
-  .contact-page .rich-copy p,
-  .contact-page .rich-copy li,
-  .contact-page .info-card p {
-    font-size: 0.98rem;
-    line-height: var(--body-leading);
-  }
-
-  .contact-page .info-card strong {
-    font-size: 0.98rem;
-    line-height: 1.25;
-    letter-spacing: -0.015em;
-  }
-
-  .contact-copy {
+  .contact-hero__inner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto;
-    gap: 0.8rem;
+    grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
+    gap: 3rem;
+    align-items: end;
+    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  }
+
+  .contact-hero__inner > div:first-child {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .contact-hero .eyebrow,
+  .contact-checklist .eyebrow {
+    color: #9ec4e1;
+  }
+
+  .contact-hero h1 {
+    max-width: 58rem;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.75rem, 6vw, 5.7rem);
+    line-height: 0.96;
+    letter-spacing: -0.056em;
+  }
+
+  .contact-hero__inner > div:first-child > p:last-child {
+    max-width: 51rem;
+    margin: 0;
+    color: #bfd0de;
+    line-height: 1.72;
+  }
+
+  .contact-email {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1.2rem;
+    border-top: 3px solid var(--accent-warm);
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+  }
+
+  .contact-email > span {
+    color: #aebfce;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .contact-email > a {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 760;
+  }
+
+  .contact-email > p {
+    margin: 0;
+    color: #aebfce;
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .contact-routes {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .section-heading {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: -0.045em;
+  }
+
+  .contact-routes__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .contact-route {
+    display: grid;
+    gap: 0.85rem;
+    align-content: start;
+    padding: clamp(1.2rem, 3vw, 2rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  .contact-route--primary {
+    border-top: 3px solid var(--brand);
+    background: var(--brand-soft);
+  }
+
+  .contact-route > span {
+    color: var(--brand);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .contact-route h3,
+  .contact-route p {
+    margin: 0;
+  }
+
+  .contact-route h3 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    letter-spacing: -0.035em;
+  }
+
+  .contact-route p,
+  .contact-route li {
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .contact-route ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .contact-route .button {
+    justify-self: start;
+    margin-top: 0.4rem;
+  }
+
+  .contact-route__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
     align-items: center;
+    margin-top: 0.4rem;
   }
 
-  .contact-copy .button {
-    min-height: 3rem;
-    white-space: nowrap;
+  .copy-button {
+    padding: 0.6rem 0;
+    border: 0;
+    color: var(--brand);
+    background: transparent;
+    font-size: 0.78rem;
+    font-weight: 750;
   }
 
-  .contact-copy input {
-    min-width: 0;
-    height: 3rem;
-    padding: 0.8rem 1rem;
-    color: var(--text);
-    font-size: 0.96rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0.95rem;
-    background: rgba(255, 255, 255, 0.04);
+  .contact-checklist {
+    color: #fff;
+    background: var(--brand-dark);
   }
 
-  @media (max-width: 720px) {
-    .contact-page {
-      gap: var(--mobile-page-gap);
-      padding-block: var(--mobile-page-padding-block);
-    }
-
-    .contact-page .page-intro h1 {
-      font-size: clamp(1.46rem, 6.2vw, 1.86rem);
-      line-height: 1.14;
-      letter-spacing: -0.024em;
-    }
-
-    .contact-page .rich-copy h2 {
-      font-size: 1.01rem;
-    }
+  .contact-checklist__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(25rem, 1.2fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+    padding-block: clamp(4rem, 8vw, 6.5rem);
   }
 
-  @media (max-width: 640px) {
-    .contact-copy {
+  .contact-checklist__inner > div {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .contact-checklist h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.03;
+    letter-spacing: -0.045em;
+  }
+
+  .contact-checklist ol {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .contact-checklist li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    padding-block: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .contact-checklist li span {
+    color: #8fb2ca;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .contact-checklist li strong {
+    font-size: 0.9rem;
+  }
+
+  .contact-boundary {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.55fr) minmax(0, 1.45fr);
+    gap: 2rem;
+    align-items: center;
+    margin-block: clamp(4rem, 8vw, 7rem) 1rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface-soft);
+  }
+
+  .contact-boundary > div {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .contact-boundary h2,
+  .contact-boundary > p {
+    margin: 0;
+  }
+
+  .contact-boundary h2 {
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    letter-spacing: -0.035em;
+  }
+
+  .contact-boundary > p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 800px) {
+    .contact-hero__inner,
+    .contact-routes__grid,
+    .contact-checklist__inner,
+    .contact-boundary {
       grid-template-columns: 1fr;
+    }
+
+    .contact-email {
+      max-width: 30rem;
     }
   }
 </style>

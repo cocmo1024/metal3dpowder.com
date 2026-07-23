@@ -276,8 +276,10 @@ export const estimateReadingMinutes = (body: string) =>
 export const getBlogPageViews = (postOrId: BlogPost | string) =>
   blogPageViews[typeof postOrId === 'string' ? postOrId : postOrId.id] ?? 0;
 
-export const getBlogPostImage = (postOrId: BlogPost | string) =>
-  blogPostImages[typeof postOrId === 'string' ? postOrId : postOrId.id] ?? '/og-image.svg';
+export const getBlogPostImage = (postOrId: BlogPost | string) => {
+  const image = blogPostImages[typeof postOrId === 'string' ? postOrId : postOrId.id] ?? '/og-image.png';
+  return image.endsWith('.svg') ? '/og-image.png' : image;
+};
 
 export const paginatePosts = (posts: BlogPost[], currentPage: number, pageSize = POSTS_PER_PAGE) => {
   const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));

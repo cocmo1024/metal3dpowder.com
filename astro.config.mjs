@@ -5,6 +5,7 @@ import { basename, join } from 'node:path';
 
 const siteUrl = 'https://metal3dpowder.com';
 const staticPageLastmod = new Date('2026-04-11T00:00:00.000Z');
+const storefrontRebuildLastmod = new Date('2026-07-23T00:00:00.000Z');
 
 const getFrontmatterDate = (frontmatter, key) => {
   const match = frontmatter.match(new RegExp(`^${key}:\\s*"?([^"\\r\\n]+)"?`, 'm'));
@@ -39,6 +40,18 @@ const getPageLastmod = (pathname) => {
 
   if (
     pathname === '/' ||
+    pathname.startsWith('/products/') ||
+    pathname.startsWith('/rfq/') ||
+    pathname.startsWith('/quality/') ||
+    pathname.startsWith('/about/') ||
+    pathname.startsWith('/contact/') ||
+    pathname.startsWith('/privacy/') ||
+    pathname.startsWith('/terms/')
+  ) {
+    return storefrontRebuildLastmod;
+  }
+
+  if (
     pathname.startsWith('/blog/') ||
     pathname.startsWith('/materials/') ||
     pathname.startsWith('/applications/') ||

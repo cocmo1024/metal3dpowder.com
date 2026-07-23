@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Generic metal powder production workflow illustration</title>
+  <desc id="desc">An abstract industrial illustration of atomization, powder classification, and sealed packaging.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071b2f"/>
+      <stop offset="1" stop-color="#0e3b62"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" x2="1">
+      <stop offset="0" stop-color="#9fb4c4"/>
+      <stop offset=".5" stop-color="#f4f8fb"/>
+      <stop offset="1" stop-color="#6f8799"/>
+    </linearGradient>
+    <radialGradient id="particle">
+      <stop offset="0" stop-color="#ffd2a5"/>
+      <stop offset=".55" stop-color="#e67a32"/>
+      <stop offset="1" stop-color="#8e3310"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <path d="M0 575h1200v145H0z" fill="#061524"/>
+  <path d="M0 576h1200" stroke="#3a6280" stroke-width="2"/>
+  <g opacity=".18" stroke="#8eb3cf">
+    <path d="M90 0v720M270 0v720M450 0v720M630 0v720M810 0v720M990 0v720M1170 0v720"/>
+    <path d="M0 120h1200M0 300h1200M0 480h1200"/>
+  </g>
+  <g transform="translate(90 58)">
+    <text x="0" y="0" fill="#8fc2e8" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">01 ATOMIZATION</text>
+    <path d="M178 50h164l-22 84v124l-34 144H234l-34-144V134z" fill="url(#metal)" stroke="#d6e2ea" stroke-width="3"/>
+    <path d="M233 35h54v46h-54z" fill="#dce7ed"/>
+    <path d="M247 82h27v72h-27z" fill="#f1a060"/>
+    <path d="M260 135v235" stroke="#ed8b45" stroke-width="10" opacity=".35" filter="url(#glow)"/>
+    <path d="M260 135v235" stroke="#ffd1a4" stroke-width="3"/>
+    <g fill="url(#particle)">
+      <circle cx="245" cy="190" r="7"/><circle cx="278" cy="211" r="5"/><circle cx="229" cy="237" r="4"/>
+      <circle cx="290" cy="262" r="8"/><circle cx="252" cy="284" r="5"/><circle cx="272" cy="319" r="4"/>
+      <circle cx="237" cy="337" r="6"/><circle cx="283" cy="356" r="3"/><circle cx="258" cy="383" r="5"/>
+    </g>
+    <path d="M200 156H96v-39H32" fill="none" stroke="#65a7d4" stroke-width="12"/>
+    <circle cx="27" cy="117" r="24" fill="#154b73" stroke="#7eb1d2" stroke-width="4"/>
+    <path d="M260 402v79" stroke="#8aa1b1" stroke-width="18"/>
+    <path d="M214 472h92l32 60H182z" fill="#839aa9" stroke="#d5e0e7" stroke-width="3"/>
+  </g>
+  <g transform="translate(525 58)">
+    <text x="0" y="0" fill="#8fc2e8" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">02 CLASSIFICATION</text>
+    <rect x="20" y="92" width="280" height="74" rx="18" fill="url(#metal)" stroke="#d6e2ea" stroke-width="3"/>
+    <rect x="48" y="166" width="224" height="60" rx="12" fill="#79909f" stroke="#cddbe4" stroke-width="3"/>
+    <rect x="75" y="226" width="170" height="58" rx="10" fill="#617988" stroke="#b9cbd6" stroke-width="3"/>
+    <path d="M82 117h156M105 190h110M126 250h68" stroke="#28475d" stroke-width="7" stroke-dasharray="7 10"/>
+    <g fill="url(#particle)">
+      <circle cx="81" cy="114" r="5"/><circle cx="123" cy="128" r="8"/><circle cx="170" cy="112" r="4"/>
+      <circle cx="214" cy="132" r="6"/><circle cx="242" cy="112" r="3"/><circle cx="148" cy="187" r="5"/>
+      <circle cx="188" cy="198" r="4"/><circle cx="159" cy="248" r="3"/>
+    </g>
+    <path d="M300 126h68v-39h58" fill="none" stroke="#65a7d4" stroke-width="10"/>
+    <rect x="55" y="315" width="210" height="182" rx="20" fill="#0b2b47" stroke="#5f87a2" stroke-width="3"/>
+    <path d="M87 355h146M87 397h146M87 439h90" stroke="#85a9c0" stroke-width="8"/>
+    <circle cx="213" cy="440" r="24" fill="#1d638f"/>
+    <path d="m202 440 8 8 17-20" fill="none" stroke="#d8f2e5" stroke-width="6"/>
+  </g>
+  <g transform="translate(890 58)">
+    <text x="0" y="0" fill="#8fc2e8" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">03 PACKAGING</text>
+    <path d="M36 134h216v342H36z" fill="#e4ebef" stroke="#fff" stroke-width="4"/>
+    <path d="M64 101h160v50H64z" fill="#a9bac5"/>
+    <path d="M82 196h124v114H82z" fill="#0d3558"/>
+    <circle cx="144" cy="236" r="29" fill="url(#particle)"/>
+    <text x="144" y="286" fill="#dbeaf4" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">METAL POWDER</text>
+    <path d="M82 348h124M82 382h95M82 416h73" stroke="#698091" stroke-width="9"/>
+    <rect x="18" y="476" width="252" height="42" rx="8" fill="#8b6543"/>
+    <path d="M63 518v42M218 518v42" stroke="#79573a" stroke-width="17"/>
+    <path d="M283 200h44v246h-44z" fill="#557386"/>
+    <circle cx="305" cy="170" r="40" fill="#164a70" stroke="#80adca" stroke-width="4"/>
+    <path d="M305 149v25l17 11" fill="none" stroke="#d6e7f1" stroke-width="5"/>
+  </g>
+  <text x="72" y="670" fill="#7898ae" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">
+    GENERIC WORKFLOW ILLUSTRATION · SOURCE, EQUIPMENT AND ACCEPTANCE CONTROLS CONFIRMED PER QUOTATION
+  </text>
+</svg>

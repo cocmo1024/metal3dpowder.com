@@ -1,35 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#091117" />
-      <stop offset="55%" stop-color="#0a0f14" />
-      <stop offset="100%" stop-color="#101922" />
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f3eb" />
+      <stop offset="1" stop-color="#e9e3d8" />
     </linearGradient>
-    <radialGradient id="powder" cx="35%" cy="28%" r="78%">
-      <stop offset="0%" stop-color="#fbffff" />
-      <stop offset="36%" stop-color="#9ce7dc" />
-      <stop offset="70%" stop-color="#22343c" />
-      <stop offset="100%" stop-color="#0a1014" />
+    <radialGradient id="powder" cx="32%" cy="25%" r="74%">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset=".28" stop-color="#c9d0d4" />
+      <stop offset=".68" stop-color="#64717a" />
+      <stop offset="1" stop-color="#18242d" />
     </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#15232d" flood-opacity=".18" />
+    </filter>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)" />
-  <g opacity=".75">
-    <circle cx="930" cy="150" r="95" fill="#ffb177" opacity=".18" />
-    <circle cx="1030" cy="212" r="64" fill="#8fe4d9" opacity=".22" />
+  <rect width="1200" height="630" fill="url(#paper)" />
+  <rect width="28" height="630" fill="#b84d18" />
+  <path d="M720 0h480v630H850c-75-105-118-215-130-330C708 186 708 86 720 0Z" fill="#132632" />
+  <g opacity=".3" fill="none" stroke="#b84d18" stroke-width="2">
+    <circle cx="1000" cy="145" r="95" />
+    <circle cx="1000" cy="145" r="132" />
+    <circle cx="1000" cy="145" r="169" />
   </g>
-  <g>
-    <circle cx="910" cy="350" r="150" fill="url(#powder)" />
-    <circle cx="1020" cy="420" r="90" fill="url(#powder)" opacity=".94" />
-    <circle cx="838" cy="472" r="74" fill="url(#powder)" opacity=".9" />
+  <g filter="url(#shadow)">
+    <circle cx="920" cy="365" r="128" fill="url(#powder)" />
+    <circle cx="1080" cy="430" r="88" fill="url(#powder)" />
+    <circle cx="790" cy="490" r="64" fill="url(#powder)" />
+    <g fill="#cfd5d8">
+      <circle cx="1110" cy="250" r="23" />
+      <circle cx="824" cy="287" r="17" />
+      <circle cx="1050" cy="555" r="31" />
+      <circle cx="742" cy="405" r="14" />
+    </g>
   </g>
-  <text x="90" y="180" fill="#8fe4d9" font-family="Space Grotesk, Arial, sans-serif" font-size="28" letter-spacing="7">METAL 3D POWDER</text>
-  <text x="90" y="304" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="82" font-weight="700">
-    Premium metal powders
-  </text>
-  <text x="90" y="394" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="82" font-weight="700">
-    for additive manufacturing
-  </text>
-  <text x="90" y="476" fill="#95a3b1" font-family="Space Grotesk, Arial, sans-serif" font-size="34">
-    Pricing, particle size, and lead time shown clearly for overseas buyers.
-  </text>
+  <text x="88" y="112" fill="#b84d18" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">METAL3DPOWDER</text>
+  <text x="88" y="212" fill="#132632" font-family="Arial, sans-serif" font-size="66" font-weight="700">Procurement-ready</text>
+  <text x="88" y="288" fill="#132632" font-family="Arial, sans-serif" font-size="66" font-weight="700">metal powders</text>
+  <text x="88" y="370" fill="#4e5c65" font-family="Arial, sans-serif" font-size="30">Compare grade, process, PSD and evidence.</text>
+  <g transform="translate(88 432)">
+    <rect width="520" height="74" rx="6" fill="#ffffff" stroke="#d5cec2" />
+    <text x="28" y="46" fill="#132632" font-family="Arial, sans-serif" font-size="25" font-weight="700">Structured RFQ for international buyers</text>
+  </g>
+  <text x="88" y="572" fill="#69747a" font-family="Arial, sans-serif" font-size="20" letter-spacing="1.5">GRADE  /  PSD  /  PROCESS  /  LOT EVIDENCE</text>
 </svg>

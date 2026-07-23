@@ -1,7 +1,7 @@
 import { siteInfo } from './site';
 
 export const siteAlternateName = 'Metal3DPowder';
-export const defaultOgImagePath = '/og-image.svg';
+export const defaultOgImagePath = '/og-image.png';
 export const publisherLogoPath = '/favicon.svg';
 export const rssFeedPath = '/feed.xml';
 

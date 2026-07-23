@@ -8,14 +8,17 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "deploy:dry": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
-    "astro": "^6.1.4"
+    "@astrojs/check": "0.9.9",
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "7.1.3",
+    "sharp": "0.35.3",
+    "svgo": "4.0.2",
+    "typescript": "5.9.3",
+    "wrangler": "4.113.0"
   }
 }

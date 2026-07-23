@@ -2,102 +2,635 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
-import { buildBreadcrumbSchema } from '../../data/seo';
+import { buildBreadcrumbSchema, buildOrganizationSchema } from '../../data/seo';
+import { productFamilies, products } from '../../data/products';
 import { siteInfo } from '../../data/site';
 
-const title = 'About | Metal 3D Powder';
+const title = 'About Metal 3D Powder | Partner-Backed Powder Supply';
 const description =
-  'About Metal 3D Powder and Suzhou Como Precision Materials Co., Ltd., including alloy coverage, traceability, and engineering support for AM powders.';
+  'Metal 3D Powder is a partner-backed sourcing and engineering storefront for metal powders, with project-specific source, lot, evidence, and logistics confirmation.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
-const schema = [buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'About' }])];
+const schema = [
+  buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'About' }]),
+  buildOrganizationSchema(siteUrl),
+];
+
+const partners = [
+  {
+    name: 'VILORY',
+    localName: '威拉里',
+    note: 'An authorized deep-cooperation partner within the powder supply and additive-manufacturing ecosystem.',
+  },
+  {
+    name: 'AVIMETAL',
+    localName: '中航迈特',
+    note: 'An authorized deep-cooperation partner supporting project-specific powder and manufacturing-resource review.',
+  },
+  {
+    name: 'BLT',
+    localName: '铂力特',
+    note: 'An authorized deep-cooperation partner within the industrial metal additive-manufacturing ecosystem.',
+  },
+];
 ---
 
 <BaseLayout title={title} description={description} canonical="/about/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main class="page-shell content-page document-page">
-    <section class="page-intro">
-      <p class="eyebrow">About</p>
-      <h1>Engineering-grade metal AM powder guidance and supply support.</h1>
-      <p>
-        Suzhou Como Precision Materials Co., Ltd. supports metal additive manufacturing programs with qualified powder
-        options, material guidance, and practical coordination around traceability and delivery.
-      </p>
-    </section>
-
-    <section class="copy-grid">
-      <div class="surface-card surface-card--padded rich-copy">
-        <h2>What the company does</h2>
-        <p>
-          Suzhou Como Precision Materials Co., Ltd. focuses on metal additive manufacturing powder supply, material
-          matching, delivery coordination, and practical support for engineering teams evaluating powder options.
-        </p>
-        <p>
-          The operating model is built around screened supply resources, batch traceability, and application-oriented
-          communication instead of a single-source sales pitch.
-        </p>
-      </div>
-
-      <div class="surface-card surface-card--padded rich-copy">
-        <h2>How the supply model works</h2>
-        <p>
-          Powder manufacturers, testing capability, and logistics execution are treated as parts of one delivery chain.
-          That makes it easier to match material, documents, and lead-time expectations to the real project rather than
-          only to a generic product listing.
-        </p>
-        <p>
-          The practical goal is simpler: reduce trial-and-error for teams who need usable powder information before
-          material decisions are made.
-        </p>
+  <main class="about-page">
+    <section class="about-hero">
+      <div class="page-shell about-hero__inner">
+        <div>
+          <p class="eyebrow">About Metal 3D Powder</p>
+          <h1>A powder storefront built around the buyer’s real decision variables.</h1>
+          <p>
+            Suzhou Como Precision Materials Co., Ltd. operates Metal 3D Powder as a commercial and engineering interface
+            for alloy selection, partner-backed sourcing, evidence review, and export-oriented RFQ coordination.
+          </p>
+          <div class="about-hero__actions">
+            <a class="button button--primary" href="/products/">Browse powder catalog</a>
+            <a class="button button--dark" href="/rfq/">Submit powder RFQ</a>
+          </div>
+        </div>
+        <aside>
+          <article>
+            <strong>{products.length}</strong>
+            <span>core catalog routes</span>
+          </article>
+          <article>
+            <strong>{productFamilies.length}</strong>
+            <span>alloy families</span>
+          </article>
+          <article>
+            <strong>{partners.length}</strong>
+            <span>named authorized partners</span>
+          </article>
+          <p>Catalog breadth is not an inventory claim. Source, lot, quantity, evidence, and lead time are confirmed per RFQ.</p>
+        </aside>
       </div>
     </section>
 
-    <section class="info-grid">
-      <article class="surface-card surface-card--padded info-card">
-        <strong>Materials</strong>
-        <p>Titanium alloys, nickel superalloys, stainless steels, tool steels, aluminum alloys, copper alloys, and CoCr systems.</p>
-      </article>
-
-      <article class="surface-card surface-card--padded info-card">
-        <strong>Typical users</strong>
-        <p>AM service bureaus, industrial engineering teams, mold and tooling companies, research groups, and production programs evaluating qualified powder routes.</p>
-      </article>
-
-      <article class="surface-card surface-card--padded info-card">
-        <strong>Website role</strong>
-        <p>The site combines product cards, alloy articles, FAQ material, and direct contact information for export-oriented inquiry handling.</p>
-      </article>
+    <section class="operating-model page-shell" aria-labelledby="operating-model-title">
+      <div class="section-heading">
+        <p class="eyebrow">Operating model</p>
+        <h2 id="operating-model-title">The site is not presented as a single anonymous powder factory.</h2>
+        <p>
+          The value is the controlled interface between buyer requirements and project-reviewed partner resources. The exact
+          producer, production route, testing scope, and applicable documents are disclosed in the commercial process
+          where permitted and tied to the quoted material.
+        </p>
+      </div>
+      <div class="model-grid">
+        <article>
+          <span>01</span>
+          <h3>Translate demand</h3>
+          <p>Convert alloy names into process, PSD, quantity, packaging, evidence, destination, and timing requirements.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Match supply route</h3>
+          <p>Review standard and custom routes across partner resources without presenting every supplier capability as universal.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Confirm evidence</h3>
+          <p>Define the source, lot, document package, test methods, change boundary, and exclusions before release.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Coordinate delivery</h3>
+          <p>Align packaging, export, destination, lead time, and formal commercial terms with the approved quotation.</p>
+        </article>
+      </div>
     </section>
 
-    <section class="copy-grid" aria-label="Editorial and source standards">
-      <div class="surface-card surface-card--padded rich-copy">
-        <h2>How the technical content is prepared</h2>
-        <p>
-          Material and process guides are built from alloy definitions, powder characterization standards, public
-          technical research, regulator or government guidance, and manufacturer data where it is useful. Sources are
-          linked inside articles when they support a material statement, measurement method, or application boundary.
-        </p>
-        <p>
-          Application pages distinguish a powder route worth reviewing from a qualified part. Alloy selection, powder
-          acceptance, printing, heat treatment, machining, inspection, and final release remain separate engineering
-          decisions.
-        </p>
+    <section class="partner-section">
+      <div class="page-shell partner-section__inner">
+        <div class="partner-section__copy">
+          <p class="eyebrow">Authorized cooperation network</p>
+          <h2>Named partners, explicit evidence boundaries.</h2>
+          <p>
+            These companies are identified as authorized deep-cooperation partners. Their public capabilities inform
+            route discovery, but certifications, plant identity, equipment, process, typical data, media, and documents
+            are not automatically attributed to every powder offered on this site.
+          </p>
+          <a href="/quality/">See the quality and evidence model →</a>
+        </div>
+        <div class="partner-list">
+          {partners.map((partner, index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <p>{partner.name}</p>
+                <strong>{partner.localName}</strong>
+                <small>{partner.note}</small>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
+    </section>
 
-      <div class="surface-card surface-card--padded rich-copy">
-        <h2>Boundaries, updates, and corrections</h2>
-        <p>
-          The site does not treat a common aerospace, medical, energy, or semiconductor alloy as automatic approval for
-          a part. Regulatory, code, pressure, corrosion, fatigue, and customer-specific requirements must be reviewed by
-          the responsible engineering and quality teams.
-        </p>
-        <p>
-          Article dates are updated only when the content changes materially. Technical corrections and source questions
-          can be sent to <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>.
-        </p>
+    <section class="about-workflow page-shell">
+      <div class="about-workflow__visual">
+        <img
+          src="/images/workflow/powder-production.svg"
+          alt="Generic illustration of atomization, powder classification, and sealed packaging"
+          width="1200"
+          height="720"
+          loading="lazy"
+          decoding="async"
+        />
+        <span>Generic workflow illustration · not a claim of owned equipment</span>
       </div>
+      <div class="about-workflow__copy">
+        <p class="eyebrow">What buyers receive</p>
+        <h2>A decision path that stays honest when the source changes.</h2>
+        <ul>
+          <li>
+            <strong>Public selection layer</strong>
+            <span>Catalog, aliases, process candidates, applications, failure modes, and technical guides.</span>
+          </li>
+          <li>
+            <strong>RFQ layer</strong>
+            <span>Grade, PSD, quantity, partner route, evidence, packaging, destination, and timing review.</span>
+          </li>
+          <li>
+            <strong>Quotation layer</strong>
+            <span>Formal source, scope, lot status, documents, lead time, commercial terms, and exclusions.</span>
+          </li>
+          <li>
+            <strong>Customer qualification layer</strong>
+            <span>Incoming acceptance, printing, post-processing, inspection, and finished-part release.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="boundaries-section page-shell" aria-labelledby="boundaries-title">
+      <div>
+        <p class="eyebrow">Commercial boundaries</p>
+        <h2 id="boundaries-title">What this website does not claim.</h2>
+      </div>
+      <div class="boundaries-grid">
+        <article>
+          <strong>No fictional stock</strong>
+          <p>Catalog presence is not proof of current inventory, fixed price, reserved capacity, or a guaranteed ship date.</p>
+        </article>
+        <article>
+          <strong>No borrowed certification</strong>
+          <p>A partner certificate applies only to its stated entity, site, scope, period, and quoted supply route.</p>
+        </article>
+        <article>
+          <strong>No automatic part approval</strong>
+          <p>Material or powder conformity does not qualify a printed, heat-treated, machined, or regulated finished part.</p>
+        </article>
+        <article>
+          <strong>No hidden formal offer</strong>
+          <p>Binding prices, specifications, source, lead time, and terms are issued only through the official corporate email.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-final page-shell">
+      <div>
+        <p class="eyebrow">Start with the actual requirement</p>
+        <h2>Send the process, PSD, quantity, destination, timing, and evidence needs.</h2>
+        <p>For corrections, partner-document questions, or commercial communication, use {siteInfo.email}.</p>
+      </div>
+      <a class="button button--primary" href="/rfq/">Build powder RFQ</a>
     </section>
   </main>
 
   <SiteFooter />
 </BaseLayout>
+
+<style>
+  .about-page {
+    gap: 0;
+  }
+
+  .about-hero {
+    color: #fff;
+    background:
+      radial-gradient(circle at 80% 10%, rgba(64, 139, 196, 0.32), transparent 30rem),
+      linear-gradient(130deg, #071b2f, #0c355b);
+  }
+
+  .about-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.28fr) minmax(18rem, 0.72fr);
+    gap: 3rem;
+    align-items: end;
+    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  }
+
+  .about-hero__inner > div {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .about-hero .eyebrow,
+  .partner-section .eyebrow {
+    color: #9ec4e1;
+  }
+
+  .about-hero h1 {
+    max-width: 58rem;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.75rem, 6vw, 5.7rem);
+    line-height: 0.96;
+    letter-spacing: -0.056em;
+  }
+
+  .about-hero__inner > div > p:last-of-type {
+    max-width: 51rem;
+    margin: 0;
+    color: #bfd0de;
+    line-height: 1.72;
+  }
+
+  .about-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    padding-top: 0.35rem;
+  }
+
+  .about-hero aside {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+  }
+
+  .about-hero aside article {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .about-hero aside article:last-of-type {
+    border-right: 0;
+  }
+
+  .about-hero aside strong {
+    font-size: 1.5rem;
+  }
+
+  .about-hero aside span {
+    color: #aebfce;
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+
+  .about-hero aside > p {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0.9rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #aebfce;
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  .operating-model {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .section-heading {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .section-heading h2 {
+    max-width: 62rem;
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.046em;
+  }
+
+  .section-heading > p:last-child {
+    max-width: 59rem;
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .model-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .model-grid article {
+    display: grid;
+    gap: 0.6rem;
+    min-height: 13rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  .model-grid article > span {
+    color: var(--brand);
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .model-grid h3,
+  .model-grid p {
+    margin: 0;
+  }
+
+  .model-grid h3 {
+    align-self: end;
+    font-size: 1rem;
+  }
+
+  .model-grid p {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .partner-section {
+    color: #fff;
+    background: var(--brand-dark);
+  }
+
+  .partner-section__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(25rem, 1.2fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .partner-section__copy {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .partner-section h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+  }
+
+  .partner-section__copy > p:last-of-type {
+    margin: 0;
+    color: #b3c5d4;
+    line-height: 1.7;
+  }
+
+  .partner-section__copy > a {
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 750;
+  }
+
+  .partner-list {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .partner-list article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.055);
+  }
+
+  .partner-list article > span {
+    color: #8fb2ca;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .partner-list article > div {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr);
+    gap: 0.6rem 1rem;
+    align-items: baseline;
+  }
+
+  .partner-list p,
+  .partner-list strong,
+  .partner-list small {
+    margin: 0;
+  }
+
+  .partner-list p {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 780;
+    letter-spacing: 0.06em;
+  }
+
+  .partner-list strong {
+    color: #8fb2ca;
+    font-size: 0.8rem;
+  }
+
+  .partner-list small {
+    color: #aebfce;
+    font-size: 0.76rem;
+    line-height: 1.5;
+  }
+
+  .about-workflow {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .about-workflow__visual {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .about-workflow__visual img {
+    width: 100%;
+  }
+
+  .about-workflow__visual > span {
+    position: absolute;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    left: 0.7rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.45rem;
+    color: #d5e3ed;
+    background: rgba(5, 20, 33, 0.72);
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+
+  .about-workflow__copy {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .about-workflow h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+  }
+
+  .about-workflow ul {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .about-workflow li {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: 0.8rem;
+    padding-block: 0.85rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .about-workflow li strong {
+    font-size: 0.78rem;
+  }
+
+  .about-workflow li span {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .boundaries-section {
+    display: grid;
+    gap: 1.4rem;
+    padding-block: 1rem clamp(4rem, 8vw, 7rem);
+  }
+
+  .boundaries-section > div:first-child {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .boundaries-section h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    letter-spacing: -0.04em;
+  }
+
+  .boundaries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .boundaries-grid article {
+    padding: 1rem;
+    border-top: 3px solid var(--accent);
+    background: var(--surface-soft);
+  }
+
+  .boundaries-grid strong {
+    font-size: 0.9rem;
+  }
+
+  .boundaries-grid p {
+    margin: 0.55rem 0 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .about-final {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--brand-soft);
+  }
+
+  .about-final > div {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .about-final h2,
+  .about-final p {
+    margin: 0;
+  }
+
+  .about-final h2 {
+    max-width: 55rem;
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    letter-spacing: -0.035em;
+  }
+
+  .about-final p:last-child {
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 980px) {
+    .about-hero__inner,
+    .partner-section__inner,
+    .about-workflow {
+      grid-template-columns: 1fr;
+    }
+
+    .about-hero aside {
+      max-width: 38rem;
+    }
+
+    .model-grid,
+    .boundaries-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .model-grid,
+    .boundaries-grid,
+    .about-final {
+      grid-template-columns: 1fr;
+    }
+
+    .model-grid article {
+      min-height: 0;
+    }
+
+    .partner-list article > div {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+
+    .about-workflow li {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+  }
+</style>

@@ -1,0 +1,554 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { buildBreadcrumbSchema } from '../../data/seo';
+
+const title = 'Metal Powder Quality | COA, PSD, Traceability and Packaging';
+const description =
+  'Define a metal powder evidence package around chemistry, PSD, morphology, flow, density, traceability, packaging, and lot-specific acceptance.';
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const schema = [
+  buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'Powder quality' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    url: new URL('/quality/', siteUrl).toString(),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonical="/quality/" schema={schema}>
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="quality-page">
+    <section class="quality-hero">
+      <div class="page-shell quality-hero__inner">
+        <div>
+          <p class="eyebrow">Powder quality system</p>
+          <h1>Buy the evidence package—not only the alloy label.</h1>
+          <p>
+            A professional powder purchase defines chemistry, particle-size method, powder behavior, sampling,
+            packaging, traceability, and release documents before price becomes the final decision.
+          </p>
+          <div class="quality-hero__actions">
+            <a class="button button--primary" href="/rfq/">Define RFQ controls</a>
+            <a class="button button--dark" href="/products/">Browse powder routes</a>
+          </div>
+        </div>
+        <div class="quality-hero__visual">
+          <img
+            src="/images/workflow/powder-laboratory.svg"
+            alt="Generic illustration of particle imaging, size analysis, and lot records"
+            width="1200"
+            height="720"
+            decoding="async"
+          />
+          <span>Generic workflow illustration · not a supplier certificate</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="quality-principles">
+      <div class="page-shell">
+        <article>
+          <span>01</span>
+          <strong>Method before number</strong>
+          <p>A PSD or flow value is meaningful only with the test method, preparation, and acceptance rule.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>Lot before brochure</strong>
+          <p>Published typical data guides selection; the quoted lot and its documents control procurement.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>Part after process</strong>
+          <p>Powder conformity does not replace machine, build, heat treatment, or finished-part qualification.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quality-system page-shell" aria-labelledby="quality-system-title">
+      <div class="section-heading">
+        <p class="eyebrow">Six control layers</p>
+        <h2 id="quality-system-title">Turn broad supplier capability into a project-specific release plan.</h2>
+        <p>
+          The required depth depends on the alloy, process, application, qualification stage, and failure consequence.
+          Not every document is automatically available for every route; scope is confirmed in the quotation.
+        </p>
+      </div>
+
+      <div class="quality-grid">
+        <article>
+          <span>01</span>
+          <h3>Chemistry and interstitials</h3>
+          <p>Grade, revision, target and maximum limits, restricted elements, oxygen, nitrogen, hydrogen, and sampling basis.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Particle-size distribution</h3>
+          <p>Specified range, measurement method, sieve or distribution limits, sampling, and treatment of oversize or fines.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Morphology and defects</h3>
+          <p>Sphericity, satellites, agglomerates, hollow particles, inclusions, surface condition, and evidence method.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Flow and density</h3>
+          <p>Relevant flow test, apparent and tap density, conditioning, repeatability, and process-specific acceptance.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>Lot traceability</h3>
+          <p>Producer, manufacturing route, lot identity, blend restrictions, sample retention, reuse policy, and record linkage.</p>
+        </article>
+        <article>
+          <span>06</span>
+          <h3>Packaging and logistics</h3>
+          <p>Container size, atmosphere, moisture control, labeling, dangerous-goods review, destination, and storage instructions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="evidence-section">
+      <div class="page-shell evidence-section__inner">
+        <div class="evidence-section__visual">
+          <img
+            src="/images/workflow/powder-production.svg"
+            alt="Generic illustration of atomization, powder classification, and sealed packaging"
+            width="1200"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+          <span>Generic workflow illustration · actual source and equipment confirmed per quote</span>
+        </div>
+        <div class="evidence-section__copy">
+          <p class="eyebrow">Evidence hierarchy</p>
+          <h2>Do not let a marketing PDF impersonate a purchase record.</h2>
+          <ol>
+            <li>
+              <span>Selection</span>
+              <strong>Public technical data</strong>
+              <p>Useful for alloy and process screening; not a lot release.</p>
+            </li>
+            <li>
+              <span>Quotation</span>
+              <strong>Source and specification confirmation</strong>
+              <p>Defines the proposed producer, route, PSD, documents, packaging, lead time, and commercial boundary.</p>
+            </li>
+            <li>
+              <span>Release</span>
+              <strong>Lot-linked evidence</strong>
+              <p>COA and agreed reports support incoming acceptance for the delivered lot.</p>
+            </li>
+            <li>
+              <span>Production</span>
+              <strong>Customer qualification record</strong>
+              <p>Machine, build, post-process, inspection, and finished-part evidence remain with the responsible program.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="document-package page-shell" aria-labelledby="document-package-title">
+      <div>
+        <p class="eyebrow">RFQ document package</p>
+        <h2 id="document-package-title">Ask for documents by decision purpose.</h2>
+      </div>
+      <div class="document-package__grid">
+        <article>
+          <strong>Incoming acceptance</strong>
+          <p>Lot-specific COA, chemistry, PSD, flow/density, label, and packing-list linkage as agreed.</p>
+        </article>
+        <article>
+          <strong>Handling and safety</strong>
+          <p>Safety data, storage, grounding, fire risk, transport, and spill guidance appropriate to the material.</p>
+        </article>
+        <article>
+          <strong>Qualification support</strong>
+          <p>Sample reports, test methods, supplier questionnaires, change-notification needs, and retained sample plan where available.</p>
+        </article>
+        <article>
+          <strong>Commercial release</strong>
+          <p>Producer and route, quantity, packaging, Incoterm, destination, lead time, validity, and exclusions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quality-final page-shell">
+      <div>
+        <p class="eyebrow">Make the acceptance boundary explicit</p>
+        <h2>Send the grade, process, PSD method, quantity, destination, and required evidence in one RFQ.</h2>
+      </div>
+      <a class="button button--primary" href="/rfq/">Build powder RFQ</a>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .quality-page {
+    gap: 0;
+  }
+
+  .quality-hero {
+    overflow: hidden;
+    color: #fff;
+    background:
+      radial-gradient(circle at 85% 10%, rgba(64, 139, 196, 0.32), transparent 32rem),
+      linear-gradient(130deg, #071b2f, #0b3155);
+  }
+
+  .quality-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(28rem, 1.15fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  }
+
+  .quality-hero__inner > div:first-child {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .quality-hero .eyebrow,
+  .evidence-section .eyebrow {
+    color: #9ec4e1;
+  }
+
+  .quality-hero h1 {
+    max-width: 45rem;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.75rem, 5.5vw, 5.35rem);
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+  }
+
+  .quality-hero__inner > div:first-child > p:last-of-type {
+    max-width: 43rem;
+    margin: 0;
+    color: #bfd0de;
+    line-height: 1.72;
+  }
+
+  .quality-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    padding-top: 0.4rem;
+  }
+
+  .quality-hero__visual,
+  .evidence-section__visual {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+  }
+
+  .quality-hero__visual {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
+  }
+
+  .quality-hero__visual img,
+  .evidence-section__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .quality-hero__visual > span,
+  .evidence-section__visual > span {
+    position: absolute;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    left: 0.7rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.45rem;
+    color: #d5e3ed;
+    background: rgba(5, 20, 33, 0.72);
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+
+  .quality-principles {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .quality-principles > div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .quality-principles article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.8rem;
+    row-gap: 0.25rem;
+    padding: 1.2rem;
+    border-left: 1px solid var(--line);
+  }
+
+  .quality-principles article:last-child {
+    border-right: 1px solid var(--line);
+  }
+
+  .quality-principles span {
+    grid-row: 1 / 3;
+    color: var(--brand);
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .quality-principles strong {
+    font-size: 0.9rem;
+  }
+
+  .quality-principles p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .quality-system {
+    display: grid;
+    gap: 1.6rem;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .section-heading {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .section-heading h2 {
+    max-width: 60rem;
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading > p:last-child {
+    max-width: 58rem;
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .quality-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .quality-grid article {
+    display: grid;
+    gap: 0.65rem;
+    min-height: 13rem;
+    padding: 1.15rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .quality-grid span {
+    color: var(--brand);
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .quality-grid h3,
+  .quality-grid p {
+    margin: 0;
+  }
+
+  .quality-grid h3 {
+    align-self: end;
+    font-size: 1.06rem;
+  }
+
+  .quality-grid p {
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .evidence-section {
+    color: #fff;
+    background: var(--brand-dark);
+  }
+
+  .evidence-section__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(23rem, 0.95fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .evidence-section__visual {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .evidence-section__copy {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .evidence-section h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.03;
+    letter-spacing: -0.045em;
+  }
+
+  .evidence-section ol {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .evidence-section li {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 0.25rem 0.8rem;
+    padding-block: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .evidence-section li > span {
+    grid-row: 1 / 3;
+    color: #8fb2ca;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .evidence-section li strong {
+    font-size: 0.9rem;
+  }
+
+  .evidence-section li p {
+    margin: 0;
+    color: #aebfce;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .document-package {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .document-package > div:first-child {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .document-package h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    letter-spacing: -0.04em;
+  }
+
+  .document-package__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .document-package article {
+    padding: 1rem;
+    border-top: 3px solid var(--brand);
+    background: var(--surface-soft);
+  }
+
+  .document-package article strong {
+    font-size: 0.9rem;
+  }
+
+  .document-package article p {
+    margin: 0.55rem 0 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .quality-final {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--brand-soft);
+  }
+
+  .quality-final > div {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .quality-final h2 {
+    max-width: 55rem;
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.35rem);
+    letter-spacing: -0.035em;
+  }
+
+  @media (max-width: 900px) {
+    .quality-hero__inner,
+    .evidence-section__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .quality-hero__visual,
+    .evidence-section__visual {
+      max-width: 48rem;
+    }
+
+    .quality-grid,
+    .document-package__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .quality-principles > div,
+    .quality-grid,
+    .document-package__grid,
+    .quality-final {
+      grid-template-columns: 1fr;
+    }
+
+    .quality-principles article {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .quality-grid article {
+      min-height: 0;
+    }
+  }
+</style>

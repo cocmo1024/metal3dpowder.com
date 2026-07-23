@@ -1,8 +1,33 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "metal3dpowder",
-  "compatibility_date": "2026-04-11",
+  "main": "./functions/api/rfq.ts",
+  "compatibility_date": "2026-07-23",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"],
+  },
+  "send_email": [
+    {
+      "name": "RFQ_EMAIL",
+      "destination_address": "info@szcomo.com",
+    },
+  ],
+  "ratelimits": [
+    {
+      "name": "RFQ_RATE_LIMITER",
+      "namespace_id": "3071302",
+      "simple": {
+        "limit": 5,
+        "period": 60,
+      },
+    },
+  ],
+  "observability": {
+    "enabled": true,
+  },
 }

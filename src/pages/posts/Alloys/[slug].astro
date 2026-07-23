@@ -186,7 +186,7 @@ const schema = [
         relatedPosts.length ? (
           <section class="article-related" aria-labelledby="article-related-title">
             <h2 id="article-related-title">Related Articles</h2>
-            <BlogPostGrid posts={relatedPosts} ariaLabel="Related articles" />
+            <BlogPostGrid posts={relatedPosts} ariaLabel="Related articles" headingLevel={3} />
           </section>
         ) : null
       }
@@ -343,7 +343,7 @@ const schema = [
 
   .article-content :global(th) {
     color: var(--text);
-    background: rgba(143, 228, 217, 0.08);
+    background: var(--brand-soft);
     font-weight: 700;
   }
 
@@ -358,7 +358,7 @@ const schema = [
     padding: var(--card-padding);
     border-left: 3px solid var(--accent);
     border-radius: 0 var(--radius-card) var(--radius-card) 0;
-    background: rgba(255, 255, 255, 0.035);
+    background: var(--surface-soft);
   }
 
   .article-content :global(blockquote p) {
@@ -409,11 +409,11 @@ const schema = [
     border: 1px solid var(--line);
     border-radius: var(--radius-card);
     color: var(--text);
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-soft);
   }
 
   .article-paths__links a:hover {
-    border-color: rgba(143, 228, 217, 0.28);
+    border-color: color-mix(in srgb, var(--brand) 35%, var(--line));
     color: var(--text);
   }
 
@@ -444,13 +444,13 @@ const schema = [
     border: 1px solid var(--line);
     border-radius: 999px;
     color: var(--muted);
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-soft);
     font-size: 0.86rem;
   }
 
   .article-tags__list a:hover,
   .article-pagination__link:hover {
-    border-color: rgba(143, 228, 217, 0.24);
+    border-color: color-mix(in srgb, var(--brand) 35%, var(--line));
     color: var(--text);
   }
 

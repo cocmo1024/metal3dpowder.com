@@ -6,9 +6,11 @@ interface Props {
   posts: BlogPost[];
   ariaLabel?: string;
   className?: string;
+  headingLevel?: 2 | 3;
 }
 
-const { posts, ariaLabel = 'Articles', className = '' } = Astro.props;
+const { posts, ariaLabel = 'Articles', className = '', headingLevel = 2 } = Astro.props;
+const Heading = headingLevel === 3 ? 'h3' : 'h2';
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 ---
 
@@ -19,9 +21,9 @@ const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
         <span>{post.data.category}</span>
         <span>{formatter.format(post.data.pubDate)}</span>
       </div>
-      <h2>
+      <Heading>
         <a href={getBlogPostPath(post)}>{post.data.title}</a>
-      </h2>
+      </Heading>
       <p>{post.data.description}</p>
     </article>
   ))}
@@ -56,7 +58,7 @@ const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
     letter-spacing: 0.12em;
   }
 
-  .blog-post-card h2 {
+  .blog-post-card :is(h2, h3) {
     margin: 0;
     font-size: 1.02rem;
     line-height: 1.28;
@@ -64,14 +66,14 @@ const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
     font-weight: 700;
   }
 
-  .blog-post-card h2 a,
+  .blog-post-card :is(h2, h3) a,
   .blog-post-card p {
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient: vertical;
   }
 
-  .blog-post-card h2 a {
+  .blog-post-card :is(h2, h3) a {
     -webkit-line-clamp: 2;
   }
 
@@ -97,7 +99,7 @@ const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
       grid-template-columns: 1fr;
     }
 
-    .blog-post-card h2 {
+    .blog-post-card :is(h2, h3) {
       font-size: 0.98rem;
     }
   }

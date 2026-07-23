@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Generic metal powder laboratory workflow illustration</title>
+  <desc id="desc">An abstract industrial laboratory showing particle imaging, particle-size analysis, chemistry, and lot records.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eff4f7"/>
+      <stop offset="1" stop-color="#d9e6ee"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" x2="1">
+      <stop offset="0" stop-color="#09243d"/>
+      <stop offset="1" stop-color="#155694"/>
+    </linearGradient>
+    <radialGradient id="particle">
+      <stop offset="0" stop-color="#ffd5aa"/>
+      <stop offset=".55" stop-color="#da6d2c"/>
+      <stop offset="1" stop-color="#87330f"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <path d="M0 555h1200v165H0z" fill="#c4d4dd"/>
+  <path d="M0 555h1200" stroke="#7893a5" stroke-width="3"/>
+  <g transform="translate(72 68)">
+    <text x="0" y="0" fill="#155694" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">POWDER CHARACTERIZATION</text>
+    <rect x="0" y="62" width="442" height="348" rx="22" fill="#fff" stroke="#9fb4c2" stroke-width="3"/>
+    <rect x="34" y="96" width="374" height="218" rx="12" fill="url(#screen)"/>
+    <g fill="url(#particle)">
+      <circle cx="92" cy="152" r="27"/><circle cx="155" cy="189" r="18"/><circle cx="230" cy="145" r="34"/>
+      <circle cx="315" cy="205" r="26"/><circle cx="120" cy="259" r="14"/><circle cx="246" cy="261" r="21"/>
+      <circle cx="362" cy="135" r="11"/><circle cx="352" cy="273" r="13"/>
+    </g>
+    <path d="M65 349h312" stroke="#bfd0da" stroke-width="12"/>
+    <circle cx="83" cy="350" r="17" fill="#155694"/>
+    <circle cx="367" cy="350" r="17" fill="#b84d18"/>
+    <path d="M184 410v82h-73v42h220v-42h-73v-82" fill="#879fac"/>
+  </g>
+  <g transform="translate(580 68)">
+    <text x="0" y="0" fill="#155694" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">LOT EVIDENCE</text>
+    <rect x="0" y="62" width="548" height="472" rx="22" fill="#fff" stroke="#9fb4c2" stroke-width="3"/>
+    <path d="M54 121h197v157H54z" fill="#e9f1f6" stroke="#a6bbc8" stroke-width="3"/>
+    <path d="M81 241V172l35 28 34-63 34 51 40-77" fill="none" stroke="#155694" stroke-width="8"/>
+    <circle cx="81" cy="172" r="7" fill="#b84d18"/><circle cx="116" cy="200" r="7" fill="#b84d18"/>
+    <circle cx="150" cy="137" r="7" fill="#b84d18"/><circle cx="184" cy="188" r="7" fill="#b84d18"/>
+    <circle cx="224" cy="111" r="7" fill="#b84d18"/>
+    <path d="M304 121h184M304 161h184M304 201h124M304 241h160" stroke="#8da5b4" stroke-width="11"/>
+    <g transform="translate(54 330)">
+      <rect width="434" height="145" rx="13" fill="#0b2748"/>
+      <text x="25" y="37" fill="#83b8dd" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">TRACEABLE RECORD</text>
+      <path d="M27 65h233M27 91h303M27 117h190" stroke="#d0e1ed" stroke-width="8"/>
+      <rect x="350" y="35" width="54" height="76" fill="#fff"/>
+      <path d="M357 43h11v11h-11zm17 0h11v11h-11zm17 0h7v11h-7zm-34 17h7v7h-7zm13 0h17v7h-17zm23 0h5v7h-5zm-36 13h15v15h-15zm21 0h8v8h-8zm14 0h6v21h-6zm-20 15h14v6h-14z" fill="#0b2748"/>
+    </g>
+  </g>
+  <text x="72" y="670" fill="#57758a" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">
+    GENERIC WORKFLOW ILLUSTRATION · TEST METHODS, LIMITS AND DOCUMENT AVAILABILITY CONFIRMED PER RFQ
+  </text>
+</svg>

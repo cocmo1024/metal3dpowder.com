@@ -42,7 +42,7 @@ const {
     posts.length ? (
       <section class="hub-section" aria-labelledby="hub-posts-title">
         <h2 id="hub-posts-title">{postsTitle}</h2>
-        <BlogPostGrid posts={posts} ariaLabel={postsTitle} />
+        <BlogPostGrid posts={posts} ariaLabel={postsTitle} headingLevel={3} />
       </section>
     ) : null
   }

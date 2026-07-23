@@ -1,0 +1,497 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import {
+  getProductPath,
+  productApplications,
+  productFamilies,
+  productProcesses,
+  products,
+} from '../../data/products';
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
+
+const title = 'Metal Powder Catalog | Search by Alloy, Process and PSD';
+const description =
+  'Search metal powders by alloy family, grade, international designation, process, application, and particle-size route. Add one or more products to a technical RFQ.';
+const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
+const schema = [
+  buildBreadcrumbSchema(siteUrl, [{ name: 'Home', path: '/' }, { name: 'Powder catalog' }]),
+  buildCollectionPageSchema({
+    site: siteUrl,
+    path: '/products/',
+    name: title,
+    description,
+    items: products.map((product) => ({
+      name: product.name,
+      path: getProductPath(product),
+    })),
+  }),
+];
+---
+
+<BaseLayout title={title} description={description} canonical="/products/" schema={schema}>
+  <SiteHeader pathname={Astro.url.pathname} />
+
+  <main class="catalog-page">
+    <section class="catalog-hero">
+      <div class="catalog-hero__inner page-shell">
+        <div>
+          <p class="eyebrow">Powder catalog</p>
+          <h1>Find the powder route that fits your process.</h1>
+          <p>
+            Search common names, UNS and EN identifiers, alloy families, processes, and applications. The catalog
+            presents requestable commercial routes—not unqualified promises of current stock or fixed performance.
+          </p>
+        </div>
+        <aside>
+          <strong>{products.length} core products</strong>
+          <span>{productFamilies.length} alloy families · {productProcesses.length} process routes</span>
+          <a href="/rfq/">Open RFQ list <span data-rfq-count data-empty>0</span> →</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="catalog-shell page-shell" aria-labelledby="catalog-results-title">
+      <div class="filter-panel" data-catalog-filters>
+        <div class="filter-panel__top">
+          <div>
+            <p class="eyebrow">Product finder</p>
+            <h2>Filter by the variables buyers actually use.</h2>
+          </div>
+          <button type="button" data-filter-reset>Clear filters</button>
+        </div>
+
+        <div class="filter-grid">
+          <label class="filter-search">
+            <span>Search grade or designation</span>
+            <input
+              type="search"
+              placeholder="Examples: 316L, S31603, GH4169, CuCrZr"
+              autocomplete="off"
+              data-filter-search
+            />
+          </label>
+
+          <label>
+            <span>Alloy family</span>
+            <select data-filter-family>
+              <option value="">All families</option>
+              {productFamilies.map((family) => <option value={family.id}>{family.label}</option>)}
+            </select>
+          </label>
+
+          <label>
+            <span>Process</span>
+            <select data-filter-process>
+              <option value="">All processes</option>
+              {productProcesses.map((process) => <option value={process}>{process}</option>)}
+            </select>
+          </label>
+
+          <label>
+            <span>Application market</span>
+            <select data-filter-application>
+              <option value="">All applications</option>
+              {productApplications.map((application) => <option value={application}>{application}</option>)}
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="catalog-results__head">
+        <div>
+          <p class="eyebrow">Search results</p>
+          <h2 id="catalog-results-title"><span data-result-count>{products.length}</span> powder routes</h2>
+          <span class="sr-only" data-result-status role="status" aria-live="polite" aria-atomic="true">
+            {products.length} powder routes shown
+          </span>
+        </div>
+        <p>Pricing, packaging, availability, producer, and documents are confirmed in the formal quotation.</p>
+      </div>
+
+      <div class="catalog-grid" data-catalog-grid>
+        {products.map((product, index) => <ProductCard product={product} index={index} />)}
+      </div>
+
+      <div class="catalog-empty" data-catalog-empty hidden>
+        <strong>No exact catalog route matches all filters.</strong>
+        <p>Clear one filter or submit a custom powder RFQ with the target chemistry, PSD, quantity, and process.</p>
+        <a class="button button--primary" href="/rfq/?custom=1">Start custom powder RFQ</a>
+      </div>
+    </section>
+
+    <section class="catalog-help page-shell">
+      <div>
+        <p class="eyebrow">Cannot find the exact grade?</p>
+        <h2>Use the catalog as a specification starting point.</h2>
+        <p>
+          Non-standard chemistry, tighter interstitial limits, uncommon PSD, special packaging, and qualification
+          programs require a technical review. Add the nearest material—or leave the grade open—and describe the real
+          requirement.
+        </p>
+      </div>
+      <a class="button button--primary" href="/rfq/?custom=1">Request a custom route</a>
+    </section>
+  </main>
+
+  <SiteFooter />
+
+  <script is:inline>
+    (() => {
+      const panel = document.querySelector('[data-catalog-filters]');
+      const cards = Array.from(document.querySelectorAll('[data-product-card]'));
+      if (!panel || !cards.length) return;
+
+      const search = panel.querySelector('[data-filter-search]');
+      const family = panel.querySelector('[data-filter-family]');
+      const process = panel.querySelector('[data-filter-process]');
+      const application = panel.querySelector('[data-filter-application]');
+      const count = document.querySelector('[data-result-count]');
+      const status = document.querySelector('[data-result-status]');
+      const empty = document.querySelector('[data-catalog-empty]');
+      const reset = panel.querySelector('[data-filter-reset]');
+
+      const params = new URLSearchParams(window.location.search);
+      if (family) family.value = params.get('family') || '';
+      if (process) process.value = params.get('process') || '';
+      if (application) application.value = params.get('application') || '';
+      if (search) search.value = params.get('q') || '';
+
+      const apply = () => {
+        const query = search?.value.trim().toLowerCase() || '';
+        const selectedFamily = family?.value || '';
+        const selectedProcess = process?.value || '';
+        const selectedApplication = application?.value || '';
+        let visible = 0;
+
+        cards.forEach((card) => {
+          const matches =
+            (!query || card.dataset.search?.includes(query)) &&
+            (!selectedFamily || card.dataset.family === selectedFamily) &&
+            (!selectedProcess || card.dataset.processes?.split('|').includes(selectedProcess)) &&
+            (!selectedApplication || card.dataset.applications?.split('|').includes(selectedApplication));
+
+          card.hidden = !matches;
+          if (matches) visible += 1;
+        });
+
+        if (count) count.textContent = String(visible);
+        if (status) status.textContent = `${visible} powder route${visible === 1 ? '' : 's'} shown`;
+        if (empty) empty.hidden = visible !== 0;
+
+        const next = new URLSearchParams();
+        if (query) next.set('q', query);
+        if (selectedFamily) next.set('family', selectedFamily);
+        if (selectedProcess) next.set('process', selectedProcess);
+        if (selectedApplication) next.set('application', selectedApplication);
+        window.history.replaceState({}, '', `${window.location.pathname}${next.size ? `?${next}` : ''}`);
+      };
+
+      [search, family, process, application].forEach((control) => {
+        control?.addEventListener(control === search ? 'input' : 'change', apply);
+      });
+
+      reset?.addEventListener('click', () => {
+        if (search) search.value = '';
+        if (family) family.value = '';
+        if (process) process.value = '';
+        if (application) application.value = '';
+        apply();
+      });
+
+      apply();
+    })();
+  </script>
+</BaseLayout>
+
+<style>
+  .catalog-page {
+    gap: 0;
+  }
+
+  .catalog-hero {
+    color: #fff;
+    background:
+      radial-gradient(circle at 90% 20%, rgba(71, 145, 211, 0.28), transparent 26rem),
+      linear-gradient(130deg, #091f36, #0b3157);
+  }
+
+  .catalog-hero .eyebrow {
+    color: #9ec4e1;
+  }
+
+  .catalog-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+    gap: 3rem;
+    align-items: end;
+    padding-block: clamp(3.5rem, 7vw, 5.5rem);
+  }
+
+  .catalog-hero__inner > div {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .catalog-hero h1 {
+    max-width: 48rem;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 0.99;
+    letter-spacing: -0.046em;
+  }
+
+  .catalog-hero p:last-child {
+    max-width: 46rem;
+    margin: 0;
+    color: #c0cedb;
+    line-height: 1.72;
+  }
+
+  .catalog-hero aside {
+    display: grid;
+    gap: 0.4rem;
+    padding: 1.15rem 1.25rem;
+    border-left: 3px solid var(--accent);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .catalog-hero aside strong {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  .catalog-hero aside > span {
+    color: #a9bdce;
+    font-size: 0.8rem;
+  }
+
+  .catalog-hero aside a {
+    margin-top: 0.4rem;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 740;
+  }
+
+  .catalog-hero aside a span {
+    display: inline-flex;
+    min-width: 1.3rem;
+    height: 1.3rem;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 0.18rem;
+    border-radius: 50%;
+    color: var(--brand-dark);
+    background: #fff;
+    font-size: 0.68rem;
+  }
+
+  .catalog-shell {
+    display: grid;
+    gap: 2rem;
+    padding-block: 2.5rem 4.5rem;
+  }
+
+  .filter-panel {
+    display: grid;
+    gap: 1rem;
+    margin-top: -4.4rem;
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: 0 18px 50px rgba(9, 31, 54, 0.14);
+  }
+
+  .filter-panel__top {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .filter-panel__top h2 {
+    margin: 0.25rem 0 0;
+    font-size: 1.2rem;
+    letter-spacing: -0.024em;
+  }
+
+  .filter-panel__top button {
+    padding: 0.45rem 0;
+    border: 0;
+    color: var(--brand);
+    background: transparent;
+    font-size: 0.78rem;
+    font-weight: 720;
+  }
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: minmax(18rem, 1.5fr) repeat(3, minmax(10rem, 0.7fr));
+    gap: 0.7rem;
+  }
+
+  .filter-grid label {
+    display: grid;
+    gap: 0.38rem;
+  }
+
+  .filter-grid label > span {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .filter-grid input,
+  .filter-grid select {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.72rem 0.8rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 0.52rem;
+    color: var(--text);
+    background: var(--surface);
+    font-size: 0.84rem;
+  }
+
+  .catalog-results__head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 0.4rem;
+  }
+
+  .catalog-results__head h2 {
+    margin: 0.22rem 0 0;
+    font-size: 1.7rem;
+    letter-spacing: -0.03em;
+  }
+
+  .catalog-results__head > p {
+    max-width: 33rem;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.55;
+    text-align: right;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .catalog-grid > [hidden] {
+    display: none;
+  }
+
+  .catalog-empty {
+    justify-items: center;
+    gap: 0.65rem;
+    padding: 3rem 1.5rem;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--radius-card);
+    text-align: center;
+    background: var(--surface);
+  }
+
+  .catalog-empty:not([hidden]) {
+    display: grid;
+  }
+
+  .catalog-empty strong {
+    font-size: 1.2rem;
+  }
+
+  .catalog-empty p {
+    max-width: 40rem;
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .catalog-help {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--brand-soft);
+  }
+
+  .catalog-help > div {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .catalog-help h2 {
+    margin: 0;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    letter-spacing: -0.03em;
+  }
+
+  .catalog-help p:last-child {
+    max-width: 53rem;
+    margin: 0;
+    color: var(--copy);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 1080px) {
+    .filter-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .catalog-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .catalog-hero__inner,
+    .catalog-help {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .catalog-hero aside {
+      max-width: 25rem;
+    }
+
+    .catalog-results__head {
+      display: grid;
+      align-items: start;
+    }
+
+    .catalog-results__head > p {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .filter-panel {
+      margin-top: -2rem;
+    }
+
+    .filter-panel__top {
+      align-items: start;
+    }
+
+    .filter-grid,
+    .catalog-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .catalog-help .button {
+      width: 100%;
+    }
+  }
+</style>

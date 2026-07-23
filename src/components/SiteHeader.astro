@@ -7,82 +7,72 @@ interface Props {
   contactHref?: string;
 }
 
-const {
-  pathname,
-  productsHref = '/#products',
-  contactHref = '/#contact',
-} = Astro.props;
-
-const homePage = pathname === '/';
+const { pathname } = Astro.props;
 const normalizedPathname = pathname.toLowerCase();
-const blogPage = pathname.startsWith('/blog/') || pathname.startsWith('/posts/');
-const materialsPage = pathname.startsWith('/materials/');
-const applicationsPage = pathname.startsWith('/applications/');
-const knowledgePage = pathname.startsWith('/knowledge/') || pathname.startsWith('/processes/') || pathname.startsWith('/comparisons/');
 
 const links = [
   {
-    href: productsHref,
-    label: 'Products',
-    active: homePage,
+    href: '/products/',
+    label: 'Powders',
+    active: normalizedPathname.startsWith('/products/'),
   },
   {
     href: '/materials/',
     label: 'Materials',
-    active: materialsPage,
+    active: normalizedPathname.startsWith('/materials/'),
+  },
+  {
+    href: '/processes/',
+    label: 'Processes',
+    active: normalizedPathname.startsWith('/processes/'),
   },
   {
     href: '/applications/',
     label: 'Applications',
-    active: applicationsPage,
+    active: normalizedPathname.startsWith('/applications/'),
+  },
+  {
+    href: '/quality/',
+    label: 'Quality',
+    active: normalizedPathname.startsWith('/quality/'),
   },
   {
     href: '/knowledge/',
-    label: 'Knowledge',
-    active: knowledgePage,
+    label: 'Engineering',
+    active:
+      normalizedPathname.startsWith('/knowledge/') ||
+      normalizedPathname.startsWith('/comparisons/') ||
+      normalizedPathname.startsWith('/blog/') ||
+      normalizedPathname.startsWith('/posts/'),
   },
   {
-    href: '/blog/',
-    label: 'Blog',
-    active: blogPage,
-  },
-  {
-    href: '/faq/',
-    label: 'FAQ',
-    active: normalizedPathname === '/faq/',
-  },
-  {
-    href: pathname === '/' ? contactHref : '/contact/',
-    label: 'Contact',
-    active: normalizedPathname === '/contact/',
+    href: '/about/',
+    label: 'About',
+    active: normalizedPathname.startsWith('/about/'),
   },
 ];
 ---
 
+<div class="utility-bar">
+  <div class="utility-bar__inner page-shell">
+    <p>Metal powder sourcing for AM, MIM, binder jet, DED, and powder metallurgy</p>
+    <a href="/rfq/">Commercial and technical RFQ support</a>
+  </div>
+</div>
+
 <header class="site-header" data-site-header data-open="false">
   <div class="site-header__inner page-shell">
-    {
-      homePage ? (
-        <h1 class="brand-heading">
-          <a class="brand" href="/" aria-label={`${siteInfo.brand} home`}>
-            <span>{siteInfo.brand}</span>
-          </a>
-        </h1>
-      ) : (
-        <a class="brand" href="/" aria-label={`${siteInfo.brand} home`}>
-          <span>{siteInfo.brand}</span>
-        </a>
-      )
-    }
-
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" data-nav-toggle>
-      <span class="nav-toggle__lines" aria-hidden="true">
+    <a class="brand" href="/" aria-label={`${siteInfo.brand} home`}>
+      <span class="brand__mark" aria-hidden="true">
         <span></span>
         <span></span>
         <span></span>
       </span>
-      <span>Menu</span>
-    </button>
+      <span class="brand__text">
+        <strong>METAL 3D</strong>
+        <small>POWDER</small>
+      </span>
+    </a>
 
     <nav class="site-nav site-nav--desktop" aria-label="Primary">
       {
@@ -93,16 +83,33 @@ const links = [
         ))
       }
     </nav>
+
+    <a class="rfq-nav" href="/rfq/" aria-current={normalizedPathname.startsWith('/rfq/') ? 'page' : undefined}>
+      <span>RFQ list</span>
+      <span class="rfq-nav__count" data-rfq-count data-empty>0</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" data-nav-toggle>
+      <span class="nav-toggle__lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>Menu</span>
+    </button>
   </div>
 
   <button class="drawer-backdrop" type="button" aria-label="Close menu" tabindex="-1" data-nav-close></button>
 
-  <aside class="site-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true" data-drawer>
+  <aside
+    class="site-drawer"
+    id="mobile-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile navigation"
+    aria-hidden="true"
+    data-drawer
+  >
     <div class="site-drawer__header">
-      <p>Navigation</p>
+      <p>Product navigation</p>
       <button class="site-drawer__close" type="button" aria-label="Close menu" data-nav-close>
-        <span></span>
-        <span></span>
+        <span></span><span></span>
       </button>
     </div>
 
@@ -119,6 +126,10 @@ const links = [
           </a>
         ))
       }
+      <a class="site-drawer__rfq" href="/rfq/" data-drawer-link>
+        <span>Open RFQ list</span>
+        <span data-rfq-count data-empty>0</span>
+      </a>
     </nav>
   </aside>
 </header>
@@ -130,124 +141,221 @@ const links = [
     const toggle = header.querySelector('[data-nav-toggle]');
     const drawer = header.querySelector('[data-drawer]');
     const closeButtons = header.querySelectorAll('[data-nav-close], [data-drawer-link]');
+    let lastFocusedElement = null;
 
-    const sync = (open) => {
+    const sync = (open, restoreFocus = true) => {
+      if (open && document.activeElement instanceof HTMLElement) lastFocusedElement = document.activeElement;
       header.dataset.open = String(open);
-      if (toggle instanceof HTMLButtonElement) {
-        toggle.setAttribute('aria-expanded', String(open));
-      }
-      if (drawer instanceof HTMLElement) {
-        drawer.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (toggle instanceof HTMLButtonElement) toggle.setAttribute('aria-expanded', String(open));
+      if (drawer instanceof HTMLElement) drawer.setAttribute('aria-hidden', String(!open));
+
+      if (open && drawer instanceof HTMLElement) {
+        window.requestAnimationFrame(() => {
+          const firstFocusable = drawer.querySelector('button, a[href]');
+          if (firstFocusable instanceof HTMLElement) firstFocusable.focus();
+        });
+      } else if (restoreFocus && lastFocusedElement instanceof HTMLElement) {
+        lastFocusedElement.focus();
       }
     };
 
-    const closeDrawer = () => sync(false);
-
     if (toggle instanceof HTMLButtonElement) {
-      toggle.addEventListener('click', () => {
-        sync(header.dataset.open !== 'true');
-      });
+      toggle.addEventListener('click', () => sync(header.dataset.open !== 'true'));
     }
 
-    closeButtons.forEach((node) => {
-      node.addEventListener('click', closeDrawer);
-    });
-
+    closeButtons.forEach((node) =>
+      node.addEventListener('click', () => sync(false, !node.hasAttribute('data-drawer-link')))
+    );
     window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        closeDrawer();
+      if (event.key === 'Escape' && header.dataset.open === 'true') {
+        event.preventDefault();
+        sync(false);
+        return;
       }
-    });
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 760) {
-        closeDrawer();
+      if (event.key !== 'Tab' || header.dataset.open !== 'true' || !(drawer instanceof HTMLElement)) return;
+      const focusable = Array.from(drawer.querySelectorAll('button:not([disabled]), a[href]')).filter(
+        (node) => node instanceof HTMLElement && node.offsetParent !== null
+      );
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     });
+    window.addEventListener('resize', () => window.innerWidth > 900 && sync(false, false));
   }
 </script>
 
 <style>
+  .utility-bar {
+    color: #dce7f1;
+    background: var(--brand-dark);
+  }
+
+  .utility-bar__inner {
+    display: flex;
+    min-height: 2.15rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.025em;
+  }
+
+  .utility-bar p {
+    margin: 0;
+  }
+
+  .utility-bar a {
+    color: #fff;
+    font-weight: 700;
+  }
+
   .site-header {
     position: sticky;
-    top: 0;
     z-index: 40;
+    top: 0;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    background:
-      linear-gradient(180deg, rgba(8, 11, 14, 0.94), rgba(8, 11, 14, 0.84)),
-      rgba(8, 11, 14, 0.9);
-    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(11, 39, 72, 0.1);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
   }
 
   .site-header__inner {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    min-height: 4.75rem;
     align-items: center;
     gap: 1.4rem;
-    padding-block: 1rem 0.9rem;
   }
 
   .brand {
     display: inline-flex;
     align-items: center;
-    padding-inline-start: 0.12rem;
-    color: var(--text);
-    font-size: clamp(1.38rem, 1.12rem + 0.7vw, 1.82rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1;
+    gap: 0.68rem;
     white-space: nowrap;
   }
 
-  .brand-heading {
-    margin: 0;
-    font-size: inherit;
-    line-height: inherit;
+  .brand__mark {
+    position: relative;
+    display: block;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: var(--brand-dark);
+  }
+
+  .brand__mark span {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
+  }
+
+  .brand__mark span:nth-child(1) {
+    top: 0.43rem;
+    left: 0.42rem;
+    width: 0.58rem;
+    height: 0.58rem;
+  }
+
+  .brand__mark span:nth-child(2) {
+    top: 0.72rem;
+    right: 0.38rem;
+    width: 0.72rem;
+    height: 0.72rem;
+  }
+
+  .brand__mark span:nth-child(3) {
+    bottom: 0.37rem;
+    left: 0.8rem;
+    width: 0.66rem;
+    height: 0.66rem;
+  }
+
+  .brand__text {
+    display: grid;
+    gap: 0.02rem;
+    line-height: 1;
+  }
+
+  .brand__text strong {
+    color: var(--brand-dark);
+    font-size: 0.98rem;
+    letter-spacing: 0.055em;
+  }
+
+  .brand__text small {
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.22em;
   }
 
   .site-nav {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     align-items: center;
-    justify-self: end;
-    gap: 0.32rem;
-    padding: 0.32rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
-      rgba(11, 15, 19, 0.78);
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.05) inset,
-      0 16px 36px rgba(0, 0, 0, 0.18);
+    justify-self: center;
+    gap: 0.08rem;
   }
 
   .site-nav a {
     display: inline-flex;
+    min-height: 2.65rem;
     align-items: center;
-    justify-content: center;
-    min-height: 2.7rem;
-    padding-inline: 0.86rem;
-    border-radius: 999px;
-    color: #aab7c4;
-    font-size: 0.94rem;
-    font-weight: 650;
-    letter-spacing: -0.01em;
-    transition:
-      color 180ms ease,
-      background-color 180ms ease,
-      transform 180ms ease;
+    padding-inline: 0.7rem;
+    border-bottom: 2px solid transparent;
+    color: #405160;
+    font-size: 0.86rem;
+    font-weight: 680;
+    transition: color 160ms ease, border-color 160ms ease;
   }
 
   .site-nav a:hover,
   .site-nav a[data-active='true'] {
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.07);
+    color: var(--brand);
+    border-bottom-color: var(--brand);
   }
 
-  .site-nav a:hover {
-    transform: translateY(-1px);
+  .rfq-nav {
+    display: inline-flex;
+    min-height: 2.8rem;
+    align-items: center;
+    justify-self: end;
+    gap: 0.62rem;
+    padding: 0.68rem 0.82rem 0.68rem 1rem;
+    border-radius: 0.58rem;
+    color: #fff;
+    background: var(--brand);
+    font-size: 0.84rem;
+    font-weight: 760;
+    box-shadow: 0 8px 20px rgba(21, 86, 148, 0.16);
+  }
+
+  .rfq-nav__count,
+  .site-drawer__rfq [data-rfq-count] {
+    display: inline-flex;
+    min-width: 1.4rem;
+    height: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    color: var(--brand-dark);
+    background: #fff;
+    font-size: 0.72rem;
+  }
+
+  [data-rfq-count][data-empty] {
+    opacity: 0.66;
   }
 
   .nav-toggle,
@@ -256,96 +364,74 @@ const links = [
     display: none;
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 1040px) {
     .site-header__inner {
-      grid-template-columns: 1fr auto;
-      gap: 0.9rem;
-      padding-block: 0.95rem 0.85rem;
+      grid-template-columns: auto 1fr auto auto;
     }
 
-    .brand {
-      font-size: clamp(1.18rem, 5vw, 1.4rem);
-    }
-
-    .site-nav--desktop {
+    .site-nav {
       display: none;
     }
 
     .nav-toggle {
       display: inline-flex;
+      min-height: 2.8rem;
       align-items: center;
-      gap: 0.65rem;
       justify-content: center;
-      min-height: 2.9rem;
-      padding: 0.7rem 0.95rem;
+      gap: 0.55rem;
+      padding: 0.65rem 0.78rem;
+      border: 1px solid var(--line);
+      border-radius: 0.58rem;
       color: var(--text);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
-        rgba(11, 15, 19, 0.82);
-      box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.05) inset,
-        0 12px 26px rgba(0, 0, 0, 0.14);
-    }
-
-    .nav-toggle span:last-child {
-      font-size: 0.94rem;
-      font-weight: 650;
-      letter-spacing: -0.01em;
+      background: var(--surface);
+      font-size: 0.82rem;
+      font-weight: 700;
     }
 
     .nav-toggle__lines {
       display: grid;
-      gap: 0.22rem;
+      gap: 0.2rem;
     }
 
     .nav-toggle__lines span {
       display: block;
-      width: 1rem;
+      width: 0.95rem;
       height: 2px;
       border-radius: 999px;
       background: currentColor;
-      transition: transform 180ms ease, opacity 180ms ease;
     }
 
     .drawer-backdrop {
       position: fixed;
-      inset: 0;
       z-index: 48;
+      inset: 0;
       display: block;
       border: 0;
       padding: 0;
-      background: rgba(3, 6, 8, 0.48);
+      background: rgba(8, 24, 40, 0.45);
       opacity: 0;
       pointer-events: none;
-      transition: opacity 220ms ease;
+      transition: opacity 180ms ease;
     }
 
     .site-drawer {
       position: fixed;
+      z-index: 49;
       top: 0;
       right: 0;
-      z-index: 49;
       display: grid;
-      align-content: start;
-      gap: 0.9rem;
-      width: min(78vw, 320px);
+      width: min(84vw, 340px);
       height: 100dvh;
-      padding: 1rem 0.95rem;
-      border-left: 1px solid rgba(255, 255, 255, 0.08);
-      background:
-        linear-gradient(180deg, rgba(16, 22, 28, 0.98), rgba(9, 13, 17, 0.98)),
-        rgba(8, 11, 14, 0.98);
-      box-shadow: none;
+      align-content: start;
+      gap: 1rem;
+      padding: 1rem;
+      border-left: 1px solid var(--line);
+      background: var(--surface);
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transform: translate3d(calc(100% + 1rem), 0, 0);
-      transition:
-        transform 240ms cubic-bezier(0.2, 1, 0.22, 1),
-        opacity 180ms ease,
-        visibility 0ms linear 240ms;
+      transform: translate3d(100%, 0, 0);
+      transition: transform 220ms ease, opacity 180ms ease, visibility 0ms linear 220ms;
     }
 
     .site-drawer__header {
@@ -353,25 +439,26 @@ const links = [
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding-block: 0.08rem 0.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--line);
     }
 
     .site-drawer__header p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+      font-size: 0.75rem;
+      font-weight: 760;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
     .site-drawer__close {
       position: relative;
-      width: 2.85rem;
-      height: 2.85rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.03);
+      width: 2.7rem;
+      height: 2.7rem;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--surface-soft);
     }
 
     .site-drawer__close span {
@@ -380,8 +467,8 @@ const links = [
       left: 50%;
       width: 1rem;
       height: 2px;
-      background: var(--text);
       border-radius: 999px;
+      background: var(--text);
     }
 
     .site-drawer__close span:first-child {
@@ -394,28 +481,33 @@ const links = [
 
     .site-drawer__nav {
       display: grid;
-      align-content: start;
       gap: 0.5rem;
     }
 
     .site-drawer__nav a {
       display: flex;
+      min-height: 3.05rem;
       align-items: center;
-      min-height: 3.1rem;
-      padding: 0.78rem 0.95rem;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 0.95rem;
-      color: #b9c5d1;
-      background: rgba(255, 255, 255, 0.03);
-      font-size: 0.98rem;
-      font-weight: 650;
-      letter-spacing: -0.02em;
+      justify-content: space-between;
+      padding: 0.72rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 0.62rem;
+      color: var(--text);
+      background: var(--surface-soft);
+      font-size: 0.92rem;
+      font-weight: 680;
     }
 
     .site-drawer__nav a[data-active='true'] {
-      color: var(--text);
-      border-color: rgba(143, 228, 217, 0.28);
-      background: rgba(143, 228, 217, 0.08);
+      color: var(--brand);
+      border-color: color-mix(in srgb, var(--brand) 32%, var(--line));
+      background: var(--brand-soft);
+    }
+
+    .site-drawer__nav .site-drawer__rfq {
+      color: #fff;
+      border-color: var(--brand);
+      background: var(--brand);
     }
 
     .site-header[data-open='true'] .drawer-backdrop {
@@ -424,53 +516,52 @@ const links = [
     }
 
     .site-header[data-open='true'] .site-drawer {
-      box-shadow: -24px 0 70px rgba(0, 0, 0, 0.35);
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
       transform: translate3d(0, 0, 0);
-      transition:
-        transform 240ms cubic-bezier(0.2, 1, 0.22, 1),
-        opacity 180ms ease,
-        visibility 0ms linear 0ms;
-    }
-
-    .site-header[data-open='true'] .nav-toggle__lines span:nth-child(1) {
-      transform: translateY(4px) rotate(45deg);
-    }
-
-    .site-header[data-open='true'] .nav-toggle__lines span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .site-header[data-open='true'] .nav-toggle__lines span:nth-child(3) {
-      transform: translateY(-4px) rotate(-45deg);
+      transition: transform 220ms ease, opacity 180ms ease, visibility 0ms;
     }
   }
 
-  @media (max-width: 420px) {
-    .brand {
-      font-size: 1.08rem;
+  @media (max-width: 680px) {
+    .utility-bar__inner {
+      justify-content: center;
+      text-align: center;
     }
 
-    .nav-toggle {
-      min-height: 2.75rem;
-      padding-inline: 0.82rem;
+    .utility-bar p {
+      display: none;
     }
 
-    .nav-toggle span:last-child {
-      font-size: 0.88rem;
+    .site-header__inner {
+      min-height: 4.25rem;
+      grid-template-columns: 1fr auto;
+      gap: 0.7rem;
     }
 
-    .site-drawer {
-      width: min(80vw, 300px);
-      padding: 0.95rem 0.9rem;
+    .rfq-nav {
+      display: none;
     }
 
-    .site-drawer__nav a {
-      min-height: 2.95rem;
-      padding: 0.72rem 0.9rem;
-      font-size: 0.95rem;
+    .brand__mark {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .brand__mark span:nth-child(1) {
+      top: 0.38rem;
+      left: 0.36rem;
+    }
+
+    .brand__mark span:nth-child(2) {
+      top: 0.62rem;
+      right: 0.32rem;
+    }
+
+    .brand__mark span:nth-child(3) {
+      bottom: 0.32rem;
+      left: 0.68rem;
     }
   }
 </style>

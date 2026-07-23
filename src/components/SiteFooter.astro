@@ -1,49 +1,148 @@
-<footer class="site-footer page-shell">
-  <p class="site-footer__meta">
-    &copy; 2026 Metal 3D Powder &mdash;
-    <a href="/privacy/">Privacy</a>
-    <span>|</span>
-    <a href="/about/">About</a>
-    <span>|</span>
-    <a href="/terms/">Terms</a>
-  </p>
+---
+import { siteInfo } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="site-footer__main page-shell">
+    <div class="site-footer__brand">
+      <p class="site-footer__name">METAL 3D POWDER</p>
+      <p>
+        A commercial and engineering storefront for metal powders across additive manufacturing, MIM, binder jet,
+        DED, and powder-metallurgy routes.
+      </p>
+      <a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
+    </div>
+
+    <nav aria-label="Product links">
+      <p>Products</p>
+      <a href="/products/">All powders</a>
+      <a href="/materials/titanium-powder/">Titanium powders</a>
+      <a href="/materials/nickel-alloy-powder/">Nickel alloy powders</a>
+      <a href="/materials/stainless-steel-powder/">Stainless steel powders</a>
+      <a href="/materials/copper-alloy-powder/">Copper alloy powders</a>
+    </nav>
+
+    <nav aria-label="Engineering links">
+      <p>Engineering</p>
+      <a href="/processes/">Process routes</a>
+      <a href="/applications/">Applications</a>
+      <a href="/quality/">Quality and evidence</a>
+      <a href="/knowledge/">Powder knowledge</a>
+      <a href="/comparisons/">Material comparisons</a>
+      <a href="/blog/">Technical library</a>
+    </nav>
+
+    <nav aria-label="Company links">
+      <p>Company</p>
+      <a href="/about/">About</a>
+      <a href="/rfq/">Submit RFQ</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+  </div>
+
+  <div class="site-footer__bottom page-shell">
+    <p>&copy; 2026 Metal 3D Powder. All specifications and availability are confirmed per quotation and lot.</p>
+    <p>Formal commercial terms are issued only from the official sales email.</p>
+  </div>
 </footer>
 
 <style>
   .site-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-block: 1.2rem 1.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: clamp(3.5rem, 6vw, 6rem);
+    color: #d2dfeb;
+    background: #091d33;
   }
 
-  .site-footer__meta {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.52rem;
+  .site-footer__main {
+    display: grid;
+    grid-template-columns: minmax(14rem, 1.55fr) repeat(3, minmax(9rem, 0.7fr));
+    gap: clamp(2rem, 5vw, 4.5rem);
+    padding-block: 3.5rem 3rem;
+  }
+
+  .site-footer__brand,
+  .site-footer nav {
+    display: grid;
+    align-content: start;
+    gap: 0.65rem;
+  }
+
+  .site-footer__brand {
+    max-width: 25rem;
+  }
+
+  .site-footer__brand p,
+  .site-footer nav p,
+  .site-footer__bottom p {
     margin: 0;
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.5;
-    white-space: nowrap;
   }
 
-  .site-footer__meta a {
-    color: #cad4de;
+  .site-footer__name,
+  .site-footer nav p {
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 780;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
   }
 
-  .site-footer__meta span {
-    color: rgba(202, 212, 222, 0.58);
+  .site-footer__brand p:nth-child(2) {
+    color: #aebfce;
+    font-size: 0.9rem;
+    line-height: 1.68;
   }
 
-  @media (max-width: 640px) {
-    .site-footer__meta {
-      flex-wrap: wrap;
-      gap: 0.35rem 0.55rem;
-      white-space: normal;
+  .site-footer__brand a {
+    margin-top: 0.35rem;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 720;
+  }
+
+  .site-footer nav a {
+    color: #aebfce;
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  .site-footer nav a:hover,
+  .site-footer__brand a:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    min-height: 4.4rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.11);
+    color: #879bae;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-footer__main {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__main {
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+      padding-block: 2.7rem 2.3rem;
+    }
+
+    .site-footer__bottom {
+      display: grid;
+      justify-content: start;
+      padding-block: 1.15rem;
     }
   }
 </style>

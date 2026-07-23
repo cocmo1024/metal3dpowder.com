@@ -48,7 +48,7 @@ const schemaItems = Array.isArray(schema) ? schema : [schema];
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
     <meta name="author" content={author} />
-    <meta name="theme-color" content="#080b0e" />
+    <meta name="theme-color" content="#0b2748" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
@@ -77,8 +77,127 @@ const schemaItems = Array.isArray(schema) ? schema : [schema];
     {schemaItems.map((item) => (
       <script type="application/ld+json" is:inline set:html={JSON.stringify(item)} />
     ))}
+
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
     <slot />
+
+    <script is:inline>
+      (() => {
+        const storageKey = 'metal3dpowder:rfq-products';
+        let memoryProducts = [];
+
+        const readProducts = () => {
+          try {
+            const value = JSON.parse(window.localStorage.getItem(storageKey) || '[]');
+            memoryProducts = Array.isArray(value) ? value.filter((item) => typeof item === 'string') : [];
+            return memoryProducts;
+          } catch {
+            return memoryProducts;
+          }
+        };
+
+        const writeProducts = (products) => {
+          memoryProducts = [...new Set(products)];
+          try {
+            window.localStorage.setItem(storageKey, JSON.stringify(memoryProducts));
+          } catch {
+            // Keep the list in memory when browser storage is unavailable.
+          }
+          window.dispatchEvent(new CustomEvent('metal3dpowder:rfq-change'));
+        };
+
+        const sync = () => {
+          const products = readProducts();
+          document.querySelectorAll('[data-rfq-count]').forEach((node) => {
+            node.textContent = String(products.length);
+            node.toggleAttribute('data-empty', products.length === 0);
+          });
+
+          document.querySelectorAll('[data-add-product]').forEach((node) => {
+            const productId = node.getAttribute('data-add-product');
+            const added = Boolean(productId && products.includes(productId));
+            const productName = node.getAttribute('data-product-name') || 'this powder';
+            if (!node.getAttribute('data-default-label')) {
+              node.setAttribute('data-default-label', node.textContent?.trim() || 'Add to RFQ');
+            }
+            node.setAttribute('data-added', String(added));
+            node.setAttribute('aria-pressed', String(added));
+            node.setAttribute(
+              'aria-label',
+              added ? `Remove ${productName} from the RFQ list` : `Add ${productName} to the RFQ list`
+            );
+            node.textContent = added ? 'Remove from RFQ' : node.getAttribute('data-default-label');
+          });
+        };
+
+        document.addEventListener('click', (event) => {
+          const target = event.target instanceof Element ? event.target.closest('[data-add-product]') : null;
+          if (!target) return;
+
+          const productId = target.getAttribute('data-add-product');
+          if (!productId) return;
+
+          const products = readProducts();
+          if (!products.includes(productId)) {
+            writeProducts([...products, productId]);
+          } else {
+            writeProducts(products.filter((item) => item !== productId));
+          }
+        });
+
+        window.addEventListener('storage', sync);
+        window.addEventListener('metal3dpowder:rfq-change', sync);
+        sync();
+
+        try {
+          const attributionKey = 'metal3dpowder:attribution';
+          const allowedQueryKeys = [
+            'gclid',
+            'gbraid',
+            'wbraid',
+            'utm_source',
+            'utm_medium',
+            'utm_campaign',
+            'utm_term',
+            'utm_content',
+          ];
+          const stored = JSON.parse(window.localStorage.getItem(attributionKey) || '{}');
+          const currentQuery = new URLSearchParams(window.location.search);
+          const retainedQuery = new URLSearchParams();
+          const next = stored && typeof stored === 'object' ? { ...stored } : {};
+
+          allowedQueryKeys.forEach((key) => {
+            const value = currentQuery.get(key);
+            if (value) {
+              next[key] = value.slice(0, 500);
+              retainedQuery.set(key, value.slice(0, 500));
+            }
+          });
+
+          const landing = `${window.location.pathname}${retainedQuery.size ? `?${retainedQuery}` : ''}`;
+          const now = new Date().toISOString();
+          if (!next.first_landing_page) next.first_landing_page = landing;
+          if (!next.captured_at) next.captured_at = now;
+          next.last_landing_page = landing;
+          next.updated_at = now;
+
+          if (!next.referrer && document.referrer) {
+            try {
+              next.referrer = new URL(document.referrer).origin;
+            } catch {
+              // Ignore invalid referrer values.
+            }
+          }
+
+          window.localStorage.setItem(attributionKey, JSON.stringify(next));
+        } catch {
+          // Attribution must never block navigation or RFQ interaction.
+        }
+      })();
+    </script>
   </body>
 </html>
