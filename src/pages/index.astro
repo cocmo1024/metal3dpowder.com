@@ -102,12 +102,15 @@ const collectionPageSchema = buildCollectionPageSchema({
           <h1 id="hero-title">Metal powder sourcing, built around your process.</h1>
           <p class="hero__lead">
             Source metal powders by alloy, particle size, process, and documentation requirements. Each formal
-            quotation confirms the proposed production source, applicable lot documentation, packaging, availability,
+            quotation confirms the proposed production route, applicable lot documentation, packaging, availability,
             and destination-specific terms.
           </p>
 
           <div class="hero__supply-chain">
-            <strong>Backed by China’s complete powder supply chain, with extensive international metal powder trading experience.</strong>
+            <strong>
+              Reviewed powder production and testing routes in China, matched to the alloy, process, PSD, evidence,
+              and delivery requirements in each RFQ.
+            </strong>
           </div>
 
           <div class="hero__actions">
@@ -252,49 +255,59 @@ const collectionPageSchema = buildCollectionPageSchema({
     <section class="network-section" aria-labelledby="network-title">
       <div class="network-section__inner page-shell">
         <div class="network-section__copy">
-          <p class="eyebrow">China supply network</p>
-          <h2 id="network-title">Powder sourcing aligned to your specification.</h2>
+          <p class="eyebrow">Reviewed production capability</p>
+          <h2 id="network-title">Multiple powder routes. One controlled specification.</h2>
           <p>
-            We coordinate sourcing across reviewed atomization and downstream powder-processing capabilities. The
-            proposed source, applicable quality documentation, and commercial terms are confirmed in the quotation.
+            Supply-network capabilities span gas- and electrode-based atomization, powder classification, application
+            testing, and lot release. The route and evidence package are selected for the quoted alloy, PSD, process,
+            quantity, and program risk.
           </p>
 
-          <div class="capability-list" aria-label="Supply network capabilities">
-            <span>Atomization routes</span>
-            <span>Powder conditioning</span>
-            <span>Export coordination</span>
+          <div class="capability-list" aria-label="Reviewed atomization route families">
+            <span>VIGA / GA</span>
+            <span>EIGA</span>
+            <span>PREP</span>
+            <span>Plasma atomization</span>
           </div>
 
-          <a class="button button--dark" href="/about/">How the supply model works</a>
+          <p class="network-section__boundary">
+            Capabilities are confirmed per quoted material; no route, test, or certificate is treated as universal.
+            Production-partner identities are not published on the website.
+          </p>
+
+          <div class="network-section__actions">
+            <a class="button button--hero" href="/rfq/">Build powder RFQ</a>
+            <a class="network-section__link" href="/quality/">Review the quality model →</a>
+          </div>
         </div>
 
-        <ol class="sourcing-steps">
+        <ol class="sourcing-steps" aria-label="Capability and evidence available by quotation">
           <li>
             <span>01</span>
             <div>
-              <strong>Define the requirement</strong>
-              <p>Grade, process, PSD, chemistry limits, quantity, destination, documents, and timing.</p>
+              <strong>Route and alloy coverage</strong>
+              <p>Titanium, nickel, stainless and tool steel, aluminum, copper, and cobalt-chrome routes, with custom chemistry reviewed by project.</p>
             </div>
           </li>
           <li>
             <span>02</span>
             <div>
-              <strong>Match production route and lot</strong>
-              <p>Choose the producer and atomization route that fit the alloy and program risk.</p>
+              <strong>Particle window and conditioning</strong>
+              <p>Fine and coarse PSD candidates, screening and classification, powder handling, packaging, and sample planning.</p>
             </div>
           </li>
           <li>
             <span>03</span>
             <div>
-              <strong>Confirm evidence</strong>
-              <p>Align COA, PSD, chemistry, testing, packaging, traceability, and any sample plan.</p>
+              <strong>Powder verification</strong>
+              <p>Chemistry and interstitials, laser PSD, flow and density, morphology, and application-specific checks where agreed.</p>
             </div>
           </li>
           <li>
             <span>04</span>
             <div>
-              <strong>Issue the commercial quote</strong>
-              <p>State the actual product, quantity, price basis, lead time, shipping scope, and validity.</p>
+              <strong>Lot-linked release package</strong>
+              <p>Applicable COA, PSD report, SDS, test evidence, lot traceability, packaging, and commercial scope confirmed before order.</p>
             </div>
           </li>
         </ol>
@@ -861,6 +874,32 @@ const collectionPageSchema = buildCollectionPageSchema({
     font-weight: 700;
   }
 
+  .network-section__boundary {
+    margin: 0;
+    padding-left: 0.85rem;
+    border-left: 2px solid rgba(143, 201, 255, 0.72);
+    color: #96adbf;
+    font-size: 0.76rem;
+    line-height: 1.6;
+  }
+
+  .network-section__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
+  .network-section__link {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 760;
+  }
+
+  .network-section__link:hover {
+    color: #9ed0ff;
+  }
+
   .sourcing-steps {
     display: grid;
     gap: 0;
@@ -1140,6 +1179,12 @@ const collectionPageSchema = buildCollectionPageSchema({
 
     .network-section__inner {
       padding-block: 3.4rem;
+    }
+
+    .network-section__actions,
+    .network-section__actions .button {
+      display: grid;
+      width: 100%;
     }
 
     .sourcing-steps li {

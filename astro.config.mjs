@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { readdirSync, readFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const siteUrl = 'https://metal3dpowder.com';
 
@@ -50,6 +51,11 @@ export default defineConfig({
   compressHTML: true,
   trailingSlash: 'always',
   vite: {
+    resolve: {
+      alias: {
+        picomatch: fileURLToPath(new URL('./scripts/picomatch-esm.mjs', import.meta.url)),
+      },
+    },
     build: {
       assetsInlineLimit: (filePath) => (filePath.endsWith('.js') ? false : undefined),
       rollupOptions: {
