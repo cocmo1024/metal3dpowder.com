@@ -166,6 +166,52 @@ const supplyCapabilities = [
       </div>
     </section>
 
+    <section id="editorial-standards" class="editorial-section page-shell" aria-labelledby="editorial-title">
+      <div class="section-heading">
+        <p class="eyebrow">Editorial and technical review</p>
+        <h2 id="editorial-title">How technical content is prepared, bounded, and corrected.</h2>
+        <p>
+          The knowledge base is designed to help engineers and buyers define a better powder requirement. It does not
+          replace a governing specification, lot certificate, machine qualification, or finished-part validation.
+        </p>
+      </div>
+      <div class="editorial-grid">
+        <article>
+          <span>01</span>
+          <h3>Publisher accountability</h3>
+          <p>
+            Metal 3D Powder Editorial is the publishing identity for content operated by {siteInfo.operatorLegalName}. The same
+            commercial entity receives specification questions and correction requests.
+          </p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Source priority</h3>
+          <p>
+            Numerical limits, test methods, and standards are tied to cited primary or authoritative sources where
+            available. A cited value is not carried into a quotation without checking its scope and revision.
+          </p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Qualification boundary</h3>
+          <p>
+            Powder properties, process settings, printed-part performance, and regulatory release are treated as
+            separate evidence layers. Catalog routes are candidates until the source and lot are confirmed.
+          </p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Corrections and updates</h3>
+          <p>
+            Send factual corrections, source questions, or outdated-reference notices to
+            <a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>. Material changes are reflected in the page update
+            date where applicable.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <section class="boundaries-section page-shell" aria-labelledby="boundaries-title">
       <div>
         <p class="eyebrow">Quotation controls</p>
@@ -523,6 +569,54 @@ const supplyCapabilities = [
     padding-block: 1rem clamp(4rem, 8vw, 7rem);
   }
 
+  .editorial-section {
+    display: grid;
+    gap: 1.4rem;
+    padding-block: 1rem clamp(4rem, 8vw, 7rem);
+    scroll-margin-top: 6rem;
+  }
+
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .editorial-grid article {
+    display: grid;
+    align-content: start;
+    gap: 0.55rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  .editorial-grid span {
+    color: var(--brand);
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .editorial-grid h3,
+  .editorial-grid p {
+    margin: 0;
+  }
+
+  .editorial-grid h3 {
+    font-size: 0.95rem;
+  }
+
+  .editorial-grid p {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+
+  .editorial-grid a {
+    color: var(--accent);
+  }
+
   .boundaries-section > div:first-child {
     display: grid;
     gap: 0.5rem;
@@ -602,6 +696,7 @@ const supplyCapabilities = [
     }
 
     .model-grid,
+    .editorial-grid,
     .boundaries-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -609,6 +704,7 @@ const supplyCapabilities = [
 
   @media (max-width: 680px) {
     .model-grid,
+    .editorial-grid,
     .boundaries-grid,
     .about-final {
       grid-template-columns: 1fr;

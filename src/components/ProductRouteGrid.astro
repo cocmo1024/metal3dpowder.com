@@ -1,0 +1,169 @@
+---
+import { getProductPath, type Product } from '../data/products';
+
+interface Props {
+  products: Product[];
+  title?: string;
+  description?: string;
+}
+
+const {
+  products,
+  title = 'Powder routes related to this decision',
+  description = 'Review a candidate material route, then confirm grade, particle-size distribution, evidence, quantity, and source details in the RFQ.',
+} = Astro.props;
+---
+
+{
+  products.length ? (
+    <section class="product-routes" aria-labelledby="product-routes-title">
+      <header>
+        <p class="eyebrow">Commercial next step</p>
+        <h2 id="product-routes-title">{title}</h2>
+        <p>{description}</p>
+      </header>
+
+      <div class="product-routes__grid">
+        {products.map((product) => (
+          <article class="product-route">
+            <div class="product-route__meta">
+              <span>{product.familyLabel}</span>
+              <span>{product.code}</span>
+            </div>
+            <h3>{product.name}</h3>
+            <p>{product.summary}</p>
+            <dl>
+              <div>
+                <dt>Candidate PSD</dt>
+                <dd>{product.particleSizes.join(' / ')}</dd>
+              </div>
+              <div>
+                <dt>Process routes</dt>
+                <dd>{product.processes.join(', ')}</dd>
+              </div>
+            </dl>
+            <div class="product-route__actions">
+              <a href={getProductPath(product)} data-product-route={product.id}>Review powder route</a>
+              <a href={`/rfq/?product=${product.id}`} data-rfq-entry="product-route">Request this powder</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  ) : null
+}
+
+<style>
+  .product-routes {
+    display: grid;
+    gap: 1rem;
+    padding-block: 1.1rem;
+    border-block: 1px solid var(--line);
+  }
+
+  .product-routes > header {
+    display: grid;
+    gap: 0.45rem;
+    max-width: 48rem;
+  }
+
+  .product-routes h2,
+  .product-routes h3,
+  .product-routes p {
+    margin: 0;
+  }
+
+  .product-routes h2 {
+    font-size: clamp(1.18rem, 2vw, 1.45rem);
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+  }
+
+  .product-routes > header > p:last-child,
+  .product-route > p {
+    color: var(--copy);
+    line-height: var(--body-leading);
+  }
+
+  .product-routes__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr));
+    gap: 0.75rem;
+  }
+
+  .product-route {
+    display: grid;
+    align-content: start;
+    gap: 0.72rem;
+    min-width: 0;
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-card);
+  }
+
+  .product-route__meta,
+  .product-route__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.7rem;
+  }
+
+  .product-route__meta {
+    color: var(--muted);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .product-route h3 {
+    font-size: 1.03rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+
+  .product-route > p,
+  .product-route dd {
+    font-size: 0.9rem;
+  }
+
+  .product-route dl {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+  }
+
+  .product-route dl div {
+    display: grid;
+    gap: 0.12rem;
+  }
+
+  .product-route dt {
+    color: var(--muted);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+  }
+
+  .product-route dd {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.45;
+  }
+
+  .product-route__actions {
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.2rem;
+  }
+
+  .product-route__actions a:first-child {
+    font-weight: 700;
+  }
+
+  .product-route__actions a:last-child {
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+</style>

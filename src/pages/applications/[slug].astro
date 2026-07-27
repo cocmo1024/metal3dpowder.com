@@ -6,6 +6,8 @@ import SiteHeader from '../../components/SiteHeader.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getBlogPostPath, sortBlogPosts, type BlogPost } from '../../data/blog';
 import { applicationHubs, type HubDefinition } from '../../data/contentHubs';
+import { getProductsForHub } from '../../data/productRoutes';
+import { getProductPath } from '../../data/products';
 import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
 import { siteInfo } from '../../data/site';
 
@@ -24,6 +26,7 @@ const { hub } = Astro.props;
 const allPosts = sortBlogPosts(await getCollection('blog'));
 const postMap = new Map(allPosts.map((post) => [post.id, post]));
 const posts = hub.postIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
+const relatedProducts = getProductsForHub(hub);
 const canonical = `/applications/${hub.slug}/`;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const breadcrumbItems = [
@@ -37,7 +40,10 @@ const schema = [
     path: canonical,
     name: `${hub.title} guides`,
     description: hub.description,
-    items: posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
+    items: [
+      ...relatedProducts.map((product) => ({ name: product.name, path: getProductPath(product) })),
+      ...posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
+    ],
   }),
   buildBreadcrumbSchema(siteUrl, breadcrumbItems),
 ];
@@ -50,6 +56,8 @@ const schema = [
     eyebrow="Application center"
     title={`${hub.title} Guides`}
     description={hub.description}
+    products={relatedProducts}
+    productsTitle={`Candidate powder routes for ${hub.title}`}
     posts={posts}
     postsTitle="Articles in this application center"
   />

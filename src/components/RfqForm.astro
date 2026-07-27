@@ -283,6 +283,7 @@ const productPayload = products.map((product) => ({
     const attributionInput = form.elements.namedItem('attribution');
     const defaultStatus = status?.textContent?.trim() || '';
     const defaultSubmitText = submitButton?.textContent?.trim() || 'Submit powder RFQ';
+    let rfqStarted = false;
     let selectedIds = [];
     const itemSelections = new Map();
     const escapeAttribute = (value) =>
@@ -504,6 +505,17 @@ const productPayload = products.map((product) => ({
           // The accepted RFQ should not be downgraded because local storage is unavailable.
         }
         window.dispatchEvent(new CustomEvent('metal3dpowder:rfq-change'));
+        window.dispatchEvent(
+          new CustomEvent('metal3dpowder:track', {
+            detail: {
+              event: 'generate_lead',
+              submission_id: String(result.submissionId),
+              product_count: selectedIds.length,
+              products: selectedIds.join(','),
+              source_path: window.location.pathname,
+            },
+          })
+        );
         successPanel?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (error) {
         setStatus(error instanceof Error ? error.message : 'The RFQ could not be accepted.', true);
@@ -516,6 +528,19 @@ const productPayload = products.map((product) => ({
     });
 
     form.addEventListener('input', () => {
+      if (!rfqStarted) {
+        rfqStarted = true;
+        window.dispatchEvent(
+          new CustomEvent('metal3dpowder:track', {
+            detail: {
+              event: 'begin_rfq',
+              product_count: selectedIds.length,
+              products: selectedIds.join(','),
+              source_path: window.location.pathname,
+            },
+          })
+        );
+      }
       if (status?.hasAttribute('data-error')) setStatus(defaultStatus);
     });
 

@@ -1,9 +1,11 @@
 ---
 import type { BlogPost } from '../data/blog';
+import type { Product } from '../data/products';
 import type { BreadcrumbItem } from '../data/seo';
 import BlogPostGrid from './BlogPostGrid.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
 import HubCardGrid from './HubCardGrid.astro';
+import ProductRouteGrid from './ProductRouteGrid.astro';
 import RfqCta from './RfqCta.astro';
 
 interface HubCard {
@@ -17,6 +19,8 @@ interface Props {
   title: string;
   description: string;
   cards?: HubCard[];
+  products?: Product[];
+  productsTitle?: string;
   posts?: BlogPost[];
   postsTitle?: string;
   breadcrumbItems?: BreadcrumbItem[];
@@ -27,6 +31,8 @@ const {
   title,
   description,
   cards = [],
+  products = [],
+  productsTitle = 'Powder routes for this topic',
   posts = [],
   postsTitle = 'Related articles',
   breadcrumbItems = [],
@@ -43,6 +49,16 @@ const {
   </section>
 
   {cards.length ? <HubCardGrid items={cards} ariaLabel={`${title} sections`} /> : null}
+
+  {
+    products.length ? (
+      <ProductRouteGrid
+        products={products}
+        title={productsTitle}
+        description="Use these as candidate routes, not automatic approvals. The quotation confirms source, grade, PSD, evidence scope, quantity, and delivery terms."
+      />
+    ) : null
+  }
 
   {
     posts.length ? (

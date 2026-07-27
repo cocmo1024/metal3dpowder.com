@@ -649,6 +649,43 @@ for (const route of indexableRoutes) {
   }
 }
 
+const articleRoutes = [...pages.keys()].filter((route) =>
+  route.startsWith("/posts/Alloys/"),
+);
+for (const route of articleRoutes) {
+  const productLinks = pages
+    .get(route)
+    .anchorHrefs.map((href) => internalTarget(href, route))
+    .filter(
+      (target) =>
+        target &&
+        !target.malformed &&
+        /^\/products\/[^/]+\/$/.test(target.path),
+    );
+
+  if (productLinks.length === 0) {
+    fail(
+      "commercial-paths",
+      `${route}: article has no contextual link to a product-detail page.`,
+    );
+  }
+}
+
+const productRoutes = [...indexableRoutes].filter((route) =>
+  /^\/products\/[^/]+\/$/.test(route),
+);
+for (const route of productRoutes) {
+  const editorialSources = [...(inboundRoutes.get(route) ?? [])].filter(
+    (source) => source.startsWith("/posts/Alloys/"),
+  );
+  if (editorialSources.length === 0) {
+    fail(
+      "commercial-paths",
+      `${route}: product has no contextual inbound link from an article.`,
+    );
+  }
+}
+
 const notFound = pages.get("/404.html");
 if (!notFound) {
   fail("404", "/404.html is missing from dist.");

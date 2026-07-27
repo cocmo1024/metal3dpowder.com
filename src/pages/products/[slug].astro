@@ -21,8 +21,8 @@ interface Props {
 const { product } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const productPath = getProductPath(product);
-const title = `${product.name} Metal Powder | PSD and RFQ`;
-const description = `${product.name} powder selection page with candidate PSD routes, processes, evidence requirements, and lot-specific RFQ controls.`;
+const title = `${product.name} Powder Supplier | PSD & RFQ`;
+const description = `${product.name} powder for ${product.processes.join(', ')}. Compare candidate PSD routes and evidence requirements, then request a source- and lot-specific quotation.`;
 const relatedProducts = products
   .filter((candidate) => candidate.id !== product.id)
   .sort((left, right) => Number(right.family === product.family) - Number(left.family === product.family))

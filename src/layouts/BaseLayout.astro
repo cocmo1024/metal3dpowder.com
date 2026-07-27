@@ -108,6 +108,51 @@ const schemaItems = Array.isArray(schema) ? schema : [schema];
       (() => {
         const storageKey = 'metal3dpowder:rfq-products';
         let memoryProducts: string[] = [];
+        const analyticsWindow = window as typeof window & {
+          dataLayer?: Array<Record<string, unknown>>;
+        };
+        const allowedAnalyticsEvents = new Set([
+          'add_to_rfq',
+          'begin_rfq',
+          'generate_lead',
+          'mailto_click',
+          'remove_from_rfq',
+          'select_product',
+          'select_rfq',
+        ]);
+        const allowedAnalyticsParameters = new Set([
+          'entry_point',
+          'page_path',
+          'product_count',
+          'product_id',
+          'products',
+          'source_path',
+          'submission_id',
+        ]);
+
+        const emitAnalytics = (eventName: string, parameters: Record<string, unknown> = {}) => {
+          if (!allowedAnalyticsEvents.has(eventName)) return;
+
+          const safeParameters = Object.fromEntries(
+            Object.entries(parameters)
+              .filter(([key, value]) => allowedAnalyticsParameters.has(key) && ['string', 'number', 'boolean'].includes(typeof value))
+              .map(([key, value]) => [key, typeof value === 'string' ? value.slice(0, 250) : value])
+          );
+          const payload = {
+            event: eventName,
+            ...safeParameters,
+          };
+
+          analyticsWindow.dataLayer ??= [];
+          analyticsWindow.dataLayer.push(payload);
+          window.dispatchEvent(new CustomEvent('metal3dpowder:analytics', { detail: payload }));
+        };
+
+        window.addEventListener('metal3dpowder:track', (event) => {
+          if (!(event instanceof CustomEvent) || !event.detail || typeof event.detail !== 'object') return;
+          const { event: eventName, ...parameters } = event.detail as Record<string, unknown>;
+          if (typeof eventName === 'string') emitAnalytics(eventName, parameters);
+        });
 
         const readProducts = (): string[] => {
           try {
@@ -165,8 +210,45 @@ const schemaItems = Array.isArray(schema) ? schema : [schema];
           const products = readProducts();
           if (!products.includes(productId)) {
             writeProducts([...products, productId]);
+            emitAnalytics('add_to_rfq', {
+              product_id: productId,
+              product_count: products.length + 1,
+              page_path: window.location.pathname,
+            });
           } else {
             writeProducts(products.filter((item) => item !== productId));
+            emitAnalytics('remove_from_rfq', {
+              product_id: productId,
+              product_count: Math.max(0, products.length - 1),
+              page_path: window.location.pathname,
+            });
+          }
+        });
+
+        document.addEventListener('click', (event) => {
+          const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+          if (!(link instanceof HTMLAnchorElement)) return;
+
+          const productId = link.getAttribute('data-product-route');
+          if (productId) {
+            emitAnalytics('select_product', {
+              product_id: productId,
+              entry_point: 'contextual_product_route',
+              page_path: window.location.pathname,
+            });
+            return;
+          }
+
+          if (link.protocol === 'mailto:') {
+            emitAnalytics('mailto_click', { page_path: window.location.pathname });
+            return;
+          }
+
+          if (link.origin === window.location.origin && link.pathname.startsWith('/rfq/')) {
+            emitAnalytics('select_rfq', {
+              entry_point: link.getAttribute('data-rfq-entry') || 'site_link',
+              page_path: window.location.pathname,
+            });
           }
         });
 

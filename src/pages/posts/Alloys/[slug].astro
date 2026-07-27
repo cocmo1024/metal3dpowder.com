@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BlogPostGrid from '../../../components/BlogPostGrid.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import ProductRouteGrid from '../../../components/ProductRouteGrid.astro';
 import RfqCta from '../../../components/RfqCta.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
@@ -23,6 +24,7 @@ import {
   sortBlogPosts,
 } from '../../../data/blog';
 import { getHubPath, getPostHubs, knowledgePostIds } from '../../../data/contentHubs';
+import { getProductsForPost } from '../../../data/productRoutes';
 import { siteInfo } from '../../../data/site';
 
 export async function getStaticPaths() {
@@ -40,6 +42,7 @@ const allPosts = sortBlogPosts(await getCollection('blog'));
 const { previousPost, nextPost } = getAdjacentBlogPosts(allPosts, post.id);
 const relatedPosts = getRelatedBlogPosts(allPosts, post, 6);
 const topicHubs = getPostHubs(post.id);
+const relatedProducts = getProductsForPost(post.id);
 const isKnowledgePost = knowledgePostIds.includes(post.id);
 const readingMinutes = estimateReadingMinutes(post.body ?? '');
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
@@ -120,7 +123,7 @@ const schema = [
 
         <div class="article-meta">
           <span>{post.data.category}</span>
-          <span>{blogAuthorName}</span>
+          <span>Reviewed by <a href={`${blogAuthorPath}#editorial-standards`}>{blogAuthorName}</a></span>
           <span>{formatter.format(post.data.pubDate)}</span>
           <span>{readingMinutes} min read</span>
         </div>
@@ -134,6 +137,8 @@ const schema = [
       <section class="article-content">
         <Content />
       </section>
+
+      <ProductRouteGrid products={relatedProducts} />
 
       <RfqCta context={post.data.title} />
 
@@ -252,6 +257,12 @@ const schema = [
     font-size: 0.84rem;
     text-transform: uppercase;
     letter-spacing: 0.11em;
+  }
+
+  .article-meta a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 
   .article-summary {
