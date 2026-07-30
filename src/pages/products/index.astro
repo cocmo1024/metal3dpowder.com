@@ -11,6 +11,11 @@ import {
   productProcesses,
   products,
 } from '../../data/products';
+import {
+  extendedAlloyMatrix,
+  extendedGradeCount,
+  processPowderWindows,
+} from '../../data/powderCapabilities';
 import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
 
 const title = 'Metal Powder Catalog | Search by Alloy, Process and PSD';
@@ -50,8 +55,8 @@ const schema = [
           </p>
         </div>
         <aside>
-          <strong>{products.length} core products</strong>
-          <span>{productFamilies.length} alloy families · {productProcesses.length} supported processes</span>
+          <strong>{products.length} core quote-ready routes</strong>
+          <span>{extendedGradeCount} reviewed grade designations · {processPowderWindows.length} process families</span>
           <a href="/rfq/">Open RFQ list <span data-rfq-count data-empty>0</span> →</a>
         </aside>
       </div>
@@ -124,6 +129,81 @@ const schema = [
         <p>Clear one filter or submit a custom powder RFQ with the target chemistry, PSD, quantity, and process.</p>
         <a class="button button--primary" href="/rfq/?custom=1">Start custom powder RFQ</a>
       </div>
+    </section>
+
+    <section class="extended-catalog page-shell" aria-labelledby="extended-catalog-title">
+      <div class="section-heading">
+        <p class="eyebrow">Extended sourcing matrix</p>
+        <h2 id="extended-catalog-title">Additional alloy systems reviewed for specification-led sourcing.</h2>
+        <p>
+          The core cards above have dedicated technical routes. The extended matrix captures additional grades found
+          across reviewed production sources without creating thin product pages or implying current stock. Select a
+          grade to open a prefilled custom RFQ.
+        </p>
+      </div>
+
+      <div class="alloy-matrix">
+        {extendedAlloyMatrix.map((group) => (
+          <article>
+            <div class="alloy-matrix__heading">
+              <h3>{group.family}</h3>
+              <span>{group.grades.length} designations</span>
+            </div>
+            <ul>
+              {group.grades.map((grade) => (
+                <li>
+                  <a href={`/rfq/?custom=1&material=${encodeURIComponent(grade)}`}>{grade}</a>
+                </li>
+              ))}
+            </ul>
+            <dl>
+              <div>
+                <dt>Candidate routes</dt>
+                <dd>{group.routes}</dd>
+              </div>
+              <div>
+                <dt>RFQ focus</dt>
+                <dd>{group.procurementFocus}</dd>
+              </div>
+            </dl>
+          </article>
+        ))}
+      </div>
+
+      <div class="section-heading section-heading--process">
+        <p class="eyebrow">Process powder windows</p>
+        <h2>Start with the process, then qualify the PSD.</h2>
+        <p>
+          These ranges are sourcing candidates compiled from reviewed routes. The machine, feed system, test method,
+          chemistry, and quoted lot determine the final usable specification.
+        </p>
+      </div>
+      <div class="process-window-wrap">
+        <table class="process-window-table">
+          <thead>
+            <tr>
+              <th scope="col">Process</th>
+              <th scope="col">Candidate PSD</th>
+              <th scope="col">Material examples</th>
+              <th scope="col">RFQ controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            {processPowderWindows.map((window) => (
+              <tr>
+                <th scope="row">{window.process}</th>
+                <td>{window.candidatePsd}</td>
+                <td>{window.materialExamples}</td>
+                <td>{window.rfqControl}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="extended-catalog__boundary">
+        Matrix inclusion means the grade or route is suitable for source review. It does not confirm inventory,
+        production capacity, certification scope, export eligibility, price, lead time, or lot documentation.
+      </p>
     </section>
 
     <section class="catalog-help page-shell">
@@ -433,6 +513,167 @@ const schema = [
     background: var(--brand-soft);
   }
 
+  .extended-catalog {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 0 4.5rem;
+  }
+
+  .extended-catalog > .section-heading {
+    max-width: 58rem;
+  }
+
+  .extended-catalog .section-heading h2 {
+    margin: 0.25rem 0 0.7rem;
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    letter-spacing: -0.035em;
+  }
+
+  .extended-catalog .section-heading > p:last-child {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .alloy-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .alloy-matrix > article {
+    display: grid;
+    gap: 1rem;
+    padding: 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .alloy-matrix__heading {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .alloy-matrix__heading h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    letter-spacing: -0.025em;
+  }
+
+  .alloy-matrix__heading span {
+    color: var(--muted);
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .alloy-matrix ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .alloy-matrix li a {
+    display: inline-flex;
+    padding: 0.36rem 0.58rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--text);
+    background: var(--surface-soft);
+    font-size: 0.78rem;
+    font-weight: 650;
+  }
+
+  .alloy-matrix dl {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .alloy-matrix dl div {
+    display: grid;
+    grid-template-columns: 7.4rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .alloy-matrix dt {
+    color: var(--muted);
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .alloy-matrix dd {
+    margin: 0;
+    color: var(--copy);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .section-heading--process {
+    margin-top: 1.25rem;
+  }
+
+  .process-window-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  .process-window-table {
+    width: 100%;
+    min-width: 62rem;
+    border-collapse: collapse;
+  }
+
+  .process-window-table th,
+  .process-window-table td {
+    padding: 0.9rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--copy);
+    font-size: 0.8rem;
+    line-height: 1.55;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .process-window-table thead th {
+    color: var(--muted);
+    background: var(--surface-soft);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .process-window-table tbody th {
+    color: var(--text);
+    font-weight: 760;
+  }
+
+  .process-window-table tbody tr:last-child th,
+  .process-window-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .extended-catalog__boundary {
+    margin: 0;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid var(--accent);
+    color: var(--muted);
+    background: var(--brand-soft);
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
   .catalog-help > div {
     display: grid;
     gap: 0.55rem;
@@ -480,6 +721,10 @@ const schema = [
     .catalog-results__head > p {
       text-align: left;
     }
+
+    .alloy-matrix {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 580px) {
@@ -498,6 +743,11 @@ const schema = [
 
     .catalog-help .button {
       width: 100%;
+    }
+
+    .alloy-matrix dl div {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
     }
   }
 </style>

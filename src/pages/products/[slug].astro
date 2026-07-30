@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import { getReviewedPowderWindow } from '../../data/powderCapabilities';
 import { buildBreadcrumbSchema, defaultOgImagePath } from '../../data/seo';
 import { getProductPath, products, type Product } from '../../data/products';
 
@@ -21,6 +22,7 @@ interface Props {
 const { product } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const productPath = getProductPath(product);
+const reviewedWindow = getReviewedPowderWindow(product.id);
 const title = `${product.name} Powder Supplier | PSD & RFQ`;
 const description = `${product.name} powder for ${product.processes.join(', ')}. Compare candidate PSD routes and evidence requirements, then request a source- and lot-specific quotation.`;
 const relatedProducts = products
@@ -64,6 +66,13 @@ const schema = [
         name: 'Supply status',
         value: product.availabilityLabel,
       },
+      ...(reviewedWindow
+        ? reviewedWindow.metrics.map((metric) => ({
+            '@type': 'PropertyValue',
+            name: `Reviewed screening value: ${metric.label}`,
+            value: metric.value,
+          }))
+        : []),
     ],
   },
 ];
@@ -270,6 +279,46 @@ const schema = [
             </table>
           </div>
         </section>
+
+        {
+          reviewedWindow && (
+            <section class="content-block" aria-labelledby="reviewed-window-title">
+              <div class="section-heading">
+                <p class="eyebrow">Reviewed powder data</p>
+                <h2 id="reviewed-window-title">A screening window for a better technical RFQ.</h2>
+                <p>
+                  These values reproduce a grade-specific powder window found in one reviewed technical data set. They
+                  help define the questions to ask; they are not stock data, a universal specification, or a lot
+                  certificate.
+                </p>
+              </div>
+              <div class="route-table-wrap">
+                <table class="route-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Powder metric</th>
+                      <th scope="col">Reviewed value</th>
+                      <th scope="col">Qualification boundary</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {reviewedWindow.metrics.map((metric) => (
+                      <tr>
+                        <th scope="row">{metric.label}</th>
+                        <td>{metric.value}</td>
+                        <td>{metric.qualification ?? 'Method and lot to be confirmed'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p class="evidence-note">
+                <strong>{reviewedWindow.route}.</strong> {reviewedWindow.basis} Ask for the governing test method,
+                sampling rule, source, production route, and lot-linked report in the quotation.
+              </p>
+            </section>
+          )
+        }
 
         <section class="content-block content-block--split" aria-labelledby="risk-title">
           <div>

@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && node scripts/check-seo.mjs",
+    "build": "astro check && astro build && node scripts/check-seo.mjs && node scripts/check-debranding.mjs",
     "check:seo": "node scripts/check-seo.mjs",
+    "check:debranding": "node scripts/check-debranding.mjs",
     "preview": "astro preview",
     "deploy:dry": "wrangler deploy --dry-run",
     "deploy": "wrangler deploy",

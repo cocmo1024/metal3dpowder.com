@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import { testingCoverage } from '../../data/powderCapabilities';
 import { buildBreadcrumbSchema, getWebsiteId } from '../../data/seo';
 
 const title = 'Metal Powder Quality | COA, PSD, Traceability and Packaging';
@@ -121,6 +122,41 @@ const schema = [
           <h3>Packaging and logistics</h3>
           <p>Container size, atmosphere, moisture control, labeling, dangerous-goods review, destination, and storage instructions.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="test-coverage page-shell" aria-labelledby="test-coverage-title">
+      <div class="section-heading">
+        <p class="eyebrow">Reviewed test coverage</p>
+        <h2 id="test-coverage-title">Connect each reported value to a method and release decision.</h2>
+        <p>
+          Reviewed source capabilities include the methods below. The quotation must still identify the actual lab,
+          method, sampling basis, acceptance limit, source, and lot for every required result.
+        </p>
+      </div>
+      <div class="test-coverage__grid">
+        {testingCoverage.map((item, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{item.layer}</h3>
+            <p>{item.methods}</p>
+            <div>
+              <strong>Release question</strong>
+              <small>{item.releaseQuestion}</small>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="batch-flow" aria-label="Candidate batch-control flow">
+        <strong>Candidate batch-control flow</strong>
+        <ol>
+          <li>Feedstock or bar review</li>
+          <li>Atomization process control</li>
+          <li>Screening and classification</li>
+          <li>Powder physical and chemical tests</li>
+          <li>Scoped build validation</li>
+          <li>Qualified release and record linkage</li>
+        </ol>
       </div>
     </section>
 
@@ -399,6 +435,116 @@ const schema = [
     line-height: 1.6;
   }
 
+  .test-coverage {
+    display: grid;
+    gap: 1.4rem;
+    padding-block: 0 clamp(3.5rem, 6vw, 5.5rem);
+  }
+
+  .test-coverage > .section-heading {
+    max-width: 60rem;
+  }
+
+  .test-coverage .section-heading h2 {
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+  }
+
+  .test-coverage__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .test-coverage__grid article {
+    display: grid;
+    gap: 0.65rem;
+    padding: 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .test-coverage__grid article > span {
+    color: var(--brand);
+    font-size: 0.72rem;
+    font-weight: 760;
+    letter-spacing: 0.08em;
+  }
+
+  .test-coverage__grid h3,
+  .test-coverage__grid p {
+    margin: 0;
+  }
+
+  .test-coverage__grid h3 {
+    font-size: 1.05rem;
+  }
+
+  .test-coverage__grid p {
+    color: var(--copy);
+    font-size: 0.85rem;
+    line-height: 1.58;
+  }
+
+  .test-coverage__grid article > div {
+    display: grid;
+    gap: 0.25rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .test-coverage__grid article > div strong {
+    color: var(--muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .test-coverage__grid article > div small {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .batch-flow {
+    display: grid;
+    gap: 0.8rem;
+    padding: 1.1rem;
+    border-left: 3px solid var(--accent);
+    background: var(--brand-soft);
+  }
+
+  .batch-flow ol {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    counter-reset: batch-step;
+    list-style: none;
+  }
+
+  .batch-flow li {
+    padding: 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 0.55rem;
+    color: var(--copy);
+    background: var(--surface);
+    font-size: 0.76rem;
+    line-height: 1.45;
+    counter-increment: batch-step;
+  }
+
+  .batch-flow li::before {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--brand);
+    content: counter(batch-step, decimal-leading-zero);
+    font-weight: 760;
+  }
+
   .evidence-section {
     color: #fff;
     background: var(--brand-dark);
@@ -543,11 +689,20 @@ const schema = [
     .document-package__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .test-coverage__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .batch-flow ol {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   @media (max-width: 680px) {
     .quality-principles > div,
     .quality-grid,
+    .test-coverage__grid,
     .document-package__grid,
     .quality-final {
       grid-template-columns: 1fr;
@@ -560,6 +715,10 @@ const schema = [
 
     .quality-grid article {
       min-height: 0;
+    }
+
+    .batch-flow ol {
+      grid-template-columns: 1fr;
     }
   }
 </style>

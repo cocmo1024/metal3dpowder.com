@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import { atomizationRoutes } from '../../data/powderCapabilities';
 import { buildBreadcrumbSchema, buildOrganizationSchema } from '../../data/seo';
 import { productFamilies, products } from '../../data/products';
 import { siteInfo } from '../../data/site';
@@ -128,6 +129,48 @@ const supplyCapabilities = [
           ))}
         </div>
       </div>
+    </section>
+
+    <section class="atomization-section page-shell" aria-labelledby="atomization-title">
+      <div class="section-heading">
+        <p class="eyebrow">Atomization route screening</p>
+        <h2 id="atomization-title">Match the alloy and PSD to a viable powder-production route.</h2>
+        <p>
+          The values below are screened-source envelopes found in reviewed technical data. They are used to qualify a
+          source for the RFQ; they are not a claim that one plant, machine, or lot covers the complete range.
+        </p>
+      </div>
+      <div class="atomization-table-wrap">
+        <table class="atomization-table">
+          <thead>
+            <tr>
+              <th scope="col">Route</th>
+              <th scope="col">Material fit</th>
+              <th scope="col">Candidate PSD</th>
+              <th scope="col">Reviewed-source window</th>
+              <th scope="col">Confirm before quote</th>
+            </tr>
+          </thead>
+          <tbody>
+            {atomizationRoutes.map((route) => (
+              <tr>
+                <th scope="row">{route.route}</th>
+                <td>{route.bestFit}</td>
+                <td>{route.candidatePsd}</td>
+                <td>{route.reviewedWindow}</td>
+                <td>{route.confirm}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <aside class="atomization-boundary">
+        <strong>Commercial boundary</strong>
+        <p>
+          Capacity, yield, gas use, equipment configuration, certification scope, and availability are rechecked against
+          the proposed production source and quantity before they appear in a formal quotation.
+        </p>
+      </aside>
     </section>
 
     <section class="about-workflow page-shell">
@@ -492,6 +535,89 @@ const supplyCapabilities = [
     line-height: 1.5;
   }
 
+  .atomization-section {
+    display: grid;
+    gap: 1.35rem;
+    padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  }
+
+  .atomization-section > .section-heading {
+    max-width: 60rem;
+  }
+
+  .atomization-section .section-heading h2 {
+    margin: 0.25rem 0 0.7rem;
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    letter-spacing: -0.035em;
+  }
+
+  .atomization-section .section-heading > p:last-child {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .atomization-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .atomization-table {
+    width: 100%;
+    min-width: 76rem;
+    border-collapse: collapse;
+  }
+
+  .atomization-table th,
+  .atomization-table td {
+    padding: 0.9rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--copy);
+    font-size: 0.8rem;
+    line-height: 1.55;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .atomization-table thead th {
+    color: var(--muted);
+    background: var(--surface-soft);
+    font-size: 0.71rem;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+  }
+
+  .atomization-table tbody th {
+    color: var(--text);
+    font-weight: 760;
+  }
+
+  .atomization-table tbody tr:last-child th,
+  .atomization-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .atomization-boundary {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    padding: 1rem 1.1rem;
+    border-left: 3px solid var(--accent);
+    color: var(--copy);
+    background: var(--brand-soft);
+  }
+
+  .atomization-boundary p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
   .about-workflow {
     display: grid;
     grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
@@ -720,6 +846,11 @@ const supplyCapabilities = [
     }
 
     .about-workflow li {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+
+    .atomization-boundary {
       grid-template-columns: 1fr;
       gap: 0.35rem;
     }

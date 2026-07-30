@@ -406,6 +406,15 @@ const productPayload = products.map((product) => ({
     if (queryProduct && productMap.has(queryProduct) && !selectedIds.includes(queryProduct)) {
       selectedIds.push(queryProduct);
     }
+    const queryMaterial = query.get('material');
+    const materialRequest = form.elements.namedItem('material_request');
+    if (
+      queryMaterial &&
+      materialRequest instanceof HTMLInputElement &&
+      !materialRequest.value.trim()
+    ) {
+      materialRequest.value = queryMaterial;
+    }
     writeStoredProducts();
     renderSelectedProducts();
 
