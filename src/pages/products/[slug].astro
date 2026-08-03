@@ -4,7 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
-import { getReviewedPowderWindow } from '../../data/powderCapabilities';
+import { getPowderScreeningWindow } from '../../data/powderCapabilities';
 import { buildBreadcrumbSchema, defaultOgImagePath } from '../../data/seo';
 import { getProductPath, products, type Product } from '../../data/products';
 import { getProductSearchIntent } from '../../data/searchIntent';
@@ -23,7 +23,7 @@ interface Props {
 const { product } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const productPath = getProductPath(product);
-const reviewedWindow = getReviewedPowderWindow(product.id);
+const screeningWindow = getPowderScreeningWindow(product.id);
 const searchIntent = getProductSearchIntent(product.id);
 const title = searchIntent.seoTitle;
 const description = searchIntent.metaDescription;
@@ -44,7 +44,7 @@ const schema = [
     '@type': 'Product',
     '@id': `${new URL(productPath, siteUrl).toString()}#product`,
     name: searchIntent.primaryQuery,
-    alternateName: product.aliases,
+    alternateName: product.schemaAliases,
     category: product.familyLabel,
     description: product.summary,
     image: new URL(product.image, siteUrl).toString(),
@@ -61,7 +61,7 @@ const schema = [
       },
       {
         '@type': 'PropertyValue',
-        name: 'International and regional designations',
+        name: 'Common procurement search designations',
         value: product.aliases.join(', '),
       },
       {
@@ -79,11 +79,12 @@ const schema = [
         name: 'Supply status',
         value: product.availabilityLabel,
       },
-      ...(reviewedWindow
-        ? reviewedWindow.metrics.map((metric) => ({
+      ...(screeningWindow
+        ? screeningWindow.metrics.map((metric) => ({
             '@type': 'PropertyValue',
-            name: `Reviewed screening value: ${metric.label}`,
+            name: `Indicative screening value: ${metric.label}`,
             value: metric.value,
+            description: [screeningWindow.route, screeningWindow.basis, metric.qualification].filter(Boolean).join(' '),
           }))
         : []),
     ],
@@ -328,15 +329,14 @@ const schema = [
         </section>
 
         {
-          reviewedWindow && (
-            <section class="content-block" aria-labelledby="reviewed-window-title">
+          screeningWindow && (
+            <section class="content-block" aria-labelledby="screening-window-title">
               <div class="section-heading">
-                <p class="eyebrow">Reviewed powder data</p>
-                <h2 id="reviewed-window-title">A screening window for a better technical RFQ.</h2>
+                <p class="eyebrow">Powder screening data</p>
+                <h2 id="screening-window-title">A screening window for a better technical RFQ.</h2>
                 <p>
-                  These values reproduce a grade-specific powder window found in one reviewed technical data set. They
-                  help define the questions to ask; they are not stock data, a universal specification, or a lot
-                  certificate.
+                  These grade-specific values help define the questions to ask. They are not stock data, a universal
+                  specification, or a lot certificate.
                 </p>
               </div>
               <div class="route-table-wrap">
@@ -344,12 +344,12 @@ const schema = [
                   <thead>
                     <tr>
                       <th scope="col">Powder metric</th>
-                      <th scope="col">Reviewed value</th>
+                      <th scope="col">Screening value</th>
                       <th scope="col">Qualification boundary</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {reviewedWindow.metrics.map((metric) => (
+                    {screeningWindow.metrics.map((metric) => (
                       <tr>
                         <th scope="row">{metric.label}</th>
                         <td>{metric.value}</td>
@@ -360,7 +360,7 @@ const schema = [
                 </table>
               </div>
               <p class="evidence-note">
-                <strong>{reviewedWindow.route}.</strong> {reviewedWindow.basis} Ask for the governing test method,
+                <strong>{screeningWindow.route}.</strong> {screeningWindow.basis} Ask for the governing test method,
                 sampling rule, source, production route, and lot-linked report in the quotation.
               </p>
             </section>

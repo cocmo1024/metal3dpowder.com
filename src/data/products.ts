@@ -14,6 +14,7 @@ export type Product = {
   family: ProductFamily;
   familyLabel: string;
   aliases: string[];
+  schemaAliases: string[];
   summary: string;
   image: string;
   accent: string;
@@ -97,6 +98,7 @@ export const products: Product[] = [
     family: 'titanium',
     familyLabel: 'Titanium',
     aliases: ['Ti-6Al-4V', 'Ti64', 'Grade 5', 'UNS R56400', 'TC4'],
+    schemaAliases: ['Ti-6Al-4V', 'Ti64', 'Grade 5', 'UNS R56400'],
     summary:
       'A widely used titanium alloy powder for lightweight structural AM parts where strength-to-weight performance matters.',
     image: '/images/products/titanium.svg',
@@ -119,6 +121,7 @@ export const products: Product[] = [
     family: 'titanium',
     familyLabel: 'Titanium',
     aliases: ['Ti-6Al-4V ELI', 'Ti64 ELI', 'Grade 23', 'UNS R56407', 'TC4 ELI'],
+    schemaAliases: ['Ti-6Al-4V ELI', 'Ti64 ELI', 'Grade 23', 'UNS R56407'],
     summary:
       'Extra-low-interstitial titanium powder for projects that require tighter chemistry control and qualification evidence.',
     image: '/images/products/titanium.svg',
@@ -141,12 +144,13 @@ export const products: Product[] = [
     family: 'titanium',
     familyLabel: 'Titanium',
     aliases: ['CP-Ti Grade 2', 'UNS R50400', 'Commercially pure titanium', 'TA1'],
+    schemaAliases: ['CP-Ti Grade 2', 'UNS R50400', 'Grade 2 titanium'],
     summary:
       'Commercially pure titanium powder for corrosion-led parts where ductility and chemical compatibility lead the decision.',
     image: '/images/products/ti-grade-2.svg',
     accent: '#66d6bd',
     particleSizes: ['15–45 µm', '15–53 µm', '45–105 µm'],
-    processes: ['LPBF', 'EBM', 'DED'],
+    processes: ['LPBF', 'EBM'],
     applications: ['Chemical', 'Medical', 'Industrial'],
     bestFor: ['Chemical-service hardware', 'Corrosion-led components', 'Ductility-sensitive applications'],
     watchItems: ['Oxygen limits', 'Service chemistry', 'Finished-part validation'],
@@ -162,6 +166,7 @@ export const products: Product[] = [
     family: 'titanium',
     familyLabel: 'Titanium',
     aliases: ['TA15', 'Near-alpha titanium'],
+    schemaAliases: ['TA15', 'Near-alpha TA15 titanium'],
     summary:
       'Near-alpha titanium powder for elevated-temperature structural programs and aerospace development work.',
     image: '/images/products/titanium.svg',
@@ -183,6 +188,7 @@ export const products: Product[] = [
     family: 'stainless-steel',
     familyLabel: 'Stainless steel',
     aliases: ['316L', 'UNS S31603', 'EN 1.4404'],
+    schemaAliases: ['316L', 'UNS S31603', 'EN 1.4404'],
     summary:
       'A widely used corrosion-resistant powder for manifolds, fluid hardware, industrial parts, MIM, and binder jet.',
     image: '/images/products/316l.svg',
@@ -205,6 +211,7 @@ export const products: Product[] = [
     family: 'stainless-steel',
     familyLabel: 'Stainless steel',
     aliases: ['17-4PH', 'UNS S17400', 'AISI 630'],
+    schemaAliases: ['17-4PH', 'UNS S17400', 'AISI 630'],
     summary:
       'Precipitation-hardening stainless powder for higher-strength tooling, fixtures, housings, and production hardware.',
     image: '/images/products/17-4ph.svg',
@@ -226,6 +233,7 @@ export const products: Product[] = [
     family: 'tool-steel',
     familyLabel: 'Tool & maraging steel',
     aliases: ['M300', '18Ni300', 'Maraging 300', 'EN 1.2709'],
+    schemaAliases: ['M300', '18Ni300', 'Maraging 300', 'EN 1.2709'],
     summary:
       'High-strength maraging steel powder for mold inserts, precision tooling, and age-hardened production components.',
     image: '/images/products/m300.svg',
@@ -248,6 +256,7 @@ export const products: Product[] = [
     family: 'tool-steel',
     familyLabel: 'Tool & maraging steel',
     aliases: ['AISI H13', 'EN 1.2344', 'Hot-work tool steel'],
+    schemaAliases: ['AISI H13', 'EN 1.2344', 'H13 tool steel'],
     summary:
       'Hot-work tool steel powder for die-casting inserts, conformal cooling, and thermally cycled tooling.',
     image: '/images/products/h13.svg',
@@ -269,12 +278,13 @@ export const products: Product[] = [
     family: 'nickel-alloy',
     familyLabel: 'Nickel alloy',
     aliases: ['Alloy 718', 'IN718', 'Inconel 718', 'UNS N07718', 'GH4169'],
+    schemaAliases: ['Alloy 718', 'IN718', 'UNS N07718'],
     summary:
       'Precipitation-hardenable nickel alloy powder for high-temperature structures, turbines, and energy hardware.',
     image: '/images/products/in718.svg',
     accent: '#f29b54',
     particleSizes: ['15–45 µm', '15–53 µm', '45–106 µm'],
-    processes: ['LPBF', 'DED', 'HIP'],
+    processes: ['LPBF', 'DED'],
     applications: ['Aerospace', 'Energy', 'Industrial'],
     bestFor: ['Turbomachinery hardware', 'High-temperature structures', 'Hot-side housings'],
     watchItems: ['Heat treatment', 'Laves phase and segregation control', 'Temperature-specific testing'],
@@ -291,12 +301,13 @@ export const products: Product[] = [
     family: 'nickel-alloy',
     familyLabel: 'Nickel alloy',
     aliases: ['Alloy 625', 'IN625', 'Inconel 625', 'UNS N06625', 'GH3625'],
+    schemaAliases: ['Alloy 625', 'IN625', 'UNS N06625'],
     summary:
       'Solid-solution nickel alloy powder for corrosion-heavy chemical, marine, energy, and hot-side hardware.',
     image: '/images/products/in625.svg',
     accent: '#f1aa65',
     particleSizes: ['15–45 µm', '15–53 µm', '45–106 µm'],
-    processes: ['LPBF', 'DED', 'HIP'],
+    processes: ['LPBF', 'DED'],
     applications: ['Chemical', 'Marine', 'Energy'],
     bestFor: ['Corrosion-heavy hardware', 'Chemical nozzles and manifolds', 'Repair and overlay routes'],
     watchItems: ['Service chemistry', 'DED dilution', 'Corrosion-test scope'],
@@ -312,12 +323,13 @@ export const products: Product[] = [
     family: 'nickel-alloy',
     familyLabel: 'Nickel alloy',
     aliases: ['Alloy X', 'Hastelloy X', 'GH3536', 'UNS N06002'],
+    schemaAliases: ['Alloy X', 'UNS N06002'],
     summary:
       'Oxidation-resistant nickel alloy powder for combustion, furnace, hot-gas, and high-temperature hardware.',
     image: '/images/products/hastelloyx.svg',
     accent: '#e68a43',
     particleSizes: ['15–45 µm', '15–53 µm', '45–106 µm'],
-    processes: ['LPBF', 'DED'],
+    processes: ['LPBF'],
     applications: ['Aerospace', 'Energy', 'Industrial'],
     bestFor: ['Combustion hardware', 'Furnace components', 'Hot-gas structures'],
     watchItems: ['Crack sensitivity', 'Thermal exposure', 'Oxidation-test conditions'],
@@ -333,12 +345,13 @@ export const products: Product[] = [
     family: 'aluminum',
     familyLabel: 'Aluminum',
     aliases: ['AlSi10Mg', 'Aluminum-silicon-magnesium'],
+    schemaAliases: ['AlSi10Mg', 'Al-Si10-Mg alloy powder'],
     summary:
       'Lightweight aluminum powder for housings, brackets, thermal structures, and transportation hardware.',
     image: '/images/products/alsi10mg.svg',
     accent: '#579be2',
     particleSizes: ['20–63 µm', '15–53 µm', '45–106 µm'],
-    processes: ['LPBF', 'DED'],
+    processes: ['LPBF'],
     applications: ['Aerospace', 'Transportation', 'Electronics'],
     bestFor: ['Lightweight housings', 'Brackets and frames', 'Thermal and electronics structures'],
     watchItems: ['Moisture handling', 'Powder safety', 'Heat treatment and dimensional stability'],
@@ -355,12 +368,13 @@ export const products: Product[] = [
     family: 'copper-alloy',
     familyLabel: 'Copper alloy',
     aliases: ['CuCrZr', 'CuCr1Zr', 'UNS C18150'],
+    schemaAliases: ['CuCrZr', 'CuCr1Zr'],
     summary:
       'Conductive copper-alloy powder for thermal, electrical, RF, tooling, and high-heat-flux components.',
     image: '/images/products/cucrzr.svg',
     accent: '#f07c46',
     particleSizes: ['15–45 µm', '15–53 µm', '45–106 µm'],
-    processes: ['LPBF', 'DED'],
+    processes: ['LPBF'],
     applications: ['Electronics', 'Energy', 'Tooling'],
     bestFor: ['Cold plates and heat exchangers', 'Induction and electrical hardware', 'Conductive tooling'],
     watchItems: ['Conductivity versus strength target', 'Heat treatment', 'Laser compatibility'],
@@ -377,6 +391,7 @@ export const products: Product[] = [
     family: 'cobalt-chrome',
     familyLabel: 'Cobalt chrome',
     aliases: ['CoCrMo', 'Cobalt chromium molybdenum'],
+    schemaAliases: ['CoCrMo', 'Cobalt chromium molybdenum'],
     summary:
       'Wear- and corrosion-resistant cobalt alloy powder for dental, medical-development, and industrial wear parts.',
     image: '/images/products/cocrmo.svg',

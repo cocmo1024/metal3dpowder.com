@@ -1,25 +1,25 @@
-export type ReviewedPowderMetric = {
+export type PowderScreeningMetric = {
   label: string;
   value: string;
   qualification?: string;
 };
 
-export type ReviewedPowderWindow = {
+export type PowderScreeningWindow = {
   productId: string;
   route: string;
   basis: string;
-  metrics: ReviewedPowderMetric[];
+  metrics: PowderScreeningMetric[];
 };
 
-export const reviewedPowderWindows: ReviewedPowderWindow[] = [
+export const powderScreeningWindows: PowderScreeningWindow[] = [
   {
     productId: 'ti64',
     route: 'LPBF screening window',
-    basis: 'One reviewed Ti6Al4V powder data set; not a universal or lot-release specification.',
+    basis: 'A grade-specific Ti6Al4V screening basis; not a universal or lot-release specification.',
     metrics: [
       { label: 'D10', value: '≥15 µm', qualification: 'Laser-distribution screening value' },
-      { label: 'D50', value: '30–40 µm', qualification: 'Reviewed source window' },
-      { label: 'D90', value: '≤63 µm', qualification: 'Reviewed source window' },
+      { label: 'D50', value: '30–40 µm', qualification: 'Grade-specific screening window' },
+      { label: 'D90', value: '≤63 µm', qualification: 'Grade-specific screening window' },
       { label: 'Sphericity', value: '≥0.90', qualification: 'Method to be confirmed' },
       { label: 'Apparent density', value: '≥2.4 g/cm³', qualification: 'Test method to be confirmed' },
       { label: 'Tap density', value: '≥2.8 g/cm³', qualification: 'Test method to be confirmed' },
@@ -27,23 +27,9 @@ export const reviewedPowderWindows: ReviewedPowderWindow[] = [
     ],
   },
   {
-    productId: 'ti-grade-2',
-    route: 'LPBF screening window',
-    basis: 'One reviewed commercially pure titanium powder data set; grade and interstitial limits control the quote.',
-    metrics: [
-      { label: 'D10', value: '≥15 µm' },
-      { label: 'D50', value: '30–40 µm' },
-      { label: 'D90', value: '≤63 µm' },
-      { label: 'Sphericity', value: '≥0.90', qualification: 'Method to be confirmed' },
-      { label: 'Apparent density', value: '≥2.4 g/cm³' },
-      { label: 'Tap density', value: '≥2.8 g/cm³' },
-      { label: 'Flow', value: '≤35 s/50 g', qualification: 'Method and conditioning to be confirmed' },
-    ],
-  },
-  {
     productId: 'ta15',
     route: 'LPBF screening window',
-    basis: 'One reviewed TA15 powder data set; the governing chemistry version and test method must be stated in the RFQ.',
+    basis: 'A TA15 screening basis; the governing chemistry version and test method must be stated in the RFQ.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–40 µm' },
@@ -57,7 +43,7 @@ export const reviewedPowderWindows: ReviewedPowderWindow[] = [
   {
     productId: '316l',
     route: 'LPBF screening window',
-    basis: 'One reviewed 316L powder data set; chemistry, PSD method, and the delivered lot remain controlling.',
+    basis: 'A 316L screening basis; chemistry, PSD method, and the delivered lot remain controlling.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–40 µm' },
@@ -71,7 +57,7 @@ export const reviewedPowderWindows: ReviewedPowderWindow[] = [
   {
     productId: '17-4ph',
     route: 'LPBF screening window',
-    basis: 'One reviewed 17-4PH powder data set; heat-treatment condition is not implied by powder conformance.',
+    basis: 'A 17-4PH screening basis; heat-treatment condition is not implied by powder conformance.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–40 µm' },
@@ -85,7 +71,7 @@ export const reviewedPowderWindows: ReviewedPowderWindow[] = [
   {
     productId: 'm300',
     route: 'LPBF screening window',
-    basis: 'One reviewed 18Ni300 powder data set; aging and printed-part performance are separate qualification layers.',
+    basis: 'An 18Ni300 screening basis; aging and printed-part performance are separate qualification layers.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–40 µm' },
@@ -99,7 +85,7 @@ export const reviewedPowderWindows: ReviewedPowderWindow[] = [
   {
     productId: 'in718',
     route: 'LPBF screening window',
-    basis: 'One reviewed IN718/GH4169 powder data set; final chemistry, PSD, and test methods are source- and lot-specific.',
+    basis: 'An Alloy 718 screening basis; final chemistry, PSD, and test methods are production- and lot-specific.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–40 µm' },
@@ -113,7 +99,7 @@ export const reviewedPowderWindows: ReviewedPowderWindow[] = [
   {
     productId: 'in625',
     route: 'LPBF screening window',
-    basis: 'One reviewed IN625/GH3625 powder data set; corrosion and DED performance require separate test conditions.',
+    basis: 'An Alloy 625 screening basis; corrosion and DED performance require separate test conditions.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–40 µm' },
@@ -127,7 +113,7 @@ export const reviewedPowderWindows: ReviewedPowderWindow[] = [
   {
     productId: 'hastelloyx',
     route: 'LPBF screening window',
-    basis: 'One reviewed Alloy X/GH3536 powder data set; build cracking and thermal exposure remain process-level risks.',
+    basis: 'An Alloy X screening basis; build cracking and thermal exposure remain process-level risks.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–40 µm' },
@@ -141,74 +127,77 @@ export const reviewedPowderWindows: ReviewedPowderWindow[] = [
   {
     productId: 'alsi10mg',
     route: 'LPBF screening window',
-    basis: 'One reviewed AlSi10Mg powder data set; moisture, sampling, and safe handling affect usable results.',
+    basis: 'An AlSi10Mg screening basis; moisture, sampling, and safe handling affect usable results.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–45 µm' },
       { label: 'D90', value: '≤70 µm' },
       { label: 'Sphericity', value: '≥0.90', qualification: 'Method to be confirmed' },
-      { label: 'Apparent density', value: '≥1.3 g/cm³' },
-      { label: 'Tap density', value: '≥1.5 g/cm³' },
+      { label: 'Apparent density', value: '≥1.35 g/cm³' },
+      { label: 'Tap density', value: '≥1.6 g/cm³' },
     ],
   },
   {
     productId: 'cucrzr',
     route: 'LPBF screening window',
-    basis: 'One reviewed CuCrZr powder data set; conductivity, strength, and laser coupling depend on the complete process route.',
+    basis: 'A CuCrZr screening basis; conductivity, strength, and laser coupling depend on the complete process route.',
     metrics: [
       { label: 'D10', value: '≥15 µm' },
       { label: 'D50', value: '30–40 µm' },
       { label: 'D90', value: '≤60 µm' },
       { label: 'Sphericity', value: '≥0.90', qualification: 'Method to be confirmed' },
+      { label: 'Apparent density', value: '≥4.4 g/cm³' },
+      { label: 'Tap density', value: '≥5.2 g/cm³' },
+      { label: 'Flow', value: '≤22 s/50 g', qualification: 'Method and conditioning to be confirmed' },
     ],
   },
   {
     productId: 'cocrmo',
     route: 'LPBF / EBM screening window',
-    basis: 'One reviewed CoCrMo powder data set; the exact chemistry version and medical or dental release scope must be confirmed.',
+    basis: 'A CoCrMo screening basis; the exact chemistry version and medical or dental release scope must be confirmed.',
     metrics: [
       { label: 'D10', value: '≥12 µm' },
       { label: 'D50', value: '25–40 µm' },
       { label: 'D90', value: '≤65 µm' },
       { label: 'Sphericity', value: '≥0.85', qualification: 'Method to be confirmed' },
-      { label: 'Apparent density', value: '≥4.0 g/cm³' },
-      { label: 'Tap density', value: '≥4.5 g/cm³' },
+      { label: 'Apparent density', value: '≥4.4 g/cm³' },
+      { label: 'Tap density', value: '≥5.0 g/cm³' },
       { label: 'Flow', value: '≤25 s/50 g', qualification: 'Method and conditioning to be confirmed' },
     ],
   },
 ];
 
-export const getReviewedPowderWindow = (productId: string) =>
-  reviewedPowderWindows.find((window) => window.productId === productId);
+export const getPowderScreeningWindow = (productId: string) =>
+  powderScreeningWindows.find((window) => window.productId === productId);
 
 export const atomizationRoutes = [
   {
     route: 'VIGA / inert-gas atomization',
     bestFit: 'Fe-, Ni-, Co-, Al-, and Cu-base alloys',
     candidatePsd: '15–45, 15–53, and 53–150 µm',
-    reviewedWindow: '10–500 kg crucible range; a reviewed 316L route reported 8–10 kg/min atomization output.',
+    capabilityWindow: '10–500 kg crucible range; an applicable 316L route can be screened around 8–10 kg/min output.',
     confirm: 'Crucible compatibility, melt size, gas, PSD yield, oxygen control, and the actual production source.',
   },
   {
     route: 'EIGA / electrode induction gas atomization',
     bestFit: 'Reactive titanium alloys, selected superalloys, and intermetallics',
     candidatePsd: '15–53, 53–150, 75–200, and 100–250 µm',
-    reviewedWindow: '30–100 mm electrode range and 15–30 kg/h were documented across one reviewed equipment route.',
+    capabilityWindow: '30–100 mm electrode range and 15–30 kg/h are candidate equipment and throughput boundaries.',
     confirm: 'Electrode chemistry, diameter, melt cleanliness, gas, interstitial limits, yield, and lot size.',
   },
   {
     route: 'PREP / plasma rotating electrode',
     bestFit: 'High-sphericity titanium and selected nickel-alloy routes',
     candidatePsd: 'Mid-to-coarse spherical fractions; source- and alloy-dependent',
-    reviewedWindow:
-      'A reviewed route used 50 or 75 mm electrodes at up to 30,000 rpm and reported 6–10 kg/h under specified conditions.',
+    capabilityWindow:
+      'Candidate equipment uses 50 or 75 mm electrodes at up to 30,000 rpm, with 6–10 kg/h considered under specified conditions.',
     confirm: 'Electrode source, rotation conditions, PSD yield, oxygen pickup, morphology method, and production scale.',
   },
   {
     route: 'PA / plasma atomization',
     bestFit: 'Reactive and specialty alloys requiring a plasma-based route',
     candidatePsd: 'Quote-defined; commonly screened for fine AM fractions',
-    reviewedWindow: 'Route access was documented; equipment and lot limits vary by the selected source.',
+    capabilityWindow: 'Equipment, feedstock, capacity, and lot limits vary by the selected production route.',
     confirm: 'Feedstock form, chemistry loss, interstitials, PSD yield, morphology, capacity, and test package.',
   },
 ];
@@ -234,7 +223,7 @@ export const processPowderWindows = [
   },
   {
     process: 'HIP / powder metallurgy',
-    candidatePsd: 'Often 45–105 or 53–150 µm; quote-defined',
+    candidatePsd: 'Quote-defined; coarse fractions are evaluated against filling and consolidation requirements',
     materialExamples: 'FGH-series superalloys plus selected Ti and Ni alloys',
     rfqControl: 'Can size, fill density, cleanliness, degassing, HIP cycle, inspection, and part-level qualification.',
   },

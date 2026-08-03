@@ -136,8 +136,8 @@ const supplyCapabilities = [
         <p class="eyebrow">Atomization route screening</p>
         <h2 id="atomization-title">Match the alloy and PSD to a viable powder-production route.</h2>
         <p>
-          The values below are screened-source envelopes found in reviewed technical data. They are used to qualify a
-          source for the RFQ; they are not a claim that one plant, machine, or lot covers the complete range.
+          The values below are capability-screening envelopes used to qualify a production route for an RFQ. They are
+          not a claim that one plant, machine, or lot covers the complete range.
         </p>
       </div>
       <div class="atomization-table-wrap">
@@ -147,7 +147,7 @@ const supplyCapabilities = [
               <th scope="col">Route</th>
               <th scope="col">Material fit</th>
               <th scope="col">Candidate PSD</th>
-              <th scope="col">Reviewed-source window</th>
+              <th scope="col">Capability screening window</th>
               <th scope="col">Confirm before quote</th>
             </tr>
           </thead>
@@ -157,7 +157,7 @@ const supplyCapabilities = [
                 <th scope="row">{route.route}</th>
                 <td>{route.bestFit}</td>
                 <td>{route.candidatePsd}</td>
-                <td>{route.reviewedWindow}</td>
+                <td>{route.capabilityWindow}</td>
                 <td>{route.confirm}</td>
               </tr>
             ))}

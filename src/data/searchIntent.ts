@@ -44,7 +44,7 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
     primaryQuery: 'Grade 2 titanium powder',
     seoTitle: 'Grade 2 Titanium Powder Supplier | Metal 3D Powder',
     metaDescription:
-      'Source CP titanium Grade 2 powder for LPBF, EBM, or DED by PSD, oxygen limits, and lot evidence. Request price, availability, and documents.',
+      'Source CP titanium Grade 2 powder for LPBF or EBM by PSD, oxygen limits, and lot evidence. Request price, availability, and documents.',
     buyerQueries: [
       'Grade 2 titanium powder supplier',
       'CP titanium powder for LPBF',
@@ -140,7 +140,7 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
     primaryQuery: 'IN718 alloy powder',
     seoTitle: 'IN718 Alloy 718 Powder Supplier for LPBF & DED | Metal 3D Powder',
     metaDescription:
-      'Source IN718 or Alloy 718 powder for LPBF, DED, or HIP by PSD, chemistry, heat treatment, and lot evidence. Request a technical supplier RFQ.',
+      'Source IN718 or Alloy 718 powder for LPBF or DED by PSD, chemistry, heat treatment, and lot evidence. Request a technical supplier RFQ.',
     buyerQueries: [
       'Inconel 718 powder supplier',
       'IN718 powder for LPBF',
@@ -156,7 +156,7 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
     primaryQuery: 'IN625 alloy powder',
     seoTitle: 'IN625 Alloy 625 Powder Supplier for LPBF & DED | Metal 3D Powder',
     metaDescription:
-      'Source IN625 or Alloy 625 powder for LPBF, DED, or HIP by PSD, service chemistry, and lot evidence. Request supplier pricing and documents.',
+      'Source IN625 or Alloy 625 powder for LPBF or DED by PSD, service chemistry, and lot evidence. Request supplier pricing and documents.',
     buyerQueries: [
       'Inconel 625 powder supplier',
       'IN625 powder for LPBF',
@@ -170,13 +170,13 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
   },
   hastelloyx: {
     primaryQuery: 'Alloy X powder',
-    seoTitle: 'Alloy X Powder Supplier for LPBF & DED | Metal 3D Powder',
+    seoTitle: 'Alloy X Powder Supplier for LPBF | Metal 3D Powder',
     metaDescription:
-      'Source Alloy X powder for LPBF or DED by PSD, chemistry, thermal exposure, and lot evidence. Request supplier price, availability, and documents.',
+      'Source Alloy X powder for LPBF by PSD, chemistry, thermal exposure, and lot evidence. Request supplier price, availability, and documents.',
     buyerQueries: [
       'Hastelloy X powder supplier',
       'Alloy X powder for LPBF',
-      'UNS N06002 powder for DED',
+      'Alloy X powder 15–45 µm',
       'Hastelloy X metal powder price',
     ],
     designationGuidance:
@@ -188,7 +188,7 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
     primaryQuery: 'AlSi10Mg powder',
     seoTitle: 'AlSi10Mg Powder Supplier for LPBF | Metal 3D Powder',
     metaDescription:
-      'Source AlSi10Mg powder for LPBF or DED by PSD, chemistry, handling, and lot evidence. Request supplier pricing, availability, and documents.',
+      'Source AlSi10Mg powder for LPBF by PSD, chemistry, handling, and lot evidence. Request supplier pricing, availability, and documents.',
     buyerQueries: [
       'AlSi10Mg powder supplier',
       'AlSi10Mg powder for LPBF',
@@ -204,7 +204,7 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
     primaryQuery: 'CuCrZr C18150 powder',
     seoTitle: 'CuCrZr C18150 Powder Supplier for AM | Metal 3D Powder',
     metaDescription:
-      'Source CuCrZr, CuCr1Zr, or C18150 powder for LPBF or DED by PSD, conductivity target, and lot evidence. Request a supplier RFQ.',
+      'Source CuCrZr, CuCr1Zr, or C18150 powder for LPBF by PSD, conductivity target, and lot evidence. Request a supplier RFQ.',
     buyerQueries: [
       'CuCrZr powder supplier',
       'C18150 copper powder for LPBF',
