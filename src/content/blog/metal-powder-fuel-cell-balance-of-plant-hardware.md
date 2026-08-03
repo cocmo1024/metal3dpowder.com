@@ -4,12 +4,11 @@ description: Select 316L, IN625, Hastelloy X, 17-4PH, or CuCrZr powder for fuel-
 pubDate: 2026-07-18T00:12:00+08:00
 category: Knowledge
 tags:
-  - fuel-cell balance of plant
-  - 316L powder
-  - nickel alloy powder
-  - LPBF
-  - binder jet
-featured: true
+  - metal powder
+  - powder specification
+  - thermal management
+  - additive manufacturing
+featured: false
 ---
 
 Fuel-cell balance-of-plant hardware cannot be specified from one broad "hydrogen service" label. A humidifier manifold, coolant plate, porous filter, reformer burner, hot SOFC manifold, and compressor housing operate in different fluid, temperature, corrosion, fatigue, cleanliness, and leakage zones.
@@ -65,7 +64,7 @@ LPBF 316L is most attractive for low-volume integrated routing. Binder-jet 316L 
 
 ### Hastelloy X: hot gas and thermal cycling lead
 
-[Hastelloy X powder](/posts/Alloys/hastelloy-x-powder-hydrogen-burner-and-combustor-hardware/) enters the review for reformer burners, tail-gas combustors, hot transition ducts, and other flame-adjacent hardware. A [published Alloy X technical page](https://haynesintl.com/en/alloys/alloy-portfolio/high-temperature-alloys/hastelloy-x/) describes the nickel-chromium-iron-molybdenum alloy as combining oxidation resistance, fabricability, and high-temperature strength. The source data are a material-screening reference, not proof for a printed hydrogen burner or SOFC manifold.
+[Hastelloy X powder](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) enters the review for reformer burners, tail-gas combustors, hot transition ducts, and other flame-adjacent hardware. A [published Alloy X technical page](https://haynesintl.com/en/alloys/alloy-portfolio/high-temperature-alloys/hastelloy-x/) describes the nickel-chromium-iron-molybdenum alloy as combining oxidation resistance, fabricability, and high-temperature strength. The source data are a material-screening reference, not proof for a printed hydrogen burner or SOFC manifold.
 
 ### 17-4PH: strength-led static hardware only after corrosion review
 

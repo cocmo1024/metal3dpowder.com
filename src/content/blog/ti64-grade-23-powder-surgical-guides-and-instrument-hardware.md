@@ -4,12 +4,12 @@ description: Where Ti64 Grade 23 powder fits patient-specific surgical guides, d
 pubDate: 2026-07-05T16:30:00+08:00
 category: Titanium
 tags:
-  - Ti64 Grade 23
-  - surgical guides
-  - medical titanium
-  - LPBF
   - titanium powder
-featured: true
+  - Ti64 Grade 23
+  - Ti-6Al-4V
+  - CP titanium
+  - medical additive manufacturing
+featured: false
 ---
 
 Ti64 Grade 23 powder is usually discussed as a medical implant material, but the same ELI-style titanium route can also matter in surgical guides, drill-guide carriers, reusable alignment hardware, and instrument-adjacent components. The search intent is different from a spinal cage or orthopedic implant page: the buyer is often trying to decide whether a metal AM route is justified for a guide, fixture, or instrument component that must survive handling, cleaning, sterilization, and qualification review.
@@ -18,7 +18,7 @@ That distinction matters. Not every patient-specific surgical guide should becom
 
 ## How this differs from implant-side Grade 23 pages
 
-The existing [Ti64 Grade 23 orthopedic implant guide](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/) covers broad medical titanium hardware. The [spinal cage and porous implant page](/posts/Alloys/ti64-grade-23-powder-spinal-cages-and-porous-implant-structures/) is narrower and focuses on porous implant structures where lattice geometry, trapped powder risk, and implant-side surface condition dominate the discussion.
+The existing [Ti64 Grade 23 orthopedic implant guide](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/) covers broad medical titanium hardware. The [spinal cage and porous implant page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/) is narrower and focuses on porous implant structures where lattice geometry, trapped powder risk, and implant-side surface condition dominate the discussion.
 
 This page sits next to those topics but should not compete with them. Surgical guides and instrument hardware usually raise a different set of questions:
 
@@ -122,9 +122,9 @@ Use Grade 23 when the hardware needs ELI-style titanium logic, controlled chemis
 
 Use standard Ti64 / Grade 5 when the part is structural, weight-sensitive, and titanium is needed, but the tighter Grade 23 chemistry is not justified. The [TC4 / Ti-6Al-4V powder page](/posts/Alloys/tc4-ti6al4v-powder/) is the better fit for that broader decision.
 
-Use commercially pure titanium when corrosion behavior or CP titanium logic matters more than Ti64-level strength. For that path, compare against [TA1 commercially pure titanium powder](/posts/Alloys/ta1-cp-titanium-powder/) and [TA1 chemical and biomedical titanium parts](/posts/Alloys/ta1-powder-chemical-and-biomedical-parts/).
+Use commercially pure titanium when corrosion behavior or CP titanium logic matters more than Ti64-level strength. For that path, compare against [TA1 commercially pure titanium powder](/posts/Alloys/ta1-cp-titanium-powder/) and [TA1 chemical and biomedical titanium parts](/posts/Alloys/ta1-cp-titanium-powder/).
 
-Use cobalt chrome when the application is dental or wear-critical rather than a titanium guide or instrument frame. The dental route is covered in the [cobalt chrome vs titanium powder dental AM comparison](/posts/Alloys/cobalt-chrome-vs-titanium-powder-dental-am/).
+Use cobalt chrome when the application is dental or wear-critical rather than a titanium guide or instrument frame. The dental route is covered in the [cobalt chrome vs titanium powder dental AM comparison](/posts/Alloys/cocrmo-powder-dental-frameworks-and-crowns/).
 
 ## RFQ checklist for surgical-guide and instrument hardware
 
@@ -154,4 +154,4 @@ For regulatory and standards framing, review FDA's [3D Printing of Medical Devic
 
 Ti64 Grade 23 powder is a strong candidate for surgical guides and instrument-adjacent hardware only when the application can justify metal AM, controlled ELI titanium chemistry, and a documented powder/process route. The highest-value inquiry will define the part type, medical workflow, LPBF powder range, oxygen limit, post-processing plan, and validation expectations before asking for price.
 
-For adjacent decisions, continue to the [Ti64 Grade 23 orthopedic implant guide](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/), the [spinal cage and porous implant page](/posts/Alloys/ti64-grade-23-powder-spinal-cages-and-porous-implant-structures/), the [Grade 23 vs Grade 5 comparison](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/), and the [metal powder specification guide](/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/).
+For adjacent decisions, continue to the Ti64 Grade 23 orthopedic implant guide, the spinal cage and porous implant page, the [Grade 23 vs Grade 5 comparison](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/), and the [metal powder specification guide](/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/).

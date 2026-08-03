@@ -4,12 +4,10 @@ description: Where 316L powder fits AI data center coolant distribution manifold
 pubDate: 2026-06-06T09:20:00+08:00
 category: Steel
 tags:
+  - stainless steel powder
   - 316L
-  - AI data center
-  - coolant distribution
-  - liquid cooling
-  - LPBF
-featured: true
+  - additive manufacturing
+featured: false
 ---
 
 AI data center liquid cooling is no longer only a cold-plate topic. As rack-scale systems move toward direct-to-chip cooling, higher coolant flow, more monitoring, and denser rack integration, the stainless fluid hardware around the cold plate becomes more important. Coolant distribution units, rack-drop interfaces, sensor blocks, small manifolds, bypass bodies, and serviceable fluid-path hardware all need clean routing, sealing faces, corrosion-aware material behavior, and a manufacturing route that can handle compact geometry.
@@ -34,7 +32,7 @@ Liquid-cooled AI infrastructure pushes more thermal work into the rack and into 
 - compact transition blocks between tubing, hoses, and cold plates
 - small stainless fluid-path housings used in test fixtures or pilot deployments
 
-These parts usually do not need the thermal conductivity of CuCrZr. They need controlled stainless routing, leak-aware interfaces, stable machining, and corrosion behavior that fits the coolant chemistry. This makes the topic different from the existing [CuCrZr AI cold plate and GPU manifold page](/posts/Alloys/cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds/), which is about copper-family thermal hardware.
+These parts usually do not need the thermal conductivity of CuCrZr. They need controlled stainless routing, leak-aware interfaces, stable machining, and corrosion behavior that fits the coolant chemistry. This makes the topic different from the existing [CuCrZr AI cold plate and GPU manifold page](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/), which is about copper-family thermal hardware.
 
 The stainless side is more about distribution and control. A 316L manifold may need several ports in a small envelope, sensor bosses in the right locations, mounting ears, seal lands, and internal passages that would require multiple drilled blocks or welded assemblies in a conventional route.
 
@@ -53,7 +51,7 @@ The common pattern is not "AI data center" by itself. The common pattern is rout
 
 ## Where 316L should not be forced
 
-316L powder should not be treated as a universal liquid-cooling material. If the part is the primary heat-transfer surface under a GPU, accelerator, ASIC, or optical module, a copper-family route may be more relevant. That is where [CuCrZr powder for cold plates](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/) and [CuCrZr powder for co-packaged optics cold plates](/posts/Alloys/cucrzr-powder-co-packaged-optics-cold-plates/) are closer fits.
+316L powder should not be treated as a universal liquid-cooling material. If the part is the primary heat-transfer surface under a GPU, accelerator, ASIC, or optical module, a copper-family route may be more relevant. That is where [CuCrZr powder for cold plates](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/) and CuCrZr powder for co-packaged optics cold plates are closer fits.
 
 If the coolant or process environment is more chemically aggressive than ordinary inhibited water, water-glycol, or compatible dielectric-loop hardware, the material review should become more conservative. Chlorides, poor coolant control, galvanic pairings, cleaning chemistry, and high-temperature exposure can change the answer. In some cases, a nickel alloy route or a different stainless specification may be cleaner. The [316L vs nickel powder comparison for corrosion-side manifolds](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) is the better starting point when corrosion severity is the real risk.
 
@@ -114,10 +112,10 @@ For a liquid-cooled AI rack, a practical material map often looks like this:
 
 | Hardware area | Common material direction | Powder-page path |
 |---|---|---|
-| Cold plate or heat-transfer core | Copper-family route where conductivity matters | [CuCrZr AI cold plates](/posts/Alloys/cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds/) |
-| CPO or optical thermal hardware | Copper-family route for dense local cooling | [CuCrZr CPO cold plates](/posts/Alloys/cucrzr-powder-co-packaged-optics-cold-plates/) |
+| Cold plate or heat-transfer core | Copper-family route where conductivity matters | CuCrZr AI cold plates |
+| CPO or optical thermal hardware | Copper-family route for dense local cooling | CuCrZr CPO cold plates |
 | Coolant distribution and sensor blocks | 316L when routed stainless behavior is enough | This 316L coolant distribution page |
-| Clean gas or sensor-adjacent stainless hardware | 316L if clean routing and sealing dominate | [316L semiconductor gas manifolds](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/) |
+| Clean gas or sensor-adjacent stainless hardware | 316L if clean routing and sealing dominate | [316L semiconductor gas manifolds](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/) |
 | More aggressive corrosion-side manifolds | 316L vs nickel review | [316L vs nickel powder](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) |
 
 That map keeps the AI liquid-cooling cluster powder-centered. It prevents the site from turning into a generic data center blog and keeps each page tied to a real material decision.
@@ -126,7 +124,7 @@ That map keeps the AI liquid-cooling cluster powder-centered. It prevents the si
 
 If the project is starting from the application, use the [AI Liquid Cooling hub](/applications/ai-liquid-cooling/) to compare copper and stainless thermal-fluid hardware. If the project is starting from the material, use the [Stainless Steel Powder hub](/materials/stainless-steel-powder/). If the main question is manufacturability, route through [LPBF Powder](/processes/lpbf/).
 
-For adjacent stainless paths, continue with [316L powder for manifolds and fluid-path parts](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/), [316L powder for semiconductor gas manifolds and sensor housings](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/), or [316L powder for hydrogen electrolyzer flow-field hardware](/posts/Alloys/316l-powder-hydrogen-electrolyzer-flow-field-plates/) depending on the actual environment.
+For adjacent stainless paths, continue with 316L powder for manifolds and fluid-path parts, 316L powder for semiconductor gas manifolds and sensor housings, or [316L powder for hydrogen electrolyzer flow-field hardware](/posts/Alloys/316l-powder-hydrogen-electrolyzer-flow-field-plates/) depending on the actual environment.
 
 ## The practical takeaway
 

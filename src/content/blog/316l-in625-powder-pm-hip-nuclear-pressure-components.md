@@ -5,12 +5,12 @@ pubDate: 2026-07-19T00:10:00+08:00
 updatedDate: 2026-07-23
 category: Knowledge
 tags:
+  - metal powder
+  - powder specification
+  - 316L
+  - IN625
   - PM-HIP
-  - nuclear pressure components
-  - 316L powder
-  - IN625 powder
-  - hot isostatic pressing
-featured: true
+featured: false
 ---
 
 Powder metallurgy hot isostatic pressing can make large near-net-shape metal components, but a PM-HIP powder quote is not evidence that a nuclear pressure component is code-acceptable. The useful buyer decision is narrower: does the component have enough geometry, material-utilization, weld-reduction, or supply-chain value to justify PM-HIP, and can the powder-to-finished-part route be qualified under the project's actual rules?

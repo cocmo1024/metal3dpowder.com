@@ -4,12 +4,11 @@ description: Where M300 powder fits precision injection mold sliders, lifters, c
 pubDate: 2026-07-05T10:30:00+08:00
 category: Tooling
 tags:
+  - tool steel powder
+  - tooling and mold inserts
   - M300
-  - injection molding
-  - mold sliders
-  - mold lifters
-  - tooling powder
-featured: true
+  - additive manufacturing
+featured: false
 ---
 
 M300 powder deserves a separate discussion for injection mold sliders and lifters because these parts are not just another mold insert. A slider or lifter has to move, locate, release an undercut, survive repeated cycles, hold machined datum surfaces, and fit into a tight tool envelope. That makes the powder decision more specific than a broad "M300 mold tooling" question.
@@ -29,7 +28,7 @@ That changes the M300 discussion. The part may need:
 - wear-aware contact zones and replaceable inserts
 - clear machining stock on shutoff, forming, and guide surfaces
 
-This is why a slider or lifter is not the same search intent as a general [M300 mold tooling insert](/posts/Alloys/m300-powder-mold-tooling-inserts/) or a broad [M300 core insert](/posts/Alloys/m300-powder-core-inserts-and-compact-production-tooling/) page.
+This is why a slider or lifter is not the same search intent as a general [M300 mold tooling insert](/posts/Alloys/m300-powder-mold-tooling-inserts/) or a broad [M300 core insert](/posts/Alloys/m300-powder-mold-tooling-inserts/) page.
 
 ## Where M300 powder can fit
 
@@ -60,7 +59,7 @@ LPBF does not remove the need for machining. Shutoff surfaces, guide surfaces, a
 
 ## How this differs from compact mold inserts
 
-The existing [M300 compact mold insert page](/posts/Alloys/m300-powder-compact-mold-inserts-in-recurring-production/) is about recurring production inserts where cooling geometry and insert replacement justify M300. This page is narrower because sliders and lifters add motion.
+The existing M300 compact mold insert page is about recurring production inserts where cooling geometry and insert replacement justify M300. This page is narrower because sliders and lifters add motion.
 
 That motion changes the RFQ:
 
@@ -85,7 +84,7 @@ The [H13 vs M300 powder guide](/posts/Alloys/h13-vs-m300-powder/) is the broad c
 | Critical surfaces | Datum, guide, shutoff, forming, and wear faces need machining | Thermal-cycling areas and hot-work surfaces dominate |
 | Risk | Dimensional stability after aging and finishing | Heat checking, thermal cycling, and production heat load |
 
-If the project is mainly an injection molding production tool with heat-driven durability requirements, review the [H13 injection molding conformal cooling page](/posts/Alloys/h13-powder-injection-molding-conformal-cooling-production-tools/). If the job is a precision moving insert with compact cooling and controlled finishing, M300 is often the cleaner first discussion.
+If the project is mainly an injection molding production tool with heat-driven durability requirements, review the [H13 injection molding conformal cooling page](/posts/Alloys/h13-powder-conformal-cooling-inserts/). If the job is a precision moving insert with compact cooling and controlled finishing, M300 is often the cleaner first discussion.
 
 ## RFQ checklist for M300 slider and lifter powder projects
 
@@ -108,9 +107,9 @@ For the broader powder checklist, use the [metal powder specification guide](/po
 Use this page when the search intent is specifically sliders, lifters, and compact moving mold details. Use adjacent pages when the part family changes:
 
 - start with [M300 maraging steel powder](/posts/Alloys/m300-maraging-steel-powder/) when confirming the alloy family
-- use [M300 mold tooling inserts](/posts/Alloys/m300-powder-mold-tooling-inserts/) for broad mold tooling and production fixture context
-- use [M300 core inserts and compact production tooling](/posts/Alloys/m300-powder-core-inserts-and-compact-production-tooling/) when the detail is a static insert rather than a moving slider or lifter
-- use [M300 compact mold inserts](/posts/Alloys/m300-powder-compact-mold-inserts-in-recurring-production/) when the recurring-production insert is the main question
+- use M300 mold tooling inserts for broad mold tooling and production fixture context
+- use M300 core inserts and compact production tooling when the detail is a static insert rather than a moving slider or lifter
+- use M300 compact mold inserts when the recurring-production insert is the main question
 - compare [H13 vs M300](/posts/Alloys/h13-vs-m300-powder/) when hot-work duty and insert precision are both possible
 - use [Tool Steel Powder](/materials/tool-steel-powder/) for the H13 and M300 material cluster
 - use [Tooling and Mold Inserts](/applications/tooling-and-mold-inserts/) for application-led browsing

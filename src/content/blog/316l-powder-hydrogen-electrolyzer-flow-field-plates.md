@@ -5,12 +5,11 @@ pubDate: 2026-05-29T09:20:00+08:00
 updatedDate: 2026-07-18
 category: Steel
 tags:
+  - stainless steel powder
   - 316L
-  - fuel-cell bipolar plate
-  - electrolyzer flow field
-  - LPBF
-  - binder jet
-featured: true
+  - thermal management
+  - additive manufacturing
+featured: false
 ---
 
 316L powder is a credible candidate for fuel-cell bipolar plates and electrolyzer flow-field hardware when additive manufacturing solves a specific geometry, integration, or development problem. It is not the automatic choice for a thin production plate, and a dense printed coupon does not prove acceptable corrosion, contact resistance, coating adhesion, sealing, or stack life.

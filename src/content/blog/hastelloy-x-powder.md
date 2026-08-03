@@ -2,11 +2,11 @@
 title: Hastelloy X Powder for Oxidation-Resistant High-Temperature AM Parts
 description: Hastelloy X powder guide for additive manufacturing projects focused on combustion hardware, oxidation resistance, and high-temperature alloy selection.
 pubDate: 2026-04-12
+updatedDate: 2026-08-03
 category: Nickel
 tags:
-  - Hastelloy X
   - nickel alloy powder
-  - high-temperature alloy
+  - Hastelloy X
   - additive manufacturing
 featured: false
 ---
@@ -38,6 +38,19 @@ With Hastelloy X, the thermal problem has to be explicit. If the environment is 
 
 Use Hastelloy X when the AM part belongs to an oxidation-resistant, high-temperature, combustion-oriented problem. Do not treat it as a generic premium nickel upgrade. The right comparison is against the environment, then against [IN718 vs IN625](/posts/Alloys/in718-vs-in625-powder/) if the project still sits between structural and corrosion-driven nickel-alloy routes. If the actual use case is furnace or hot-gas hardware, continue with the focused [Hastelloy X application guide](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/).
 
-If the choice is specifically between structural hot-side hardware and oxidation-driven furnace hardware, use the dedicated [IN718 vs Hastelloy X comparison](/posts/Alloys/in718-vs-hastelloy-x-powder-turbine-vs-furnace-hardware/).
+If the choice is specifically between structural hot-side hardware and oxidation-driven furnace hardware, use the dedicated [IN718 vs Hastelloy X comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/).
 
-If the choice is specifically between corrosion-first IN625 and oxidation-first Hastelloy X for chemical hot-gas hardware, use the dedicated [IN625 vs Hastelloy X chemical hot-gas comparison](/posts/Alloys/in625-vs-hastelloy-x-powder-chemical-hot-gas-hardware/).
+If the choice is specifically between corrosion-first IN625 and oxidation-first Hastelloy X for chemical hot-gas hardware, use the dedicated [IN625 vs Hastelloy X chemical hot-gas comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/).
+
+## Hastelloy X powder buying matrix
+
+| Field | Specify | Why |
+| --- | --- | --- |
+| Alloy identity | Exact Hastelloy X chemistry/specification | “Nickel superalloy” is not sufficient |
+| Process | LPBF or another qualified route and machine family | PSD and evidence depend on the process |
+| Powder lot | Production route, PSD method, morphology, condition and traceability | Controls identity and lot change |
+| Thermal route | Stress relief, solution treatment, HIP or other project route | Final properties are condition-dependent |
+| Service | Gas composition, temperature-time cycle, pressure and load | Separates oxidation, fatigue, creep and corrosion questions |
+| Acceptance | NDE, dimensions, surface and representative tests | Powder acceptance does not qualify the component |
+
+Use the [furnace and hot-gas application guide](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) when the hardware is a burner, combustor, furnace component, duct, or high-temperature test article. Request the lot COA, PSD report, TDS/SDS, and available SEM or morphology evidence in the RFQ, then require finished-part evidence for the actual thermal cycle.

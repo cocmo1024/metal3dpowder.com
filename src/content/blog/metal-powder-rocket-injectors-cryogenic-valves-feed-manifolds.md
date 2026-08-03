@@ -4,12 +4,11 @@ description: Compare IN718, IN625, Hastelloy X, Ti64, and copper-alloy powder ro
 pubDate: 2026-07-17T00:18:00+08:00
 category: Knowledge
 tags:
-  - rocket injector
-  - cryogenic valve
-  - feed-system manifold
-  - LPBF powder
-  - alloy selection
-featured: true
+  - metal powder
+  - powder specification
+  - aerospace additive manufacturing
+  - additive manufacturing
+featured: false
 ---
 
 There is no single best metal powder for rocket injectors, cryogenic valve bodies, pump housings, and feed-system manifolds. These parts share a propulsion system, but they do not share one thermal, structural, fluid-compatibility, ignition, corrosion, or flow-path problem.

@@ -5,7 +5,6 @@ pubDate: 2026-04-29T22:08:00+08:00
 updatedDate: 2026-07-11
 category: Steel
 tags:
-  - steel powder for 3D printing
   - stainless steel powder
   - 316L
   - 17-4PH
@@ -66,7 +65,7 @@ H13 belongs to hot-work tooling: die-casting inserts, forging or forming tools, 
 
 The AM route must address cracking risk, thermal history, residual stress, heat treatment, hardness, machining stock, and surface condition. A cooling-channel design is not successful if the working surface fails prematurely or the channels cannot be cleaned and pressure tested.
 
-Read the [H13 conformal cooling guide](/posts/Alloys/h13-powder-conformal-cooling-inserts/) and [H13 die-casting insert guide](/posts/Alloys/h13-powder-die-casting-inserts/) for application-specific decisions.
+Read the [H13 conformal cooling guide](/posts/Alloys/h13-powder-conformal-cooling-inserts/) and [H13 die-casting insert guide](/posts/Alloys/h13-powder-conformal-cooling-inserts/) for application-specific decisions.
 
 ## M300 maraging steel powder
 

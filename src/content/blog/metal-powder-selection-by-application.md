@@ -4,11 +4,9 @@ description: Choose metal powder by application across aerospace, medical, therm
 pubDate: 2026-07-11T09:30:00+08:00
 category: Knowledge
 tags:
-  - metal powder applications
-  - metal powder selection
-  - additive manufacturing materials
-  - alloy selection
-  - metal powder RFQ
+  - metal powder
+  - powder specification
+  - additive manufacturing
 featured: true
 ---
 
@@ -116,7 +114,7 @@ Pure copper is attractive when maximum conductivity is the first requirement. Cu
 - busbar transition components,
 - rocket or high-heat-flux cooling parts.
 
-The real questions are thermal resistance, current path, pressure and leakage, channel cleaning, machined contact faces, joining, and machine capability. Use the [copper powder guide](/posts/Alloys/copper-powder-for-3d-printing-guide/) and [CuCrZr versus pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/).
+The real questions are thermal resistance, current path, pressure and leakage, channel cleaning, machined contact faces, joining, and machine capability. Use the [copper powder guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) and [CuCrZr versus pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/).
 
 ### 316L in cooling systems
 

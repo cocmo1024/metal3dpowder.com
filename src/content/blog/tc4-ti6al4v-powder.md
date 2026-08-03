@@ -2,7 +2,7 @@
 title: TC4 (Ti-6Al-4V) Grade 5/23 Titanium Powder for LPBF, EBM & DED
 description: A practical guide to TC4 titanium powder covering Grade 5 vs Grade 23, PSD selection, oxygen control, and process fit across LPBF, EBM, and DED.
 pubDate: 2025-12-20
-updatedDate: 2026-07-05
+updatedDate: 2026-08-03
 category: Titanium
 tags:
   - titanium powder
@@ -51,8 +51,21 @@ That is why the process route should be explicit from the beginning. LPBF, EBM, 
 
 If the part is corrosion-driven rather than strength-driven, it is worth comparing TC4 against [Grade 2 titanium powder](/posts/Alloys/ti64-vs-grade-2-titanium-powder/). If the process is electron beam rather than laser based, pair the alloy decision with the [EBM powder size guide](/posts/Alloys/ebm-powder-size-guide/) instead of reusing an LPBF-style PSD request.
 
-If the end use is really aerospace structural hardware rather than titanium AM in general, continue with the application-specific [Ti64 aerospace structures guide](/posts/Alloys/ti64-titanium-powder-aerospace-structures/). If the titanium geometry is specifically a lattice bracket or lightweight structural node, continue with the narrower [Ti64 lattice and structural-node page](/posts/Alloys/ti64-powder-lattice-brackets-and-lightweight-structural-nodes/). If the titanium part is specifically an aircraft hydraulic manifold or valve block, continue with the dedicated [Ti64 aircraft hydraulic page](/posts/Alloys/ti64-powder-aircraft-hydraulic-manifolds-and-valve-blocks/). If the titanium route is being defined for orthopedic or medical use, continue with the focused [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/) or the narrower [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/).
+## TC4 sourcing matrix
+
+| Decision | State in the RFQ | Evidence to request |
+| --- | --- | --- |
+| Grade intent | Grade 5, Grade 23, or governing program specification | Lot chemistry and the applicable material specification |
+| Process fit | LPBF, EBM, DED, machine and parameter basis | PSD result and method, morphology, flow evidence relevant to the route |
+| Powder history | Virgin-only or approved reuse/blending policy | Lot identity, traceability, handling and contamination controls |
+| Final application | Service environment, qualification stage and critical properties | TDS/SDS plus the agreed mechanical, heat-treatment and inspection basis |
+
+Powder COA, process qualification, and final-part acceptance are different evidence layers. A strong supplier response should identify which layer each document supports.
+
+If the end use is aerospace structural hardware, including brackets, lightweight nodes, or hydraulic-support hardware, continue with the consolidated [Ti64 aerospace structures guide](/posts/Alloys/ti64-titanium-powder-aerospace-structures/). If the route is being defined for orthopedic or medical use, continue with the focused [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/) or the narrower [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/).
 
 ## The practical takeaway
 
 Use TC4 when the part is structural, weight-sensitive, and needs a titanium route with broad AM familiarity. Define the grade intent, the process route, and the oxygen logic before treating Ti64 as a generic titanium option.
+
+For a comparable quote, include grade/specification, process, machine, PSD, interstitial limits, powder history, quantity, recurring demand, qualification stage, and delivery country. Ask for lot COA, PSD, TDS/SDS, available SEM or morphology evidence, and packaging information through the RFQ.

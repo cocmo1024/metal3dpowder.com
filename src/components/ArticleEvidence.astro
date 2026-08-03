@@ -1,0 +1,117 @@
+---
+import { getArticleEvidenceProfile } from '../data/articleEvidence';
+
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+const profile = getArticleEvidenceProfile(category);
+---
+
+<section class="article-evidence" aria-labelledby="article-evidence-title">
+  <header>
+    <p class="eyebrow">Buyer evidence gate</p>
+    <h2 id="article-evidence-title">Evidence to request before approval</h2>
+    <p>{profile.boundary}</p>
+  </header>
+
+  <div class="article-evidence__grid">
+    <div>
+      <h3>Put these items in the RFQ</h3>
+      <ul>
+        {profile.powderEvidence.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+
+    <div>
+      <h3>Standards and technical starting points</h3>
+      <ul class="article-evidence__sources">
+        {
+          profile.sources.map((source) => (
+            <li>
+              <a href={source.href} rel="noreferrer">{source.label}</a>
+              <span>{source.scope}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <p class="article-evidence__request">
+    Need the available lot-specific COA, PSD report, TDS/SDS, SEM images, or packaging evidence?
+    List the required files and acceptance basis in the powder RFQ.
+  </p>
+</section>
+
+<style>
+  .article-evidence {
+    display: grid;
+    gap: 1rem;
+    padding: var(--card-padding);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface-soft);
+  }
+
+  .article-evidence header,
+  .article-evidence__grid > div,
+  .article-evidence__sources li {
+    display: grid;
+    gap: 0.48rem;
+  }
+
+  .article-evidence h2,
+  .article-evidence h3,
+  .article-evidence p,
+  .article-evidence ul {
+    margin: 0;
+  }
+
+  .article-evidence h2 {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    line-height: 1.25;
+  }
+
+  .article-evidence h3 {
+    font-size: 1rem;
+  }
+
+  .article-evidence header > p:last-child,
+  .article-evidence li,
+  .article-evidence__request {
+    color: var(--copy);
+    line-height: var(--body-leading);
+  }
+
+  .article-evidence ul {
+    display: grid;
+    gap: 0.42rem;
+    padding-left: 1.15rem;
+  }
+
+  .article-evidence__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .article-evidence__sources span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  .article-evidence__request {
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--line);
+    font-weight: 650;
+  }
+
+  @media (max-width: 720px) {
+    .article-evidence__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -5,12 +5,11 @@ pubDate: 2026-06-30T15:58:00+08:00
 updatedDate: 2026-07-03
 category: Nickel
 tags:
-  - IN625
-  - sour gas
-  - valve hardware
-  - downhole hardware
   - nickel alloy powder
-featured: true
+  - IN625
+  - corrosion resistant hardware
+  - additive manufacturing
+featured: false
 ---
 
 IN625 powder is worth reviewing for sour gas valves, chokes, and downhole flow hardware when the part combines H2S exposure, CO2, chlorides, pressure, temperature, erosion, and compact geometry. This is not a generic oil and gas page. It is a powder and part-selection guide for corrosion-critical hardware where a nickel alloy route may be more defensible than stronger stainless steel.
@@ -72,7 +71,7 @@ If the project is specifically an IN625 repair overlay, laser-clad rebuild, or l
 
 Chokes and valve components can fail from corrosion, erosion, sliding wear, cavitation, particle impact, or combinations of those mechanisms. IN625 powder is strongest when corrosion resistance and nickel alloy behavior are the main reasons for leaving stainless. It should not be treated as a universal hard-facing or wear-seat solution.
 
-If sliding wear, valve-seat wear, pump-sleeve wear, or tribology dominates, compare the [CoCrMo pump sleeve and valve-seat page](/posts/Alloys/cocrmo-powder-pump-sleeves-and-valve-seat-wear-hardware/). If the problem is mainly stronger stainless structure and the sour-service requirement is not dominant, compare [316L vs 17-4PH powder](/posts/Alloys/316l-vs-17-4ph-powder/) and [17-4PH stainless steel powder](/posts/Alloys/17-4ph-stainless-steel-powder/).
+If sliding wear, valve-seat wear, pump-sleeve wear, or tribology dominates, compare the [CoCrMo pump sleeve and valve-seat page](/posts/Alloys/cocrmo-cocrw-powder/). If the problem is mainly stronger stainless structure and the sour-service requirement is not dominant, compare [316L vs 17-4PH powder](/posts/Alloys/316l-vs-17-4ph-powder/) and [17-4PH stainless steel powder](/posts/Alloys/17-4ph-stainless-steel-powder/).
 
 ## What to include in a sour-service IN625 powder RFQ
 
@@ -98,7 +97,7 @@ Use this internal map to keep the topic powder-centered:
 - use this page when the environment is sour gas, H2S-bearing production, choke hardware, downhole flow, or wellhead/subsea flow hardware
 - use [17-4PH oil and gas valve and pump hardware](/posts/Alloys/17-4ph-powder-oil-gas-valve-components-and-pump-hardware/) when stronger stainless hardware is the main question
 - use [316L vs nickel powder](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) if the stainless-to-nickel decision is not settled
-- use [IN625 corrosion-heavy hot-side hardware](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/) when the environment is hot and corrosive but not specifically sour-service oilfield hardware
+- use [IN625 corrosion-heavy hot-side hardware](/posts/Alloys/gh3625-in625-powder/) when the environment is hot and corrosive but not specifically sour-service oilfield hardware
 - use [Nickel Alloy Powder](/materials/nickel-alloy-powder/) for adjacent IN625, IN718, and Hastelloy X choices
 - use [Oil, Gas, and Sour-Service Hardware](/applications/oil-gas-and-sour-service-hardware/) when browsing oilfield flow and wear hardware by application
 

@@ -4,12 +4,11 @@ description: Where CuCrZr powder fits fusion and high-heat-flux cooling hardware
 pubDate: 2026-05-27T09:20:00+08:00
 category: Copper
 tags:
-  - CuCrZr
-  - fusion components
-  - high heat flux cooling
   - copper alloy powder
-  - LPBF
-featured: true
+  - CuCrZr
+  - thermal management
+  - additive manufacturing
+featured: false
 ---
 
 CuCrZr powder is becoming more relevant for fusion and other high-heat-flux cooling components because these parts need a difficult combination: high thermal conductivity, useful mechanical strength, controlled cooling geometry, and a powder-bed route that can be qualified rather than treated as a lab curiosity.
@@ -24,7 +23,7 @@ Fusion systems push material decisions hard because heat removal is central to t
 
 In many designs, the plasma-facing or heat-loaded surface is not the same material as the heat sink. Tungsten, steel, refractory alloys, coatings, or composites may appear on the hot side, while a copper alloy can be used where heat removal dominates. CuCrZr is attractive because it offers a more balanced route than pure copper: strong thermal performance with better mechanical credibility and aging response than a softer copper route.
 
-That balance is why CuCrZr already appears in demanding thermal hardware beyond fusion. The same logic also explains its use in [rocket-side copper heat exchangers](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/), [cold plates and heat sinks](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/), and compact [AI data center liquid-cooling manifolds](/posts/Alloys/cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds/).
+That balance is why CuCrZr already appears in demanding thermal hardware beyond fusion. The same logic also explains its use in [rocket-side copper heat exchangers](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/), [cold plates and heat sinks](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/), and compact [AI data center liquid-cooling manifolds](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/).
 
 ## Where CuCrZr powder can fit
 
@@ -108,7 +107,7 @@ The decision should start with the limiting factor. If the limiting factor is co
 
 This topic overlaps with other copper articles but has a different search intent.
 
-The [CuCrZr cold plate page](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/) is broad thermal-management guidance. The [CuCrZr AI cooling page](/posts/Alloys/cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds/) focuses on data center liquid cooling. The [CuCrZr rocket engine page](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/) covers propulsion-side thermal hardware. This fusion page is narrower because it focuses on high heat flux, powder-bed processing risk, internal cooling, and qualification logic around fusion-adjacent hardware.
+The CuCrZr cold plate page is broad thermal-management guidance. The CuCrZr AI cooling page focuses on data center liquid cooling. The [CuCrZr rocket engine page](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/) covers propulsion-side thermal hardware. This fusion page is narrower because it focuses on high heat flux, powder-bed processing risk, internal cooling, and qualification logic around fusion-adjacent hardware.
 
 That separation matters for search and for engineering. A buyer searching for "CuCrZr fusion component powder" is usually not asking the same question as a buyer searching for "copper cold plate powder."
 
@@ -116,4 +115,4 @@ That separation matters for search and for engineering. A buyer searching for "C
 
 Use CuCrZr powder for fusion and high-heat-flux cooling components when conductivity, structural credibility, and complex cooling geometry matter together. Keep the discussion tied to the actual component: heat flux, coolant path, inspection access, leak testing, heat treatment, joining, and qualification evidence.
 
-For broader material context, start with the [CuCrZr powder guide](/posts/Alloys/cucrzr-copper-powder/) and the [copper powder for 3D printing guide](/posts/Alloys/copper-powder-for-3d-printing-guide/). For adjacent application paths, compare [Energy and Propulsion Hardware](/applications/energy-and-propulsion/), [AI Liquid Cooling](/applications/ai-liquid-cooling/), and [Fusion and High-Heat-Flux Hardware](/applications/fusion-high-heat-flux-hardware/).
+For broader material context, start with the [CuCrZr powder guide](/posts/Alloys/cucrzr-copper-powder/) and the [copper powder for 3D printing guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/). For adjacent application paths, compare [Energy and Propulsion Hardware](/applications/energy-and-propulsion/), [AI Liquid Cooling](/applications/ai-liquid-cooling/), and [Fusion and High-Heat-Flux Hardware](/applications/fusion-high-heat-flux-hardware/).

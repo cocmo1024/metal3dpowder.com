@@ -5,11 +5,10 @@ pubDate: 2026-04-29T22:06:00+08:00
 updatedDate: 2026-07-16
 category: Knowledge
 tags:
-  - additive manufacturing powder suppliers
-  - metal powder manufacturer
-  - 3D printing metal powder supplier
-  - powder quality
-  - RFQ
+  - metal powder
+  - powder specification
+  - metal powder sourcing
+  - additive manufacturing
 featured: true
 ---
 
@@ -176,7 +175,7 @@ For [nickel alloy powder](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guid
 
 For [steel powder](/posts/Alloys/steel-metal-powder-for-3d-printing-guide/), separate 316L, 17-4PH, H13, and M300, then define heat treatment or sintering.
 
-For [copper powder](/posts/Alloys/copper-powder-for-3d-printing-guide/), define pure copper versus CuCrZr, conductivity expectations, oxygen behavior, machine compatibility, and post-processing.
+For [copper powder](/posts/Alloys/cucrzr-vs-pure-copper-powder/), define pure copper versus CuCrZr, conductivity expectations, oxygen behavior, machine compatibility, and post-processing.
 
 ## RFQ template for supplier comparison
 

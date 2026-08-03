@@ -2,14 +2,13 @@
 title: CuCrZr Copper Alloy Powder for High-Conductivity AM Applications
 description: CuCrZr copper powder explained for conductivity-focused AM parts, including the tradeoff between conductivity, strength, and printability.
 pubDate: 2025-12-20
-updatedDate: 2026-07-02
+updatedDate: 2026-08-03
 category: Copper
 tags:
-  - CuCrZr
   - copper alloy powder
-  - high conductivity
+  - CuCrZr
   - additive manufacturing
-featured: false
+featured: true
 ---
 
 CuCrZr is one of the most practical copper alloys for additive manufacturing when the part needs a real balance of conductivity and mechanical strength. Pure copper can be difficult to process and may lack the required strength. Many stronger copper alloys sacrifice too much conductivity. CuCrZr sits in the middle.
@@ -39,12 +38,25 @@ CuCrZr is valuable because it can be precipitation hardened after printing. That
 
 If the project is still undecided between CuCrZr and a pure-copper route, use the dedicated [CuCrZr vs pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) before finalizing the material route.
 
-If the actual hardware target is a cold plate or heat sink rather than a general copper part, continue with the application-focused [CuCrZr thermal hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/). If the part is an induction coil or current-carrying copper component, continue with the dedicated [CuCrZr induction and conductor guide](/posts/Alloys/cucrzr-powder-induction-coils-and-current-carrying-parts/).
+If the actual hardware target is a cold plate or heat sink rather than a general copper part, continue with the application-focused [CuCrZr thermal hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/). If the part is an induction coil or current-carrying copper component, continue with the dedicated [CuCrZr induction and conductor guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
 
 If the actual use case is conductive tooling or a welding-contact component, continue with the dedicated [CuCrZr conductive tooling guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
 
 If the actual use case is a regeneratively cooled rocket combustion chamber liner, continue with the [CuCrZr rocket chamber guide](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/) for cooling-channel, jacket-interface, inspection, and RFQ decisions.
 
-If the actual use case is semiconductor equipment cooling plates, RF thermal hardware, packaging test fixtures, or clean copper thermal tooling, continue with the dedicated [CuCrZr semiconductor equipment hardware guide](/posts/Alloys/cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware/).
+If the actual use case is semiconductor equipment cooling plates, RF thermal hardware, packaging test fixtures, or clean copper thermal tooling, continue with the dedicated [CuCrZr semiconductor equipment hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/).
 
-If the real question is whether CuCrZr or pure copper is better for electrical contact hardware, continue with the dedicated [electrical-contact comparison](/posts/Alloys/cucrzr-vs-pure-copper-powder-electrical-contact-hardware/).
+If the real question is whether CuCrZr or pure copper is better for electrical contact hardware, continue with the dedicated [electrical-contact comparison](/posts/Alloys/cucrzr-vs-pure-copper-powder/).
+
+## CuCrZr powder purchase specification
+
+| Field | Minimum request |
+| --- | --- |
+| Alloy | Exact CuCrZr/C18150 or project designation and chemistry |
+| Powder | Production route, lot, PSD method, morphology, oxygen/contamination and packaging |
+| Process | Machine/laser family, parameter status and qualified PSD window |
+| Thermal condition | Solution and aging sequence used for conductivity and strength data |
+| Evidence | Lot COA plus representative or lot-specific PSD/SEM data |
+| Part route | Conductivity test, mechanical duty, joining, machining, leak or pressure tests where applicable |
+
+CuCrZr, pure copper, GRCop-42 and GRCop-84 are not interchangeable. Ask suppliers to identify which alloy, machine, heat treatment and test condition support every conductivity or strength value. Use the [CuCrZr versus pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) before fixing the material, then use the cold-plate, conductive-tooling, fusion or rocket page for application-specific acceptance.

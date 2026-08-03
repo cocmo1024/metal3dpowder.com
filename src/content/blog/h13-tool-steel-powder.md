@@ -2,11 +2,12 @@
 title: H13 Tool Steel Powder for AM Dies, Inserts, and Hot-Work Tooling
 description: H13 tool steel powder explained for additive manufacturing focused on hot-work tooling, thermal fatigue resistance, and application fit.
 pubDate: 2026-04-12
+updatedDate: 2026-08-03
 category: Tooling
 tags:
-  - H13
   - tool steel powder
-  - hot work tooling
+  - tooling and mold inserts
+  - H13
   - additive manufacturing
 featured: false
 ---
@@ -57,6 +58,17 @@ H13 is not the low-friction answer for every strong steel application. It is als
 
 That is why AM tooling selection should start with the service condition, not just with brand familiarity around steel names.
 
+## H13 purchase and validation matrix
+
+| Stage | Evidence to define or request | Why it matters |
+| --- | --- | --- |
+| Powder selection | Governing chemistry, PSD, morphology, flow behavior, lot traceability | Establishes whether the lot fits the selected machine and parameter route |
+| Build planning | Preheat strategy, geometry risks, machining stock, stress-relief sequence | H13 tool performance cannot be separated from crack control and thermal history |
+| Heat treatment | Intended condition, furnace record, hardness target and sampling plan | The printed condition is not the final tooling condition |
+| Tool acceptance | Dimensional inspection, cooling-channel verification, hardness and surface requirements | Acceptance must reflect the insert or die function, not only coupon density |
+
+Request lot COA, PSD, TDS/SDS, available morphology or SEM evidence, and packaging details through the RFQ. For a production tool, include the tool geometry, thermal cycle, mating surfaces, cooling-channel constraints, target heat-treatment condition, and inspection plan.
+
 ## The practical takeaway
 
 Use H13 when the part is a true hot-work tooling problem and the value of the project depends on thermal fatigue resistance, hot-service durability, and tooling-focused performance. If the job is more insert- and mold-driven with less thermal punishment, compare it against M300 instead of assuming one steel covers every tooling case.
@@ -65,6 +77,4 @@ For the direct side-by-side decision, use the [H13 vs M300 tooling guide](/posts
 
 If the specific application is conformal cooling or insert-side thermal control, continue with the dedicated [H13 conformal cooling insert guide](/posts/Alloys/h13-powder-conformal-cooling-inserts/).
 
-If the actual tool is a die-casting insert rather than a general hot-work tool, continue with the dedicated [H13 die-casting insert guide](/posts/Alloys/h13-powder-die-casting-inserts/).
-
-If the actual tool is an injection molding production tool with conformal cooling rather than a broad insert discussion, continue with the dedicated [H13 injection molding production-tool page](/posts/Alloys/h13-powder-injection-molding-conformal-cooling-production-tools/).
+If the actual tool is a die-casting or injection-molding insert with internal thermal-control features, use the consolidated [H13 conformal cooling insert guide](/posts/Alloys/h13-powder-conformal-cooling-inserts/) and specify the tooling cycle, channel geometry, post-machining, and acceptance evidence.

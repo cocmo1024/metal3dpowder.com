@@ -2,11 +2,10 @@
 title: Titanium Oxygen Limit Discussion Guide for AM Titanium Powders
 description: A practical guide to discussing oxygen limits in titanium AM powders without treating one number as universal across all grades and program stages.
 pubDate: 2026-04-18T11:20:00+08:00
+updatedDate: 2026-08-03
 category: Titanium
 tags:
   - titanium powder
-  - oxygen control
-  - Ti-6Al-4V
   - additive manufacturing
 featured: false
 ---
@@ -56,3 +55,16 @@ That gives the project something actionable instead of a vague request for "bett
 ## The practical takeaway
 
 Titanium oxygen control should be discussed as part of the grade and release strategy, not as an isolated number chase. Teams get cleaner alloy decisions when the oxygen expectation is tied to the actual alloy route, the actual program stage, and the actual evidence basis.
+
+## Oxygen-limit decision table
+
+| Question | Required answer |
+| --- | --- |
+| Which alloy? | Grade 5, Grade 23, CP titanium, TA15, or project-specific chemistry |
+| Which limit? | Referenced specification, edition, units and whether the limit applies to powder or final part |
+| Which result? | Lot-specific measured value, method, sampling basis and uncertainty where required |
+| Which powder history? | Virgin, blended, recovered or reused condition and genealogy |
+| Which process effect? | Exposure, sieving, builds, atmosphere and change in final-part chemistry |
+| Which acceptance action? | Release, warning, investigation, retest or rejection rule |
+
+A lower oxygen number is not automatically a better purchase if it belongs to a different grade, test method, powder condition, or project basis. Request the complete lot chemistry and method rather than a single highlighted oxygen value. Include nitrogen and hydrogen where the specification or risk requires them, and keep powder release separate from finished-part mechanical qualification.

@@ -2,12 +2,13 @@
 title: M300 Maraging Steel Powder for AM Tooling and Conformal Cooling Inserts
 description: M300 maraging steel powder guide covering tooling fit, aging response, and the applications where this steel is strongest.
 pubDate: 2026-04-12
-updatedDate: 2026-07-05
+updatedDate: 2026-08-03
 category: Tooling
 tags:
+  - tool steel powder
+  - tooling and mold inserts
   - M300
-  - maraging steel powder
-  - tooling
+  - thermal management
   - additive manufacturing
 featured: false
 ---
@@ -52,8 +53,20 @@ For the full side-by-side choice, use the [H13 vs M300 powder guide](/posts/Allo
 
 If the application is primarily mold tooling, core inserts, or production fixtures, continue with the narrower [M300 tooling applications guide](/posts/Alloys/m300-powder-mold-tooling-inserts/).
 
-If the actual use case is compact production tooling or a core insert, continue with the dedicated [M300 core insert guide](/posts/Alloys/m300-powder-core-inserts-and-compact-production-tooling/).
+If the actual use case is compact production tooling or a core insert, continue with the dedicated [M300 core insert guide](/posts/Alloys/m300-powder-mold-tooling-inserts/).
 
-If the actual use case is a compact mold insert in recurring production, continue with the dedicated [M300 recurring-production insert page](/posts/Alloys/m300-powder-compact-mold-inserts-in-recurring-production/).
+If the actual use case is a compact mold insert in recurring production, continue with the consolidated [M300 mold tooling insert guide](/posts/Alloys/m300-powder-mold-tooling-inserts/) and specify the production cycle, cooling, machining, final hardness, and inspection requirements.
 
 If the actual use case is a moving injection mold detail such as a slider, lifter, angled side action, or undercut-release insert, continue with the dedicated [M300 mold slider and lifter guide](/posts/Alloys/m300-powder-injection-mold-sliders-and-lifters/).
+
+## M300 powder buying matrix
+
+| Field | Define before approval |
+| --- | --- |
+| Grade | Exact maraging-steel/M300 chemistry and specification |
+| Powder | Route, lot, PSD method, morphology, contamination, packaging and reuse state |
+| Build | Machine, parameter set, support, stress relief and distortion strategy |
+| Aging | Final aging condition, hardness/strength target and dimensional allowance |
+| Tool | Cooling channels, machining/polishing, wear surfaces, leak/pressure and inspection |
+
+As-built data should not be compared with aged tool requirements. Ask for the condition, machine, orientation, density and method behind typical values. The lot COA, PSD report, TDS/SDS, and available SEM or morphology evidence support powder selection; they do not prove tool life or cycle-time improvement.

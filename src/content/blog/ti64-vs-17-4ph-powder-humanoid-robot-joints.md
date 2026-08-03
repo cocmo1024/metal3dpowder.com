@@ -4,12 +4,12 @@ description: How Ti64 and 17-4PH powder compare for humanoid robot joints when w
 pubDate: 2026-05-31T09:20:00+08:00
 category: Titanium
 tags:
-  - Ti64
+  - titanium powder
   - 17-4PH
-  - humanoid robots
-  - robot joints
-  - LPBF
-featured: true
+  - Ti-6Al-4V
+  - industrial automation
+  - additive manufacturing
+featured: false
 ---
 
 Recent industrial humanoid robot programs have made joint hardware a more serious material-selection topic. The visible story is software, balance, perception, and dexterous manipulation. The practical hardware story is more grounded: compact actuators, wrist links, bearing seats, latch blocks, cable-protected brackets, and end-effector supports all need to fit inside tight envelopes without wasting payload.
@@ -53,7 +53,7 @@ Good Ti64 candidates in humanoid and robot joint hardware include:
 
 This is close to the logic in the [Ti64 robotic arm bracket page](/posts/Alloys/ti64-powder-robotic-arm-brackets-and-end-effector-hardware/), but humanoid joints make the tradeoff sharper. Because the robot may repeat similar moving structures many times, every gram saved near the hand or wrist can support better acceleration, lower actuator load, or more payload margin.
 
-Ti64 also fits when the geometry looks more like a structural node than a simple block. If the part can combine angled ribs, local bosses, protected cable paths, and machined pads, the economics are easier to justify. The [Ti64 lattice bracket guide](/posts/Alloys/ti64-powder-lattice-brackets-and-lightweight-structural-nodes/) is a useful companion when the design intent is weight reduction through load-path geometry.
+Ti64 also fits when the geometry looks more like a structural node than a simple block. If the part can combine angled ribs, local bosses, protected cable paths, and machined pads, the economics are easier to justify. The [Ti64 lattice bracket guide](/posts/Alloys/ti64-titanium-powder-aerospace-structures/) is a useful companion when the design intent is weight reduction through load-path geometry.
 
 ## Where 17-4PH powder fits best
 

@@ -4,12 +4,12 @@ description: Where IN625 powder fits geothermal brine heat-exchangers, valve har
 pubDate: 2026-06-26T09:20:00+08:00
 category: Nickel
 tags:
-  - IN625
-  - geothermal brine
-  - heat exchangers
-  - valve hardware
   - nickel alloy powder
-featured: true
+  - IN625
+  - thermal management
+  - corrosion resistant hardware
+  - additive manufacturing
+featured: false
 ---
 
 IN625 powder is a serious option for geothermal brine heat-exchanger and valve hardware when the component is exposed to hot chloride-bearing fluids, dissolved minerals, acid gases, pressure cycling, and difficult maintenance windows. The alloy discussion is not simply "use a better corrosion metal." It should start with the actual brine chemistry, temperature, flow path, cleaning method, and part geometry.
@@ -80,7 +80,7 @@ A compact AM heat-exchanger header may be attractive because it removes joints a
 
 Valve and pump-adjacent hardware should be handled with care because the failure mode is often local. A seat region, throat, bend, diffuser detail, purge hole, or threaded connection can see a different combination of velocity, deposits, crevice geometry, and temperature than the surrounding pipe.
 
-IN625 powder can be useful when the project needs a compact corrosion-resistant body or insert, but it is not automatically a wear solution. If sliding contact, abrasion, or valve-seat wear dominates, compare the adjacent [CoCrMo pump sleeve and valve-seat page](/posts/Alloys/cocrmo-powder-pump-sleeves-and-valve-seat-wear-hardware/). If the problem is mainly hot corrosive flow rather than geothermal brine specifically, the broader [IN625 corrosion-heavy hot-side hardware page](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/) is the better path.
+IN625 powder can be useful when the project needs a compact corrosion-resistant body or insert, but it is not automatically a wear solution. If sliding contact, abrasion, or valve-seat wear dominates, compare the adjacent [CoCrMo pump sleeve and valve-seat page](/posts/Alloys/cocrmo-cocrw-powder/). If the problem is mainly hot corrosive flow rather than geothermal brine specifically, the broader [IN625 corrosion-heavy hot-side hardware page](/posts/Alloys/gh3625-in625-powder/) is the better path.
 
 For repairs and overlays, define whether the requirement is corrosion resistance, dimensional restoration, sealing-surface restoration, or life extension after known damage. Those goals can lead to different powder, heat input, machining, and inspection requirements.
 
@@ -104,10 +104,10 @@ The [metal powder specification guide](/posts/Alloys/metal-powder-specification-
 
 Route geothermal brine decisions through a focused internal map:
 
-- start with the [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/) when the part is corrosion-led
+- start with the IN625 powder guide when the part is corrosion-led
 - use this page when the environment is geothermal brine, hot brine flow, valve hardware, heat-exchanger hardware, or brine-side repair
 - use the [IN625 desalination hardware page](/posts/Alloys/in625-powder-seawater-desalination-pump-valve-and-brine-hardware/) when the brine is seawater concentrate rather than geothermal fluid
-- use [IN625 chemical nozzles and injector blocks](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/) when dosing, injection, or small passages dominate
+- use IN625 chemical nozzles and injector blocks when dosing, injection, or small passages dominate
 - compare [316L vs nickel powder](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) if the stainless-to-nickel decision is not settled
 - use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN718, IN625, and Hastelloy X choices
 - use [Energy and Propulsion Hardware](/applications/energy-and-propulsion/) for energy-side powder applications

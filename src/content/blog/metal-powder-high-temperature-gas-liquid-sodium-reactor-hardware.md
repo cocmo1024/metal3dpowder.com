@@ -4,11 +4,10 @@ description: How to screen Hastelloy X, 316L, IN625, and other metal powder rout
 pubDate: 2026-07-20T00:20:00+08:00
 category: Knowledge
 tags:
-  - advanced reactor
-  - high-temperature gas reactor
-  - liquid sodium
   - metal powder
-  - LPBF
+  - powder specification
+  - nuclear additive manufacturing
+  - additive manufacturing
 featured: false
 ---
 

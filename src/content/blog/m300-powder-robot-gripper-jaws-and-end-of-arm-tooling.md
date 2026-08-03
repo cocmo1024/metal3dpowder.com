@@ -4,12 +4,12 @@ description: Where M300 powder fits robot gripper jaws, end-of-arm tooling, loca
 pubDate: 2026-06-17T09:20:00+08:00
 category: Tooling
 tags:
+  - tool steel powder
+  - tooling and mold inserts
   - M300
-  - robot grippers
-  - end-of-arm tooling
-  - maraging steel powder
-  - LPBF
-featured: true
+  - industrial automation
+  - additive manufacturing
+featured: false
 ---
 
 M300 powder is worth considering for robot gripper jaws and end-of-arm tooling when the part behaves more like precision tooling than a lightweight bracket. The search intent is narrow on purpose. A gripper jaw that touches production parts every cycle has different requirements from a robot wrist support, sensor mount, or actuator housing. It may need hard contact faces, repeatable datum control, compact geometry, and a clear post-machining plan after additive manufacturing.
@@ -60,7 +60,7 @@ Powder removal and inspection also need to be designed in. Blind internal channe
 
 M300 should sit in the decision map with adjacent alloys, not replace them all.
 
-Use M300 when the part is a compact tooling component that benefits from high aged strength, good machinability, hard contact faces, and stable precision after a defined heat-treatment route. That logic is close to [M300 core inserts and compact production tooling](/posts/Alloys/m300-powder-core-inserts-and-compact-production-tooling/) and [M300 compact mold inserts](/posts/Alloys/m300-powder-compact-mold-inserts-in-recurring-production/), but the robot gripper use case adds wrist-side packaging, changeover, and repeated handling cycles.
+Use M300 when the part is a compact tooling component that benefits from high aged strength, good machinability, hard contact faces, and stable precision after a defined heat-treatment route. That logic is close to [M300 core inserts and compact production tooling](/posts/Alloys/m300-powder-mold-tooling-inserts/) and [M300 compact mold inserts](/posts/Alloys/m300-powder-mold-tooling-inserts/), but the robot gripper use case adds wrist-side packaging, changeover, and repeated handling cycles.
 
 Use [H13 powder](/posts/Alloys/h13-tool-steel-powder/) when hot-work duty, high thermal cycling, die-casting service, or heat-checking resistance is the main concern. The [H13 vs M300 powder comparison](/posts/Alloys/h13-vs-m300-powder/) is still the better starting point if the service environment is truly hot-tooling-driven.
 

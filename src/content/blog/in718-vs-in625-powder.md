@@ -2,11 +2,12 @@
 title: "IN718 vs IN625 Powder: Which Nickel Alloy Fits the AM Job Better?"
 description: A practical comparison of IN718 and IN625 powders for additive manufacturing, focused on strength, corrosion logic, and application fit.
 pubDate: 2026-04-12
+updatedDate: 2026-08-03
 category: Nickel
 tags:
+  - nickel alloy powder
   - IN718
   - IN625
-  - nickel alloy powder
   - additive manufacturing
 featured: false
 ---
@@ -55,8 +56,21 @@ Some teams compare IN718 and IN625, then realize the part is actually a better f
 
 That does not mean Hastelloy X replaces both alloys. It means the nickel-alloy decision should be tied to the operating environment instead of habit.
 
+## Nickel alloy selection matrix
+
+| Requirement to lead with | IN718 direction | IN625 direction |
+| --- | --- | --- |
+| Main design problem | Elevated-temperature structural strength | Corrosion and media resistance |
+| Post-build route | Define solution and aging intent with the qualification plan | Define stress relief, final condition, and corrosion-side acceptance |
+| Application information that matters most | Load, temperature cycle, fatigue or creep basis, critical interfaces | Media composition, temperature, pressure, crevices, weld or repair context |
+| Evidence to request | Lot chemistry, PSD, morphology, traceability, heat-treatment and mechanical-test basis | Lot chemistry, PSD, morphology, traceability, corrosion or service-specific acceptance basis |
+
+These columns do not replace a design review. They expose the missing input that commonly turns a useful nickel-alloy inquiry into an unqualified price request.
+
 ## The practical takeaway
 
 Choose IN718 when the part is structurally demanding and elevated-temperature mechanical performance sits at the center of the decision. Choose IN625 when the part is driven more by corrosion resistance, service environment, and practical nickel-alloy durability. If the real requirement is hot-section oxidation resistance, widen the comparison instead of forcing the wrong two-alloy choice.
 
 For single-alloy guidance, see the dedicated [IN718 powder guide](/posts/Alloys/gh4169-in718-powder/) and [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/).
+
+For a comparable supplier response, send the process and machine, requested PSD, governing alloy specification, service temperature and media, final heat-treatment condition, test plan, annual demand, and destination. Request a lot COA, PSD report, TDS/SDS, available SEM or morphology evidence, and packaging information through the RFQ.

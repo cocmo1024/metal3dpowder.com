@@ -5,12 +5,11 @@ pubDate: 2026-04-19T14:34:00+08:00
 updatedDate: 2026-07-15
 category: Copper
 tags:
-  - CuCrZr
-  - C18150
-  - rocket combustion chamber
-  - regenerative cooling
   - copper alloy powder
-featured: true
+  - CuCrZr
+  - aerospace additive manufacturing
+  - additive manufacturing
+featured: false
 ---
 
 CuCrZr powder belongs in a rocket combustion chamber discussion when the part is a high-heat-flux liner with integral regenerative cooling channels, not merely a copper-shaped engine component. The purchasing decision combines thermal duty, channel geometry, pressure containment, powder-bed process capability, heat treatment, and the outer structural load path.

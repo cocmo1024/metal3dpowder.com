@@ -4,12 +4,11 @@ description: Where Ti64 powder fits compact robotic arm brackets, wrist-side sup
 pubDate: 2026-05-18T18:10:00+08:00
 category: Titanium
 tags:
-  - Ti-6Al-4V
-  - robotic arm brackets
-  - end-effector hardware
-  - lightweight structures
   - titanium powder
-featured: true
+  - Ti-6Al-4V
+  - industrial automation
+  - additive manufacturing
+featured: false
 ---
 
 Ti64 powder is a serious option for robotic arm brackets and end-effector hardware when the part is weight-sensitive, structurally loaded, and too geometrically constrained for a simple machined bracket. It is not the default answer for every automation component. The value appears when a compact support has to carry tools, sensors, grippers, cable routing, and multi-axis mounting interfaces without adding unnecessary mass at the robot wrist.
@@ -83,4 +82,4 @@ For recurring production, build orientation should be selected around support st
 
 Use Ti64 powder for robotic arm brackets and end-effector hardware when low mass, stiffness, compact mounting geometry, and part consolidation matter together. Keep the discussion close to the real bracket: payload, reach, load direction, tool interface, sensor alignment, cable protection, and post-machining needs.
 
-If the project is still deciding whether Ti64 is the right titanium route, start with the [TC4 / Ti-6Al-4V powder guide](/posts/Alloys/tc4-ti6al4v-powder/). If the design is mainly a lattice or structural-node problem, compare it with the [Ti64 lattice bracket guide](/posts/Alloys/ti64-powder-lattice-brackets-and-lightweight-structural-nodes/). If the part is a lower-cost aluminum housing or support, review the [AlSi10Mg lightweight housings and brackets page](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/). If the automation part is more about actuator housings, latch hardware, or stronger stainless behavior, the [17-4PH industrial automation page](/posts/Alloys/17-4ph-powder-industrial-automation-actuator-housings-and-latch-hardware/) is the closer fit.
+If the project is still deciding whether Ti64 is the right titanium route, start with the [TC4 / Ti-6Al-4V powder guide](/posts/Alloys/tc4-ti6al4v-powder/). If the design is mainly a lattice or structural-node problem, compare it with the [Ti64 lattice bracket guide](/posts/Alloys/ti64-titanium-powder-aerospace-structures/). If the part is a lower-cost aluminum housing or support, review the [AlSi10Mg lightweight housings and brackets page](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/). If the automation part is more about actuator housings, latch hardware, or stronger stainless behavior, the [17-4PH industrial automation page](/posts/Alloys/17-4ph-powder-industrial-automation-actuator-housings-and-latch-hardware/) is the closer fit.

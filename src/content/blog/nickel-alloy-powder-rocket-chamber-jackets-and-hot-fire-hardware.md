@@ -5,11 +5,9 @@ pubDate: 2026-07-15T00:06:00+08:00
 category: Nickel
 tags:
   - nickel alloy powder
-  - rocket chamber jacket
-  - preburner
-  - hot-fire hardware
-  - directed energy deposition
-featured: true
+  - aerospace additive manufacturing
+  - additive manufacturing
+featured: false
 ---
 
 Nickel alloy powder enters a liquid-rocket engine program for several different jobs: carrying pressure outside a conductive copper liner, forming a large channel-wall nozzle, surviving a hot-gas or hydrogen environment, or producing compact manifolds, injectors, support rings, and development hardware. Those jobs should not be collapsed into one "rocket-grade nickel powder" request.

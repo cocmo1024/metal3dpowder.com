@@ -4,12 +4,12 @@ description: Where IN625 DED powder fits repair overlays, laser cladding, oilfie
 pubDate: 2026-07-03T11:48:00+08:00
 category: Nickel
 tags:
+  - nickel alloy powder
   - IN625
   - DED
-  - repair overlays
-  - oilfield hardware
-  - nickel alloy powder
-featured: true
+  - corrosion resistant hardware
+  - additive manufacturing
+featured: false
 ---
 
 IN625 DED powder becomes relevant when the project is not trying to print a whole new nickel alloy part, but to repair, rebuild, overlay, or locally protect a larger component that already exists. In oilfield and energy hardware, that distinction matters. Many real parts are too large, too code-sensitive, or too expensive to replace with a full LPBF build. The powder route may instead be a laser cladding or directed energy deposition repair that adds corrosion-resistant Alloy 625 only where the hardware needs it.
@@ -68,7 +68,7 @@ If those details are missing, the quote may still be possible, but the process d
 
 LPBF is strongest when the whole part benefits from internal channels, compact geometry, and near-net feature consolidation. DED is strongest when the value is localized material addition, repair, coating, or rebuild on a larger part.
 
-For example, a compact chemical injector block may point to [IN625 powder for chemical nozzles and injector blocks](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/) because the part geometry itself is the AM value. A worn oilfield sealing land or corrosion-damaged valve region may point to IN625 DED powder because the base part already exists and only a local nickel alloy deposit is needed.
+For example, a compact chemical injector block may point to [IN625 powder for chemical nozzles and injector blocks](/posts/Alloys/gh3625-in625-powder/) because the part geometry itself is the AM value. A worn oilfield sealing land or corrosion-damaged valve region may point to IN625 DED powder because the base part already exists and only a local nickel alloy deposit is needed.
 
 That difference keeps the content cluster clean:
 
@@ -82,7 +82,7 @@ IN625 is a strong nickel alloy candidate, but a deposited IN625 overlay is not a
 
 For H2S-bearing or sour-service work, route the decision through the dedicated [IN625 sour gas valves and downhole hardware guide](/posts/Alloys/in625-powder-sour-gas-valves-chokes-and-downhole-flow-hardware/) and the project's governing qualification framework. This DED page can support the powder and repair discussion, but it does not replace sour-service review.
 
-If the application is mainly stronger stainless valve or pump hardware and the service environment allows it, compare [17-4PH powder for oil and gas valve components](/posts/Alloys/17-4ph-powder-oil-gas-valve-components-and-pump-hardware/). If sliding wear or valve-seat durability dominates more than corrosion resistance, compare [CoCrMo pump sleeve and valve-seat wear hardware](/posts/Alloys/cocrmo-powder-pump-sleeves-and-valve-seat-wear-hardware/).
+If the application is mainly stronger stainless valve or pump hardware and the service environment allows it, compare [17-4PH powder for oil and gas valve components](/posts/Alloys/17-4ph-powder-oil-gas-valve-components-and-pump-hardware/). If sliding wear or valve-seat durability dominates more than corrosion resistance, compare [CoCrMo pump sleeve and valve-seat wear hardware](/posts/Alloys/cocrmo-cocrw-powder/).
 
 ## What to ask for in an IN625 DED powder RFQ
 
@@ -104,9 +104,9 @@ For broader powder documentation, use the [metal powder specification guide](/po
 
 Use this page when the search intent is repair, overlay, or localized deposition. Use adjacent pages when the application changes:
 
-- start with [IN625 powder](/posts/Alloys/gh3625-in625-powder/) if the buyer is still confirming the alloy family
-- use [IN625 sour gas hardware](/posts/Alloys/in625-powder-sour-gas-valves-chokes-and-downhole-flow-hardware/) for H2S-bearing valves, chokes, downhole flow, and wellhead/subsea service
-- use [IN625 corrosion-heavy hot-side hardware](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/) when heat plus aggressive media drives the selection
+- start with IN625 powder if the buyer is still confirming the alloy family
+- use IN625 sour gas hardware for H2S-bearing valves, chokes, downhole flow, and wellhead/subsea service
+- use IN625 corrosion-heavy hot-side hardware when heat plus aggressive media drives the selection
 - use [IN625 geothermal brine hardware](/posts/Alloys/in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware/) when hot brine, scaling, and heat-exchanger or pump repair dominate
 - use [Oil, Gas, and Sour-Service Hardware](/applications/oil-gas-and-sour-service-hardware/) when browsing oilfield flow, valve, pump, choke, and repair topics by application
 - use [Nickel Alloy Powder](/materials/nickel-alloy-powder/) when comparing IN625 with IN718 and Hastelloy X

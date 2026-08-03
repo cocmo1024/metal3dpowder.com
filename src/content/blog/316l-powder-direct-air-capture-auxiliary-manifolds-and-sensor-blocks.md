@@ -4,12 +4,10 @@ description: Where 316L powder fits direct air capture auxiliary manifolds, sens
 pubDate: 2026-07-02T10:30:00+08:00
 category: Steel
 tags:
-  - 316L
-  - direct air capture
-  - carbon dioxide removal
-  - manifolds
   - stainless steel powder
-featured: true
+  - 316L
+  - additive manufacturing
+featured: false
 ---
 
 316L powder is worth reviewing for direct air capture auxiliary manifolds and sensor blocks when the part is a compact stainless flow problem rather than a severe solvent, hot-side, or pressure-equipment problem. The most realistic applications are small air-side sampling blocks, CO2 product-gas sampling hardware, purge and drain manifolds, vacuum or instrumentation bodies, humidity sensor housings, and pilot-skid test-loop parts where internal routing, port consolidation, corrosion-aware stainless behavior, and repeatable LPBF execution all matter.
@@ -105,7 +103,7 @@ Use this page when the search intent is specifically [316L powder](/posts/Alloys
 
 Use the broader [316L manifold and fluid-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/) when the project is a generic stainless manifold. Use [316L powder for SMR auxiliary manifolds](/posts/Alloys/316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware/) when classification, qualification evidence, and nuclear support context dominate. Use [316L powder for hydrogen electrolyzer flow-field plates](/posts/Alloys/316l-powder-hydrogen-electrolyzer-flow-field-plates/) when the part belongs to hydrogen-side clean energy hardware rather than DAC.
 
-If the chemistry is clearly more severe, use [316L vs nickel powder for corrosion-side manifolds](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) and then the [IN625 carbon capture hardware guide](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/) when amine service, wet CO2, solvent degradation, or compression-skid conditions are the main risk.
+If the chemistry is clearly more severe, use [316L vs nickel powder for corrosion-side manifolds](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) and then the IN625 carbon capture hardware guide when amine service, wet CO2, solvent degradation, or compression-skid conditions are the main risk.
 
 For browsing by cluster, use the [Stainless Steel Powder](/materials/stainless-steel-powder/) hub, the [Carbon Capture and CO2 Processing Hardware](/applications/carbon-capture-and-co2-processing-hardware/) hub, and the [LPBF Powder](/processes/lpbf/) process hub.
 

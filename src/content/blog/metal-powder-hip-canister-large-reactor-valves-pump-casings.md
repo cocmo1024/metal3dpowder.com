@@ -4,12 +4,12 @@ description: Specify powder filling, HIP canister design, evacuation, sealing, i
 pubDate: 2026-07-19T00:20:00+08:00
 category: Knowledge
 tags:
-  - HIP canister
-  - PM-HIP powder
-  - reactor valve
-  - pump casing
-  - nuclear manufacturing
-featured: true
+  - metal powder
+  - powder specification
+  - PM-HIP
+  - nuclear additive manufacturing
+  - additive manufacturing
+featured: false
 ---
 
 A PM-HIP canister is not disposable packaging. It is a process tool and temporary pressure boundary whose geometry, welds, fill path, evacuation, seal, surface condition, and removal plan can affect the consolidated valve body or pump casing. The powder requirement and canister requirement therefore need one controlled interface.

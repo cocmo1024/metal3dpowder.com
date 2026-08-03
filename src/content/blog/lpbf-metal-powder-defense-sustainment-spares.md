@@ -4,12 +4,12 @@ description: How IN718, Ti64, 17-4PH, AlSi10Mg, and CuCrZr powders fit defense s
 pubDate: 2026-05-24T09:20:00+08:00
 category: Knowledge
 tags:
-  - defense sustainment
+  - metal powder
+  - powder specification
   - LPBF
-  - metal powder for 3D printing
-  - aerospace AM
-  - qualified spares
-featured: true
+  - aerospace additive manufacturing
+  - additive manufacturing
+featured: false
 ---
 
 LPBF metal powder is becoming more relevant to defense sustainment because the problem is no longer only "can this part be printed?" The harder question is whether a powder route can help keep a fleet, aircraft, missile system, ground platform, or high-energy test asset ready when the original supply chain is slow, tooling is unavailable, or the part needs a qualified replacement path.
@@ -42,13 +42,13 @@ Defense sustainment is too broad for one alloy. The right powder family depends 
 
 [IN718 powder](/posts/Alloys/gh4169-in718-powder/) is usually the first nickel alloy to review when a sustainment spare needs structural credibility at elevated temperature. It can fit hot-side housings, casings, brackets, turbine-adjacent hardware, and thermal-management structures where strength retention and a mature post-build route matter.
 
-For narrower examples, compare the [IN718 hot-side structural housings guide](/posts/Alloys/in718-powder-hot-side-structural-housings-and-casings/) and the [IN718 turbomachinery hardware page](/posts/Alloys/in718-powder-turbomachinery-impellers-and-compressor-hardware/). If the part is less structural and more corrosion-side or chemical-side, [IN625 powder](/posts/Alloys/gh3625-in625-powder/) may be the cleaner route.
+For narrower examples, compare the [IN718 hot-side structural housings guide](/posts/Alloys/gh4169-in718-powder/) and the [IN718 turbomachinery hardware page](/posts/Alloys/in718-powder-turbomachinery-impellers-and-compressor-hardware/). If the part is less structural and more corrosion-side or chemical-side, [IN625 powder](/posts/Alloys/gh3625-in625-powder/) may be the cleaner route.
 
 ### Ti64 powder for lightweight flight structures and support hardware
 
 [Ti64 powder](/posts/Alloys/tc4-ti6al4v-powder/) is relevant when a spare part needs a strong lightweight route, especially in flight hardware, payload supports, brackets, or compact structural nodes. The sustainment case is strongest when a printed geometry can reduce assembly count, recover a difficult bracket, or integrate mounting features without adding mass.
 
-Useful adjacent pages include [Ti64 aerospace structures](/posts/Alloys/ti64-titanium-powder-aerospace-structures/), [Ti64 satellite brackets](/posts/Alloys/ti64-powder-satellite-brackets-and-propulsion-support-hardware/), and [Ti64 lattice brackets](/posts/Alloys/ti64-powder-lattice-brackets-and-lightweight-structural-nodes/). If the part is medical or implant-related, Grade 23 logic may matter more than ordinary Grade 5 logic, but that is a different qualification path.
+Useful adjacent pages include [Ti64 aerospace structures](/posts/Alloys/ti64-titanium-powder-aerospace-structures/), [Ti64 satellite brackets](/posts/Alloys/ti64-titanium-powder-aerospace-structures/), and Ti64 lattice brackets. If the part is medical or implant-related, Grade 23 logic may matter more than ordinary Grade 5 logic, but that is a different qualification path.
 
 ### 17-4PH powder for stronger stainless replacement parts
 
@@ -60,13 +60,13 @@ It should not be treated as a universal stainless replacement. If corrosion and 
 
 [AlSi10Mg powder](/posts/Alloys/alsi10mg-powder/) fits sustainment when the spare is a lightweight aluminum housing, sensor body, electronics frame, or UAV payload support. It is strongest when the design needs integrated ribs, bosses, cable paths, and mounting features in a low-mass aluminum part.
 
-For defense-adjacent payloads, the closest page is [AlSi10Mg radar and EO/IR sensor housings](/posts/Alloys/alsi10mg-powder-radar-and-eo-ir-sensor-housings/). For broader lightweight structures, compare [AlSi10Mg UAV structures](/posts/Alloys/alsi10mg-powder-uav-structures-and-electronics-housings/) and [AlSi10Mg lightweight housings and brackets](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/).
+For defense-adjacent payloads, the closest page is [AlSi10Mg radar and EO/IR sensor housings](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/). For broader lightweight structures, compare [AlSi10Mg UAV structures](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/) and AlSi10Mg lightweight housings and brackets.
 
 ### CuCrZr powder for thermal and current-carrying mission hardware
 
 [CuCrZr powder](/posts/Alloys/cucrzr-copper-powder/) is a candidate when heat transfer or current-carrying behavior matters more than low density or stainless strength. It can fit liquid-cooling plates, thermal manifolds, busbar transitions, RF heat spreaders, electrical contact hardware, and propulsion-side thermal parts.
 
-That does not mean every copper-family spare should be printed. CuCrZr becomes more credible when internal channels, compact cooling geometry, or integrated conductive features create value. Compare the [CuCrZr cold plate guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/), the [AI data center liquid-cooling page](/posts/Alloys/cucrzr-powder-ai-data-center-cold-plates-and-gpu-liquid-cooling-manifolds/), and the [rocket engine heat exchanger page](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/).
+That does not mean every copper-family spare should be printed. CuCrZr becomes more credible when internal channels, compact cooling geometry, or integrated conductive features create value. Compare the [CuCrZr cold plate guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/), the [AI data center liquid-cooling page](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/), and the [rocket engine heat exchanger page](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/).
 
 ## Where LPBF usually fits best
 

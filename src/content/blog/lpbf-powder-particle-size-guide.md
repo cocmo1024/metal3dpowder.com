@@ -5,11 +5,11 @@ pubDate: 2026-04-12
 updatedDate: 2026-07-16
 category: Process
 tags:
+  - metal powder
   - LPBF
-  - particle size
-  - powder quality
-  - metal additive manufacturing
-featured: true
+  - particle size distribution
+  - additive manufacturing
+featured: false
 ---
 
 Particle size is one of the first things teams ask about in an LPBF powder discussion, and that makes sense. It affects recoating behavior, layer consistency, flow, apparent density, and how comfortably the powder fits a known process window.

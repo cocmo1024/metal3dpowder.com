@@ -2,12 +2,11 @@
 title: EBM Powder Size Guide for Titanium and High-Temperature AM Alloys
 description: Practical EBM powder size guidance for teams comparing electron beam powder bed fusion with LPBF, including why coarser cuts and reuse planning matter.
 pubDate: 2026-04-12T09:40:00+08:00
-updatedDate: 2026-07-23
+updatedDate: 2026-08-03
 category: Process
 tags:
+  - metal powder
   - EBM
-  - particle size
-  - titanium powder
   - additive manufacturing
 featured: false
 ---
@@ -56,3 +55,16 @@ If the team still works mainly in laser systems, the [LPBF particle size guide](
 Use an EBM powder definition that reflects EBM reality, not an LPBF template. Expect coarser powder strategy to be normal, connect the material to the machine route, and define the reuse plan before freezing the process window.
 
 For titanium-specific alloy context, pair this with the [TC4 / Ti64 powder guide](/posts/Alloys/tc4-ti6al4v-powder/).
+
+## EBM powder RFQ matrix
+
+| Field | Buyer requirement |
+| --- | --- |
+| Machine | EBM machine family, qualified material route and build temperature |
+| Alloy | Exact grade and chemistry/interstitial basis |
+| PSD | Agreed range plus sampling, measurement method and reporting basis |
+| Electrical/thermal behavior | Evidence relevant to charging, preheat and powder-bed stability |
+| Reuse | Recovery, sieving, blending, exposure, genealogy and release rules |
+| Part route | Build, support/sinter-cake removal, heat treatment, HIP, machining and inspection |
+
+Do not copy an LPBF fine-powder requirement into an EBM purchase order. The appropriate cut must fit the EBM machine, preheat, powder-bed behavior and qualified material route. Request the lot COA, PSD report, TDS/SDS, and available morphology or SEM evidence. If used powder will return to production, define the lifecycle plan before the first lot is released.

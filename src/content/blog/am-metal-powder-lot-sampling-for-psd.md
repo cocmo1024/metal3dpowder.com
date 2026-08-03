@@ -4,10 +4,10 @@ description: Build a representative metal powder sampling plan for PSD testing, 
 pubDate: 2026-07-14T00:16:00+08:00
 category: Knowledge
 tags:
-  - metal powder sampling
+  - metal powder
+  - powder specification
+  - powder sampling
   - particle size distribution
-  - powder quality
-  - certificate of analysis
   - additive manufacturing
 featured: true
 ---

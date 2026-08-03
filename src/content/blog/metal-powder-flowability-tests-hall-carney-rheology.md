@@ -4,10 +4,9 @@ description: Compare Hall flow, Carney flow, apparent density, tap density, and 
 pubDate: 2026-07-16T00:18:00+08:00
 category: Knowledge
 tags:
-  - metal powder flowability
-  - Hall flow
-  - Carney flow
-  - powder rheology
+  - metal powder
+  - powder specification
+  - powder flowability
   - additive manufacturing
 featured: true
 ---

@@ -2,13 +2,13 @@
 title: "Titanium Powder for 3D Printing: Ti64, Grade 23, Grade 2, and TA15"
 description: Titanium powder for 3D printing guide covering Ti64, Grade 23, Grade 2, TA15, particle size, oxygen control, and application fit.
 pubDate: 2026-05-02T10:12:00+08:00
-updatedDate: 2026-07-05T16:30:00+08:00
+updatedDate: 2026-08-03
 category: Titanium
 tags:
-  - titanium powder for 3D printing
   - titanium powder
   - Ti-6Al-4V
-  - Grade 23 titanium
+  - CP titanium
+  - TA15
   - additive manufacturing
 featured: true
 ---
@@ -50,9 +50,22 @@ For Grade 23 and implant-side titanium work, oxygen and interstitial control bec
 
 If the part is a lightweight aircraft bracket, start with Ti64 powder and ask whether the load case, supports, heat treatment, and inspection plan are realistic. If the part is a spinal cage or porous implant, start with Grade 23 powder and define the lattice, cleaning, surface treatment, and documentation requirements. If the part is corrosion-side titanium hardware, Grade 2 or TA1 may be more relevant. If the part sees higher structural temperature, TA15 deserves review.
 
+## Titanium grade screening matrix
+
+| Search or sourcing intent | First grade family to investigate | Evidence that should control the decision |
+| --- | --- | --- |
+| Lightweight structural AM | Ti64 Grade 5 / TC4 | Load case, heat treatment, fatigue basis, chemistry and lot traceability |
+| Implant or tightly controlled Ti64 route | Ti64 Grade 23 | Governing specification, interstitial control, cleaning, surface and final-device qualification |
+| Corrosion-led commercially pure titanium route | Grade 2 / TA1 | Exact CP grade, chemistry, media, pressure status and fabrication route |
+| Elevated-temperature structural titanium | TA15 or another program-defined alloy | Service temperature, material specification, process qualification and mechanical evidence |
+
+This is a routing table, not an equivalency statement. The alloy must still be checked against the governing design and regulatory requirements.
+
 ## What to specify in an inquiry
 
 A useful titanium powder inquiry should include the alloy grade, AM process, target particle-size range, oxygen limit, intended application, post-processing plan, and whether the part is prototype, qualification, or recurring production. If the project is medical or aerospace, include the documentation expectation early.
+
+Also request lot-specific COA, PSD, TDS/SDS, available SEM or morphology evidence, powder history or virgin/reused status, and packaging details through the RFQ. If final-part data or application images are needed, request them explicitly; do not infer part qualification from powder documentation.
 
 ## Related titanium powder pages
 

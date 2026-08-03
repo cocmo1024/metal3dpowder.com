@@ -2,12 +2,13 @@
 title: Ti64 Grade 23 vs Grade 5 Powder for Additive Manufacturing
 description: A practical comparison of Ti64 Grade 23 and Grade 5 powder for additive manufacturing focused on interstitial control, toughness, and specification intent.
 pubDate: 2026-04-13T10:10:00+08:00
-updatedDate: 2026-07-23
+updatedDate: 2026-08-03
 category: Titanium
 tags:
-  - Ti-6Al-4V
-  - Grade 23 titanium
   - titanium powder
+  - Ti64 Grade 23
+  - Ti-6Al-4V
+  - CP titanium
   - additive manufacturing
 featured: false
 ---
@@ -49,6 +50,17 @@ If the project is still within the Ti64 family, the specification should make cl
 
 That prevents the project from drifting between a general structural titanium route and a tighter controlled route.
 
+## Evidence to compare before accepting a grade
+
+| Evidence | Grade 5 review | Grade 23 review |
+| --- | --- | --- |
+| Governing specification | Confirm the exact material and AM route required by the program | Confirm the ELI or program-specific chemistry basis rather than relying on the grade name |
+| Interstitial control | Verify lot values against the agreed specification | Give particular attention to oxygen and other interstitial limits and the required test method |
+| Mechanical evidence | Match condition, orientation and heat-treatment route to the application | Match the tighter grade intent to the required ductility, toughness, fatigue or medical evidence |
+| Traceability | Lot COA, PSD, powder history and packaging | The same evidence, plus any program-specific chain-of-custody or cleanliness requirement |
+
+A label such as “medical grade” is not a substitute for this package. Powder evidence, process qualification, and final-part acceptance remain separate layers.
+
 ## How this differs from Grade 2 titanium
 
 This comparison is still inside the Ti64 family. It should not be confused with the broader [Ti64 vs Grade 2 guide](/posts/Alloys/ti64-vs-grade-2-titanium-powder/), which is really a structural-versus-corrosion titanium decision. Grade 23 versus Grade 5 is a specification refinement inside the structural titanium path.
@@ -58,3 +70,5 @@ This comparison is still inside the Ti64 family. It should not be confused with 
 Choose Grade 23 when the application needs the tighter ELI-style titanium route and can justify its specification discipline. Choose Grade 5 when the project remains strength-driven and a standard Ti64 route is sufficient. The right answer depends on what the program is actually trying to control.
 
 If the real use case is orthopedic or medical titanium hardware rather than a broad grade comparison, continue with the dedicated [Ti64 Grade 23 medical applications page](/posts/Alloys/ti64-grade-23-powder-orthopedic-implants-and-medical-components/). If the hardware is a surgical guide or instrument-adjacent component, use the focused [Ti64 Grade 23 surgical guide and instrument hardware page](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/).
+
+For an RFQ, state Grade 5 or Grade 23, governing specification, process and machine, PSD, oxygen or interstitial requirements, powder reuse status, application, qualification stage, lot size, and destination. Request the proposed lot COA, PSD report, TDS/SDS, available SEM or morphology evidence, and packaging details.

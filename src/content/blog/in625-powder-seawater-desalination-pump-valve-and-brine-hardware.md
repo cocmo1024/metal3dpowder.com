@@ -4,12 +4,11 @@ description: Where IN625 powder fits seawater desalination pumps, valves, brine-
 pubDate: 2026-06-24T09:20:00+08:00
 category: Nickel
 tags:
-  - IN625
-  - desalination
-  - seawater hardware
-  - brine hardware
   - nickel alloy powder
-featured: true
+  - IN625
+  - corrosion resistant hardware
+  - additive manufacturing
+featured: false
 ---
 
 IN625 powder is a serious route for seawater desalination pump, valve, and brine-side hardware when the part is no longer a mild stainless flow component. Desalination plants combine chloride exposure, concentrated brine, pressure, flow erosion, maintenance windows, and long service expectations. That makes the material decision more specific than a generic "corrosion-resistant metal" choice.
@@ -57,7 +56,7 @@ This does not mean every desalination part should be IN625. Large low-complexity
 
 ## Why this is narrower than marine ducting
 
-The existing [IN625 marine and chemical ducting page](/posts/Alloys/in625-powder-marine-and-chemical-ducting/) covers routed ducting and corrosion-facing nickel hardware. Desalination pump, valve, and brine hardware is narrower because the limiting details often sit at flow interruptions, seats, throats, bends, dosing points, sampling ports, and brine-side manifolds.
+The existing [IN625 marine and chemical ducting page](/posts/Alloys/gh3625-in625-powder/) covers routed ducting and corrosion-facing nickel hardware. Desalination pump, valve, and brine hardware is narrower because the limiting details often sit at flow interruptions, seats, throats, bends, dosing points, sampling ports, and brine-side manifolds.
 
 Ducting is often a routing problem. Desalination pump and valve hardware is more often a local corrosion and service-life problem. A small valve insert, pump wear region, brine manifold, or chemical dosing block may fail because of a local crevice, high velocity, stagnant pocket, or surface condition. That is why this page treats material, flow geometry, post-processing, and inspection as one decision.
 
@@ -110,17 +109,17 @@ The [metal powder specification guide](/posts/Alloys/metal-powder-specification-
 
 IN625 powder should not be forced into every seawater component. Use 316L when the part is lower-severity stainless hardware and the corrosion risk is understood. Use conventional duplex or superduplex routes when the part is large, standardized, and already well served by existing seawater material practices. Use a different nickel alloy or corrosion-resistant overlay when local chemistry, temperature, or project standards point away from IN625.
 
-Wear also needs separate thinking. If the problem is sliding contact, valve-seat wear, or pump sleeve tribology, the [CoCrMo pump sleeve and valve-seat page](/posts/Alloys/cocrmo-powder-pump-sleeves-and-valve-seat-wear-hardware/) may be a better adjacent reference. IN625 is strongest when corrosion is the dominant reason for moving beyond stainless, not when the only problem is hard sliding wear.
+Wear also needs separate thinking. If the problem is sliding contact, valve-seat wear, or pump sleeve tribology, the [CoCrMo pump sleeve and valve-seat page](/posts/Alloys/cocrmo-cocrw-powder/) may be a better adjacent reference. IN625 is strongest when corrosion is the dominant reason for moving beyond stainless, not when the only problem is hard sliding wear.
 
 ## Internal material path for seawater projects
 
 For a seawater or desalination project, route the decision through a small content map:
 
-- start with the [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/) when corrosion is already beyond ordinary stainless comfort
+- start with the IN625 powder guide when corrosion is already beyond ordinary stainless comfort
 - compare [316L vs nickel powder](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) when the stainless-to-nickel decision is still open
-- use [IN625 marine and chemical ducting](/posts/Alloys/in625-powder-marine-and-chemical-ducting/) when the part is mainly routed ducting
-- use [IN625 chemical nozzles and injector blocks](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/) when small passages and chemical dosing dominate
-- use [IN625 corrosion-heavy hot-side hardware](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/) when the part combines aggressive media with hotter service
+- use IN625 marine and chemical ducting when the part is mainly routed ducting
+- use IN625 chemical nozzles and injector blocks when small passages and chemical dosing dominate
+- use IN625 corrosion-heavy hot-side hardware when the part combines aggressive media with hotter service
 - use [IN625 geothermal brine hardware](/posts/Alloys/in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware/) when the brine is a hot geothermal production fluid rather than seawater concentrate
 - use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN718, IN625, and Hastelloy X choices
 - use the [Marine and Desalination Hardware](/applications/marine-and-desalination-hardware/) hub for seawater, brine, pump, valve, and corrosion-side application pages

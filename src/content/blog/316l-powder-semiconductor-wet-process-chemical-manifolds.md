@@ -4,17 +4,16 @@ description: Where 316L powder fits semiconductor wet-process chemical manifolds
 pubDate: 2026-07-08T20:35:00+08:00
 category: Steel
 tags:
-  - 316L
-  - semiconductor wet process
-  - chemical manifolds
-  - LPBF
   - stainless steel powder
-featured: true
+  - 316L
+  - corrosion resistant hardware
+  - additive manufacturing
+featured: false
 ---
 
 316L powder can be a strong LPBF route for semiconductor wet-process chemical manifolds, valve blocks, rinse and drain hardware, and clean liquid delivery bodies when the design needs compact internal routing that is difficult to machine cleanly. It should not be treated as a universal answer for every wet bench, UPW, acid, solvent, or tool-side chemical component. In semiconductor service, the material, surface condition, trapped-powder risk, leak path, cleaning plan, and acceptance evidence matter together.
 
-This page is intentionally separate from the existing [316L semiconductor gas manifold and sensor housing guide](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/). Gas manifolds, sensor housings, and instrumentation blocks usually start with sealing, gas cleanliness, leak tightness, and corrosion-aware routing. Wet-process chemical manifolds add a different layer of risk: liquid chemistry, drainability, residue, crevice behavior, internal surface finish, and whether every wetted surface can be inspected or cleaned after printing.
+This page is intentionally separate from the existing [316L semiconductor gas manifold and sensor housing guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/). Gas manifolds, sensor housings, and instrumentation blocks usually start with sealing, gas cleanliness, leak tightness, and corrosion-aware routing. Wet-process chemical manifolds add a different layer of risk: liquid chemistry, drainability, residue, crevice behavior, internal surface finish, and whether every wetted surface can be inspected or cleaned after printing.
 
 ## Why this is a durable semiconductor powder topic
 
@@ -71,7 +70,7 @@ Be cautious or move away from 316L LPBF when:
 - a polymer, fluoropolymer, nickel alloy, Hastelloy, or machined route is already the qualified baseline,
 - the RFQ cannot define the media, temperature, pressure, leak requirement, cleaning expectation, or inspection method.
 
-If the media and temperature clearly exceed a stainless comfort zone, review the [316L vs nickel powder corrosion-side manifold comparison](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) and the [IN625 chemical nozzle and injector block page](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/) before locking a 316L powder route.
+If the media and temperature clearly exceed a stainless comfort zone, review the [316L vs nickel powder corrosion-side manifold comparison](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) and the [IN625 chemical nozzle and injector block page](/posts/Alloys/gh3625-in625-powder/) before locking a 316L powder route.
 
 ## Powder and LPBF controls that matter
 
@@ -106,11 +105,11 @@ This is why the RFQ should include a process-level drawing review. Powder alone 
 
 Use 316L powder when the part is a compact stainless liquid manifold, the chemistry is moderate enough for 316L, and LPBF creates meaningful routing or assembly value.
 
-Move toward IN625 when the service is corrosion-first and stainless margin is too thin. The [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/) and the [IN625 chemical nozzle page](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/) are better starting points when the hardware is no longer a practical stainless problem.
+Move toward IN625 when the service is corrosion-first and stainless margin is too thin. The [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/) and the IN625 chemical nozzle page are better starting points when the hardware is no longer a practical stainless problem.
 
 Stay with conventional stainless fabrication when a straight tube, welded assembly, drilled block, or electropolished component can meet the requirement with lower release risk. AM should earn its place by reducing interfaces, solving compact routing, integrating mounting or sensing features, or shortening a development loop.
 
-Use copper alloy powder only when the part is really thermal or RF-adjacent hardware rather than a stainless wet chemical body. That path is covered in the [CuCrZr semiconductor equipment cooling and RF hardware guide](/posts/Alloys/cucrzr-powder-semiconductor-equipment-cooling-plates-and-rf-thermal-hardware/).
+Use copper alloy powder only when the part is really thermal or RF-adjacent hardware rather than a stainless wet chemical body. That path is covered in the [CuCrZr semiconductor equipment cooling and RF hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/).
 
 ## RFQ checklist for 316L semiconductor wet-process hardware
 
@@ -135,9 +134,9 @@ When those details are named, the supplier can discuss powder quality, build rou
 
 Use this page for semiconductor wet-process chemical manifolds, liquid delivery valve blocks, rinse/drain bodies, and clean stainless chemical-flow hardware.
 
-Use the [316L semiconductor gas manifold and sensor housing guide](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/) when the part is primarily gas, instrumentation, or sensor-side stainless hardware.
+Use the [316L semiconductor gas manifold and sensor housing guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/) when the part is primarily gas, instrumentation, or sensor-side stainless hardware.
 
-Use the [316L manifolds and fluid-path parts guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/) when the application is a general stainless manifold rather than semiconductor wet-process hardware.
+Use the 316L manifolds and fluid-path parts guide when the application is a general stainless manifold rather than semiconductor wet-process hardware.
 
 Use the [Semiconductor Fluid Hardware hub](/applications/semiconductor-fluid-hardware/) when browsing the wider semiconductor powder cluster, and use the [LPBF Powder hub](/processes/lpbf/) when the process route is still being defined.
 

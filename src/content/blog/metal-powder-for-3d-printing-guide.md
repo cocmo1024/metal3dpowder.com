@@ -5,11 +5,9 @@ pubDate: 2026-04-29T22:05:00+08:00
 updatedDate: 2026-07-11
 category: Knowledge
 tags:
-  - metal powder for 3D printing
-  - 3D printing metal powder
-  - additive manufacturing powder
-  - particle size
-  - powder supplier
+  - metal powder
+  - powder specification
+  - additive manufacturing
 featured: true
 ---
 
@@ -80,13 +78,13 @@ Operating environment comes before alloy reputation. The [nickel alloy powder gu
 
 AlSi10Mg is widely used for lightweight housings, UAV structures, electronics frames, sensor payload enclosures, and other parts where low mass and integrated geometry matter. It is not a substitute for titanium when temperature, fatigue, or strength margins exceed the aluminum route.
 
-Continue with the [AlSi10Mg and aluminum powder guide](/posts/Alloys/aluminum-powder-for-additive-manufacturing-guide/).
+Continue with the [AlSi10Mg and aluminum powder guide](/posts/Alloys/alsi10mg-powder/).
 
 ### Copper and copper alloy powder
 
 Pure copper is attractive when conductivity dominates. CuCrZr trades some conductivity for more strength and process margin, which can be useful for cold plates, heat spreaders, induction hardware, electrical transitions, and high-heat-flux components.
 
-Machine laser wavelength, absorptivity, oxygen behavior, thermal design, and post-machining all matter. Use the [copper powder guide](/posts/Alloys/copper-powder-for-3d-printing-guide/) and [CuCrZr versus pure copper comparison](/posts/Alloys/cucrzr-vs-pure-copper-powder/).
+Machine laser wavelength, absorptivity, oxygen behavior, thermal design, and post-machining all matter. Use the [copper powder guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) and [CuCrZr versus pure copper comparison](/posts/Alloys/cucrzr-vs-pure-copper-powder/).
 
 ### Cobalt chrome powder
 
@@ -112,7 +110,7 @@ Gas atomization is common because it can produce relatively spherical particles 
 
 "Spherical powder" does not mean every particle is a perfect sphere. Satellites, agglomerates, internal pores, irregular particles, and surface oxides can still be present. NIST research on [3D particle shape and size measurement](https://www.nist.gov/publications/particle-shape-and-size-analysis-metal-powders-used-additive-manufacturing-technique) illustrates why size and shape need actual characterization.
 
-Use the [gas atomized powder guide](/posts/Alloys/gas-atomized-metal-powder-for-additive-manufacturing/) and [spherical metal powder guide](/posts/Alloys/spherical-metal-powder-for-3d-printing/) as supporting pages, not as substitutes for a lot-specific report.
+Use the [gas atomized powder guide](/posts/Alloys/gas-atomized-metal-powder-for-additive-manufacturing/) and [spherical metal powder guide](/posts/Alloys/gas-atomized-metal-powder-for-additive-manufacturing/) as supporting pages, not as substitutes for a lot-specific report.
 
 ## How to judge powder quality before buying
 

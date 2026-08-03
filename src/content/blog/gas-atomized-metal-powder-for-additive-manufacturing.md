@@ -2,13 +2,12 @@
 title: "Gas Atomized Metal Powder for Additive Manufacturing"
 description: Gas atomized metal powder for additive manufacturing explained through spherical morphology, PSD control, alloy families, LPBF fit, and RFQ priorities.
 pubDate: 2026-05-04T07:46:00+08:00
+updatedDate: 2026-08-03
 category: Knowledge
 tags:
-  - gas atomized metal powder
-  - spherical metal powder
-  - additive manufacturing powder
-  - powder quality
-  - LPBF
+  - metal powder
+  - powder specification
+  - additive manufacturing
 featured: true
 ---
 
@@ -45,3 +44,38 @@ A useful inquiry should state the alloy, process route, PSD expectation, quantit
 ## Related powder guides
 
 For process-specific size guidance, read the [LPBF powder particle size guide](/posts/Alloys/lpbf-powder-particle-size-guide/). For broad material selection, start with the [metal powder for 3D printing guide](/posts/Alloys/metal-powder-for-3d-printing-guide/) and then move into the relevant material center.
+
+## “Spherical powder” is not a complete specification
+
+Gas atomization is often used to produce near-spherical metal powder, but “spherical” is not a binary acceptance result. A lot can contain satellites, irregular particles, agglomerates, hollow particles, internal gas porosity, surface oxide, fines, and oversize. Morphology must be connected to a sampling and observation method.
+
+| Claim in an offer | Better evidence request | Why it matters |
+| --- | --- | --- |
+| Spherical powder | Representative or lot-specific images with scale, method, and sampling basis | Prevents an isolated image from standing in for the lot |
+| 15-45 µm | PSD report with method, basis, D10/D50/D90 or agreed sieve results | Nominal cut does not show distribution tails |
+| Good flowability | Named Hall, Carney, rheology, or spread test with conditions | Different methods do not measure the same behavior |
+| Low oxygen | Lot result, method, units, specification limit, and sampling basis | The relevance and limit depend on alloy and process |
+| Gas atomized | Manufacturer, atomization route, lot definition, classification, and change control | Production route alone does not establish quality |
+| AM grade | Machine/process compatibility evidence and agreed acceptance criteria | “AM grade” is a marketing label without a technical basis |
+
+## Gas atomization versus other powder routes
+
+Gas atomization is common for titanium, nickel, stainless, tool steel, aluminum, cobalt-chromium, and copper-alloy AM feedstocks. Other routes can also produce usable powder. Plasma atomization, electrode-based routes, water atomization, mechanical routes, and project-specific processes create different morphology, surface, oxygen, cost, and alloy constraints.
+
+The buyer should not specify gas atomization automatically if the real requirement is chemistry, PSD, spreadability, packing, or cost. Conversely, a lower-cost irregular or water-atomized route should not be substituted when the qualified process requires a controlled near-spherical feedstock.
+
+## Internal porosity and satellites
+
+External shape does not reveal the complete particle. Atomization can produce hollow or internally porous particles, and satellites can change packing, flow, and spread behavior. The significance depends on the alloy, process, particle size, machine, and acceptance route.
+
+If internal particle porosity is a project risk, define a suitable observation or correlation method and the decision it supports. Do not assume that one SEM surface image measures internal gas. Likewise, do not turn an expensive characterization method into a routine COA field without evidence that it controls the manufacturing outcome.
+
+## From incoming powder to process evidence
+
+Use incoming tests to detect identity and lot change, then verify the actual process interaction. LPBF needs controlled recoating and layer behavior; DED needs stable feeder and nozzle delivery; binder jet and MIM need packing, binder interaction, debinding, and sintering behavior; EBM adds charging and thermal conditions.
+
+The [powder spreadability guide](/posts/Alloys/lpbf-powder-spreadability-and-layer-density/) explains why Hall flow cannot replace a recoating trial. The [flowability test guide](/posts/Alloys/metal-powder-flowability-tests-hall-carney-rheology/) explains how to name the method and report conditions.
+
+## RFQ for gas-atomized or spherical powder
+
+Provide the alloy and referenced chemistry, process and machine family, PSD and method, quantity, powder condition, destination, packaging, and document needs. Request the available lot COA, PSD report, TDS/SDS, and SEM or morphology evidence. State whether representative images are sufficient for screening or whether lot-specific evidence is required. Add change notification for atomization source, classification route, PSD method, or recycled-powder content when those changes affect qualification.

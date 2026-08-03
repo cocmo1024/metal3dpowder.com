@@ -5,11 +5,11 @@ pubDate: 2026-05-04T07:46:00+08:00
 updatedDate: 2026-07-16
 category: Knowledge
 tags:
-  - metal powder specification
-  - metal powder COA
-  - PSD report
-  - oxygen control
+  - metal powder
+  - powder specification
   - powder flowability
+  - particle size distribution
+  - additive manufacturing
 featured: true
 ---
 

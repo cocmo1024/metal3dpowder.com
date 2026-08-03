@@ -4,11 +4,11 @@ description: Specify LPBF powder spreadability, layer density, humidity controls
 pubDate: 2026-07-16T00:24:00+08:00
 category: Knowledge
 tags:
-  - powder spreadability
-  - powder layer density
-  - LPBF powder
-  - recoating
-  - metal powder specification
+  - metal powder
+  - powder specification
+  - LPBF
+  - powder flowability
+  - additive manufacturing
 featured: true
 ---
 

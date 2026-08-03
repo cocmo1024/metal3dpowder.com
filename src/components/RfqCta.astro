@@ -13,8 +13,8 @@ const heading = isHub
   ? 'Request pricing and availability'
   : 'Need a powder quote for this application?';
 const copy = isHub
-  ? 'Shortlist a material, then send the process, particle size, quantity, destination, application, and documentation requirements for review.'
-  : 'To request powder for this application, send the alloy grade, process, PSD target, quantity, destination country, and any oxygen, documentation, or packaging requirements.';
+  ? 'Shortlist a material, then send the process, particle size, quantity, destination, application, and required technical evidence for review.'
+  : 'Send the alloy grade, process, PSD target, quantity, destination country, and the technical data or images needed to evaluate the powder route.';
 const emailHref = buildRfqEmailHref(context);
 ---
 
@@ -27,8 +27,9 @@ const emailHref = buildRfqEmailHref(context);
 
   <ul class="rfq-cta__details" aria-label="Useful RFQ details">
     <li>Alloy grade and target process: LPBF, EBM, DED, binder jetting, or MIM</li>
-    <li>Particle size range, chemistry limits, and document needs</li>
+    <li>Particle size range, chemistry limits, and lot-specific COA needs</li>
     <li>Trial or production quantity, destination, and target timing</li>
+    <li>Request available PSD data, TDS/SDS, SEM images, or packaging evidence</li>
   </ul>
 
   <div class="rfq-cta__actions" aria-label="RFQ actions">

@@ -2,14 +2,12 @@
 title: "Nickel Alloy Powder for 3D Printing: IN718, IN625, and Hastelloy X"
 description: Nickel alloy powder for 3D printing guide covering IN718, IN625, Hastelloy X, LPBF, DED, hot-side parts, and corrosion hardware.
 pubDate: 2026-05-02T10:13:00+08:00
-updatedDate: 2026-07-03
+updatedDate: 2026-08-03
 category: Nickel
 tags:
-  - nickel alloy powder for 3D printing
   - nickel alloy powder
   - IN718
   - IN625
-  - Hastelloy X
   - additive manufacturing
 featured: true
 ---
@@ -59,3 +57,30 @@ Define the operating temperature, chemical environment, load path, internal pass
 ## Related nickel powder pages
 
 For alloy-specific detail, continue with [IN718 / GH4169 powder](/posts/Alloys/gh4169-in718-powder/), [IN625 / GH3625 powder](/posts/Alloys/gh3625-in625-powder/), [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/), and [IN718 vs IN625 powder](/posts/Alloys/in718-vs-in625-powder/).
+
+## IN718, IN625, and Hastelloy X decision matrix
+
+| Primary requirement | First alloy to review | Why | Do not assume |
+| --- | --- | --- | --- |
+| Structural load at elevated temperature | IN718 / GH4169 | Precipitation-strengthened route for loaded hot-side hardware | That IN718 is best for every hot-gas or corrosion condition |
+| Corrosion-resistant flow, repair, or pressure hardware | IN625 / GH3625 | Strong corrosion and fabrication logic across LPBF and DED applications | That generic IN625 data qualify a named chemical, sour, brine, or nuclear service |
+| Oxidation-driven furnace, combustor, or hot-gas hardware | Hastelloy X | High-temperature oxidation-focused alloy logic | That furnace suitability proves creep, fatigue, burner, or flight qualification |
+| Maximum temperature with a different alloy basis | Project-specific superalloy | IN718, IN625, and Hastelloy X may all be outside the required envelope | That “nickel alloy powder” is a complete material choice |
+
+This guide now owns the broad IN718-versus-IN625-versus-Hastelloy X selection intent. Separate comparison pages are not needed unless the searcher faces an independently verifiable decision with its own service and acceptance basis.
+
+## Match LPBF and DED powder to different delivery systems
+
+LPBF needs a powder and recoating route that forms repeatable thin layers. Powder-fed DED needs stable feeder discharge, transport, nozzle delivery, and deposition behavior. The same alloy may use different PSD windows and release tests. Do not request an LPBF cut for a DED repair because it appears more precise on paper.
+
+Use the [LPBF size guide](/posts/Alloys/lpbf-powder-particle-size-guide/) and [DED powder-versus-wire guide](/posts/Alloys/ded-powder-vs-wire-feedstock-guide/) before fixing the size range. Define the sampling and measurement method so the supplier's PSD result is comparable with the purchase requirement.
+
+## Evidence hierarchy
+
+Powder evidence answers identity, lot condition, and selected incoming properties. Process evidence answers machine, feeder, atmosphere, parameters, deposition or layer behavior, and repeatability. Finished-part evidence answers density, defects, chemistry change, heat-treatment response, mechanical behavior, corrosion, pressure integrity, and service qualification.
+
+No single COA, coupon, or material data sheet covers all three levels. Ask suppliers to label evidence as lot-specific, representative, typical, qualified, or customer-generated.
+
+## RFQ for nickel-alloy powder
+
+State the exact alloy/specification, LPBF or DED route, machine or feeder, target PSD and method, quantity, service temperature, media, structural load, heat treatment, HIP or machining route, inspection, and required documents. Request the lot COA, PSD report, TDS/SDS, and available SEM or morphology evidence. If the alloy is not yet fixed, describe the duty and ask for a technically bounded recommendation rather than a generic price list.

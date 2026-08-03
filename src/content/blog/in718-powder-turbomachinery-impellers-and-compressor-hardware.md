@@ -5,12 +5,11 @@ pubDate: 2026-04-25T22:26:00+08:00
 updatedDate: 2026-07-17
 category: Nickel
 tags:
+  - nickel alloy powder
   - IN718
-  - rocket turbopump
-  - turbomachinery
-  - compressor hardware
-  - LPBF powder
-featured: true
+  - aerospace additive manufacturing
+  - additive manufacturing
+featured: false
 ---
 
 IN718 powder is a defensible starting point for an LPBF rocket turbopump impeller, inducer, or compressor component when high structural demand and AM-only geometry justify the qualification burden. It is not an automatic choice for every rotating part. The buyer still has to connect the powder lot, machine and parameter set, heat treatment, machining, inspection, balance, and component test plan to the actual duty cycle.

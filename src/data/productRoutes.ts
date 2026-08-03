@@ -45,6 +45,7 @@ const processHubProcessLabels: Record<string, string[]> = {
 
 const postProductOverrides: Record<string, string[]> = {
   'metal-powder-selection-by-application': ['ti64', '316l', 'in625'],
+  '316l-vs-nickel-powder-for-corrosion-side-manifolds': ['316l', 'in625'],
 };
 
 const productOrder = new Map(products.map((product, index) => [product.id, index]));

@@ -5,12 +5,11 @@ pubDate: 2026-06-27T09:20:00+08:00
 updatedDate: 2026-07-20
 category: Steel
 tags:
+  - stainless steel powder
   - 316L
-  - SMR hardware
-  - nuclear support hardware
-  - fluid manifolds
-  - LPBF
-featured: true
+  - nuclear additive manufacturing
+  - additive manufacturing
+featured: false
 ---
 
 316L powder can be relevant to SMR and advanced nuclear hardware, but only when the discussion stays specific. The useful question is not "can nuclear parts be 3D printed?" The useful question is whether a particular stainless auxiliary manifold, instrumentation block, test-loop part, support bracket, or qualification article has a material and geometry case for 316L powder.
@@ -54,7 +53,7 @@ The common pattern is routed or compact stainless hardware. That makes this page
 
 That does not mean 316L is the right answer for every nuclear or SMR part. High-temperature reactor regions, aggressive coolants, chloride-heavy chemistry, molten salts, high radiation exposure, high-cycle fatigue, or code pressure-boundary requirements can push the material and process discussion elsewhere. Use the dedicated [molten-salt flow-hardware guide](/posts/Alloys/in625-powder-molten-salt-reactor-flow-hardware-heat-exchangers/) when salt chemistry and corrosion exposure control the decision, and the [gas-cooled and liquid-sodium reactor guide](/posts/Alloys/metal-powder-high-temperature-gas-liquid-sodium-reactor-hardware/) when helium or sodium compatibility is the real environment. In some elevated-temperature nuclear research, 316H is evaluated because high-temperature strength becomes important. ORNL has reported 3D-printed 316H stainless steel capsules tested in a reactor environment, while Argonne/LWRS work has evaluated AM 316L in light-water-reactor environments. Those programs show why qualification evidence matters; they do not remove the need for project-specific approval.
 
-For ordinary corrosion-side industrial hardware, use the [316L corrosion-resistant industrial hardware page](/posts/Alloys/316l-powder-corrosion-resistant-industrial-hardware/). For nuclear-adjacent auxiliary or support hardware, keep the acceptance route in the same discussion as material, powder lot, build parameters, post-processing, and inspection.
+For ordinary corrosion-side industrial hardware, use the [316L corrosion-resistant industrial hardware page](/posts/Alloys/316l-stainless-steel-powder/). For nuclear-adjacent auxiliary or support hardware, keep the acceptance route in the same discussion as material, powder lot, build parameters, post-processing, and inspection.
 
 ## What LPBF changes in a nuclear support part
 
@@ -129,7 +128,7 @@ Different nuclear-adjacent parts point to different powder families. A simple in
 | Hardware need | Likely starting point | Internal path |
 |---|---|---|
 | Compact auxiliary fluid manifold | 316L powder when moderate stainless corrosion behavior fits | [316L manifolds and fluid-path parts](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/) |
-| Clean sensor or instrumentation block | 316L when clean routing and sealing dominate | [316L semiconductor gas manifolds and sensor housings](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/) |
+| Clean sensor or instrumentation block | 316L when clean routing and sealing dominate | 316L semiconductor gas manifolds and sensor housings |
 | Stronger stainless support or fixture | 17-4PH if strength and heat treatment fit | [316L vs 17-4PH powder](/posts/Alloys/316l-vs-17-4ph-powder/) |
 | Severe corrosion-side service | Nickel alloy review | [316L vs nickel powder](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) |
 | Thermal or high-heat-flux copper hardware | CuCrZr or copper-family review | [CuCrZr fusion high-heat-flux hardware](/posts/Alloys/cucrzr-powder-fusion-high-heat-flux-cooling-components/) |
@@ -139,9 +138,9 @@ This keeps the topic powder-centered. The site should not become a generic SMR n
 
 ## Internal route for this topic
 
-If the project starts from material selection, begin with the [Stainless Steel Powder hub](/materials/stainless-steel-powder/) and the main [316L powder guide](/posts/Alloys/316l-stainless-steel-powder/). If the project starts from application, use the [Energy and Propulsion Hardware hub](/applications/energy-and-propulsion/) or the new [Nuclear and SMR Support Hardware hub](/applications/nuclear-and-smr-support-hardware/). If the main question is manufacturability, route through [LPBF Powder](/processes/lpbf/).
+If the project starts from material selection, begin with the [Stainless Steel Powder hub](/materials/stainless-steel-powder/) and the main 316L powder guide. If the project starts from application, use the [Energy and Propulsion Hardware hub](/applications/energy-and-propulsion/) or the new [Nuclear and SMR Support Hardware hub](/applications/nuclear-and-smr-support-hardware/). If the main question is manufacturability, route through [LPBF Powder](/processes/lpbf/).
 
-For adjacent fluid hardware, compare [316L hydrogen electrolyzer flow-field hardware](/posts/Alloys/316l-powder-hydrogen-electrolyzer-flow-field-plates/), [316L pharmaceutical fluid manifolds](/posts/Alloys/316l-powder-pharmaceutical-fluid-manifolds-and-clean-flow-hardware/), and [316L semiconductor gas manifolds](/posts/Alloys/316l-powder-semiconductor-gas-manifolds-and-sensor-housings/). The environments are different, but the recurring decision is similar: chemistry, cleanliness, routing, surface condition, inspection, and documentation must all fit the part.
+For adjacent fluid hardware, compare [316L hydrogen electrolyzer flow-field hardware](/posts/Alloys/316l-powder-hydrogen-electrolyzer-flow-field-plates/), 316L pharmaceutical fluid manifolds, and 316L semiconductor gas manifolds. The environments are different, but the recurring decision is similar: chemistry, cleanliness, routing, surface condition, inspection, and documentation must all fit the part.
 
 ## The practical takeaway
 

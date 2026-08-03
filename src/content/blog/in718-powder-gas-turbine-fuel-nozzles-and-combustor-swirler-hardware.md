@@ -4,12 +4,11 @@ description: Where IN718 powder can fit gas turbine fuel nozzle bodies, combusto
 pubDate: 2026-07-03T09:20:00+08:00
 category: Nickel
 tags:
-  - IN718
-  - gas turbine
-  - fuel nozzles
-  - combustor swirlers
   - nickel alloy powder
-featured: true
+  - IN718
+  - aerospace additive manufacturing
+  - additive manufacturing
+featured: false
 ---
 
 IN718 powder is worth reviewing for gas turbine fuel nozzle bodies, combustor swirler hardware, injector-adjacent supports, and small hot-section flow parts when the project is strength-led, temperature-loaded, geometry-sensitive, and tied to a controlled LPBF plus heat-treatment route. The strongest fit is not every combustor part. It is compact nickel hardware where internal passages, fuel or air distribution, mounting interfaces, thermal-mechanical load, and inspection access all matter together.
@@ -43,15 +42,15 @@ The additive value is usually part consolidation, controlled routing, smaller pa
 
 ## How this differs from broad IN718 hot-section content
 
-The site already has a broad [IN718 hot-section parts guide](/posts/Alloys/in718-powder-hot-section-parts/) and an [IN718 turbomachinery impellers and compressor hardware guide](/posts/Alloys/in718-powder-turbomachinery-impellers-and-compressor-hardware/). This page narrows the intent to combustor-adjacent flow hardware: fuel nozzle bodies, swirler supports, injector-adjacent structures, and small routed hot-section parts.
+The site already has a broad [IN718 hot-section parts guide](/posts/Alloys/gh4169-in718-powder/) and an [IN718 turbomachinery impellers and compressor hardware guide](/posts/Alloys/in718-powder-turbomachinery-impellers-and-compressor-hardware/). This page narrows the intent to combustor-adjacent flow hardware: fuel nozzle bodies, swirler supports, injector-adjacent structures, and small routed hot-section parts.
 
 That distinction matters. A turbine bracket may be mainly a structural load and temperature question. A compressor impeller may be a rotating component with balance, surface finish, and fatigue sensitivity. A fuel nozzle or swirler body is more likely to combine small passages, flow uniformity, heat exposure, sealing interfaces, and inspection access. The RFQ should make those differences visible.
 
 ## When Hastelloy X or IN625 may be cleaner
 
-IN718 should not be forced into every combustor or hot-gas part. If oxidation resistance, flame adjacency, and hot-gas durability dominate the design, [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/) or the [Hastelloy X hydrogen burner and combustor guide](/posts/Alloys/hastelloy-x-powder-hydrogen-burner-and-combustor-hardware/) may be the better starting point. If corrosion, chemical media, or aggressive cleaning chemistry dominates, [IN625 powder](/posts/Alloys/gh3625-in625-powder/) may be more defensible.
+IN718 should not be forced into every combustor or hot-gas part. If oxidation resistance, flame adjacency, and hot-gas durability dominate the design, [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/) or the [Hastelloy X hydrogen burner and combustor guide](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) may be the better starting point. If corrosion, chemical media, or aggressive cleaning chemistry dominates, [IN625 powder](/posts/Alloys/gh3625-in625-powder/) may be more defensible.
 
-Use the [IN718 vs Hastelloy X turbine and furnace comparison](/posts/Alloys/in718-vs-hastelloy-x-powder-turbine-vs-furnace-hardware/) when the project is stuck between structural hot-side strength and oxidation-driven hot-gas service. Use the [IN718 vs IN625 powder comparison](/posts/Alloys/in718-vs-in625-powder/) when the decision is structural strength versus corrosion-led nickel alloy behavior.
+Use the [IN718 vs Hastelloy X turbine and furnace comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/) when the project is stuck between structural hot-side strength and oxidation-driven hot-gas service. Use the [IN718 vs IN625 powder comparison](/posts/Alloys/in718-vs-in625-powder/) when the decision is structural strength versus corrosion-led nickel alloy behavior.
 
 The short rule is simple: IN718 fits better when precipitation-strengthened hot-side strength is central. Hastelloy X fits better when oxidation and flame-adjacent hot-gas exposure are central. IN625 fits better when corrosion and chemical durability are central.
 
@@ -91,7 +90,7 @@ Those details help a supplier decide whether IN718 powder is a rational route or
 
 Start with the main [IN718 / GH4169 powder guide](/posts/Alloys/gh4169-in718-powder/) when the material decision is still broad. Use this page when the part is specifically a gas turbine fuel nozzle body, combustor swirler support, injector-adjacent structure, or small routed hot-section part.
 
-Use the [IN718 hot-section parts guide](/posts/Alloys/in718-powder-hot-section-parts/) for broader turbine, exhaust, and hot-section hardware. Use the [IN718 turbomachinery page](/posts/Alloys/in718-powder-turbomachinery-impellers-and-compressor-hardware/) when rotating or compressor-adjacent hardware dominates. Use the [Hastelloy X combustor page](/posts/Alloys/hastelloy-x-powder-hydrogen-burner-and-combustor-hardware/) when oxidation, hot-gas behavior, or hydrogen burner work is the main driver.
+Use the IN718 hot-section parts guide for broader turbine, exhaust, and hot-section hardware. Use the [IN718 turbomachinery page](/posts/Alloys/in718-powder-turbomachinery-impellers-and-compressor-hardware/) when rotating or compressor-adjacent hardware dominates. Use the [Hastelloy X combustor page](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) when oxidation, hot-gas behavior, or hydrogen burner work is the main driver.
 
 For browsing by cluster, use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub, the [Energy and Propulsion Hardware](/applications/energy-and-propulsion/) hub, the [Aerospace and Space](/applications/aerospace-space/) hub, and the [LPBF Powder](/processes/lpbf/) process hub.
 

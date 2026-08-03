@@ -2,14 +2,14 @@
 title: AlSi10Mg Aluminum Alloy Powder for LPBF Additive Manufacturing
 description: AlSi10Mg powder guidance for LPBF covering printability, chemistry, and where this aluminum route is most useful.
 pubDate: 2025-12-20
-updatedDate: 2026-04-12
+updatedDate: 2026-08-03
 category: Aluminum
 tags:
-  - AlSi10Mg
   - aluminum powder
+  - AlSi10Mg
   - LPBF
   - additive manufacturing
-featured: false
+featured: true
 ---
 
 AlSi10Mg is the default aluminum alloy for many LPBF programs because it balances printability with useful lightweight performance. Aluminum AM is not simple: reflectivity, thermal conductivity, and oxide control all make the process harder than it looks. AlSi10Mg remains popular because it is one of the most manageable aluminum choices.
@@ -38,4 +38,18 @@ If the geometry is thin-walled, thermal, or dimensional-control-sensitive, that 
 
 If the actual target is lightweight housings, brackets, or enclosure hardware, continue with the dedicated [AlSi10Mg applications guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/).
 
-If the actual target is a UAV structure or electronics housing, continue with the focused [AlSi10Mg UAV and electronics guide](/posts/Alloys/alsi10mg-powder-uav-structures-and-electronics-housings/).
+If the actual target is a UAV structure or electronics housing, continue with the focused [AlSi10Mg UAV and electronics guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/).
+
+## AlSi10Mg powder purchase fields
+
+| Requirement | What to define |
+| --- | --- |
+| Alloy | Referenced AlSi10Mg chemistry and controlled elements |
+| Powder | Atomization route, lot, PSD method, morphology, contamination and packaging |
+| LPBF route | Machine/laser family, parameter status, layer strategy and atmosphere |
+| Final condition | Stress relief or heat treatment, orientation, machining and surface route |
+| Part evidence | Density/defect plan, dimensions, mechanical or thermal tests for the actual geometry |
+
+Aluminum reflectivity, heat flow and oxide condition make transfer between machines or parameter sets risky. Do not accept “15-45 µm AlSi10Mg” as a complete process definition. Ask for the lot COA, PSD report, TDS/SDS, and available morphology or SEM evidence, then verify the powder on the intended LPBF route.
+
+For lightweight housings, brackets, UAV frames and sensor enclosures, use the consolidated [AlSi10Mg application guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/). If conductivity is the primary design driver, compare a [CuCrZr route](/posts/Alloys/cucrzr-copper-powder/) instead of forcing aluminum into a copper problem.

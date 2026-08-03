@@ -4,12 +4,11 @@ description: Compare laser diffraction, dynamic image analysis, and sieve testin
 pubDate: 2026-07-14T00:17:00+08:00
 category: Knowledge
 tags:
-  - laser diffraction
-  - dynamic image analysis
+  - metal powder
+  - powder specification
   - particle size distribution
-  - metal powder testing
   - additive manufacturing
-featured: true
+featured: false
 ---
 
 Laser diffraction and dynamic image analysis can both report a metal powder particle-size distribution. They do not measure the same physical signal, do not necessarily use the same size descriptor or weighting, and should not be expected to return interchangeable D10, D50, and D90 values.

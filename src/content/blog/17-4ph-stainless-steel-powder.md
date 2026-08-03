@@ -2,14 +2,13 @@
 title: 17-4PH Precipitation Hardening Stainless Steel Powder for AM
 description: 17-4PH AM powder guide covering strengthening logic, heat-treatment fit, and where this stainless route is most useful.
 pubDate: 2025-12-20
-updatedDate: 2026-04-12
+updatedDate: 2026-08-03
 category: Steel
 tags:
+  - stainless steel powder
   - 17-4PH
-  - precipitation hardening stainless steel
-  - AM powder
-  - LPBF
-featured: false
+  - additive manufacturing
+featured: true
 ---
 
 17-4PH is often selected when stainless steel parts need more strength than 316L can typically offer, while still keeping better corrosion performance than ordinary tool steels. In AM, it stays popular because the final strength level can be adjusted through heat treatment after printing. That makes it one of the most useful stainless routes when the part needs a stronger stainless answer without jumping immediately into tool steels or nickel alloys.
@@ -52,8 +51,20 @@ Those details keep the stainless route stable from build to final condition.
 
 That is why the best 17-4PH evaluations describe both the build route and the post-build intent.
 
+## What a purchase specification should separate
+
+| Requirement | Define before quotation | Verify for the supplied lot or route |
+| --- | --- | --- |
+| Powder | AM process, machine context, PSD and governing chemistry | Lot COA, PSD method and result, morphology, contamination controls and traceability |
+| Thermal route | Stress relief, solution treatment and aging intent | Furnace record, actual condition, hardness and any required mechanical results |
+| Part acceptance | Critical dimensions, machining stock, surface and inspection level | Dimensional report and agreed part- or coupon-level evidence |
+
+The supplier's powder datasheet and the part processor's qualified route answer different questions. Do not treat one document as proof of both.
+
 ## The practical takeaway
 
-Use 17-4PH when the hardware is genuinely strength-driven and the final heat-treated condition is part of the design intent. If the application is industrial fixturing, tooling-support hardware, or stronger stainless production aids, continue with the narrower [17-4PH application guide](/posts/Alloys/17-4ph-powder-industrial-fixtures-and-tooling-hardware/). If the decision is still open, compare it directly against [316L vs 17-4PH powder](/posts/Alloys/316l-vs-17-4ph-powder/) before choosing on habit.
+Use 17-4PH when the hardware is genuinely strength-driven and the final heat-treated condition is part of the design intent. If the application is industrial fixturing, tooling-support hardware, or stronger stainless production aids, continue with the narrower [17-4PH application guide](/posts/Alloys/17-4ph-powder-stronger-workholding-and-jig-hardware/). If the decision is still open, compare it directly against [316L vs 17-4PH powder](/posts/Alloys/316l-vs-17-4ph-powder/) before choosing on habit.
 
-If the actual route is metal injection molding or binder jet rather than LPBF, continue with the dedicated [17-4PH MIM and binder jet guide](/posts/Alloys/17-4ph-powder-metal-injection-molding-and-binder-jet-parts/). If the actual hardware is stronger workholding or jig hardware, continue with the narrower [17-4PH workholding page](/posts/Alloys/17-4ph-powder-stronger-workholding-and-jig-hardware/). If the actual route is binder jet for stronger industrial stainless parts, continue with the specific [17-4PH binder jet industrial parts page](/posts/Alloys/17-4ph-powder-stronger-binder-jet-industrial-parts/).
+If the actual route is metal injection molding or binder jet rather than LPBF, continue with the dedicated [17-4PH MIM and binder jet guide](/posts/Alloys/17-4ph-powder-metal-injection-molding-and-binder-jet-parts/). If the actual hardware is stronger workholding or jig hardware, continue with the narrower [17-4PH workholding page](/posts/Alloys/17-4ph-powder-stronger-workholding-and-jig-hardware/). If the actual route is binder jet for stronger industrial stainless parts, continue with the specific [17-4PH binder jet industrial parts page](/posts/Alloys/17-4ph-powder-metal-injection-molding-and-binder-jet-parts/).
+
+In the RFQ, include alloy specification, process, machine, PSD, intended thermal condition, required testing, quantity, repeat demand, and delivery country. Ask for lot-specific COA, PSD, TDS/SDS, available SEM or morphology evidence, and packaging details.

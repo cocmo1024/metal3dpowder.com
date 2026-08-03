@@ -2,11 +2,12 @@
 title: Ti64 vs Grade 2 Titanium Powder for Additive Manufacturing
 description: A practical comparison of Ti64 and Grade 2 titanium powder for strength-driven versus corrosion-driven AM applications.
 pubDate: 2026-04-12
+updatedDate: 2026-08-03
 category: Titanium
 tags:
   - titanium powder
   - Ti-6Al-4V
-  - Grade 2 titanium
+  - CP titanium
   - additive manufacturing
 featured: false
 ---
@@ -44,3 +45,15 @@ The part should first answer whether it is structurally titanium-driven or corro
 ## The practical takeaway
 
 Ti64 is the safer default for structural titanium AM work. Grade 2 is the more logical choice when corrosion behavior and commercially pure titanium logic matter more than high structural performance. The right material choice becomes clear once the service condition is named correctly.
+
+## Side-by-side buyer decision
+
+| Question | Ti64 / Ti-6Al-4V | Grade 2 / CP titanium |
+| --- | --- | --- |
+| Main reason to choose | Higher structural strength-to-weight | Corrosion, ductility or CP-titanium material basis |
+| Typical AM discussion | Aerospace structures, loaded brackets, implants by exact grade | Chemical hardware, lower-strength biomedical or corrosion-side parts |
+| Chemistry focus | Grade 5 versus Grade 23 and interstitial limits | Exact CP grade and interstitial limits |
+| Qualification risk | Fatigue, orientation, defects, heat treatment and surface | Corrosion environment, lower strength, joining, surface and device route |
+| Wrong shortcut | Treating all Ti64 grades as the same | Treating TA1, Grade 1 and Grade 2 as synonyms |
+
+Define the referenced alloy, process, PSD, load, media, temperature, final surface, and governing application requirements before requesting price. Ask for the lot COA, PSD report, TDS/SDS, and available SEM or morphology evidence. Powder chemistry does not qualify the finished structure, chemical component, or medical device.

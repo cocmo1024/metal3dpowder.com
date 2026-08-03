@@ -2,13 +2,14 @@
 title: H13 vs M300 Powder for AM Tooling
 description: A practical comparison of H13 and M300 powders for additive manufacturing tooling, focused on hot-work duty and insert performance.
 pubDate: 2026-04-12T09:00:00+08:00
-updatedDate: 2026-07-05
+updatedDate: 2026-08-03
 category: Tooling
 tags:
+  - tool steel powder
+  - tooling and mold inserts
   - H13
   - M300
-  - tool steel powder
-  - tooling
+  - additive manufacturing
 featured: false
 ---
 
@@ -62,3 +63,15 @@ That is what turns a steel comparison into a usable engineering decision.
 Use H13 when the tooling problem is truly heat- and thermal-fatigue-driven. Use M300 when the main value is insert performance, conformal cooling, and high-strength tooling after aging. If the project has not defined the tooling duty clearly, the alloy decision is premature.
 
 For single-alloy guidance, see the dedicated [H13 powder guide](/posts/Alloys/h13-tool-steel-powder/) and [M300 powder guide](/posts/Alloys/m300-maraging-steel-powder/).
+
+## Direct tooling comparison
+
+| Decision | H13 | M300 |
+| --- | --- | --- |
+| Primary duty | Hot-work and thermal-cycle tooling | Precision inserts and high strength after aging |
+| Typical parts | Die-casting inserts, hot-work tools, conformal-cooled hot tooling | Mold/core inserts, sliders, lifters and compact production tooling |
+| Thermal route | Hardening and tempering route must be controlled | Aging route and dimensional response must be controlled |
+| Main risk | Cracking, heat checking, thermal fatigue and distortion | Wear surfaces, aging distortion, polishing and moving interfaces |
+| Better alternative | M300 when hot-work duty is limited | H13 when repeated high-temperature cycling dominates |
+
+Specify the actual tool temperature, cycle, contact, coolant, load, wear surface, required hardness, channel geometry, machining and expected life. Request lot chemistry, PSD, morphology, COA, TDS/SDS and available SEM evidence for the chosen powder. Select the alloy from the service condition, then qualify the complete tool route.

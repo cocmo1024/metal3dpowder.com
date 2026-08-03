@@ -5,12 +5,11 @@ pubDate: 2026-06-30T09:20:00+08:00
 updatedDate: 2026-07-02
 category: Nickel
 tags:
-  - IN625
-  - carbon capture
-  - amine service
-  - CO2 compression
   - nickel alloy powder
-featured: true
+  - IN625
+  - corrosion resistant hardware
+  - additive manufacturing
+featured: false
 ---
 
 IN625 powder is worth reviewing for carbon capture amine-service and CO2 compression hardware when the part combines aggressive chemistry, compact flow geometry, pressure or leak discipline, and enough additive value to justify a nickel alloy route. The strongest use cases are not ordinary pipe spools or generic stainless blocks. They are small corrosion-critical parts where amine chemistry, wet CO2, solvent degradation products, oxygen, SOx/NOx carryover, heat-stable salts, water, pressure cycling, and inspection access can all matter at once.
@@ -78,7 +77,7 @@ LPBF is the most likely route for compact IN625 carbon capture hardware when the
 - corrosion coupon fixtures and test-loop parts
 - nozzles and injector blocks with defined inspection access
 
-The [IN625 chemical nozzles and injector blocks page](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/) is the closest adjacent route when dosing, mixing, or small passages dominate.
+The [IN625 chemical nozzles and injector blocks page](/posts/Alloys/gh3625-in625-powder/) is the closest adjacent route when dosing, mixing, or small passages dominate.
 
 DED powder routes are more relevant for localized repair, overlay, or corrosion-resistant features on larger hardware. In a carbon capture plant or test facility, a full LPBF replacement may not be realistic for large vessels, piping, or compressor components. DED changes the RFQ: dilution, base-metal compatibility, heat input, powder size, machining, and procedure qualification become central. Use the [DED powder vs wire feedstock guide](/posts/Alloys/ded-powder-vs-wire-feedstock-guide/) when repair or overlay is the real route.
 
@@ -119,11 +118,11 @@ The [metal powder specification guide](/posts/Alloys/metal-powder-specification-
 
 Use this internal map to keep the topic powder-centered:
 
-- start with the [IN625 powder guide](/posts/Alloys/gh3625-in625-powder/) when corrosion is the main reason for choosing nickel
+- start with the IN625 powder guide when corrosion is the main reason for choosing nickel
 - use this page when the environment is amine-service, CO2 conditioning, CO2 compression-skid hardware, wet CO2, or CCUS pilot-loop hardware
 - use [316L vs nickel powder](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) if the stainless-to-nickel decision is not settled
-- use [IN625 chemical nozzles and injector blocks](/posts/Alloys/in625-powder-chemical-nozzles-and-injector-blocks/) when dosing, injection, or small passages dominate
-- use [IN625 corrosion-heavy hot-side hardware](/posts/Alloys/in625-powder-corrosion-heavy-hot-side-hardware/) when the part is hot and corrosion-heavy but not specifically CCUS
+- use IN625 chemical nozzles and injector blocks when dosing, injection, or small passages dominate
+- use IN625 corrosion-heavy hot-side hardware when the part is hot and corrosion-heavy but not specifically CCUS
 - use [LPBF Powder](/processes/lpbf/) for compact powder-bed parts and [DED Powder](/processes/ded/) for overlays or repair routes
 - use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN625, IN718, and Hastelloy X choices
 - use [Energy and Propulsion Hardware](/applications/energy-and-propulsion/) or [Carbon Capture and CO2 Processing Hardware](/applications/carbon-capture-and-co2-processing-hardware/) when browsing by application
