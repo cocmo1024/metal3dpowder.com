@@ -20,7 +20,7 @@ const cards = landing.hubs.map((hub) => ({
   href: `/processes/${hub.slug}/`,
 }));
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
-const description = `${landing.description} Browse process-led AM powder guides for LPBF, EBM, DED, binder jet, and MIM.`;
+const description = 'Compare metal powder requirements for LPBF, EBM, DED, binder jet, MIM, and PM-HIP by PSD, flow, morphology, chemistry, evidence, and alloy grade.';
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
   { name: 'Processes' },
@@ -47,6 +47,7 @@ const schema = [
     cards={cards}
     posts={posts}
     postsTitle="Selected process guides"
+    intentLayer="directory"
   />
   <SiteFooter />
 </BaseLayout>

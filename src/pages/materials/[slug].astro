@@ -9,7 +9,6 @@ import { materialHubs, type HubDefinition } from '../../data/contentHubs';
 import { getProductsForHub } from '../../data/productRoutes';
 import { getProductPath } from '../../data/products';
 import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
-import { siteInfo } from '../../data/site';
 
 interface Props {
   hub: HubDefinition;
@@ -28,6 +27,9 @@ const postMap = new Map(allPosts.map((post) => [post.id, post]));
 const posts = hub.postIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
 const relatedProducts = getProductsForHub(hub);
 const canonical = `/materials/${hub.slug}/`;
+const seoTitle = `${hub.title} for AM | Alloy Grade Guide`;
+const pageHeading = `${hub.title} for Additive Manufacturing`;
+const metaDescription = `Compare ${hub.title.toLowerCase()} grades, international designations, AM process fit, particle-size routes, evidence requirements, and supplier RFQ inputs.`;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -38,8 +40,8 @@ const schema = [
   buildCollectionPageSchema({
     site: siteUrl,
     path: canonical,
-    name: `${hub.title} guides`,
-    description: hub.description,
+    name: pageHeading,
+    description: metaDescription,
     items: [
       ...relatedProducts.map((product) => ({ name: product.name, path: getProductPath(product) })),
       ...posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
@@ -49,17 +51,18 @@ const schema = [
 ];
 ---
 
-<BaseLayout title={`${hub.title} Guides | ${siteInfo.brand}`} description={hub.description} canonical={canonical} schema={schema}>
+<BaseLayout title={seoTitle} description={metaDescription} canonical={canonical} schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <ContentHub
     breadcrumbItems={breadcrumbItems}
-    eyebrow="Material center"
-    title={`${hub.title} Guides`}
+    eyebrow="Material family"
+    title={pageHeading}
     description={hub.description}
     products={relatedProducts}
-    productsTitle={`Candidate ${hub.title.toLowerCase()} routes`}
+    productsTitle={`${hub.title} grades for specification-led RFQ`}
     posts={posts}
-    postsTitle="Articles in this material center"
+    postsTitle={`Technical guides supporting ${hub.title.toLowerCase()} selection`}
+    intentLayer="material-family"
   />
   <SiteFooter />
 </BaseLayout>

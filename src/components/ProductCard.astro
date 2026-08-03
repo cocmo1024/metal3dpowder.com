@@ -1,5 +1,6 @@
 ---
 import { getProductPath, type Product } from '../data/products';
+import { getProductSearchIntent } from '../data/searchIntent';
 
 interface Props {
   product: Product;
@@ -8,13 +9,16 @@ interface Props {
 
 const { product, index = 0 } = Astro.props;
 const productPath = getProductPath(product);
+const searchIntent = getProductSearchIntent(product.id);
 const searchableText = [
+  searchIntent.primaryQuery,
   product.name,
   product.code,
   product.familyLabel,
   ...product.aliases,
   ...product.processes,
   ...product.applications,
+  ...searchIntent.buyerQueries,
 ].join(' ');
 ---
 
@@ -25,6 +29,7 @@ const searchableText = [
   data-processes={product.processes.join('|')}
   data-applications={product.applications.join('|')}
   data-search={searchableText.toLowerCase()}
+  data-primary-query={searchIntent.primaryQuery}
   style={`--card-accent:${product.accent}; --card-delay:${Math.min(index, 7) * 45}ms;`}
 >
   <a class="product-card__media" href={productPath} aria-label={`View ${product.name}`}>
@@ -49,6 +54,10 @@ const searchableText = [
     </div>
 
     <p class="product-card__summary">{product.summary}</p>
+    <p class="product-card__search-name">
+      <span>Primary grade search</span>
+      <strong>{searchIntent.primaryQuery}</strong>
+    </p>
 
     <dl class="product-card__specs">
       <div>
@@ -196,6 +205,20 @@ const searchableText = [
     color: var(--muted);
     font-size: 0.92rem;
     line-height: 1.62;
+  }
+
+  .product-card__search-name {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.55rem;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+
+  .product-card__search-name strong {
+    color: var(--text);
+    font-weight: 700;
   }
 
   .product-card__specs {

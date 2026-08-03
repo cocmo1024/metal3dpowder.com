@@ -24,6 +24,7 @@ interface Props {
   posts?: BlogPost[];
   postsTitle?: string;
   breadcrumbItems?: BreadcrumbItem[];
+  intentLayer?: 'material-family' | 'process' | 'application' | 'directory';
 }
 
 const {
@@ -36,10 +37,11 @@ const {
   posts = [],
   postsTitle = 'Related articles',
   breadcrumbItems = [],
+  intentLayer = 'directory',
 } = Astro.props;
 ---
 
-<main id="main-content" class="page-shell hub-page">
+<main id="main-content" class="page-shell hub-page" data-intent-layer={intentLayer}>
   {breadcrumbItems.length ? <Breadcrumbs items={breadcrumbItems} /> : null}
 
   <section class="hub-intro">

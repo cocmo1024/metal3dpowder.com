@@ -465,20 +465,20 @@ export const getPostHubs = (postId: string) => contentHubs.filter((hub) => hub.p
 
 export const hubLandings: Record<HubGroup, HubLandingDefinition> = {
   materials: {
-    title: 'Powder by Material',
-    description: 'Compare titanium, stainless steel, nickel, copper, tool steel, aluminum, and cobalt-chromium powders by properties, process fit, and application.',
+    title: 'Metal Powder by Alloy Family and Grade',
+    description: 'Move from titanium, stainless steel, nickel, copper, tool steel, aluminum, or cobalt-chromium families to exact grade pages with international aliases, process and PSD routes, evidence requirements, and RFQ inputs.',
     path: '/materials/',
     hubs: materialHubs,
   },
   applications: {
-    title: 'Powder by Application',
-    description: 'Explore powder options by service environment, component type, and manufacturing requirements.',
+    title: 'Metal Powder by Application',
+    description: 'Use service environment and component requirements to shortlist material families, then move to the exact alloy-grade page for supplier, PSD, evidence, and quotation intent.',
     path: '/applications/',
     hubs: applicationHubs,
   },
   processes: {
-    title: 'Powder by Process',
-    description: 'Compare powder requirements for LPBF, EBM, DED, binder jetting, MIM, and powder HIP.',
+    title: 'Metal Powder by AM Process',
+    description: 'Compare particle-size, flow, morphology, chemistry, and qualification requirements for LPBF, EBM, DED, binder jetting, MIM, and powder HIP, then evaluate eligible alloy grades.',
     path: '/processes/',
     hubs: processHubs,
   },

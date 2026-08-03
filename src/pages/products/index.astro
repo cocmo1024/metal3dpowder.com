@@ -17,10 +17,11 @@ import {
   processPowderWindows,
 } from '../../data/powderCapabilities';
 import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
+import { getProductSearchIntent } from '../../data/searchIntent';
 
-const title = 'Metal Powder Catalog | Search by Alloy, Process and PSD';
+const title = 'Metal Powder by Alloy Grade for 3D Printing & AM | Supplier RFQ';
 const description =
-  'Search metal powders by alloy family, grade, international designation, process, application, and particle-size route. Add one or more products to a technical RFQ.';
+  'Find metal powder by exact alloy grade, international designation, LPBF, EBM, DED, MIM or binder jet process, PSD, price intent, and supplier RFQ.';
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const breadcrumbItems = [{ name: 'Home', path: '/' }, { name: 'Powder catalog' }];
 const schema = [
@@ -31,7 +32,7 @@ const schema = [
     name: title,
     description,
     items: products.map((product) => ({
-      name: product.name,
+      name: getProductSearchIntent(product.id).primaryQuery,
       path: getProductPath(product),
     })),
   }),
@@ -41,21 +42,22 @@ const schema = [
 <BaseLayout title={title} description={description} canonical="/products/" schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main id="main-content" class="catalog-page">
+  <main id="main-content" class="catalog-page" data-intent-layer="alloy-grade-catalog">
     <Breadcrumbs items={breadcrumbItems} contained />
 
     <section class="catalog-hero">
       <div class="catalog-hero__inner page-shell">
         <div>
           <p class="eyebrow">Powder catalog</p>
-          <h1>Find the alloy and particle-size range for your process.</h1>
+          <h1>Metal powder by exact alloy grade for 3D printing and AM.</h1>
           <p>
-            Review powder grades, candidate PSD ranges, processes, and applications. Stock, pricing, documentation, and
-            final specifications are confirmed with each quotation.
+            Start with the grade buyers actually specify—such as Ti6Al4V, IN718, 316L, AlSi10Mg, CuCrZr, or CoCrMo—then
+            narrow by process, PSD, standard, evidence package, quantity, and destination. Stock, pricing, and final
+            specifications are confirmed with each quotation.
           </p>
         </div>
         <aside>
-          <strong>{products.length} core quote-ready routes</strong>
+          <strong>{products.length} core grade-owner pages</strong>
           <span>{extendedGradeCount} reviewed grade designations · {processPowderWindows.length} process families</span>
           <a href="/rfq/">Open RFQ list <span data-rfq-count data-empty>0</span> →</a>
         </aside>
@@ -67,7 +69,7 @@ const schema = [
         <div class="filter-panel__top">
           <div>
             <p class="eyebrow">Product finder</p>
-            <h2>Filter by grade, process, and application.</h2>
+            <h2>Filter by grade, alias, process, and application.</h2>
           </div>
           <button type="button" data-filter-reset>Clear filters</button>
         </div>
@@ -77,7 +79,7 @@ const schema = [
             <span>Search grade or designation</span>
             <input
               type="search"
-              placeholder="Examples: 316L, S31603, GH4169, CuCrZr"
+              placeholder="Examples: Ti64, Grade 23, IN718, S31603, C18150"
               autocomplete="off"
               data-filter-search
             />
@@ -112,12 +114,12 @@ const schema = [
       <div class="catalog-results__head">
         <div>
           <p class="eyebrow">Search results</p>
-          <h2 id="catalog-results-title"><span data-result-count>{products.length}</span> powder products</h2>
+          <h2 id="catalog-results-title"><span data-result-count>{products.length}</span> alloy-grade pages</h2>
           <span class="sr-only" data-result-status role="status" aria-live="polite" aria-atomic="true">
-            {products.length} powder products shown
+            {products.length} alloy-grade pages shown
           </span>
         </div>
-        <p>Pricing, packaging, availability, producer, and documents are confirmed in the formal quotation.</p>
+        <p>Each grade page owns supplier, process, PSD, price, and document intent without creating thin duplicate URLs.</p>
       </div>
 
       <div class="catalog-grid" data-catalog-grid>
@@ -262,7 +264,7 @@ const schema = [
         });
 
         if (count) count.textContent = String(visible);
-        if (status) status.textContent = `${visible} powder product${visible === 1 ? '' : 's'} shown`;
+        if (status) status.textContent = `${visible} alloy-grade page${visible === 1 ? '' : 's'} shown`;
         if (empty) empty.hidden = visible !== 0;
 
         const next = new URLSearchParams();

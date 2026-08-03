@@ -7,6 +7,7 @@ import SiteHeader from '../../components/SiteHeader.astro';
 import { getReviewedPowderWindow } from '../../data/powderCapabilities';
 import { buildBreadcrumbSchema, defaultOgImagePath } from '../../data/seo';
 import { getProductPath, products, type Product } from '../../data/products';
+import { getProductSearchIntent } from '../../data/searchIntent';
 
 export function getStaticPaths() {
   return products.map((product) => ({
@@ -23,8 +24,9 @@ const { product } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const productPath = getProductPath(product);
 const reviewedWindow = getReviewedPowderWindow(product.id);
-const title = `${product.name} Powder Supplier | PSD & RFQ`;
-const description = `${product.name} powder for ${product.processes.join(', ')}. Compare candidate PSD routes and evidence requirements, then request a source- and lot-specific quotation.`;
+const searchIntent = getProductSearchIntent(product.id);
+const title = searchIntent.seoTitle;
+const description = searchIntent.metaDescription;
 const relatedProducts = products
   .filter((candidate) => candidate.id !== product.id)
   .sort((left, right) => Number(right.family === product.family) - Number(left.family === product.family))
@@ -41,7 +43,8 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Product',
     '@id': `${new URL(productPath, siteUrl).toString()}#product`,
-    name: `${product.name} metal powder`,
+    name: searchIntent.primaryQuery,
+    alternateName: product.aliases,
     category: product.familyLabel,
     description: product.summary,
     image: new URL(product.image, siteUrl).toString(),
@@ -51,6 +54,16 @@ const schema = [
       '@id': `${new URL(productPath, siteUrl).toString()}#webpage`,
     },
     additionalProperty: [
+      {
+        '@type': 'PropertyValue',
+        name: 'Primary procurement query',
+        value: searchIntent.primaryQuery,
+      },
+      {
+        '@type': 'PropertyValue',
+        name: 'International and regional designations',
+        value: product.aliases.join(', '),
+      },
       {
         '@type': 'PropertyValue',
         name: 'Candidate particle-size routes',
@@ -88,7 +101,13 @@ const schema = [
 >
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main id="main-content" class="product-page" style={`--product-accent:${product.accent};`}>
+  <main
+    id="main-content"
+    class="product-page"
+    style={`--product-accent:${product.accent};`}
+    data-intent-layer="alloy-grade-commercial"
+    data-search-owner={searchIntent.primaryQuery}
+  >
     <Breadcrumbs items={breadcrumbItems} contained />
 
     <section class="product-hero page-shell">
@@ -128,7 +147,7 @@ const schema = [
           <span>{product.availabilityLabel}</span>
         </div>
         <p class="product-code">{product.code}</p>
-        <h1>{product.name} metal powder</h1>
+        <h1>{searchIntent.primaryQuery} supplier and RFQ</h1>
         <p class="product-deck">{product.summary}</p>
 
         <div class="alias-row" aria-label="Alternate designations">
@@ -188,8 +207,36 @@ const schema = [
       </div>
     </section>
 
+    <nav class="intent-jump page-shell" aria-label={`${searchIntent.primaryQuery} purchasing sections`}>
+      <span>On this grade page</span>
+      <a href="#grade-designations">Designations & search names</a>
+      <a href="#process-and-particle-size">Process & particle size</a>
+      <a href="#standards-and-documents">Standards & documents</a>
+      <a href="#price-and-quote-inputs">Price & quote inputs</a>
+    </nav>
+
     <section class="product-content page-shell">
       <div class="product-content__main">
+        <section id="grade-designations" class="content-block" aria-labelledby="grade-designations-title">
+          <div class="section-heading">
+            <p class="eyebrow">Grade search intent</p>
+            <h2 id="grade-designations-title">Specify this powder by grade, then narrow the buying requirement.</h2>
+            <p>{searchIntent.designationGuidance}</p>
+          </div>
+          <div class="buyer-query-grid" aria-label={`Common procurement searches for ${searchIntent.primaryQuery}`}>
+            {searchIntent.buyerQueries.map((query) => (
+              <article data-buyer-query>
+                <span>Procurement query</span>
+                <strong>{query}</strong>
+              </article>
+            ))}
+          </div>
+          <p class="search-boundary">
+            These search patterns are consolidated on this grade owner page. They describe buying intent—not separate
+            stock items, guaranteed specifications, fixed prices, or additional thin landing pages.
+          </p>
+        </section>
+
         <section class="content-block" aria-labelledby="fit-title">
           <div class="section-heading">
             <p class="eyebrow">Application fit</p>
@@ -241,7 +288,7 @@ const schema = [
           </div>
         </section>
 
-        <section class="content-block" aria-labelledby="route-title">
+        <section id="process-and-particle-size" class="content-block" aria-labelledby="route-title">
           <div class="section-heading">
             <p class="eyebrow">Process and PSD</p>
             <h2 id="route-title">Process and PSD options to confirm in the RFQ.</h2>
@@ -339,10 +386,11 @@ const schema = [
           </aside>
         </section>
 
-        <section class="content-block" aria-labelledby="documents-title">
+        <section id="standards-and-documents" class="content-block" aria-labelledby="documents-title">
           <div class="section-heading">
             <p class="eyebrow">Evidence package</p>
             <h2 id="documents-title">Request the documents that support the actual buying decision.</h2>
+            <p>{searchIntent.specificationPrompt}</p>
           </div>
           <div class="document-grid">
             {product.documentOptions.map((document, index) => (
@@ -357,6 +405,43 @@ const schema = [
             Certificates, technical data, sample reports, and partner-specific documents are supplied only when they
             correspond to the quoted source, grade, particle-size route, and lot.
           </p>
+        </section>
+
+        <section id="price-and-quote-inputs" class="content-block" aria-labelledby="quote-inputs-title">
+          <div class="section-heading">
+            <p class="eyebrow">Price and supplier RFQ</p>
+            <h2 id="quote-inputs-title">Price and availability follow the exact grade, PSD, evidence, and delivery scope.</h2>
+            <p>
+              A useful supplier comparison keeps the technical and commercial basis identical. Send the same inputs to
+              avoid comparing different chemistry limits, powder routes, packages, or document scopes as if they were
+              the same product.
+            </p>
+          </div>
+          <div class="control-grid">
+            <article>
+              <span>01</span>
+              <h3>Grade and acceptance basis</h3>
+              <p>{searchIntent.specificationPrompt}</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Process, machine, and PSD</h3>
+              <p>State the target process, equipment constraints, particle-size range, and governing PSD method.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Quantity, packaging, and destination</h3>
+              <p>Separate sample and production quantities; include package size, destination country, and target timing.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Lot evidence and source controls</h3>
+              <p>List required COA, PSD, SDS, TDS, SEM, traceability, sampling, and production-route evidence.</p>
+            </article>
+          </div>
+          <a class="button button--primary quote-inputs-action" href={`/rfq/?product=${product.id}`}>
+            Request {searchIntent.primaryQuery}
+          </a>
         </section>
       </div>
 
@@ -688,6 +773,29 @@ const schema = [
     line-height: 1.4;
   }
 
+  .intent-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.9rem;
+    align-items: center;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .intent-jump span {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .intent-jump a {
+    color: var(--brand);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
   .product-content {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.34fr);
@@ -704,6 +812,7 @@ const schema = [
     display: grid;
     gap: 1.5rem;
     min-width: 0;
+    scroll-margin-top: 5.5rem;
   }
 
   .section-heading {
@@ -790,6 +899,50 @@ const schema = [
     color: var(--muted);
     font-size: 0.84rem;
     line-height: 1.6;
+  }
+
+  .buyer-query-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .buyer-query-grid article {
+    display: grid;
+    gap: 0.38rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--product-accent);
+    border-radius: var(--radius-card);
+    background: var(--surface-soft);
+  }
+
+  .buyer-query-grid span {
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .buyer-query-grid strong {
+    color: var(--text);
+    font-size: 0.94rem;
+    line-height: 1.35;
+  }
+
+  .search-boundary {
+    margin: 0;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid var(--product-accent);
+    color: var(--muted);
+    background: var(--brand-soft);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .quote-inputs-action {
+    justify-self: start;
   }
 
   .route-table-wrap {
@@ -1102,6 +1255,7 @@ const schema = [
     }
 
     .control-grid,
+    .buyer-query-grid,
     .content-block--split,
     .document-grid,
     .product-content__aside,

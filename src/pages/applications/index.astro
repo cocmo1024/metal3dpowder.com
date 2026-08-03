@@ -20,7 +20,7 @@ const cards = landing.hubs.map((hub) => ({
   href: `/applications/${hub.slug}/`,
 }));
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
-const description = 'Application-led metal powder guides for AM materials, processes, and part-design decisions.';
+const description = 'Shortlist metal powder by application, service environment, component requirements, AM process, and suitable alloy-grade routes.';
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
   { name: 'Applications' },
@@ -47,6 +47,7 @@ const schema = [
     cards={cards}
     posts={posts}
     postsTitle="Selected application guides"
+    intentLayer="directory"
   />
   <SiteFooter />
 </BaseLayout>

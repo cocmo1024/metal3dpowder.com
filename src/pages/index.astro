@@ -15,10 +15,11 @@ import {
 } from '../data/products';
 import { getBlogPostPath, sortBlogPosts } from '../data/blog';
 import { applicationHubs, getHubPath } from '../data/contentHubs';
+import { getProductSearchIntent } from '../data/searchIntent';
 
-const title = 'Metal Powder Supplier for AM, MIM & Binder Jet | Metal 3D Powder';
+const title = 'Metal Powder for 3D Printing & Additive Manufacturing';
 const description =
-  'Browse titanium, stainless, nickel, aluminum, copper, tool steel, and cobalt chrome powders by alloy, process, PSD, and application. Build a lot-specific RFQ online.';
+  'Source metal powder by exact alloy grade, process, particle size, specification, and lot evidence. Compare Ti6Al4V, IN718, 316L, AlSi10Mg, CuCrZr, and more.';
 
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const allPosts = sortBlogPosts(await getCollection('blog'));
@@ -55,7 +56,7 @@ const processCards = [
     label: 'EBM',
     title: 'Electron beam melting',
     description: 'Titanium and high-temperature powder routes with process-specific PSD requirements.',
-    href: '/products/?process=EBM',
+    href: '/processes/ebm/',
     index: '02',
   },
   {
@@ -81,7 +82,7 @@ const collectionPageSchema = buildCollectionPageSchema({
   description,
   items: [
     ...featuredProducts.map((product) => ({
-      name: `${product.name} powder`,
+      name: getProductSearchIntent(product.id).primaryQuery,
       path: getProductPath(product),
     })),
     ...featuredKnowledgePosts.map((post) => ({
@@ -105,12 +106,12 @@ const collectionPageSchema = buildCollectionPageSchema({
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__inner page-shell">
         <div class="hero__copy">
-          <p class="hero__eyebrow">Industrial metal powder catalog</p>
-          <h1 id="hero-title">Metal powder sourcing, built around your process.</h1>
+          <p class="hero__eyebrow">Metal powder for 3D printing and AM</p>
+          <h1 id="hero-title">Metal powder sourcing, built around the exact alloy grade.</h1>
           <p class="hero__lead">
-            Source metal powders by alloy, particle size, process, and documentation requirements. Each formal
-            quotation confirms the proposed production route, applicable lot documentation, packaging, availability,
-            and destination-specific terms.
+            Start with the grade buyers specify—Ti6Al4V, Grade 23, IN718, 316L, AlSi10Mg, CuCrZr, CoCrMo, and more—then
+            define process, particle size, standard, evidence, and delivery requirements. Each formal quotation confirms
+            the proposed source, production route, lot documents, packaging, availability, and destination terms.
           </p>
 
           <div class="hero__supply-chain">
@@ -121,7 +122,7 @@ const collectionPageSchema = buildCollectionPageSchema({
           </div>
 
           <div class="hero__actions">
-            <a class="button button--hero" href="/products/">Browse powders</a>
+            <a class="button button--hero" href="/products/">Browse powder grades</a>
             <a class="button button--dark" href="/rfq/">Request a quote</a>
           </div>
 
@@ -187,10 +188,10 @@ const collectionPageSchema = buildCollectionPageSchema({
     <section class="finder-section page-shell" aria-labelledby="finder-title">
       <div class="section-heading">
         <p class="eyebrow">Powder finder</p>
-        <h2 id="finder-title">Start with the alloy family.</h2>
+        <h2 id="finder-title">Find the alloy family, then choose the exact grade.</h2>
         <p>
-          Filter by grade, international designation, process, or application. Pricing, availability, and lot
-          documentation are confirmed with each quotation.
+          The family pages organize broad material demand; the individual grade pages own international aliases,
+          process and PSD combinations, supplier and price intent, standards, documents, and the structured RFQ.
         </p>
       </div>
 
@@ -199,7 +200,7 @@ const collectionPageSchema = buildCollectionPageSchema({
           productFamilies.map((family) => {
             const count = products.filter((product) => product.family === family.id).length;
             return (
-              <a class="family-card" href={`/products/?family=${family.id}`} style={`--family-accent:${family.accent}`}>
+              <a class="family-card" href={family.hubPath} style={`--family-accent:${family.accent}`}>
                 <span class="family-card__orb" aria-hidden="true"></span>
                 <div>
                   <small>{count} {count === 1 ? 'grade' : 'grades'}</small>
@@ -218,8 +219,8 @@ const collectionPageSchema = buildCollectionPageSchema({
       <div class="featured-section__inner page-shell">
         <div class="section-heading">
           <p class="eyebrow">Featured powders</p>
-          <h2 id="featured-title">Frequently requested grades for technical review.</h2>
-          <p>Compare candidate PSD ranges and processes, then add one or more grades to the RFQ.</p>
+          <h2 id="featured-title">Core alloy grades for technical purchasing.</h2>
+          <p>Compare international designations, candidate PSD ranges, processes, and quote inputs, then build the RFQ.</p>
         </div>
 
         <div class="products-grid">

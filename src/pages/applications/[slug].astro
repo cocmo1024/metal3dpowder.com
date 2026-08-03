@@ -9,7 +9,6 @@ import { applicationHubs, type HubDefinition } from '../../data/contentHubs';
 import { getProductsForHub } from '../../data/productRoutes';
 import { getProductPath } from '../../data/products';
 import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
-import { siteInfo } from '../../data/site';
 
 interface Props {
   hub: HubDefinition;
@@ -28,6 +27,9 @@ const postMap = new Map(allPosts.map((post) => [post.id, post]));
 const posts = hub.postIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
 const relatedProducts = getProductsForHub(hub);
 const canonical = `/applications/${hub.slug}/`;
+const seoTitle = `${hub.title}: Metal Powder Selection`;
+const pageHeading = `${hub.title} metal powder selection`;
+const metaDescription = `Metal powder selection for ${hub.title}: compare alloy grades, AM process fit, service requirements, and RFQ evidence.`;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -38,8 +40,8 @@ const schema = [
   buildCollectionPageSchema({
     site: siteUrl,
     path: canonical,
-    name: `${hub.title} guides`,
-    description: hub.description,
+    name: pageHeading,
+    description: metaDescription,
     items: [
       ...relatedProducts.map((product) => ({ name: product.name, path: getProductPath(product) })),
       ...posts.map((post) => ({ name: post.data.title, path: getBlogPostPath(post) })),
@@ -49,17 +51,18 @@ const schema = [
 ];
 ---
 
-<BaseLayout title={`${hub.title} Guides | ${siteInfo.brand}`} description={hub.description} canonical={canonical} schema={schema}>
+<BaseLayout title={seoTitle} description={metaDescription} canonical={canonical} schema={schema}>
   <SiteHeader pathname={Astro.url.pathname} />
   <ContentHub
     breadcrumbItems={breadcrumbItems}
     eyebrow="Application center"
-    title={`${hub.title} Guides`}
+    title={pageHeading}
     description={hub.description}
     products={relatedProducts}
-    productsTitle={`Candidate powder routes for ${hub.title}`}
+    productsTitle={`Alloy grades to evaluate for ${hub.title}`}
     posts={posts}
-    postsTitle="Articles in this application center"
+    postsTitle={`Engineering guides for ${hub.title}`}
+    intentLayer="application"
   />
   <SiteFooter />
 </BaseLayout>

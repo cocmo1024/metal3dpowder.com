@@ -34,48 +34,56 @@ export const productFamilies: Array<{
   label: string;
   description: string;
   accent: string;
+  hubPath: string;
 }> = [
   {
     id: 'titanium',
     label: 'Titanium',
     description: 'Lightweight, corrosion-resistant powders for LPBF, EBM, medical, and aerospace programs.',
     accent: '#34d0c5',
+    hubPath: '/materials/titanium-powder/',
   },
   {
     id: 'stainless-steel',
     label: 'Stainless steel',
     description: 'Versatile corrosion-resistant powders for AM, binder jet, MIM, and industrial hardware.',
     accent: '#99a9b7',
+    hubPath: '/materials/stainless-steel-powder/',
   },
   {
     id: 'nickel-alloy',
     label: 'Nickel alloys',
     description: 'High-temperature and corrosion-resistant powders for energy, aerospace, and process equipment.',
     accent: '#f29b54',
+    hubPath: '/materials/nickel-alloy-powder/',
   },
   {
     id: 'tool-steel',
     label: 'Tool & maraging steel',
     description: 'Powders for conformal cooling, tooling inserts, dies, and high-strength production hardware.',
     accent: '#65ab8b',
+    hubPath: '/materials/tool-steel-powder/',
   },
   {
     id: 'aluminum',
     label: 'Aluminum',
     description: 'Lightweight powder for housings, brackets, thermal structures, and transportation applications.',
     accent: '#579be2',
+    hubPath: '/materials/aluminum-powder/',
   },
   {
     id: 'copper-alloy',
     label: 'Copper alloys',
     description: 'Conductive powders for thermal, electrical, RF, and high-heat-flux components.',
     accent: '#f07c46',
+    hubPath: '/materials/copper-alloy-powder/',
   },
   {
     id: 'cobalt-chrome',
     label: 'Cobalt chrome',
     description: 'Wear- and corrosion-resistant powder for dental, medical, and industrial wear components.',
     accent: '#858bd9',
+    hubPath: '/materials/cobalt-chrome-powder/',
   },
 ];
 
@@ -88,7 +96,7 @@ export const products: Product[] = [
     code: 'Ti64 · Grade 5',
     family: 'titanium',
     familyLabel: 'Titanium',
-    aliases: ['Ti-6Al-4V', 'Grade 5', 'TC4'],
+    aliases: ['Ti-6Al-4V', 'Ti64', 'Grade 5', 'UNS R56400', 'TC4'],
     summary:
       'A widely used titanium alloy powder for lightweight structural AM parts where strength-to-weight performance matters.',
     image: '/images/products/titanium.svg',
@@ -110,7 +118,7 @@ export const products: Product[] = [
     code: 'Ti64 · Grade 23',
     family: 'titanium',
     familyLabel: 'Titanium',
-    aliases: ['Ti-6Al-4V ELI', 'Grade 23', 'TC4 ELI'],
+    aliases: ['Ti-6Al-4V ELI', 'Ti64 ELI', 'Grade 23', 'UNS R56407', 'TC4 ELI'],
     summary:
       'Extra-low-interstitial titanium powder for projects that require tighter chemistry control and qualification evidence.',
     image: '/images/products/titanium.svg',
@@ -132,7 +140,7 @@ export const products: Product[] = [
     code: 'CP Titanium · Grade 2',
     family: 'titanium',
     familyLabel: 'Titanium',
-    aliases: ['CP-Ti Grade 2', 'TA1', 'Commercially pure titanium'],
+    aliases: ['CP-Ti Grade 2', 'UNS R50400', 'Commercially pure titanium', 'TA1'],
     summary:
       'Commercially pure titanium powder for corrosion-led parts where ductility and chemical compatibility lead the decision.',
     image: '/images/products/ti-grade-2.svg',
@@ -217,7 +225,7 @@ export const products: Product[] = [
     code: '18Ni300 · 1.2709',
     family: 'tool-steel',
     familyLabel: 'Tool & maraging steel',
-    aliases: ['M300', '18Ni300', 'EN 1.2709'],
+    aliases: ['M300', '18Ni300', 'Maraging 300', 'EN 1.2709'],
     summary:
       'High-strength maraging steel powder for mold inserts, precision tooling, and age-hardened production components.',
     image: '/images/products/m300.svg',
@@ -260,7 +268,7 @@ export const products: Product[] = [
     code: 'IN718 · GH4169',
     family: 'nickel-alloy',
     familyLabel: 'Nickel alloy',
-    aliases: ['Alloy 718', 'IN718', 'GH4169', 'UNS N07718'],
+    aliases: ['Alloy 718', 'IN718', 'Inconel 718', 'UNS N07718', 'GH4169'],
     summary:
       'Precipitation-hardenable nickel alloy powder for high-temperature structures, turbines, and energy hardware.',
     image: '/images/products/in718.svg',
@@ -282,7 +290,7 @@ export const products: Product[] = [
     code: 'IN625 · GH3625',
     family: 'nickel-alloy',
     familyLabel: 'Nickel alloy',
-    aliases: ['Alloy 625', 'IN625', 'GH3625', 'UNS N06625'],
+    aliases: ['Alloy 625', 'IN625', 'Inconel 625', 'UNS N06625', 'GH3625'],
     summary:
       'Solid-solution nickel alloy powder for corrosion-heavy chemical, marine, energy, and hot-side hardware.',
     image: '/images/products/in625.svg',
@@ -346,7 +354,7 @@ export const products: Product[] = [
     code: 'CuCrZr · C18150',
     family: 'copper-alloy',
     familyLabel: 'Copper alloy',
-    aliases: ['CuCrZr', 'CuCr1Zr', 'C18150'],
+    aliases: ['CuCrZr', 'CuCr1Zr', 'UNS C18150'],
     summary:
       'Conductive copper-alloy powder for thermal, electrical, RF, tooling, and high-heat-flux components.',
     image: '/images/products/cucrzr.svg',

@@ -113,7 +113,7 @@ const schema = [
 >
   <SiteHeader pathname={Astro.url.pathname} />
 
-  <main id="main-content" class="page-shell article-page">
+  <main id="main-content" class="page-shell article-page" data-intent-layer="technical-guide">
     <article class="article">
       <Breadcrumbs items={breadcrumbItems} />
 
@@ -121,6 +121,7 @@ const schema = [
         <h1>{post.data.title}</h1>
 
         <div class="article-meta">
+          <span>Technical guide</span>
           <span>{post.data.category}</span>
           <span>Reviewed by <a href={`${blogAuthorPath}#editorial-standards`}>{blogAuthorName}</a></span>
           <span>{formatter.format(post.data.pubDate)}</span>
@@ -139,7 +140,11 @@ const schema = [
 
       <ArticleEvidence category={post.data.category} />
 
-      <ProductRouteGrid products={relatedProducts} />
+      <ProductRouteGrid
+        products={relatedProducts}
+        title="Commercial alloy-grade pages for quotation"
+        description="This article supports research and selection intent. Continue to the grade owner page for international designations, process and PSD inputs, supplier and price intent, document scope, and the structured RFQ."
+      />
 
       <RfqCta context={post.data.title} />
 

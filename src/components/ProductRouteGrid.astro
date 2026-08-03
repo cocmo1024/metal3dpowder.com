@@ -1,5 +1,6 @@
 ---
 import { getProductPath, type Product } from '../data/products';
+import { getProductSearchIntent } from '../data/searchIntent';
 
 interface Props {
   products: Product[];
@@ -30,9 +31,13 @@ const {
               <span>{product.familyLabel}</span>
               <span>{product.code}</span>
             </div>
-            <h3>{product.name}</h3>
+            <h3>{getProductSearchIntent(product.id).primaryQuery}</h3>
             <p>{product.summary}</p>
             <dl>
+              <div>
+                <dt>Search designations</dt>
+                <dd>{product.aliases.slice(0, 4).join(', ')}</dd>
+              </div>
               <div>
                 <dt>Candidate PSD</dt>
                 <dd>{product.particleSizes.join(' / ')}</dd>
@@ -43,7 +48,7 @@ const {
               </div>
             </dl>
             <div class="product-route__actions">
-              <a href={getProductPath(product)} data-product-route={product.id}>Review powder route</a>
+              <a href={getProductPath(product)} data-product-route={product.id}>Review grade, PSD & RFQ</a>
               <a href={`/rfq/?product=${product.id}`} data-rfq-entry="product-route">Request this powder</a>
             </div>
           </article>

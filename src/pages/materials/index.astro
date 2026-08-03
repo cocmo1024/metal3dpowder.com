@@ -20,7 +20,7 @@ const cards = landing.hubs.map((hub) => ({
   href: `/materials/${hub.slug}/`,
 }));
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
-const description = 'Material-led guides for titanium, stainless, nickel, copper, tool steel, aluminum, and cobalt chrome AM powder sourcing.';
+const description = 'Browse metal powder by alloy family, exact grade, international designation, AM process, PSD, supplier intent, and RFQ evidence requirements.';
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
   { name: 'Materials' },
@@ -47,6 +47,7 @@ const schema = [
     cards={cards}
     posts={posts}
     postsTitle="Selected material guides"
+    intentLayer="directory"
   />
   <SiteFooter />
 </BaseLayout>
