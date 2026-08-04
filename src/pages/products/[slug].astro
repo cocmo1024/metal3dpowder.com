@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import ProductCard from '../../components/ProductCard.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { getPowderScreeningWindow } from '../../data/powderCapabilities';
@@ -238,24 +237,6 @@ const schema = [
           </p>
         </section>
 
-        <section class="content-block" aria-labelledby="fit-title">
-          <div class="section-heading">
-            <p class="eyebrow">Application fit</p>
-            <h2 id="fit-title">Applications suited to technical review.</h2>
-          </div>
-          <div class="fit-grid">
-            {product.bestFor.map((item, index) => (
-              <article>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <p>{item}</p>
-              </article>
-            ))}
-          </div>
-          <ul class="tag-list" aria-label="Application markets">
-            {product.applications.map((application) => <li>{application}</li>)}
-          </ul>
-        </section>
-
         <section class="content-block" aria-labelledby="specification-title">
           <div class="section-heading">
             <p class="eyebrow">Specification controls</p>
@@ -366,6 +347,24 @@ const schema = [
             </section>
           )
         }
+
+        <section class="content-block" aria-labelledby="fit-title">
+          <div class="section-heading">
+            <p class="eyebrow">Application fit</p>
+            <h2 id="fit-title">Applications suited to technical review.</h2>
+          </div>
+          <div class="fit-grid">
+            {product.bestFor.map((item, index) => (
+              <article>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+          <ul class="tag-list" aria-label="Application markets">
+            {product.applications.map((application) => <li>{application}</li>)}
+          </ul>
+        </section>
 
         <section class="content-block content-block--split" aria-labelledby="risk-title">
           <div>
@@ -481,7 +480,30 @@ const schema = [
         <h2 id="related-title">Compare adjacent powder options.</h2>
       </div>
       <div class="related-grid">
-        {relatedProducts.map((related, index) => <ProductCard product={related} index={index} />)}
+        {relatedProducts.map((related) => (
+          <article class="related-route">
+            <div class="related-route__meta">
+              <span>{related.familyLabel}</span>
+              <span>{related.code}</span>
+            </div>
+            <h3><a href={getProductPath(related)}>{getProductSearchIntent(related.id).primaryQuery}</a></h3>
+            <p>{related.summary}</p>
+            <dl>
+              <div>
+                <dt>PSD</dt>
+                <dd>{related.particleSizes.slice(0, 2).join(' / ')}</dd>
+              </div>
+              <div>
+                <dt>Process</dt>
+                <dd>{related.processes.slice(0, 3).join(', ')}</dd>
+              </div>
+            </dl>
+            <div class="related-route__actions">
+              <a href={getProductPath(related)}>Review powder route</a>
+              <a href={`/rfq/?product=${related.id}`}>Request quote</a>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
 
@@ -516,7 +538,7 @@ const schema = [
     grid-template-columns: minmax(0, 1.02fr) minmax(24rem, 0.98fr);
     gap: clamp(2rem, 5vw, 4.75rem);
     align-items: center;
-    padding-block: 1rem clamp(3.5rem, 7vw, 6.5rem);
+    padding-block: 1rem clamp(3.25rem, 5.5vw, 5rem);
   }
 
   .product-gallery {
@@ -560,7 +582,7 @@ const schema = [
     border-radius: 999px;
     color: #fff;
     background: rgba(5, 14, 21, 0.58);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     backdrop-filter: blur(10px);
@@ -585,7 +607,7 @@ const schema = [
 
   .product-gallery__evidence article > span {
     color: var(--brand);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 800;
   }
 
@@ -600,7 +622,7 @@ const schema = [
 
   .product-gallery__evidence small {
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.45;
   }
 
@@ -620,7 +642,7 @@ const schema = [
     border-radius: 999px;
     color: var(--brand);
     background: var(--brand-soft);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 750;
     letter-spacing: 0.055em;
     text-transform: uppercase;
@@ -644,7 +666,7 @@ const schema = [
     max-width: 37rem;
     margin: 0;
     color: var(--text);
-    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-size: var(--title-page);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.04em;
@@ -668,7 +690,7 @@ const schema = [
 
   .alias-row strong {
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
@@ -690,7 +712,7 @@ const schema = [
     border-radius: 999px;
     color: var(--text);
     background: var(--surface-soft);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
   }
 
   .quick-specs {
@@ -709,7 +731,7 @@ const schema = [
 
   .quick-specs dt {
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -732,7 +754,7 @@ const schema = [
     padding-left: 0.8rem;
     border-left: 2px solid var(--product-accent);
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.55;
   }
 
@@ -762,7 +784,7 @@ const schema = [
 
   .decision-strip span {
     color: #91a9bd;
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -784,7 +806,7 @@ const schema = [
 
   .intent-jump span {
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 750;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -800,17 +822,17 @@ const schema = [
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.34fr);
     gap: clamp(2rem, 5vw, 4.5rem);
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(3.25rem, 5.5vw, 5rem);
   }
 
   .product-content__main {
     display: grid;
-    gap: clamp(3.5rem, 7vw, 6rem);
+    gap: clamp(2.75rem, 4.5vw, 4.25rem);
   }
 
   .content-block {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.2rem;
     min-width: 0;
     scroll-margin-top: 5.5rem;
   }
@@ -824,7 +846,7 @@ const schema = [
     max-width: 50rem;
     margin: 0;
     color: var(--text);
-    font-size: clamp(1.8rem, 3.2vw, 2.85rem);
+    font-size: var(--title-section);
     line-height: 1.08;
     letter-spacing: -0.04em;
   }
@@ -845,7 +867,7 @@ const schema = [
   .fit-grid article {
     display: grid;
     gap: 1rem;
-    min-height: 9.5rem;
+    min-height: 8rem;
     padding: 1rem;
     border: 1px solid var(--line);
     border-radius: var(--radius-card);
@@ -919,7 +941,7 @@ const schema = [
 
   .buyer-query-grid span {
     color: var(--muted);
-    font-size: 0.78rem;
+    font-size: var(--meta-size);
     font-weight: 750;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -969,7 +991,7 @@ const schema = [
   .route-table thead th {
     color: var(--muted);
     background: var(--surface-soft);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
@@ -1070,7 +1092,7 @@ const schema = [
   .document-grid span,
   .document-grid small {
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
   }
 
   .document-grid strong {
@@ -1159,7 +1181,7 @@ const schema = [
 
   .knowledge-panel > span {
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -1185,14 +1207,110 @@ const schema = [
 
   .related-section {
     display: grid;
-    gap: 1.4rem;
-    padding-block: 1rem 5rem;
+    gap: 1.15rem;
+    padding-block: 0 3.75rem;
   }
 
   .related-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.85rem;
+  }
+
+  .related-route {
+    position: relative;
+    display: grid;
+    gap: 0.65rem;
+    align-content: start;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .related-route h3,
+  .related-route p,
+  .related-route dl {
+    margin: 0;
+  }
+
+  .related-route h3 {
+    font-size: 1.08rem;
+    line-height: 1.28;
+  }
+
+  .related-route h3 a::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+  }
+
+  .related-route > p {
+    display: -webkit-box;
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .related-route__meta,
+  .related-route__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.7rem;
+  }
+
+  .related-route__meta {
+    color: var(--muted);
+    font-size: var(--meta-size);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .related-route dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .related-route dl div {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .related-route dt {
+    color: var(--muted);
+    font-size: var(--meta-size);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .related-route dd {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .related-route__actions {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+    padding-top: 0.35rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  .related-route__actions a:first-child {
+    color: var(--brand);
+  }
+
+  .related-route__actions a:last-child {
+    color: var(--muted);
   }
 
   .product-final {
@@ -1292,7 +1410,7 @@ const schema = [
     }
 
     .product-summary h1 {
-      font-size: clamp(2.25rem, 10vw, 2.75rem);
+      font-size: var(--title-page);
     }
 
     .quick-specs div {
@@ -1339,7 +1457,7 @@ const schema = [
 
     .mobile-rfq-bar span {
       color: #9fb4c5;
-      font-size: 0.78rem;
+      font-size: var(--meta-size);
     }
 
     .mobile-rfq-bar strong {

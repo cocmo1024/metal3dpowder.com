@@ -144,68 +144,71 @@ const schema = [
         </p>
       </div>
 
-      <div class="alloy-matrix">
-        {extendedAlloyMatrix.map((group) => (
-          <article>
-            <div class="alloy-matrix__heading">
-              <h3>{group.family}</h3>
-              <span>{group.grades.length} designations</span>
-            </div>
-            <ul>
-              {group.grades.map((grade) => (
-                <li>
-                  <a href={`/rfq/?custom=1&material=${encodeURIComponent(grade)}`}>{grade}</a>
-                </li>
-              ))}
-            </ul>
-            <dl>
-              <div>
-                <dt>Candidate routes</dt>
-                <dd>{group.routes}</dd>
+      <details class="extended-matrix-details">
+        <summary>Browse {extendedGradeCount} additional grade designations and process windows</summary>
+        <div class="alloy-matrix">
+          {extendedAlloyMatrix.map((group) => (
+            <article>
+              <div class="alloy-matrix__heading">
+                <h3>{group.family}</h3>
+                <span>{group.grades.length} designations</span>
               </div>
-              <div>
-                <dt>RFQ focus</dt>
-                <dd>{group.procurementFocus}</dd>
-              </div>
-            </dl>
-          </article>
-        ))}
-      </div>
+              <ul>
+                {group.grades.map((grade) => (
+                  <li>
+                    <a href={`/rfq/?custom=1&material=${encodeURIComponent(grade)}`}>{grade}</a>
+                  </li>
+                ))}
+              </ul>
+              <dl>
+                <div>
+                  <dt>Candidate routes</dt>
+                  <dd>{group.routes}</dd>
+                </div>
+                <div>
+                  <dt>RFQ focus</dt>
+                  <dd>{group.procurementFocus}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
 
-      <div class="section-heading section-heading--process">
-        <p class="eyebrow">Process powder windows</p>
-        <h2>Start with the process, then qualify the PSD.</h2>
-        <p>
-          These ranges are capability-screening candidates. The machine, feed system, test method, chemistry, and quoted
-          lot determine the final usable specification.
-        </p>
-      </div>
-      <div class="process-window-wrap">
-        <table class="process-window-table">
-          <thead>
-            <tr>
-              <th scope="col">Process</th>
-              <th scope="col">Candidate PSD</th>
-              <th scope="col">Material examples</th>
-              <th scope="col">RFQ controls</th>
-            </tr>
-          </thead>
-          <tbody>
-            {processPowderWindows.map((window) => (
+        <div class="section-heading section-heading--process">
+          <p class="eyebrow">Process powder windows</p>
+          <h2>Start with the process, then qualify the PSD.</h2>
+          <p>
+            These ranges are capability-screening candidates. The machine, feed system, test method, chemistry, and quoted
+            lot determine the final usable specification.
+          </p>
+        </div>
+        <div class="process-window-wrap">
+          <table class="process-window-table">
+            <thead>
               <tr>
-                <th scope="row">{window.process}</th>
-                <td>{window.candidatePsd}</td>
-                <td>{window.materialExamples}</td>
-                <td>{window.rfqControl}</td>
+                <th scope="col">Process</th>
+                <th scope="col">Candidate PSD</th>
+                <th scope="col">Material examples</th>
+                <th scope="col">RFQ controls</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="extended-catalog__boundary">
-        Matrix inclusion means the grade or route is suitable for source review. It does not confirm inventory,
-        production capacity, certification scope, export eligibility, price, lead time, or lot documentation.
-      </p>
+            </thead>
+            <tbody>
+              {processPowderWindows.map((window) => (
+                <tr>
+                  <th scope="row">{window.process}</th>
+                  <td>{window.candidatePsd}</td>
+                  <td>{window.materialExamples}</td>
+                  <td>{window.rfqControl}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="extended-catalog__boundary">
+          Matrix inclusion means the grade or route is suitable for source review. It does not confirm inventory,
+          production capacity, certification scope, export eligibility, price, lead time, or lot documentation.
+        </p>
+      </details>
     </section>
 
     <section class="catalog-help page-shell">
@@ -325,7 +328,7 @@ const schema = [
     max-width: 48rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-size: var(--title-page);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.04em;
@@ -354,13 +357,13 @@ const schema = [
 
   .catalog-hero aside > span {
     color: #a9bdce;
-    font-size: 0.86rem;
+    font-size: 0.9rem;
   }
 
   .catalog-hero aside a {
     margin-top: 0.4rem;
     color: #fff;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 740;
   }
 
@@ -429,7 +432,7 @@ const schema = [
 
   .filter-grid label > span {
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 700;
   }
 
@@ -471,7 +474,7 @@ const schema = [
   .catalog-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.9rem;
   }
 
   .catalog-grid > [hidden] {
@@ -518,7 +521,7 @@ const schema = [
   .extended-catalog {
     display: grid;
     gap: 1.5rem;
-    padding-block: 0 4.5rem;
+    padding-block: 0 3.75rem;
   }
 
   .extended-catalog > .section-heading {
@@ -527,7 +530,7 @@ const schema = [
 
   .extended-catalog .section-heading h2 {
     margin: 0.25rem 0 0.7rem;
-    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    font-size: var(--title-section);
     letter-spacing: -0.035em;
   }
 
@@ -541,6 +544,43 @@ const schema = [
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
+  }
+
+  .extended-matrix-details {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .extended-matrix-details > summary {
+    padding: 1rem 1.15rem;
+    color: var(--brand);
+    font-size: 0.94rem;
+    font-weight: 760;
+    cursor: pointer;
+  }
+
+  .extended-matrix-details:not([open]) > :not(summary) {
+    display: none;
+  }
+
+  .extended-matrix-details .alloy-matrix {
+    padding: 0 1rem 1rem;
+  }
+
+  .extended-matrix-details > .section-heading,
+  .extended-matrix-details > .process-window-wrap,
+  .extended-matrix-details > .extended-catalog__boundary {
+    margin-inline: 1rem;
+  }
+
+  .extended-matrix-details > .section-heading {
+    padding-top: 0.25rem;
+  }
+
+  .extended-matrix-details > .extended-catalog__boundary {
+    margin-bottom: 1rem;
   }
 
   .alloy-matrix > article {
@@ -568,7 +608,7 @@ const schema = [
 
   .alloy-matrix__heading span {
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     white-space: nowrap;
   }
 
@@ -608,7 +648,7 @@ const schema = [
 
   .alloy-matrix dt {
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -651,7 +691,7 @@ const schema = [
   .process-window-table thead th {
     color: var(--muted);
     background: var(--surface-soft);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }

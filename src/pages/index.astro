@@ -327,7 +327,7 @@ const collectionPageSchema = buildCollectionPageSchema({
   .hero__eyebrow {
     margin: 0;
     color: #8fc9ff;
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 760;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -337,7 +337,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     max-width: 45rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.65rem, 4.3vw, 3.8rem);
+    font-size: var(--title-hero);
     font-weight: 720;
     line-height: 1.02;
     letter-spacing: -0.04em;
@@ -391,7 +391,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     border-radius: 0.42rem;
     color: #d9e8f4;
     background: rgba(255, 255, 255, 0.055);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 700;
   }
 
@@ -466,7 +466,7 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .hero-product small {
     color: #93a9bd;
-    font-size: 0.76rem;
+    font-size: var(--meta-size);
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
@@ -520,7 +520,7 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .hero-showcase__note span {
     color: #82c5ff;
-    font-size: 0.72rem;
+    font-size: var(--meta-size);
     font-weight: 760;
     letter-spacing: 0.11em;
   }
@@ -528,7 +528,7 @@ const collectionPageSchema = buildCollectionPageSchema({
   .hero-showcase__note p {
     margin: 0;
     color: #b9c9d7;
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     line-height: 1.45;
   }
 
@@ -562,7 +562,7 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .proof-strip span {
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
   }
 
   .grade-finder {
@@ -639,7 +639,7 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .grade-card__family {
     color: var(--muted);
-    font-size: 0.75rem;
+    font-size: var(--meta-size);
     font-weight: 760;
     letter-spacing: 0.09em;
     text-transform: uppercase;
@@ -652,14 +652,14 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .grade-card > small {
     color: var(--brand);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 700;
   }
 
   .grade-card p {
     margin: 0.12rem 0 0;
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.45;
   }
 
@@ -671,7 +671,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     margin-top: auto;
     padding-top: 0.6rem;
     color: var(--brand);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 760;
   }
 
@@ -690,7 +690,7 @@ const collectionPageSchema = buildCollectionPageSchema({
   .network-section__inner {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(27rem, 1.1fr);
-    gap: clamp(3rem, 7vw, 7rem);
+    gap: clamp(2.75rem, 5vw, 5rem);
     align-items: center;
     padding-block: clamp(3.8rem, 6vw, 5.5rem);
   }
@@ -704,7 +704,7 @@ const collectionPageSchema = buildCollectionPageSchema({
   .network-section h2 {
     margin: 0;
     color: #fff;
-    font-size: clamp(2rem, 3.4vw, 3.1rem);
+    font-size: var(--title-section);
     line-height: 1.04;
     letter-spacing: -0.038em;
   }
@@ -727,7 +727,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     border-radius: 0.42rem;
     color: #dce8f2;
     background: rgba(255, 255, 255, 0.05);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 700;
   }
 
@@ -736,7 +736,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     padding-left: 0.85rem;
     border-left: 2px solid rgba(143, 201, 255, 0.72);
     color: #96adbf;
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.58;
   }
 
@@ -846,7 +846,7 @@ const collectionPageSchema = buildCollectionPageSchema({
 
   .explore-grid span {
     color: var(--accent-dark);
-    font-size: 0.76rem;
+    font-size: var(--meta-size);
     font-weight: 780;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -867,7 +867,7 @@ const collectionPageSchema = buildCollectionPageSchema({
   .explore-grid b {
     margin-top: auto;
     color: var(--brand);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
   }
 
   .final-cta {
@@ -892,7 +892,7 @@ const collectionPageSchema = buildCollectionPageSchema({
   .final-cta h2 {
     margin: 0;
     color: #fff;
-    font-size: clamp(1.75rem, 3.4vw, 2.9rem);
+    font-size: var(--title-section);
     line-height: 1.05;
     letter-spacing: -0.034em;
   }
@@ -949,7 +949,7 @@ const collectionPageSchema = buildCollectionPageSchema({
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 9.4vw, 2.85rem);
+      font-size: var(--title-hero);
     }
 
     .proof-strip {

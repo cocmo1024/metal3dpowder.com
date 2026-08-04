@@ -1,5 +1,5 @@
 ---
-import type { BlogPost } from '../data/blog';
+import { getBlogPostPath, type BlogPost } from '../data/blog';
 import type { HubDefinition } from '../data/contentHubs';
 import type { Product } from '../data/products';
 import type { BreadcrumbItem } from '../data/seo';
@@ -42,6 +42,10 @@ const {
   intentLayer = 'directory',
   decisionGuide,
 } = Astro.props;
+const featuredPosts = posts.slice(0, 12);
+const additionalPosts = posts.slice(12);
+const featuredCards = cards.slice(0, 12);
+const additionalCards = cards.slice(12);
 ---
 
 <main id="main-content" class="page-shell hub-page" data-intent-layer={intentLayer}>
@@ -75,7 +79,22 @@ const {
     ) : null
   }
 
-  {cards.length ? <HubCardGrid items={cards} ariaLabel={`${title} sections`} /> : null}
+  {featuredCards.length ? <HubCardGrid items={featuredCards} ariaLabel={`${title} sections`} /> : null}
+  {
+    additionalCards.length ? (
+      <details class="hub-more-sections">
+        <summary>Browse {additionalCards.length} more application and industry routes</summary>
+        <ul>
+          {additionalCards.map((card) => (
+            <li>
+              <a href={card.href}>{card.title}</a>
+              <span>{card.description}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
+    ) : null
+  }
 
   {
     products.length ? (
@@ -91,7 +110,19 @@ const {
     posts.length ? (
       <section class="hub-section" aria-labelledby="hub-posts-title">
         <h2 id="hub-posts-title">{postsTitle}</h2>
-        <BlogPostGrid posts={posts} ariaLabel={postsTitle} headingLevel={3} />
+        <BlogPostGrid posts={featuredPosts} ariaLabel={postsTitle} headingLevel={3} />
+        {
+          additionalPosts.length ? (
+            <details class="hub-more-guides">
+              <summary>Browse {additionalPosts.length} more technical guides</summary>
+              <ul>
+                {additionalPosts.map((post) => (
+                  <li><a href={getBlogPostPath(post)}>{post.data.title}</a></li>
+                ))}
+              </ul>
+            </details>
+          ) : null
+        }
       </section>
     ) : null
   }
@@ -114,7 +145,7 @@ const {
 
   .hub-intro h1 {
     margin: 0;
-    font-size: clamp(2.25rem, 3.6vw, 3.5rem);
+    font-size: var(--title-hub);
     line-height: 1.06;
     letter-spacing: var(--title-tracking);
     font-weight: 760;
@@ -134,7 +165,7 @@ const {
 
   .hub-section h2 {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.55rem;
     line-height: 1.25;
     letter-spacing: -0.02em;
   }
@@ -172,6 +203,81 @@ const {
   .hub-decision__conclusion {
     color: var(--copy);
     line-height: var(--body-leading);
+  }
+
+  .hub-more-guides {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  .hub-more-sections {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .hub-more-sections summary {
+    padding: 1rem 1.1rem;
+    color: var(--brand);
+    font-size: 0.94rem;
+    font-weight: 760;
+    cursor: pointer;
+  }
+
+  .hub-more-sections ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0 1rem 1rem;
+    list-style: none;
+  }
+
+  .hub-more-sections li {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface-soft);
+  }
+
+  .hub-more-sections a {
+    font-weight: 750;
+  }
+
+  .hub-more-sections span {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .hub-more-guides summary {
+    padding: 0.95rem 1rem;
+    color: var(--brand);
+    font-size: 0.94rem;
+    font-weight: 760;
+    cursor: pointer;
+  }
+
+  .hub-more-guides ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem 1.25rem;
+    margin: 0;
+    padding: 0 1rem 1rem 2.1rem;
+  }
+
+  .hub-more-guides a {
+    color: var(--copy);
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .hub-more-guides a:hover {
+    color: var(--accent);
   }
 
   .hub-decision__grid {
@@ -222,11 +328,19 @@ const {
     }
 
     .hub-intro h1 {
-      font-size: clamp(1.95rem, 8.5vw, 2.6rem);
+      font-size: var(--title-hub);
       line-height: 1.08;
     }
 
     .hub-decision__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hub-more-guides ul {
+      grid-template-columns: 1fr;
+    }
+
+    .hub-more-sections ul {
       grid-template-columns: 1fr;
     }
   }

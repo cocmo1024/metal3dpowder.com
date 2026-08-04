@@ -575,7 +575,7 @@ const productPayload = products.map((product) => ({
   .rfq-form-section__intro h2 {
     max-width: 32rem;
     margin: 0;
-    font-size: clamp(2rem, 3.6vw, 3.15rem);
+    font-size: var(--title-section);
     line-height: 1.04;
     letter-spacing: -0.045em;
   }
@@ -602,7 +602,7 @@ const productPayload = products.map((product) => ({
 
   .rfq-expectations article > span {
     color: var(--brand);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 800;
   }
 
@@ -643,7 +643,7 @@ const productPayload = products.map((product) => ({
   }
 
   .rfq-form-section__intro aside small {
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
   }
 
   .rfq-form-card {
@@ -732,7 +732,7 @@ const productPayload = products.map((product) => ({
 
   :global([data-selected-products] .selected-product small) {
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     line-height: 1.4;
   }
 
@@ -744,7 +744,7 @@ const productPayload = products.map((product) => ({
     border-radius: 0.45rem;
     color: var(--brand);
     background: var(--surface);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 750;
     cursor: pointer;
   }
@@ -763,7 +763,7 @@ const productPayload = products.map((product) => ({
 
   :global([data-selected-products] .selected-product__fields label > span) {
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 700;
   }
 
@@ -817,7 +817,7 @@ const productPayload = products.map((product) => ({
   .product-selection label > span,
   .full-field > span {
     color: var(--text);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 700;
   }
 
@@ -883,7 +883,7 @@ const productPayload = products.map((product) => ({
 
   .consent-row span {
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.55;
   }
 
@@ -901,7 +901,7 @@ const productPayload = products.map((product) => ({
   .submit-row p {
     margin: 0;
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     line-height: 1.45;
   }
 
@@ -923,7 +923,7 @@ const productPayload = products.map((product) => ({
 
   .rfq-success > span {
     color: var(--success-text);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;

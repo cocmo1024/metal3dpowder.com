@@ -146,11 +146,11 @@ const schema = [
         <p>{post.data.description}</p>
       </section>
 
+      <ArticleDecisionGuide postId={post.id} />
+
       <section class="article-content" data-editorial-content>
         <Content />
       </section>
-
-      <ArticleDecisionGuide postId={post.id} />
 
       <ArticleEvidence category={post.data.category} />
 
@@ -232,7 +232,7 @@ const schema = [
   .article {
     display: grid;
     gap: var(--page-gap);
-    max-width: 920px;
+    max-width: 860px;
     margin-inline: auto;
   }
 
@@ -259,7 +259,7 @@ const schema = [
   .article-header h1 {
     width: 100%;
     max-width: none;
-    font-size: clamp(2.15rem, 3vw, 3.15rem);
+    font-size: var(--title-article);
     line-height: 1.08;
     letter-spacing: var(--title-tracking);
     font-weight: 760;
@@ -321,7 +321,7 @@ const schema = [
 
   .article-content :global(h2),
   .article-content :global(h3) {
-    margin-top: 2.35rem;
+    margin-top: 2rem;
     margin-bottom: 0.8rem;
     letter-spacing: -0.02em;
   }
@@ -525,7 +525,7 @@ const schema = [
     }
 
     .article-header h1 {
-      font-size: clamp(1.9rem, 8.2vw, 2.45rem);
+      font-size: var(--title-article);
       line-height: 1.1;
       letter-spacing: -0.02em;
     }

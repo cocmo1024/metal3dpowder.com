@@ -274,7 +274,7 @@ const schema = [
     max-width: 45rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-size: var(--title-page);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.04em;
@@ -324,7 +324,7 @@ const schema = [
     border-radius: 0.45rem;
     color: #d5e3ed;
     background: rgba(5, 20, 33, 0.72);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     text-transform: uppercase;
     backdrop-filter: blur(8px);
   }
@@ -355,7 +355,7 @@ const schema = [
   .quality-principles span {
     grid-row: 1 / 3;
     color: var(--brand);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 800;
   }
 
@@ -366,14 +366,14 @@ const schema = [
   .quality-principles p {
     margin: 0;
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.5;
   }
 
   .quality-system {
     display: grid;
     gap: 1.6rem;
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(3.5rem, 5.5vw, 5rem);
   }
 
   .section-heading {
@@ -384,7 +384,7 @@ const schema = [
   .section-heading h2 {
     max-width: 60rem;
     margin: 0;
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: var(--title-section);
     line-height: 1.04;
     letter-spacing: -0.045em;
   }
@@ -415,7 +415,7 @@ const schema = [
 
   .quality-grid span {
     color: var(--brand);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 800;
   }
 
@@ -438,7 +438,7 @@ const schema = [
   .test-coverage {
     display: grid;
     gap: 1.4rem;
-    padding-block: 0 clamp(3.5rem, 6vw, 5.5rem);
+    padding-block: 0 clamp(3rem, 4.5vw, 4.25rem);
   }
 
   .test-coverage > .section-heading {
@@ -446,7 +446,7 @@ const schema = [
   }
 
   .test-coverage .section-heading h2 {
-    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    font-size: var(--title-section);
   }
 
   .test-coverage__grid {
@@ -467,7 +467,7 @@ const schema = [
 
   .test-coverage__grid article > span {
     color: var(--brand);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 760;
     letter-spacing: 0.08em;
   }
@@ -497,7 +497,7 @@ const schema = [
 
   .test-coverage__grid article > div strong {
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
@@ -532,7 +532,7 @@ const schema = [
     border-radius: 0.55rem;
     color: var(--copy);
     background: var(--surface);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.45;
     counter-increment: batch-step;
   }
@@ -555,7 +555,7 @@ const schema = [
     grid-template-columns: minmax(0, 1.05fr) minmax(23rem, 0.95fr);
     gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(3.5rem, 5.5vw, 5rem);
   }
 
   .evidence-section__visual {
@@ -570,7 +570,7 @@ const schema = [
   .evidence-section h2 {
     margin: 0;
     color: #fff;
-    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-size: var(--title-section);
     line-height: 1.03;
     letter-spacing: -0.045em;
   }
@@ -594,7 +594,7 @@ const schema = [
   .evidence-section li > span {
     grid-row: 1 / 3;
     color: #8fb2ca;
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -613,7 +613,7 @@ const schema = [
   .document-package {
     display: grid;
     gap: 1.5rem;
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(3rem, 4.5vw, 4rem);
   }
 
   .document-package > div:first-child {
@@ -623,7 +623,7 @@ const schema = [
 
   .document-package h2 {
     margin: 0;
-    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-size: var(--title-section);
     letter-spacing: -0.04em;
   }
 

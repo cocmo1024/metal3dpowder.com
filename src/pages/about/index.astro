@@ -210,15 +210,13 @@ const supplyCapabilities = [
     </section>
 
     <section id="editorial-standards" class="editorial-section page-shell" aria-labelledby="editorial-title">
-      <div class="section-heading">
-        <p class="eyebrow">Editorial and technical review</p>
-        <h2 id="editorial-title">How technical content is prepared, bounded, and corrected.</h2>
-        <p>
-          The knowledge base is designed to help engineers and buyers define a better powder requirement. It does not
-          replace a governing specification, lot certificate, machine qualification, or finished-part validation.
-        </p>
-      </div>
-      <div class="editorial-grid">
+      <details class="editorial-details">
+        <summary>
+          <span class="eyebrow">Editorial and technical review</span>
+          <strong id="editorial-title">How technical content is prepared, bounded, and corrected.</strong>
+          <span>Open the publishing, source-priority, qualification-boundary, and correction policy.</span>
+        </summary>
+        <div class="editorial-grid">
         <article>
           <span>01</span>
           <h3>Publisher accountability</h3>
@@ -252,7 +250,8 @@ const supplyCapabilities = [
             date where applicable.
           </p>
         </article>
-      </div>
+        </div>
+      </details>
     </section>
 
     <section class="boundaries-section page-shell" aria-labelledby="boundaries-title">
@@ -327,7 +326,7 @@ const supplyCapabilities = [
     max-width: 58rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-size: var(--title-page);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.04em;
@@ -374,7 +373,7 @@ const supplyCapabilities = [
 
   .about-hero aside span {
     color: #aebfce;
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.4;
   }
 
@@ -384,14 +383,14 @@ const supplyCapabilities = [
     padding: 0.9rem 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     color: #aebfce;
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     line-height: 1.5;
   }
 
   .operating-model {
     display: grid;
     gap: 1.5rem;
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(3.5rem, 5.5vw, 5rem);
   }
 
   .section-heading {
@@ -402,7 +401,7 @@ const supplyCapabilities = [
   .section-heading h2 {
     max-width: 62rem;
     margin: 0;
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: var(--title-section);
     line-height: 1.04;
     letter-spacing: -0.046em;
   }
@@ -432,7 +431,7 @@ const supplyCapabilities = [
 
   .model-grid article > span {
     color: var(--brand);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 800;
   }
 
@@ -460,9 +459,9 @@ const supplyCapabilities = [
   .partner-section__inner {
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(25rem, 1.2fr);
-    gap: clamp(2rem, 6vw, 6rem);
+    gap: clamp(2rem, 4.5vw, 4.5rem);
     align-items: center;
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(3.5rem, 5.5vw, 5rem);
   }
 
   .partner-section__copy {
@@ -473,7 +472,7 @@ const supplyCapabilities = [
   .partner-section h2 {
     margin: 0;
     color: #fff;
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: var(--title-section);
     line-height: 1.02;
     letter-spacing: -0.045em;
   }
@@ -506,7 +505,7 @@ const supplyCapabilities = [
 
   .partner-list article > span {
     color: #8fb2ca;
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 800;
   }
 
@@ -531,14 +530,14 @@ const supplyCapabilities = [
 
   .partner-list small {
     color: #aebfce;
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     line-height: 1.5;
   }
 
   .atomization-section {
     display: grid;
     gap: 1.35rem;
-    padding-block: clamp(3.5rem, 6vw, 5.5rem);
+    padding-block: clamp(3rem, 4.5vw, 4.5rem);
   }
 
   .atomization-section > .section-heading {
@@ -585,7 +584,7 @@ const supplyCapabilities = [
   .atomization-table thead th {
     color: var(--muted);
     background: var(--surface-soft);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     letter-spacing: 0.055em;
     text-transform: uppercase;
   }
@@ -623,7 +622,7 @@ const supplyCapabilities = [
     grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
     gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(3.5rem, 5.5vw, 5rem);
   }
 
   .about-workflow__visual {
@@ -646,7 +645,7 @@ const supplyCapabilities = [
     border-radius: 0.45rem;
     color: #d5e3ed;
     background: rgba(5, 20, 33, 0.72);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     text-transform: uppercase;
     backdrop-filter: blur(8px);
   }
@@ -658,7 +657,7 @@ const supplyCapabilities = [
 
   .about-workflow h2 {
     margin: 0;
-    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-size: var(--title-section);
     line-height: 1.04;
     letter-spacing: -0.045em;
   }
@@ -692,20 +691,54 @@ const supplyCapabilities = [
   .boundaries-section {
     display: grid;
     gap: 1.4rem;
-    padding-block: 1rem clamp(4rem, 8vw, 7rem);
+    padding-block: 0 clamp(3rem, 4.5vw, 4rem);
   }
 
   .editorial-section {
     display: grid;
     gap: 1.4rem;
-    padding-block: 1rem clamp(4rem, 8vw, 7rem);
+    padding-block: 0 clamp(2.5rem, 4vw, 3.5rem);
     scroll-margin-top: 6rem;
   }
 
   .editorial-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
+  }
+
+  .editorial-details {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .editorial-details summary {
+    display: grid;
+    gap: 0.45rem;
+    padding: 1.15rem 1.25rem;
+    cursor: pointer;
+  }
+
+  .editorial-details summary::marker {
+    color: var(--accent);
+  }
+
+  .editorial-details summary strong {
+    max-width: 52rem;
+    font-size: 1.45rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .editorial-details summary > span:last-child {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .editorial-details .editorial-grid {
+    padding: 0 1rem 1rem;
   }
 
   .editorial-grid article {
@@ -720,7 +753,7 @@ const supplyCapabilities = [
 
   .editorial-grid span {
     color: var(--brand);
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 800;
   }
 
@@ -750,7 +783,7 @@ const supplyCapabilities = [
 
   .boundaries-section h2 {
     margin: 0;
-    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-size: var(--title-section);
     letter-spacing: -0.04em;
   }
 

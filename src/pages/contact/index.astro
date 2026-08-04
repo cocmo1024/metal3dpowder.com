@@ -173,7 +173,7 @@ const schema = [
     max-width: 58rem;
     margin: 0;
     color: #fff;
-    font-size: clamp(2.4rem, 4.6vw, 3.75rem);
+    font-size: var(--title-utility);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.04em;
@@ -205,7 +205,7 @@ const schema = [
 
   .contact-email > span {
     color: #aebfce;
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -227,7 +227,7 @@ const schema = [
   .contact-routes {
     display: grid;
     gap: 1.5rem;
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(3.25rem, 5vw, 4.5rem);
   }
 
   .section-heading {
@@ -237,7 +237,7 @@ const schema = [
 
   .section-heading h2 {
     margin: 0;
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: var(--title-section);
     letter-spacing: -0.045em;
   }
 
@@ -264,7 +264,7 @@ const schema = [
 
   .contact-route > span {
     color: var(--brand);
-    font-size: 0.82rem;
+    font-size: var(--meta-size);
     font-weight: 800;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -326,7 +326,7 @@ const schema = [
     grid-template-columns: minmax(0, 0.8fr) minmax(25rem, 1.2fr);
     gap: clamp(2rem, 5vw, 5rem);
     align-items: center;
-    padding-block: clamp(4rem, 8vw, 6.5rem);
+    padding-block: clamp(3.25rem, 5vw, 4.5rem);
   }
 
   .contact-checklist__inner > div {
@@ -337,7 +337,7 @@ const schema = [
   .contact-checklist h2 {
     margin: 0;
     color: #fff;
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: var(--title-section);
     line-height: 1.03;
     letter-spacing: -0.045em;
   }
@@ -361,7 +361,7 @@ const schema = [
 
   .contact-checklist li span {
     color: #8fb2ca;
-    font-size: 0.8rem;
+    font-size: var(--meta-size);
     font-weight: 800;
   }
 
