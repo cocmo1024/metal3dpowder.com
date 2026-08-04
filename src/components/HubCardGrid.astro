@@ -25,7 +25,7 @@ const { items, ariaLabel = 'Topic hubs' } = Astro.props;
 <style>
   .hub-card-grid {
     display: grid;
-    gap: 1rem;
+    gap: 1.15rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -34,7 +34,7 @@ const { items, ariaLabel = 'Topic hubs' } = Astro.props;
     display: grid;
     gap: 0.7rem;
     align-content: start;
-    min-height: 10rem;
+    min-height: 11.5rem;
     padding: var(--card-padding);
     border: 1px solid var(--line);
     border-radius: var(--radius-card);
@@ -45,7 +45,7 @@ const { items, ariaLabel = 'Topic hubs' } = Astro.props;
 
   .hub-card h2 {
     margin: 0;
-    font-size: 1.05rem;
+    font-size: 1.18rem;
     line-height: 1.28;
     letter-spacing: -0.016em;
   }
@@ -54,6 +54,7 @@ const { items, ariaLabel = 'Topic hubs' } = Astro.props;
     margin: 0;
     color: var(--muted);
     line-height: var(--body-leading);
+    font-size: 0.98rem;
   }
 
   .hub-card h2 a::after {

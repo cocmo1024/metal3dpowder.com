@@ -51,11 +51,7 @@ Use M300 when the project is tooling-driven and the value comes from high post-a
 
 For the full side-by-side choice, use the [H13 vs M300 powder guide](/posts/Alloys/h13-vs-m300-powder/).
 
-If the application is primarily mold tooling, core inserts, or production fixtures, continue with the narrower [M300 tooling applications guide](/posts/Alloys/m300-powder-mold-tooling-inserts/).
-
-If the actual use case is compact production tooling or a core insert, continue with the dedicated [M300 core insert guide](/posts/Alloys/m300-powder-mold-tooling-inserts/).
-
-If the actual use case is a compact mold insert in recurring production, continue with the consolidated [M300 mold tooling insert guide](/posts/Alloys/m300-powder-mold-tooling-inserts/) and specify the production cycle, cooling, machining, final hardness, and inspection requirements.
+For mold tooling, core inserts, cavity details, and compact production fixtures, continue with the consolidated [M300 mold tooling insert guide](/posts/Alloys/m300-powder-mold-tooling-inserts/). Specify the production cycle, cooling layout, mating interfaces, machining and polishing route, final hardness, dimensional recovery, and inspection requirements.
 
 If the actual use case is a moving injection mold detail such as a slider, lifter, angled side action, or undercut-release insert, continue with the dedicated [M300 mold slider and lifter guide](/posts/Alloys/m300-powder-injection-mold-sliders-and-lifters/).
 

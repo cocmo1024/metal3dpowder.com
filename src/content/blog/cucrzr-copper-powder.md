@@ -38,15 +38,11 @@ CuCrZr is valuable because it can be precipitation hardened after printing. That
 
 If the project is still undecided between CuCrZr and a pure-copper route, use the dedicated [CuCrZr vs pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) before finalizing the material route.
 
-If the actual hardware target is a cold plate or heat sink rather than a general copper part, continue with the application-focused [CuCrZr thermal hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/). If the part is an induction coil or current-carrying copper component, continue with the dedicated [CuCrZr induction and conductor guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
-
-If the actual use case is conductive tooling or a welding-contact component, continue with the dedicated [CuCrZr conductive tooling guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
+For cold plates, heat sinks, semiconductor cooling plates, and RF thermal hardware, continue with the application-focused [CuCrZr thermal hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/). For induction coils, current-carrying tooling, or welding contacts, use the [CuCrZr conductive tooling guide](/posts/Alloys/cucrzr-powder-conductive-tooling-and-welding-contacts/).
 
 If the actual use case is a regeneratively cooled rocket combustion chamber liner, continue with the [CuCrZr rocket chamber guide](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/) for cooling-channel, jacket-interface, inspection, and RFQ decisions.
 
-If the actual use case is semiconductor equipment cooling plates, RF thermal hardware, packaging test fixtures, or clean copper thermal tooling, continue with the dedicated [CuCrZr semiconductor equipment hardware guide](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/).
-
-If the real question is whether CuCrZr or pure copper is better for electrical contact hardware, continue with the dedicated [electrical-contact comparison](/posts/Alloys/cucrzr-vs-pure-copper-powder/).
+For electrical-contact hardware, return to the CuCrZr-versus-pure-copper decision above and add contact resistance, wear, joining, surface finish, current, heat, and duty-cycle requirements.
 
 ## CuCrZr powder purchase specification
 
@@ -59,4 +55,4 @@ If the real question is whether CuCrZr or pure copper is better for electrical c
 | Evidence | Lot COA plus representative or lot-specific PSD/SEM data |
 | Part route | Conductivity test, mechanical duty, joining, machining, leak or pressure tests where applicable |
 
-CuCrZr, pure copper, GRCop-42 and GRCop-84 are not interchangeable. Ask suppliers to identify which alloy, machine, heat treatment and test condition support every conductivity or strength value. Use the [CuCrZr versus pure copper guide](/posts/Alloys/cucrzr-vs-pure-copper-powder/) before fixing the material, then use the cold-plate, conductive-tooling, fusion or rocket page for application-specific acceptance.
+CuCrZr, pure copper, GRCop-42, and GRCop-84 are not interchangeable. Ask suppliers to identify which alloy, machine, heat treatment, and test condition support every conductivity or strength value. Resolve the alloy comparison first, then use the cold-plate, conductive-tooling, fusion, or rocket route for application-specific acceptance.

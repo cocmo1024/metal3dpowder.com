@@ -1,0 +1,131 @@
+---
+import { getArticleDecisionGuide } from '../data/articleDecisions';
+
+interface Props {
+  postId: string;
+}
+
+const { postId } = Astro.props;
+const guide = getArticleDecisionGuide(postId);
+---
+
+{
+  guide ? (
+    <section class="article-decision" data-editorial-content aria-labelledby="article-decision-title">
+      <header>
+        <p class="eyebrow">Procurement decision</p>
+        <h2 id="article-decision-title">{guide.title}</h2>
+        <p>{guide.introduction}</p>
+      </header>
+
+      <div class="article-decision__grid">
+        {guide.checks.map((check, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{check.label}</h3>
+            <p>{check.question}</p>
+          </article>
+        ))}
+      </div>
+
+      {guide.verification ? <p class="article-decision__verification">{guide.verification}</p> : null}
+
+      <p class="article-decision__acceptance"><strong>Approval gate:</strong> {guide.acceptance}</p>
+    </section>
+  ) : null
+}
+
+<style>
+  .article-decision {
+    display: grid;
+    gap: 1.25rem;
+    padding: clamp(1.25rem, 2.5vw, 1.75rem);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-card-lg);
+    background: linear-gradient(145deg, var(--surface) 0%, var(--surface-soft) 100%);
+    box-shadow: var(--shadow-card);
+  }
+
+  .article-decision header {
+    display: grid;
+    gap: 0.55rem;
+    max-width: 46rem;
+  }
+
+  .article-decision h2,
+  .article-decision h3,
+  .article-decision p {
+    margin: 0;
+  }
+
+  .article-decision h2 {
+    font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+  }
+
+  .article-decision header > p:last-child,
+  .article-decision article p,
+  .article-decision__verification,
+  .article-decision__acceptance {
+    color: var(--copy);
+    font-size: 1rem;
+    line-height: var(--body-leading);
+  }
+
+  .article-decision__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .article-decision article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.35rem 0.7rem;
+    align-content: start;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  .article-decision article > span {
+    grid-row: 1 / span 2;
+    color: var(--accent);
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .article-decision h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .article-decision article p {
+    grid-column: 2;
+    font-size: 0.94rem;
+  }
+
+  .article-decision__acceptance {
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .article-decision__verification {
+    padding: 1rem;
+    border-left: 3px solid var(--brand);
+    background: var(--brand-soft);
+  }
+
+  .article-decision__acceptance strong {
+    color: var(--text);
+  }
+
+  @media (max-width: 720px) {
+    .article-decision__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

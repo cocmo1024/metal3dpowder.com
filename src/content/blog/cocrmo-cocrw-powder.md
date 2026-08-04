@@ -34,9 +34,7 @@ With CoCr systems, the alloy name gets attention, but the application logic clos
 
 If the application is specifically dental frameworks or crown-related metal parts, the dedicated [CoCrMo dental applications guide](/posts/Alloys/cocrmo-powder-dental-frameworks-and-crowns/) is the most relevant next page.
 
-If the part is instead a wear-critical industrial component, continue with the [CoCrMo versus stainless wear-hardware guide](/posts/Alloys/cocrmo-vs-stainless-powder-wear-critical-industrial-hardware/) and define the mating surface, load, motion, corrosion environment, finishing, and wear-test basis.
-
-If the real question is whether cobalt chrome should replace stainless on wear-critical industrial hardware, continue with the direct [CoCrMo vs stainless comparison](/posts/Alloys/cocrmo-vs-stainless-powder-wear-critical-industrial-hardware/).
+If the part is a wear-critical industrial component—or the real question is whether cobalt chrome should replace stainless—continue with the [CoCrMo versus stainless wear-hardware guide](/posts/Alloys/cocrmo-vs-stainless-powder-wear-critical-industrial-hardware/). Define the mating surface, load, motion, corrosion environment, finishing, and wear-test basis.
 
 ## CoCrMo and CoCrW must remain distinct
 
@@ -55,7 +53,7 @@ Pump sleeves, valve-seat components, guide hardware, and other wear-critical par
 
 Define the counterface, contact pressure, motion, lubricant or process fluid, temperature, debris tolerance, and required surface condition. Printed near-net geometry can reduce machining in a difficult alloy, but critical wear surfaces normally still require controlled machining, grinding, or polishing. The build surface is not automatically a finished bearing or sealing surface.
 
-When corrosion dominates and wear is secondary, a stainless or nickel route may be more economical and easier to qualify. Use the [CoCrMo versus stainless guide](/posts/Alloys/cocrmo-vs-stainless-powder-wear-critical-industrial-hardware/) to separate those cases.
+When corrosion dominates and wear is secondary, a stainless or nickel route may be more economical and easier to qualify. Use the wear-system comparison above to separate those cases.
 
 ## Powder evidence and finished wear evidence
 
@@ -65,4 +63,4 @@ A powder COA cannot establish pump life, valve leakage, wear rate, galling resis
 
 ## RFQ checklist
 
-State the exact cobalt-chromium grade, manufacturing process, target PSD, quantity, application, mating material, service fluid, temperature, surface requirement, and required documents. Ask for the available COA, TDS/SDS, PSD report, and SEM or morphology evidence. For dental work, use the dedicated [CoCrMo dental powder guide](/posts/Alloys/cocrmo-powder-dental-frameworks-and-crowns/) because the acceptance route is different from industrial wear hardware.
+State the exact cobalt-chromium grade, manufacturing process, target PSD, quantity, application, mating material, service fluid, temperature, surface requirement, and required documents. Ask for the available COA, TDS/SDS, PSD report, and SEM or morphology evidence. Dental work should stay on the dedicated dental route above because its acceptance basis differs from industrial wear hardware.

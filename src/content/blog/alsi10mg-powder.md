@@ -36,9 +36,7 @@ If the part is mainly thermal and lightweight, AlSi10Mg is often strong enough. 
 
 If the geometry is thin-walled, thermal, or dimensional-control-sensitive, that should be defined early because it changes the technical conversation.
 
-If the actual target is lightweight housings, brackets, or enclosure hardware, continue with the dedicated [AlSi10Mg applications guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/).
-
-If the actual target is a UAV structure or electronics housing, continue with the focused [AlSi10Mg UAV and electronics guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/).
+If the actual target is a lightweight housing, bracket, UAV structure, motor mount, sensor enclosure, or electronics frame, continue with the consolidated [AlSi10Mg applications guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/). The same material route can support these component searches while the finished-part acceptance changes with structural, thermal, vibration, sealing, and dimensional duty.
 
 ## AlSi10Mg powder purchase fields
 
@@ -52,4 +50,4 @@ If the actual target is a UAV structure or electronics housing, continue with th
 
 Aluminum reflectivity, heat flow and oxide condition make transfer between machines or parameter sets risky. Do not accept “15-45 µm AlSi10Mg” as a complete process definition. Ask for the lot COA, PSD report, TDS/SDS, and available morphology or SEM evidence, then verify the powder on the intended LPBF route.
 
-For lightweight housings, brackets, UAV frames and sensor enclosures, use the consolidated [AlSi10Mg application guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/). If conductivity is the primary design driver, compare a [CuCrZr route](/posts/Alloys/cucrzr-copper-powder/) instead of forcing aluminum into a copper problem.
+For lightweight housings, brackets, UAV frames, and sensor enclosures, use the consolidated application route above. If conductivity is the primary design driver, compare a [CuCrZr route](/posts/Alloys/cucrzr-copper-powder/) instead of forcing aluminum into a copper problem.

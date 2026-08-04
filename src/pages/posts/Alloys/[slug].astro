@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleDecisionGuide from '../../../components/ArticleDecisionGuide.astro';
 import ArticleEvidence from '../../../components/ArticleEvidence.astro';
 import BlogPostGrid from '../../../components/BlogPostGrid.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
@@ -25,6 +26,7 @@ import {
   sortBlogPosts,
 } from '../../../data/blog';
 import { getHubPath, getPostHubs, knowledgePostIds } from '../../../data/contentHubs';
+import { getArticleDecisionGuide } from '../../../data/articleDecisions';
 import { getProductsForPost } from '../../../data/productRoutes';
 import { siteInfo } from '../../../data/site';
 
@@ -45,7 +47,17 @@ const relatedPosts = getRelatedBlogPosts(allPosts, post, 6);
 const topicHubs = getPostHubs(post.id);
 const relatedProducts = getProductsForPost(post.id);
 const isKnowledgePost = knowledgePostIds.includes(post.id);
-const readingMinutes = estimateReadingMinutes(post.body ?? '');
+const decisionGuide = getArticleDecisionGuide(post.id);
+const decisionCopy = decisionGuide
+  ? [
+      decisionGuide.title,
+      decisionGuide.introduction,
+      ...decisionGuide.checks.flatMap((check) => [check.label, check.question]),
+      decisionGuide.verification ?? '',
+      decisionGuide.acceptance,
+    ].join(' ')
+  : '';
+const readingMinutes = estimateReadingMinutes(`${post.body ?? ''} ${decisionCopy}`);
 const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 const topicHubLabel = (group: string) =>
   group === 'materials' ? 'Material guide' : group === 'applications' ? 'Application guide' : 'Process guide';
@@ -134,9 +146,11 @@ const schema = [
         <p>{post.data.description}</p>
       </section>
 
-      <section class="article-content">
+      <section class="article-content" data-editorial-content>
         <Content />
       </section>
+
+      <ArticleDecisionGuide postId={post.id} />
 
       <ArticleEvidence category={post.data.category} />
 
@@ -218,7 +232,7 @@ const schema = [
   .article {
     display: grid;
     gap: var(--page-gap);
-    max-width: 860px;
+    max-width: 920px;
     margin-inline: auto;
   }
 
@@ -245,10 +259,10 @@ const schema = [
   .article-header h1 {
     width: 100%;
     max-width: none;
-    font-size: clamp(1.58rem, 2vw, 1.96rem);
-    line-height: 1.16;
+    font-size: clamp(2.15rem, 3vw, 3.15rem);
+    line-height: 1.08;
     letter-spacing: var(--title-tracking);
-    font-weight: 720;
+    font-weight: 760;
     text-wrap: pretty;
     word-break: normal;
     overflow-wrap: normal;
@@ -258,9 +272,10 @@ const schema = [
   .article-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem 1rem;
+    gap: 0.75rem 1.05rem;
     color: var(--muted);
-    font-size: 0.84rem;
+    font-size: 0.92rem;
+    font-weight: 650;
     text-transform: uppercase;
     letter-spacing: 0.11em;
   }
@@ -283,9 +298,9 @@ const schema = [
   .article-paths h2,
   .article-tags h2,
   .article-related h2 {
-    font-size: 0.92rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    font-weight: 760;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
   }
 
@@ -296,7 +311,7 @@ const schema = [
     margin: 0;
     color: var(--copy);
     line-height: var(--body-leading);
-    font-size: 0.98rem;
+    font-size: 1.06rem;
   }
 
   .article-content {
@@ -306,27 +321,27 @@ const schema = [
 
   .article-content :global(h2),
   .article-content :global(h3) {
-    margin-top: 2rem;
-    margin-bottom: 0.7rem;
+    margin-top: 2.35rem;
+    margin-bottom: 0.8rem;
     letter-spacing: -0.02em;
   }
 
   .article-content :global(h2) {
-    font-size: clamp(1.28rem, 2vw, 1.6rem);
-    line-height: 1.2;
-    font-weight: 720;
+    font-size: clamp(1.5rem, 2.2vw, 1.92rem);
+    line-height: 1.16;
+    font-weight: 750;
   }
 
   .article-content :global(h3) {
-    font-size: clamp(1.02rem, 1.4vw, 1.12rem);
+    font-size: clamp(1.14rem, 1.5vw, 1.28rem);
     line-height: 1.3;
-    font-weight: 700;
+    font-weight: 730;
   }
 
   .article-content :global(ul),
   .article-content :global(ol) {
     margin: 0;
-    padding-left: 1.2rem;
+    padding-left: 1.35rem;
   }
 
   .article-content :global(table) {
@@ -338,14 +353,14 @@ const schema = [
     border-collapse: collapse;
     border: 1px solid var(--line);
     border-radius: var(--radius-card);
-    font-size: 0.9rem;
-    line-height: 1.55;
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 
   .article-content :global(th),
   .article-content :global(td) {
     min-width: 9rem;
-    padding: 0.72rem 0.78rem;
+    padding: 0.85rem 0.95rem;
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     text-align: left;
@@ -406,7 +421,7 @@ const schema = [
 
   .article-content :global(.article-figure figcaption) {
     color: var(--muted);
-    font-size: 0.86rem;
+    font-size: 0.92rem;
     line-height: 1.5;
   }
 
@@ -439,13 +454,13 @@ const schema = [
 
   .article-paths__links span {
     color: var(--muted);
-    font-size: 0.74rem;
+    font-size: 0.86rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
   }
 
   .article-paths__links strong {
-    font-size: 0.96rem;
+    font-size: 1.02rem;
     line-height: 1.32;
     letter-spacing: -0.01em;
   }
@@ -465,7 +480,7 @@ const schema = [
     border-radius: 999px;
     color: var(--muted);
     background: var(--surface-soft);
-    font-size: 0.86rem;
+    font-size: 0.92rem;
   }
 
   .article-pagination__link:hover {
@@ -488,13 +503,13 @@ const schema = [
 
   .article-pagination__link span {
     color: var(--muted);
-    font-size: 0.76rem;
+    font-size: 0.88rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
   }
 
   .article-pagination__link strong {
-    font-size: 0.96rem;
+    font-size: 1.02rem;
     line-height: 1.35;
     letter-spacing: -0.015em;
     font-weight: 700;
@@ -510,17 +525,17 @@ const schema = [
     }
 
     .article-header h1 {
-      font-size: clamp(1.42rem, 5.6vw, 1.76rem);
-      line-height: 1.14;
+      font-size: clamp(1.9rem, 8.2vw, 2.45rem);
+      line-height: 1.1;
       letter-spacing: -0.02em;
     }
 
     .article-content :global(h2) {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
     .article-content :global(h3) {
-      font-size: 1rem;
+      font-size: 1.15rem;
     }
 
     .article-pagination {

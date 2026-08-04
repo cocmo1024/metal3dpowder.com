@@ -250,11 +250,11 @@ const links = [
 
   .utility-bar__inner {
     display: flex;
-    min-height: 2.15rem;
+    min-height: 2.35rem;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    font-size: 0.75rem;
+    font-size: 0.86rem;
     letter-spacing: 0.025em;
   }
 
@@ -280,9 +280,9 @@ const links = [
   .site-header__inner {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
-    min-height: 4.75rem;
+    min-height: 5rem;
     align-items: center;
-    gap: 1.4rem;
+    gap: 1.6rem;
   }
 
   .brand {
@@ -295,10 +295,11 @@ const links = [
   .brand__mark {
     position: relative;
     display: block;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
-    background: var(--brand-dark);
+    background: linear-gradient(145deg, var(--brand-dark), var(--brand));
+    box-shadow: 0 8px 20px rgba(10, 38, 55, 0.16);
   }
 
   .brand__mark span {
@@ -338,13 +339,13 @@ const links = [
 
   .brand__text strong {
     color: var(--brand-dark);
-    font-size: 0.98rem;
-    letter-spacing: 0.055em;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
   }
 
   .brand__text small {
     color: var(--muted);
-    font-size: 0.68rem;
+    font-size: 0.82rem;
     font-weight: 750;
     letter-spacing: 0.22em;
   }
@@ -353,18 +354,18 @@ const links = [
     display: flex;
     align-items: center;
     justify-self: center;
-    gap: 0.08rem;
+    gap: 0.12rem;
   }
 
   .site-nav a {
     display: inline-flex;
-    min-height: 2.65rem;
+    min-height: 2.8rem;
     align-items: center;
-    padding-inline: 0.7rem;
+    padding-inline: 0.78rem;
     border-bottom: 2px solid transparent;
     color: #405160;
-    font-size: 0.86rem;
-    font-weight: 680;
+    font-size: 0.92rem;
+    font-weight: 690;
     transition: color 160ms ease, border-color 160ms ease;
   }
 
@@ -376,17 +377,17 @@ const links = [
 
   .rfq-nav {
     display: inline-flex;
-    min-height: 2.8rem;
+    min-height: 3rem;
     align-items: center;
     justify-self: end;
     gap: 0.62rem;
     padding: 0.68rem 0.82rem 0.68rem 1rem;
-    border-radius: 0.58rem;
+    border-radius: 0.48rem;
     color: #fff;
     background: var(--brand);
-    font-size: 0.84rem;
+    font-size: 0.9rem;
     font-weight: 760;
-    box-shadow: 0 8px 20px rgba(21, 86, 148, 0.16);
+    box-shadow: 0 9px 22px rgba(18, 90, 112, 0.18);
   }
 
   .rfq-nav__count,
@@ -399,7 +400,7 @@ const links = [
     border-radius: 999px;
     color: var(--brand-dark);
     background: #fff;
-    font-size: 0.72rem;
+    font-size: 0.84rem;
   }
 
   [data-rfq-count][data-empty] {
@@ -432,7 +433,7 @@ const links = [
       border-radius: 0.58rem;
       color: var(--text);
       background: var(--surface);
-      font-size: 0.82rem;
+      font-size: 0.94rem;
       font-weight: 700;
     }
 
@@ -498,7 +499,7 @@ const links = [
     .site-drawer__header p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.75rem;
+      font-size: 0.86rem;
       font-weight: 760;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -546,7 +547,7 @@ const links = [
       border-radius: 0.62rem;
       color: var(--text);
       background: var(--surface-soft);
-      font-size: 0.92rem;
+      font-size: 0.98rem;
       font-weight: 680;
     }
 

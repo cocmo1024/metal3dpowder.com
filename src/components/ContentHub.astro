@@ -1,5 +1,6 @@
 ---
 import type { BlogPost } from '../data/blog';
+import type { HubDefinition } from '../data/contentHubs';
 import type { Product } from '../data/products';
 import type { BreadcrumbItem } from '../data/seo';
 import BlogPostGrid from './BlogPostGrid.astro';
@@ -25,6 +26,7 @@ interface Props {
   postsTitle?: string;
   breadcrumbItems?: BreadcrumbItem[];
   intentLayer?: 'material-family' | 'process' | 'application' | 'directory';
+  decisionGuide?: HubDefinition['decisionGuide'];
 }
 
 const {
@@ -38,6 +40,7 @@ const {
   postsTitle = 'Related articles',
   breadcrumbItems = [],
   intentLayer = 'directory',
+  decisionGuide,
 } = Astro.props;
 ---
 
@@ -49,6 +52,28 @@ const {
     <h1>{title}</h1>
     <p>{description}</p>
   </section>
+
+  {
+    decisionGuide ? (
+      <section class="hub-decision" aria-labelledby="hub-decision-title">
+        <header>
+          <p class="eyebrow">Buyer decision framework</p>
+          <h2 id="hub-decision-title">{decisionGuide.title}</h2>
+          <p>{decisionGuide.introduction}</p>
+        </header>
+        <div class="hub-decision__grid">
+          {decisionGuide.checkpoints.map((checkpoint, index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{checkpoint.title}</h3>
+              <p>{checkpoint.description}</p>
+            </article>
+          ))}
+        </div>
+        <p class="hub-decision__conclusion">{decisionGuide.conclusion}</p>
+      </section>
+    ) : null
+  }
 
   {cards.length ? <HubCardGrid items={cards} ariaLabel={`${title} sections`} /> : null}
 
@@ -84,21 +109,22 @@ const {
   .hub-intro {
     display: grid;
     gap: 0.65rem;
-    max-width: 58rem;
+    max-width: 64rem;
   }
 
   .hub-intro h1 {
     margin: 0;
-    font-size: clamp(1.68rem, 2.7vw, 2.14rem);
-    line-height: 1.12;
+    font-size: clamp(2.25rem, 3.6vw, 3.5rem);
+    line-height: 1.06;
     letter-spacing: var(--title-tracking);
-    font-weight: 730;
+    font-weight: 760;
   }
 
   .hub-intro p:last-child {
     margin: 0;
     color: var(--muted);
     line-height: var(--body-leading);
+    font-size: 1.08rem;
   }
 
   .hub-section {
@@ -108,9 +134,85 @@ const {
 
   .hub-section h2 {
     margin: 0;
-    font-size: 1.12rem;
+    font-size: 1.4rem;
     line-height: 1.25;
     letter-spacing: -0.02em;
+  }
+
+  .hub-decision {
+    display: grid;
+    gap: 1.25rem;
+    padding: clamp(1.35rem, 2.6vw, 2rem);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-card-lg);
+    background: linear-gradient(145deg, var(--surface) 0%, var(--surface-soft) 100%);
+    box-shadow: var(--shadow-card);
+  }
+
+  .hub-decision header {
+    display: grid;
+    gap: 0.6rem;
+    max-width: 52rem;
+  }
+
+  .hub-decision h2,
+  .hub-decision h3,
+  .hub-decision p {
+    margin: 0;
+  }
+
+  .hub-decision h2 {
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    line-height: 1.17;
+    letter-spacing: -0.026em;
+  }
+
+  .hub-decision header > p:last-child,
+  .hub-decision article p,
+  .hub-decision__conclusion {
+    color: var(--copy);
+    line-height: var(--body-leading);
+  }
+
+  .hub-decision__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .hub-decision article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 0.8rem;
+    align-content: start;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  .hub-decision article > span {
+    grid-row: 1 / span 2;
+    color: var(--accent);
+    font-size: 0.86rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .hub-decision h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .hub-decision article p {
+    grid-column: 2;
+    font-size: 0.96rem;
+  }
+
+  .hub-decision__conclusion {
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    font-weight: 650;
   }
 
   @media (max-width: 720px) {
@@ -120,8 +222,12 @@ const {
     }
 
     .hub-intro h1 {
-      font-size: clamp(1.46rem, 6.2vw, 1.86rem);
-      line-height: 1.12;
+      font-size: clamp(1.95rem, 8.5vw, 2.6rem);
+      line-height: 1.08;
+    }
+
+    .hub-decision__grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

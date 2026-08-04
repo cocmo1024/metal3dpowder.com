@@ -6,6 +6,15 @@ export type HubDefinition = {
   title: string;
   description: string;
   postIds: string[];
+  decisionGuide?: {
+    title: string;
+    introduction: string;
+    checkpoints: Array<{
+      title: string;
+      description: string;
+    }>;
+    conclusion: string;
+  };
 };
 
 export type HubLandingDefinition = {
@@ -124,9 +133,40 @@ export const materialHubs: HubDefinition[] = [
     slug: 'aluminum-powder',
     title: 'Aluminum Powder',
     description: 'AlSi10Mg powder selection guidance for lightweight housings, UAV structures, motor mounts, and electronics frames.',
+    decisionGuide: {
+      title: 'Build the aluminum powder specification around the LPBF route',
+      introduction:
+        'AlSi10Mg is the main commercial route in this catalog, but the grade name is only the starting point. A useful RFQ connects the powder lot to the machine, geometry, final thermal condition, inspection, and actual duty of the lightweight part.',
+      checkpoints: [
+        {
+          title: 'Confirm AlSi10Mg is the right alloy family',
+          description:
+            'Use it where low mass, LPBF process maturity, castable geometry, and practical strength matter. Compare copper for conductivity-led parts and another alloy family for high-wear or sustained hot-side duty.',
+        },
+        {
+          title: 'Define powder-to-machine compatibility',
+          description:
+            'State the referenced chemistry, atomization route, lot, PSD result and method, morphology, density, flow or spreadability evidence, contamination controls, packaging, and the intended machine or laser family.',
+        },
+        {
+          title: 'Specify the final material condition',
+          description:
+            'Identify stress relief or heat treatment, orientation, support and powder removal, machining, surface finishing, density or defect method, dimensional inspection, and the condition behind mechanical or thermal values.',
+        },
+        {
+          title: 'Match evidence to the component function',
+          description:
+            'A housing, bracket, UAV frame, motor mount, and electronics enclosure can share the powder route while requiring different vibration, fatigue, sealing, thermal, corrosion, grounding, and interface evidence.',
+        },
+      ],
+      conclusion:
+        'The quotation should therefore identify one AlSi10Mg lot and one intended LPBF route, then list the documents, finished-part tests, quantity, packaging, destination, and change-control requirements needed for approval.',
+    },
     postIds: [
       'alsi10mg-powder',
       'alsi10mg-powder-lightweight-housings-and-brackets',
+      'gas-atomized-metal-powder-for-additive-manufacturing',
+      'metal-powder-specification-guide-psd-oxygen-flowability',
     ],
   },
   {
@@ -284,8 +324,39 @@ export const applicationHubs: HubDefinition[] = [
     slug: 'geothermal-and-brine-energy-hardware',
     title: 'Geothermal and Brine Energy Hardware',
     description: 'IN625, 316L, and nickel powder selection guidance for geothermal brine, heat-exchanger, valve, pump, and corrosion-side energy hardware.',
+    decisionGuide: {
+      title: 'Start with the brine chemistry and pressure boundary',
+      introduction:
+        'Geothermal service is not a single corrosion environment. Temperature, chlorides, dissolved gases, pH, scaling, solids, pressure, velocity, cleaning, and upset conditions determine whether 316L, IN625, another alloy, or a conventional route deserves evaluation.',
+      checkpoints: [
+        {
+          title: 'Characterize the real fluid envelope',
+          description:
+            'Provide brine composition, chloride level, H2S and CO2 exposure, pH, temperature-time profile, pressure, flow velocity, solids, scaling, cleaning chemistry, oxygen ingress, and shutdown conditions.',
+        },
+        {
+          title: 'Classify the component and failure mode',
+          description:
+            'Separate pressure-retaining manifolds and heat-exchanger sections from valve trim, pump hardware, sensor blocks, test articles, repair features, and non-pressure support parts. Rank corrosion, erosion, fatigue, wear, leak, and fouling risks.',
+        },
+        {
+          title: 'Compare 316L and IN625 on evidence',
+          description:
+            '316L may fit moderate service with a stronger cost and fabrication case. IN625 enters when corrosion margin and difficult chemistry justify it. Neither choice should be made from a generic alloy ranking.',
+        },
+        {
+          title: 'Prove the additive route adds value',
+          description:
+            'Use AM where internal flow paths, compact manifolds, thermal integration, repair, part consolidation, or low-volume geometry create measurable value. Keep code, pressure, joining, NDE, and qualification requirements explicit.',
+        },
+      ],
+      conclusion:
+        'A useful RFQ links the powder lot and manufacturing route to the stated brine envelope, final material condition, corrosion or exposure plan, pressure or leak test, dimensions, NDE, documentation, and destination requirements.',
+    },
     postIds: [
       'in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware',
+      '316l-vs-nickel-powder-for-corrosion-side-manifolds',
+      'gh3625-in625-powder',
     ],
   },
   {
@@ -357,10 +428,40 @@ export const processHubs: HubDefinition[] = [
     slug: 'pm-hip',
     title: 'PM-HIP Powder',
     description: 'Powder metallurgy hot isostatic pressing guidance for nuclear pressure-component route selection, HIP canisters, powder lots, filling, consolidation, and qualification records.',
+    decisionGuide: {
+      title: 'Control the complete powder-to-consolidated-part route',
+      introduction:
+        'PM-HIP is not a particle-size label or an automatic substitute for forging, casting, or LPBF. The route combines alloy selection, powder manufacture, lot sampling, canister design, cleaning, filling, evacuation, sealing, HIP cycle, heat treatment, can removal, machining, and qualification.',
+      checkpoints: [
+        {
+          title: 'Set the route-selection gate',
+          description:
+            'Define component size, geometry, buy-to-fly or material utilization, production volume, pressure-boundary status, code basis, alloy maturity, conventional alternatives, and the economic reason to use PM-HIP.',
+        },
+        {
+          title: 'Specify powder and canister controls',
+          description:
+            'Identify alloy specification, production route, chemistry, PSD and sampling methods, cleanliness, morphology, lot traceability, filling density, canister material, welds, cleaning, evacuation, leak testing, and retained samples.',
+        },
+        {
+          title: 'Define consolidation and downstream processing',
+          description:
+            'State HIP pressure-temperature-time cycle, monitoring, furnace records, heat treatment, can removal, machining allowance, distortion strategy, joining, surface condition, and any repair restrictions.',
+        },
+        {
+          title: 'Write a part-level acceptance plan',
+          description:
+            'Agree density and defect methods, chemistry, microstructure, mechanical properties, witness locations, NDE, dimensional inspection, pressure or leak tests, traceability, configuration control, and qualification ownership.',
+        },
+      ],
+      conclusion:
+        'Powder approval is only the first gate. A PM-HIP quotation should state which party controls each record from powder lot and canister fabrication through consolidation, heat treatment, machining, inspection, and final acceptance.',
+    },
     postIds: [
       '316l-in625-powder-pm-hip-nuclear-pressure-components',
       'metal-powder-hip-canister-large-reactor-valves-pump-casings',
       'gh3625-in625-powder',
+      'metal-powder-specification-guide-psd-oxygen-flowability',
     ],
   },
   {
