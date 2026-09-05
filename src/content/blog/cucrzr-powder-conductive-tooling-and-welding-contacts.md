@@ -39,7 +39,7 @@ Use CuCrZr powder when the application is conductive tooling or welding-contact 
 
 For the broader alloy picture, return to the main [CuCrZr copper powder guide](/posts/Alloys/cucrzr-copper-powder/). Induction coils and other current-carrying tooling are covered on this consolidated conductive-hardware page; define current, duty cycle, cooling, joining, wear, and acceptance requirements in the RFQ. If the hardware is really an RF heat spreader or busbar transition component, continue with the [CuCrZr thermal hardware page](/posts/Alloys/cucrzr-powder-cold-plates-and-heat-sinks/).
 
-## Conductive tooling is one intent with several part names
+<h2 id="conductive-tooling-is-one-intent-with-several-part-names">Conductive tooling across different component types</h2>
 
 Induction coils, resistance-welding contacts, battery welding fixtures, current-carrying inserts, and conductive tooling should be evaluated under one engineering decision. They need electrical or thermal transport, but they also experience clamping, thermal cycling, handling, surface restoration, coolant pressure, or contact wear.
 

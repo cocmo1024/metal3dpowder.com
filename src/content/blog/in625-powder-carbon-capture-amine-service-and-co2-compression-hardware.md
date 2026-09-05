@@ -96,7 +96,7 @@ Important checks include:
 - define whether corrosion coupons use the same powder lot, heat treatment, surface finish, and build orientation
 - document heat treatment, stress relief, HIP if used, machining, cleaning, and packaging
 
-This is where low-quality SEO content often overpromises additive manufacturing. AM can simplify a compact flow path, but it does not remove the need for corrosion review, process validation, machining, inspection, or release records.
+AM can simplify a compact flow path, but it does not remove the need for corrosion review, process validation, machining, inspection, or release records.
 
 ## What to include in an IN625 carbon capture RFQ
 
@@ -114,7 +114,7 @@ A useful inquiry should do more than name IN625 or GH3625. For carbon capture am
 
 The [metal powder specification guide](/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/) is the broader checklist for PSD, oxygen, flowability, and documentation. For carbon capture hardware, add the media and corrosion details early. Without that information, an IN625 powder inquiry can look like a generic nickel quote while the real risk sits in solvent chemistry or wet CO2 service.
 
-## Internal route for carbon capture hardware
+<h2 id="internal-route-for-carbon-capture-hardware">Related guides for carbon capture hardware</h2>
 
 Use this internal map to keep the topic powder-centered:
 

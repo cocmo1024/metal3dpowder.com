@@ -15,7 +15,7 @@ IN625 powder is a serious route for seawater desalination pump, valve, and brine
 
 This page is not a broad water-treatment article. It is a powder and part-selection guide for corrosion-critical desalination hardware where nickel alloy behavior and additive geometry may both matter. The strongest use cases are compact pump-adjacent parts, valve-side flow bodies, brine manifolds, nozzles, repair inserts, and routed components that see seawater, concentrate, cleaning chemicals, or mixed thermal and chloride exposure.
 
-Recent water-security discussions keep desalination and water reuse visible, but the long-term search value is more stable: teams still need to decide when 316L is enough, when duplex or conventional fabrication is cleaner, and when a nickel alloy such as [IN625 powder](/posts/Alloys/gh3625-in625-powder/) deserves review.
+For desalination hardware, teams need to decide when 316L is enough, when duplex or conventional fabrication is cleaner, and when a nickel alloy such as [IN625 powder](/posts/Alloys/gh3625-in625-powder/) deserves review.
 
 If the brine problem is geothermal production fluid rather than seawater concentrate, use the [IN625 geothermal brine hardware guide](/posts/Alloys/in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware/) instead. Heat, scaling, dissolved gases, field chemistry, and repair access change the material and powder discussion.
 
@@ -111,7 +111,7 @@ IN625 powder should not be forced into every seawater component. Use 316L when t
 
 Wear also needs separate thinking. If the problem is sliding contact, valve-seat wear, or pump sleeve tribology, the [CoCrMo pump sleeve and valve-seat page](/posts/Alloys/cocrmo-cocrw-powder/) may be a better adjacent reference. IN625 is strongest when corrosion is the dominant reason for moving beyond stainless, not when the only problem is hard sliding wear.
 
-## Internal material path for seawater projects
+<h2 id="internal-material-path-for-seawater-projects">Related material guides for seawater projects</h2>
 
 For a seawater or desalination project, route the decision through a small content map:
 

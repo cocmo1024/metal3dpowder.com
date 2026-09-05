@@ -49,7 +49,7 @@ If the part is a wear-critical industrial component—or the real question is wh
 
 ## Pump sleeves, valve seats, and general wear parts
 
-Pump sleeves, valve-seat components, guide hardware, and other wear-critical parts belong to the same industrial search intent. CoCrMo becomes credible when sliding, rubbing, fretting, or repeated contact occurs in an environment where corrosion also matters. It should not be selected merely because “cobalt chrome is hard.”
+Pump sleeves, valve-seat components, guide hardware, and other wear-critical parts share a wear-and-corrosion material-selection problem. CoCrMo becomes credible when sliding, rubbing, fretting, or repeated contact occurs in an environment where corrosion also matters. It should not be selected merely because “cobalt chrome is hard.”
 
 Define the counterface, contact pressure, motion, lubricant or process fluid, temperature, debris tolerance, and required surface condition. Printed near-net geometry can reduce machining in a difficult alloy, but critical wear surfaces normally still require controlled machining, grinding, or polishing. The build surface is not automatically a finished bearing or sealing surface.
 

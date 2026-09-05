@@ -12,7 +12,7 @@ tags:
 featured: false
 ---
 
-M300 powder is worth considering for robot gripper jaws and end-of-arm tooling when the part behaves more like precision tooling than a lightweight bracket. The search intent is narrow on purpose. A gripper jaw that touches production parts every cycle has different requirements from a robot wrist support, sensor mount, or actuator housing. It may need hard contact faces, repeatable datum control, compact geometry, and a clear post-machining plan after additive manufacturing.
+M300 powder is worth considering for robot gripper jaws and end-of-arm tooling when the part behaves more like precision tooling than a lightweight bracket. A gripper jaw that touches production parts every cycle has different requirements from a robot wrist support, sensor mount, or actuator housing. It may need hard contact faces, repeatable datum control, compact geometry, and a clear post-machining plan after additive manufacturing.
 
 That is where M300 maraging steel can make sense. It is not chosen because every robot part needs a tool steel. It is chosen when the robot-side component is also a production tool: a jaw, nest, locating finger, wear insert, changeover detail, or compact fixture feature that has to hold position after repeated cycles.
 
@@ -93,7 +93,7 @@ Second, additive geometry should not remove maintainability. Integrated channels
 
 Third, heat treatment and machining must be planned together. Aging response, distortion control, build orientation, support removal, and finish machining all affect whether the tool returns to the robot with usable datum accuracy. A printed jaw that is strong but mislocated is not a successful gripper.
 
-## Internal route for robot tooling projects
+<h2 id="internal-route-for-robot-tooling-projects">Related guides for robot tooling projects</h2>
 
 For a robot tooling project, use a small internal content path instead of treating every robot component as the same material problem:
 

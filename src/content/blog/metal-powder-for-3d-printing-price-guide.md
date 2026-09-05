@@ -2,7 +2,7 @@
 title: "Metal 3D Printing Powder Price: Cost Drivers and RFQ Guide"
 description: Compare metal 3D printing powder price drivers by alloy, PSD, quantity, documentation, packaging, and delivery terms before requesting a formal quote.
 pubDate: 2026-04-29T22:07:00+08:00
-updatedDate: 2026-08-03
+updatedDate: 2026-09-05
 category: Knowledge
 tags:
   - metal powder
@@ -77,11 +77,31 @@ The safest budgeting method is to compare quotations on one normalized basis aft
 
 Published powder prices are best treated as budget signals, not binding commercial terms. Metal powder markets move with raw material prices, atomization capacity, powder cut, inspection scope, and freight conditions. A responsible price guide should explain the cost drivers and then push the buyer toward a controlled RFQ.
 
-That is also better for search visitors. Engineers and sourcing teams do not need exaggerated "cheap powder" claims. They need a realistic starting point and a clear list of information to send for a formal quote.
+Engineers and sourcing teams need a realistic comparison basis and a clear list of information to send for a formal quote, rather than an unsupported "cheap powder" claim.
 
 ## The practical takeaway
 
 Use price as a filter after the alloy, process, and application are clear. For specific powder choices, start with the [metal powder for 3D printing guide](/posts/Alloys/metal-powder-for-3d-printing-guide/) and then move into the relevant [material center](/materials/).
+
+## A worksheet for comparing two powder quotations
+
+Compare technical acceptability before unit price. Copy this worksheet into the purchasing review and fill it from the two actual offers. Blank or unclear fields mean clarification is needed; they are not a zero-cost assumption.
+
+| Comparison field | Record for each offer | Why the difference matters |
+| --- | --- | --- |
+| Grade and specification edition | Exact designation, chemistry and agreed exceptions | Similar names may describe different acceptance limits |
+| Process, PSD and method | Machine route, nominal cut, measured PSD and test basis | A cheaper but incompatible cut is not an equivalent offer |
+| Quantity and packaging | Ordered net mass, pack size and any minimum order | Compare net powder mass, not gross shipping weight |
+| Included evidence | Lot COA, PSD, agreed tests and available technical files | Separate included reports from chargeable testing |
+| Delivery basis | Named destination, agreed Incoterm and included transport costs | Do not add freight twice or omit buyer-paid charges |
+| Commercial basis | Currency, quote date, validity and payment terms | Compare offers valid for the same buying decision |
+| One-time work | Trial, setup or qualification costs shown separately | Do not confuse first-order cost with recurring supply cost |
+
+For an internal purchasing comparison, calculate **comparable delivered cost per net kilogram = (powder charge + agreed testing/packaging charges + buyer-paid delivery costs included in the comparison) / ordered net powder mass**. Apply the same currency, destination, tax treatment and included-cost boundary to both offers. This is a comparison method, not a market price or a promise about duties, freight or future supply.
+
+Keep first-order qualification cost on a separate line and request a repeat-order basis where relevant. If an offer changes the grade, PSD, powder condition or evidence package, return to technical review before treating the price difference as a saving.
+
+Start with [316L powder](/products/316l/), [Ti6Al4V powder](/products/ti64/) or [AlSi10Mg powder](/products/alsi10mg/) for a grade-specific request. If comparing several materials, use the existing [multi-product RFQ](/rfq/) so quantities and process requirements can be specified per item.
 
 ## Quote-comparison block
 

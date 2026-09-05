@@ -42,7 +42,7 @@ If the project is undecided between commercially pure titanium and Ti64, use the
 
 Corrosion-facing chemical hardware and biomedical TA1 concepts are covered on this consolidated grade page. State the exact CP titanium grade, media or biological context, pressure or device status, process, surface and cleaning requirements, and governing acceptance basis before requesting a quote.
 
-## Chemical and biomedical searches belong to the CP titanium decision
+<h2 id="chemical-and-biomedical-searches-belong-to-the-cp-titanium-decision">CP titanium for chemical and biomedical requirements</h2>
 
 TA1 and other commercially pure titanium grades are reviewed when corrosion behavior, biocompatibility-related material selection, ductility, or lower alloy content matters more than Ti64 strength. Chemical hardware and biomedical components share the alloy-family question but require different final acceptance.
 

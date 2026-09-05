@@ -105,7 +105,7 @@ The decision should start with the limiting factor. If the limiting factor is co
 
 ## How this differs from other CuCrZr pages
 
-This topic overlaps with other copper articles but has a different search intent.
+Fusion and high-heat-flux components require their own service and acceptance review; evidence from another copper application is not automatically transferable.
 
 The CuCrZr cold plate page is broad thermal-management guidance. The CuCrZr AI cooling page focuses on data center liquid cooling. The [CuCrZr rocket engine page](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/) covers propulsion-side thermal hardware. This fusion page is narrower because it focuses on high heat flux, powder-bed processing risk, internal cooling, and qualification logic around fusion-adjacent hardware.
 

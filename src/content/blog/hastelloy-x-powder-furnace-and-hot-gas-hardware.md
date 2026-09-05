@@ -40,7 +40,7 @@ Use Hastelloy X when the application is genuinely oxidation-driven furnace or ho
 
 ## Furnace, combustor, burner, and hot-gas test hardware
 
-These component names belong to one primary search intent: selecting a nickel-alloy powder for oxidation-driven high-temperature gas service. The hardware can still require different acceptance evidence.
+These component families share a material-selection task: selecting a nickel-alloy powder for oxidation-driven high-temperature gas service. The hardware can still require different acceptance evidence.
 
 | Hardware | Why Hastelloy X is reviewed | Main acceptance questions |
 | --- | --- | --- |

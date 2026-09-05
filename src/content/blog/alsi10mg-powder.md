@@ -1,8 +1,8 @@
 ---
 title: AlSi10Mg Aluminum Alloy Powder for LPBF Additive Manufacturing
-description: AlSi10Mg powder guidance for LPBF covering printability, chemistry, and where this aluminum route is most useful.
+description: Specify AlSi10Mg powder for LPBF by chemistry, measured PSD, lot evidence and final-part condition. Review acceptance questions before requesting a quote.
 pubDate: 2025-12-20
-updatedDate: 2026-08-03
+updatedDate: 2026-09-05
 category: Aluminum
 tags:
   - aluminum powder
@@ -12,9 +12,9 @@ tags:
 featured: true
 ---
 
-AlSi10Mg is the default aluminum alloy for many LPBF programs because it balances printability with useful lightweight performance. Aluminum AM is not simple: reflectivity, thermal conductivity, and oxide control all make the process harder than it looks. AlSi10Mg remains popular because it is one of the most manageable aluminum choices.
+AlSi10Mg powder is an aluminum-silicon-magnesium feedstock for LPBF. For a purchase, establish the exact chemistry, measured particle-size distribution and lot evidence, then connect that powder to the machine and final-part requirements. The alloy name alone does not establish printability, strength or thermal performance for a particular build.
 
-For many teams, that practical point matters more than marketing language. AlSi10Mg is often not selected because it is perfect in every category. It is selected because it is one of the few aluminum AM alloys with a realistic combination of printability and engineering usefulness.
+Use the [AlSi10Mg product page](/products/alsi10mg/) for candidate supply specifications and quotation. This guide covers powder acceptance; the separate [housings and brackets guide](/posts/Alloys/alsi10mg-powder-lightweight-housings-and-brackets/) covers component-level decisions.
 
 ## Why the alloy is widely used
 
@@ -50,4 +50,17 @@ If the actual target is a lightweight housing, bracket, UAV structure, motor mou
 
 Aluminum reflectivity, heat flow and oxide condition make transfer between machines or parameter sets risky. Do not accept “15-45 µm AlSi10Mg” as a complete process definition. Ask for the lot COA, PSD report, TDS/SDS, and available morphology or SEM evidence, then verify the powder on the intended LPBF route.
 
-For lightweight housings, brackets, UAV frames, and sensor enclosures, use the consolidated application route above. If conductivity is the primary design driver, compare a [CuCrZr route](/posts/Alloys/cucrzr-copper-powder/) instead of forcing aluminum into a copper problem.
+## Read powder and finished-part data separately
+
+[ASTM F3318-18](https://store.astm.org/f3318-18.html) addresses AlSi10Mg parts produced by laser powder bed fusion, including manufacturing and finished-part requirements. It is not a guarantee attached to every AlSi10Mg powder lot. Agree the edition and any purchaser requirements that apply to the actual part.
+
+| Information received | What it can support | What remains to be established |
+| --- | --- | --- |
+| Lot chemistry and measured PSD | Incoming powder review against agreed limits | Machine compatibility and build qualification |
+| Typical mechanical-property table | Early comparison when the test condition is identified | Actual orientation, thermal treatment, specimen and acceptance basis |
+| A nominal powder cut | An initial sizing discussion | Distribution, method, fines/oversize and recoater requirements |
+| A successful coupon | Evidence for the tested build condition | Fatigue, sealing, dimensions or thermal duty of the actual component |
+
+When two offers use different thermal conditions, do not rank their tensile, ductility or conductivity data as if they were equivalent. Ask which results describe the powder, which describe test specimens and which have been demonstrated on representative hardware. Missing evidence should remain an open requirement rather than an assumed capability.
+
+[Request AlSi10Mg powder](/rfq/?product=alsi10mg) with the machine, proposed PSD, quantity, destination and required documents. For lightweight housings, brackets, UAV frames and sensor enclosures, use the application guide above. If conductivity is the primary design driver, compare the [CuCrZr route](/posts/Alloys/cucrzr-copper-powder/) against the actual component requirements.

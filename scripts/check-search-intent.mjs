@@ -78,8 +78,8 @@ for (const productId of productDirs) {
     if (!new RegExp(`\\bid=(?:"${anchor}"|'${anchor}')`, 'i').test(html)) fail(`${route}: missing #${anchor} section.`);
   }
 
-  const buyerQueryCount = [...html.matchAll(/\bdata-buyer-query(?:\s|>|=)/gi)].length;
-  if (buyerQueryCount !== 4) fail(`${route}: expected 4 visible buyer-query patterns, found ${buyerQueryCount}.`);
+  if (!/\bdata-grade-guidance(?:\s|>|=)/i.test(html)) fail(`${route}: missing visible grade-identification guidance.`);
+  if (/\bdata-buyer-query(?:\s|>|=)/i.test(html)) fail(`${route}: keyword-list cards must not replace buyer guidance.`);
   if (!new RegExp(`href=(?:"|')/rfq/\\?product=${productId}(?:"|')`, 'i').test(html)) {
     fail(`${route}: missing product-prefilled RFQ link.`);
   }
@@ -95,7 +95,7 @@ for (const productId of productDirs) {
   }
   if ('offers' in productSchema) fail(`${route}: Product schema must not imply price, stock, or an Offer.`);
   const primaryProperty = (productSchema.additionalProperty ?? []).find(
-    (property) => property?.name === 'Primary procurement query',
+    (property) => property?.name === 'Powder designation',
   );
   if (primaryProperty?.value !== owner) fail(`${route}: schema primary query does not match the visible owner.`);
 }
@@ -131,6 +131,31 @@ const articleRoot = path.join(DIST, 'posts', 'Alloys');
 const articlePages = fs
   .readdirSync(articleRoot, { withFileTypes: true })
   .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(articleRoot, entry.name, 'index.html')));
+// Independent regression cases: comparisons retain both alloys; a single-grade guide
+// must not inherit unrelated products merely because they share an application hub.
+const expectedArticleProducts = new Map([
+  ['metal-powder-specification-guide-psd-oxygen-flowability', ['316l', 'ti64', 'alsi10mg']],
+  ['additive-manufacturing-powder-supplier-guide', ['316l', 'ti64', 'in718']],
+  ['metal-powder-for-3d-printing-price-guide', ['316l', 'ti64', 'alsi10mg']],
+  ['ti64-vs-grade-2-titanium-powder', ['ti64', 'ti-grade-2']],
+  ['ti64-grade-23-vs-grade-5-powder', ['ti64-grade-23', 'ti64']],
+  ['ti64-vs-17-4ph-powder-humanoid-robot-joints', ['ti64', '17-4ph']],
+  ['316l-vs-17-4ph-powder', ['316l', '17-4ph']],
+  ['in718-vs-in625-powder', ['in718', 'in625']],
+  ['h13-vs-m300-powder', ['h13', 'm300']],
+  ['316l-in625-powder-pm-hip-nuclear-pressure-components', ['316l', 'in625']],
+  ['cocrmo-vs-stainless-powder-wear-critical-industrial-hardware', ['cocrmo', '316l', '17-4ph']],
+  ['cucrzr-vs-pure-copper-powder', ['cucrzr']],
+  ['tc4-ti6al4v-powder', ['ti64', 'ti64-grade-23']],
+  ['alsi10mg-powder', ['alsi10mg']],
+  ['316l-stainless-steel-powder', ['316l']],
+  ['ti64-grade-23-powder-surgical-guides-and-instrument-hardware', ['ti64-grade-23']],
+  ['in625-ded-powder-repair-overlays-and-oilfield-corrosion-hardware', ['in625']],
+  ['cucrzr-powder-cold-plates-and-heat-sinks', ['cucrzr']],
+]);
+for (const slug of expectedArticleProducts.keys()) {
+  if (!articlePages.some((page) => page.name === slug)) fail(`Missing article routing regression fixture: ${slug}.`);
+}
 for (const page of articlePages) {
   const route = `/posts/Alloys/${page.name}/`;
   const html = read(path.join(articleRoot, page.name, 'index.html'));
@@ -138,6 +163,41 @@ for (const page of articlePages) {
     fail(`${route}: article is not explicitly assigned to technical-guide intent.`);
   }
   if (!/>\s*Technical guide\s*</i.test(html)) fail(`${route}: missing visible technical-guide label.`);
+  const productIds = [...html.matchAll(/\bdata-product-route="([^"]+)"/g)].map((match) => match[1]);
+  const expectedProducts = expectedArticleProducts.get(page.name);
+  if (expectedProducts && JSON.stringify(productIds) !== JSON.stringify(expectedProducts)) {
+    fail(`${route}: expected relevant product order ${expectedProducts.join(', ')}, got ${productIds.join(', ')}.`);
+  }
+  for (const productId of productIds) {
+    if (!productDirs.includes(productId) || !html.includes(`href="/rfq/?product=${productId}"`)) {
+      fail(`${route}: product ${productId} has no valid catalog destination or prefilled RFQ.`);
+    }
+  }
+  const blogSchemas = getSchemaObjects(html, route).filter((object) => object['@type'] === 'BlogPosting');
+  if (blogSchemas.length !== 1) fail(`${route}: expected one BlogPosting schema.`);
+  const articleSchema = blogSchemas[0];
+  if (articleSchema) {
+    const published = Date.parse(articleSchema.datePublished);
+    const modified = Date.parse(articleSchema.dateModified);
+    if (!Number.isFinite(published) || !Number.isFinite(modified) || modified < published || modified > Date.now()) {
+      fail(`${route}: invalid, reversed or future article dates.`);
+    }
+    const meta = html.match(/<div\b[^>]*class="article-meta"[^>]*>([\s\S]*?)<\/div>/i)?.[1] ?? '';
+    if (!meta.includes(`Published <time datetime="${articleSchema.datePublished}"`)) {
+      fail(`${route}: visible publication date does not match structured data.`);
+    }
+    if (modified > published && !meta.includes(`Updated <time datetime="${articleSchema.dateModified}"`)) {
+      fail(`${route}: visible update date does not match structured data.`);
+    }
+    for (const match of meta.matchAll(/<time\b[^>]*datetime="([^"]+)"[^>]*>([^<]+)<\/time>/g)) {
+      const expectedDate = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(match[1]));
+      if (decode(match[2]) !== expectedDate) fail(`${route}: displayed date depends on the build machine's time zone.`);
+    }
+  }
+  const visibleText = decode(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ');
+  if (/\b(?:SEO value|SEO page|search intent|internal route)\b/i.test(visibleText)) {
+    fail(`${route}: internal editorial or SEO language leaked into visible buyer content.`);
+  }
 }
 
 if (failures.length) {

@@ -14,7 +14,7 @@ featured: false
 
 This is a useful search topic now because direct air capture is moving from lab-scale equipment toward larger field demonstrations and hub-scale planning. The [IEA tracks direct air capture as a small but expanding carbon removal route](https://www.iea.org/energy-system/carbon-capture-utilisation-and-storage/direct-air-capture), with dozens of commissioned plants and many larger facilities in planning. The [US Department of Energy's Regional DAC Hubs program](https://www.energy.gov/oced/DACHubs) is designed around commercial-scale direct air capture demonstrations, while DOE's [carbon management project guidance](https://www.energy.gov/edf/carbon-management-projects) includes carbon dioxide removal projects that pull CO2 from ambient air through direct air capture and other routes.
 
-For a metal powder supplier, the long-term value is not writing about climate policy. The useful search intent is narrower: which powder route fits compact DAC hardware, when 316L is enough, when [IN625 powder](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/) deserves review, and what details a buyer should include in an RFQ.
+For a DAC powder purchase, resolve the hardware requirements: which powder route fits compact DAC hardware, when 316L is enough, when [IN625 powder](/posts/Alloys/in625-powder-carbon-capture-amine-service-and-co2-compression-hardware/) deserves review, and what details a buyer should include in an RFQ.
 
 ## Why DAC creates a different stainless hardware question
 
@@ -97,9 +97,9 @@ A useful 316L DAC powder inquiry should include enough detail to separate a real
 
 These details help a supplier decide whether 316L powder is a rational route and whether the geometry has enough additive value to justify the process.
 
-## Internal route for DAC powder decisions
+<h2 id="internal-route-for-dac-powder-decisions">Related guides for DAC powder decisions</h2>
 
-Use this page when the search intent is specifically [316L powder](/posts/Alloys/316l-stainless-steel-powder/) for direct air capture auxiliary manifolds, sampling blocks, sensor housings, and moderate stainless DAC flow hardware.
+Use this guide when evaluating [316L powder](/posts/Alloys/316l-stainless-steel-powder/) for direct air capture auxiliary manifolds, sampling blocks, sensor housings, and moderate stainless DAC flow hardware.
 
 Use the broader [316L manifold and fluid-path guide](/posts/Alloys/316l-powder-manifolds-and-fluid-path-parts/) when the project is a generic stainless manifold. Use [316L powder for SMR auxiliary manifolds](/posts/Alloys/316l-powder-smr-auxiliary-fluid-manifolds-and-nuclear-support-hardware/) when classification, qualification evidence, and nuclear support context dominate. Use [316L powder for hydrogen electrolyzer flow-field plates](/posts/Alloys/316l-powder-hydrogen-electrolyzer-flow-field-plates/) when the part belongs to hydrogen-side clean energy hardware rather than DAC.
 

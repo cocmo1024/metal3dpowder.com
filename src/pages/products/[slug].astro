@@ -55,12 +55,12 @@ const schema = [
     additionalProperty: [
       {
         '@type': 'PropertyValue',
-        name: 'Primary procurement query',
+        name: 'Powder designation',
         value: searchIntent.primaryQuery,
       },
       {
         '@type': 'PropertyValue',
-        name: 'Common procurement search designations',
+        name: 'Related alloy designations',
         value: product.aliases.join(', '),
       },
       {
@@ -209,7 +209,7 @@ const schema = [
 
     <nav class="intent-jump page-shell" aria-label={`${searchIntent.primaryQuery} purchasing sections`}>
       <span>On this grade page</span>
-      <a href="#grade-designations">Designations & search names</a>
+      <a href="#grade-designations">Grade & designations</a>
       <a href="#process-and-particle-size">Process & particle size</a>
       <a href="#standards-and-documents">Standards & documents</a>
       <a href="#price-and-quote-inputs">Price & quote inputs</a>
@@ -219,21 +219,13 @@ const schema = [
       <div class="product-content__main">
         <section id="grade-designations" class="content-block" aria-labelledby="grade-designations-title">
           <div class="section-heading">
-            <p class="eyebrow">Grade search intent</p>
+            <p class="eyebrow">Alloy identification</p>
             <h2 id="grade-designations-title">Specify this powder by grade, then narrow the buying requirement.</h2>
-            <p>{searchIntent.designationGuidance}</p>
-          </div>
-          <div class="buyer-query-grid" aria-label={`Common procurement searches for ${searchIntent.primaryQuery}`}>
-            {searchIntent.buyerQueries.map((query) => (
-              <article data-buyer-query>
-                <span>Procurement query</span>
-                <strong>{query}</strong>
-              </article>
-            ))}
+            <p data-grade-guidance>{searchIntent.designationGuidance}</p>
           </div>
           <p class="search-boundary">
-            These search patterns are consolidated on this grade owner page. They describe buying intent—not separate
-            stock items, guaranteed specifications, fixed prices, or additional thin landing pages.
+            Similar grade names do not establish identical chemistry or process compatibility. Include the governing
+            specification and required edition; the quotation confirms the proposed powder and supporting lot records.
           </p>
         </section>
 

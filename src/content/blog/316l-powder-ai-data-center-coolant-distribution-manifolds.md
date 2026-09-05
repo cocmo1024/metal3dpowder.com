@@ -19,7 +19,7 @@ That is where 316L powder deserves a separate discussion. It is not the right ma
   <figcaption>Illustrative engineering visual: 316L powder fits coolant distribution hardware when stainless routing, sealing faces, and sensor integration matter more than maximum copper conductivity.</figcaption>
 </figure>
 
-The long-term search value of this topic is simple: AI racks will keep changing, but liquid-cooling loops will keep asking the same engineering questions. How should coolant be distributed? Where should sensors sit? Which bodies need stainless corrosion behavior? Which faces need machining? What powder specification and inspection route make the part repeatable?
+The recurring engineering problem is clear: AI racks will keep changing, but liquid-cooling loops will keep asking the same engineering questions. How should coolant be distributed? Where should sensors sit? Which bodies need stainless corrosion behavior? Which faces need machining? What powder specification and inspection route make the part repeatable?
 
 ## Why AI liquid cooling creates a stainless manifold problem
 
@@ -120,7 +120,7 @@ For a liquid-cooled AI rack, a practical material map often looks like this:
 
 That map keeps the AI liquid-cooling cluster powder-centered. It prevents the site from turning into a generic data center blog and keeps each page tied to a real material decision.
 
-## Internal route for the topic
+<h2 id="internal-route-for-the-topic">Related guides for the topic</h2>
 
 If the project is starting from the application, use the [AI Liquid Cooling hub](/applications/ai-liquid-cooling/) to compare copper and stainless thermal-fluid hardware. If the project is starting from the material, use the [Stainless Steel Powder hub](/materials/stainless-steel-powder/). If the main question is manufacturability, route through [LPBF Powder](/processes/lpbf/).
 

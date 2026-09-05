@@ -36,7 +36,7 @@ If the job is still a general-purpose structural titanium decision, start with [
 
 ## TA15 for elevated-temperature aerospace structures
 
-TA15 application variants consolidate here because the search intent is narrow: selecting a near-alpha titanium powder route when elevated-temperature structural behavior is important enough that a general Ti64 route may not be sufficient.
+For elevated-temperature structural applications, the decision is selecting a near-alpha titanium powder route when elevated-temperature structural behavior is important enough that a general Ti64 route may not be sufficient.
 
 | Question | TA15 review | Evidence required |
 | --- | --- | --- |

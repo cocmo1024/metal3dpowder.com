@@ -14,7 +14,7 @@ featured: false
 
 IN625 powder is a serious option for geothermal brine heat-exchanger and valve hardware when the component is exposed to hot chloride-bearing fluids, dissolved minerals, acid gases, pressure cycling, and difficult maintenance windows. The alloy discussion is not simply "use a better corrosion metal." It should start with the actual brine chemistry, temperature, flow path, cleaning method, and part geometry.
 
-This page is not a general geothermal energy overview. It is a powder and part-selection guide for compact, corrosion-critical geothermal hardware where a nickel alloy and additive manufacturing may both matter. The strongest search intent is practical: heat-exchanger headers, compact inlet pieces, valve inserts, sampling blocks, dosing hardware, pump-adjacent flow parts, DED repair zones, and pilot-loop components that need more corrosion confidence than ordinary stainless steel.
+This page is not a general geothermal energy overview. It is a powder and part-selection guide for compact, corrosion-critical geothermal hardware where a nickel alloy and additive manufacturing may both matter. The component review includes heat-exchanger headers, compact inlet pieces, valve inserts, sampling blocks, dosing hardware, pump-adjacent flow parts, DED repair zones, and pilot-loop components that need more corrosion confidence than ordinary stainless steel.
 
 The current market signal is useful but should not be overplayed. The [IEA has highlighted rising investment in next-generation geothermal](https://www.iea.org/commentaries/investment-in-next-generation-geothermal-is-surging-policies-are-key-to-further-growth), while the [US Department of Energy frames enhanced geothermal systems as a major expansion path](https://www.energy.gov/hgeo/geothermal/enhanced-geothermal-systems). The long-term powder search value is more stable: geothermal projects still need to decide when 316L is enough, when conventional corrosion-resistant alloys are cleaner, and when [IN625 powder](/posts/Alloys/gh3625-in625-powder/) deserves review for brine-side hardware.
 
@@ -100,7 +100,7 @@ A useful inquiry should do more than name IN625 or GH3625. For geothermal brine 
 
 The [metal powder specification guide](/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/) is the broader checklist for PSD, oxygen, flowability, and documentation. For geothermal brine, add media chemistry and surface-condition expectations early. Without those details, an inquiry can look like a normal nickel powder request while the real risk sits in brine chemistry and post-processing.
 
-## Internal material path for geothermal projects
+<h2 id="internal-material-path-for-geothermal-projects">Related material guides for geothermal projects</h2>
 
 Route geothermal brine decisions through a focused internal map:
 

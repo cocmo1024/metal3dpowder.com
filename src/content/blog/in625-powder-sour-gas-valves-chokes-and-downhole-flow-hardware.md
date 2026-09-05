@@ -89,7 +89,7 @@ A useful RFQ should define the service condition before asking for price. For so
 
 The [metal powder specification guide](/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/) is the broader checklist for PSD, oxygen, flowability, and documentation. For sour-service hardware, add the H2S environment, qualification route, and pressure or leak status early.
 
-## Internal route for oilfield sour-service decisions
+<h2 id="internal-route-for-oilfield-sour-service-decisions">Related guides for oilfield sour-service decisions</h2>
 
 Use this internal map to keep the topic powder-centered:
 

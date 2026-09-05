@@ -11,7 +11,7 @@ interface Props {
 
 const { posts, ariaLabel = 'Articles', className = '', headingLevel = 2 } = Astro.props;
 const Heading = headingLevel === 3 ? 'h3' : 'h2';
-const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
 ---
 
 <section class:list={['blog-post-grid', className]} aria-label={ariaLabel}>

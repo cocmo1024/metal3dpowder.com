@@ -58,7 +58,7 @@ const decisionCopy = decisionGuide
     ].join(' ')
   : '';
 const readingMinutes = estimateReadingMinutes(`${post.body ?? ''} ${decisionCopy}`);
-const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
 const topicHubLabel = (group: string) =>
   group === 'materials' ? 'Material guide' : group === 'applications' ? 'Application guide' : 'Process guide';
 
@@ -136,7 +136,10 @@ const schema = [
           <span>Technical guide</span>
           <span>{post.data.category}</span>
           <span>Reviewed by <a href={`${blogAuthorPath}#editorial-standards`}>{blogAuthorName}</a></span>
-          <span>{formatter.format(post.data.pubDate)}</span>
+          <span>Published <time datetime={publishedIso}>{formatter.format(post.data.pubDate)}</time></span>
+          {post.data.updatedDate && post.data.updatedDate > post.data.pubDate ? (
+            <span>Updated <time datetime={modifiedIso}>{formatter.format(post.data.updatedDate)}</time></span>
+          ) : null}
           <span>{readingMinutes} min read</span>
         </div>
       </header>
@@ -156,8 +159,8 @@ const schema = [
 
       <ProductRouteGrid
         products={relatedProducts}
-        title="Commercial alloy-grade pages for quotation"
-        description="This article supports research and selection intent. Continue to the grade owner page for international designations, process and PSD inputs, supplier and price intent, document scope, and the structured RFQ."
+        title="Review powder grades and request a quotation"
+        description="Review the relevant powder grades, candidate particle sizes and available lot documents, then send your process, quantity and delivery requirements for a quotation."
       />
 
       <RfqCta context={post.data.title} />

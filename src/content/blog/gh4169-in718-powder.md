@@ -44,7 +44,7 @@ If the choice is between structural hot-side hardware and oxidation-driven furna
 
 ## IN718 for structural hot-side parts, housings, and casings
 
-Turbine-adjacent housings, hot-side structural casings, brackets, impeller supports, and loaded flow hardware belong to one core IN718 search intent. IN718 is reviewed when temperature and structural loading matter together and a precipitation-hardening nickel route can be controlled through build and post-processing.
+Turbine-adjacent housings, hot-side structural casings, brackets, impeller supports, and loaded flow hardware share an IN718 material-selection question. IN718 is reviewed when temperature and structural loading matter together and a precipitation-hardening nickel route can be controlled through build and post-processing.
 
 | Part class | Why IN718 fits the first review | What still controls acceptance |
 | --- | --- | --- |

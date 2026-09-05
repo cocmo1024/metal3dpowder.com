@@ -18,7 +18,7 @@ That makes this a current topic in 2026. Public aerospace and defense programs a
 
 This page is not a generic metal 3D printing overview. It focuses on powder selection logic for defense sustainment and flight-ready spares: when IN718, Ti64, 17-4PH, AlSi10Mg, CuCrZr, or another route should be part of the discussion, and when additive manufacturing is not the right answer.
 
-## Why defense sustainment is a distinct powder search intent
+<h2 id="why-defense-sustainment-is-a-distinct-powder-search-intent">Why replacement hardware needs its own powder review</h2>
 
 A sustainment spare is not the same as a new-design prototype. The part usually has an existing function, a known platform, a known failure mode, and an existing material or process history. The buyer is often trying to reduce lead time, recover an obsolete source, or support readiness without creating a new qualification problem.
 
@@ -118,7 +118,7 @@ Be cautious when the existing part has:
 
 In those cases, the AM route may still be viable, but the discussion should move from "can we print it?" to "what evidence is needed to accept it?"
 
-## Why this topic has long search value
+<h2 id="why-this-topic-has-long-search-value">Plan for repeat orders and configuration control</h2>
 
 Defense sustainment will keep generating demand for low-volume, high-consequence spares. Some platforms will need replacements for obsolete suppliers. Some new systems will need faster iteration and qualified production paths. Some thermal-management and propulsion components will benefit from internal geometry that traditional manufacturing struggles to make efficiently.
 

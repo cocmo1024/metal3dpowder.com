@@ -127,7 +127,7 @@ A useful robot joint powder inquiry should describe the part's function before i
 
 Those details help prevent the common mismatch: Ti64 quoted for a heavy actuator housing where stainless would be more practical, or 17-4PH quoted for a wrist-side structure where mass is the actual constraint.
 
-## Internal material map for robot-joint projects
+<h2 id="internal-material-map-for-robot-joint-projects">Related material guides for robot-joint projects</h2>
 
 For a robot joint program, it helps to route the decision through a small content map instead of jumping straight to one alloy:
 

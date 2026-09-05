@@ -100,9 +100,9 @@ A useful RFQ should not just ask for "Alloy 625 powder." For DED repair overlays
 
 For broader powder documentation, use the [metal powder specification guide](/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/). For DED feedstock form decisions, start with [DED powder vs wire](/posts/Alloys/ded-powder-vs-wire-feedstock-guide/).
 
-## Internal route for repair-led IN625 decisions
+<h2 id="internal-route-for-repair-led-in625-decisions">Related guides for repair-led IN625 decisions</h2>
 
-Use this page when the search intent is repair, overlay, or localized deposition. Use adjacent pages when the application changes:
+Use this guide for repair, overlay, or localized deposition. Use adjacent pages when the application changes:
 
 - start with IN625 powder if the buyer is still confirming the alloy family
 - use IN625 sour gas hardware for H2S-bearing valves, chokes, downhole flow, and wellhead/subsea service

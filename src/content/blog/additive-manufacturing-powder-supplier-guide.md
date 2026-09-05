@@ -2,7 +2,7 @@
 title: "Additive Manufacturing Powder Suppliers and Manufacturers: Buyer Guide"
 description: Qualify AM powder suppliers and manufacturers by alloy, PSD, COA, traceability, change control, price basis, packaging, and application risk.
 pubDate: 2026-04-29T22:06:00+08:00
-updatedDate: 2026-07-16
+updatedDate: 2026-09-05
 category: Knowledge
 tags:
   - metal powder
@@ -14,9 +14,7 @@ featured: true
 
 The best additive manufacturing powder supplier is not necessarily the company with the longest alloy list or the lowest price. It is the source that can repeatedly deliver the required alloy, particle-size distribution, chemistry, documentation, packaging, and change control for the buyer's process and application.
 
-Searches for **additive manufacturing powder suppliers**, **3D printing metal powder manufacturers**, and **metal powder suppliers** often describe the same underlying task: reduce feedstock risk before a sample, qualification lot, or production order.
-
-This guide turns that broad search into an evidence-based supplier qualification process.
+Whether buying from a manufacturer, distributor or supply coordinator, the task is the same: establish a traceable powder route before a sample, qualification lot or recurring order. This guide explains what evidence to request and which changes need review after the first trial.
 
 ## Manufacturer, distributor, or integrated supplier
 
@@ -150,6 +148,22 @@ Before ordering a sample, define what the trial must prove:
 7. decide what must remain unchanged for the next order.
 
 If a sample prints well but its lot identity, PSD, oxygen, machine settings, or reuse history are not recorded, the trial has limited qualification value.
+
+## Moving from an approved sample to a repeat order
+
+A successful sample is evidence about the tested powder and process, not approval for every future shipment with the same alloy label. Compare each proposed repeat order against the recorded trial baseline. [ISO/ASTM 52928:2024](https://www.iso.org/standard/78527.html) addresses metal-powder lifecycle management; the actual change-approval rules belong in the purchaser's quality agreement.
+
+| Proposed change | Evidence to compare | Question for the approval owner |
+| --- | --- | --- |
+| New production lot, same agreed route | Lot COA, PSD, powder condition and the incoming inspection plan | Does routine lot release cover this change? |
+| New producer or atomization route | Chemistry, morphology, contamination controls and process-trial scope | Is additional qualification needed before use? |
+| Different PSD method or testing laboratory | Method details, sampling and comparative results where required | Can the existing acceptance limits still be applied? |
+| Repacking or different container format | Original-to-repack genealogy, seal, labeling and handling record | Is identity and condition preserved through delivery? |
+| Virgin powder replaced by a blend or reused material | Powder history, blend definition and the approved lifecycle plan | Is this condition explicitly permitted? |
+
+Do not impose automatic requalification on every new lot, or assume that every change is harmless. Record who decides, which evidence is required, and whether use is held until approval. This turns supplier qualification into a repeatable purchasing process without requiring the maximum audit package for every order.
+
+Use the [COA review workflow](/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/#what-to-do-when-a-coa-is-incomplete-or-inconsistent) for lot-document discrepancies. For a proposed supply route, [send the powder specification and project stage](/rfq/) and identify any conditions that must remain unchanged.
 
 ## Red flags in supplier responses
 

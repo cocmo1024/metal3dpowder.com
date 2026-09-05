@@ -7,7 +7,7 @@ import { buildBreadcrumbSchema } from '../../data/seo';
 import { faqs } from '../../data/faqs';
 import { siteInfo } from '../../data/site';
 
-const title = 'FAQ | Metal 3D Powder';
+const title = 'Metal Powder FAQ | Specifications, Documents & Ordering';
 const description =
   'Metal additive manufacturing FAQ covering powder basics, quality control, material selection, storage, and shipment-related questions.';
 
@@ -61,6 +61,7 @@ const schema = [
           If qualification matters, also send printer model, oxygen limits, preferred package size, and the documents
           you need with shipment.
         </p>
+        <p><a class="inline-link" href="/rfq/">Send a powder RFQ</a> or <a class="inline-link" href="/products/">find the exact powder grade</a>.</p>
       </div>
 
       <div class="surface-card surface-card--padded rich-copy">
@@ -69,6 +70,7 @@ const schema = [
           Email: <a class="inline-link" href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
         </p>
         <p>{siteInfo.contactNote}</p>
+        <p>For document review, use the <a class="inline-link" href="/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/">powder specification and COA guide</a>.</p>
       </div>
     </section>
 

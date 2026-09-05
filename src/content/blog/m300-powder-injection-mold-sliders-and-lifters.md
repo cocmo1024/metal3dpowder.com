@@ -13,7 +13,7 @@ featured: false
 
 M300 powder deserves a separate discussion for injection mold sliders and lifters because these parts are not just another mold insert. A slider or lifter has to move, locate, release an undercut, survive repeated cycles, hold machined datum surfaces, and fit into a tight tool envelope. That makes the powder decision more specific than a broad "M300 mold tooling" question.
 
-The current manufacturing context keeps this topic relevant. The [PLASTICS Size and Impact report](https://www.plasticsindustry.org/data-analysis-reports/size-impact-plastics-economy/) continues to track plastics manufacturing as a large industrial base with ongoing forecast work, while the long-term search value is stable: production molds keep needing better cooling, more compact moving details, and faster replacement of high-value inserts. M300 powder can fit that problem when LPBF changes the slider or lifter geometry enough to justify the route.
+The current manufacturing context keeps this topic relevant. The [PLASTICS Size and Impact report](https://www.plasticsindustry.org/data-analysis-reports/size-impact-plastics-economy/) continues to track plastics manufacturing as a large industrial base with ongoing forecast work, while the engineering need remains: production molds keep needing better cooling, more compact moving details, and faster replacement of high-value inserts. M300 powder can fit that problem when LPBF changes the slider or lifter geometry enough to justify the route.
 
 ## Why sliders and lifters are different from general inserts
 
@@ -28,7 +28,7 @@ That changes the M300 discussion. The part may need:
 - wear-aware contact zones and replaceable inserts
 - clear machining stock on shutoff, forming, and guide surfaces
 
-This is why a slider or lifter is not the same search intent as a general [M300 mold tooling insert](/posts/Alloys/m300-powder-mold-tooling-inserts/) or a broad [M300 core insert](/posts/Alloys/m300-powder-mold-tooling-inserts/) page.
+A moving slider or lifter needs a different fit, wear and cooling review from a stationary [M300 mold or core insert](/posts/Alloys/m300-powder-mold-tooling-inserts/).
 
 ## Where M300 powder can fit
 
@@ -102,9 +102,9 @@ A useful RFQ should describe the tool detail, not only the alloy. Include:
 
 For the broader powder checklist, use the [metal powder specification guide](/posts/Alloys/metal-powder-specification-guide-psd-oxygen-flowability/). For process sizing and LPBF assumptions, use the [LPBF powder particle size guide](/posts/Alloys/lpbf-powder-particle-size-guide/).
 
-## Internal route for M300 mold tooling projects
+<h2 id="internal-route-for-m300-mold-tooling-projects">Related guides for M300 mold tooling projects</h2>
 
-Use this page when the search intent is specifically sliders, lifters, and compact moving mold details. Use adjacent pages when the part family changes:
+Use this guide when evaluating sliders, lifters, and compact moving mold details. Use adjacent pages when the part family changes:
 
 - start with [M300 maraging steel powder](/posts/Alloys/m300-maraging-steel-powder/) when confirming the alloy family
 - use M300 mold tooling inserts for broad mold tooling and production fixture context

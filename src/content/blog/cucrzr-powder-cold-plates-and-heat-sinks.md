@@ -48,7 +48,7 @@ If the real hardware is conductive tooling or a welding-contact component rather
 
 ## Cold-plate applications belong to one thermal-hardware decision
 
-AI accelerators, co-packaged optics, semiconductor equipment, power electronics, batteries, and RF systems create different loads, but their copper-powder search intent overlaps: can an AM CuCrZr route create useful cooling geometry while meeting conductivity, strength, cleanliness, and leak-integrity requirements?
+AI accelerators, co-packaged optics, semiconductor equipment, power electronics, batteries, and RF systems create different loads, but they share a powder-selection question: can an AM CuCrZr route create useful cooling geometry while meeting conductivity, strength, cleanliness, and leak-integrity requirements?
 
 | Hardware | Geometry value from AM | Dominant validation questions |
 | --- | --- | --- |

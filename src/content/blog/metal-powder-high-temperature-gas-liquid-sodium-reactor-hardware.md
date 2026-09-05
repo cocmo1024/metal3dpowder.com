@@ -22,7 +22,7 @@ The correct buying sequence is:
 
 This guide covers LPBF development hardware, test-loop components, representative coupons, non-safety auxiliary parts, and process-qualification articles. It does not qualify a printed alloy for a reactor core, pressure boundary, intermediate heat exchanger, sodium-wetted primary component, or safety-related service.
 
-## Split the search intent before selecting an alloy
+<h2 id="split-the-search-intent-before-selecting-an-alloy">Separate service environments before selecting an alloy</h2>
 
 The US Department of Energy's [Advanced Materials and Manufacturing Technologies roadmap](https://www.energy.gov/sites/default/files/2023-03/ne-ammt-roadmap-030823.pdf) separates high-temperature gas-cooled reactors from sodium-cooled fast reactors for a reason. The roadmap identifies high-temperature, radiation-tolerant materials for gas-cooled systems, while describing austenitic stainless and ferritic/martensitic steels as the material classes of strongest interest for sodium-cooled structural applications.
 
@@ -117,7 +117,7 @@ Examples include purge, sampling and utility manifolds, sensor housings, cable o
 
 Examples include alignment fixtures, inspection aids, handling tools, gauges and temporary test rigs. 17-4PH or 316L powder may support strength, corrosion resistance or compact geometry, but contamination control, temperature, radiation history, foreign-material exclusion and site procedures still apply.
 
-This zoning prevents one SEO page from implying that the same powder belongs in a core component and a maintenance tool.
+This zoning keeps core-component acceptance requirements separate from those for a maintenance tool.
 
 ## When LPBF creates enough value
 

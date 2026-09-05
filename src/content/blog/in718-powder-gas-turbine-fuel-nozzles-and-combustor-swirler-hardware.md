@@ -86,7 +86,7 @@ A useful inquiry should do more than name IN718 or GH4169. For gas turbine fuel 
 
 Those details help a supplier decide whether IN718 powder is a rational route or whether the part should move toward Hastelloy X, IN625, cobalt alloy, conventional fabrication, or a different design.
 
-## Internal route for gas turbine nickel powder decisions
+<h2 id="internal-route-for-gas-turbine-nickel-powder-decisions">Related guides for gas turbine nickel powder decisions</h2>
 
 Start with the main [IN718 / GH4169 powder guide](/posts/Alloys/gh4169-in718-powder/) when the material decision is still broad. Use this page when the part is specifically a gas turbine fuel nozzle body, combustor swirler support, injector-adjacent structure, or small routed hot-section part.
 

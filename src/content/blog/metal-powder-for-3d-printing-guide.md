@@ -21,7 +21,7 @@ For most projects, the fastest route is:
 4. set the particle-size and chemistry requirements,
 5. compare suppliers using the same acceptance basis.
 
-This guide answers the broad search intent behind **metal powder for 3D printing**, then routes each decision to a more specific material or process page.
+Use this **metal powder for 3D printing** guide to select an alloy family and process, then review the linked grade and specification requirements before requesting powder.
 
 ## Quick metal powder selection table
 

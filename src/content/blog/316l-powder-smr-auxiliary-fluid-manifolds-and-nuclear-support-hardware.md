@@ -123,7 +123,7 @@ This is where 316L LPBF can be useful without overclaiming. It can reduce assemb
 
 ## Material route map for SMR support hardware
 
-Different nuclear-adjacent parts point to different powder families. A simple internal route map is useful:
+Different nuclear-adjacent parts require different powder families. Review these related material and component guides:
 
 | Hardware need | Likely starting point | Internal path |
 |---|---|---|
@@ -136,7 +136,7 @@ Different nuclear-adjacent parts point to different powder families. A simple in
 
 This keeps the topic powder-centered. The site should not become a generic SMR news page. The useful path is alloy, powder, process, application, and qualification evidence.
 
-## Internal route for this topic
+<h2 id="internal-route-for-this-topic">Related guides for this topic</h2>
 
 If the project starts from material selection, begin with the [Stainless Steel Powder hub](/materials/stainless-steel-powder/) and the main 316L powder guide. If the project starts from application, use the [Energy and Propulsion Hardware hub](/applications/energy-and-propulsion/) or the new [Nuclear and SMR Support Hardware hub](/applications/nuclear-and-smr-support-hardware/). If the main question is manufacturability, route through [LPBF Powder](/processes/lpbf/).
 

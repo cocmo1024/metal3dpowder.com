@@ -2,7 +2,7 @@
 title: "Metal Powder Specification and COA Guide: PSD, Oxygen, and Flow"
 description: Specify AM metal powder and read a COA using chemistry, D10/D50/D90, oxygen, morphology, density, flow, sampling, traceability, and RFQ fields.
 pubDate: 2026-05-04T07:46:00+08:00
-updatedDate: 2026-07-16
+updatedDate: 2026-09-05
 category: Knowledge
 tags:
   - metal powder
@@ -218,6 +218,23 @@ Before accepting a COA, ask:
 8. Does the packaging label match the COA?
 9. Is any test performed on a different lot or product baseline?
 10. Are deviations or substitutions explicitly approved?
+
+## What to do when a COA is incomplete or inconsistent
+
+A document review should end with a clear disposition, not simply a folder of certificates. The following is a purchasing workflow, not a replacement for the agreed acceptance specification or a set of universal test limits.
+
+| Finding on the proposed lot | What to request next | Release decision |
+| --- | --- | --- |
+| COA and container show different lot codes | A documented link between the original lot, any repack lot and each container | Hold until traceability is resolved |
+| Chemistry column contains only limits or typical values | Measured results for the supplied lot and the required test scope | Do not treat a generic data sheet as lot acceptance |
+| PSD method differs from the purchase requirement | Results using the agreed method, or an approved method-comparison plan | Do not transfer acceptance limits between unlike methods |
+| A required element or test is missing | The missing test result or a formally approved change to the requirement | Missing evidence is not a passing result |
+| A result is outside the agreed limit | A documented nonconformance review and authorized disposition | Keep the lot separate; do not average away a failed result |
+| All requested powder evidence is complete | Record the review, container identity and next process gate | Powder release does not release finished parts |
+
+Keep the original report, any corrected revision, the reason for correction, reviewer and disposition together. If retesting is justified, agree the sampling and retest rules before taking another sample; repeated testing until a favorable result appears is not a controlled acceptance plan. The [lot sampling guide](/posts/Alloys/am-metal-powder-lot-sampling-for-psd/) explains how to preserve representative evidence.
+
+For example, a 316L quotation with a nominal PSD and a brochure chemistry table may be sufficient to begin a technical discussion, but it does not demonstrate that the ordered lot meets the purchase specification. Start from [316L product requirements](/products/316l/) and list the missing documents in the [powder RFQ](/rfq/?product=316l).
 
 ## Metal powder RFQ specification block
 

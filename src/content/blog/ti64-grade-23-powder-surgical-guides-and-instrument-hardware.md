@@ -12,7 +12,7 @@ tags:
 featured: false
 ---
 
-Ti64 Grade 23 powder is usually discussed as a medical implant material, but the same ELI-style titanium route can also matter in surgical guides, drill-guide carriers, reusable alignment hardware, and instrument-adjacent components. The search intent is different from a spinal cage or orthopedic implant page: the buyer is often trying to decide whether a metal AM route is justified for a guide, fixture, or instrument component that must survive handling, cleaning, sterilization, and qualification review.
+Ti64 Grade 23 powder is usually discussed as a medical implant material, but the same ELI-style titanium route can also matter in surgical guides, drill-guide carriers, reusable alignment hardware, and instrument-adjacent components. Unlike a spinal cage or orthopedic implant program, the buyer is often trying to decide whether a metal AM route is justified for a guide, fixture, or instrument component that must survive handling, cleaning, sterilization, and qualification review.
 
 That distinction matters. Not every patient-specific surgical guide should become a titanium part. Many single-use guides are better served by qualified polymers or conventional manufacturing. Ti64 Grade 23 powder becomes relevant when the guide or instrument-adjacent hardware needs metallic stiffness, thin-section strength, wear resistance around sleeves or contact features, repeatable cleaning access, and a controlled titanium documentation trail.
 
@@ -30,11 +30,11 @@ This page sits next to those topics but should not compete with them. Surgical g
 
 If the buyer is still deciding between the two Ti64 grade routes, start with the [Ti64 Grade 23 vs Grade 5 powder comparison](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/). If the project is broader titanium AM, use the [titanium powder for 3D printing guide](/posts/Alloys/titanium-powder-for-3d-printing-guide/) before narrowing the inquiry.
 
-## Why this topic has long-term search value
+<h2 id="why-this-topic-has-long-term-search-value">Define the surgical guide or instrument requirement</h2>
 
 Medical additive manufacturing keeps expanding because 3D printing can support complex internal structures and patient-matched geometries. FDA's public medical-device 3D printing page specifically lists medical devices such as orthopedic implants, surgical instruments, dental restorations, and external prosthetics, and notes the ability to create devices matched to patient anatomy. That does not turn every printed guide into a cleared device, but it explains why surgical workflows keep generating AM-related material questions.
 
-The durable SEO value is not "3D printing in healthcare" as a broad trend. The valuable query is more specific: which titanium powder route should a team specify when a surgical guide, drill sleeve carrier, or instrument-adjacent part needs metal AM? That question connects directly to RFQ language:
+The material decision is specific: which titanium powder route should a team specify when a surgical guide, drill sleeve carrier, or instrument-adjacent part needs metal AM? That question connects directly to RFQ language:
 
 - Ti64 Grade 23 powder or standard Grade 5 Ti64
 - LPBF particle-size range
