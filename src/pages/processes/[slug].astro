@@ -7,7 +7,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getBlogPostPath, sortBlogPosts, type BlogPost } from '../../data/blog';
 import { processHubs, type HubDefinition } from '../../data/contentHubs';
 import { getProductsForHub } from '../../data/productRoutes';
-import { getProductPath } from '../../data/products';
+import { getProductById, getProductPath, type Product } from '../../data/products';
 import { buildBreadcrumbSchema, buildCollectionPageSchema } from '../../data/seo';
 
 interface Props {
@@ -25,12 +25,20 @@ const { hub } = Astro.props;
 const allPosts = sortBlogPosts(await getCollection('blog'));
 const postMap = new Map(allPosts.map((post) => [post.id, post]));
 const posts = hub.postIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
-const relatedProducts = getProductsForHub(hub);
+const relatedProducts = hub.slug === 'lpbf'
+  ? ['ti64', '316l', 'alsi10mg', 'in718']
+      .map(getProductById)
+      .filter((product): product is Product => Boolean(product))
+  : getProductsForHub(hub);
 const canonical = `/processes/${hub.slug}/`;
 const processName = hub.title.replace(/ Powder$/, '');
-const seoTitle = `${processName} Metal Powder | Particle Size & Alloy Selection`;
+const seoTitle = hub.slug === 'lpbf'
+  ? 'LPBF Metal Powder Supply | Alloy Grades, PSD & RFQ'
+  : `${processName} Metal Powder | Particle Size & Alloy Selection`;
 const pageHeading = `${processName} metal powder for additive manufacturing`;
-const metaDescription = `Compare ${processName} metal powder by alloy grade, particle size, flow, morphology, chemistry, qualification evidence, and RFQ requirements.`;
+const metaDescription = hub.slug === 'lpbf'
+  ? 'Source LPBF powder by alloy grade: titanium, 316L, AlSi10Mg and more. Compare particle-size requirements, lot evidence and grade-specific quotation routes.'
+  : `Compare ${processName} metal powder by alloy grade, particle size, flow, morphology, chemistry, qualification evidence, and RFQ requirements.`;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
