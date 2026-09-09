@@ -68,6 +68,21 @@ const resolveProductIds = (ids: string[]) => {
   return [...new Set(ids)].map((id) => productById.get(id)).filter((product): product is Product => Boolean(product));
 };
 
+// Do not fill empty recommendation slots with unrelated alloys from catalog order.
+export const getRelatedProducts = (product: Product): Product[] =>
+  products.filter((candidate) => candidate.id !== product.id && candidate.family === product.family);
+
+const comparisonGuides = [
+  { productIds: ['ti64', 'ti-grade-2'], slug: 'ti64-vs-grade-2-titanium-powder', title: 'Ti6Al4V vs Grade 2: strength or commercially pure titanium?' },
+  { productIds: ['ti64', 'ti64-grade-23'], slug: 'ti64-grade-23-vs-grade-5-powder', title: 'Grade 23 vs Grade 5: when do lower interstitial limits matter?' },
+  { productIds: ['316l', '17-4ph'], slug: '316l-vs-17-4ph-powder', title: '316L vs 17-4PH: corrosion duty or heat-treated strength?' },
+  { productIds: ['in718', 'in625'], slug: 'in718-vs-in625-powder', title: 'IN718 vs IN625: hot strength or corrosion-side duty?' },
+  { productIds: ['h13', 'm300'], slug: 'h13-vs-m300-powder', title: 'H13 vs M300: hot-work duty or precision tooling?' },
+];
+
+export const getComparisonGuidesForProduct = (productId: string) =>
+  comparisonGuides.filter((guide) => guide.productIds.includes(productId));
+
 const gradePostPrefixes: Array<[string, string]> = [
   ['ti64-grade-23-', 'ti64-grade-23'], ['ti64-', 'ti64'], ['tc4-', 'ti64'],
   ['ta1-', 'ti-grade-2'], ['ta15-', 'ta15'], ['316l-', '316l'], ['17-4ph-', '17-4ph'],

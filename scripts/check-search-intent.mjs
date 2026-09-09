@@ -49,6 +49,18 @@ const productDirs = fs
   .sort();
 
 const searchOwners = new Map();
+const relatedProductFamilies = [
+  ['ti64', 'ti64-grade-23', 'ti-grade-2', 'ta15'],
+  ['316l', '17-4ph'], ['in718', 'in625', 'hastelloyx'], ['h13', 'm300'],
+  ['alsi10mg'], ['cucrzr'], ['cocrmo'],
+];
+const comparisonPairs = [
+  ['ti64-vs-grade-2-titanium-powder', ['ti64', 'ti-grade-2']],
+  ['ti64-grade-23-vs-grade-5-powder', ['ti64', 'ti64-grade-23']],
+  ['316l-vs-17-4ph-powder', ['316l', '17-4ph']],
+  ['in718-vs-in625-powder', ['in718', 'in625']],
+  ['h13-vs-m300-powder', ['h13', 'm300']],
+];
 for (const productId of productDirs) {
   const route = `/products/${productId}/`;
   const html = read(path.join(PRODUCT_ROOT, productId, 'index.html'));
@@ -82,6 +94,22 @@ for (const productId of productDirs) {
   if (/\bdata-buyer-query(?:\s|>|=)/i.test(html)) fail(`${route}: keyword-list cards must not replace buyer guidance.`);
   if (!new RegExp(`href=(?:"|')/rfq/\\?product=${productId}(?:"|')`, 'i').test(html)) {
     fail(`${route}: missing product-prefilled RFQ link.`);
+  }
+
+  const expectedRelated = (relatedProductFamilies.find((family) => family.includes(productId)) ?? [])
+    .filter((id) => id !== productId).sort();
+  const actualRelated = [...html.matchAll(/\bdata-related-product="([^"]+)"/g)].map((match) => match[1]).sort();
+  if (JSON.stringify(actualRelated) !== JSON.stringify(expectedRelated)) {
+    fail(`${route}: related products must stay in the material family; expected ${expectedRelated}, got ${actualRelated}.`);
+  }
+  if (html.includes('id="related-title"') !== Boolean(expectedRelated.length)) {
+    fail(`${route}: related section must be absent when there are no other grades in this family.`);
+  }
+  const actualComparisons = [...html.matchAll(/<a\b[^>]*href="\/posts\/Alloys\/([^"/]+)\/"[^>]*data-grade-comparison\b/g)]
+    .map((match) => match[1]).sort();
+  const expectedComparisons = comparisonPairs.filter(([, ids]) => ids.includes(productId)).map(([slug]) => slug).sort();
+  if (JSON.stringify(actualComparisons) !== JSON.stringify(expectedComparisons)) {
+    fail(`${route}: missing or unrelated grade comparison links.`);
   }
 
   const productSchemas = getSchemaObjects(html, route).filter((object) => object['@type'] === 'Product');
@@ -124,6 +152,24 @@ for (const [directory, layer] of layerExpectations) {
     if (!new RegExp(`\\bdata-intent-layer=(?:"${layer}"|'${layer}')`, 'i').test(html)) {
       fail(`${route}: expected ${layer} intent layer.`);
     }
+    if (layer === 'material-family') {
+      const productPosition = html.indexOf('id="product-routes-title"');
+      const guidePosition = html.indexOf('id="hub-posts-title"');
+      const decisionPosition = html.indexOf('id="hub-decision-title"');
+      if (productPosition < 0 || (guidePosition >= 0 && productPosition > guidePosition)
+        || (decisionPosition >= 0 && productPosition > decisionPosition)) {
+        fail(`${route}: material grade choices must precede long technical guidance.`);
+      }
+      for (const anchor of ['product-routes-title', 'hub-posts-title']) {
+        if (!html.includes(`href="#${anchor}"`) || !html.includes(`id="${anchor}"`)) {
+          fail(`${route}: missing or broken material selection shortcut #${anchor}.`);
+        }
+      }
+      const routeIds = [...html.matchAll(/\bdata-product-route="([^"]+)"/g)].map((match) => match[1]);
+      for (const id of routeIds) {
+        if (!html.includes(`href="/rfq/?product=${id}"`)) fail(`${route}: grade ${id} has no prefilled RFQ.`);
+      }
+    }
   }
 }
 
@@ -149,6 +195,7 @@ const expectedArticleProducts = new Map([
   ['tc4-ti6al4v-powder', ['ti64', 'ti64-grade-23']],
   ['alsi10mg-powder', ['alsi10mg']],
   ['316l-stainless-steel-powder', ['316l']],
+  ['17-4ph-stainless-steel-powder', ['17-4ph']],
   ['ti64-grade-23-powder-surgical-guides-and-instrument-hardware', ['ti64-grade-23']],
   ['in625-ded-powder-repair-overlays-and-oilfield-corrosion-hardware', ['in625']],
   ['cucrzr-powder-cold-plates-and-heat-sinks', ['cucrzr']],

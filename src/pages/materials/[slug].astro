@@ -27,9 +27,24 @@ const postMap = new Map(allPosts.map((post) => [post.id, post]));
 const posts = hub.postIds.map((id) => postMap.get(id)).filter((post): post is BlogPost => Boolean(post));
 const relatedProducts = getProductsForHub(hub);
 const canonical = `/materials/${hub.slug}/`;
-const seoTitle = `${hub.title} for AM | Alloy Grade Guide`;
+const gradeSearchCopy: Record<string, { title: string; description: string }> = {
+  'titanium-powder': {
+    title: 'Titanium Powder: Ti6Al4V, Grade 23 & Grade 2 | AM Supply',
+    description: 'Compare Ti6Al4V Grade 5, ELI Grade 23, CP titanium Grade 2 and TA15 powder. Review chemistry, AM particle sizes and documents, then request a quote.',
+  },
+  'stainless-steel-powder': {
+    title: 'Stainless Steel Powder: 316L & 17-4PH | AM Supply',
+    description: 'Choose 316L or 17-4PH stainless steel powder by corrosion duty, heat-treated strength and AM process. Compare PSD and lot evidence, then request a quote.',
+  },
+  'nickel-alloy-powder': {
+    title: 'Nickel Alloy Powder: IN718, IN625 & Alloy X | AM Supply',
+    description: 'Compare IN718, IN625 and Alloy X nickel powders for hot-strength and corrosion-side applications. Review AM particle sizes and lot documents for your RFQ.',
+  },
+};
+const searchCopy = gradeSearchCopy[hub.slug];
+const seoTitle = searchCopy?.title ?? `${hub.title} for AM | Alloy Grade Guide`;
 const pageHeading = `${hub.title} for Additive Manufacturing`;
-const metaDescription = `Compare ${hub.title.toLowerCase()} grades, international designations, AM process fit, particle-size routes, evidence requirements, and supplier RFQ inputs.`;
+const metaDescription = searchCopy?.description ?? `Compare ${hub.title.toLowerCase()} grades, international designations, AM process fit, particle-size routes, evidence requirements, and supplier RFQ inputs.`;
 const siteUrl = Astro.site ?? new URL('https://metal3dpowder.com');
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -60,7 +75,7 @@ const schema = [
     description={hub.description}
     decisionGuide={hub.decisionGuide}
     products={relatedProducts}
-    productsTitle={`${hub.title} grades for specification-led RFQ`}
+    productsTitle={`Compare ${hub.title.toLowerCase()} grades`}
     posts={posts}
     postsTitle={`Technical guides supporting ${hub.title.toLowerCase()} selection`}
     intentLayer="material-family"

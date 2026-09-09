@@ -46,6 +46,7 @@ const featuredPosts = posts.slice(0, 12);
 const additionalPosts = posts.slice(12);
 const featuredCards = cards.slice(0, 12);
 const additionalCards = cards.slice(12);
+const isMaterial = intentLayer === 'material-family';
 ---
 
 <main id="main-content" class="page-shell hub-page" data-intent-layer={intentLayer}>
@@ -54,8 +55,23 @@ const additionalCards = cards.slice(12);
   <section class="hub-intro">
     <p class="eyebrow">{eyebrow}</p>
     <h1>{title}</h1>
-    <p>{description}</p>
+    <p class="hub-intro__description">{description}</p>
+    {isMaterial && products.length ? (
+      <nav class="hub-intro__actions" aria-label="Material selection shortcuts">
+        <a class="button button--primary" href="#product-routes-title">Compare powder grades</a>
+        <a class="button button--ghost" href="/rfq/">Send your specification</a>
+        {posts.length ? <a href="#hub-posts-title">Read selection guides →</a> : null}
+      </nav>
+    ) : null}
   </section>
+
+  {isMaterial && products.length ? (
+    <ProductRouteGrid
+      products={products}
+      title={productsTitle}
+      description="Choose a grade to review chemistry, candidate particle sizes and process fit, or send a powder-specific RFQ. Final specifications and availability are confirmed with the quotation."
+    />
+  ) : null}
 
   {
     decisionGuide ? (
@@ -97,7 +113,7 @@ const additionalCards = cards.slice(12);
   }
 
   {
-    products.length ? (
+    !isMaterial && products.length ? (
       <ProductRouteGrid
         products={products}
         title={productsTitle}
@@ -151,11 +167,24 @@ const additionalCards = cards.slice(12);
     font-weight: 760;
   }
 
-  .hub-intro p:last-child {
+  .hub-intro__description {
     margin: 0;
     color: var(--muted);
     line-height: var(--body-leading);
     font-size: 1.08rem;
+  }
+
+  .hub-intro__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .hub-intro__actions > a:not(.button) {
+    font-size: 0.94rem;
+    font-weight: 700;
   }
 
   .hub-section {

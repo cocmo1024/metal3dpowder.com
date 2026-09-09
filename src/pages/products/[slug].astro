@@ -7,6 +7,7 @@ import { getPowderScreeningWindow } from '../../data/powderCapabilities';
 import { buildBreadcrumbSchema, defaultOgImagePath } from '../../data/seo';
 import { getProductPath, products, type Product } from '../../data/products';
 import { getProductSearchIntent } from '../../data/searchIntent';
+import { getComparisonGuidesForProduct, getRelatedProducts } from '../../data/productRoutes';
 
 export function getStaticPaths() {
   return products.map((product) => ({
@@ -26,10 +27,8 @@ const screeningWindow = getPowderScreeningWindow(product.id);
 const searchIntent = getProductSearchIntent(product.id);
 const title = searchIntent.seoTitle;
 const description = searchIntent.metaDescription;
-const relatedProducts = products
-  .filter((candidate) => candidate.id !== product.id)
-  .sort((left, right) => Number(right.family === product.family) - Number(left.family === product.family))
-  .slice(0, 3);
+const relatedProducts = getRelatedProducts(product);
+const comparisonGuides = getComparisonGuidesForProduct(product.id);
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
   { name: 'Powder catalog', path: '/products/' },
@@ -462,18 +461,22 @@ const schema = [
           <strong>Need material-selection context first?</strong>
           <p>Read the related technical guide, then return with the process, PSD, quantity, and acceptance needs.</p>
           <a href={product.knowledgePath}>Read the alloy guide →</a>
+          {comparisonGuides.map((guide) => (
+            <a href={`/posts/Alloys/${guide.slug}/`} data-grade-comparison>{guide.title} →</a>
+          ))}
         </div>
       </aside>
     </section>
 
-    <section class="related-section page-shell" aria-labelledby="related-title">
+    {relatedProducts.length ? <section class="related-section page-shell" aria-labelledby="related-title">
       <div class="section-heading">
         <p class="eyebrow">Related routes</p>
-        <h2 id="related-title">Compare adjacent powder options.</h2>
+        <h2 id="related-title">Compare other {product.familyLabel.toLowerCase()} grades.</h2>
+        <p>These grades are not interchangeable. Check the service condition, chemistry and qualified process before changing material.</p>
       </div>
       <div class="related-grid">
         {relatedProducts.map((related) => (
-          <article class="related-route">
+          <article class="related-route" data-related-product={related.id}>
             <div class="related-route__meta">
               <span>{related.familyLabel}</span>
               <span>{related.code}</span>
@@ -497,7 +500,7 @@ const schema = [
           </article>
         ))}
       </div>
-    </section>
+    </section> : null}
 
     <section class="product-final page-shell">
       <div>
