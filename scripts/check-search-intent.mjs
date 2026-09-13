@@ -60,6 +60,7 @@ const comparisonPairs = [
   ['316l-vs-17-4ph-powder', ['316l', '17-4ph']],
   ['in718-vs-in625-powder', ['in718', 'in625']],
   ['h13-vs-m300-powder', ['h13', 'm300']],
+  ['cucrzr-vs-pure-copper-powder', ['cucrzr']],
 ];
 for (const productId of productDirs) {
   const route = `/products/${productId}/`;

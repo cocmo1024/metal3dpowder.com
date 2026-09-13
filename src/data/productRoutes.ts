@@ -78,6 +78,7 @@ const comparisonGuides = [
   { productIds: ['316l', '17-4ph'], slug: '316l-vs-17-4ph-powder', title: '316L vs 17-4PH: corrosion duty or heat-treated strength?' },
   { productIds: ['in718', 'in625'], slug: 'in718-vs-in625-powder', title: 'IN718 vs IN625: hot strength or corrosion-side duty?' },
   { productIds: ['h13', 'm300'], slug: 'h13-vs-m300-powder', title: 'H13 vs M300: hot-work duty or precision tooling?' },
+  { productIds: ['cucrzr'], slug: 'cucrzr-vs-pure-copper-powder', title: 'CuCrZr vs pure copper: conductivity or strength-conductivity balance?' },
 ];
 
 export const getComparisonGuidesForProduct = (productId: string) =>
