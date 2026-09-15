@@ -185,7 +185,7 @@ Red flags are prompts for clarification, not automatic proof of bad material.
 
 For [titanium powder](/posts/Alloys/titanium-powder-for-3d-printing-guide/), ask about oxygen and interstitials, atomization route, reuse, and Grade 5 versus Grade 23 identity.
 
-For [nickel alloy powder](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/), confirm IN718, IN625, or Hastelloy X chemistry, process cut, heat-treatment assumptions, and hot-side or corrosion-side intent.
+For [nickel alloy powder](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/), confirm IN718, IN625, or Alloy X chemistry, process cut, heat-treatment assumptions, and hot-side or corrosion-side intent.
 
 For [steel powder](/posts/Alloys/steel-metal-powder-for-3d-printing-guide/), separate 316L, 17-4PH, H13, and M300, then define heat treatment or sintering.
 

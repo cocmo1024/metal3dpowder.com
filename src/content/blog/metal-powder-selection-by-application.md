@@ -29,7 +29,7 @@ This page is a cross-application decision map. It does not claim that a named al
 | --- | --- | --- | --- |
 | Lightweight structural bracket or node | Ti64, AlSi10Mg | Strength-to-weight, topology optimization, integrated geometry | Fatigue, orientation, support removal, heat treatment |
 | High-temperature structural or rotating-adjacent hardware | IN718 | Precipitation-strengthened high-temperature route | Creep/fatigue basis, heat treatment, defects, inspection |
-| Hot-gas, furnace, or combustor hardware | Hastelloy X, IN625, IN718 | Oxidation, thermal cycling, corrosion, or strength depending on duty | Alloy/environment match, cracking, thermal fatigue |
+| Hot-gas, furnace, or combustor hardware | Alloy X, IN625, IN718 | Oxidation, thermal cycling, corrosion, or strength depending on duty | Alloy/environment match, cracking, thermal fatigue |
 | Corrosion-resistant manifold or fluid block | 316L, IN625, Grade 2 titanium | Corrosion behavior plus consolidated passages | Media compatibility, trapped powder, cleaning, leak testing |
 | Medical implant or porous structure | Ti64 Grade 23, selected CoCrMo routes | Biocompatible material families and geometry freedom | Regulatory route, validation, cleaning, surface, traceability |
 | Dental framework or wear-resistant medical hardware | CoCrMo, titanium depending on device | Stiffness, wear, established material families | Device-specific requirements, finishing, patient-contact controls |
@@ -145,14 +145,14 @@ High-temperature applications require a more precise question than "heat-resista
 | Governing requirement | First route to review | Reason |
 | --- | --- | --- |
 | High-temperature structural strength | IN718 | Precipitation-strengthened nickel route |
-| Oxidizing hot-gas or furnace environment | Hastelloy X | Hot-gas and oxidation-oriented alloy logic |
+| Oxidizing hot-gas or furnace environment | Alloy X | Hot-gas and oxidation-oriented alloy logic |
 | Corrosion-heavy hot-side or chemical flow | IN625 | Corrosion and ductility emphasis |
 | Elevated-temperature lightweight titanium structure | TA15 | Specialized near-alpha titanium route |
 | Conductive cooling near high heat flux | CuCrZr | Thermal transfer with more strength than pure copper |
 
 Applications include turbine hardware, combustor components, hydrogen burner hardware, heat exchangers, fusion cooling mockups, geothermal components, and propulsion support systems. Each has different pressure, media, cycling, inspection, and code requirements.
 
-Use the [energy and propulsion center](/applications/energy-and-propulsion/) and [IN718, IN625, and Hastelloy X comparison guide](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/).
+Use the [energy and propulsion center](/applications/energy-and-propulsion/) and [IN718, IN625, and Alloy X comparison guide](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/).
 
 ## Tooling, molds, dies, and production equipment
 

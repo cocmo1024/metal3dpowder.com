@@ -277,7 +277,7 @@ export const products: Product[] = [
     code: 'IN718 · GH4169',
     family: 'nickel-alloy',
     familyLabel: 'Nickel alloy',
-    aliases: ['Alloy 718', 'IN718', 'Inconel 718', 'UNS N07718', 'GH4169'],
+    aliases: ['Alloy 718', 'IN718', 'UNS N07718', 'GH4169'],
     schemaAliases: ['Alloy 718', 'IN718', 'UNS N07718'],
     summary:
       'Precipitation-hardenable nickel alloy powder for high-temperature structures, turbines, and energy hardware.',
@@ -300,7 +300,7 @@ export const products: Product[] = [
     code: 'IN625 · GH3625',
     family: 'nickel-alloy',
     familyLabel: 'Nickel alloy',
-    aliases: ['Alloy 625', 'IN625', 'Inconel 625', 'UNS N06625', 'GH3625'],
+    aliases: ['Alloy 625', 'IN625', 'UNS N06625', 'GH3625'],
     schemaAliases: ['Alloy 625', 'IN625', 'UNS N06625'],
     summary:
       'Solid-solution nickel alloy powder for corrosion-heavy chemical, marine, energy, and hot-side hardware.',
@@ -319,10 +319,10 @@ export const products: Product[] = [
   {
     id: 'hastelloyx',
     name: 'Nickel Alloy X',
-    code: 'Hastelloy X · GH3536',
+    code: 'Alloy X · UNS N06002',
     family: 'nickel-alloy',
     familyLabel: 'Nickel alloy',
-    aliases: ['Alloy X', 'Hastelloy X', 'GH3536', 'UNS N06002'],
+    aliases: ['Alloy X', 'UNS N06002', 'GH3536'],
     schemaAliases: ['Alloy X', 'UNS N06002'],
     summary:
       'Oxidation-resistant nickel alloy powder for combustion, furnace, hot-gas, and high-temperature hardware.',

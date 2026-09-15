@@ -109,7 +109,7 @@ Use this guide for repair, overlay, or localized deposition. Use adjacent pages 
 - use IN625 corrosion-heavy hot-side hardware when heat plus aggressive media drives the selection
 - use [IN625 geothermal brine hardware](/posts/Alloys/in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware/) when hot brine, scaling, and heat-exchanger or pump repair dominate
 - use [Oil, Gas, and Sour-Service Hardware](/applications/oil-gas-and-sour-service-hardware/) when browsing oilfield flow, valve, pump, choke, and repair topics by application
-- use [Nickel Alloy Powder](/materials/nickel-alloy-powder/) when comparing IN625 with IN718 and Hastelloy X
+- use [Nickel Alloy Powder](/materials/nickel-alloy-powder/) when comparing IN625 with IN718 and Alloy X
 - use [DED Powder](/processes/ded/) when the route is deposition, repair, or powder-versus-wire selection
 
 ## The practical takeaway

@@ -1,6 +1,6 @@
 ---
 title: Metal Powder for Fuel-Cell Balance-of-Plant Hardware
-description: Select 316L, IN625, Hastelloy X, 17-4PH, or CuCrZr powder for fuel-cell manifolds, filters, heat exchangers, burners, and compressor hardware.
+description: Select 316L, IN625, Alloy X, 17-4PH, or CuCrZr powder for fuel-cell manifolds, filters, heat exchangers, burners, and compressor hardware.
 pubDate: 2026-07-18T00:12:00+08:00
 category: Knowledge
 tags:
@@ -35,8 +35,8 @@ That list is a system map, not a list of parts that should be printed. Many tube
 | --- | --- | --- | --- |
 | Low-temperature humidifier, water-separator, or coolant manifold | 316L by LPBF; binder-jet 316L for qualified recurring geometry | Stainless processing maturity, corrosion-aware fluid routing, integrated ports | Water chemistry, ions, biocide, cleaning agents, gas crossover, surface finish, passivation, and leak criteria must be defined |
 | Coolant plate or compact heat-exchanger body | 316L, IN625, or CuCrZr according to fluid, temperature, conductivity, and joining | AM can consolidate channels or reduce brazed interfaces | Thermal performance alone is insufficient; pressure integrity, corrosion, cleaning, wall inspection, and joining control remain decisive |
-| Reformate, anode-off-gas, or tail-gas burner hardware | Hastelloy X or another program high-temperature nickel alloy | Oxidation, thermal cycling, and integrated mixing or cooling passages may lead | Fuel composition, flame position, metal temperature, ignition, emissions, creep, fatigue, and hot testing control suitability |
-| SOFC hot manifold, transition, or heat-exchanger hardware | IN625, Hastelloy X, or a higher-temperature program alloy | High-temperature oxidation, thermal gradients, and complex gas routing can dominate | The selected alloy must match actual temperature, atmosphere, life, joining, and creep requirements; one nickel alloy does not cover every hot zone |
+| Reformate, anode-off-gas, or tail-gas burner hardware | Alloy X or another program high-temperature nickel alloy | Oxidation, thermal cycling, and integrated mixing or cooling passages may lead | Fuel composition, flame position, metal temperature, ignition, emissions, creep, fatigue, and hot testing control suitability |
+| SOFC hot manifold, transition, or heat-exchanger hardware | IN625, Alloy X, or a higher-temperature program alloy | High-temperature oxidation, thermal gradients, and complex gas routing can dominate | The selected alloy must match actual temperature, atmosphere, life, joining, and creep requirements; one nickel alloy does not cover every hot zone |
 | Compressor, expander, or recirculation-pump static housing | 17-4PH, 316L, IN625, or IN718 according to load and environment | Integrated volutes, ports, cooling, and compact packaging may create value | Separate the static pressure body from the rotating wheel, shaft, bearings, seals, and motor; rotor dynamics and fatigue need a dedicated qualification route |
 | Porous filter, flame arrestor, diffuser, or gas distributor | 316L or IN625 through a qualified sintering or binder-jet route | Controlled porous geometry can be a functional feature | Pore size, permeability, pressure drop, particle shedding, cleaning, ignition behavior, strength, and pressure cycling must be accepted together |
 
@@ -46,7 +46,7 @@ The table is a screening tool. It is not a material approval and it deliberately
 
 PEM fuel cells commonly operate with humidification, air compression, coolant management, and water separation. Hardware may see humid air, deionized water, coolant, hydrogen, condensate, or cleaning chemicals at different points in the same system.
 
-Solid oxide fuel cells create a separate high-temperature problem. DOE's [fuel-cell technology comparison](https://www.energy.gov/cmei/fuels/comparison-fuel-cell-technologies) lists SOFC operating temperatures across a broad 500 to 1,000 degrees C range and identifies high-temperature corrosion and component breakdown as challenges. That range is too wide for a generic "SOFC manifold powder" decision. Record the local metal temperature, atmosphere, thermal gradient, dwell time, cycle count, joining method, and required life before comparing IN625 with Hastelloy X or another alloy.
+Solid oxide fuel cells create a separate high-temperature problem. DOE's [fuel-cell technology comparison](https://www.energy.gov/cmei/fuels/comparison-fuel-cell-technologies) lists SOFC operating temperatures across a broad 500 to 1,000 degrees C range and identifies high-temperature corrosion and component breakdown as challenges. That range is too wide for a generic "SOFC manifold powder" decision. Record the local metal temperature, atmosphere, thermal gradient, dwell time, cycle count, joining method, and required life before comparing IN625 with Alloy X or another alloy.
 
 Fuel processors and reformers add another boundary. A humidifier body in a reformate system does not see the same conditions as the reformer burner, catalyst enclosure, heat exchanger, or anode tail-gas combustor. Split the hardware into zones before requesting powder.
 
@@ -62,9 +62,9 @@ LPBF 316L is most attractive for low-volume integrated routing. Binder-jet 316L 
 
 [IN625 powder](/posts/Alloys/gh3625-in625-powder/) deserves review where stainless corrosion margin is weak or the hardware sees a hotter and more aggressive fluid environment. A [published Alloy 625 technical bulletin](https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-625.pdf) documents the wrought alloy's corrosion and temperature-dependent behavior. Wrought handbook values do not become LPBF acceptance values; the powder, build, heat treatment, orientation, and finished part need their own basis.
 
-### Hastelloy X: hot gas and thermal cycling lead
+### Alloy X: hot gas and thermal cycling lead
 
-[Hastelloy X powder](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) enters the review for reformer burners, tail-gas combustors, hot transition ducts, and other flame-adjacent hardware. A [published Alloy X technical page](https://haynesintl.com/en/alloys/alloy-portfolio/high-temperature-alloys/hastelloy-x/) describes the nickel-chromium-iron-molybdenum alloy as combining oxidation resistance, fabricability, and high-temperature strength. The source data are a material-screening reference, not proof for a printed hydrogen burner or SOFC manifold.
+[Alloy X powder](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) enters the review for reformer burners, tail-gas combustors, hot transition ducts, and other flame-adjacent hardware. A [published Alloy X technical page](https://haynesintl.com/en/alloys/alloy-portfolio/high-temperature-alloys/hastelloy-x/) describes the nickel-chromium-iron-molybdenum alloy as combining oxidation resistance, fabricability, and high-temperature strength. The source data are a material-screening reference, not proof for a printed hydrogen burner or SOFC manifold.
 
 ### 17-4PH: strength-led static hardware only after corrosion review
 

@@ -109,7 +109,7 @@ Route geothermal brine decisions through a focused internal map:
 - use the [IN625 desalination hardware page](/posts/Alloys/in625-powder-seawater-desalination-pump-valve-and-brine-hardware/) when the brine is seawater concentrate rather than geothermal fluid
 - use IN625 chemical nozzles and injector blocks when dosing, injection, or small passages dominate
 - compare [316L vs nickel powder](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) if the stainless-to-nickel decision is not settled
-- use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN718, IN625, and Hastelloy X choices
+- use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN718, IN625, and Alloy X choices
 - use [Energy and Propulsion Hardware](/applications/energy-and-propulsion/) for energy-side powder applications
 - use [Geothermal and Brine Energy Hardware](/applications/geothermal-and-brine-energy-hardware/) for brine, heat-exchanger, pump, valve, repair, and corrosion-side energy content
 

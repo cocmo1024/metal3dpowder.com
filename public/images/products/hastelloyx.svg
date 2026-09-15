@@ -25,6 +25,6 @@
     <circle cx="370" cy="390" r="70" fill="url(#orb)" opacity=".88" />
     <circle cx="684" cy="214" r="48" fill="url(#orb)" opacity=".84" />
   </g>
-  <text x="52" y="82" fill="#ffbf78" font-family="Space Grotesk, Arial, sans-serif" font-size="20" letter-spacing="4">HASTELLOY X</text>
-  <text x="52" y="500" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="54" font-weight="700">HX</text>
+  <text x="52" y="82" fill="#ffbf78" font-family="Space Grotesk, Arial, sans-serif" font-size="20" letter-spacing="4">NICKEL ALLOY X</text>
+  <text x="52" y="500" fill="#f5f8fb" font-family="Space Grotesk, Arial, sans-serif" font-size="54" font-weight="700">Alloy X</text>
 </svg>

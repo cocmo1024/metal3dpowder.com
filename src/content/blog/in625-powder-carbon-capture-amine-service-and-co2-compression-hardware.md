@@ -124,7 +124,7 @@ Use this internal map to keep the topic powder-centered:
 - use IN625 chemical nozzles and injector blocks when dosing, injection, or small passages dominate
 - use IN625 corrosion-heavy hot-side hardware when the part is hot and corrosion-heavy but not specifically CCUS
 - use [LPBF Powder](/processes/lpbf/) for compact powder-bed parts and [DED Powder](/processes/ded/) for overlays or repair routes
-- use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN625, IN718, and Hastelloy X choices
+- use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN625, IN718, and Alloy X choices
 - use [Energy and Propulsion Hardware](/applications/energy-and-propulsion/) or [Carbon Capture and CO2 Processing Hardware](/applications/carbon-capture-and-co2-processing-hardware/) when browsing by application
 
 ## The practical takeaway

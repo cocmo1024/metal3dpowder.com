@@ -99,7 +99,7 @@ The RFQ should also state whether the part is a research sample, a high-heat-flu
 
 ## When another route is cleaner
 
-CuCrZr powder should not be forced into every fusion or high-heat-flux part. Pure copper may be better when maximum conductivity dominates and strength is manageable. Wrought CuCrZr may be better when the geometry is simple and qualification favors conventional processing. ODS copper or other advanced copper alloys may be considered when radiation resistance or elevated-temperature strength dominates. Nickel alloys such as [IN718 powder](/posts/Alloys/gh4169-in718-powder/) may be better when structural hot-side strength matters more than conductivity. [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/) may be a better fit for oxidation and hot-gas hardware.
+CuCrZr powder should not be forced into every fusion or high-heat-flux part. Pure copper may be better when maximum conductivity dominates and strength is manageable. Wrought CuCrZr may be better when the geometry is simple and qualification favors conventional processing. ODS copper or other advanced copper alloys may be considered when radiation resistance or elevated-temperature strength dominates. Nickel alloys such as [IN718 powder](/posts/Alloys/gh4169-in718-powder/) may be better when structural hot-side strength matters more than conductivity. [Alloy X powder](/posts/Alloys/hastelloy-x-powder/) may be a better fit for oxidation and hot-gas hardware.
 
 The decision should start with the limiting factor. If the limiting factor is coolant channel geometry plus copper heat removal, CuCrZr powder deserves review. If the limiting factor is radiation tolerance, simple geometry, joining risk, or established qualification, another route may be safer.
 

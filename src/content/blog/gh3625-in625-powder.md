@@ -45,7 +45,7 @@ IN625 is more forgiving than some higher-strength nickel systems, but it still b
 
 ## When IN625 is not the right answer
 
-If the part is primarily structural at elevated temperature, [IN718 powder](/posts/Alloys/gh4169-in718-powder/) may be a better starting point. If the job is more specifically hot-section and oxidation-driven, [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/) may be worth evaluating. The point is to match the alloy to the failure mode.
+If the part is primarily structural at elevated temperature, [IN718 powder](/posts/Alloys/gh4169-in718-powder/) may be a better starting point. If the job is more specifically hot-section and oxidation-driven, [Alloy X powder](/posts/Alloys/hastelloy-x-powder/) may be worth evaluating. The point is to match the alloy to the failure mode.
 
 Corrosion-heavy hot-side hardware is covered on this consolidated IN625 guide; state the media, metal temperature, pressure status, thermal cycle, joining, heat treatment, and required service evidence in the RFQ.
 
@@ -61,7 +61,7 @@ If the actual use case is sour gas, H2S-bearing valve, choke, downhole flow, or 
 
 If the actual use case is a repair overlay, laser-clad rebuild, or localized oilfield corrosion restoration rather than a full new part, continue with the focused [IN625 DED powder repair overlay guide](/posts/Alloys/in625-ded-powder-repair-overlays-and-oilfield-corrosion-hardware/).
 
-If the actual decision sits between IN625 and Hastelloy X on chemical hot-gas hardware, continue with the dedicated [IN625 vs Hastelloy X chemical hot-gas comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/).
+If the actual decision sits between IN625 and Alloy X on chemical hot-gas hardware, continue with the dedicated [IN625 vs Alloy X chemical hot-gas comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/).
 
 Chemical nozzles and injector blocks are also covered here at the alloy-selection level. Send the media, flow path, pressure, temperature, joining, finishing, and acceptance requirements so the response can be narrowed to the actual hardware.
 

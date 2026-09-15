@@ -251,7 +251,11 @@ const blogPostImages: Record<string, string> = {
 export const getBlogPostPath = (postOrId: BlogPost | string) =>
   `/posts/Alloys/${typeof postOrId === 'string' ? postOrId : postOrId.id}/`;
 
-export const slugifyTag = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+export const slugifyTag = (value: string) => {
+  const slug = value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  // Keep the established archive URL when updating the public material label.
+  return slug === 'alloy-x' ? 'hastelloy-x' : slug;
+};
 
 export const getTagPath = (tagOrSlug: string) => `/blog/tags/${slugifyTag(tagOrSlug)}/`;
 

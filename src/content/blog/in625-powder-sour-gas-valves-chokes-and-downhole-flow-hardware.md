@@ -98,7 +98,7 @@ Use this internal map to keep the topic powder-centered:
 - use [17-4PH oil and gas valve and pump hardware](/posts/Alloys/17-4ph-powder-oil-gas-valve-components-and-pump-hardware/) when stronger stainless hardware is the main question
 - use [316L vs nickel powder](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) if the stainless-to-nickel decision is not settled
 - use [IN625 corrosion-heavy hot-side hardware](/posts/Alloys/gh3625-in625-powder/) when the environment is hot and corrosive but not specifically sour-service oilfield hardware
-- use [Nickel Alloy Powder](/materials/nickel-alloy-powder/) for adjacent IN625, IN718, and Hastelloy X choices
+- use [Nickel Alloy Powder](/materials/nickel-alloy-powder/) for adjacent IN625, IN718, and Alloy X choices
 - use [Oil, Gas, and Sour-Service Hardware](/applications/oil-gas-and-sour-service-hardware/) when browsing oilfield flow and wear hardware by application
 
 ## The practical takeaway

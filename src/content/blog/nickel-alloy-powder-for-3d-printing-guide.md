@@ -1,6 +1,6 @@
 ---
-title: "Nickel Alloy Powder for 3D Printing: IN718, IN625, and Hastelloy X"
-description: Nickel alloy powder for 3D printing guide covering IN718, IN625, Hastelloy X, LPBF, DED, hot-side parts, and corrosion hardware.
+title: "Nickel Alloy Powder for 3D Printing: IN718, IN625, and Alloy X"
+description: Nickel alloy powder for 3D printing guide covering IN718, IN625, Alloy X, LPBF, DED, hot-side parts, and corrosion hardware.
 pubDate: 2026-05-02T10:13:00+08:00
 updatedDate: 2026-08-03
 category: Nickel
@@ -12,7 +12,7 @@ tags:
 featured: true
 ---
 
-Nickel alloy powder for 3D printing is usually searched when stainless steel is no longer enough. The reason may be temperature, corrosion, oxidation, thermal cycling, or a combination of all of them. The key decision is not simply "nickel powder." The useful decision is whether IN718, IN625, or Hastelloy X fits the actual hardware.
+Nickel alloy powder for 3D printing is usually searched when stainless steel is no longer enough. The reason may be temperature, corrosion, oxidation, thermal cycling, or a combination of all of them. The key decision is not simply "nickel powder." The useful decision is whether IN718, IN625, or Alloy X fits the actual hardware.
 
 In metal AM, nickel alloys are used in LPBF, DED, and selected powder metallurgy routes. They are valuable because they allow complex hot-side or corrosion-side geometry, but they also require disciplined powder handling, heat treatment, and inspection planning.
 
@@ -30,9 +30,9 @@ IN625 powder is often the more corrosion-led nickel route. It is useful for chem
 
 IN625 is usually easier to justify when corrosion exposure and ductility matter more than precipitation-strengthened hot-section strength. It is not a substitute for a corrosion review, but it often enters the discussion before IN718 when the hardware is passage-driven and chemically demanding.
 
-## Hastelloy X powder
+## Alloy X powder
 
-Hastelloy X powder belongs in oxidation-resistant and high-temperature gas-side discussions. Furnace hardware, combustor-adjacent parts, hot-gas structures, and hydrogen burner hardware may require a different logic than IN718 or IN625.
+Alloy X powder belongs in oxidation-resistant and high-temperature gas-side discussions. Furnace hardware, combustor-adjacent parts, hot-gas structures, and hydrogen burner hardware may require a different logic than IN718 or IN625.
 
 The practical question is whether the part is strength-led, corrosion-led, or oxidation and hot-gas led. That distinction should be made before asking for a powder quote.
 
@@ -42,7 +42,7 @@ If the application is a liquid-rocket chamber jacket, preburner, propellant mani
 | --- | --- |
 | IN718 | High-temperature strength and structural hot-side AM parts. |
 | IN625 | Corrosion-heavy, chemical, marine, and flow-path hardware. |
-| Hastelloy X | Oxidation-resistant furnace, combustor, and hot-gas hardware. |
+| Alloy X | Oxidation-resistant furnace, combustor, and hot-gas hardware. |
 
 ## Powder and process points
 
@@ -56,18 +56,18 @@ Define the operating temperature, chemical environment, load path, internal pass
 
 ## Related nickel powder pages
 
-For alloy-specific detail, continue with [IN718 / GH4169 powder](/posts/Alloys/gh4169-in718-powder/), [IN625 / GH3625 powder](/posts/Alloys/gh3625-in625-powder/), [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/), and [IN718 vs IN625 powder](/posts/Alloys/in718-vs-in625-powder/).
+For alloy-specific detail, continue with [IN718 / GH4169 powder](/posts/Alloys/gh4169-in718-powder/), [IN625 / GH3625 powder](/posts/Alloys/gh3625-in625-powder/), [Alloy X powder](/posts/Alloys/hastelloy-x-powder/), and [IN718 vs IN625 powder](/posts/Alloys/in718-vs-in625-powder/).
 
-## IN718, IN625, and Hastelloy X decision matrix
+## IN718, IN625, and Alloy X decision matrix
 
 | Primary requirement | First alloy to review | Why | Do not assume |
 | --- | --- | --- | --- |
 | Structural load at elevated temperature | IN718 / GH4169 | Precipitation-strengthened route for loaded hot-side hardware | That IN718 is best for every hot-gas or corrosion condition |
 | Corrosion-resistant flow, repair, or pressure hardware | IN625 / GH3625 | Strong corrosion and fabrication logic across LPBF and DED applications | That generic IN625 data qualify a named chemical, sour, brine, or nuclear service |
-| Oxidation-driven furnace, combustor, or hot-gas hardware | Hastelloy X | High-temperature oxidation-focused alloy logic | That furnace suitability proves creep, fatigue, burner, or flight qualification |
-| Maximum temperature with a different alloy basis | Project-specific superalloy | IN718, IN625, and Hastelloy X may all be outside the required envelope | That “nickel alloy powder” is a complete material choice |
+| Oxidation-driven furnace, combustor, or hot-gas hardware | Alloy X | High-temperature oxidation-focused alloy logic | That furnace suitability proves creep, fatigue, burner, or flight qualification |
+| Maximum temperature with a different alloy basis | Project-specific superalloy | IN718, IN625, and Alloy X may all be outside the required envelope | That “nickel alloy powder” is a complete material choice |
 
-This guide now owns the broad IN718-versus-IN625-versus-Hastelloy X selection intent. Separate comparison pages are not needed unless the searcher faces an independently verifiable decision with its own service and acceptance basis.
+This guide now owns the broad IN718-versus-IN625-versus-Alloy X selection intent. Separate comparison pages are not needed unless the searcher faces an independently verifiable decision with its own service and acceptance basis.
 
 ## Match LPBF and DED powder to different delivery systems
 

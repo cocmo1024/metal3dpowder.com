@@ -1,6 +1,6 @@
 ---
 title: "Nickel Alloy Powder for Rocket Chamber Jackets, Preburners, and Hot-Fire Hardware"
-description: Select IN718, IN625, Hastelloy X, or a program-specific nickel alloy powder for rocket chamber jackets, preburners, manifolds, nozzles, and hot-fire hardware.
+description: Select IN718, IN625, Alloy X, or a program-specific nickel alloy powder for rocket chamber jackets, preburners, manifolds, nozzles, and hot-fire hardware.
 pubDate: 2026-07-15T00:06:00+08:00
 category: Nickel
 tags:
@@ -16,7 +16,7 @@ The material decision is:
 
 > Is the part a structural jacket, a propellant-side flow component, an oxidation-led hot-gas part, or a program-specific extreme-environment component, and which powder process can produce and qualify that role?
 
-This guide separates the roles. It does not claim that IN718, IN625, Hastelloy X, NASA HR-1, or GRX-810 are interchangeable, commercially equivalent, or automatically suitable for flight hardware.
+This guide separates the roles. It does not claim that IN718, IN625, Alloy X, NASA HR-1, or GRX-810 are interchangeable, commercially equivalent, or automatically suitable for flight hardware.
 
 ## Short answer: the copper liner and nickel structure solve different problems
 
@@ -25,7 +25,7 @@ This guide separates the roles. It does not claim that IN718, IN625, Hastelloy X
 | Outer jacket over a copper chamber liner | Pressure load, bond integrity, compatible deposition and thermal history | Qualified IN625 or another demonstrated structural-jacket alloy; IN718 only with program evidence | LP-DED or another qualified deposition/joining route | No representative copper-nickel interface qualification |
 | Structural ring, mount, housing, or support | Elevated-temperature strength, fatigue, interfaces, heat treatment | IN718 when strength retention is the central reason | LPBF for compact parts; DED for larger features | The part is actually oxidation-led or hydrogen-limited |
 | Propellant manifold or corrosion-sensitive flow body | Media compatibility, ductility, leak integrity, passages | IN625 or another environment-qualified alloy | LPBF for compact routed parts | Material compatibility is inferred from alloy reputation alone |
-| Preburner, injector, or flame-adjacent hot-gas component | Oxidation, creep, thermal cycling, combustion environment | Hastelloy X or a program-specific extreme-temperature alloy | LPBF or DED depending on size | No service-specific hot-gas and life evidence |
+| Preburner, injector, or flame-adjacent hot-gas component | Oxidation, creep, thermal cycling, combustion environment | Alloy X or a program-specific extreme-temperature alloy | LPBF or DED depending on size | No service-specific hot-gas and life evidence |
 | Large regeneratively cooled nozzle | Hydrogen resistance, pressure, thin channel walls, scale | Program-specific alloy such as NASA HR-1 where available and licensed | LP-DED | Commodity nickel alloy is substituted without hydrogen or fatigue evidence |
 | Conductive chamber hot-wall liner | Heat transfer into regenerative coolant | CuCrZr/C18150, GRCop, or another qualified copper alloy | Usually LPBF | Nickel is being used where conductivity-first copper is required |
 
@@ -74,9 +74,9 @@ That makes IN625 a defensible candidate to evaluate for:
 
 It does not mean IN625 automatically meets every chamber pressure, temperature, fatigue, or life target. Compare its strength and thermal cycle against the actual jacket duty. If a stronger age-hardened structure is required, the program may need IN718 or a dedicated alloy. If combustion-facing oxidation or creep dominates, a different hot-gas alloy may be cleaner.
 
-## Hastelloy X: an oxidation-led hot-gas candidate, not a default jacket
+## Alloy X: an oxidation-led hot-gas candidate, not a default jacket
 
-Hastelloy X belongs in the review when the part is flame-adjacent or hot-gas-facing and oxidation plus thermal cycling are more important than maximum age-hardened structural strength. Candidate part classes can include preburner development hardware, combustor liners, hot-gas ducts, injector-adjacent components, and burner-rig parts.
+Alloy X belongs in the review when the part is flame-adjacent or hot-gas-facing and oxidation plus thermal cycling are more important than maximum age-hardened structural strength. Candidate part classes can include preburner development hardware, combustor liners, hot-gas ducts, injector-adjacent components, and burner-rig parts.
 
 The program must still verify:
 
@@ -88,7 +88,7 @@ The program must still verify:
 - internal inspection, cleaning, and flow verification,
 - whether another alloy has stronger program-specific data.
 
-Hastelloy X should not be selected merely because a component is called a preburner or combustor. NASA's recent [GRX-810 development](https://ntrs.nasa.gov/citations/20240000067) specifically targets injectors, preburners, turbines, and extreme-temperature hot-section components, which shows why advanced programs may need an alloy beyond common commercial nickel powders. GRX-810 is program-specific development evidence, not a commodity substitute or a performance promise for Hastelloy X.
+Alloy X should not be selected merely because a component is called a preburner or combustor. NASA's recent [GRX-810 development](https://ntrs.nasa.gov/citations/20240000067) specifically targets injectors, preburners, turbines, and extreme-temperature hot-section components, which shows why advanced programs may need an alloy beyond common commercial nickel powders. GRX-810 is program-specific development evidence, not a commodity substitute or a performance promise for Alloy X.
 
 ## NASA HR-1 shows why hydrogen service needs its own route
 
@@ -104,7 +104,7 @@ The procurement lesson is not "request NASA HR-1" without access to a qualified 
 - verify powder source, chemistry, heat treatment, and process changes,
 - avoid transferring air data or another alloy's hot-fire history.
 
-For many buyers, IN718, IN625, or Hastelloy X may remain the practical quotable options. Where their evidence does not meet the environment, the correct decision may be a program-specific alloy or a different manufacturing route, not a weaker specification.
+For many buyers, IN718, IN625, or Alloy X may remain the practical quotable options. Where their evidence does not meet the environment, the correct decision may be a program-specific alloy or a different manufacturing route, not a weaker specification.
 
 ## LPBF and LP-DED require different powder definitions
 
@@ -140,7 +140,7 @@ Define and verify:
 
 The paired [CuCrZr chamber-liner guide](/posts/Alloys/cucrzr-powder-rocket-engine-parts-and-heat-exchangers/) covers the conductivity-first side of this architecture.
 
-For cryogenic valve bodies, injector flow hardware, and propellant manifolds outside the chamber-wall architecture, use the [rocket feed-system powder selection guide](/posts/Alloys/metal-powder-rocket-injectors-cryogenic-valves-feed-manifolds/). It compares the service boundaries for IN718, IN625, Hastelloy X, Ti64, and copper-alloy routes.
+For cryogenic valve bodies, injector flow hardware, and propellant manifolds outside the chamber-wall architecture, use the [rocket feed-system powder selection guide](/posts/Alloys/metal-powder-rocket-injectors-cryogenic-valves-feed-manifolds/). It compares the service boundaries for IN718, IN625, Alloy X, Ti64, and copper-alloy routes.
 
 ## Powder and supplier controls for an RFQ
 

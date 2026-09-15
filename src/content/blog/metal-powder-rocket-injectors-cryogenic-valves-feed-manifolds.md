@@ -1,6 +1,6 @@
 ---
 title: Metal Powder for Rocket Injectors, Cryogenic Valves, and Feed Manifolds
-description: Compare IN718, IN625, Hastelloy X, Ti64, and copper-alloy powder routes for rocket injectors, cryogenic valves, feed manifolds, and RFQs.
+description: Compare IN718, IN625, Alloy X, Ti64, and copper-alloy powder routes for rocket injectors, cryogenic valves, feed manifolds, and RFQs.
 pubDate: 2026-07-17T00:18:00+08:00
 category: Knowledge
 tags:
@@ -27,7 +27,7 @@ This page covers non-rotating feed and injection hardware. For impellers and ind
 
 | Hardware zone | First powder routes to review | Why they enter the review | Critical boundary |
 | --- | --- | --- | --- |
-| Injector body, swirl cup, or hot-face structure | Hastelloy X, IN718, or the program nickel alloy | Hot-gas oxidation, strength, thermal cycling, and integrated passages may lead | Alloy selection must follow the actual hot-face and propellant environment; powder does not replace hot-fire evidence |
+| Injector body, swirl cup, or hot-face structure | Alloy X, IN718, or the program nickel alloy | Hot-gas oxidation, strength, thermal cycling, and integrated passages may lead | Alloy selection must follow the actual hot-face and propellant environment; powder does not replace hot-fire evidence |
 | Cryogenic fuel valve body or non-rotating support | IN718 or IN625, with other program-qualified alloys considered | Nickel alloys can provide structural and environmental capability across demanding temperatures | Seat, trim, spring, seal, galling, leakage, and fluid compatibility remain component-level decisions |
 | Oxidizer valve or manifold | Program-approved oxygen-compatible alloy and process | Ignition and cleanliness can dominate strength or mass | Do not select Ti64 merely for weight; oxygen compatibility assessment controls |
 | Fuel or oxidizer feed manifold | IN625, IN718, or a qualified stainless/nickel route | Integrated branches can remove welds and reduce assembly count | Passage cleaning, roughness, pressure drop, proof, leak, and NDE access can erase the AM benefit |
@@ -77,9 +77,9 @@ IN625 deserves review for stationary manifolds, valve bodies, and feed hardware 
 
 Use the [IN718 versus IN625 comparison](/posts/Alloys/in718-vs-in625-powder/) for the broader alloy boundary. The decision here is narrower: which one fits the exact wetted zone and load case.
 
-### Hastelloy X: hot-gas exposure leads
+### Alloy X: hot-gas exposure leads
 
-Hastelloy X enters the review for injector swirl cups, face structures, and combustor-adjacent hardware when oxidation, thermal cycling, and hot-gas service lead. It is not automatically the best material for a cryogenic valve or a high-strength pump support. State which side of the injector sees hot gas, which side sees propellant, and how the interface is tested.
+Alloy X enters the review for injector swirl cups, face structures, and combustor-adjacent hardware when oxidation, thermal cycling, and hot-gas service lead. It is not automatically the best material for a cryogenic valve or a high-strength pump support. State which side of the injector sees hot gas, which side sees propellant, and how the interface is tested.
 
 ### Ti64: mass reduction only after compatibility review
 

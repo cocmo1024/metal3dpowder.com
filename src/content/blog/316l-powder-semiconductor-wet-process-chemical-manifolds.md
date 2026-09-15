@@ -40,7 +40,7 @@ For AM, that means the powder request has to be narrower:
 - Which faces, ports, and sealing lands will be machined?
 - Can powder be removed from every internal passage?
 - What leak test, pressure test, flow check, CT, borescope, or cleanliness evidence is required?
-- Is 316L chemically sufficient, or should the review move toward IN625, Hastelloy, fluoropolymer, or conventional tubing?
+- Is 316L chemically sufficient, or should the review move toward IN625, another corrosion-resistant nickel alloy, fluoropolymer, or conventional tubing?
 
 ## Where 316L powder can fit
 
@@ -67,7 +67,7 @@ Be cautious or move away from 316L LPBF when:
 - trapped powder cannot be removed or verified,
 - crevices, dead legs, or blind pockets create residue risk,
 - a qualified electropolished tube-and-fitting assembly is lower risk,
-- a polymer, fluoropolymer, nickel alloy, Hastelloy, or machined route is already the qualified baseline,
+- a polymer, fluoropolymer, corrosion-resistant nickel alloy, or machined route is already the qualified baseline,
 - the RFQ cannot define the media, temperature, pressure, leak requirement, cleaning expectation, or inspection method.
 
 If the media and temperature clearly exceed a stainless comfort zone, review the [316L vs nickel powder corrosion-side manifold comparison](/posts/Alloys/316l-vs-nickel-powder-for-corrosion-side-manifolds/) and the [IN625 chemical nozzle and injector block page](/posts/Alloys/gh3625-in625-powder/) before locking a 316L powder route.

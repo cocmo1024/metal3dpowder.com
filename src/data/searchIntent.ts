@@ -142,7 +142,7 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
     metaDescription:
       'Source IN718 or Alloy 718 powder for LPBF or DED by PSD, chemistry, heat treatment, and lot evidence. Request a technical supplier RFQ.',
     buyerQueries: [
-      'Inconel 718 powder supplier',
+      'Alloy 718 powder supplier',
       'IN718 powder for LPBF',
       'Alloy 718 powder for DED',
       'IN718 metal powder price',
@@ -158,7 +158,7 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
     metaDescription:
       'Source IN625 or Alloy 625 powder for LPBF or DED by PSD, service chemistry, and lot evidence. Request supplier pricing and documents.',
     buyerQueries: [
-      'Inconel 625 powder supplier',
+      'Alloy 625 powder supplier',
       'IN625 powder for LPBF',
       'Alloy 625 powder for DED',
       'IN625 metal powder price',
@@ -174,13 +174,13 @@ export const productSearchIntents: Record<string, ProductSearchIntent> = {
     metaDescription:
       'Source Alloy X powder for LPBF by PSD, chemistry, thermal exposure, and lot evidence. Request supplier price, availability, and documents.',
     buyerQueries: [
-      'Hastelloy X powder supplier',
+      'Alloy X powder supplier',
       'Alloy X powder for LPBF',
       'Alloy X powder 15–45 µm',
-      'Hastelloy X metal powder price',
+      'Alloy X metal powder price',
     ],
     designationGuidance:
-      'Use Alloy X or UNS N06002 for chemistry-led sourcing. State a Hastelloy-branded requirement explicitly; it cannot be inferred from an alloy-equivalent search term.',
+      'Use Alloy X or UNS N06002 for chemistry-led sourcing. Confirm the governing specification and lot chemistry; a related designation does not establish an identical source or qualification.',
     specificationPrompt:
       'State the UNS, branded-source, customer, or program basis plus crack-control, thermal-exposure, and oxidation-test requirements.',
   },

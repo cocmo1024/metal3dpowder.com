@@ -76,7 +76,7 @@ export const materialHubs: HubDefinition[] = [
     group: 'materials',
     slug: 'nickel-alloy-powder',
     title: 'Nickel Alloy Powder',
-    description: 'IN718, IN625, and Hastelloy X powder guidance for hot-side, corrosion, and chemical hardware.',
+    description: 'IN718, IN625, and Alloy X powder guidance for hot-side, corrosion, and chemical hardware.',
     postIds: [
       'nickel-alloy-powder-for-3d-printing-guide',
       '316l-in625-powder-pm-hip-nuclear-pressure-components',
@@ -310,7 +310,7 @@ export const applicationHubs: HubDefinition[] = [
     group: 'applications',
     slug: 'nuclear-and-smr-support-hardware',
     title: 'Nuclear and SMR Support Hardware',
-    description: '316L, IN625, Hastelloy X, 17-4PH, and copper powder guidance for molten-salt, helium, liquid-sodium, PM-HIP, SMR auxiliary, test-loop, and qualification-led hardware decisions.',
+    description: '316L, IN625, Alloy X, 17-4PH, and copper powder guidance for molten-salt, helium, liquid-sodium, PM-HIP, SMR auxiliary, test-loop, and qualification-led hardware decisions.',
     postIds: [
       'in625-powder-molten-salt-reactor-flow-hardware-heat-exchangers',
       'metal-powder-high-temperature-gas-liquid-sodium-reactor-hardware',

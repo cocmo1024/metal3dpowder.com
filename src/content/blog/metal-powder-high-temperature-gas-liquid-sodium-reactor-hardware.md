@@ -1,6 +1,6 @@
 ---
 title: Metal Powder for Gas-Cooled and Liquid-Sodium Reactor Hardware
-description: How to screen Hastelloy X, 316L, IN625, and other metal powder routes for helium-cooled and liquid-sodium reactor development hardware.
+description: How to screen Alloy X, 316L, IN625, and other metal powder routes for helium-cooled and liquid-sodium reactor development hardware.
 pubDate: 2026-07-20T00:20:00+08:00
 category: Knowledge
 tags:
@@ -41,11 +41,11 @@ Molten fluoride and chloride systems are intentionally excluded. They have a sep
 
 DOE describes [high-temperature gas reactors](https://www.energy.gov/ne/articles/nuclear-101-what-high-temperature-gas-reactor) as helium-cooled systems designed to produce heat around 750 degrees C for electricity or industrial processes. Helium is chemically inert, but real reactor gas can contain low levels of reactive impurities. Surface reactions at high temperature can still matter.
 
-An INL-hosted review of [environmental effects in impure helium](https://inldigitallibrary.inl.gov/sites/sti/sti/3484392.pdf) identifies Alloy 617, Alloy 800H, and Hastelloy X as reference materials from prior very-high-temperature reactor testing. It also discusses oxidation, carburization and the effect of gas "dryness" on protective surface layers. The procurement implication is direct: a buyer must name the gas chemistry and exposure state, not merely write "helium compatible."
+An INL-hosted review of [environmental effects in impure helium](https://inldigitallibrary.inl.gov/sites/sti/sti/3484392.pdf) identifies Alloy 617, Alloy 800H, and Alloy X as reference materials from prior very-high-temperature reactor testing. It also discusses oxidation, carburization and the effect of gas "dryness" on protective surface layers. The procurement implication is direct: a buyer must name the gas chemistry and exposure state, not merely write "helium compatible."
 
 The current engineering baseline also matters. An INL technical report on [Alloy 617 for ASME Section III, Division 5](https://www.osti.gov/biblio/1836553) documents Alloy 617 as a leading intermediate-heat-exchanger candidate and discusses established high-temperature nuclear materials including Alloy 800H, Types 304 and 316 stainless steel, Grade 91, and 2.25Cr-1Mo. The applicable code edition, code case, temperature range and owner acceptance must be checked at project execution time.
 
-Hastelloy X powder can still enter an AM research matrix because it is a hot-gas alloy with LPBF experience and has appeared in helium-reactor materials studies. It should not be marketed as a substitute for Alloy 617 or 800H based only on oxidation resistance.
+Alloy X powder can still enter an AM research matrix because it is a hot-gas alloy with LPBF experience and has appeared in helium-reactor materials studies. It should not be marketed as a substitute for Alloy 617 or 800H based only on oxidation resistance.
 
 ### Gas-side evidence that should exist before a component build
 
@@ -58,7 +58,7 @@ Hastelloy X powder can still enter an AM research matrix because it is a hot-gas
 - irradiation scope and a written boundary when tests are non-irradiated
 - comparison against the owner-selected wrought or code material
 
-For ordinary furnace or combustion hardware outside nuclear service, use the [Hastelloy X furnace and hot-gas guide](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/). The nuclear helium route adds gas-purity control, long-duration mechanical behavior, code design, irradiation and quality-program requirements.
+For ordinary furnace or combustion hardware outside nuclear service, use the [Alloy X furnace and hot-gas guide](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/). The nuclear helium route adds gas-purity control, long-duration mechanical behavior, code design, irradiation and quality-program requirements.
 
 ## Liquid sodium: distinguish 316L powder from 316H design data
 
@@ -88,7 +88,7 @@ The commercial powder families on this site have narrow roles in an advanced-rea
 
 | Powder family | Plausible role | Restriction that must be stated |
 |---|---|---|
-| Hastelloy X | Hot-helium coupon, test-loop feature or non-code flow hardware when the owner includes it in the candidate matrix | Reference-material history is not component qualification; impure-helium and mechanical tests remain necessary |
+| Alloy X | Hot-helium coupon, test-loop feature or non-code flow hardware when the owner includes it in the candidate matrix | Reference-material history is not component qualification; impure-helium and mechanical tests remain necessary |
 | IN625 | Corrosion-side or mixed-environment development hardware when the owner has an Alloy 625 rationale | Not a default HTGR or sodium structural alloy; direct environment and high-temperature property evidence is required |
 | 316L | Lower-temperature auxiliary manifolds, instrumentation blocks, non-wetted supports or comparison coupons | Do not substitute it for 316H design data or use it as a generic sodium-wetted high-temperature material |
 | 17-4PH | Maintenance tooling, handling fixtures, gauges or strength-led non-wetted support hardware when the temperature and classification fit | Keep it out of hot sodium, hot helium pressure boundaries and irradiation-critical claims without an owner-led evidence path |
@@ -148,7 +148,7 @@ Build an evidence matrix before asking for production powder.
 | Gate | High-temperature helium route | Liquid-sodium route | Required record |
 |---|---|---|---|
 | Environment | Gas composition, impurity range, temperature, pressure and cycling | Sodium chemistry, oxygen/cold-trap control, temperature, flow and carbon activity | Owner-approved exposure specification |
-| Material baseline | Alloy 617, 800H, Hastelloy X or other program material | 316H, Grade 91, Alloy 709 or other program material | Baseline selection rationale |
+| Material baseline | Alloy 617, 800H, Alloy X or other program material | 316H, Grade 91, Alloy 709 or other program material | Baseline selection rationale |
 | AM state | Orientation, density, heat treatment, HIP, machining and surface finish | Same, plus representative sodium-wetted channel condition | Manufacturing plan and traveler |
 | Exposure output | Oxide scale, carburization/decarburization, depletion and property changes | Mass transfer, carbon change, microstructure, dimensions and property changes | Laboratory report with raw-data traceability |
 | Mechanical output | Creep, creep-fatigue, fatigue or tensile as design requires | Thermal aging plus sodium-exposed mechanical comparison | Test standard and acceptance rule |
@@ -185,7 +185,7 @@ Send these inputs with the drawing or coupon plan:
 - **Component zone:** primary, intermediate loop, auxiliary, instrumentation, test article or tooling
 - **Classification:** safety/pressure function, code path, owner specification and irradiation scope
 - **Environment detail:** gas impurities or sodium chemistry; temperature; pressure; flow; duration; cycling; off-normal boundary
-- **Baseline material:** applicable Alloy 617, 800H, Hastelloy X, 316H, Grade 91, Alloy 709 or owner-approved comparison
+- **Baseline material:** applicable Alloy 617, 800H, Alloy X, 316H, Grade 91, Alloy 709 or owner-approved comparison
 - **Requested powder:** alloy, quantity, PSD, chemistry, morphology, flow/density tests, contamination and reuse status
 - **Build route:** LPBF machine, orientation, parameter-control level and representative surface features
 - **Post-processing:** heat treatment, HIP, machining, cleaning, coating or joining
@@ -196,7 +196,7 @@ Use the [contact page](/contact/) to submit a powder request only after the two 
 
 ## Application limits
 
-This page does not provide a code design value, corrosion rate, sodium mass-transfer limit, helium impurity limit, creep life, irradiation allowance or reactor qualification. It does not claim that commercial Hastelloy X, IN625, 316L, 17-4PH or IN718 powder is acceptable for coolant-wetted or safety-related service. It does not treat a listed research material as currently approved under every code edition or owner program.
+This page does not provide a code design value, corrosion rate, sodium mass-transfer limit, helium impurity limit, creep life, irradiation allowance or reactor qualification. It does not claim that commercial Alloy X, IN625, 316L, 17-4PH or IN718 powder is acceptable for coolant-wetted or safety-related service. It does not treat a listed research material as currently approved under every code edition or owner program.
 
 The main failure mode is category error: using evidence from hot air for helium, from fluoride salt for sodium, from 316H for 316L, from wrought material for an as-built internal surface, or from a non-safety test article for a pressure component. Each transfer needs a written technical basis.
 
@@ -213,6 +213,6 @@ The main failure mode is category error: using evidence from hot air for helium,
 
 ## The procurement decision
 
-For high-temperature gas hardware, start from the helium chemistry, temperature and owner baseline, then decide whether Hastelloy X or another available powder belongs in a comparison program. For liquid-sodium hardware, start from 316H, Grade 91, Alloy 709 or the owner's chosen structural material, and do not force commercial 316L powder into a role it does not inherit.
+For high-temperature gas hardware, start from the helium chemistry, temperature and owner baseline, then decide whether Alloy X or another available powder belongs in a comparison program. For liquid-sodium hardware, start from 316H, Grade 91, Alloy 709 or the owner's chosen structural material, and do not force commercial 316L powder into a role it does not inherit.
 
 Buy powder when AM geometry helps answer the engineering question and the powder lot can remain traceable through environmental and mechanical testing. Use conventional manufacture when the approved alloy, code route or inspection plan is stronger there. That decision discipline is more likely to produce a credible powder inquiry than a broad request for "nuclear metal powder."

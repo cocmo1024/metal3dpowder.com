@@ -121,7 +121,7 @@ For a seawater or desalination project, route the decision through a small conte
 - use IN625 chemical nozzles and injector blocks when small passages and chemical dosing dominate
 - use IN625 corrosion-heavy hot-side hardware when the part combines aggressive media with hotter service
 - use [IN625 geothermal brine hardware](/posts/Alloys/in625-powder-geothermal-brine-heat-exchanger-and-valve-hardware/) when the brine is a hot geothermal production fluid rather than seawater concentrate
-- use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN718, IN625, and Hastelloy X choices
+- use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub for adjacent IN718, IN625, and Alloy X choices
 - use the [Marine and Desalination Hardware](/applications/marine-and-desalination-hardware/) hub for seawater, brine, pump, valve, and corrosion-side application pages
 
 ## The practical takeaway

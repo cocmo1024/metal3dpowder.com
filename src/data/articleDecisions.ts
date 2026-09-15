@@ -13,7 +13,7 @@ const guides: Record<string, ArticleDecisionGuide> = {
   'hastelloy-x-powder-furnace-and-hot-gas-hardware': {
     title: 'Define the hot-gas duty before selecting the powder',
     introduction:
-      'A furnace fixture, combustor-adjacent part, burner component, and instrumented hot-gas article can share an alloy family while requiring different evidence. Resolve the service envelope before treating Hastelloy X as the answer.',
+      'A furnace fixture, combustor-adjacent part, burner component, and instrumented hot-gas article can share an alloy family while requiring different evidence. Resolve the service envelope before treating Alloy X as the answer.',
     checks: [
       { label: 'Atmosphere', question: 'State the gas chemistry, contaminants, pressure, peak temperature, dwell time, and number of thermal cycles.' },
       { label: 'Failure mode', question: 'Rank oxidation, creep, thermal fatigue, distortion, cracking, erosion, and joining risk for the actual component.' },
@@ -222,7 +222,7 @@ const guides: Record<string, ArticleDecisionGuide> = {
   'hastelloy-x-powder': {
     title: 'Keep oxidation-driven service distinct from generic nickel duty',
     introduction:
-      'Hastelloy X is not an automatic high-temperature upgrade. Selection should show why oxidation, hot-gas stability, fabrication, and thermal cycling outweigh the strengths of IN718 or corrosion focus of IN625.',
+      'Alloy X is not an automatic high-temperature upgrade. Selection should show why oxidation, hot-gas stability, fabrication, and thermal cycling outweigh the strengths of IN718 or corrosion focus of IN625.',
     checks: [
       { label: 'Service envelope', question: 'State atmosphere, contaminants, temperature-time profile, pressure, stress, cooling, start-stop cycles, and expected degradation mode.' },
       { label: 'Alloy comparison', question: 'Compare IN718 for strength-led duty and IN625 for corrosion-led duty using the same temperature, condition, and test basis.' },

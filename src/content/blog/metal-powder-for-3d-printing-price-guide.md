@@ -27,7 +27,7 @@ The table is a relative sourcing guide, not a quotation. Actual order prices can
 | H13 and M300 tool steel | Specialized tooling route | Grade identity, PSD yield, quantity, documentation and technical support |
 | AlSi10Mg aluminum | Common LPBF aluminum route | Packaging, oxide/contamination control, PSD and shipment handling |
 | Ti6Al4V / Grade 23 / CP titanium | Higher-control reactive-metal route | Interstitial limits, atomization route, grade, documents, pack size and destination |
-| IN718, IN625 and Hastelloy X | Alloy- and service-specific nickel route | Chemistry, lot size, PSD, qualification evidence and market raw-material basis |
+| IN718, IN625 and Alloy X | Alloy- and service-specific nickel route | Chemistry, lot size, PSD, qualification evidence and market raw-material basis |
 | CuCrZr or pure copper | Specialized conductivity-led route | Exact alloy, oxygen control, PSD yield, machine route and requested conductivity evidence |
 | CoCrMo or CoCrW | Specialized dental, medical or industrial wear route | Exact grade, documentation, quantity, powder condition and application evidence |
 
@@ -37,7 +37,7 @@ This relative position is best used for early sourcing decisions. For a formal p
 
 Stainless steel powder is usually one of the more economical metal AM powder categories. 316L and 17-4PH are common examples. Tool steels such as H13 and M300 usually cost more than common stainless powders because of alloy composition and production volume.
 
-Titanium powders such as Ti64 or Grade 23 are usually higher because of raw material, oxygen control, and powder handling requirements. Nickel alloys such as IN718, IN625, and Hastelloy X are also higher because of alloying content and demanding application environments.
+Titanium powders such as Ti64 or Grade 23 are usually higher because of raw material, oxygen control, and powder handling requirements. Nickel alloys such as IN718, IN625, and Alloy X are also higher because of alloying content and demanding application environments.
 
 Copper alloy powders such as CuCrZr often sit in a specialized category because conductivity, oxygen behavior, and printability all matter. Cobalt chrome powders are usually high-value powders for dental, medical, or wear-related applications.
 

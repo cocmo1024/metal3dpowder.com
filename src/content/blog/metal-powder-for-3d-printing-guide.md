@@ -29,7 +29,7 @@ Use this **metal powder for 3D printing** guide to select an alloy family and pr
 | --- | --- | --- | --- |
 | Low mass with structural strength | Ti6Al4V / Ti64, AlSi10Mg | LPBF, EBM | Is strength-to-weight or cost the stronger constraint? |
 | Corrosion-resistant fluid hardware | 316L, IN625, Grade 2 titanium | LPBF, DED | What media, temperature, pressure, and cleaning route apply? |
-| High-temperature structural duty | IN718, Hastelloy X, IN625 | LPBF, DED | Is the design strength-led, oxidation-led, or corrosion-led? |
+| High-temperature structural duty | IN718, Alloy X, IN625 | LPBF, DED | Is the design strength-led, oxidation-led, or corrosion-led? |
 | Thermal or electrical hardware | CuCrZr, pure copper | LPBF | Is maximum conductivity or mechanical/process margin more important? |
 | Mold, die, and production tooling | H13, M300 maraging steel | LPBF, DED | Is thermal fatigue or aged strength the main failure mode? |
 | Medical or dental hardware | Ti64 Grade 23, CoCrMo, selected 316L routes | LPBF, EBM | What regulatory, cleaning, surface, and traceability requirements apply? |
@@ -70,7 +70,7 @@ These grades should not be grouped together as interchangeable "steel powder." U
 
 ### Nickel alloy powder
 
-IN718 is normally the strength-led high-temperature route. IN625 is commonly reviewed for corrosion-heavy, marine, chemical, and ducting applications. Hastelloy X is associated with oxidation-resistant hot-gas and furnace or combustor hardware.
+IN718 is normally the strength-led high-temperature route. IN625 is commonly reviewed for corrosion-heavy, marine, chemical, and ducting applications. Alloy X is associated with oxidation-resistant hot-gas and furnace or combustor hardware.
 
 Operating environment comes before alloy reputation. The [nickel alloy powder guide](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/) and [IN718 versus IN625 comparison](/posts/Alloys/in718-vs-in625-powder/) explain the difference.
 

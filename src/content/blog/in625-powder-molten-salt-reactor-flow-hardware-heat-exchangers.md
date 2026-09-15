@@ -53,9 +53,9 @@ IN625 is most defensible in a molten-salt program when one of these statements i
 
 DOE-indexed research has specifically examined [Alloy 625 in molten FLiNaK with tellurium](https://www.osti.gov/pages/biblio/2000200). That is evidence that Alloy 625 is a relevant research candidate. It is not evidence that one result transfers to a different salt, chemistry state, temperature, printed microstructure, or component geometry.
 
-## Why Hastelloy N and other program alloys still matter
+## Why Alloy N and other program alloys still matter
 
-IN625 should not displace the reactor program's real baseline. Alloy N, also known as Hastelloy N, was developed for fluoride-salt service. ORNL's gap assessment describes its fluoride-salt history but also identifies limits involving high-temperature strength, creep, weld behavior, irradiation, and expanded service conditions. ORNL continues to evaluate [new solid-solution-strengthened alloys for molten fluoride environments](https://impact.ornl.gov/en/publications/fabrication-and-testing-of-solid-solution-strengthened-corrosion-/) because chemistry compatibility and long-term mechanical performance must be solved together.
+IN625 should not displace the reactor program's real baseline. Alloy N was developed for fluoride-salt service. ORNL's gap assessment describes its fluoride-salt history but also identifies limits involving high-temperature strength, creep, weld behavior, irradiation, and expanded service conditions. ORNL continues to evaluate [new solid-solution-strengthened alloys for molten fluoride environments](https://impact.ornl.gov/en/publications/fabrication-and-testing-of-solid-solution-strengthened-corrosion-/) because chemistry compatibility and long-term mechanical performance must be solved together.
 
 This leads to a practical rule:
 
@@ -73,7 +73,7 @@ The table below is a gate, not a final alloy recommendation.
 | Candidate powder | Reason it may enter the screen | Main reason to reject or restrict it | Appropriate first evidence |
 |---|---|---|---|
 | IN625 | Available LPBF route; nickel alloy for corrosion-side geometries; ASTM component specification exists | Salt-specific compatibility, irradiation, creep, and code acceptance are not established by the alloy label | Printed and wrought controls exposed to the actual salt and surface condition |
-| Hastelloy X | Hot-gas oxidation experience; useful when one face sees a high-temperature gas environment | Not a default salt alloy; chromium behavior and salt chemistry require direct testing | Dual-environment or salt-specific coupon program |
+| Alloy X | Hot-gas oxidation experience; useful when one face sees a high-temperature gas environment | Not a default salt alloy; chromium behavior and salt chemistry require direct testing | Dual-environment or salt-specific coupon program |
 | 316L / 316H | Available stainless powder route; 316H is an active AM molten-chloride research material | Austenitic stainless may lose alloying elements or suffer mass-transfer effects; 316L is not a high-temperature substitute for 316H | Project-specific chemistry, microstructure, creep and corrosion comparison |
 | IN718 | Strong structural nickel route for some hot mechanical hardware | Precipitation-strengthened behavior does not establish salt compatibility; avoid using strength as a proxy for corrosion resistance | Use only when the owner has a separate mechanical and environmental rationale |
 | Alloy N or program-specific advanced alloy | Direct relevance to fluoride-salt programs or owner material plan | Powder availability, AM process maturity, code data, and high-temperature strength may limit the route | Program baseline data plus AM-specific equivalency work |

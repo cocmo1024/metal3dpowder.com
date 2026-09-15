@@ -58,7 +58,7 @@ NASA's 2024 [handbook for AM strength, fatigue, and fracture control](https://st
 | --- | --- | --- | --- |
 | High structural demand with a mature nickel AM route | IN718 | Precipitation-hardened nickel route with established LPBF use | Heat treatment, section size, surface, orientation, and defect population remain process-specific |
 | Corrosion-led stationary feed or manifold hardware | IN625 | Solution-strengthened nickel alloy often selected when corrosion matters more than peak strength | Do not substitute it into a rotor without a new stress and life basis |
-| Combustor-adjacent oxidation or hot-gas hardware | Hastelloy X or the program alloy | Hot-gas behavior may lead the decision | This does not make it the default for a cryogenic pump rotor |
+| Combustor-adjacent oxidation or hot-gas hardware | Alloy X or the program alloy | Hot-gas behavior may lead the decision | This does not make it the default for a cryogenic pump rotor |
 | Lightweight external housing or support | Ti64, where the fluid and ignition assessment permits | Lower mass can be valuable in non-hot, non-oxidizer-wetted structure | Do not treat titanium as a default oxygen-service material |
 | Simple rotor with mature stock and accessible machining | Wrought or forged IN718 | Established stock route may reduce defect and qualification uncertainty | AM only wins when geometry, integration, or lead time creates measurable value |
 

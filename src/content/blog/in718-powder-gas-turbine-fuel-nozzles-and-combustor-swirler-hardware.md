@@ -46,13 +46,13 @@ The site already has a broad [IN718 hot-section parts guide](/posts/Alloys/gh416
 
 That distinction matters. A turbine bracket may be mainly a structural load and temperature question. A compressor impeller may be a rotating component with balance, surface finish, and fatigue sensitivity. A fuel nozzle or swirler body is more likely to combine small passages, flow uniformity, heat exposure, sealing interfaces, and inspection access. The RFQ should make those differences visible.
 
-## When Hastelloy X or IN625 may be cleaner
+## When Alloy X or IN625 may be cleaner
 
-IN718 should not be forced into every combustor or hot-gas part. If oxidation resistance, flame adjacency, and hot-gas durability dominate the design, [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/) or the [Hastelloy X hydrogen burner and combustor guide](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) may be the better starting point. If corrosion, chemical media, or aggressive cleaning chemistry dominates, [IN625 powder](/posts/Alloys/gh3625-in625-powder/) may be more defensible.
+IN718 should not be forced into every combustor or hot-gas part. If oxidation resistance, flame adjacency, and hot-gas durability dominate the design, [Alloy X powder](/posts/Alloys/hastelloy-x-powder/) or the [Alloy X hydrogen burner and combustor guide](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) may be the better starting point. If corrosion, chemical media, or aggressive cleaning chemistry dominates, [IN625 powder](/posts/Alloys/gh3625-in625-powder/) may be more defensible.
 
-Use the [IN718 vs Hastelloy X turbine and furnace comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/) when the project is stuck between structural hot-side strength and oxidation-driven hot-gas service. Use the [IN718 vs IN625 powder comparison](/posts/Alloys/in718-vs-in625-powder/) when the decision is structural strength versus corrosion-led nickel alloy behavior.
+Use the [IN718 vs Alloy X turbine and furnace comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/) when the project is stuck between structural hot-side strength and oxidation-driven hot-gas service. Use the [IN718 vs IN625 powder comparison](/posts/Alloys/in718-vs-in625-powder/) when the decision is structural strength versus corrosion-led nickel alloy behavior.
 
-The short rule is simple: IN718 fits better when precipitation-strengthened hot-side strength is central. Hastelloy X fits better when oxidation and flame-adjacent hot-gas exposure are central. IN625 fits better when corrosion and chemical durability are central.
+The short rule is simple: IN718 fits better when precipitation-strengthened hot-side strength is central. Alloy X fits better when oxidation and flame-adjacent hot-gas exposure are central. IN625 fits better when corrosion and chemical durability are central.
 
 ## LPBF details that matter for nozzle and swirler hardware
 
@@ -84,13 +84,13 @@ A useful inquiry should do more than name IN718 or GH4169. For gas turbine fuel 
 - post-processing: stress relief, solution and aging route, HIP if required, machining, surface finishing, cleaning, and packaging
 - acceptance evidence: dimensional report, CT, borescope, leak test, pressure test, flow test, metallography, coupon data, and heat-treatment records
 
-Those details help a supplier decide whether IN718 powder is a rational route or whether the part should move toward Hastelloy X, IN625, cobalt alloy, conventional fabrication, or a different design.
+Those details help a supplier decide whether IN718 powder is a rational route or whether the part should move toward Alloy X, IN625, cobalt alloy, conventional fabrication, or a different design.
 
 <h2 id="internal-route-for-gas-turbine-nickel-powder-decisions">Related guides for gas turbine nickel powder decisions</h2>
 
 Start with the main [IN718 / GH4169 powder guide](/posts/Alloys/gh4169-in718-powder/) when the material decision is still broad. Use this page when the part is specifically a gas turbine fuel nozzle body, combustor swirler support, injector-adjacent structure, or small routed hot-section part.
 
-Use the IN718 hot-section parts guide for broader turbine, exhaust, and hot-section hardware. Use the [IN718 turbomachinery page](/posts/Alloys/in718-powder-turbomachinery-impellers-and-compressor-hardware/) when rotating or compressor-adjacent hardware dominates. Use the [Hastelloy X combustor page](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) when oxidation, hot-gas behavior, or hydrogen burner work is the main driver.
+Use the IN718 hot-section parts guide for broader turbine, exhaust, and hot-section hardware. Use the [IN718 turbomachinery page](/posts/Alloys/in718-powder-turbomachinery-impellers-and-compressor-hardware/) when rotating or compressor-adjacent hardware dominates. Use the [Alloy X combustor page](/posts/Alloys/hastelloy-x-powder-furnace-and-hot-gas-hardware/) when oxidation, hot-gas behavior, or hydrogen burner work is the main driver.
 
 For browsing by cluster, use the [Nickel Alloy Powder](/materials/nickel-alloy-powder/) hub, the [Energy and Propulsion Hardware](/applications/energy-and-propulsion/) hub, the [Aerospace and Space](/applications/aerospace-space/) hub, and the [LPBF Powder](/processes/lpbf/) process hub.
 
@@ -98,4 +98,4 @@ For browsing by cluster, use the [Nickel Alloy Powder](/materials/nickel-alloy-p
 
 Use IN718 powder for gas turbine fuel nozzle bodies and combustor swirler hardware when the job combines high-temperature strength, controlled heat treatment, compact internal geometry, post-machined interfaces, and enough inspection discipline to make LPBF credible.
 
-Do not use IN718 as a blanket combustor material. If the real risk is oxidation-dominated hot-gas exposure, review Hastelloy X. If the real risk is corrosion or chemical media, review IN625. The strongest RFQ names the part class, service condition, internal passages, powder specification, post-processing route, and acceptance evidence before asking for a quote.
+Do not use IN718 as a blanket combustor material. If the real risk is oxidation-dominated hot-gas exposure, review Alloy X. If the real risk is corrosion or chemical media, review IN625. The strongest RFQ names the part class, service condition, internal passages, powder specification, post-processing route, and acceptance evidence before asking for a quote.

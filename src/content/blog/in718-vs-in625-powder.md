@@ -60,11 +60,11 @@ Many projects use the phrase "nickel alloy powder" without explaining the servic
 
 Keep powder acceptance separate from component qualification. A powder COA can document chemistry; it does not certify finished-part creep, fatigue or corrosion performance. Match the exact specification and edition, measured PSD, powder condition, lot identity and machine route first. Then compare part data with the same orientation, thermal treatment, surface condition and test basis. A successful LPBF coupon is not qualification of a DED repair or a different part geometry.
 
-## When Hastelloy X enters the conversation
+## When Alloy X enters the conversation
 
-Some teams compare IN718 and IN625, then realize the part is actually a better fit for a more combustion- or oxidation-oriented alloy. In that case, the decision may need to expand to [Hastelloy X powder](/posts/Alloys/hastelloy-x-powder/), especially for hot-gas or combustor-adjacent hardware.
+Some teams compare IN718 and IN625, then realize the part is actually a better fit for a more combustion- or oxidation-oriented alloy. In that case, the decision may need to expand to [Alloy X powder](/posts/Alloys/hastelloy-x-powder/), especially for hot-gas or combustor-adjacent hardware.
 
-That does not mean Hastelloy X replaces both alloys. It means the nickel-alloy decision should be tied to the operating environment instead of habit.
+That does not mean Alloy X replaces both alloys. It means the nickel-alloy decision should be tied to the operating environment instead of habit.
 
 ## Nickel alloy selection matrix
 

@@ -128,7 +128,7 @@ const profiles: Record<string, ArticleEvidenceProfile> = {
   },
   Nickel: {
     powderEvidence: [
-      'Exact IN718, IN625, or Hastelloy X designation, chemistry, powder route, and lot identity',
+      'Exact IN718, IN625, or Alloy X designation, chemistry, powder route, and lot identity',
       'PSD method, morphology, contamination control, flow or feed evidence, and reuse state',
       'Build process, heat treatment or HIP route, machining allowance, and inspection plan',
       'Available COA, TDS/SDS, SEM or PSD evidence, and service-specific corrosion or temperature data',

@@ -34,13 +34,13 @@ IN718 performance is heavily tied to post-build heat treatment and, in many proj
 
 IN718 is usually the right answer when the project needs a well-proven high-strength nickel AM route with broad industry familiarity. It is often less attractive when corrosion resistance is the main driver and the strength route is not essential. In those cases, [IN625](/posts/Alloys/in718-vs-in625-powder/) may be the better fit.
 
-If oxidation resistance in hot-section service is the primary issue, [Hastelloy X](/posts/Alloys/hastelloy-x-powder/) may deserve review instead of defaulting to IN718.
+If oxidation resistance in hot-section service is the primary issue, [Alloy X](/posts/Alloys/hastelloy-x-powder/) may deserve review instead of defaulting to IN718.
 
 ## The practical takeaway
 
 Use IN718 when the part is structurally demanding, temperature-loaded, and tied to a controlled post-build route. General hot-section structures, housings, and casings are covered on this consolidated alloy guide. If the part is specifically a gas turbine fuel nozzle body, combustor swirler support, or injector-adjacent hot-section flow part, continue with the dedicated [IN718 gas turbine fuel nozzle and swirler hardware guide](/posts/Alloys/in718-powder-gas-turbine-fuel-nozzles-and-combustor-swirler-hardware/).
 
-If the choice is between structural hot-side hardware and oxidation-driven furnace hardware, use the direct [IN718 vs Hastelloy X comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/).
+If the choice is between structural hot-side hardware and oxidation-driven furnace hardware, use the direct [IN718 vs Alloy X comparison](/posts/Alloys/nickel-alloy-powder-for-3d-printing-guide/).
 
 ## IN718 for structural hot-side parts, housings, and casings
 
@@ -63,7 +63,7 @@ IN718 properties are highly condition-dependent. Supplier data should identify t
 
 ## When IN718 is the wrong nickel route
 
-Use IN625 when corrosion and fabrication dominate and the service does not need the IN718 precipitation-strength route. Use Hastelloy X when oxidation-driven furnace or hot-gas exposure leads the decision. Conventional wrought, cast, forged, or machined hardware can remain cleaner when AM does not remove assemblies, enable required internal geometry, or solve a supply problem worth the qualification cost.
+Use IN625 when corrosion and fabrication dominate and the service does not need the IN718 precipitation-strength route. Use Alloy X when oxidation-driven furnace or hot-gas exposure leads the decision. Conventional wrought, cast, forged, or machined hardware can remain cleaner when AM does not remove assemblies, enable required internal geometry, or solve a supply problem worth the qualification cost.
 
 ## RFQ fields
 
