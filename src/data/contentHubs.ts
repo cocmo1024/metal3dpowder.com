@@ -29,7 +29,36 @@ export const materialHubs: HubDefinition[] = [
     group: 'materials',
     slug: 'titanium-powder',
     title: 'Titanium Powder',
-    description: 'Ti64, Grade 23, Grade 2, and TA15 routes for structural, medical, and elevated-temperature AM parts.',
+    description: 'Titanium powder for additive manufacturing can be commercially pure titanium or a titanium alloy. Compare Ti6Al4V Grade 5, Grade 23 ELI, Grade 2, and TA15 below, then match the exact grade, particle size, and lot documents to your process.',
+    decisionGuide: {
+      title: 'Which titanium powder grade should you choose?',
+      introduction:
+        'Start with the drawing or governing material specification. If the grade is not fixed, use the component duty to shortlist a route; the alloy name alone does not qualify a medical device, aerospace part, or printing process.',
+      checkpoints: [
+        {
+          title: 'Ti6Al4V Grade 5: structural duty',
+          description:
+            'Review this route for strength-led lightweight parts. Define load, fatigue, heat treatment, and inspection requirements before comparing powder lots; Grade 5 and Grade 23 are not automatic substitutes.',
+        },
+        {
+          title: 'Ti6Al4V Grade 23 ELI: controlled interstitials',
+          description:
+            'Use the ELI route when the specification requires it. Request chemistry and interstitial evidence for the offered lot; medical use still requires the applicable process, part, and device qualification.',
+        },
+        {
+          title: 'Grade 2: commercially pure titanium',
+          description:
+            'Consider commercially pure titanium for corrosion-led service rather than Ti6Al4V-level strength. Confirm the exact grade, standard, and chemistry; a TA1 designation must not be treated as an automatic Grade 2 equivalent.',
+        },
+        {
+          title: 'TA15: program-defined temperature duty',
+          description:
+            'Consider TA15 only against the specified service temperature, loads, and qualified manufacturing route. It is a separate alloy choice, not a general upgrade from Ti6Al4V.',
+        },
+      ],
+      conclusion:
+        'For a first inquiry, send the grade or application, machine/process, required powder cut, quantity, and destination. If a limit is undecided, mark it for technical review instead of assuming compatibility. The grade links above open a prefilled RFQ.',
+    },
     postIds: [
       'titanium-powder-for-3d-printing-guide',
       'titanium-oxygen-limit-discussion-guide',
@@ -473,7 +502,7 @@ export const processHubs: HubDefinition[] = [
       'lpbf-powder-particle-size-guide',
       'tc4-ti6al4v-powder',
       '316l-stainless-steel-powder',
-      'alsi10mg-powder-lightweight-housings-and-brackets',
+      'alsi10mg-powder',
       'additive-manufacturing-powder-supplier-guide',
       'metal-powder-for-3d-printing-guide',
       'metal-powder-for-3d-printing-price-guide',
@@ -482,6 +511,7 @@ export const processHubs: HubDefinition[] = [
       'am-metal-powder-lot-sampling-for-psd',
       'laser-diffraction-vs-dynamic-image-analysis-metal-powder-psd',
       'metal-powder-flowability-tests-hall-carney-rheology',
+      'alsi10mg-powder-lightweight-housings-and-brackets',
       'lpbf-powder-spreadability-and-layer-density',
       'lpbf-metal-powder-defense-sustainment-spares',
       'ti64-grade-23-powder-surgical-guides-and-instrument-hardware',

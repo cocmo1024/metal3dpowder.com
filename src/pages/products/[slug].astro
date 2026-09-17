@@ -379,7 +379,11 @@ const schema = [
         <section id="standards-and-documents" class="content-block" aria-labelledby="documents-title">
           <div class="section-heading">
             <p class="eyebrow">Evidence package</p>
-            <h2 id="documents-title">Request the documents that support the actual buying decision.</h2>
+            <h2 id="documents-title">
+              {product.id === 'alsi10mg'
+                ? 'AlSi10Mg powder data sheet, SDS, and lot COA'
+                : 'Request the documents that support the actual buying decision.'}
+            </h2>
             <p>{searchIntent.specificationPrompt}</p>
           </div>
           <div class="document-grid">
@@ -395,6 +399,15 @@ const schema = [
             Certificates, technical data, sample reports, and partner-specific documents are supplied only when they
             correspond to the quoted source, grade, particle-size route, and lot.
           </p>
+          {product.id === 'alsi10mg' && (
+            <p class="evidence-note document-request-guidance">
+              A TDS describes the proposed powder route; a COA reports the identified batch; an SDS provides safety
+              information. Read <a href="/posts/Alloys/alsi10mg-powder/#alsi10mg-powder-data-sheet-tds-coa-or-sds">what to check in each AlSi10Mg document</a>,
+              then <a href="/rfq/?product=alsi10mg">request source-specific documents and a quotation</a> with your
+              machine, PSD, quantity, and destination. Availability is confirmed during review; typical data is not a
+              lot acceptance guarantee.
+            </p>
+          )}
         </section>
 
         <section id="price-and-quote-inputs" class="content-block" aria-labelledby="quote-inputs-title">
@@ -1103,6 +1116,12 @@ const schema = [
     background: var(--surface);
     font-size: 0.86rem;
     line-height: 1.55;
+  }
+
+  .document-request-guidance a {
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
   }
 
   .product-content__aside {

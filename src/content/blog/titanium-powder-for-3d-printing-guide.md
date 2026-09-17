@@ -1,8 +1,8 @@
 ---
 title: "Titanium Powder for 3D Printing: Ti64, Grade 23, Grade 2, and TA15"
-description: Titanium powder for 3D printing guide covering Ti64, Grade 23, Grade 2, TA15, particle size, oxygen control, and application fit.
+description: Choose titanium powder by exact grade, process, PSD and lot evidence. Compare Ti6Al4V Grade 5, Grade 23 ELI, Grade 2 and TA15 before requesting a quote.
 pubDate: 2026-05-02T10:12:00+08:00
-updatedDate: 2026-08-03
+updatedDate: 2026-09-17
 category: Titanium
 tags:
   - titanium powder
@@ -13,42 +13,35 @@ tags:
 featured: true
 ---
 
-Titanium powder for 3D printing is usually searched by teams that already know they need low weight, corrosion resistance, or implant-side titanium behavior, but still need to decide which titanium grade and powder route make sense. The most common mistake is treating "titanium powder" as one material. In real AM projects, Ti64, Grade 23, Grade 2, and TA15 answer different engineering problems.
+Titanium powder for 3D printing is a feedstock made from commercially pure titanium or a titanium alloy. Start with the grade required by the drawing, then match particle size and lot acceptance to the printing process. Ti6Al4V Grade 5, Grade 23 ELI, Grade 2 and TA15 are different material choices, not interchangeable versions of one powder.
 
-For metal additive manufacturing, the powder discussion should include alloy grade, particle-size distribution, oxygen and nitrogen control, morphology, flowability, reuse policy, and the process route. A titanium powder that looks acceptable for one LPBF bracket may be wrong for an implant, an EBM build, or an elevated-temperature structural part.
+If the grade has not been fixed, use the component duty to shortlist candidates before requesting a sample. Compare the [titanium powder product routes](/materials/titanium-powder/) for candidate supply specifications; use this guide to define what the quotation and incoming inspection must establish.
 
 ## Main titanium powder families
 
-Ti64, commonly aligned with Ti-6Al-4V, is the default titanium alloy for many structural AM projects. It fits aerospace brackets, lightweight nodes, hydraulic manifolds, UAV support hardware, and many general high-strength titanium parts.
+Ti64 denotes the Ti-6Al-4V alloy family, but an RFQ should state Grade 5 or Grade 23 and the governing specification. Grade 5 is a candidate for strength-led lightweight structures such as brackets, nodes and manifolds. Suitability still depends on the load case, fatigue evidence, manufacturing route and final condition.
 
-Grade 23 titanium powder is the ELI-style Ti-6Al-4V route used when implant-side chemistry and ductility logic become more important. It is commonly considered for orthopedic implants, spinal cages, porous structures, and controlled medical components where a tighter titanium grade definition matters. It can also be considered for [surgical guides and instrument-adjacent hardware](/posts/Alloys/ti64-grade-23-powder-surgical-guides-and-instrument-hardware/) when metallic stiffness, sleeve interfaces, cleaning access, and documentation justify a Grade 23 route.
+Grade 23 is the extra-low-interstitial (ELI) Ti-6Al-4V route. It is considered where the specified chemistry and interstitial controls require it, including some implant programs. The label does not confer medical-device approval or prove the properties of a printed part. For the acceptance distinction, use the existing [Grade 23 vs Grade 5 comparison](/posts/Alloys/ti64-grade-23-vs-grade-5-powder/).
 
-Grade 2 or TA1 commercially pure titanium powder is different. It is not chosen for maximum strength. It is selected when corrosion behavior, ductility, biocompatibility logic, or chemical-service titanium behavior are more important than Ti64-style strength.
+Grade 2 is commercially pure titanium, considered when corrosion service and ductility are more important than Ti6Al4V-level strength. TA1 is a separate designation that requires its own standard and chemistry review; do not infer Grade 2 equivalence from a commercially pure titanium label. The [Ti64 vs Grade 2 guide](/posts/Alloys/ti64-vs-grade-2-titanium-powder/) explains the strength-versus-corrosion selection boundary.
 
-TA15 near-alpha titanium powder is more specialized. It belongs in discussions where elevated-temperature structural behavior matters more than ordinary room-temperature structural duty.
-
-| Titanium route | Where it usually fits |
-| --- | --- |
-| Ti64 / Ti-6Al-4V | Aerospace brackets, manifolds, UAV structures, lightweight nodes. |
-| Grade 23 Ti64 | Medical implants, spinal cages, porous implant structures, surgical guide carriers, instrument hardware. |
-| Grade 2 / TA1 | Chemical parts, biomedical titanium, corrosion-aware hardware. |
-| TA15 | Elevated-temperature aerospace or structural AM parts. |
+TA15 is a near-alpha titanium alloy considered for program-defined elevated-temperature structural duty. Service temperature alone is not enough to substitute it for another titanium alloy; the design specification, process qualification and mechanical evidence must support the choice.
 
 ## Particle size and process fit
 
-LPBF titanium powder commonly uses a fine powder-bed range such as 15-45 um or 15-53 um, depending on machine, layer thickness, and supplier specification. EBM titanium powder can use coarser powder because the process conditions are different. DED powder is usually selected around deposition rate, nozzle behavior, and repair or large-structure needs rather than fine powder-bed resolution.
+LPBF candidate powder cuts include ranges such as 15–45 µm or 15–53 µm, subject to the machine and agreed specification. These are screening examples, not universal acceptance limits. EBM and powder-fed DED can require different cuts and behavior; an LPBF lot should not be assumed compatible with either process.
 
-The important point is that particle size is not a standalone buying decision. It has to match the machine, layer thickness, spreading behavior, target density, feature size, and post-processing route. A powder that spreads well in one system may not be the right choice for another system.
+Ask for measured PSD and its method, not just a nominal sieve range. Confirm fines/oversize limits, sampling, morphology and flow or spreading evidence against the intended equipment. [ISO/ASTM 52907:2019](https://www.iso.org/standard/73565.html) provides a framework for characterizing metal powders, including traceability, sampling, particle size and chemistry; it does not make a particular lot machine-qualified. The [LPBF particle-size guide](/posts/Alloys/lpbf-powder-particle-size-guide/) covers the detailed sizing questions.
 
 ## Oxygen control is not optional
 
-Titanium is reactive, and oxygen pickup can change ductility and final performance. That is why titanium powder discussions often focus on oxygen, nitrogen, hydrogen, chemistry limits, and powder reuse discipline. For medical and aerospace projects, this is not paperwork decoration. It is part of the material risk.
+Specify the oxygen and other interstitial limits required by the governing material specification, together with the test method and sampling basis. Do not use one oxygen limit for every titanium grade, or assume the result on a virgin lot also describes powder after handling and reuse.
 
-For Grade 23 and implant-side titanium work, oxygen and interstitial control become especially important. For structural Ti64, oxygen still matters because the balance between strength and ductility can shift if powder handling is poor. For TA1 or Grade 2 titanium, chemistry control is part of the reason the commercially pure route was selected in the first place.
+The [NIST review of reused Ti-6Al-4V feedstock](https://www.nist.gov/publications/oxidation-reused-powder-bed-fusion-additive-manufacturing-ti-6al-4v-feedstock-brief) describes variation in oxidation behavior across reuse studies. A fixed reuse count is therefore not a substitute for a controlled powder history and acceptance plan. Request virgin/reused status, blending records where applicable, exposure controls and the agreed retest criteria. Use the [titanium oxygen-limit guide](/posts/Alloys/titanium-oxygen-limit-discussion-guide/) to frame that discussion; storage and handling must also follow the applicable SDS and site safety procedures.
 
-## Application-led selection
+## What ASTM F2924 and F3001 do, and do not, establish
 
-If the part is a lightweight aircraft bracket, start with Ti64 powder and ask whether the load case, supports, heat treatment, and inspection plan are realistic. If the part is a spinal cage or porous implant, start with Grade 23 powder and define the lattice, cleaning, surface treatment, and documentation requirements. If the part is corrosion-side titanium hardware, Grade 2 or TA1 may be more relevant. If the part sees higher structural temperature, TA15 deserves review.
+[ASTM F2924-14(2021)](https://store.astm.org/f2924-14r21.html) addresses Ti-6Al-4V components produced by full-melt powder bed fusion; [ASTM F3001-14(2021)](https://store.astm.org/f3001-14r21.html) addresses the ELI route. Neither should be reduced to a generic stamp on a powder COA. Specify the applicable edition and purchaser requirements, and separate feedstock acceptance from build, heat-treatment, inspection and finished-part qualification. Neither reference alone establishes approval for a medical device.
 
 ## Titanium grade screening matrix
 
@@ -56,16 +49,18 @@ If the part is a lightweight aircraft bracket, start with Ti64 powder and ask wh
 | --- | --- | --- |
 | Lightweight structural AM | Ti64 Grade 5 / TC4 | Load case, heat treatment, fatigue basis, chemistry and lot traceability |
 | Implant or tightly controlled Ti64 route | Ti64 Grade 23 | Governing specification, interstitial control, cleaning, surface and final-device qualification |
-| Corrosion-led commercially pure titanium route | Grade 2 / TA1 | Exact CP grade, chemistry, media, pressure status and fabrication route |
+| Corrosion-led commercially pure titanium route | Exact specified CP grade, such as Grade 2 | Grade standard, chemistry, media, pressure status and fabrication route; verify any proposed TA1 substitution separately |
 | Elevated-temperature structural titanium | TA15 or another program-defined alloy | Service temperature, material specification, process qualification and mechanical evidence |
 
 This is a routing table, not an equivalency statement. The alloy must still be checked against the governing design and regulatory requirements.
 
 ## What to specify in an inquiry
 
-A useful titanium powder inquiry should include the alloy grade, AM process, target particle-size range, oxygen limit, intended application, post-processing plan, and whether the part is prototype, qualification, or recurring production. If the project is medical or aerospace, include the documentation expectation early.
+For a first inquiry, send the grade or application, process/machine, requested powder cut, sample or production quantity, and destination. Add a drawing or material specification if available. Unknown limits can remain open for technical review; there is no need to invent a complete specification before starting the conversation.
 
-Also request lot-specific COA, PSD, TDS/SDS, available SEM or morphology evidence, powder history or virgin/reused status, and packaging details through the RFQ. If final-part data or application images are needed, request them explicitly; do not infer part qualification from powder documentation.
+Before approving a lot, agree the chemistry and interstitial limits, measured PSD and method, powder history, packaging and required documents. Request the source-specific TDS/SDS and lot-linked COA; a typical data sheet is not a batch release certificate. State any final-part qualification needs separately from the powder purchase.
+
+Start a grade-specific inquiry for [Ti6Al4V Grade 5](/rfq/?product=ti64), [Grade 23 ELI](/rfq/?product=ti64-grade-23), [Grade 2](/rfq/?product=ti-grade-2) or [TA15](/rfq/?product=ta15). If the grade is undecided, [send the application for review](/rfq/) and identify the decision that still needs evidence.
 
 ## Related titanium powder pages
 

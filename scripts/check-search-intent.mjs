@@ -129,6 +129,25 @@ for (const productId of productDirs) {
   if (primaryProperty?.value !== owner) fail(`${route}: schema primary query does not match the visible owner.`);
 }
 
+// Existing-page content increments must keep the document and grade-specific RFQ paths intact.
+const alsiGuide = read(path.join(DIST, 'posts', 'Alloys', 'alsi10mg-powder', 'index.html'));
+const documentAnchor = 'alsi10mg-powder-data-sheet-tds-coa-or-sds';
+const alsiProduct = read(path.join(PRODUCT_ROOT, 'alsi10mg', 'index.html'));
+if (!alsiGuide.includes(`id="${documentAnchor}"`)
+  || !alsiProduct.includes(`href="/posts/Alloys/alsi10mg-powder/#${documentAnchor}"`)) {
+  fail('AlSi10Mg: product document guidance must link to an existing TDS/COA/SDS section.');
+}
+const titaniumGuide = read(path.join(DIST, 'posts', 'Alloys', 'titanium-powder-for-3d-printing-guide', 'index.html'));
+for (const id of ['ti64', 'ti64-grade-23', 'ti-grade-2', 'ta15']) {
+  if (!titaniumGuide.includes(`href="/rfq/?product=${id}"`)) {
+    fail(`Titanium selection guide: missing direct RFQ for ${id}.`);
+  }
+}
+const lpbfHub = read(path.join(DIST, 'processes', 'lpbf', 'index.html'));
+if (!lpbfHub.includes('href="/posts/Alloys/alsi10mg-powder/"')) {
+  fail('LPBF: existing AlSi10Mg powder acceptance guide must remain discoverable.');
+}
+
 const catalogHtml = read(path.join(PRODUCT_ROOT, 'index.html'));
 const catalogOwners = [...catalogHtml.matchAll(/\bdata-primary-query=(?:"([^"]*)"|'([^']*)')/gi)].map((match) =>
   decode(match.slice(1).find(Boolean)).toLowerCase(),
